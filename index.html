@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prestige Finish | Detailing Interior Premium în Ploiești</title>
+  <title>Prestige Finish | Detailing Interior Premium Ploiești</title>
   <link rel="icon" type="image/png" href="logo.png" />
-  <meta name="description" content="Prestige Finish - detailing interior premium în Ploiești. Curățare interioară profesională, igienizare auto și detailing motor. Servicii premium, lansare în curând." />
-  <meta name="keywords" content="detailing interior ploiesti, igienizare auto ploiesti, detailing motor ploiesti, curatare interior auto ploiesti, prestige finish" />
+  <meta name="description" content="Prestige Finish - detailing interior premium în Ploiești. Curățare profesională interior auto, igienizare, detailing motor și servicii premium pentru persoane fizice." />
+  <meta name="keywords" content="detailing interior ploiesti, igienizare auto ploiesti, detailing motor ploiesti, curatare interior auto ploiesti, polish faruri ploiesti">
+
   <style>
     :root {
       --bg: #050505;
@@ -16,10 +17,12 @@
       --muted: #c5bea9;
       --line: rgba(212,175,55,0.18);
       --shadow: 0 20px 60px rgba(0,0,0,0.45);
+      --green: #25D366;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
@@ -42,7 +45,7 @@
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 40;
+      z-index: 100;
       background: rgba(5,5,5,0.86);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--line);
@@ -62,12 +65,10 @@
       gap: 12px;
     }
 
-    .brand-mark {
-      width: 12px;
-      height: 12px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--gold), #f2d777);
-      box-shadow: 0 0 18px rgba(212,175,55,0.6);
+    .brand-logo {
+      height: 44px;
+      width: auto;
+      border-radius: 10px;
     }
 
     .brand-name {
@@ -114,7 +115,7 @@
         linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.22)),
         url('logo.png') center/contain no-repeat,
         radial-gradient(circle at center, rgba(212,175,55,0.10), transparent 35%);
-      opacity: 0.12;
+      opacity: 0.10;
     }
 
     .hero-grid {
@@ -220,9 +221,7 @@
 
     .mini-card span,
     .card p,
-    .card li,
     .section-text,
-    .contact-list,
     .contact-row span {
       color: var(--muted);
     }
@@ -237,7 +236,7 @@
 
     .hero-panel img {
       width: 100%;
-      max-width: 320px;
+      max-width: 300px;
       margin: 0 auto 18px;
       border-radius: 24px;
       border: 1px solid var(--line);
@@ -274,6 +273,12 @@
       margin: 0 0 12px;
     }
 
+    .section-text {
+      max-width: 760px;
+      margin: 0 0 28px;
+      font-size: 17px;
+    }
+
     .tag {
       display: inline-flex;
       margin-bottom: 14px;
@@ -290,6 +295,13 @@
     .card h3 {
       margin: 0 0 10px;
       font-size: 22px;
+    }
+
+    .price {
+      display: block;
+      margin-top: 14px;
+      color: var(--gold);
+      font-weight: 700;
     }
 
     .split {
@@ -364,7 +376,7 @@
       position: fixed;
       bottom: 25px;
       right: 25px;
-      background: #25D366;
+      background: var(--green);
       color: white;
       padding: 14px 22px;
       font-size: 15px;
@@ -388,10 +400,7 @@
       height: 22px;
     }
 
-    #premium-services,
-    #future-services,
-    #why-us,
-    #contact {
+    #despre, #servicii, #contact {
       scroll-margin-top: 100px;
     }
 
@@ -408,6 +417,7 @@
 
       .nav-links { display: none; }
       h1 { font-size: 48px; }
+      .brand-logo { height: 40px; }
     }
   </style>
 </head>
@@ -415,16 +425,16 @@
   <header class="topbar">
     <div class="container nav">
       <a href="#top" class="brand">
-        <span class="brand-mark"></span>
+        <img src="logo.png" alt="Prestige Finish Logo" class="brand-logo">
         <span class="brand-name">Prestige Finish</span>
       </a>
-     <div class="nav-links">
-<a href="#despre">Despre</a>
-<a href="#servicii">Servicii</a>
-<a href="#movement">Prestige Movement</a>
-<a href="flote.html">Flote & Companii</a>
-<a href="#contact">Contact</a>
-</div>
+
+      <div class="nav-links">
+        <a href="#despre">Despre</a>
+        <a href="#servicii">Servicii</a>
+        <a href="flote.html">Flote & Companii</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </div>
     </div>
   </header>
 
@@ -436,17 +446,19 @@
           <div class="eyebrow">Detailing Interior Premium • Ploiești</div>
           <h1>Interiorul mașinii tale,<br>la standard premium</h1>
           <p>
-            Prestige Finish este un studio în curs de lansare, specializat la început pe detailing interior profesional,
-            igienizare completă și detailing motor. Confort, atenție la detalii și o experiență premium pentru fiecare client.
+            Prestige Finish oferă servicii de detailing interior premium pentru persoane fizice, cu accent pe curățenie reală,
+            igienizare, confort și atenție la detalii. Începem focusat pe interior și detailing motor, pentru rezultate impecabile.
           </p>
+
           <div class="hero-actions">
             <a class="btn btn-primary" href="tel:+40753788848">Sună acum</a>
             <a class="btn btn-secondary" href="#contact">Vezi contact</a>
           </div>
+
           <div class="hero-points">
             <div class="mini-card">
-              <strong>Specializare pe interior</strong>
-              <span>Start focusat pe servicii curate, sigure și cu impact vizibil imediat.</span>
+              <strong>Focus pe interior</strong>
+              <span>Servicii dedicate unui interior curat, îngrijit și confortabil.</span>
             </div>
             <div class="mini-card">
               <strong>Deschidere în curând</strong>
@@ -464,7 +476,7 @@
           <img src="logo.png" alt="Prestige Finish Logo" />
           <h3 style="margin:0 0 8px; font-size:28px;">Prestige Finish</h3>
           <p style="margin:0; color:var(--muted);">
-            Brand de detailing premium orientat pe interior auto, igienizare și atenție reală la fiecare detaliu.
+            Brand de detailing premium orientat pe interior auto, igienizare și curățare atentă a fiecărui detaliu.
           </p>
         </div>
       </div>
@@ -473,19 +485,20 @@
     <section id="despre">
       <div class="container split">
         <div>
-          <div class="tag">Despre brand</div>
-          <h2 class="section-title">Un studio construit în jurul confortului și curățeniei reale</h2>
+          <div class="tag">Despre</div>
+          <h2 class="section-title">Servicii premium pentru persoane fizice</h2>
           <p class="section-text">
             Prestige Finish pornește cu o direcție clară: detailing interior premium pentru clienți care își doresc o mașină curată,
-            igienizată și prezentată impecabil. În loc să promitem tot de la început, alegem să facem foarte bine serviciile pe care le oferim.
+            igienizată și prezentată impecabil. Alegem să începem cu servicii pe care le putem livra la standard înalt.
           </p>
           <a class="btn btn-primary" href="tel:+40753788848">Contact pentru lansare</a>
         </div>
+
         <div class="card">
           <div class="feature-list">
             <div class="feature-item">
               <div class="feature-icon"></div>
-              <div><strong>Igienizare completă</strong><br><span>Interiorul mașinii este spațiul în care petreci cel mai mult timp. Noi îl aducem la standard premium.</span></div>
+              <div><strong>Curățenie și igienizare</strong><br><span>Interiorul mașinii este spațiul în care petreci cel mai mult timp. Noi îl aducem la standard premium.</span></div>
             </div>
             <div class="feature-item">
               <div class="feature-icon"></div>
@@ -493,7 +506,7 @@
             </div>
             <div class="feature-item">
               <div class="feature-icon"></div>
-              <div><strong>Direcție clară</strong><br><span>Fără servicii făcute în grabă. Începem focusat pe ce putem livra impecabil.</span></div>
+              <div><strong>Abordare realistă</strong><br><span>Începem cu servicii bine făcute, nu cu promisiuni prea multe din prima.</span></div>
             </div>
           </div>
         </div>
@@ -502,112 +515,65 @@
 
     <section id="servicii" class="coming">
       <div class="container">
-        <div class="tag">Servicii principale</div>
-        <h2 class="section-title">Serviciile cu care pornim</h2>
+        <div class="tag">Servicii</div>
+        <h2 class="section-title">Ce oferim persoanelor fizice</h2>
         <p class="section-text">
-          La început ne concentrăm pe servicii interioare și pe detailing motor, pentru rezultate vizibile, sigure și profesioniste.
+          La început ne concentrăm pe servicii de interior și pe detailing motor, pentru rezultate vizibile, sigure și profesioniste.
         </p>
-        <div class="grid-3">
+
+        <div class="grid-4">
           <div class="card">
             <div class="tag">Interior</div>
             <h3>Detailing interior premium</h3>
-            <p>Curățare completă a interiorului: scaune, plastice, bord, zone greu accesibile, finisaj și prospețime reală.</p>
+            <p>Curățare completă a interiorului: scaune, plastice, bord, panouri uși, mochete și portbagaj.</p>
+            <span class="price">De la 300 lei</span>
           </div>
+
           <div class="card">
             <div class="tag">Igienizare</div>
             <h3>Curățare și igienizare interior</h3>
             <p>Îndepărtarea murdăriei, prafului și a senzației de interior uzat pentru un spațiu curat și plăcut.</p>
+            <span class="price">De la 250 lei</span>
           </div>
+
           <div class="card">
             <div class="tag">Motor</div>
             <h3>Detailing motor</h3>
-            <p>Curățare atentă a compartimentului motor pentru un aspect îngrijit și o prezentare completă a mașinii.</p>
+            <p>Curățare atentă a compartimentului motor pentru un aspect îngrijit și o prezentare generală mai bună.</p>
+            <span class="price">De la 150 lei</span>
+          </div>
+
+          <div class="card">
+            <div class="tag">Faruri</div>
+            <h3>Restaurare faruri</h3>
+            <p>Disponibil doar pentru anumite modele și doar în cazurile în care materialul și starea farului permit polish în siguranță.</p>
+            <span class="price">Evaluare individuală</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="premium-services">
+    <section class="coming">
       <div class="container">
-        <div class="tag">Servicii exclusive</div>
-        <h2 class="section-title">Mai mult decât detailing clasic</h2>
+        <div class="tag">Serviciu mobil</div>
+        <h2 class="section-title">Prestige Movement</h2>
         <p class="section-text">
-          Prestige Finish este construit pentru clienți care caută confort, flexibilitate și o experiență premium.
+          Prestige Movement este serviciul prin care echipa Prestige Finish se poate deplasa la locația clientului pentru servicii selectate de detailing interior.
+          Este gândit pentru persoane fizice care își doresc confort maxim și economie de timp.
         </p>
+
         <div class="grid-3">
           <div class="card">
-            <div class="tag">Mobil</div>
-            <h3>Detailing la domiciliu</h3>
-            <p>Servicii realizate direct la locația clientului, pentru confort maxim și economie de timp.</p>
-            <p><strong style="color: var(--gold);">Disponibil în curând</strong></p>
+            <h3>Confort</h3>
+            <p>Serviciul este ideal pentru clienții care preferă ca intervenția să fie realizată direct la locația lor.</p>
           </div>
           <div class="card">
-            <div class="tag">Business</div>
-            <h3>Servicii pentru flote auto</h3>
-            <p>Soluții dedicate companiilor cu autoturisme de serviciu sau flote care trebuie să arate impecabil constant.</p>
-            <p><strong style="color: var(--gold);">Disponibil în curând</strong></p>
+            <h3>Programare</h3>
+            <p>Disponibil pentru anumite servicii și doar pe bază de programare prealabilă.</p>
           </div>
           <div class="card">
-            <div class="tag">Concierge</div>
-            <h3>Preluare și predare auto</h3>
-            <p>Pentru clienții care își doresc confort maxim, mașina poate fi preluată și returnată după finalizarea serviciilor.</p>
-            <p><strong style="color: var(--gold);">Disponibil în curând</strong></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="future-services" class="coming">
-      <div class="container">
-        <div class="tag">În dezvoltare</div>
-        <h2 class="section-title">Servicii planificate pentru etapa următoare</h2>
-        <p class="section-text">
-          Ne dezvoltăm pas cu pas. Aceste servicii vor fi introduse ulterior, după lansarea și stabilizarea activității principale.
-        </p>
-        <div class="grid-4">
-          <div class="card">
-            <h3>Detailing exterior</h3>
-            <p><strong style="color: var(--gold);">În curând</strong></p>
-          </div>
-          <div class="card">
-            <h3>Polish exterior</h3>
-            <p><strong style="color: var(--gold);">În curând</strong></p>
-          </div>
-          <div class="card">
-            <h3>Protecție ceramică</h3>
-            <p><strong style="color: var(--gold);">În curând</strong></p>
-          </div>
-          <div class="card">
-            <h3>Protecție suprafețe</h3>
-            <p><strong style="color: var(--gold);">În curând</strong></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="why-us">
-      <div class="container">
-        <div class="tag">De ce Prestige Finish</div>
-        <h2 class="section-title">Diferența vine din direcție, nu din volum</h2>
-        <p class="section-text">
-          Într-o piață aglomerată, alegem să ne diferențiem prin focus, experiență premium și servicii gândite pentru client.
-        </p>
-        <div class="grid-4">
-          <div class="card">
-            <h3>Specializare</h3>
-            <p>Începem cu servicii pe care le putem livra impecabil, nu cu promisiuni prea multe.</p>
-          </div>
-          <div class="card">
-            <h3>Confort premium</h3>
-            <p>Servicii gândite pentru clienți care caută economie de timp și o experiență fără complicații.</p>
-          </div>
-          <div class="card">
-            <h3>Atenție reală</h3>
-            <p>Fiecare mașină este tratată individual, cu accent pe curățenie, prospețime și prezentare.</p>
-          </div>
-          <div class="card">
-            <h3>Direcție de brand</h3>
-            <p>Prestige Finish este construit ca studio premium, nu ca o simplă spălătorie auto.</p>
+            <h3>Disponibilitate</h3>
+            <p>Serviciul este oferit în funcție de locație, tipul lucrării și calendarul disponibil.</p>
           </div>
         </div>
       </div>
@@ -619,19 +585,21 @@
           <div class="tag">Contact</div>
           <h2 class="section-title">Intră în contact cu Prestige Finish</h2>
           <p class="section-text">
-            Studioul este în pregătire, dar brandul este deja online. Pentru informații despre lansare sau servicii, ne poți contacta direct.
+            Studioul este în pregătire, dar brandul este deja online. Pentru informații despre lansare, servicii sau programări viitoare, ne poți contacta direct.
           </p>
+
           <div class="hero-actions">
             <a class="btn btn-primary" href="tel:+40753788848">0753 788 848</a>
             <a class="btn btn-primary" href="tel:+40761132169">0761 132 169</a>
           </div>
         </div>
-        <div class="card contact-list">
+
+        <div class="card">
           <div class="contact-row"><strong>Telefon principal</strong><span>0753 788 848</span></div>
           <div class="contact-row"><strong>Telefon secundar</strong><span>0761 132 169</span></div>
-          <div class="contact-row"><strong>WhatsApp</strong><span>Disponibil pentru programări și informații</span></div>
           <div class="contact-row"><strong>Locație</strong><span>Ploiești</span></div>
-          <div class="contact-row"><strong>Status</strong><span>Deschidere în curând</span></div>
+          <div class="contact-row"><strong>Specializare</strong><span>Detailing interior premium</span></div>
+          <div class="contact-row" style="border-bottom:none;"><strong>Status</strong><span>Deschidere în curând</span></div>
         </div>
       </div>
     </section>
