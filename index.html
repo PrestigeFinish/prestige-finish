@@ -1,200 +1,656 @@
-```html
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prestige Finish | Auto Detailing Premium în Ploiești</title>
+  <meta name="description" content="Prestige Finish - auto detailing premium în Ploiești. Brand în curs de lansare. Descoperă un studio creat pentru mașini impecabile și atenție reală la fiecare detaliu." />
+  <style>
+    :root {
+      --bg: #050505;
+      --bg-soft: #0d0d0d;
+      --card: rgba(255,255,255,0.04);
+      --gold: #d4af37;
+      --gold-soft: rgba(212,175,55,0.14);
+      --text: #f5f2ea;
+      --muted: #c5bea9;
+      --line: rgba(212,175,55,0.18);
+      --white-soft: rgba(255,255,255,0.08);
+      --shadow: 0 20px 60px rgba(0,0,0,0.45);
+    }
 
-<title>Prestige Finish | Auto Detailing Premium Ploiești</title>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(212,175,55,0.16), transparent 24%),
+        radial-gradient(circle at bottom left, rgba(212,175,55,0.10), transparent 20%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-<style>
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#0b0b0b;
-color:white;
-}
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
 
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 40px;
-border-bottom:1px solid rgba(212,175,55,0.2);
-}
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(5,5,5,0.82);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
 
-.logo{
-display:flex;
-align-items:center;
-gap:10px;
-font-weight:bold;
-color:#d4af37;
-}
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 0;
+    }
 
-nav a{
-color:white;
-text-decoration:none;
-margin-left:20px;
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
 
-.hero{
-padding:80px 40px;
-max-width:1100px;
-margin:auto;
-}
+    .brand-mark {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--gold), #f2d777);
+      box-shadow: 0 0 18px rgba(212,175,55,0.6);
+    }
 
-.hero h1{
-font-size:48px;
-margin-bottom:20px;
-}
+    .brand-name {
+      color: var(--gold);
+      font-size: 20px;
+    }
 
-.hero p{
-color:#cfcfcf;
-max-width:600px;
-line-height:1.6;
-}
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
 
-.btn{
-display:inline-block;
-padding:14px 26px;
-margin-top:20px;
-border-radius:30px;
-background:#d4af37;
-color:black;
-text-decoration:none;
-font-weight:bold;
-}
+    .nav-cta {
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--gold);
+      background: rgba(212,175,55,0.06);
+    }
 
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-margin-top:50px;
-}
+    .hero {
+      padding: 84px 0 70px;
+      position: relative;
+      overflow: hidden;
+    }
 
-.card{
-padding:25px;
-border-radius:15px;
-background:rgba(255,255,255,0.03);
-border:1px solid rgba(212,175,55,0.15);
-}
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(5,5,5,0.96) 0%, rgba(5,5,5,0.88) 40%, rgba(5,5,5,0.55) 68%, rgba(5,5,5,0.80) 100%);
+      pointer-events: none;
+    }
 
-.card h3{
-color:#d4af37;
-}
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.22)),
+        url('logo.png') center/contain no-repeat,
+        radial-gradient(circle at center, rgba(212,175,55,0.10), transparent 35%);
+      opacity: 0.12;
+      filter: saturate(0.8);
+    }
 
-.contact{
-margin-top:80px;
-padding:40px;
-border-top:1px solid rgba(212,175,55,0.2);
-}
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 32px;
+      align-items: center;
+    }
 
-.contact p{
-margin:10px 0;
-}
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--gold);
+      background: rgba(212,175,55,0.07);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
 
-footer{
-text-align:center;
-padding:30px;
-color:#888;
-}
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(44px, 7vw, 84px);
+      line-height: 0.98;
+      letter-spacing: -1px;
+      max-width: 780px;
+    }
 
-/* BUTON WHATSAPP */
+    .hero p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 640px;
+      margin: 0 0 28px;
+    }
 
-.whatsapp-btn{
-position:fixed;
-bottom:25px;
-right:25px;
-background:#25D366;
-color:white;
-font-size:28px;
-width:60px;
-height:60px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-text-decoration:none;
-box-shadow:0 8px 20px rgba(0,0,0,0.4);
-z-index:999;
-transition:0.3s;
-}
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
 
-.whatsapp-btn:hover{
-transform:scale(1.1);
-}
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      transition: 0.2s ease;
+      box-shadow: var(--shadow);
+    }
 
-</style>
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), #f0d266);
+      color: #0a0a0a;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--line);
+      color: var(--text);
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 14px;
+      max-width: 760px;
+    }
+
+    .mini-card {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      border-radius: 20px;
+      padding: 16px;
+    }
+
+    .mini-card strong {
+      display: block;
+      color: var(--gold);
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .mini-card span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero-panel {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(212,175,55,0.10), rgba(255,255,255,0.03));
+      border-radius: 30px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-panel img {
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto 18px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: #000;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: rgba(212,175,55,0.06);
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--gold);
+      box-shadow: 0 0 12px rgba(212,175,55,0.7);
+    }
+
+    section {
+      padding: 78px 0;
+      position: relative;
+    }
+
+    .section-title {
+      font-size: clamp(30px, 4vw, 48px);
+      margin: 0 0 12px;
+    }
+
+    .section-text {
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 0 28px;
+      font-size: 17px;
+    }
+
+    .grid-2, .grid-3, .grid-4 {
+      display: grid;
+      gap: 20px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
+
+    .card {
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 26px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+    }
+
+    .tag {
+      display: inline-flex;
+      margin-bottom: 14px;
+      color: var(--gold);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .feature-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--white-soft);
+    }
+
+    .feature-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: rgba(212,175,55,0.12);
+      border: 1px solid var(--line);
+      flex-shrink: 0;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr 0.85fr;
+      grid-template-rows: 220px 220px;
+      gap: 18px;
+    }
+
+    .gallery-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 26px;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, rgba(212,175,55,0.22), rgba(255,255,255,0.03));
+      box-shadow: var(--shadow);
+      padding: 18px;
+      display: flex;
+      align-items: end;
+    }
+
+    .gallery-card.large { grid-row: span 2; }
+
+    .gallery-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.65));
+    }
+
+    .gallery-card span {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .gallery-card small {
+      position: relative;
+      z-index: 1;
+      display: block;
+      color: var(--muted);
+      margin-top: 6px;
+      font-size: 13px;
+    }
+
+    .testimonial {
+      min-height: 220px;
+    }
+
+    .stars {
+      color: var(--gold);
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      color: var(--muted);
+    }
+
+    .contact-row {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--white-soft);
+    }
+
+    .contact-row strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .coming {
+      background: linear-gradient(180deg, rgba(212,175,55,0.08), rgba(255,255,255,0.02));
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0 40px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .whatsapp-btn{
+      position:fixed;
+      bottom:25px;
+      right:25px;
+      background:#25D366;
+      color:white;
+      font-size:28px;
+      width:60px;
+      height:60px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      text-decoration:none;
+      box-shadow:0 8px 20px rgba(0,0,0,0.35);
+      z-index:9999;
+      transition:0.3s ease;
+    }
+
+    .whatsapp-btn:hover{
+      transform:scale(1.08);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .split,
+      .grid-2,
+      .grid-3,
+      .grid-4,
+      .contact-wrap,
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-rows: repeat(5, 220px);
+      }
+
+      .gallery-card.large { grid-row: span 1; }
+
+      .hero-points {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#top" class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Prestige Finish</span>
+      </a>
+      <div class="nav-links">
+        <a href="#despre">Despre</a>
+        <a href="#servicii">Servicii</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </div>
+    </div>
+  </header>
 
-<header>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Auto Detailing Premium • Ploiești</div>
+          <h1>Where Your Car<br>Meets Perfection</h1>
+          <p>
+            Un brand creat pentru mașini impecabile, detalii curate și o experiență premium.
+            Prestige Finish se deschide în curând în Ploiești.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:+40753788848">Sună acum</a>
+            <a class="btn btn-secondary" href="#contact">Vezi detalii</a>
+          </div>
+          <div class="hero-points">
+            <div class="mini-card">
+              <strong>Brand premium</strong>
+              <span>Imagine elegantă și servicii construite în jurul calității.</span>
+            </div>
+            <div class="mini-card">
+              <strong>Lansare în curând</strong>
+              <span>Pregătim spațiul și experiența completă pentru deschidere.</span>
+            </div>
+            <div class="mini-card">
+              <strong>Ploiești</strong>
+              <span>Servicii locale pentru clienți care vor mai mult decât o simplă spălare.</span>
+            </div>
+          </div>
+        </div>
 
-<div class="logo">
-Prestige Finish
-</div>
+        <div class="hero-panel">
+          <div class="status"><span class="status-dot"></span> Opening Soon</div>
+          <img src="logo.png" alt="Prestige Finish Logo" />
+          <h3 style="margin:0 0 8px; font-size:28px;">Prestige Finish</h3>
+          <p style="margin:0; color:var(--muted);">
+            Studio de auto detailing cu direcție premium, focus pe prezentare, rezultate și atenție reală la fiecare detaliu.
+          </p>
+        </div>
+      </div>
+    </section>
 
-<nav>
-<a href="#servicii">Servicii</a>
-<a href="#contact">Contact</a>
-</nav>
+    <section id="despre">
+      <div class="container split">
+        <div>
+          <div class="tag">Despre brand</div>
+          <h2 class="section-title">Un studio construit în jurul detaliilor</h2>
+          <p class="section-text">
+            Prestige Finish este un brand nou de auto detailing creat pentru clienții care își doresc o mașină îngrijită,
+            prezentată impecabil și tratată cu grijă. Lansarea oficială urmează în curând, iar până atunci construim un spațiu
+            care să reflecte exact nivelul de calitate pe care vrem să îl oferim.
+          </p>
+          <a class="btn btn-primary" href="tel:+40753788848">Contact pentru lansare</a>
+        </div>
+        <div class="card">
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="feature-icon"></div>
+              <div><strong>Imagine premium</strong><br><span style="color:var(--muted)">Un brand gândit să inspire încredere încă de la prima vizită.</span></div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon"></div>
+              <div><strong>Atenție la detalii</strong><br><span style="color:var(--muted)">Fiecare mașină merită finisaj, curățenie și prezentare impecabilă.</span></div>
+            </div>
+            <div class="feature-item" style="border-bottom:none;">
+              <div class="feature-icon"></div>
+              <div><strong>Experiență în curs de lansare</strong><br><span style="color:var(--muted)">Suntem aproape de deschidere și pregătim totul la standardul brandului.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-</header>
+    <section class="coming" id="servicii">
+      <div class="container">
+        <div class="tag">Servicii planificate</div>
+        <h2 class="section-title">Servicii premium pregătite pentru lansare</h2>
+        <p class="section-text">
+          Acestea sunt serviciile pe care le pregătim pentru Prestige Finish. Site-ul este online, iar studioul este în curs de amenajare.
+        </p>
+        <div class="grid-3">
+          <div class="card">
+            <div class="tag">Interior</div>
+            <h3>Detailing interior</h3>
+            <p>Curățare amănunțită a interiorului pentru un aspect premium și o experiență complet diferită în mașină.</p>
+          </div>
+          <div class="card">
+            <div class="tag">Exterior</div>
+            <h3>Detailing exterior</h3>
+            <p>Îngrijire atentă a exteriorului, accent pe prezentare, finisaj și impresie vizuală impecabilă.</p>
+          </div>
+          <div class="card">
+            <div class="tag">Finish</div>
+            <h3>Polish faruri</h3>
+            <p>Restaurarea clarității și a aspectului pentru un plus de siguranță și estetică.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section class="hero">
+    <section id="galerie">
+      <div class="container">
+        <div class="tag">Preview vizual</div>
+        <h2 class="section-title">Un look premium încă dinainte de lansare</h2>
+        <p class="section-text">Pe măsură ce începeți lucrările, aici veți adăuga poze reale before / after, interior, exterior și rezultate premium.</p>
+        <div class="gallery">
+          <div class="gallery-card large"><div><span>Interior Detailing</span><small>Curățare, finisaj, atenție la fiecare detaliu</small></div></div>
+          <div class="gallery-card"><div><span>Exterior Finish</span><small>Prezentare premium și reflexii curate</small></div></div>
+          <div class="gallery-card"><div><span>Polish Faruri</span><small>Claritate și estetică îmbunătățită</small></div></div>
+          <div class="gallery-card"><div><span>Before / After</span><small>Loc perfect pentru primele tale transformări</small></div></div>
+          <div class="gallery-card"><div><span>Studio Opening</span><small>Poze din spațiu după finalizare</small></div></div>
+        </div>
+      </div>
+    </section>
 
-<h1>Where Your Car Meets Perfection</h1>
+    <section id="contact">
+      <div class="container contact-wrap">
+        <div>
+          <div class="tag">Contact</div>
+          <h2 class="section-title">Intră în contact cu Prestige Finish</h2>
+          <p class="section-text">
+            Studioul este în pregătire, dar brandul este deja online. Pentru informații despre lansare, detalii sau programări viitoare,
+            ne poți contacta direct.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:+40753788848">0753 788 848</a>
+            <a class="btn btn-secondary" href="tel:+40761132169">0761 132 169</a>
+          </div>
+        </div>
+        <div class="card contact-list">
+          <div class="contact-row"><strong>Telefon principal</strong><span>0753 788 848</span></div>
+          <div class="contact-row"><strong>Telefon secundar</strong><span>0761 132 169</span></div>
+          <div class="contact-row"><strong>Locație</strong><span>Ploiești</span></div>
+          <div class="contact-row"><strong>Status</strong><span>Deschidere în curând</span></div>
+          <div class="contact-row" style="border-bottom:none;"><strong>Brand</strong><span>Prestige Finish</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<p>
-Un brand creat pentru mașini impecabile, detalii curate și o experiență premium.
-Prestige Finish se deschide în curând în Ploiești.
-</p>
+  <footer>
+    <div class="container footer-row">
+      <div>© 2026 Prestige Finish. Toate drepturile rezervate.</div>
+      <div>Premium Auto Detailing • Ploiești</div>
+    </div>
+  </footer>
 
-<a href="tel:+40753788848" class="btn">Sună acum</a>
-
-<div class="cards">
-
-<div class="card">
-<h3>Brand premium</h3>
-<p>Imagine elegantă și servicii construite în jurul calității.</p>
-</div>
-
-<div class="card">
-<h3>Lansare în curând</h3>
-<p>Pregătim spațiul și experiența completă pentru deschidere.</p>
-</div>
-
-<div class="card">
-<h3>Ploiești</h3>
-<p>Servicii locale pentru clienți care vor mai mult decât o simplă spălare.</p>
-</div>
-
-</div>
-
-</section>
-
-<section id="contact" class="contact">
-
-<h2>Contact</h2>
-
-<p>Telefon principal: <a href="tel:+40753788848">0753 788 848</a></p>
-
-<p>Telefon secundar: <a href="tel:+40735671826">0735 671 826</a></p>
-
-<p>Email: prestigefinish.ro@gmail.com</p>
-
-</section>
-
-<footer>
-© 2026 Prestige Finish
-</footer>
-
-<a href="https://wa.me/40753788848?text=Buna!%20Vreau%20o%20programare%20pentru%20detailing." 
-class="whatsapp-btn" 
-target="_blank">💬</a>
-
+  <a href="https://wa.me/40753788848?text=Buna!%20Vreau%20o%20programare%20pentru%20detailing." class="whatsapp-btn" target="_blank">💬</a>
 </body>
 </html>
-```
