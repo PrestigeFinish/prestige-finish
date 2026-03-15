@@ -137,15 +137,32 @@
     }
 
     input, textarea, select {
-      width: 100%;
-      padding: 14px 16px;
-      border-radius: 14px;
-      border: 1px solid rgba(212,175,55,0.18);
-      background: rgba(255,255,255,0.03);
-      color: white;
-      font-size: 15px;
-      outline: none;
-    }
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(212,175,55,0.18);
+  background: rgba(255,255,255,0.03);
+  color: #f5f2ea;
+  font-size: 15px;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+select {
+  background-image: linear-gradient(45deg, transparent 50%, #d4af37 50%), linear-gradient(135deg, #d4af37 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(50% - 3px), calc(100% - 14px) calc(50% - 3px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 42px;
+  cursor: pointer;
+}
+
+select option {
+  background: #111111;
+  color: #f5f2ea;
+}
 
     textarea {
       min-height: 140px;
@@ -195,6 +212,25 @@
       color: var(--text);
       margin-bottom: 4px;
     }
+    .info-list {
+  display: grid;
+  gap: 16px;
+}
+
+.info-box {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.info-box:last-child {
+  border-bottom: none;
+}
+
+.info-box strong {
+  display: block;
+  color: #f5f2ea;
+  margin-bottom: 6px;
+}
 
     .back-link {
       display: inline-block;
@@ -277,39 +313,37 @@
 
           <button type="submit" class="btn">Trimite solicitarea</button>
 
-          <p class="small">
-            După trimitere, solicitarea ajunge pe emailul Prestige Finish. Emailul de confirmare automată către client se poate activa ulterior prin funcția autoresponder din Web3Forms Pro.  [oai_citation:2‡docs.web3forms.com](https://docs.web3forms.com/getting-started/pro-features/autoresponder?utm_source=chatgpt.com)
-          </p>
+          
         </form>
       </div>
 
       <div class="card">
-        <h3>Ce se întâmplă după?</h3>
+  <h3>Ce urmează după solicitare</h3>
 
-        <div class="info-list">
-          <div class="info-box">
-            <strong>1. Primești confirmarea trimiterii</strong>
-            <span class="small">Formularul este trimis prin endpoint-ul Web3Forms și ajunge pe emailul configurat prin access key.  [oai_citation:3‡docs.web3forms.com](https://docs.web3forms.com/getting-started/api-reference?utm_source=chatgpt.com)</span>
-          </div>
+  <div class="info-list">
+    <div class="info-box">
+      <strong>1. Analizăm solicitarea</strong>
+      <span class="small">Cererea ta este preluată de echipa Prestige Finish și verificată în cel mai scurt timp.</span>
+    </div>
 
-          <div class="info-box">
-            <strong>2. Echipa Prestige Finish te contactează</strong>
-            <span class="small">Vom reveni telefonic sau pe email în cel mai scurt timp.</span>
-          </div>
+    <div class="info-box">
+      <strong>2. Te contactăm direct</strong>
+      <span class="small">Unul dintre colegii noștri va reveni telefonic sau pe email pentru a discuta serviciul sau pachetul potrivit.</span>
+    </div>
 
-          <div class="info-box">
-            <strong>3. Răspuns automat către client</strong>
-            <span class="small">Această parte se poate activa ulterior prin autoresponder, funcție disponibilă în Web3Forms Pro și care folosește câmpul `email` din formular.  [oai_citation:4‡docs.web3forms.com](https://docs.web3forms.com/getting-started/pro-features/autoresponder?utm_source=chatgpt.com)</span>
-          </div>
+    <div class="info-box">
+      <strong>3. Stabilim detaliile</strong>
+      <span class="small">Clarificăm disponibilitatea, tipul serviciului și toate detaliile necesare pentru o experiență cât mai simplă și eficientă.</span>
+    </div>
 
-          <div class="info-box">
-            <strong>4. Reply direct</strong>
-            <span class="small">Câmpul `email` din formular este folosit ca reply-to implicit, deci poți răspunde direct clientului din emailul primit.  [oai_citation:5‡docs.web3forms.com](https://docs.web3forms.com/getting-started/customizations/custom-reply-to?utm_source=chatgpt.com)</span>
-          </div>
-        </div>
+    <div class="info-box">
+      <strong>4. Programăm intervenția</strong>
+      <span class="small">După confirmare, stabilim programarea și ne vedem la data agreată.</span>
+    </div>
+  </div>
 
-        <a href="index.html" class="back-link">← Înapoi la prezentarea principală</a>
-      </div>
+  <a href="index.html" class="back-link">← Înapoi la prezentarea principală</a>
+</div>
     </div>
   </section>
 
