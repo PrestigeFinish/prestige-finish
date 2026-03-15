@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prestige Finish Private Care | Persoane fizice</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+  <meta name="description" content="Prestige Finish Private Care - servicii premium pentru persoane fizice: detailing interior, igienizare, detailing motor, restaurare faruri și Prestige Movement." />
+  <meta name="keywords" content="detailing interior ploiesti, persoane fizice, igienizare auto ploiesti, detailing motor ploiesti, restaurare faruri ploiesti">
+
+  <style>
+    :root {
+      --bg: #050505;
+      --card: rgba(255,255,255,0.04);
+      --gold: #d4af37;
+      --text: #f5f2ea;
+      --muted: #c5bea9;
+      --line: rgba(212,175,55,0.18);
+      --shadow: 0 20px 60px rgba(0,0,0,0.45);
+      --green: #25D366;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(212,175,55,0.16), transparent 24%),
+        radial-gradient(circle at bottom left, rgba(212,175,55,0.10), transparent 20%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(5,5,5,0.86);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      height: 48px;
+      width: auto;
+      border-radius: 10px;
+    }
+
+    .brand-name {
+      color: var(--gold);
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-cta {
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--gold);
+      background: rgba(212,175,55,0.06);
+    }
+
+    .hero {
+      padding: 84px 0 70px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(5,5,5,0.96) 0%, rgba(5,5,5,0.88) 40%, rgba(5,5,5,0.55) 68%, rgba(5,5,5,0.82) 100%);
+      pointer-events: none;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.22)),
+        url('logo.png') center/contain no-repeat,
+        radial-gradient(circle at center, rgba(212,175,55,0.10), transparent 35%);
+      opacity: 0.10;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--gold);
+      background: rgba(212,175,55,0.07);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 0.98;
+      letter-spacing: -1px;
+      max-width: 780px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 760px;
+      margin: 0 0 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      transition: 0.2s ease;
+      box-shadow: var(--shadow);
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), #f0d266);
+      color: #0a0a0a;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--line);
+      color: var(--text);
+    }
+
+    .hero-points,
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+      display: grid;
+      gap: 20px;
+    }
+
+    .hero-points {
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      max-width: 820px;
+    }
+
+    .mini-card,
+    .card {
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .mini-card strong {
+      display: block;
+      color: var(--gold);
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .mini-card span,
+    .card p,
+    .section-text,
+    .contact-row span {
+      color: var(--muted);
+    }
+
+    .hero-panel {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(212,175,55,0.10), rgba(255,255,255,0.03));
+      border-radius: 30px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+      margin-top: 6px;
+    }
+
+    .hero-panel img {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto 18px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: #000;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: rgba(212,175,55,0.06);
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--gold);
+      box-shadow: 0 0 12px rgba(212,175,55,0.7);
+    }
+
+    section {
+      padding: 78px 0;
+    }
+
+    .section-title {
+      font-size: clamp(30px, 4vw, 48px);
+      margin: 0 0 12px;
+    }
+
+    .section-text {
+      max-width: 760px;
+      margin: 0 0 28px;
+      font-size: 17px;
+    }
+
+    .tag {
+      display: inline-flex;
+      margin-bottom: 14px;
+      color: var(--gold);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      color: var(--gold);
+    }
+
+    .price {
+      display: block;
+      margin-top: 14px;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .feature-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .feature-item:last-child { border-bottom: none; }
+
+    .feature-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: rgba(212,175,55,0.12);
+      border: 1px solid var(--line);
+      flex-shrink: 0;
+    }
+
+    .coming {
+      background: linear-gradient(180deg, rgba(212,175,55,0.08), rgba(255,255,255,0.02));
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+    }
+
+    .contact-row {
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .contact-row strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0 40px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .whatsapp-btn{
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--green);
+      color: white;
+      padding: 14px 22px;
+      font-size: 15px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+      z-index: 9999;
+      transition: 0.3s ease;
+    }
+
+    .whatsapp-btn:hover{
+      transform: scale(1.08);
+    }
+
+    .whatsapp-btn img{
+      width: 22px;
+      height: 22px;
+    }
+
+    #despre, #servicii, #pachete, #movement, #contact {
+      scroll-margin-top: 100px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .split,
+      .grid-2,
+      .grid-3,
+      .grid-4,
+      .contact-wrap,
+      .hero-points {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links { display: none; }
+      h1 { font-size: 48px; }
+      .brand-logo { height: 42px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Prestige Finish Logo" class="brand-logo">
+        <div>
+          <div class="brand-name">Prestige Finish Private Care</div>
+          <div style="font-size:12px;color:#c5bea9;">← Înapoi la prezentarea principală</div>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="#servicii">Servicii</a>
+        <a href="#pachete">Pachete</a>
+        <a href="#movement">Prestige Movement</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Persoane fizice • Detailing Interior Premium</div>
+          <h1>Servicii premium pentru persoane fizice</h1>
+          <p>
+            Prestige Finish Private Care este pagina dedicată clienților individuali care își doresc detailing interior premium,
+            igienizare completă, detailing motor și servicii mobile selectate, realizate cu atenție la detalii și focus pe confort.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:+40753788848">Sună acum</a>
+            <a class="btn btn-secondary" href="formular-contact.html">Formular de contact</a>
+          </div>
+
+          <div class="hero-points">
+            <div class="mini-card">
+              <strong>Detailing interior</strong>
+              <span>Serviciul principal al paginii dedicate persoanelor fizice.</span>
+            </div>
+            <div class="mini-card">
+              <strong>Servicii selectate</strong>
+              <span>Începem focusat pe interior, detailing motor și evaluare pentru faruri.</span>
+            </div>
+            <div class="mini-card">
+              <strong>Confort premium</strong>
+              <span>Servicii gândite pentru clienți care caută calitate și experiență plăcută.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="status"><span class="status-dot"></span> Private Care</div>
+          <img src="logo.png" alt="Prestige Finish Logo" />
+          <h3 style="margin:0 0 8px; font-size:28px;">Prestige Finish</h3>
+          <p style="margin:0; color:var(--muted);">
+            O experiență dedicată persoanelor fizice, construită în jurul unui interior curat, îngrijit și confortabil.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicii" class="coming">
+      <div class="container">
+        <div class="tag">Servicii</div>
+        <h2 class="section-title">Serviciile disponibile pentru persoane fizice</h2>
+        <p class="section-text">
+          Începem cu servicii atent selecționate, astfel încât să livrăm rezultate impecabile și o experiență premium pentru fiecare client.
+        </p>
+
+        <div class="grid-4">
+          <div class="card">
+            <div class="tag">Interior</div>
+            <h3>Detailing interior premium</h3>
+            <p>Curățare completă a interiorului: scaune, plastice, bord, panouri uși, mochete și portbagaj.</p>
+            <span class="price">Serviciu principal</span>
+          </div>
+
+          <div class="card">
+            <div class="tag">Igienizare</div>
+            <h3>Curățare și igienizare tapițerie</h3>
+            <p>Curățare profundă a suprafețelor textile pentru un interior mai curat, mai plăcut și mai bine întreținut.</p>
+            <span class="price">Disponibil</span>
+          </div>
+
+          <div class="card">
+            <div class="tag">Motor</div>
+            <h3>Detailing motor</h3>
+            <p>Curățare atentă a compartimentului motor pentru un aspect îngrijit și o prezentare generală mai bună.</p>
+            <span class="price">Disponibil</span>
+          </div>
+
+          <div class="card">
+            <div class="tag">Faruri</div>
+            <h3>Restaurare faruri</h3>
+            <p>Disponibil doar pentru anumite modele și doar în cazurile în care materialul și starea farului permit polish în siguranță.</p>
+            <span class="price">Evaluare individuală</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pachete">
+      <div class="container">
+        <div class="tag">Pachete</div>
+        <h2 class="section-title">Pachete pentru persoane fizice</h2>
+        <p class="section-text">
+          Pachetele sunt gândite pentru diferite niveluri de întreținere, de la întreținere regulată până la curățare aprofundată.
+        </p>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>Essential Interior</h3>
+            <p>Aspirare completă, curățare plastice, bord, geamuri interior și finisaj interior.</p>
+            <span class="price">Pachet de bază</span>
+          </div>
+
+          <div class="card">
+            <h3>Premium Interior</h3>
+            <p>Include Essential + curățare tapițerie, curățare portbagaj și atenție extinsă la detalii.</p>
+            <span class="price">Pachet recomandat</span>
+          </div>
+
+          <div class="card">
+            <h3>Deep Interior</h3>
+            <p>Pachet complet de detailing interior cu igienizare aprofundată și opțional detailing motor.</p>
+            <span class="price">Pachet complet</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="movement" class="coming">
+      <div class="container">
+        <div class="tag">Prestige Movement</div>
+        <h2 class="section-title">Serviciu mobil pentru persoane fizice</h2>
+        <p class="section-text">
+          Prestige Movement este serviciul prin care echipa Prestige Finish se poate deplasa la locația clientului pentru servicii selectate de detailing interior.
+          Este creat pentru persoanele care își doresc confort maxim și economie de timp.
+        </p>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>Confort</h3>
+            <p>Serviciul este ideal pentru clienții care preferă ca intervenția să fie realizată direct la locația lor.</p>
+          </div>
+          <div class="card">
+            <h3>Programare</h3>
+            <p>Disponibil pentru anumite tipuri de servicii și doar pe bază de programare prealabilă.</p>
+          </div>
+          <div class="card">
+            <h3>Disponibilitate</h3>
+            <p>Serviciul este oferit în funcție de locație, tipul lucrării și calendarul disponibil.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-wrap">
+        <div>
+          <div class="tag">Contact</div>
+          <h2 class="section-title">Contact pentru persoane fizice</h2>
+          <p class="section-text">
+            Pentru programări, informații și interes privind serviciile Prestige Finish Private Care, ne poți contacta direct.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:+40753788848">0753 788 848</a>
+            <a class="btn btn-primary" href="tel:+40761132169">0761 132 169</a>
+            <a class="btn btn-secondary" href="formular-contact.html">Formular de contact</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="contact-row"><strong>Telefon principal</strong><span>0753 788 848</span></div>
+          <div class="contact-row"><strong>Telefon secundar</strong><span>0761 132 169</span></div>
+          <div class="contact-row"><strong>Tip clienți</strong><span>Persoane fizice</span></div>
+          <div class="contact-row"><strong>Locație</strong><span>Ploiești</span></div>
+          <div class="contact-row" style="border-bottom:none;"><strong>Status</strong><span>Deschidere în curând</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>© 2026 Prestige Finish Private Care. Toate drepturile rezervate.</div>
+      <div>Persoane fizice • Ploiești</div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/40753788848?text=Buna!%20Vreau%20informatii%20despre%20serviciile%20pentru%20persoane%20fizice." class="whatsapp-btn" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    Programează acum
+  </a>
+</body>
+</html>
