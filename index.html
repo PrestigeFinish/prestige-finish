@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prestige Finish | Detailing Interior Premium Ploiești</title>
   <link rel="icon" type="image/png" href="logo.png" />
-  <meta name="description" content="Prestige Finish - detailing interior premium în Ploiești. Curățare profesională interior auto, igienizare, detailing motor și servicii premium pentru persoane fizice." />
-  <meta name="keywords" content="detailing interior ploiesti, igienizare auto ploiesti, detailing motor ploiesti, curatare interior auto ploiesti, polish faruri ploiesti">
+  <meta name="description" content="Prestige Finish oferă servicii de detailing interior premium atât pentru persoane fizice, cât și pentru persoane juridice/flote, cu accent pe curățenie reală, igienizare, confort și atenție la detalii." />
+  <meta name="keywords" content="detailing interior ploiesti, persoane fizice, flote auto, persoane juridice, igienizare auto ploiesti, prestige finish">
 
   <style>
     :root {
@@ -56,7 +56,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      padding: 18px 0;
+      padding: 16px 0;
     }
 
     .brand {
@@ -66,14 +66,15 @@
     }
 
     .brand-logo {
-      height: 44px;
+      height: 54px;
       width: auto;
       border-radius: 10px;
+      object-fit: contain;
     }
 
     .brand-name {
       color: var(--gold);
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 700;
       letter-spacing: 0.5px;
     }
@@ -81,9 +82,11 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 18px;
       color: var(--muted);
       font-size: 14px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     .nav-cta {
@@ -95,7 +98,7 @@
     }
 
     .hero {
-      padding: 84px 0 70px;
+      padding: 84px 0 54px;
       position: relative;
       overflow: hidden;
     }
@@ -122,9 +125,9 @@
       position: relative;
       z-index: 2;
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 32px;
-      align-items: center;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 34px;
+      align-items: start;
     }
 
     .eyebrow {
@@ -153,7 +156,7 @@
     .hero p {
       color: var(--muted);
       font-size: 18px;
-      max-width: 680px;
+      max-width: 760px;
       margin: 0 0 28px;
     }
 
@@ -192,8 +195,7 @@
 
     .hero-points,
     .grid-2,
-    .grid-3,
-    .grid-4 {
+    .grid-3 {
       display: grid;
       gap: 20px;
     }
@@ -232,6 +234,7 @@
       border-radius: 30px;
       padding: 26px;
       box-shadow: var(--shadow);
+      margin-top: 6px;
     }
 
     .hero-panel img {
@@ -290,49 +293,48 @@
 
     .grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
     .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
-    .grid-4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
 
     .card h3 {
       margin: 0 0 10px;
       font-size: 22px;
-    }
-
-    .price {
-      display: block;
-      margin-top: 14px;
       color: var(--gold);
-      font-weight: 700;
     }
 
-    .split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      align-items: stretch;
+    .switch-section {
+      padding-top: 24px;
+      padding-bottom: 24px;
     }
 
-    .feature-list {
-      display: grid;
-      gap: 14px;
-    }
-
-    .feature-item {
+    .switch-wrap {
       display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      padding: 16px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      flex-wrap: wrap;
+      gap: 18px;
+      align-items: center;
+      justify-content: center;
     }
 
-    .feature-item:last-child { border-bottom: none; }
-
-    .feature-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      background: rgba(212,175,55,0.12);
+    .switch-btn {
+      min-width: 260px;
+      text-align: center;
+      padding: 18px 26px;
+      border-radius: 18px;
       border: 1px solid var(--line);
-      flex-shrink: 0;
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+      font-size: 18px;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+      transition: 0.2s ease;
+    }
+
+    .switch-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212,175,55,0.4);
+    }
+
+    .switch-btn.primary {
+      background: linear-gradient(135deg, rgba(212,175,55,0.18), rgba(255,255,255,0.03));
+      color: var(--gold);
     }
 
     .coming {
@@ -406,10 +408,8 @@
 
     @media (max-width: 980px) {
       .hero-grid,
-      .split,
       .grid-2,
       .grid-3,
-      .grid-4,
       .contact-wrap,
       .hero-points {
         grid-template-columns: 1fr;
@@ -417,7 +417,8 @@
 
       .nav-links { display: none; }
       h1 { font-size: 48px; }
-      .brand-logo { height: 40px; }
+      .brand-logo { height: 44px; }
+      .switch-btn { min-width: 100%; }
     }
   </style>
 </head>
@@ -432,7 +433,8 @@
       <div class="nav-links">
         <a href="#despre">Despre</a>
         <a href="#servicii">Servicii</a>
-        <a href="flote.html">Flote & Companii</a>
+        <a href="persoane-fizice.html">Persoane fizice</a>
+        <a href="flote.html">Persoane juridice/flote</a>
         <a href="#contact" class="nav-cta">Contact</a>
       </div>
     </div>
@@ -446,13 +448,12 @@
           <div class="eyebrow">Detailing Interior Premium • Ploiești</div>
           <h1>Interiorul mașinii tale,<br>la standard premium</h1>
           <p>
-            Prestige Finish oferă servicii de detailing interior premium pentru persoane fizice, cu accent pe curățenie reală,
-            igienizare, confort și atenție la detalii. Începem focusat pe interior și detailing motor, pentru rezultate impecabile.
+            Prestige Finish oferă servicii de detailing interior premium atât pentru persoane fizice, cât și pentru persoane juridice/flote, cu accent pe curățenie reală, igienizare, confort și atenție la detalii. Începem focusat pe interior pentru rezultate impecabile.
           </p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="tel:+40753788848">Sună acum</a>
-            <a class="btn btn-secondary" href="#contact">Vezi contact</a>
+            <a class="btn btn-secondary" href="formular-contact.html">Formular de contact</a>
           </div>
 
           <div class="hero-points">
@@ -482,32 +483,45 @@
       </div>
     </section>
 
-    <section id="despre">
-      <div class="container split">
-        <div>
-          <div class="tag">Despre</div>
-          <h2 class="section-title">Servicii premium pentru persoane fizice</h2>
-          <p class="section-text">
-            Prestige Finish pornește cu o direcție clară: detailing interior premium pentru clienți care își doresc o mașină curată,
-            igienizată și prezentată impecabil. Alegem să începem cu servicii pe care le putem livra la standard înalt.
-          </p>
-          <a class="btn btn-primary" href="tel:+40753788848">Contact pentru lansare</a>
+    <section class="switch-section">
+      <div class="container">
+        <div class="switch-wrap">
+          <a href="persoane-fizice.html" class="switch-btn primary">Persoane fizice</a>
+          <a href="flote.html" class="switch-btn">Persoane juridice / flote</a>
         </div>
+      </div>
+    </section>
 
-        <div class="card">
-          <div class="feature-list">
-            <div class="feature-item">
-              <div class="feature-icon"></div>
-              <div><strong>Curățenie și igienizare</strong><br><span>Interiorul mașinii este spațiul în care petreci cel mai mult timp. Noi îl aducem la standard premium.</span></div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon"></div>
-              <div><strong>Atenție la detalii</strong><br><span>Fiecare suprafață, fiecare colț și fiecare material contează.</span></div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon"></div>
-              <div><strong>Abordare realistă</strong><br><span>Începem cu servicii bine făcute, nu cu promisiuni prea multe din prima.</span></div>
-            </div>
+    <section id="despre">
+      <div class="container">
+        <div class="tag">Despre</div>
+        <h2 class="section-title">Alege direcția potrivită pentru tine</h2>
+        <p class="section-text">
+          Pentru o experiență cât mai clară și intuitivă, site-ul Prestige Finish este împărțit pe două direcții distincte:
+          servicii dedicate persoanelor fizice și soluții business pentru persoane juridice și flote auto.
+        </p>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Persoane fizice</h3>
+            <p>
+              Pagina dedicată clienților individuali include serviciile de detailing interior, igienizare, detailing motor,
+              restaurare faruri și opțiuni de deplasare la domiciliu.
+            </p>
+            <p style="margin-top:18px;">
+              <a href="persoane-fizice.html" class="btn btn-primary">Vezi pagina pentru persoane fizice</a>
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Persoane juridice / flote</h3>
+            <p>
+              Pagina business este dedicată companiilor și flotelor auto și include pachete corporate, intervenții recurente,
+              deplasare la sediul firmei și soluții mobile premium.
+            </p>
+            <p style="margin-top:18px;">
+              <a href="flote.html" class="btn btn-secondary">Vezi pagina pentru persoane juridice / flote</a>
+            </p>
           </div>
         </div>
       </div>
@@ -516,64 +530,25 @@
     <section id="servicii" class="coming">
       <div class="container">
         <div class="tag">Servicii</div>
-        <h2 class="section-title">Ce oferim persoanelor fizice</h2>
+        <h2 class="section-title">Servicii premium pe două direcții clare</h2>
         <p class="section-text">
-          La început ne concentrăm pe servicii de interior și pe detailing motor, pentru rezultate vizibile, sigure și profesioniste.
-        </p>
-
-        <div class="grid-4">
-          <div class="card">
-            <div class="tag">Interior</div>
-            <h3>Detailing interior premium</h3>
-            <p>Curățare completă a interiorului: scaune, plastice, bord, panouri uși, mochete și portbagaj.</p>
-            <span class="price">De la 300 lei</span>
-          </div>
-
-          <div class="card">
-            <div class="tag">Igienizare</div>
-            <h3>Curățare și igienizare interior</h3>
-            <p>Îndepărtarea murdăriei, prafului și a senzației de interior uzat pentru un spațiu curat și plăcut.</p>
-            <span class="price">De la 250 lei</span>
-          </div>
-
-          <div class="card">
-            <div class="tag">Motor</div>
-            <h3>Detailing motor</h3>
-            <p>Curățare atentă a compartimentului motor pentru un aspect îngrijit și o prezentare generală mai bună.</p>
-            <span class="price">De la 150 lei</span>
-          </div>
-
-          <div class="card">
-            <div class="tag">Faruri</div>
-            <h3>Restaurare faruri</h3>
-            <p>Disponibil doar pentru anumite modele și doar în cazurile în care materialul și starea farului permit polish în siguranță.</p>
-            <span class="price">Evaluare individuală</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="coming">
-      <div class="container">
-        <div class="tag">Serviciu mobil</div>
-        <h2 class="section-title">Prestige Movement</h2>
-        <p class="section-text">
-          Prestige Movement este serviciul prin care echipa Prestige Finish se poate deplasa la locația clientului pentru servicii selectate de detailing interior.
-          Este gândit pentru persoane fizice care își doresc confort maxim și economie de timp.
+          Prestige Finish este construit pentru a răspunde diferit nevoilor persoanelor fizice și ale companiilor, prin pagini dedicate și servicii prezentate clar.
         </p>
 
         <div class="grid-3">
           <div class="card">
-            <h3>Confort</h3>
-            <p>Serviciul este ideal pentru clienții care preferă ca intervenția să fie realizată direct la locația lor.</p>
+            <h3>Detailing interior premium</h3>
+            <p>Serviciul principal al brandului, atât pentru clienți individuali, cât și pentru zona business.</p>
           </div>
+
           <div class="card">
-            <h3>Programare</h3>
-            <p>Disponibil pentru anumite servicii și doar pe bază de programare prealabilă.</p>
+            <h3>Servicii mobile</h3>
+            <p>Deplasare la domiciliu pentru persoane fizice și intervenții la sediul firmei pentru colaborări corporate.</p>
           </div>
+
           <div class="card">
-            <h3>Disponibilitate</h3>
-            <p>Serviciul este oferit în funcție de locație, tipul lucrării și calendarul disponibil.</p>
+            <h3>Pachete dedicate</h3>
+            <p>Structuri separate și intuitive pentru persoane fizice și pentru persoane juridice / flote.</p>
           </div>
         </div>
       </div>
@@ -585,12 +560,13 @@
           <div class="tag">Contact</div>
           <h2 class="section-title">Intră în contact cu Prestige Finish</h2>
           <p class="section-text">
-            Studioul este în pregătire, dar brandul este deja online. Pentru informații despre lansare, servicii sau programări viitoare, ne poți contacta direct.
+            Pentru informații despre lansare, servicii sau o cerere de contact, poți alege fie formularul dedicat, fie contactul telefonic direct.
           </p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="tel:+40753788848">0753 788 848</a>
             <a class="btn btn-primary" href="tel:+40761132169">0761 132 169</a>
+            <a class="btn btn-secondary" href="formular-contact.html">Formular de contact</a>
           </div>
         </div>
 
@@ -598,7 +574,7 @@
           <div class="contact-row"><strong>Telefon principal</strong><span>0753 788 848</span></div>
           <div class="contact-row"><strong>Telefon secundar</strong><span>0761 132 169</span></div>
           <div class="contact-row"><strong>Locație</strong><span>Ploiești</span></div>
-          <div class="contact-row"><strong>Specializare</strong><span>Detailing interior premium</span></div>
+          <div class="contact-row"><strong>Disponibilitate</strong><span>Persoane fizice și persoane juridice / flote</span></div>
           <div class="contact-row" style="border-bottom:none;"><strong>Status</strong><span>Deschidere în curând</span></div>
         </div>
       </div>
