@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prestige Finish | Formular de contact</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+  <meta name="description" content="Formular de contact Prestige Finish. Lasă datele tale și te vom contacta în cel mai scurt timp." />
+
+  <style>
+    :root {
+      --bg: #050505;
+      --card: rgba(255,255,255,0.04);
+      --gold: #d4af37;
+      --text: #f5f2ea;
+      --muted: #c5bea9;
+      --line: rgba(212,175,55,0.18);
+      --shadow: 0 20px 60px rgba(0,0,0,0.45);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(212,175,55,0.16), transparent 24%),
+        radial-gradient(circle at bottom left, rgba(212,175,55,0.10), transparent 20%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(5,5,5,0.86);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      height: 46px;
+      width: auto;
+      border-radius: 10px;
+    }
+
+    .brand-name {
+      color: var(--gold);
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .hero {
+      padding: 70px 0 30px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--gold);
+      background: rgba(212,175,55,0.07);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(34px, 6vw, 62px);
+      line-height: 1.02;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 720px;
+      font-size: 18px;
+      margin: 0 0 30px;
+    }
+
+    .form-wrap {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      padding: 24px 0 80px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h2, .card h3 {
+      margin-top: 0;
+      color: var(--gold);
+    }
+
+    form {
+      display: grid;
+      gap: 16px;
+    }
+
+    label {
+      font-size: 14px;
+      color: var(--text);
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(212,175,55,0.18);
+      background: rgba(255,255,255,0.03);
+      color: white;
+      font-size: 15px;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #9f9a8c;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 999px;
+      border: none;
+      font-weight: 700;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--gold), #f0d266);
+      color: #0a0a0a;
+      box-shadow: var(--shadow);
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .info-box {
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .info-box:last-child {
+      border-bottom: none;
+    }
+
+    .info-box strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .form-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Prestige Finish Logo" class="brand-logo">
+        <span class="brand-name">Prestige Finish</span>
+      </a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="eyebrow">Formular de contact</div>
+      <h1>Lasă-ne datele tale și revenim rapid</h1>
+      <p>
+        Completează formularul de mai jos, iar echipa Prestige Finish te va contacta în cel mai scurt timp pentru detalii, lansare sau servicii.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container form-wrap">
+      <div class="card">
+        <h2>Trimite cererea ta</h2>
+
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="PUNE_AICI_ACCESS_KEY">
+          <input type="hidden" name="subject" value="Cerere nouă de contact - Prestige Finish">
+          <input type="hidden" name="from_name" value="Prestige Finish Website">
+          <input type="hidden" name="redirect" value="https://prestigefinish.ro/multumim.html">
+
+          <div style="display:none;">
+            <input type="checkbox" name="botcheck">
+          </div>
+
+          <div>
+            <label for="name">Nume complet</label>
+            <input type="text" id="name" name="name" placeholder="Ex: Andrei Popescu" required>
+          </div>
+
+          <div>
+            <label for="phone">Număr de telefon</label>
+            <input type="text" id="phone" name="phone" placeholder="Ex: 07xx xxx xxx" required>
+          </div>
+
+          <div>
+            <label for="email">Adresă de email</label>
+            <input type="email" id="email" name="email" placeholder="Ex: nume@email.com" required>
+          </div>
+
+          <div>
+            <label for="client_type">Tip client</label>
+            <select id="client_type" name="client_type" required>
+              <option value="">Alege o opțiune</option>
+              <option value="Persoana fizica">Persoană fizică</option>
+              <option value="Persoana juridica / Flota">Persoană juridică / Flotă</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="message">Mesaj</label>
+            <textarea id="message" name="message" placeholder="Spune-ne pe scurt ce tip de serviciu te interesează"></textarea>
+          </div>
+
+          <button type="submit" class="btn">Trimite solicitarea</button>
+
+          <p class="small">
+            După trimitere, solicitarea ajunge pe emailul Prestige Finish. Emailul de confirmare automată către client se poate activa ulterior prin funcția autoresponder din Web3Forms Pro.  [oai_citation:2‡docs.web3forms.com](https://docs.web3forms.com/getting-started/pro-features/autoresponder?utm_source=chatgpt.com)
+          </p>
+        </form>
+      </div>
+
+      <div class="card">
+        <h3>Ce se întâmplă după?</h3>
+
+        <div class="info-list">
+          <div class="info-box">
+            <strong>1. Primești confirmarea trimiterii</strong>
+            <span class="small">Formularul este trimis prin endpoint-ul Web3Forms și ajunge pe emailul configurat prin access key.  [oai_citation:3‡docs.web3forms.com](https://docs.web3forms.com/getting-started/api-reference?utm_source=chatgpt.com)</span>
+          </div>
+
+          <div class="info-box">
+            <strong>2. Echipa Prestige Finish te contactează</strong>
+            <span class="small">Vom reveni telefonic sau pe email în cel mai scurt timp.</span>
+          </div>
+
+          <div class="info-box">
+            <strong>3. Răspuns automat către client</strong>
+            <span class="small">Această parte se poate activa ulterior prin autoresponder, funcție disponibilă în Web3Forms Pro și care folosește câmpul `email` din formular.  [oai_citation:4‡docs.web3forms.com](https://docs.web3forms.com/getting-started/pro-features/autoresponder?utm_source=chatgpt.com)</span>
+          </div>
+
+          <div class="info-box">
+            <strong>4. Reply direct</strong>
+            <span class="small">Câmpul `email` din formular este folosit ca reply-to implicit, deci poți răspunde direct clientului din emailul primit.  [oai_citation:5‡docs.web3forms.com](https://docs.web3forms.com/getting-started/customizations/custom-reply-to?utm_source=chatgpt.com)</span>
+          </div>
+        </div>
+
+        <a href="index.html" class="back-link">← Înapoi la prezentarea principală</a>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
