@@ -494,6 +494,17 @@
       background: rgba(212,175,55,0.18);
       border-color: rgba(212,175,55,0.40);
     }
+    .pf-map-buttons{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  align-items:center;
+}
+
+.pf-map-btn-secondary{
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.15);
+}
 
     footer {
       border-top: 1px solid var(--line);
@@ -884,13 +895,24 @@
           </iframe>
 
           <div class="pf-map-overlay">
-            <a
-              href="https://waze.com/ul?q=Strada%20Libertatii%2012%20107592%20Ploiesti"
-              target="_blank"
-              class="pf-map-btn">
-              Deschide navigarea în Waze
-            </a>
-          </div>
+  <div class="pf-map-buttons">
+
+    <a
+      href="https://waze.com/ul?q=Strada%20Libertatii%2012%20107592%20Ploiesti"
+      target="_blank"
+      class="pf-map-btn">
+      Navighează cu Waze
+    </a>
+
+    <a
+      href="https://www.google.com/maps/dir/?api=1&destination=Strada+Libertatii+12,+Ploiesti"
+      target="_blank"
+      class="pf-map-btn pf-map-btn-secondary">
+      Deschide în Google Maps
+    </a>
+
+  </div>
+</div>
         </div>
       </div>
     </section>
