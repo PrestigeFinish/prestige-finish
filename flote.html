@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prestige Finish Fleet Care | Flote & Companii</title>
+  <title>Prestige Finish Fleet Care | Soluții pentru flote și companii</title>
   <link rel="icon" type="image/png" href="logo.png" />
-  <meta name="description" content="Prestige Finish Fleet Care - soluții premium pentru flote auto și companii. Servicii mobile, pachete business și Prestige Fleet Movement. În curs de lansare." />
-  <meta name="keywords" content="flote auto ploiesti, detailing flote ploiesti, servicii firme auto ploiesti, curatare flotă auto, prestige finish fleet care">
+  <meta name="description" content="Prestige Finish Fleet Care oferă soluții premium pentru flote auto și companii în Ploiești: întreținere interioară, colaborări recurente și servicii dedicate persoanelor juridice." />
+  <meta name="keywords" content="flote auto ploiesti, detailing flote ploiesti, servicii firme auto ploiesti, intretinere flota auto, prestige finish fleet care" />
 
   <style>
     :root {
@@ -35,6 +35,7 @@
     }
 
     a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
     .container {
       width: min(1180px, calc(100% - 32px));
@@ -44,10 +45,10 @@
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(5,5,5,0.86);
+      z-index: 1000;
+      background: rgba(5,5,5,0.88);
       backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(212,175,55,0.18);
+      border-bottom: 1px solid var(--line);
     }
 
     .nav {
@@ -55,7 +56,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      padding: 18px 0;
+      padding: 16px 0;
     }
 
     .brand {
@@ -65,7 +66,7 @@
     }
 
     .brand-logo {
-      height: 44px;
+      height: 46px;
       width: auto;
       border-radius: 10px;
     }
@@ -74,15 +75,22 @@
       color: var(--gold);
       font-size: 20px;
       font-weight: 700;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
+    }
+
+    .brand-sub {
+      font-size: 12px;
+      color: var(--muted);
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 18px;
       color: var(--muted);
       font-size: 14px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     .nav-cta {
@@ -94,7 +102,7 @@
     }
 
     .hero {
-      padding: 84px 0 70px;
+      padding: 86px 0 70px;
       position: relative;
       overflow: hidden;
     }
@@ -103,7 +111,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, rgba(5,5,5,0.96) 0%, rgba(5,5,5,0.88) 40%, rgba(5,5,5,0.55) 68%, rgba(5,5,5,0.82) 100%);
+      background: linear-gradient(90deg, rgba(5,5,5,0.96) 0%, rgba(5,5,5,0.88) 40%, rgba(5,5,5,0.58) 68%, rgba(5,5,5,0.84) 100%);
       pointer-events: none;
     }
 
@@ -121,9 +129,9 @@
       position: relative;
       z-index: 2;
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 32px;
-      align-items: center;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 34px;
+      align-items: start;
     }
 
     .eyebrow {
@@ -143,7 +151,7 @@
 
     h1 {
       margin: 0 0 16px;
-      font-size: clamp(42px, 7vw, 78px);
+      font-size: clamp(38px, 7vw, 70px);
       line-height: 0.98;
       letter-spacing: -1px;
       max-width: 780px;
@@ -152,7 +160,7 @@
     .hero p {
       color: var(--muted);
       font-size: 18px;
-      max-width: 700px;
+      max-width: 760px;
       margin: 0 0 28px;
     }
 
@@ -174,6 +182,7 @@
       font-weight: 700;
       transition: 0.2s ease;
       box-shadow: var(--shadow);
+      cursor: pointer;
     }
 
     .btn:hover { transform: translateY(-2px); }
@@ -185,35 +194,89 @@
 
     .btn-secondary {
       background: transparent;
-      border-color: rgba(212,175,55,0.18);
+      border-color: var(--line);
       color: var(--text);
     }
 
-    .grid-2, .grid-3, .grid-4 {
+    .hero-points,
+    .grid-2,
+    .grid-3,
+    .grid-4,
+    .process-grid {
       display: grid;
       gap: 20px;
     }
 
-    .grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
-    .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
-    .grid-4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
+    .hero-points {
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      max-width: 860px;
+    }
 
-    .card {
-      border: 1px solid rgba(212,175,55,0.18);
-      background: rgba(255,255,255,0.04);
+    .mini-card,
+    .card,
+    .plan-card,
+    .faq-item {
+      border: 1px solid var(--line);
+      background: var(--card);
       border-radius: 24px;
       padding: 22px;
       box-shadow: var(--shadow);
     }
 
-    .card h3 {
-      margin: 0 0 10px;
-      font-size: 22px;
+    .mini-card strong {
+      display: block;
       color: var(--gold);
+      margin-bottom: 6px;
+      font-size: 14px;
     }
 
-    .card p, .section-text, .contact-row span {
+    .mini-card span,
+    .card p,
+    .section-text,
+    .contact-row span,
+    .step-text,
+    .faq-answer,
+    .plan-desc {
       color: var(--muted);
+    }
+
+    .hero-panel {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(212,175,55,0.10), rgba(255,255,255,0.03));
+      border-radius: 30px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+      margin-top: 6px;
+    }
+
+    .hero-panel img {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto 18px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: #000;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: rgba(212,175,55,0.06);
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--gold);
+      box-shadow: 0 0 12px rgba(212,175,55,0.7);
     }
 
     section {
@@ -226,7 +289,7 @@
     }
 
     .section-text {
-      max-width: 760px;
+      max-width: 780px;
       margin: 0 0 28px;
       font-size: 17px;
     }
@@ -240,17 +303,114 @@
       letter-spacing: 1.4px;
     }
 
-    .note {
-      display: inline-block;
-      margin-top: 14px;
+    .grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
+
+    .card h3,
+    .plan-card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
       color: var(--gold);
-      font-weight: 700;
     }
 
     .coming {
       background: linear-gradient(180deg, rgba(212,175,55,0.08), rgba(255,255,255,0.02));
-      border-top: 1px solid rgba(212,175,55,0.18);
-      border-bottom: 1px solid rgba(212,175,55,0.18);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .plan-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 20px;
+    }
+
+    .plan-card.featured {
+      background: linear-gradient(180deg, rgba(212,175,55,0.14), rgba(255,255,255,0.03));
+    }
+
+    .plan-label {
+      display: inline-flex;
+      margin-bottom: 10px;
+      color: var(--gold);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+    }
+
+    .plan-list {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .plan-list li {
+      position: relative;
+      padding-left: 18px;
+      color: var(--text);
+    }
+
+    .plan-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--gold);
+    }
+
+    .plan-note {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .process-grid {
+      grid-template-columns: repeat(4, minmax(0,1fr));
+    }
+
+    .step {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .step-number {
+      width: 42px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: rgba(212,175,55,0.12);
+      border: 1px solid var(--line);
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .step h3 {
+      margin: 0 0 8px;
+      color: var(--text);
+      font-size: 18px;
+    }
+
+    .faq-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .faq-item h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: var(--text);
     }
 
     .contact-wrap {
@@ -271,7 +431,7 @@
     }
 
     footer {
-      border-top: 1px solid rgba(212,175,55,0.18);
+      border-top: 1px solid var(--line);
       padding: 28px 0 40px;
       color: var(--muted);
       font-size: 14px;
@@ -284,7 +444,7 @@
       flex-wrap: wrap;
     }
 
-    .whatsapp-btn{
+    .whatsapp-btn {
       position: fixed;
       bottom: 25px;
       right: 25px;
@@ -303,17 +463,24 @@
       transition: 0.3s ease;
     }
 
-    .whatsapp-btn:hover{
+    .whatsapp-btn:hover {
       transform: scale(1.08);
     }
 
-    .whatsapp-btn img{
+    .whatsapp-btn img {
       width: 22px;
       height: 22px;
     }
 
-    #fleet-services, #packages, #movement, #contact {
+    #servicii, #pachete, #beneficii, #proces, #faq, #contact {
       scroll-margin-top: 100px;
+    }
+
+    @media (max-width: 1100px) {
+      .plan-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 980px) {
@@ -321,30 +488,35 @@
       .grid-2,
       .grid-3,
       .grid-4,
-      .contact-wrap {
+      .contact-wrap,
+      .hero-points,
+      .plan-grid,
+      .process-grid {
         grid-template-columns: 1fr;
       }
 
       .nav-links { display: none; }
       h1 { font-size: 46px; }
+      .brand-logo { height: 42px; }
     }
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="container nav">
-    <a href="index.html" class="brand">
-  <img src="logo.png" alt="Prestige Finish Logo" class="brand-logo">
-  <div>
-    <div class="brand-name">Prestige Finish Fleet Care</div>
-    <div style="font-size:12px;color:#c5bea9;">← Înapoi la pagina principala</div>
-  </div>
-</a>
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Prestige Finish Logo" class="brand-logo">
+        <div>
+          <div class="brand-name">Prestige Finish Fleet Care</div>
+          <div class="brand-sub">← Înapoi la pagina principală</div>
+        </div>
+      </a>
 
       <div class="nav-links">
-        <a href="#fleet-services">Servicii</a>
-        <a href="#packages">Pachete</a>
-        <a href="#movement">Prestige Fleet Movement</a>
+        <a href="#servicii">Servicii</a>
+        <a href="#pachete">Pachete</a>
+        <a href="#beneficii">Beneficii</a>
+        <a href="#faq">Întrebări frecvente</a>
         <a href="#contact" class="nav-cta">Contact</a>
       </div>
     </div>
@@ -355,170 +527,272 @@
       <div class="hero-bg"></div>
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Flote & Companii • În curs de lansare</div>
+          <div class="eyebrow">Flote & companii • Soluții business</div>
           <h1>Soluții premium pentru flote auto și companii</h1>
           <p>
-            Prestige Finish Fleet Care este direcția business a brandului nostru, creată pentru companii care își doresc
-            întreținere interioară constantă, imagine profesională și o colaborare predictibilă, pe bază de contract.
+            Prestige Finish Fleet Care este direcția dedicată persoanelor juridice care își doresc
+            întreținere interioară constantă, imagine profesională și o colaborare clară, stabilită
+            în funcție de tipul flotei și de frecvența intervențiilor.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">Solicită informații</a>
-            <a class="btn btn-secondary" href="index.html">Persoane fizice</a>
+            <a class="btn btn-primary" href="tel:+40753788848">Discută cu noi</a>
+            <a class="btn btn-secondary" href="formular-contact.html">Solicită o ofertă</a>
+          </div>
+
+          <div class="hero-points">
+            <div class="mini-card">
+              <strong>Colaborări recurente</strong>
+              <span>Servicii gândite pentru firme care au nevoie de continuitate și predictibilitate.</span>
+            </div>
+            <div class="mini-card">
+              <strong>Imagine profesională</strong>
+              <span>Un interior curat și îngrijit contribuie direct la imaginea companiei.</span>
+            </div>
+            <div class="mini-card">
+              <strong>Soluții adaptate</strong>
+              <span>Stabilim pachetul în funcție de flotă, ritm de lucru și tipul vehiculelor.</span>
+            </div>
           </div>
         </div>
 
-        <div class="card">
-          <div class="tag">Business Program</div>
-          <h3 style="margin-top:0;">În curs de lansare</h3>
-          <p>
-            Program premium dedicat persoanelor juridice, flotelor auto și vehiculelor executive care necesită standard constant de curățenie și prezentare.
+        <div class="hero-panel">
+          <div class="status"><span class="status-dot"></span> Fleet Care</div>
+          <img src="logo.png" alt="Prestige Finish Logo" />
+          <h3 style="margin:0 0 8px; font-size:28px;">Prestige Finish</h3>
+          <p style="margin:0; color:var(--muted);">
+            O direcție business construită pentru companii care caută un partener serios pentru
+            întreținerea interioară a vehiculelor, nu doar o intervenție ocazională.
           </p>
         </div>
       </div>
     </section>
 
-    <section id="fleet-services" class="coming">
+    <section id="servicii" class="coming">
       <div class="container">
         <div class="tag">Servicii</div>
-        <h2 class="section-title">Servicii pentru persoane juridice și flote</h2>
+        <h2 class="section-title">Servicii dedicate persoanelor juridice și flotelor auto</h2>
         <p class="section-text">
-          Pagina aceasta este dedicată exclusiv firmelor, flotelor și colaborărilor recurente. Toate serviciile de mai jos sunt prezentate ca direcție business în curs de lansare.
+          Pagina aceasta este dedicată companiilor care au nevoie de intervenții recurente și de o
+          structură clară a serviciilor. Soluțiile se stabilesc în funcție de tipul vehiculelor,
+          numărul acestora și frecvența dorită.
         </p>
 
         <div class="grid-3">
           <div class="card">
-            <h3>Întreținere interior flotă</h3>
-            <p>Curățare interioară recurentă pentru vehicule de serviciu, mașini executive și autoturisme folosite zilnic.</p>
-            <span class="note">În curs de lansare</span>
+            <h3>Întreținere interioară flotă</h3>
+            <p>
+              Curățare interioară recurentă pentru vehicule de serviciu, autoturisme executive
+              sau mașini utilizate intens în activitatea de zi cu zi.
+            </p>
           </div>
 
           <div class="card">
-            <h3>Igienizare flotă</h3>
-            <p>Servicii recurente de igienizare și întreținere pentru păstrarea unui standard estetic constant în flotă.</p>
-            <span class="note">În curs de lansare</span>
+            <h3>Igienizare interioară</h3>
+            <p>
+              Servicii orientate către menținerea unui standard constant de curățenie și confort
+              în vehiculele utilizate frecvent de angajați sau management.
+            </p>
           </div>
 
           <div class="card">
-            <h3>Detailing motor pentru loturi selectate.Serviciu prestat doar la sediul nostru</h3>
-            <p>Curățare atentă a compartimentului motor pentru vehiculele unde această intervenție este necesară și recomandată.</p>
-            <span class="note">În curs de lansare</span>
+            <h3>Intervenții selectate la sediul nostru</h3>
+            <p>
+              Pentru anumite lucrări, precum detailing motor sau intervenții speciale, serviciile
+              se realizează exclusiv la sediul Prestige Finish, în condiții controlate.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="packages">
+    <section id="pachete">
       <div class="container">
         <div class="tag">Pachete</div>
-        <h2 class="section-title">Pachete business pentru persoane juridice</h2>
+        <h2 class="section-title">Pachete business orientative</h2>
         <p class="section-text">
-          Pachetele sunt gândite pentru întreținerea estetică a flotei și pot fi adaptate în funcție de tipul vehiculelor și frecvența colaborării.
+          Pachetele de mai jos reprezintă o bază de discuție. Varianta finală a colaborării se stabilește
+          în funcție de flotă, frecvență, tipul vehiculelor și nivelul de intervenție necesar.
         </p>
 
-        <div class="grid-4">
-          <div class="card">
-            <h3>Fleet Interior Basic</h3>
-            <p>Aspirare completă, ștergere plastice, geamuri interior și finisaj general pentru întreținere regulată.</p>
-            <span class="note">În curs de lansare</span>
+        <div class="plan-grid">
+          <div class="plan-card">
+            <div class="plan-label">Fleet Interior Basic</div>
+            <h3>Întreținere recurentă</h3>
+            <p class="plan-desc">
+              Potrivit pentru flote care au nevoie de întreținere regulată și un nivel constant de curățenie interioară.
+            </p>
+
+            <ul class="plan-list">
+              <li>Aspirare completă interior</li>
+              <li>Ștergere și curățare plastice</li>
+              <li>Curățare geamuri interior</li>
+              <li>Finisaj general pentru întreținere</li>
+              <li>Potrivit pentru intervenții recurente</li>
+            </ul>
+
+            <p class="plan-note">Recomandat pentru întreținere periodică.</p>
           </div>
 
-          <div class="card">
-            <h3>Fleet Interior Plus</h3>
-            <p>Include Basic + curățare portbagaj, atenție extinsă pentru zone textile și plafon localizat unde este necesar.</p>
-            <span class="note">În curs de lansare</span>
+          <div class="plan-card featured">
+            <div class="plan-label">Fleet Interior Plus</div>
+            <h3>Pachet recomandat</h3>
+            <p class="plan-desc">
+              Varianta echilibrată pentru companiile care urmăresc un standard vizual mai bun și o prezentare constantă a flotei.
+            </p>
+
+            <ul class="plan-list">
+              <li>Tot ce include Basic</li>
+              <li>Curățare portbagaj</li>
+              <li>Atenție extinsă pentru zone textile</li>
+              <li>Intervenție mai detaliată în zonele de uzură</li>
+              <li>Potrivit pentru vehicule utilizate intens</li>
+            </ul>
+
+            <p class="plan-note">Varianta potrivită pentru majoritatea colaborărilor business.</p>
           </div>
 
-          <div class="card">
-            <h3>Fleet Interior Premium</h3>
-            <p>Include Plus + curățare tapițerie completă, curățare portbagaj detaliată și dressing pentru plastice, inclusiv zona portbagajului.</p>
-            <span class="note">În curs de lansare</span>
-          </div>
+          <div class="plan-card">
+            <div class="plan-label">Fleet Executive Care</div>
+            <h3>Standard premium</h3>
+            <p class="plan-desc">
+              Dedicat vehiculelor executive, de management sau flotelor care au nevoie de un nivel superior de prezentare.
+            </p>
 
-          <div class="card">
-            <h3>Fleet Executive Care</h3>
-            <p>Pachet premium pentru mașini executive sau de management, cu accent pe prezentare, standard vizual și detalii.</p>
-            <span class="note">În curs de lansare</span>
+            <ul class="plan-list">
+              <li>Tot ce include Fleet Interior Plus</li>
+              <li>Curățare și atenție extinsă la detalii</li>
+              <li>Finisaj premium pentru interior</li>
+              <li>Prioritate pentru standard vizual și confort</li>
+              <li>Potrivit pentru mașini de reprezentare</li>
+            </ul>
+
+            <p class="plan-note">Pachet premium pentru companii care pun accent pe imagine.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="movement" class="coming">
-      <div class="container">
-        <div class="tag">Prestige Fleet Movement</div>
-        <h2 class="section-title">Serviciu mobil premium pentru flote și companii</h2>
-        <p class="section-text">
-          Prestige Fleet Movement este integrat într-un pachet business dedicat exclusiv firmelor care încheie o colaborare recurentă.
-          Serviciul presupune deplasarea echipei Prestige Finish la sediul clientului, pentru intervenții programate asupra flotei auto.
-        </p>
-
-        <div class="grid-2">
-          <div class="card">
-            <h3>Condiții de colaborare</h3>
-            <p>
-              Serviciul este destinat firmelor care încheie un contract de colaborare pentru minimum 4 mașini pe lună.
-              Intervențiile sunt realizate de o echipă formată din 2 detaileri, după un calendar stabilit împreună cu clientul.
-            </p>
-            <span class="note">În curs de lansare</span>
-          </div>
-
-          <div class="card">
-            <h3>Unitate mobilă complet echipată</h3>
-            <p>
-              Echipa se deplasează cu o unitate mobilă pregătită pentru intervenție, fără a necesita logistică din partea clientului.
-              Venim cu echipamentele necesare, inclusiv soluții pentru alimentare cu apă și curent, astfel încât colaborarea să fie simplă și eficientă.
-            </p>
-            <span class="note">În curs de lansare</span>
-          </div>
-        </div>
-
-        <div class="grid-3" style="margin-top:20px;">
-          <div class="card">
-            <h3>Echipă de 2 detaileri</h3>
-            <p>Intervențiile sunt gândite pentru eficiență, consistență și timp redus de execuție.</p>
-          </div>
-          <div class="card">
-            <h3>Minim 4 mașini / lună</h3>
-            <p>Programul este orientat spre colaborări recurente, nu spre intervenții ocazionale.</p>
-          </div>
-          <div class="card">
-            <h3>Plată la 30 de zile</h3>
-            <p>Pentru partenerii contractuali, pregătim opțiunea de facturare cu termen de plată la 30 de zile.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
+    <section id="beneficii" class="coming">
       <div class="container">
         <div class="tag">Beneficii</div>
-        <h2 class="section-title">De ce poate fi util pentru companii</h2>
+        <h2 class="section-title">De ce poate fi util pentru compania ta</h2>
+        <p class="section-text">
+          O flotă curată și bine întreținută nu ține doar de estetică. Contează în imaginea companiei,
+          în confortul utilizatorilor și în modul în care vehiculele sunt percepute de clienți sau parteneri.
+        </p>
 
         <div class="grid-3">
           <div class="card">
             <h3>Imagine profesională constantă</h3>
-            <p>O flotă curată și bine întreținută transmite seriozitate și grijă pentru imaginea companiei.</p>
+            <p>Vehiculele curate transmit seriozitate, grijă pentru detalii și respect pentru imaginea companiei.</p>
           </div>
-          <div class="card">
-            <h3>Economie de timp</h3>
-            <p>Intervențiile la sediul clientului reduc timpul pierdut cu deplasările și organizarea logistică.</p>
-          </div>
+
           <div class="card">
             <h3>Programare predictibilă</h3>
-            <p>Intervențiile sunt stabilite în avans, în funcție de nevoile companiei și disponibilitatea flotei.</p>
+            <p>Intervențiile pot fi planificate astfel încât să se integreze cât mai bine în ritmul de lucru al flotei.</p>
           </div>
+
+          <div class="card">
+            <h3>Soluții adaptate tipului de flotă</h3>
+            <p>Abordarea diferă în funcție de numărul vehiculelor, utilizare și nivelul de întreținere dorit.</p>
+          </div>
+
           <div class="card">
             <h3>Standard uniform</h3>
-            <p>Toate vehiculele beneficiază de același nivel de întreținere și prezentare.</p>
+            <p>Vehiculele pot beneficia de același nivel de curățenie și prezentare, în mod constant.</p>
           </div>
-          <div class="card">
-            <h3>Soluții personalizate</h3>
-            <p>Pachetele pot fi adaptate în funcție de flotă, tipul vehiculului și frecvența dorită.</p>
-          </div>
+
           <div class="card">
             <h3>Colaborare recurentă</h3>
-            <p>Scopul este construirea unui parteneriat stabil, nu a unei intervenții ocazionale.</p>
+            <p>Obiectivul este construirea unei relații stabile, nu realizarea unor intervenții ocazionale fără continuitate.</p>
+          </div>
+
+          <div class="card">
+            <h3>Comunicare clară</h3>
+            <p>Stabilim simplu și concret ce se face, când se face și ce variantă este potrivită pentru fiecare flotă.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proces">
+      <div class="container">
+        <div class="tag">Proces</div>
+        <h2 class="section-title">Cum decurge o colaborare</h2>
+        <p class="section-text">
+          Procesul este gândit clar, astfel încât o companie interesată să știe exact cum începem
+          discuția și cum ajungem la o formă de colaborare potrivită.
+        </p>
+
+        <div class="process-grid">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Ne contactezi</h3>
+            <div class="step-text">Prin telefon sau formular, cu câteva detalii despre flotă și necesități.</div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Analizăm solicitarea</h3>
+            <div class="step-text">Discutăm numărul vehiculelor, tipul lor și ritmul optim de intervenție.</div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Stabilim varianta potrivită</h3>
+            <div class="step-text">Propunem structura de servicii și modul de colaborare potrivit companiei tale.</div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3>Începem colaborarea</h3>
+            <div class="step-text">După confirmare, stabilim calendarul și condițiile concrete de lucru.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="coming">
+      <div class="container">
+        <div class="tag">Întrebări frecvente</div>
+        <h2 class="section-title">Întrebări utile pentru companii</h2>
+        <p class="section-text">
+          Mai jos sunt câteva răspunsuri orientative pentru firmele care vor să înțeleagă mai clar
+          cum poate funcționa o colaborare cu Prestige Finish Fleet Care.
+        </p>
+
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>Lucrați doar cu firme din Ploiești?</h3>
+            <div class="faq-answer">
+              Prioritatea noastră este zona Ploiești și împrejurimi. Pentru alte locații, disponibilitatea
+              se discută în funcție de tipul colaborării.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <h3>Există un număr minim de mașini?</h3>
+            <div class="faq-answer">
+              Colaborările recurente sunt, în general, mai potrivite pentru firme care au mai multe vehicule
+              sau o nevoie constantă de întreținere. Detaliile se stabilesc în funcție de solicitare.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <h3>Oferiți prețuri fixe direct pe site?</h3>
+            <div class="faq-answer">
+              Pentru flote, prețurile se stabilesc personalizat. Contează numărul mașinilor, frecvența,
+              tipul vehiculelor și nivelul intervenției necesare.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <h3>Putem începe cu o discuție fără obligații?</h3>
+            <div class="faq-answer">
+              Da. Prima etapă este o discuție scurtă în care înțelegem nevoile companiei și vedem dacă
+              există o formulă de colaborare potrivită.
+            </div>
           </div>
         </div>
       </div>
@@ -530,12 +804,14 @@
           <div class="tag">Contact</div>
           <h2 class="section-title">Contact pentru flote și companii</h2>
           <p class="section-text">
-            Direcția Fleet Care este în curs de lansare. Pentru a afla mai multe despre disponibilitate, condiții orientative și colaborări viitoare, ne poți contacta direct.
+            Dacă reprezinți o companie și vrei să discutăm despre întreținerea interioară a flotei,
+            ne poți contacta direct. Revenim cu informațiile necesare și o direcție clară de discuție.
           </p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="tel:+40753788848">0753 788 848</a>
             <a class="btn btn-primary" href="tel:+40761132169">0761 132 169</a>
+            <a class="btn btn-secondary" href="formular-contact.html">Formular de contact</a>
           </div>
         </div>
 
@@ -543,8 +819,8 @@
           <div class="contact-row"><strong>Telefon principal</strong><span>0753 788 848</span></div>
           <div class="contact-row"><strong>Telefon secundar</strong><span>0761 132 169</span></div>
           <div class="contact-row"><strong>Tip clienți</strong><span>Persoane juridice și flote auto</span></div>
-          <div class="contact-row"><strong>Status</strong><span>În curs de lansare</span></div>
-          <div class="contact-row" style="border-bottom:none;"><strong>Locație</strong><span>Ploiești</span></div>
+          <div class="contact-row"><strong>Locație</strong><span>Ploiești</span></div>
+          <div class="contact-row" style="border-bottom:none;"><strong>Status</strong><span>Disponibil pentru discuții și colaborări</span></div>
         </div>
       </div>
     </section>
@@ -553,11 +829,11 @@
   <footer>
     <div class="container footer-row">
       <div>© 2026 Prestige Finish Fleet Care. Toate drepturile rezervate.</div>
-      <div>Flote & Companii • Ploiești</div>
+      <div>Flote & companii • Ploiești</div>
     </div>
   </footer>
 
-  <a href="https://wa.me/40753788848?text=Buna!%20Doresc%20informatii%20despre%20serviciile%20pentru%20flote%20si%20companii." class="whatsapp-btn" target="_blank">
+  <a href="https://wa.me/40753788848?text=Bun%C4%83!%20Doresc%20informa%C8%9Bii%20despre%20serviciile%20pentru%20flote%20%C8%99i%20companii." class="whatsapp-btn" target="_blank">
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
     Cere ofertă
   </a>
