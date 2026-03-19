@@ -440,6 +440,61 @@
       margin-bottom: 4px;
     }
 
+    .pf-map-card {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(212,175,55,0.18);
+      background: rgba(255,255,255,0.03);
+      box-shadow: var(--shadow);
+    }
+
+    .pf-map-card iframe {
+      display: block;
+      width: 100%;
+      height: 360px;
+      border: 0;
+      filter: grayscale(1) brightness(0.55) contrast(1.05);
+    }
+
+    .pf-map-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.22) 0%,
+        rgba(0,0,0,0.38) 100%
+      );
+      backdrop-filter: blur(3px);
+    }
+
+    .pf-map-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 56px;
+      padding: 0 26px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.20);
+      background: rgba(255,255,255,0.10);
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 700;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      transition: 0.25s ease;
+    }
+
+    .pf-map-btn:hover {
+      transform: translateY(-2px);
+      background: rgba(212,175,55,0.18);
+      border-color: rgba(212,175,55,0.40);
+    }
+
     footer {
       border-top: 1px solid var(--line);
       padding: 28px 0 40px;
@@ -482,7 +537,7 @@
       height: 22px;
     }
 
-    #despre, #servicii, #de-ce-noi, #rezultate, #spatiu, #proces, #contact {
+    #despre, #servicii, #de-ce-noi, #rezultate, #spatiu, #proces, #locatie, #contact {
       scroll-margin-top: 100px;
     }
 
@@ -508,6 +563,17 @@
       h1 { font-size: 48px; }
       .brand-logo { height: 44px; }
       .switch-btn { min-width: 100%; }
+
+      .pf-map-card iframe {
+        height: 300px;
+      }
+
+      .pf-map-btn {
+        width: 100%;
+        max-width: 320px;
+        font-size: 15px;
+        padding: 0 20px;
+      }
     }
   </style>
 </head>
@@ -525,7 +591,7 @@
         <a href="#rezultate">Rezultate</a>
         <a href="persoane-fizice.html">Persoane fizice</a>
         <a href="flote.html">Persoane juridice / flote</a>
-        <a href="#contact" class="nav-cta">Contact</a>
+        <a href="#locatie" class="nav-cta">Contact</a>
       </div>
     </div>
   </header>
@@ -802,6 +868,33 @@
       </div>
     </section>
 
+    <section id="locatie" class="coming">
+      <div class="container">
+        <div class="tag">Locație</div>
+        <h2 class="section-title">Vizitează-ne în Ploiești</h2>
+        <p class="section-text">
+          Prestige Finish • Strada Libertății nr. 12
+        </p>
+
+        <div class="pf-map-card">
+          <iframe
+            src="https://www.google.com/maps?q=Strada+Libertatii+12,+107592+Ploiesti&output=embed"
+            loading="lazy"
+            allowfullscreen>
+          </iframe>
+
+          <div class="pf-map-overlay">
+            <a
+              href="https://waze.com/ul?q=Strada%20Libertatii%2012%20107592%20Ploiesti"
+              target="_blank"
+              class="pf-map-btn">
+              Deschide navigarea în Waze
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="contact">
       <div class="container contact-wrap">
         <div>
@@ -822,7 +915,7 @@
         <div class="card">
           <div class="contact-row"><strong>Telefon principal</strong><span>0753 788 848</span></div>
           <div class="contact-row"><strong>Telefon secundar</strong><span>0761 132 169</span></div>
-          <div class="contact-row"><strong>Locație</strong><span>Ploiești</span></div>
+          <div class="contact-row"><strong>Locație</strong><span>Strada Libertății nr. 12, Ploiești</span></div>
           <div class="contact-row"><strong>Disponibilitate</strong><span>Persoane fizice și persoane juridice / flote</span></div>
           <div class="contact-row" style="border-bottom:none;"><strong>Status</strong><span>Deschidere în curând</span></div>
         </div>
@@ -832,7 +925,7 @@
 
   <footer>
     <div class="container footer-row">
-      <div>© 2026 Prestige Finish. Toate drepturile rezervate.</div>
+      <div>©️ 2026 Prestige Finish. Toate drepturile rezervate.</div>
       <div>Detailing interior premium • Ploiești</div>
     </div>
   </footer>
