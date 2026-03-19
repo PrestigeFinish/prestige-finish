@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prestige Finish | Servicii persoane fizice</title>
+  <title>Prestige Finish | Servicii pentru persoane fizice</title>
   <link rel="icon" type="image/png" href="logo.png" />
-
-  <meta name="description" content="Servicii de detailing interior premium în Ploiești pentru persoane fizice: curățare, igienizare, detailing motor și restaurare faruri." />
-  <meta name="keywords" content="detailing interior ploiesti, igienizare auto ploiesti, detailing motor ploiesti, restaurare faruri ploiesti">
+  <meta name="description" content="Prestige Finish oferă servicii de detailing interior premium în Ploiești pentru persoane fizice: pachete clare, igienizare, detailing motor și restaurare faruri." />
+  <meta name="keywords" content="detailing interior ploiesti, igienizare auto ploiesti, detailing motor ploiesti, restaurare faruri ploiesti, detailing persoane fizice ploiesti" />
 
   <style>
     :root {
@@ -22,13 +21,21 @@
     }
 
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
+      background:
+        radial-gradient(circle at top right, rgba(212,175,55,0.16), transparent 24%),
+        radial-gradient(circle at bottom left, rgba(212,175,55,0.10), transparent 20%),
+        var(--bg);
       color: var(--text);
+      line-height: 1.6;
     }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
     .container {
       width: min(1180px, calc(100% - 32px));
@@ -36,13 +43,19 @@
     }
 
     .topbar {
-      background: rgba(5,5,5,0.9);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5,5,5,0.88);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--line);
     }
 
     .nav {
       display: flex;
+      align-items: center;
       justify-content: space-between;
+      gap: 16px;
       padding: 16px 0;
     }
 
@@ -53,156 +66,895 @@
     }
 
     .brand-logo {
-      height: 44px;
+      height: 48px;
+      width: auto;
+      border-radius: 10px;
     }
 
     .brand-name {
       color: var(--gold);
+      font-size: 20px;
       font-weight: 700;
+      letter-spacing: 0.4px;
+    }
+
+    .brand-sub {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-cta {
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--gold);
+      background: rgba(212,175,55,0.06);
     }
 
     .hero {
-      padding: 80px 0;
+      padding: 86px 0 70px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(5,5,5,0.96) 0%, rgba(5,5,5,0.88) 40%, rgba(5,5,5,0.58) 68%, rgba(5,5,5,0.84) 100%);
+      pointer-events: none;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.22)),
+        url('logo.png') center/contain no-repeat,
+        radial-gradient(circle at center, rgba(212,175,55,0.10), transparent 35%);
+      opacity: 0.10;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--gold);
+      background: rgba(212,175,55,0.07);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
     }
 
     h1 {
-      font-size: 48px;
-      margin-bottom: 16px;
+      margin: 0 0 16px;
+      font-size: clamp(40px, 7vw, 74px);
+      line-height: 0.98;
+      letter-spacing: -1px;
+      max-width: 760px;
     }
 
     .hero p {
       color: var(--muted);
-      max-width: 600px;
+      font-size: 18px;
+      max-width: 760px;
+      margin: 0 0 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .hero-note {
+      color: var(--gold);
+      font-size: 15px;
+      margin: 0 0 28px;
     }
 
     .btn {
-      padding: 14px 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 22px;
       border-radius: 999px;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 20px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      transition: 0.2s ease;
+      box-shadow: var(--shadow);
+      cursor: pointer;
     }
+
+    .btn:hover { transform: translateY(-2px); }
 
     .btn-primary {
-      background: var(--gold);
-      color: #000;
+      background: linear-gradient(135deg, var(--gold), #f0d266);
+      color: #0a0a0a;
     }
 
-    .grid {
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--line);
+      color: var(--text);
+    }
+
+    .hero-points,
+    .grid-2,
+    .grid-3,
+    .grid-4,
+    .price-grid,
+    .gallery-grid,
+    .process-grid,
+    .faq-grid {
       display: grid;
       gap: 20px;
     }
 
-    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .hero-points {
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      max-width: 860px;
+    }
 
-    .card {
+    .grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
+    .price-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    .gallery-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    .process-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
+
+    .mini-card,
+    .card,
+    .price-card,
+    .gallery-card,
+    .faq-item {
       border: 1px solid var(--line);
-      padding: 20px;
-      border-radius: 20px;
       background: var(--card);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: var(--shadow);
     }
 
-    .card h3 {
+    .mini-card strong {
+      display: block;
       color: var(--gold);
+      margin-bottom: 6px;
+      font-size: 14px;
     }
 
-    .section {
-      padding: 60px 0;
+    .mini-card span,
+    .card p,
+    .section-text,
+    .contact-row span,
+    .step-text,
+    .faq-answer {
+      color: var(--muted);
+    }
+
+    .hero-panel {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(212,175,55,0.10), rgba(255,255,255,0.03));
+      border-radius: 30px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+      margin-top: 6px;
+    }
+
+    .hero-panel img {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto 18px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: #000;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: rgba(212,175,55,0.06);
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--gold);
+      box-shadow: 0 0 12px rgba(212,175,55,0.7);
+    }
+
+    section {
+      padding: 78px 0;
     }
 
     .section-title {
-      font-size: 32px;
+      font-size: clamp(30px, 4vw, 48px);
+      margin: 0 0 12px;
+    }
+
+    .section-text {
+      max-width: 760px;
+      margin: 0 0 28px;
+      font-size: 17px;
+    }
+
+    .tag {
+      display: inline-flex;
+      margin-bottom: 14px;
+      color: var(--gold);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+    }
+
+    .card h3,
+    .price-card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      color: var(--gold);
+    }
+
+    .service-label {
+      display: inline-flex;
+      margin-bottom: 10px;
+      color: var(--gold);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+    }
+
+    .price-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .price-card.featured {
+      background: linear-gradient(180deg, rgba(212,175,55,0.14), rgba(255,255,255,0.03));
+    }
+
+    .plan-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .plan-title {
+      font-size: 14px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .plan-time {
+      color: var(--text);
+      font-size: 14px;
+      border: 1px solid var(--line);
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.03);
+      white-space: nowrap;
+    }
+
+    .plan-desc {
+      color: var(--muted);
       margin-bottom: 20px;
     }
 
-    .price {
-      margin-top: 10px;
-      color: var(--gold);
-      font-weight: bold;
+    .price-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 22px;
+      display: grid;
+      gap: 12px;
     }
 
-    @media(max-width: 900px){
-      .grid-3 { grid-template-columns: 1fr; }
-      h1 { font-size: 36px; }
+    .price-list li {
+      padding-left: 18px;
+      position: relative;
+      color: var(--text);
+    }
+
+    .price-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--gold);
+    }
+
+    .plan-note {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 16px 0 0;
+    }
+
+    .coming {
+      background: linear-gradient(180deg, rgba(212,175,55,0.08), rgba(255,255,255,0.02));
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .gallery-card {
+      padding: 14px;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      border-radius: 16px;
+      object-fit: cover;
+    }
+
+    .gallery-card .label {
+      color: var(--gold);
+      font-size: 14px;
+      font-weight: 700;
+      margin-top: 12px;
+    }
+
+    .gallery-card .text {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    .cta-center {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .step {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .step-number {
+      width: 42px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: rgba(212,175,55,0.12);
+      border: 1px solid var(--line);
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .step h3 {
+      margin: 0 0 8px;
+      color: var(--text);
+      font-size: 18px;
+    }
+
+    .faq-item h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: var(--text);
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+    }
+
+    .contact-row {
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .contact-row strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0 40px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--green);
+      color: white;
+      padding: 14px 22px;
+      font-size: 15px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+      z-index: 9999;
+      transition: 0.3s ease;
+    }
+
+    .whatsapp-btn:hover {
+      transform: scale(1.08);
+    }
+
+    .whatsapp-btn img {
+      width: 22px;
+      height: 22px;
+    }
+
+    #servicii, #pachete, #de-ce-noi, #rezultate, #proces, #faq, #contact {
+      scroll-margin-top: 100px;
+    }
+
+    @media (max-width: 1100px) {
+      .price-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grid-2,
+      .grid-3,
+      .grid-4,
+      .price-grid,
+      .gallery-grid,
+      .contact-wrap,
+      .hero-points,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links { display: none; }
+      h1 { font-size: 48px; }
+      .brand-logo { height: 42px; }
     }
   </style>
 </head>
-
 <body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Prestige Finish Logo" class="brand-logo">
+        <div>
+          <div class="brand-name">Prestige Finish Private Care</div>
+          <div class="brand-sub">← Înapoi la pagina principală</div>
+        </div>
+      </a>
 
-<header class="topbar">
-  <div class="container nav">
-    <a href="index.html" class="brand">
-      <img src="logo.png" class="brand-logo">
-      <span class="brand-name">Prestige Finish</span>
-    </a>
-  </div>
-</header>
-
-<section class="hero container">
-  <h1>Servicii pentru persoane fizice</h1>
-  <p>
-    Oferim servicii de detailing interior premium pentru clienții care își doresc un interior curat, igienizat și întreținut corect.
-  </p>
-
-  <a href="tel:+40753788848" class="btn btn-primary">Sună acum</a>
-</section>
-
-<section class="section container">
-  <h2 class="section-title">Servicii disponibile</h2>
-
-  <div class="grid grid-3">
-
-    <div class="card">
-      <h3>Detailing interior</h3>
-      <p>Curățare completă a interiorului: scaune, bord, plastice, mochete și portbagaj.</p>
+      <div class="nav-links">
+        <a href="#servicii">Servicii</a>
+        <a href="#pachete">Pachete</a>
+        <a href="#rezultate">Rezultate</a>
+        <a href="#faq">Întrebări frecvente</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </div>
     </div>
+  </header>
 
-    <div class="card">
-      <h3>Igienizare tapițerie</h3>
-      <p>Curățare profundă pentru textile și eliminarea mirosurilor.</p>
+  <main>
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Persoane fizice • Detailing interior premium</div>
+          <h1>Servicii premium pentru persoane fizice</h1>
+          <p>
+            Prestige Finish Private Care este dedicat clienților care își doresc un interior curat,
+            igienizat și îngrijit corect. Lucrăm atent, în condiții controlate, cu focus pe confort,
+            materiale și rezultate vizibile de la prima intervenție.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:+40753788848">Sună acum</a>
+            <a class="btn btn-secondary" href="formular-contact.html">Solicită programare</a>
+          </div>
+
+          <p class="hero-note">Programările se fac în avans • Locuri limitate</p>
+
+          <div class="hero-points">
+            <div class="mini-card">
+              <strong>Detailing interior</strong>
+              <span>Serviciul principal al paginii dedicate persoanelor fizice.</span>
+            </div>
+            <div class="mini-card">
+              <strong>Pachete clare</strong>
+              <span>Structură simplă, ușor de înțeles și potrivită nivelului de murdărie.</span>
+            </div>
+            <div class="mini-card">
+              <strong>Intervenții atent realizate</strong>
+              <span>Nu lucrăm pe bandă rulantă. Preferăm lucrări făcute corect.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="status"><span class="status-dot"></span> Private Care</div>
+          <img src="logo.png" alt="Prestige Finish Logo" />
+          <h3 style="margin:0 0 8px; font-size:28px;">Prestige Finish</h3>
+          <p style="margin:0; color:var(--muted);">
+            O experiență premium pentru clienții care caută mai mult decât o simplă curățare:
+            atenție la detalii, programări clare și servicii orientate pe interior.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicii" class="coming">
+      <div class="container">
+        <div class="tag">Servicii</div>
+        <h2 class="section-title">Serviciile disponibile pentru persoane fizice</h2>
+        <p class="section-text">
+          Începem cu servicii atent selectate, astfel încât fiecare intervenție să fie realizată corect,
+          fără grabă și cu grijă pentru materialele din interiorul mașinii.
+        </p>
+
+        <div class="grid-4">
+          <div class="card">
+            <div class="service-label">Interior</div>
+            <h3>Detailing interior premium</h3>
+            <p>
+              Curățare completă a interiorului: scaune, plastice, bord, panouri uși, mochete,
+              portbagaj și finisaj general atent realizat.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="service-label">Igienizare</div>
+            <h3>Curățare și igienizare tapițerie</h3>
+            <p>
+              Curățare aprofundată a suprafețelor textile pentru un interior mai curat,
+              mai plăcut și mai bine întreținut.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="service-label">Motor</div>
+            <h3>Detailing motor</h3>
+            <p>
+              Curățare atentă a compartimentului motor pentru un aspect îngrijit și o prezentare
+              generală mai bună. Serviciul este disponibil la sediul nostru.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="service-label">Faruri</div>
+            <h3>Restaurare faruri</h3>
+            <p>
+              Disponibilă doar pentru anumite modele și numai după evaluarea stării farurilor,
+              pentru intervenții făcute în siguranță.
+            </p>
+          </div>
+        </div>
+
+        <div class="cta-center">
+          <a href="formular-contact.html" class="btn btn-primary">Solicită programare</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="pachete">
+      <div class="container">
+        <div class="tag">Pachete</div>
+        <h2 class="section-title">Pachete pentru persoane fizice</h2>
+        <p class="section-text">
+          Am construit pachete clare, ușor de înțeles, în funcție de nivelul de murdărie și de timpul
+          necesar pentru o intervenție făcută corect.
+        </p>
+
+        <div class="price-grid">
+          <div class="price-card">
+            <div class="plan-top">
+              <div class="plan-title">Essential Interior</div>
+              <div class="plan-time">2h - 3h</div>
+            </div>
+
+            <h3>Pachet de întreținere</h3>
+            <p class="plan-desc">
+              Recomandat pentru mașini întreținute constant, care au nevoie de o curățare completă
+              și de reîmprospătare generală a interiorului.
+            </p>
+
+            <ul class="price-list">
+              <li>Aspirare completă interior</li>
+              <li>Ștergere și curățare plastice</li>
+              <li>Curățare bord și consolă centrală</li>
+              <li>Curățare panouri uși</li>
+              <li>Curățare geamuri interior</li>
+              <li>Finisaj general interior</li>
+            </ul>
+
+            <a href="formular-contact.html" class="btn btn-secondary">Solicită ofertă</a>
+            <p class="plan-note">Pachet potrivit pentru întreținere regulată.</p>
+          </div>
+
+          <div class="price-card featured">
+            <div class="plan-top">
+              <div class="plan-title">Premium Interior</div>
+              <div class="plan-time">3h - 5h</div>
+            </div>
+
+            <h3>Pachet recomandat</h3>
+            <p class="plan-desc">
+              Varianta potrivită pentru majoritatea mașinilor, atunci când interiorul are nevoie de
+              curățare atentă, igienizare și mai multă atenție la detalii.
+            </p>
+
+            <ul class="price-list">
+              <li>Tot ce include Essential Interior</li>
+              <li>Curățare tapițerie textilă</li>
+              <li>Curățare portbagaj</li>
+              <li>Curățare detaliată a zonelor greu accesibile</li>
+              <li>Atenție extinsă pentru pete și urme de utilizare</li>
+              <li>Finisaj premium pentru plastice</li>
+            </ul>
+
+            <a href="formular-contact.html" class="btn btn-primary">Solicită ofertă</a>
+            <p class="plan-note">Cel mai echilibrat pachet pentru majoritatea clienților.</p>
+          </div>
+
+          <div class="price-card">
+            <div class="plan-top">
+              <div class="plan-title">Deep Interior</div>
+              <div class="plan-time">5h - 7h+</div>
+            </div>
+
+            <h3>Pachet complet</h3>
+            <p class="plan-desc">
+              Recomandat pentru mașini cu un nivel ridicat de murdărie, pentru interioare neglijate
+              sau pentru clienți care își doresc o intervenție cât mai amplă.
+            </p>
+
+            <ul class="price-list">
+              <li>Tot ce include Premium Interior</li>
+              <li>Igienizare aprofundată a interiorului</li>
+              <li>Tratament extins pentru textile și zone sensibile</li>
+              <li>Curățare detaliată plafon și chedere</li>
+              <li>Mai mult timp alocat zonelor dificile</li>
+              <li>Opțiune de detailing motor, după evaluare</li>
+            </ul>
+
+            <a href="formular-contact.html" class="btn btn-secondary">Solicită ofertă</a>
+            <p class="plan-note">Pachet dedicat intervențiilor ample și atente.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="de-ce-noi" class="coming">
+      <div class="container">
+        <div class="tag">De ce noi</div>
+        <h2 class="section-title">De ce să alegi Prestige Finish</h2>
+        <p class="section-text">
+          Nu ne poziționăm ca un serviciu de volum, ci ca un studio în care fiecare mașină primește
+          timpul și atenția necesare pentru un rezultat bun.
+        </p>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>Fără grabă</h3>
+            <p>Nu lucrăm pe bandă rulantă. Fiecare mașină este tratată atent, nu superficial.</p>
+          </div>
+
+          <div class="card">
+            <h3>Produse profesionale</h3>
+            <p>Folosim soluții dedicate pentru materiale diferite și pentru un rezultat curat, sigur și corect.</p>
+          </div>
+
+          <div class="card">
+            <h3>Rezultate vizibile</h3>
+            <p>Diferența se vede de la prima intervenție, atât în aspect, cât și în confortul interiorului.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rezultate">
+      <div class="container">
+        <div class="tag">Rezultate</div>
+        <h2 class="section-title">Rezultate reale</h2>
+        <p class="section-text">
+          Aici trebuie să pui fotografii reale cu lucrările tale. Exact ele îți vor aduce încredere,
+          mai mult decât orice text.
+        </p>
+
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <img src="pf-before-after-1.jpg" alt="Rezultat detailing persoane fizice 1">
+            <div class="label">Lucrare 1</div>
+            <div class="text">Înlocuiește această imagine cu o lucrare reală înainte / după.</div>
+          </div>
+
+          <div class="gallery-card">
+            <img src="pf-before-after-2.jpg" alt="Rezultat detailing persoane fizice 2">
+            <div class="label">Lucrare 2</div>
+            <div class="text">Poți pune interior, scaune, portbagaj sau tapițerie.</div>
+          </div>
+
+          <div class="gallery-card">
+            <img src="pf-before-after-3.jpg" alt="Rezultat detailing persoane fizice 3">
+            <div class="label">Lucrare 3</div>
+            <div class="text">Folosește doar poze reale, clare și curate.</div>
+          </div>
+        </div>
+
+        <div class="cta-center">
+          <a href="tel:+40753788848" class="btn btn-primary">Programează-te acum</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="proces" class="coming">
+      <div class="container">
+        <div class="tag">Proces</div>
+        <h2 class="section-title">Cum decurge programarea</h2>
+        <p class="section-text">
+          Procesul este simplu și clar, astfel încât să știi exact ce urmează din momentul în care ne contactezi
+          și până la predarea mașinii.
+        </p>
+
+        <div class="process-grid">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Ne contactezi</h3>
+            <div class="step-text">Prin telefon, WhatsApp sau formularul de contact.</div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Stabilim pachetul</h3>
+            <div class="step-text">Discutăm pe scurt ce are nevoie mașina și alegem varianta potrivită.</div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Confirmăm programarea</h3>
+            <div class="step-text">Stabilim data, intervalul și eventualele detalii suplimentare.</div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3>Realizăm intervenția</h3>
+            <div class="step-text">Lucrăm atent, în condiții controlate, cu focus pe curățenie și detalii.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="tag">Întrebări frecvente</div>
+        <h2 class="section-title">Întrebări pe care le primim des</h2>
+        <p class="section-text">
+          Am strâns mai jos câteva răspunsuri utile pentru clienții care vor să înțeleagă mai clar cum lucrăm
+          și ce presupun serviciile noastre.
+        </p>
+
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>Cât durează un detailing interior?</h3>
+            <div class="faq-answer">
+              Durata depinde de pachetul ales, de dimensiunea mașinii și de gradul de murdărie.
+              În general, intervențiile pot varia de la aproximativ 2 ore până la 7 ore sau mai mult.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <h3>Pot alege pachetul doar după nume?</h3>
+            <div class="faq-answer">
+              Da, dar recomandarea noastră este să ne contactezi înainte. Astfel putem confirma rapid
+              ce variantă se potrivește cel mai bine mașinii tale.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <h3>Faceți și detailing motor?</h3>
+            <div class="faq-answer">
+              Da, dar acest serviciu este disponibil în condiții controlate și doar la sediul nostru,
+              după o scurtă evaluare.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <h3>Restaurarea farurilor este disponibilă pentru orice mașină?</h3>
+            <div class="faq-answer">
+              Nu întotdeauna. Intervenția se face doar dacă materialul și starea farurilor permit
+              o lucrare realizată în siguranță și cu rezultat bun.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="coming">
+      <div class="container contact-wrap">
+        <div>
+          <div class="tag">Contact</div>
+          <h2 class="section-title">Contact pentru persoane fizice</h2>
+          <p class="section-text">
+            Pentru programări, informații și detalii despre serviciile Prestige Finish Private Care,
+            ne poți contacta direct. Revenim cât mai rapid cu răspunsul potrivit pentru solicitarea ta.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:+40753788848">0753 788 848</a>
+            <a class="btn btn-primary" href="tel:+40761132169">0761 132 169</a>
+            <a class="btn btn-secondary" href="formular-contact.html">Formular de contact</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="contact-row"><strong>Telefon principal</strong><span>0753 788 848</span></div>
+          <div class="contact-row"><strong>Telefon secundar</strong><span>0761 132 169</span></div>
+          <div class="contact-row"><strong>Tip clienți</strong><span>Persoane fizice</span></div>
+          <div class="contact-row"><strong>Locație</strong><span>Ploiești</span></div>
+          <div class="contact-row" style="border-bottom:none;"><strong>Status</strong><span>Deschidere în curând</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>© 2026 Prestige Finish Private Care. Toate drepturile rezervate.</div>
+      <div>Persoane fizice • Ploiești</div>
     </div>
+  </footer>
 
-    <div class="card">
-      <h3>Detailing motor</h3>
-      <p>Curățare atentă a compartimentului motor.</p>
-    </div>
-
-  </div>
-</section>
-
-<section class="section container">
-  <h2 class="section-title">Pachete</h2>
-
-  <div class="grid grid-3">
-
-    <div class="card">
-      <h3>Essential Interior</h3>
-      <p>Aspirare + ștergere plastice + geamuri.</p>
-      <span class="price">de la 250 lei</span>
-    </div>
-
-    <div class="card">
-      <h3>Premium Interior</h3>
-      <p>Curățare completă + tapițerie.</p>
-      <span class="price">de la 350 lei</span>
-    </div>
-
-    <div class="card">
-      <h3>Deep Interior</h3>
-      <p>Curățare completă + igienizare profundă.</p>
-      <span class="price">de la 450 lei</span>
-    </div>
-
-  </div>
-</section>
-
-<section class="section container">
-  <h2 class="section-title">Contact</h2>
-  <p>Sună pentru programare sau detalii:</p>
-
-  <a href="tel:+40753788848" class="btn btn-primary">0753 788 848</a>
-</section>
-
+  <a href="https://wa.me/40753788848?text=Bun%C4%83!%20Vreau%20informa%C8%9Bii%20despre%20serviciile%20pentru%20persoane%20fizice." class="whatsapp-btn" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    Programează acum
+  </a>
 </body>
 </html>
