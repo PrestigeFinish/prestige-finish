@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prestige Finish | Formular de contact</title>
   <link rel="icon" type="image/png" href="logo.png" />
-  <meta name="description" content="Formular de contact Prestige Finish. Lasă datele tale și te vom contacta în cel mai scurt timp." />
+  <meta name="description" content="Contactează Prestige Finish pentru programări, informații despre servicii sau colaborări pentru persoane fizice și flote." />
 
   <style>
     :root {
@@ -19,6 +19,7 @@
     }
 
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
@@ -33,15 +34,15 @@
     a { color: inherit; text-decoration: none; }
 
     .container {
-      width: min(980px, calc(100% - 32px));
+      width: min(1040px, calc(100% - 32px));
       margin: 0 auto;
     }
 
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(5,5,5,0.86);
+      z-index: 1000;
+      background: rgba(5,5,5,0.88);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--line);
     }
@@ -70,10 +71,16 @@
       color: var(--gold);
       font-size: 20px;
       font-weight: 700;
+      letter-spacing: 0.4px;
+    }
+
+    .brand-sub {
+      font-size: 12px;
+      color: var(--muted);
     }
 
     .hero {
-      padding: 70px 0 30px;
+      padding: 72px 0 30px;
     }
 
     .eyebrow {
@@ -99,14 +106,14 @@
 
     .hero p {
       color: var(--muted);
-      max-width: 720px;
+      max-width: 760px;
       font-size: 18px;
       margin: 0 0 30px;
     }
 
     .form-wrap {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.05fr 0.95fr;
       gap: 24px;
       padding: 24px 0 80px;
     }
@@ -124,6 +131,10 @@
       color: var(--gold);
     }
 
+    .card p {
+      color: var(--muted);
+    }
+
     form {
       display: grid;
       gap: 16px;
@@ -137,35 +148,44 @@
     }
 
     input, textarea, select {
-  width: 100%;
-  padding: 14px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(212,175,55,0.18);
-  background: rgba(255,255,255,0.03);
-  color: #f5f2ea;
-  font-size: 15px;
-  outline: none;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(212,175,55,0.18);
+      background: rgba(255,255,255,0.03);
+      color: #f5f2ea;
+      font-size: 15px;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
 
-select {
-  background-image: linear-gradient(45deg, transparent 50%, #d4af37 50%), linear-gradient(135deg, #d4af37 50%, transparent 50%);
-  background-position: calc(100% - 20px) calc(50% - 3px), calc(100% - 14px) calc(50% - 3px);
-  background-size: 6px 6px, 6px 6px;
-  background-repeat: no-repeat;
-  padding-right: 42px;
-  cursor: pointer;
-}
+    input:focus, textarea:focus, select:focus {
+      border-color: rgba(212,175,55,0.45);
+      box-shadow: 0 0 0 3px rgba(212,175,55,0.08);
+    }
 
-select option {
-  background: #111111;
-  color: #f5f2ea;
-}
+    select {
+      background-image:
+        linear-gradient(45deg, transparent 50%, #d4af37 50%),
+        linear-gradient(135deg, #d4af37 50%, transparent 50%);
+      background-position:
+        calc(100% - 20px) calc(50% - 3px),
+        calc(100% - 14px) calc(50% - 3px);
+      background-size: 6px 6px, 6px 6px;
+      background-repeat: no-repeat;
+      padding-right: 42px;
+      cursor: pointer;
+    }
+
+    select option {
+      background: #111111;
+      color: #f5f2ea;
+    }
 
     textarea {
-      min-height: 140px;
+      min-height: 150px;
       resize: vertical;
     }
 
@@ -186,6 +206,11 @@ select option {
       background: linear-gradient(135deg, var(--gold), #f0d266);
       color: #0a0a0a;
       box-shadow: var(--shadow);
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
     }
 
     .small {
@@ -209,28 +234,28 @@ select option {
 
     .info-box strong {
       display: block;
+      color: #f5f2ea;
+      margin-bottom: 6px;
+    }
+
+    .contact-mini {
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .contact-mini-row strong {
+      display: block;
       color: var(--text);
       margin-bottom: 4px;
     }
-    .info-list {
-  display: grid;
-  gap: 16px;
-}
 
-.info-box {
-  padding: 16px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.info-box:last-child {
-  border-bottom: none;
-}
-
-.info-box strong {
-  display: block;
-  color: #f5f2ea;
-  margin-bottom: 6px;
-}
+    .contact-mini-row span {
+      color: var(--muted);
+      font-size: 14px;
+    }
 
     .back-link {
       display: inline-block;
@@ -243,6 +268,10 @@ select option {
       .form-wrap {
         grid-template-columns: 1fr;
       }
+
+      h1 {
+        font-size: 40px;
+      }
     }
   </style>
 </head>
@@ -252,7 +281,10 @@ select option {
     <div class="container nav">
       <a href="index.html" class="brand">
         <img src="logo.png" alt="Prestige Finish Logo" class="brand-logo">
-        <span class="brand-name">Prestige Finish</span>
+        <div>
+          <div class="brand-name">Prestige Finish</div>
+          <div class="brand-sub">← Înapoi la pagina principală</div>
+        </div>
       </a>
     </div>
   </header>
@@ -260,9 +292,10 @@ select option {
   <section class="hero">
     <div class="container">
       <div class="eyebrow">Formular de contact</div>
-      <h1>Lasă-ne datele tale și revenim rapid</h1>
+      <h1>Trimite-ne cererea ta</h1>
       <p>
-        Completează formularul de mai jos, iar echipa Prestige Finish te va contacta în cel mai scurt timp pentru detalii, lansare sau servicii.
+        Completează formularul de mai jos, iar echipa Prestige Finish va reveni cât mai rapid
+        pentru detalii despre programare, servicii sau colaborări pentru persoane fizice și flote.
       </p>
     </div>
   </section>
@@ -270,7 +303,10 @@ select option {
   <section>
     <div class="container form-wrap">
       <div class="card">
-        <h2>Trimite cererea ta</h2>
+        <h2>Solicită informații sau programare</h2>
+        <p class="small">
+          Completează datele tale și spune-ne pe scurt ce tip de serviciu te interesează.
+        </p>
 
         <form action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="9c5a3e10-8db0-4dfa-a881-463b05232c80">
@@ -301,49 +337,72 @@ select option {
             <label for="client_type">Tip client</label>
             <select id="client_type" name="client_type" required>
               <option value="">Alege o opțiune</option>
-              <option value="Persoana fizica">Persoană fizică</option>
-              <option value="Persoana juridica / Flota">Persoană juridică / Flotă</option>
+              <option value="Persoană fizică">Persoană fizică</option>
+              <option value="Persoană juridică / flotă">Persoană juridică / flotă</option>
             </select>
           </div>
 
           <div>
             <label for="message">Mesaj</label>
-            <textarea id="message" name="message" placeholder="Spune-ne pe scurt ce tip de serviciu te interesează"></textarea>
+            <textarea id="message" name="message" placeholder="Spune-ne pe scurt ce serviciu te interesează, ce tip de mașină ai sau ce fel de colaborare cauți"></textarea>
           </div>
 
           <button type="submit" class="btn">Trimite solicitarea</button>
-
-          
         </form>
       </div>
 
       <div class="card">
-  <h3>Ce urmează după solicitare</h3>
+        <h3>Ce urmează după ce trimiți formularul</h3>
 
-  <div class="info-list">
-    <div class="info-box">
-      <strong>1. Analizăm solicitarea</strong>
-      <span class="small">Cererea ta este preluată de echipa Prestige Finish și verificată în cel mai scurt timp.</span>
-    </div>
+        <div class="info-list">
+          <div class="info-box">
+            <strong>1. Analizăm solicitarea</strong>
+            <span class="small">
+              Cererea ta este preluată și verificată cât mai rapid de echipa Prestige Finish.
+            </span>
+          </div>
 
-    <div class="info-box">
-      <strong>2. Te contactăm direct</strong>
-      <span class="small">Unul dintre colegii noștri va reveni telefonic sau pe email pentru a discuta serviciul sau pachetul potrivit.</span>
-    </div>
+          <div class="info-box">
+            <strong>2. Te contactăm direct</strong>
+            <span class="small">
+              Revenim telefonic sau pe email pentru a înțelege mai bine ce tip de serviciu sau colaborare îți dorești.
+            </span>
+          </div>
 
-    <div class="info-box">
-      <strong>3. Stabilim detaliile</strong>
-      <span class="small">Clarificăm disponibilitatea, tipul serviciului și toate detaliile necesare pentru o experiență cât mai simplă și eficientă.</span>
-    </div>
+          <div class="info-box">
+            <strong>3. Stabilim detaliile</strong>
+            <span class="small">
+              Discutăm disponibilitatea, tipul intervenției și toate informațiile necesare înainte de programare.
+            </span>
+          </div>
 
-    <div class="info-box">
-      <strong>4. Programăm intervenția</strong>
-      <span class="small">După confirmare, stabilim programarea și ne vedem la data agreată.</span>
-    </div>
-  </div>
+          <div class="info-box">
+            <strong>4. Confirmăm programarea</strong>
+            <span class="small">
+              După clarificarea detaliilor, stabilim împreună data și intervalul potrivit.
+            </span>
+          </div>
+        </div>
 
-  <a href="index.html" class="back-link">← Înapoi la prezentarea principală</a>
-</div>
+        <div class="contact-mini">
+          <div class="contact-mini-row">
+            <strong>Telefon principal</strong>
+            <span>0753 788 848</span>
+          </div>
+
+          <div class="contact-mini-row">
+            <strong>Telefon secundar</strong>
+            <span>0761 132 169</span>
+          </div>
+
+          <div class="contact-mini-row">
+            <strong>Locație</strong>
+            <span>Ploiești</span>
+          </div>
+        </div>
+
+        <a href="index.html" class="back-link">← Înapoi la prezentarea principală</a>
+      </div>
     </div>
   </section>
 
