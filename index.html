@@ -164,7 +164,13 @@
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
-      margin-bottom: 28px;
+      margin-bottom: 20px;
+    }
+
+    .hero-note {
+      color: var(--gold);
+      font-size: 15px;
+      margin: 0 0 28px;
     }
 
     .btn {
@@ -198,7 +204,8 @@
     .grid-2,
     .grid-3,
     .grid-4,
-    .process-grid {
+    .process-grid,
+    .gallery-grid {
       display: grid;
       gap: 20px;
     }
@@ -207,6 +214,10 @@
       grid-template-columns: repeat(3, minmax(0,1fr));
       max-width: 860px;
     }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
 
     .mini-card,
     .card {
@@ -295,10 +306,6 @@
       letter-spacing: 1.4px;
     }
 
-    .grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
-    .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
-    .grid-4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
-
     .card h3 {
       margin: 0 0 10px;
       font-size: 22px;
@@ -380,6 +387,42 @@
       font-size: 18px;
     }
 
+    .gallery-grid {
+      grid-template-columns: repeat(3, minmax(0,1fr));
+    }
+
+    .gallery-card {
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 24px;
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      border-radius: 16px;
+      object-fit: cover;
+    }
+
+    .gallery-card .label {
+      color: var(--gold);
+      font-size: 14px;
+      font-weight: 700;
+      margin-top: 12px;
+    }
+
+    .gallery-card .text {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    .cta-center {
+      text-align: center;
+      margin-top: 30px;
+    }
+
     .contact-wrap {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
@@ -439,7 +482,7 @@
       height: 22px;
     }
 
-    #despre, #servicii, #de-ce-noi, #proces, #contact {
+    #despre, #servicii, #de-ce-noi, #rezultate, #spatiu, #proces, #contact {
       scroll-margin-top: 100px;
     }
 
@@ -456,7 +499,8 @@
       .grid-4,
       .contact-wrap,
       .hero-points,
-      .process-grid {
+      .process-grid,
+      .gallery-grid {
         grid-template-columns: 1fr;
       }
 
@@ -478,7 +522,7 @@
       <div class="nav-links">
         <a href="#despre">Despre</a>
         <a href="#servicii">Servicii</a>
-        <a href="#de-ce-noi">De ce noi</a>
+        <a href="#rezultate">Rezultate</a>
         <a href="persoane-fizice.html">Persoane fizice</a>
         <a href="flote.html">Persoane juridice / flote</a>
         <a href="#contact" class="nav-cta">Contact</a>
@@ -503,6 +547,8 @@
             <a class="btn btn-primary" href="tel:+40753788848">Sună acum</a>
             <a class="btn btn-secondary" href="formular-contact.html">Solicită programare</a>
           </div>
+
+          <p class="hero-note">Programările se fac în avans • Locuri limitate</p>
 
           <div class="hero-points">
             <div class="mini-card">
@@ -532,50 +578,6 @@
       </div>
     </section>
 
-    <section class="switch-section">
-      <div class="container">
-        <div class="switch-wrap">
-          <a href="persoane-fizice.html" class="switch-btn primary">Persoane fizice</a>
-          <a href="flote.html" class="switch-btn">Persoane juridice / flote</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="despre">
-      <div class="container">
-        <div class="tag">Despre</div>
-        <h2 class="section-title">Alege secțiunea potrivită pentru tine</h2>
-        <p class="section-text">
-          Am separat site-ul în două direcții clare, pentru ca fiecare client să ajungă rapid la informațiile relevante:
-          servicii pentru persoane fizice și soluții dedicate companiilor sau flotelor auto.
-        </p>
-
-        <div class="grid-2">
-          <div class="card">
-            <h3>Persoane fizice</h3>
-            <p>
-              Pagina dedicată clienților individuali include serviciile de detailing interior, igienizare,
-              detailing motor, restaurare faruri și informațiile necesare pentru programare.
-            </p>
-            <p style="margin-top:18px;">
-              <a href="persoane-fizice.html" class="btn btn-primary">Vezi pagina pentru persoane fizice</a>
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Persoane juridice / flote</h3>
-            <p>
-              Pagina business este dedicată companiilor și flotelor auto și include pachete corporate,
-              intervenții recurente și soluții adaptate colaborărilor profesionale.
-            </p>
-            <p style="margin-top:18px;">
-              <a href="flote.html" class="btn btn-secondary">Vezi pagina pentru persoane juridice / flote</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="servicii" class="coming">
       <div class="container">
         <div class="tag">Servicii</div>
@@ -588,34 +590,27 @@
         <div class="grid-4">
           <div class="card">
             <h3>Detailing interior</h3>
-            <p>
-              Curățare completă a interiorului, cu atenție la scaune, plastice, bord, panouri,
-              mochete și portbagaj.
-            </p>
+            <p>Curățare completă a interiorului, cu atenție la scaune, plastice, bord, panouri, mochete și portbagaj.</p>
           </div>
 
           <div class="card">
             <h3>Igienizare tapițerie</h3>
-            <p>
-              Curățare aprofundată pentru textile și suprafețe expuse zilnic murdăriei, petelor și mirosurilor.
-            </p>
+            <p>Curățare aprofundată pentru textile și suprafețe expuse zilnic murdăriei, petelor și mirosurilor.</p>
           </div>
 
           <div class="card">
             <h3>Detailing motor</h3>
-            <p>
-              Curățare atentă a compartimentului motor, disponibilă în condiții controlate,
-              la sediul nostru.
-            </p>
+            <p>Curățare atentă a compartimentului motor, disponibilă în condiții controlate, la sediul nostru.</p>
           </div>
 
           <div class="card">
             <h3>Restaurare faruri</h3>
-            <p>
-              Disponibilă pentru anumite modele și doar după evaluarea stării farurilor,
-              pentru intervenții făcute în siguranță.
-            </p>
+            <p>Disponibilă pentru anumite modele și doar după evaluarea stării farurilor, pentru intervenții făcute în siguranță.</p>
           </div>
+        </div>
+
+        <div class="cta-center">
+          <a href="persoane-fizice.html" class="btn btn-primary">Vezi serviciile pentru persoane fizice</a>
         </div>
       </div>
     </section>
@@ -631,13 +626,18 @@
 
         <div class="grid-3">
           <div class="card">
-            <h3>Focus real pe interior</h3>
-            <p>Ne concentrăm pe serviciul principal pe care vrem să îl facem foarte bine.</p>
+            <h3>Fără grabă</h3>
+            <p>Nu lucrăm pe bandă rulantă. Fiecare mașină primește timp și atenție reală.</p>
           </div>
 
           <div class="card">
-            <h3>Atenție la detalii</h3>
-            <p>Fiecare zonă importantă a interiorului este tratată cu grijă, nu superficial.</p>
+            <h3>Produse profesionale</h3>
+            <p>Folosim soluții dedicate pentru fiecare tip de material și fiecare zonă a interiorului.</p>
+          </div>
+
+          <div class="card">
+            <h3>Rezultate vizibile</h3>
+            <p>Diferența se vede de la prima intervenție, atât vizual, cât și în confortul de zi cu zi.</p>
           </div>
 
           <div class="card">
@@ -651,13 +651,74 @@
           </div>
 
           <div class="card">
-            <h3>Pentru privat și business</h3>
-            <p>Avem direcții separate pentru persoane fizice și colaborări recurente pentru flote.</p>
+            <h3>Experiență simplă</h3>
+            <p>Contact rapid, comunicare clară și programare ușoară, fără complicații inutile.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rezultate" class="coming">
+      <div class="container">
+        <div class="tag">Rezultate</div>
+        <h2 class="section-title">Rezultate reale</h2>
+        <p class="section-text">
+          Aici este locul în care trebuie să pui fotografii reale cu lucrările tale. Chiar și primele lucrări
+          contează, pentru că exact ele construiesc încrederea.
+        </p>
+
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <img src="before-after-1.jpg" alt="Rezultat detailing 1">
+            <div class="label">Lucrare 1</div>
+            <div class="text">Înlocuiește această imagine cu un rezultat real înainte / după.</div>
           </div>
 
-          <div class="card">
-            <h3>Experiență simplă pentru client</h3>
-            <p>Contact rapid, comunicare clară și programare ușoară, fără complicații inutile.</p>
+          <div class="gallery-card">
+            <img src="before-after-2.jpg" alt="Rezultat detailing 2">
+            <div class="label">Lucrare 2</div>
+            <div class="text">Poți pune interior, scaune, portbagaj sau tapițerie.</div>
+          </div>
+
+          <div class="gallery-card">
+            <img src="before-after-3.jpg" alt="Rezultat detailing 3">
+            <div class="label">Lucrare 3</div>
+            <div class="text">Folosește doar poze reale, clare și curate.</div>
+          </div>
+        </div>
+
+        <div class="cta-center">
+          <a href="formular-contact.html" class="btn btn-primary">Solicită programare</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="spatiu">
+      <div class="container">
+        <div class="tag">Spațiul nostru</div>
+        <h2 class="section-title">Unde lucrăm</h2>
+        <p class="section-text">
+          Pe măsură ce amenajarea este finalizată, adaugă aici imagini reale cu spațiul tău. Pentru un client nou,
+          faptul că vede locul în care își lasă mașina contează enorm.
+        </p>
+
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <img src="spatiu-1.jpg" alt="Spațiu Prestige Finish 1">
+            <div class="label">Spațiul 1</div>
+            <div class="text">Imagine cu zona principală de lucru.</div>
+          </div>
+
+          <div class="gallery-card">
+            <img src="spatiu-2.jpg" alt="Spațiu Prestige Finish 2">
+            <div class="label">Spațiul 2</div>
+            <div class="text">Imagine cu luminile, curățenia și amenajarea.</div>
+          </div>
+
+          <div class="gallery-card">
+            <img src="spatiu-3.jpg" alt="Spațiu Prestige Finish 3">
+            <div class="label">Spațiul 3</div>
+            <div class="text">Imagine generală cu zona în care primești clienții.</div>
           </div>
         </div>
       </div>
@@ -706,7 +767,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="despre">
       <div class="container">
         <div class="tag">Clienți</div>
         <h2 class="section-title">Servicii pentru două categorii clare de clienți</h2>
