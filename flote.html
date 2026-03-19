@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prestige Finish Fleet Care | Soluții pentru flote și companii</title>
+  <title>Prestige Finish | Soluții pentru flote și companii</title>
   <link rel="icon" type="image/png" href="logo.png" />
-  <meta name="description" content="Prestige Finish Fleet Care oferă soluții premium pentru flote auto și companii în Ploiești: întreținere interioară, colaborări recurente și servicii dedicate persoanelor juridice." />
-  <meta name="keywords" content="flote auto ploiesti, detailing flote ploiesti, servicii firme auto ploiesti, intretinere flota auto, prestige finish fleet care" />
+  <meta name="description" content="Prestige Finish oferă soluții premium pentru flote auto și companii în Ploiești: întreținere interioară, colaborări recurente și servicii dedicate persoanelor juridice." />
+  <meta name="keywords" content="flote auto ploiesti, detailing flote ploiesti, servicii firme auto ploiesti, intretinere flota auto, prestige finish" />
 
   <style>
     :root {
@@ -168,7 +168,13 @@
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
-      margin-bottom: 28px;
+      margin-bottom: 20px;
+    }
+
+    .hero-note {
+      color: var(--gold);
+      font-size: 15px;
+      margin: 0 0 28px;
     }
 
     .btn {
@@ -202,7 +208,10 @@
     .grid-2,
     .grid-3,
     .grid-4,
-    .process-grid {
+    .plan-grid,
+    .gallery-grid,
+    .process-grid,
+    .faq-grid {
       display: grid;
       gap: 20px;
     }
@@ -212,9 +221,17 @@
       max-width: 860px;
     }
 
+    .grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
+    .plan-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    .gallery-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    .process-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
+
     .mini-card,
     .card,
     .plan-card,
+    .gallery-card,
     .faq-item {
       border: 1px solid var(--line);
       background: var(--card);
@@ -303,10 +320,6 @@
       letter-spacing: 1.4px;
     }
 
-    .grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
-    .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
-    .grid-4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
-
     .card h3,
     .plan-card h3 {
       margin: 0 0 10px;
@@ -314,16 +327,9 @@
       color: var(--gold);
     }
 
-    .coming {
-      background: linear-gradient(180deg, rgba(212,175,55,0.08), rgba(255,255,255,0.02));
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .plan-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 20px;
+    .plan-card {
+      position: relative;
+      overflow: hidden;
     }
 
     .plan-card.featured {
@@ -370,8 +376,38 @@
       font-size: 14px;
     }
 
-    .process-grid {
-      grid-template-columns: repeat(4, minmax(0,1fr));
+    .coming {
+      background: linear-gradient(180deg, rgba(212,175,55,0.08), rgba(255,255,255,0.02));
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .gallery-card {
+      padding: 14px;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      border-radius: 16px;
+      object-fit: cover;
+    }
+
+    .gallery-card .label {
+      color: var(--gold);
+      font-size: 14px;
+      font-weight: 700;
+      margin-top: 12px;
+    }
+
+    .gallery-card .text {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    .cta-center {
+      text-align: center;
+      margin-top: 30px;
     }
 
     .step {
@@ -400,11 +436,6 @@
       margin: 0 0 8px;
       color: var(--text);
       font-size: 18px;
-    }
-
-    .faq-grid {
-      display: grid;
-      gap: 18px;
     }
 
     .faq-item h3 {
@@ -472,7 +503,7 @@
       height: 22px;
     }
 
-    #servicii, #pachete, #beneficii, #proces, #faq, #contact {
+    #servicii, #pachete, #de-ce-noi, #rezultate, #proces, #faq, #contact {
       scroll-margin-top: 100px;
     }
 
@@ -488,9 +519,10 @@
       .grid-2,
       .grid-3,
       .grid-4,
+      .plan-grid,
+      .gallery-grid,
       .contact-wrap,
       .hero-points,
-      .plan-grid,
       .process-grid {
         grid-template-columns: 1fr;
       }
@@ -515,7 +547,7 @@
       <div class="nav-links">
         <a href="#servicii">Servicii</a>
         <a href="#pachete">Pachete</a>
-        <a href="#beneficii">Beneficii</a>
+        <a href="#rezultate">Prezentare</a>
         <a href="#faq">Întrebări frecvente</a>
         <a href="#contact" class="nav-cta">Contact</a>
       </div>
@@ -537,8 +569,10 @@
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="tel:+40753788848">Discută cu noi</a>
-            <a class="btn btn-secondary" href="formular-contact.html">Solicită o ofertă</a>
+            <a class="btn btn-secondary" href="formular-contact.html">Solicită ofertă</a>
           </div>
+
+          <p class="hero-note">Colaborări recurente • Soluții adaptate • Discuție inițială rapidă</p>
 
           <div class="hero-points">
             <div class="mini-card">
@@ -603,6 +637,10 @@
             </p>
           </div>
         </div>
+
+        <div class="cta-center">
+          <a href="formular-contact.html" class="btn btn-primary">Solicită o ofertă personalizată</a>
+        </div>
       </div>
     </section>
 
@@ -612,7 +650,7 @@
         <h2 class="section-title">Pachete business orientative</h2>
         <p class="section-text">
           Pachetele de mai jos reprezintă o bază de discuție. Varianta finală a colaborării se stabilește
-          în funcție de flotă, frecvență, tipul vehiculelor și nivelul de intervenție necesar.
+          în funcție de flotă, frecvență, tipul vehiculelor și nivelul intervenției necesare.
         </p>
 
         <div class="plan-grid">
@@ -673,50 +711,70 @@
       </div>
     </section>
 
-    <section id="beneficii" class="coming">
+    <section id="de-ce-noi" class="coming">
       <div class="container">
-        <div class="tag">Beneficii</div>
-        <h2 class="section-title">De ce poate fi util pentru compania ta</h2>
+        <div class="tag">De ce noi</div>
+        <h2 class="section-title">De ce să alegi Prestige Finish Fleet Care</h2>
         <p class="section-text">
-          O flotă curată și bine întreținută nu ține doar de estetică. Contează în imaginea companiei,
-          în confortul utilizatorilor și în modul în care vehiculele sunt percepute de clienți sau parteneri.
+          O colaborare pentru flotă are nevoie de claritate, seriozitate și o comunicare bună.
+          Exact pe asta este construită această direcție.
         </p>
 
         <div class="grid-3">
           <div class="card">
-            <h3>Imagine profesională constantă</h3>
-            <p>Vehiculele curate transmit seriozitate, grijă pentru detalii și respect pentru imaginea companiei.</p>
+            <h3>Abordare serioasă</h3>
+            <p>Discutăm concret despre flotă, volum, frecvență și nevoile reale ale companiei.</p>
           </div>
 
           <div class="card">
-            <h3>Programare predictibilă</h3>
-            <p>Intervențiile pot fi planificate astfel încât să se integreze cât mai bine în ritmul de lucru al flotei.</p>
+            <h3>Imagine profesională</h3>
+            <p>Vehiculele curate transmit seriozitate, ordine și grijă pentru standardele companiei.</p>
           </div>
 
           <div class="card">
-            <h3>Soluții adaptate tipului de flotă</h3>
-            <p>Abordarea diferă în funcție de numărul vehiculelor, utilizare și nivelul de întreținere dorit.</p>
-          </div>
-
-          <div class="card">
-            <h3>Standard uniform</h3>
-            <p>Vehiculele pot beneficia de același nivel de curățenie și prezentare, în mod constant.</p>
-          </div>
-
-          <div class="card">
-            <h3>Colaborare recurentă</h3>
-            <p>Obiectivul este construirea unei relații stabile, nu realizarea unor intervenții ocazionale fără continuitate.</p>
-          </div>
-
-          <div class="card">
-            <h3>Comunicare clară</h3>
-            <p>Stabilim simplu și concret ce se face, când se face și ce variantă este potrivită pentru fiecare flotă.</p>
+            <h3>Colaborare predictibilă</h3>
+            <p>Obiectivul este o relație stabilă și clară, nu intervenții haotice sau ocazionale.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="proces">
+    <section id="rezultate">
+      <div class="container">
+        <div class="tag">Prezentare</div>
+        <h2 class="section-title">Cum poți folosi această secțiune</h2>
+        <p class="section-text">
+          Pentru pagina de flote, nu este obligatoriu să pui înainte / după ca la persoane fizice.
+          Aici poți folosi imagini reale cu spațiul, cu mașini lucrate sau cu un standard vizual pe care îl oferi.
+        </p>
+
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <img src="fleet-1.jpg" alt="Fleet presentation 1">
+            <div class="label">Imagine 1</div>
+            <div class="text">Poți pune o mașină de firmă, un interior curat sau o imagine din spațiul tău.</div>
+          </div>
+
+          <div class="gallery-card">
+            <img src="fleet-2.jpg" alt="Fleet presentation 2">
+            <div class="label">Imagine 2</div>
+            <div class="text">Ideal: poze reale, curate, simple și profesionale.</div>
+          </div>
+
+          <div class="gallery-card">
+            <img src="fleet-3.jpg" alt="Fleet presentation 3">
+            <div class="label">Imagine 3</div>
+            <div class="text">Evită pozele fake sau prea editate. Credibilitatea contează.</div>
+          </div>
+        </div>
+
+        <div class="cta-center">
+          <a href="formular-contact.html" class="btn btn-primary">Cere ofertă pentru compania ta</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="proces" class="coming">
       <div class="container">
         <div class="tag">Proces</div>
         <h2 class="section-title">Cum decurge o colaborare</h2>
@@ -753,7 +811,7 @@
       </div>
     </section>
 
-    <section id="faq" class="coming">
+    <section id="faq">
       <div class="container">
         <div class="tag">Întrebări frecvente</div>
         <h2 class="section-title">Întrebări utile pentru companii</h2>
@@ -766,7 +824,7 @@
           <div class="faq-item">
             <h3>Lucrați doar cu firme din Ploiești?</h3>
             <div class="faq-answer">
-              Prioritatea noastră este de a ne dezvolta și în împrejurimi. Pentru alte locații, disponibilitatea
+              Prioritatea noastră este zona Ploiești și împrejurimi. Pentru alte locații, disponibilitatea
               se discută în funcție de tipul colaborării.
             </div>
           </div>
@@ -798,7 +856,7 @@
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="coming">
       <div class="container contact-wrap">
         <div>
           <div class="tag">Contact</div>
