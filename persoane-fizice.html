@@ -52,6 +52,7 @@
     }
 
     .nav {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -63,12 +64,14 @@
       display: flex;
       align-items: center;
       gap: 12px;
+      min-width: 0;
     }
 
     .brand-logo {
       height: 48px;
       width: auto;
       border-radius: 10px;
+      flex-shrink: 0;
     }
 
     .brand-name {
@@ -76,11 +79,13 @@
       font-size: 20px;
       font-weight: 700;
       letter-spacing: 0.4px;
+      white-space: nowrap;
     }
 
     .brand-sub {
       font-size: 12px;
       color: var(--muted);
+      white-space: nowrap;
     }
 
     .nav-links {
@@ -93,12 +98,35 @@
       justify-content: flex-end;
     }
 
+    .nav-links a {
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
     .nav-cta {
       padding: 10px 16px;
       border-radius: 999px;
       border: 1px solid var(--line);
       color: var(--gold);
       background: rgba(212,175,55,0.06);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      color: var(--gold);
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      cursor: pointer;
+      flex-shrink: 0;
     }
 
     .hero {
@@ -189,6 +217,7 @@
       transition: 0.2s ease;
       box-shadow: var(--shadow);
       cursor: pointer;
+      text-align: center;
     }
 
     .btn:hover { transform: translateY(-2px); }
@@ -490,6 +519,82 @@
       margin-bottom: 4px;
     }
 
+    .pf-map-card {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(212,175,55,0.18);
+      background: rgba(255,255,255,0.03);
+      box-shadow: var(--shadow);
+    }
+
+    .pf-map-card iframe {
+      display: block;
+      width: 100%;
+      height: 360px;
+      border: 0;
+      filter: grayscale(1) brightness(0.75) contrast(1.05);
+    }
+
+    .pf-map-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.18) 0%,
+        rgba(0,0,0,0.30) 100%
+      );
+      backdrop-filter: blur(2px);
+    }
+
+    .pf-map-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .pf-map-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 56px;
+      padding: 0 26px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.20);
+      background: rgba(255,255,255,0.10);
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 700;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      transition: 0.25s ease;
+      min-width: 320px;
+      max-width: 100%;
+    }
+
+    .pf-map-btn:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.16);
+      border-color: rgba(255,255,255,0.30);
+    }
+
+    .pf-map-btn-primary {
+      background: linear-gradient(135deg, var(--gold), #f0d266);
+      color: #0a0a0a;
+      border: none;
+    }
+
+    .pf-map-btn-primary:hover {
+      background: linear-gradient(135deg, #e0bb4a, #f4d978);
+      border: none;
+    }
+
     footer {
       border-top: 1px solid var(--line);
       padding: 28px 0 40px;
@@ -532,7 +637,7 @@
       height: 22px;
     }
 
-    #servicii, #pachete, #de-ce-noi, #rezultate, #proces, #faq, #contact {
+    #servicii, #pachete, #de-ce-noi, #rezultate, #proces, #faq, #locatie, #contact {
       scroll-margin-top: 100px;
     }
 
@@ -544,6 +649,41 @@
     }
 
     @media (max-width: 980px) {
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        left: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 18px;
+        background: rgba(5,5,5,0.98);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 14px 16px;
+        border-radius: 14px;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.04);
+      }
+
+      .nav-links .nav-cta {
+        text-align: center;
+      }
+
       .hero-grid,
       .grid-2,
       .grid-3,
@@ -556,9 +696,54 @@
         grid-template-columns: 1fr;
       }
 
-      .nav-links { display: none; }
       h1 { font-size: 48px; }
       .brand-logo { height: 42px; }
+      .brand-name { font-size: 18px; }
+
+      .pf-map-card iframe {
+        height: 300px;
+      }
+
+      .pf-map-btn {
+        width: 100%;
+        min-width: 0;
+        max-width: 320px;
+        font-size: 15px;
+        padding: 0 20px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      section {
+        padding: 62px 0;
+      }
+
+      .hero {
+        padding: 72px 0 42px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .section-title {
+        font-size: 34px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .whatsapp-btn {
+        right: 16px;
+        left: 16px;
+        bottom: 16px;
+        justify-content: center;
+      }
     }
   </style>
 </head>
@@ -573,12 +758,14 @@
         </div>
       </a>
 
-      <div class="nav-links">
-        <a href="#servicii">Servicii</a>
-        <a href="#pachete">Pachete</a>
-        <a href="#rezultate">Rezultate</a>
-        <a href="#faq">Întrebări frecvente</a>
-        <a href="#contact" class="nav-cta">Contact</a>
+      <div class="menu-toggle" onclick="toggleMenu()" aria-label="Deschide meniul">☰</div>
+
+      <div class="nav-links" id="mobileMenu">
+        <a href="#servicii" onclick="closeMenu()">Servicii</a>
+        <a href="#pachete" onclick="closeMenu()">Pachete</a>
+        <a href="#rezultate" onclick="closeMenu()">Rezultate</a>
+        <a href="#faq" onclick="closeMenu()">Întrebări frecvente</a>
+        <a href="#locatie" class="nav-cta" onclick="closeMenu()">Contact</a>
       </div>
     </div>
   </header>
@@ -772,35 +959,7 @@
       </div>
     </section>
 
-    <section id="de-ce-noi" class="coming">
-      <div class="container">
-        <div class="tag">De ce noi</div>
-        <h2 class="section-title">De ce să alegi Prestige Finish</h2>
-        <p class="section-text">
-          Nu ne poziționăm ca un serviciu de volum, ci ca un studio în care fiecare mașină primește
-          timpul și atenția necesare pentru un rezultat bun.
-        </p>
-
-        <div class="grid-3">
-          <div class="card">
-            <h3>Fără grabă</h3>
-            <p>Nu lucrăm pe bandă rulantă. Fiecare mașină este tratată atent, nu superficial.</p>
-          </div>
-
-          <div class="card">
-            <h3>Produse profesionale</h3>
-            <p>Folosim soluții dedicate pentru materiale diferite și pentru un rezultat curat, sigur și corect.</p>
-          </div>
-
-          <div class="card">
-            <h3>Rezultate vizibile</h3>
-            <p>Diferența se vede de la prima intervenție, atât în aspect, cât și în confortul interiorului.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="rezultate">
+    <section id="rezultate" class="coming">
       <div class="container">
         <div class="tag">Rezultate</div>
         <h2 class="section-title">Rezultate reale</h2>
@@ -831,6 +990,34 @@
 
         <div class="cta-center">
           <a href="tel:+40753788848" class="btn btn-primary">Programează-te acum</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="de-ce-noi">
+      <div class="container">
+        <div class="tag">De ce noi</div>
+        <h2 class="section-title">De ce să alegi Prestige Finish</h2>
+        <p class="section-text">
+          Nu ne poziționăm ca un serviciu de volum, ci ca un studio în care fiecare mașină primește
+          timpul și atenția necesare pentru un rezultat bun.
+        </p>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>Fără grabă</h3>
+            <p>Nu lucrăm pe bandă rulantă. Fiecare mașină este tratată atent, nu superficial.</p>
+          </div>
+
+          <div class="card">
+            <h3>Produse profesionale</h3>
+            <p>Folosim soluții dedicate pentru materiale diferite și pentru un rezultat curat, sigur și corect.</p>
+          </div>
+
+          <div class="card">
+            <h3>Rezultate vizibile</h3>
+            <p>Diferența se vede de la prima intervenție, atât în aspect, cât și în confortul interiorului.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -917,7 +1104,43 @@
       </div>
     </section>
 
-    <section id="contact" class="coming">
+    <section id="locatie" class="coming">
+      <div class="container">
+        <div class="tag">Locație</div>
+        <h2 class="section-title">Vizitează-ne în Ploiești</h2>
+        <p class="section-text">
+          Prestige Finish • Strada Libertății nr. 12
+        </p>
+
+        <div class="pf-map-card">
+          <iframe
+            src="https://www.google.com/maps?q=Strada+Libertatii+12,+107592+Ploiesti&output=embed"
+            loading="lazy"
+            allowfullscreen>
+          </iframe>
+
+          <div class="pf-map-overlay">
+            <div class="pf-map-buttons">
+              <a
+                href="https://waze.com/ul?q=Strada%20Libertatii%2012%20107592%20Ploiesti"
+                target="_blank"
+                class="pf-map-btn pf-map-btn-primary">
+                Navighează cu Waze
+              </a>
+
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=Strada+Libertatii+12,+Ploiesti"
+                target="_blank"
+                class="pf-map-btn">
+                Deschide în Google Maps
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
       <div class="container contact-wrap">
         <div>
           <div class="tag">Contact</div>
@@ -938,7 +1161,7 @@
           <div class="contact-row"><strong>Telefon principal</strong><span>0753 788 848</span></div>
           <div class="contact-row"><strong>Telefon secundar</strong><span>0761 132 169</span></div>
           <div class="contact-row"><strong>Tip clienți</strong><span>Persoane fizice</span></div>
-          <div class="contact-row"><strong>Locație</strong><span>Ploiești</span></div>
+          <div class="contact-row"><strong>Locație</strong><span>Strada Libertății nr. 12, Ploiești</span></div>
           <div class="contact-row" style="border-bottom:none;"><strong>Status</strong><span>Deschidere în curând</span></div>
         </div>
       </div>
@@ -956,5 +1179,29 @@
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
     Programează acum
   </a>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('active');
+    }
+
+    function closeMenu() {
+      document.getElementById('mobileMenu').classList.remove('active');
+    }
+
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('mobileMenu');
+      const toggle = document.querySelector('.menu-toggle');
+
+      if (!menu || !toggle) return;
+
+      const clickedInsideMenu = menu.contains(event.target);
+      const clickedToggle = toggle.contains(event.target);
+
+      if (!clickedInsideMenu && !clickedToggle) {
+        menu.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 </html>
