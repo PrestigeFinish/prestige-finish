@@ -1,410 +1,153 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prestige Finish | Formular de contact</title>
-  <link rel="icon" type="image/png" href="logo.png" />
-  <meta name="description" content="Contactează Prestige Finish pentru programări, informații despre servicii sau colaborări pentru persoane fizice și flote." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prestige Finish | Contact</title>
 
-  <style>
-    :root {
-      --bg: #050505;
-      --card: rgba(255,255,255,0.04);
-      --gold: #d4af37;
-      --text: #f5f2ea;
-      --muted: #c5bea9;
-      --line: rgba(212,175,55,0.18);
-      --shadow: 0 20px 60px rgba(0,0,0,0.45);
-    }
+<style>
+:root{
+--bg:#050505;
+--gold:#d4af37;
+--text:#f5f2ea;
+--muted:#c5bea9;
+--line:rgba(212,175,55,0.18);
+}
 
-    * { box-sizing: border-box; }
+body{
+margin:0;
+font-family:Arial;
+background:var(--bg);
+color:var(--text);
+}
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at top right, rgba(212,175,55,0.16), transparent 24%),
-        radial-gradient(circle at bottom left, rgba(212,175,55,0.10), transparent 20%),
-        var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+.container{
+width:min(900px,90%);
+margin:auto;
+}
 
-    a { color: inherit; text-decoration: none; }
+section{
+padding:60px 0;
+}
 
-    .container {
-      width: min(1040px, calc(100% - 32px));
-      margin: 0 auto;
-    }
+h1{
+font-size:36px;
+margin-bottom:10px;
+color:var(--gold);
+}
 
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(5,5,5,0.88);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--line);
-    }
+p{
+color:var(--muted);
+margin-bottom:30px;
+}
 
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 16px 0;
-    }
+.card{
+border:1px solid var(--line);
+padding:30px;
+border-radius:20px;
+background:rgba(255,255,255,0.03);
+}
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+.grid-2{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:16px;
+}
 
-    .brand-logo {
-      height: 46px;
-      width: auto;
-      border-radius: 10px;
-    }
+input,textarea,select{
+width:100%;
+padding:14px;
+border-radius:10px;
+border:1px solid var(--line);
+background:#0a0a0a;
+color:white;
+}
 
-    .brand-name {
-      color: var(--gold);
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: 0.4px;
-    }
+button{
+width:100%;
+padding:16px;
+border-radius:999px;
+border:none;
+background:linear-gradient(135deg,var(--gold),#f0d266);
+font-weight:bold;
+cursor:pointer;
+}
 
-    .brand-sub {
-      font-size: 12px;
-      color: var(--muted);
-    }
+button:hover{
+transform:translateY(-2px);
+}
 
-    .hero {
-      padding: 72px 0 30px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--gold);
-      background: rgba(212,175,55,0.07);
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      margin: 0 0 16px;
-      font-size: clamp(34px, 6vw, 62px);
-      line-height: 1.02;
-    }
-
-    .hero p {
-      color: var(--muted);
-      max-width: 760px;
-      font-size: 18px;
-      margin: 0 0 30px;
-    }
-
-    .form-wrap {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 24px;
-      padding: 24px 0 80px;
-    }
-
-    .card {
-      border: 1px solid var(--line);
-      background: var(--card);
-      border-radius: 24px;
-      padding: 26px;
-      box-shadow: var(--shadow);
-    }
-
-    .card h2, .card h3 {
-      margin-top: 0;
-      color: var(--gold);
-    }
-
-    .card p {
-      color: var(--muted);
-    }
-
-    form {
-      display: grid;
-      gap: 16px;
-    }
-
-    label {
-      font-size: 14px;
-      color: var(--text);
-      margin-bottom: 6px;
-      display: block;
-    }
-
-    input, textarea, select {
-      width: 100%;
-      padding: 14px 16px;
-      border-radius: 14px;
-      border: 1px solid rgba(212,175,55,0.18);
-      background: rgba(255,255,255,0.03);
-      color: #f5f2ea;
-      font-size: 15px;
-      outline: none;
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-    }
-
-    input:focus, textarea:focus, select:focus {
-      border-color: rgba(212,175,55,0.45);
-      box-shadow: 0 0 0 3px rgba(212,175,55,0.08);
-    }
-
-    select {
-      background-image:
-        linear-gradient(45deg, transparent 50%, #d4af37 50%),
-        linear-gradient(135deg, #d4af37 50%, transparent 50%);
-      background-position:
-        calc(100% - 20px) calc(50% - 3px),
-        calc(100% - 14px) calc(50% - 3px);
-      background-size: 6px 6px, 6px 6px;
-      background-repeat: no-repeat;
-      padding-right: 42px;
-      cursor: pointer;
-    }
-
-    select option {
-      background: #111111;
-      color: #f5f2ea;
-    }
-
-    textarea {
-      min-height: 150px;
-      resize: vertical;
-    }
-
-    input::placeholder, textarea::placeholder {
-      color: #9f9a8c;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 52px;
-      padding: 0 22px;
-      border-radius: 999px;
-      border: none;
-      font-weight: 700;
-      cursor: pointer;
-      background: linear-gradient(135deg, var(--gold), #f0d266);
-      color: #0a0a0a;
-      box-shadow: var(--shadow);
-      transition: 0.2s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .small {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .info-list {
-      display: grid;
-      gap: 16px;
-    }
-
-    .info-box {
-      padding: 16px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .info-box:last-child {
-      border-bottom: none;
-    }
-
-    .info-box strong {
-      display: block;
-      color: #f5f2ea;
-      margin-bottom: 6px;
-    }
-
-    .contact-mini {
-      display: grid;
-      gap: 14px;
-      margin-top: 24px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .contact-mini-row strong {
-      display: block;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
-
-    .contact-mini-row span {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .back-link {
-      display: inline-block;
-      margin-top: 18px;
-      color: var(--gold);
-      font-weight: 700;
-    }
-
-    @media (max-width: 900px) {
-      .form-wrap {
-        grid-template-columns: 1fr;
-      }
-
-      h1 {
-        font-size: 40px;
-      }
-    }
-  </style>
+@media(max-width:700px){
+.grid-2{grid-template-columns:1fr;}
+}
+</style>
 </head>
+
 <body>
 
-  <header class="topbar">
-    <div class="container nav">
-      <a href="index.html" class="brand">
-        <img src="logo.png" alt="Prestige Finish Logo" class="brand-logo">
-        <div>
-          <div class="brand-name">Prestige Finish</div>
-          <div class="brand-sub">← Înapoi la pagina principală</div>
-        </div>
-      </a>
-    </div>
-  </header>
+<section>
+<div class="container">
 
-  <section class="hero">
-    <div class="container">
-      <div class="eyebrow">Formular de contact</div>
-      <h1>Trimite-ne cererea ta</h1>
-      <p>
-        Completează formularul de mai jos, iar echipa Prestige Finish va reveni cât mai rapid
-        pentru detalii despre programare, servicii sau colaborări pentru persoane fizice și flote.
-      </p>
-    </div>
-  </section>
+<h1>Solicită programare</h1>
+<p>Completează formularul și revenim rapid.</p>
 
-  <section>
-    <div class="container form-wrap">
-      <div class="card">
-        <h2>Solicită informații sau programare</h2>
-        <p class="small">
-          Completează datele tale și spune-ne pe scurt ce tip de serviciu te interesează.
-        </p>
+<div class="card">
 
-        <form action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="9c5a3e10-8db0-4dfa-a881-463b05232c80">
-          <input type="hidden" name="subject" value="Cerere nouă de contact - Prestige Finish">
-          <input type="hidden" name="from_name" value="Prestige Finish Website">
-          <input type="hidden" name="redirect" value=multumim.html">
+<form id="contactForm">
 
-          <div style="display:none;">
-            <input type="checkbox" name="botcheck">
-          </div>
+<input type="hidden" name="access_key" value="9c5a3e10-8db0-4dfa-a881-463b05232c80">
+<input type="hidden" name="subject" value="Cerere nouă - Prestige Finish">
+<input type="hidden" name="from_name" value="Website Prestige Finish">
 
-          <div>
-            <label for="name">Nume complet</label>
-            <input type="text" id="name" name="name" placeholder="Ex: Andrei Popescu" required>
-          </div>
+<div class="grid-2">
+<input type="text" name="name" placeholder="Nume / Firmă" required>
+<input type="tel" name="phone" placeholder="Telefon" required>
+</div>
 
-          <div>
-            <label for="phone">Număr de telefon</label>
-            <input type="text" id="phone" name="phone" placeholder="Ex: 07xx xxx xxx" required>
-          </div>
+<div class="grid-2">
+<input type="email" name="email" placeholder="Email" required>
 
-          <div>
-            <label for="email">Adresă de email</label>
-            <input type="email" id="email" name="email" placeholder="Ex: nume@email.com" required>
-          </div>
+<select name="client_type" required>
+<option value="">Tip client</option>
+<option>Persoană fizică</option>
+<option>Firmă / flotă</option>
+</select>
+</div>
 
-          <div>
-            <label for="client_type">Tip client</label>
-            <select id="client_type" name="client_type" required>
-              <option value="">Alege o opțiune</option>
-              <option value="Persoană fizică">Persoană fizică</option>
-              <option value="Persoană juridică / flotă">Persoană juridică / flotă</option>
-            </select>
-          </div>
+<select name="service">
+<option value="">Serviciu dorit</option>
+<option>Detailing interior</option>
+<option>Igienizare</option>
+<option>Motor</option>
+<option>Faruri</option>
+<option>Pachet complet</option>
+</select>
 
-          <div>
-            <label for="message">Mesaj</label>
-            <textarea id="message" name="message" placeholder="Spune-ne pe scurt ce serviciu te interesează, ce tip de mașină ai sau ce fel de colaborare cauți"></textarea>
-          </div>
+<textarea name="message" placeholder="Detalii"></textarea>
 
-          <button type="submit" class="btn">Trimite solicitarea</button>
-        </form>
-      </div>
+<button type="submit">Trimite solicitarea</button>
 
-      <div class="card">
-        <h3>Ce urmează după ce trimiți formularul</h3>
+</form>
 
-        <div class="info-list">
-          <div class="info-box">
-            <strong>1. Analizăm solicitarea</strong>
-            <span class="small">
-              Cererea ta este preluată și verificată cât mai rapid de echipa Prestige Finish.
-            </span>
-          </div>
+</div>
 
-          <div class="info-box">
-            <strong>2. Te contactăm direct</strong>
-            <span class="small">
-              Revenim telefonic sau pe email pentru a înțelege mai bine ce tip de serviciu sau colaborare îți dorești.
-            </span>
-          </div>
+</div>
+</section>
 
-          <div class="info-box">
-            <strong>3. Stabilim detaliile</strong>
-            <span class="small">
-              Discutăm disponibilitatea, tipul intervenției și toate informațiile necesare înainte de programare.
-            </span>
-          </div>
+<script>
+document.getElementById("contactForm").addEventListener("submit", async function(e){
+e.preventDefault();
 
-          <div class="info-box">
-            <strong>4. Confirmăm programarea</strong>
-            <span class="small">
-              După clarificarea detaliilor, stabilim împreună data și intervalul potrivit.
-            </span>
-          </div>
-        </div>
+const formData = new FormData(this);
 
-        <div class="contact-mini">
-          <div class="contact-mini-row">
-            <strong>Telefon principal</strong>
-            <span>0753 788 848</span>
-          </div>
+await fetch("https://api.web3forms.com/submit", {
+method: "POST",
+body: formData
+});
 
-          <div class="contact-mini-row">
-            <strong>Telefon secundar</strong>
-            <span>0761 132 169</span>
-          </div>
-
-          <div class="contact-mini-row">
-            <strong>Locație</strong>
-            <span>Ploiești</span>
-          </div>
-        </div>
-
-        <a href="index.html" class="back-link">← Înapoi la prezentarea principală</a>
-      </div>
-    </div>
-  </section>
+window.location.href = "multumim.html";
+});
+</script>
 
 </body>
 </html>
