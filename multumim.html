@@ -1,155 +1,71 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prestige Finish | Mulțumim</title>
-  <link rel="icon" type="image/png" href="logo.png" />
-  <meta name="description" content="Mulțumim pentru interesul acordat Prestige Finish. Echipa noastră va reveni cât mai rapid cu un răspuns." />
 
   <style>
     :root {
-      --bg: #050505;
-      --card: rgba(255,255,255,0.04);
-      --gold: #d4af37;
-      --text: #f5f2ea;
-      --muted: #c5bea9;
-      --line: rgba(212,175,55,0.18);
-      --shadow: 0 20px 60px rgba(0,0,0,0.45);
+      --bg:#050505;
+      --gold:#d4af37;
+      --text:#f5f2ea;
+      --muted:#c5bea9;
+      --line:rgba(212,175,55,0.18);
     }
 
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at top right, rgba(212,175,55,0.16), transparent 24%),
-        radial-gradient(circle at bottom left, rgba(212,175,55,0.10), transparent 20%),
-        var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
+    body{
+      margin:0;
+      font-family:Arial;
+      background:var(--bg);
+      color:var(--text);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:100vh;
+      text-align:center;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    .box{
+      max-width:600px;
+      padding:40px;
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:rgba(255,255,255,0.03);
     }
 
-    .card {
-      width: min(760px, 100%);
-      border: 1px solid var(--line);
-      background: var(--card);
-      border-radius: 28px;
-      padding: 34px;
-      box-shadow: var(--shadow);
-      text-align: center;
+    h1{
+      color:var(--gold);
+      margin-bottom:10px;
     }
 
-    .logo {
-      width: 120px;
-      margin: 0 auto 22px;
-      border-radius: 16px;
-      display: block;
+    p{
+      color:var(--muted);
+      margin-bottom:30px;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--gold);
-      background: rgba(212,175,55,0.07);
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 18px;
+    .btn{
+      padding:14px 24px;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--gold),#f0d266);
+      color:#000;
+      text-decoration:none;
+      font-weight:bold;
+      display:inline-block;
     }
 
-    h1 {
-      margin: 0 0 14px;
-      font-size: clamp(32px, 6vw, 54px);
-      line-height: 1.05;
-    }
-
-    p {
-      color: var(--muted);
-      font-size: 17px;
-      max-width: 620px;
-      margin: 0 auto 14px;
-    }
-
-    .actions {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 26px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 50px;
-      padding: 0 22px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      font-weight: 700;
-      transition: 0.2s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--gold), #f0d266);
-      color: #0a0a0a;
-      box-shadow: var(--shadow);
-    }
-
-    .btn-secondary {
-      border-color: var(--line);
-      color: var(--text);
-      background: rgba(255,255,255,0.02);
-    }
   </style>
 </head>
+
 <body>
 
-  <div class="card">
-    <img src="logo.png" alt="Prestige Finish Logo" class="logo">
+<div class="box">
+  <h1>Mulțumim!</h1>
+  <p>Solicitarea ta a fost trimisă cu succes.<br>
+  Revenim cât mai rapid pentru detalii.</p>
 
-    <div class="eyebrow">Mesaj trimis cu succes</div>
-
-    <h1>Mulțumim pentru solicitare</h1>
-
-    <p>
-      Cererea ta a fost trimisă cu succes către echipa Prestige Finish.
-    </p>
-
-    <p>
-      Vom reveni cât mai rapid pentru a discuta detaliile și pentru a-ți oferi informațiile de care ai nevoie.
-    </p>
-
-    <p>
-      Îți mulțumim pentru încredere.
-    </p>
-
-    <div class="actions">
-      <a href="index.html" class="btn btn-primary">Înapoi la pagina principală</a>
-      <a href="persoane-fizice.html" class="btn btn-secondary">Persoane fizice</a>
-      <a href="flote.html" class="btn btn-secondary">Persoane juridice / flote</a>
-    </div>
-  </div>
+  <a href="index.html" class="btn">Înapoi pe site</a>
+</div>
 
 </body>
 </html>
