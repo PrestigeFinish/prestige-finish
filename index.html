@@ -52,6 +52,7 @@
     }
 
     .nav {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -63,6 +64,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
+      min-width: 0;
     }
 
     .brand-logo {
@@ -70,6 +72,7 @@
       width: auto;
       border-radius: 10px;
       object-fit: contain;
+      flex-shrink: 0;
     }
 
     .brand-name {
@@ -77,6 +80,7 @@
       font-size: 22px;
       font-weight: 700;
       letter-spacing: 0.4px;
+      white-space: nowrap;
     }
 
     .nav-links {
@@ -89,12 +93,35 @@
       justify-content: flex-end;
     }
 
+    .nav-links a {
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
     .nav-cta {
       padding: 10px 16px;
       border-radius: 999px;
       border: 1px solid var(--line);
       color: var(--gold);
       background: rgba(212,175,55,0.06);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      color: var(--gold);
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      cursor: pointer;
+      flex-shrink: 0;
     }
 
     .hero {
@@ -185,6 +212,7 @@
       transition: 0.2s ease;
       box-shadow: var(--shadow);
       cursor: pointer;
+      text-align: center;
     }
 
     .btn:hover { transform: translateY(-2px); }
@@ -312,43 +340,6 @@
       color: var(--gold);
     }
 
-    .switch-section {
-      padding-top: 24px;
-      padding-bottom: 24px;
-    }
-
-    .switch-wrap {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .switch-btn {
-      min-width: 260px;
-      text-align: center;
-      padding: 18px 26px;
-      border-radius: 18px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.03);
-      color: var(--text);
-      font-size: 18px;
-      font-weight: 700;
-      box-shadow: var(--shadow);
-      transition: 0.2s ease;
-    }
-
-    .switch-btn:hover {
-      transform: translateY(-2px);
-      border-color: rgba(212,175,55,0.4);
-    }
-
-    .switch-btn.primary {
-      background: linear-gradient(135deg, rgba(212,175,55,0.18), rgba(255,255,255,0.03));
-      color: var(--gold);
-    }
-
     .coming {
       background: linear-gradient(180deg, rgba(212,175,55,0.08), rgba(255,255,255,0.02));
       border-top: 1px solid var(--line);
@@ -454,7 +445,7 @@
       width: 100%;
       height: 360px;
       border: 0;
-      filter: grayscale(1) brightness(0.55) contrast(1.05);
+      filter: grayscale(1) brightness(0.75) contrast(1.05);
     }
 
     .pf-map-overlay {
@@ -466,10 +457,18 @@
       padding: 20px;
       background: linear-gradient(
         180deg,
-        rgba(0,0,0,0.22) 0%,
-        rgba(0,0,0,0.38) 100%
+        rgba(0,0,0,0.18) 0%,
+        rgba(0,0,0,0.30) 100%
       );
-      backdrop-filter: blur(3px);
+      backdrop-filter: blur(2px);
+    }
+
+    .pf-map-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      width: 100%;
     }
 
     .pf-map-btn {
@@ -487,24 +486,26 @@
       text-align: center;
       box-shadow: 0 12px 30px rgba(0,0,0,0.25);
       transition: 0.25s ease;
+      min-width: 320px;
+      max-width: 100%;
     }
 
     .pf-map-btn:hover {
       transform: translateY(-2px);
-      background: rgba(212,175,55,0.18);
-      border-color: rgba(212,175,55,0.40);
+      background: rgba(255,255,255,0.16);
+      border-color: rgba(255,255,255,0.30);
     }
-    .pf-map-buttons{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  align-items:center;
-}
 
-.pf-map-btn-secondary{
-  background: rgba(255,255,255,0.05);
-  border-color: rgba(255,255,255,0.15);
-}
+    .pf-map-btn-primary {
+      background: linear-gradient(135deg, var(--gold), #f0d266);
+      color: #0a0a0a;
+      border: none;
+    }
+
+    .pf-map-btn-primary:hover {
+      background: linear-gradient(135deg, #e0bb4a, #f4d978);
+      border: none;
+    }
 
     footer {
       border-top: 1px solid var(--line);
@@ -559,6 +560,41 @@
     }
 
     @media (max-width: 980px) {
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        left: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 18px;
+        background: rgba(5,5,5,0.98);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 14px 16px;
+        border-radius: 14px;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.04);
+      }
+
+      .nav-links .nav-cta {
+        text-align: center;
+      }
+
       .hero-grid,
       .grid-2,
       .grid-3,
@@ -570,10 +606,9 @@
         grid-template-columns: 1fr;
       }
 
-      .nav-links { display: none; }
       h1 { font-size: 48px; }
       .brand-logo { height: 44px; }
-      .switch-btn { min-width: 100%; }
+      .brand-name { font-size: 18px; }
 
       .pf-map-card iframe {
         height: 300px;
@@ -581,9 +616,43 @@
 
       .pf-map-btn {
         width: 100%;
+        min-width: 0;
         max-width: 320px;
         font-size: 15px;
         padding: 0 20px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      section {
+        padding: 62px 0;
+      }
+
+      .hero {
+        padding: 72px 0 42px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .section-title {
+        font-size: 34px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .whatsapp-btn {
+        right: 16px;
+        left: 16px;
+        bottom: 16px;
+        justify-content: center;
       }
     }
   </style>
@@ -596,13 +665,15 @@
         <span class="brand-name">Prestige Finish</span>
       </a>
 
-      <div class="nav-links">
-        <a href="#despre">Despre</a>
-        <a href="#servicii">Servicii</a>
-        <a href="#rezultate">Rezultate</a>
+      <div class="menu-toggle" onclick="toggleMenu()" aria-label="Deschide meniul">☰</div>
+
+      <div class="nav-links" id="mobileMenu">
+        <a href="#despre" onclick="closeMenu()">Despre</a>
+        <a href="#servicii" onclick="closeMenu()">Servicii</a>
+        <a href="#rezultate" onclick="closeMenu()">Rezultate</a>
         <a href="persoane-fizice.html">Persoane fizice</a>
         <a href="flote.html">Persoane juridice / flote</a>
-        <a href="#locatie" class="nav-cta">Contact</a>
+        <a href="#locatie" class="nav-cta" onclick="closeMenu()">Contact</a>
       </div>
     </div>
   </header>
@@ -895,24 +966,22 @@
           </iframe>
 
           <div class="pf-map-overlay">
-  <div class="pf-map-buttons">
+            <div class="pf-map-buttons">
+              <a
+                href="https://waze.com/ul?q=Strada%20Libertatii%2012%20107592%20Ploiesti"
+                target="_blank"
+                class="pf-map-btn pf-map-btn-primary">
+                Navighează cu Waze
+              </a>
 
-    <a
-      href="https://waze.com/ul?q=Strada%20Libertatii%2012%20107592%20Ploiesti"
-      target="_blank"
-      class="pf-map-btn">
-      Navighează cu Waze
-    </a>
-
-    <a
-      href="https://www.google.com/maps/dir/?api=1&destination=Strada+Libertatii+12,+Ploiesti"
-      target="_blank"
-      class="pf-map-btn pf-map-btn-secondary">
-      Deschide în Google Maps
-    </a>
-
-  </div>
-</div>
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=Strada+Libertatii+12,+Ploiesti"
+                target="_blank"
+                class="pf-map-btn">
+                Deschide în Google Maps
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -956,5 +1025,29 @@
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
     Programează acum
   </a>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('active');
+    }
+
+    function closeMenu() {
+      document.getElementById('mobileMenu').classList.remove('active');
+    }
+
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('mobileMenu');
+      const toggle = document.querySelector('.menu-toggle');
+
+      if (!menu || !toggle) return;
+
+      const clickedInsideMenu = menu.contains(event.target);
+      const clickedToggle = toggle.contains(event.target);
+
+      if (!clickedInsideMenu && !clickedToggle) {
+        menu.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 </html>
