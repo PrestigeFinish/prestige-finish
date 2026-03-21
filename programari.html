@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programare online | Prestige Finish</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+  <meta name="description" content="Programează online serviciile Prestige Finish direct din site." />
+
+  <style>
+    :root {
+      --bg: #050505;
+      --card: rgba(255,255,255,0.04);
+      --gold: #d4af37;
+      --text: #f5f2ea;
+      --muted: #c5bea9;
+      --line: rgba(212,175,55,0.18);
+      --shadow: 0 20px 60px rgba(0,0,0,0.45);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(212,175,55,0.16), transparent 24%),
+        radial-gradient(circle at bottom left, rgba(212,175,55,0.10), transparent 20%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1240px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5,5,5,0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      height: 52px;
+      width: auto;
+      border-radius: 10px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      color: var(--gold);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+    }
+
+    .back-link {
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--gold);
+      background: rgba(212,175,55,0.06);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .hero {
+      padding: 56px 0 26px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--gold);
+      background: rgba(212,175,55,0.07);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(34px, 6vw, 60px);
+      line-height: 1.02;
+    }
+
+    .lead {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 18px;
+      margin: 0 0 28px;
+    }
+
+    .booking-shell {
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 28px;
+      padding: 14px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      margin-bottom: 60px;
+    }
+
+    .booking-shell iframe {
+      width: 100%;
+      min-height: 980px;
+      border: none;
+      border-radius: 20px;
+      background: #fff;
+      display: block;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0 40px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 38px 0 18px;
+      }
+
+      .lead {
+        font-size: 16px;
+      }
+
+      .booking-shell {
+        padding: 10px;
+        border-radius: 22px;
+      }
+
+      .booking-shell iframe {
+        min-height: 1120px;
+        border-radius: 16px;
+      }
+
+      .brand-logo {
+        height: 44px;
+      }
+
+      .brand-name {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Prestige Finish Logo" class="brand-logo">
+        <span class="brand-name">Prestige Finish</span>
+      </a>
+
+      <a href="index.html" class="back-link">Înapoi la site</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">Programare online</div>
+        <h1>Rezervă-ți locul rapid</h1>
+        <p class="lead">
+          Alege serviciul dorit, intervalul disponibil și completează evaluarea mașinii direct în platforma integrată Prestige Finish.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="booking-shell">
+
+          <div class="booking-shell">
+
+  <div id="booking-widget"></div>
+
+  <script src="//widget.simplybook.it/v2/widget/widget.js"></script>
+
+  <script>
+  var widget = new SimplybookWidget({
+      "widget_type":"iframe",
+      "url":"https://prestigefinish.simplybook.it",
+      "theme":"tender",
+      "theme_settings":{
+          "sb_base_color":"#d4af37",
+          "body_bg_color":"#111111",
+          "dark_font_color":"#111111",
+          "light_font_color":"#ffffff",
+          "btn_color_1":"#d4af37",
+          "sb_company_label_color":"#d4af37"
+      },
+      "timeline":"modern",
+      "datepicker":"top_calendar"
+  });
+  </script>
+
+</div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>© 2026 Prestige Finish. Toate drepturile rezervate.</div>
+      <div>Programare online • Ploiești</div>
+    </div>
+  </footer>
+</body>
+</html>
