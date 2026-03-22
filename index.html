@@ -18,8 +18,6 @@
       --line: rgba(212,175,55,0.18);
       --shadow: 0 20px 60px rgba(0,0,0,0.45);
       --green: #25D366;
-      --blue: #1877f2;
-      --black: #000000;
     }
 
     * { box-sizing: border-box; }
@@ -278,9 +276,8 @@
     .hero-points,
     .grid-2,
     .grid-3,
-    .grid-4,
-    .process-grid,
-    .gallery-grid {
+    .review-grid,
+    .process-grid {
       display: grid;
       gap: 20px;
     }
@@ -292,14 +289,11 @@
 
     .grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
     .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
-    .grid-4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
 
     .mini-card,
     .card,
-    .location-card,
     .review-card,
-    .booking-card,
-    .ba-card {
+    .booking-card {
       border: 1px solid var(--line);
       background: var(--card);
       border-radius: 24px;
@@ -318,11 +312,9 @@
     .card p,
     .section-text,
     .contact-row span,
-    .step-text,
-    .location-meta,
     .review-card p,
     .booking-card p,
-    .ba-caption span {
+    .step-text {
       color: var(--muted);
     }
 
@@ -391,48 +383,10 @@
 
     .card h3,
     .review-card h3,
-    .booking-card h3,
-    .location-card h3 {
+    .booking-card h3 {
       margin: 0 0 10px;
       font-size: 22px;
       color: var(--gold);
-    }
-
-    .switch-section {
-      padding-top: 24px;
-      padding-bottom: 24px;
-    }
-
-    .switch-wrap {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .switch-btn {
-      min-width: 260px;
-      text-align: center;
-      padding: 18px 26px;
-      border-radius: 18px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.03);
-      color: var(--text);
-      font-size: 18px;
-      font-weight: 700;
-      box-shadow: var(--shadow);
-      transition: 0.2s ease;
-    }
-
-    .switch-btn:hover {
-      transform: translateY(-2px);
-      border-color: rgba(212,175,55,0.4);
-    }
-
-    .switch-btn.primary {
-      background: linear-gradient(135deg, var(--gold), #f0d266);
-      color: #0a0a0a;
     }
 
     .coming {
@@ -441,73 +395,8 @@
       border-bottom: 1px solid var(--line);
     }
 
-    .process-grid {
-      grid-template-columns: repeat(5, minmax(0,1fr));
-    }
-
-    .step {
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.03);
-      border-radius: 22px;
-      padding: 22px;
-      box-shadow: var(--shadow);
-    }
-
-    .step-number {
-      width: 42px;
-      height: 42px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 999px;
-      background: rgba(212,175,55,0.12);
-      border: 1px solid var(--line);
-      color: var(--gold);
-      font-weight: 700;
-      margin-bottom: 14px;
-    }
-
-    .step h3 {
-      margin: 0 0 8px;
-      color: var(--text);
-      font-size: 18px;
-    }
-
-    .gallery-grid {
-      grid-template-columns: repeat(3, minmax(0,1fr));
-    }
-
-    .gallery-card {
-      border: 1px solid var(--line);
-      background: var(--card);
-      border-radius: 24px;
-      padding: 14px;
-      box-shadow: var(--shadow);
-    }
-
-    .gallery-card img {
-      width: 100%;
-      border-radius: 16px;
-      object-fit: cover;
-    }
-
-    .gallery-card .label {
-      color: var(--gold);
-      font-size: 14px;
-      font-weight: 700;
-      margin-top: 12px;
-    }
-
-    .gallery-card .text {
-      color: var(--muted);
-      font-size: 14px;
-      margin-top: 4px;
-    }
-
     .review-grid {
-      display: grid;
       grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 20px;
     }
 
     .stars {
@@ -543,33 +432,36 @@
       color: var(--text);
     }
 
-    .cta-center {
-      text-align: center;
-      margin-top: 30px;
+    .process-grid {
+      grid-template-columns: repeat(3, minmax(0,1fr));
     }
 
-    .location-card {
-      background: linear-gradient(180deg, rgba(212,175,55,0.08), rgba(255,255,255,0.03));
-      border-radius: 28px;
-      padding: 24px;
-      overflow: hidden;
-    }
-
-    .location-map {
-      width: 100%;
-      min-height: 360px;
-      border: 0;
+    .step {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
       border-radius: 22px;
-      display: block;
-      margin: 18px 0 20px;
-      filter: grayscale(1) contrast(1.03) brightness(0.86);
+      padding: 22px;
+      box-shadow: var(--shadow);
     }
 
-    .location-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 14px;
+    .step-number {
+      width: 42px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: rgba(212,175,55,0.12);
+      border: 1px solid var(--line);
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .step h3 {
+      margin: 0 0 8px;
+      color: var(--text);
+      font-size: 18px;
     }
 
     .contact-wrap {
@@ -587,6 +479,24 @@
       display: block;
       color: var(--text);
       margin-bottom: 4px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0 40px;
+      color: var(--muted);
+      font-size: 14px;
     }
 
     .footer-row {
@@ -624,154 +534,13 @@
       height: 22px;
     }
 
-    .fade-in {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .ba-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 24px;
-    }
-
-    .ba-card {
-      padding: 18px;
-      border-radius: 28px;
-    }
-
-    .ba-wrap {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 10;
-      overflow: hidden;
-      border-radius: 20px;
-      border: 1px solid rgba(212,175,55,0.14);
-      background: #0b0b0b;
-    }
-
-    .ba-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      user-select: none;
-      pointer-events: none;
-    }
-
-    .ba-overlay {
-      position: absolute;
-      inset: 0 auto 0 0;
-      overflow: hidden;
-      border-right: 2px solid rgba(255,255,255,0.85);
-    }
-
-    .ba-overlay .ba-img {
-      width: 100%;
-      height: 100%;
-    }
-
-    .ba-range {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      cursor: ew-resize;
-      z-index: 30;
-    }
-
-    .ba-line {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: rgba(255,255,255,0.9);
-      transform: translateX(-50%);
-      z-index: 20;
-      pointer-events: none;
-    }
-
-    .ba-handle {
-      position: absolute;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 58px;
-      height: 58px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--gold), #f0d266);
-      color: #111;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      box-shadow: 0 14px 30px rgba(0,0,0,0.32);
-      z-index: 21;
-      pointer-events: none;
-    }
-
-    .ba-handle span {
-      font-size: 22px;
-      line-height: 1;
-    }
-
-    .ba-label {
-      position: absolute;
-      top: 14px;
-      z-index: 22;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.4px;
-      border: 1px solid rgba(255,255,255,0.12);
-      backdrop-filter: blur(8px);
-    }
-
-    .ba-before {
-      left: 14px;
-      background: rgba(0,0,0,0.55);
-      color: #fff;
-    }
-
-    .ba-after {
-      right: 14px;
-      background: rgba(212,175,55,0.16);
-      color: var(--gold);
-    }
-
-    .ba-caption {
-      padding: 16px 6px 4px;
-    }
-
-    .ba-caption strong {
-      display: block;
-      color: var(--gold);
-      font-size: 18px;
-      margin-bottom: 6px;
-    }
-
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 28px 0 40px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    #despre, #servicii, #de-ce-noi, #rezultate, #before-after, #reviews, #proces, #programare, #locatie, #contact {
+    #despre, #servicii, #de-ce-noi, #programare, #reviews, #proces, #contact {
       scroll-margin-top: 100px;
     }
 
     @media (max-width: 1100px) {
-      .process-grid,
       .review-grid,
-      .booking-grid,
-      .ba-grid {
+      .process-grid {
         grid-template-columns: repeat(2, minmax(0,1fr));
       }
     }
@@ -812,53 +581,20 @@
         border: 1px solid rgba(255,255,255,0.04);
       }
 
-      .nav-links .nav-cta {
-        text-align: center;
-      }
-
-      .mobile-socials {
-        display: flex;
-        gap: 10px;
-        padding-top: 6px;
-      }
-
-      .mobile-socials a {
-        flex: 1;
-        min-height: 48px;
-        border-radius: 14px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        border: 1px solid var(--line);
-        font-weight: 700;
-      }
-
-      .mobile-socials svg {
-        width: 18px;
-        height: 18px;
-        fill: currentColor;
-      }
-
       .hero-grid,
       .grid-2,
       .grid-3,
-      .grid-4,
-      .contact-wrap,
       .hero-points,
-      .process-grid,
-      .gallery-grid,
       .review-grid,
-      .booking-grid,
-      .ba-grid {
+      .process-grid,
+      .contact-wrap,
+      .booking-grid {
         grid-template-columns: 1fr;
       }
 
       h1 { font-size: 48px; }
       .brand-logo { height: 44px; }
       .brand-name { font-size: 20px; }
-      .switch-btn { min-width: 100%; }
-      .location-map { min-height: 300px; }
     }
 
     @media (max-width: 640px) {
@@ -894,19 +630,13 @@
       <div class="nav-right">
         <div class="top-socials">
           <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.35 1.55a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z"/>
-            </svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.35 1.55a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z"/></svg>
           </a>
           <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M13.5 22v-8.2h2.77l.42-3.22H13.5V8.5c0-.93.26-1.56 1.59-1.56h1.7V4.05c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.04 1.46-4.04 4.15v2.48H7.6v3.22h2.72V22h3.18Z"/>
-            </svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8.2h2.77l.42-3.22H13.5V8.5c0-.93.26-1.56 1.59-1.56h1.7V4.05c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.04 1.46-4.04 4.15v2.48H7.6v3.22h2.72V22h3.18Z"/></svg>
           </a>
           <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="TikTok">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M15.5 2c.2 1.7 1.1 3.1 2.6 4 .9.6 1.9.9 2.9.9v3a8 8 0 0 1-3.9-1v6.1a6.1 6.1 0 1 1-6.1-6.1c.3 0 .7 0 1 .1v3.1a3 3 0 1 0 2 2.9V2h1.5Z"/>
-            </svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 2c.2 1.7 1.1 3.1 2.6 4 .9.6 1.9.9 2.9.9v3a8 8 0 0 1-3.9-1v6.1a6.1 6.1 0 1 1-6.1-6.1c.3 0 .7 0 1 .1v3.1a3 3 0 1 0 2 2.9V2h1.5Z"/></svg>
           </a>
         </div>
 
@@ -920,34 +650,11 @@
       <div class="nav-links" id="mobileMenu">
         <a href="#despre" onclick="closeMenu()">Despre</a>
         <a href="#servicii" onclick="closeMenu()">Servicii</a>
-        <a href="#programare" onclick="closeMenu()">Programare online</a>
-        <a href="#before-after" onclick="closeMenu()">Before / After</a>
+        <a href="programari.html" onclick="closeMenu()">Programare online</a>
         <a href="#reviews" onclick="closeMenu()">Recenzii</a>
-        <a href="#locatie" onclick="closeMenu()">Locație</a>
+        <a href="#contact" onclick="closeMenu()">Locație</a>
         <a href="persoane-fizice.html" onclick="closeMenu()">Persoane fizice</a>
         <a href="flote.html" onclick="closeMenu()">Persoane juridice / flote</a>
-        <a href="programari.html" class="nav-cta" onclick="closeMenu()">Programare online</a>
-
-        <div class="mobile-socials">
-          <a href="#" target="_blank" rel="noopener noreferrer" class="instagram" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.35 1.55a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z"/>
-            </svg>
-            Instagram
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="facebook" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M13.5 22v-8.2h2.77l.42-3.22H13.5V8.5c0-.93.26-1.56 1.59-1.56h1.7V4.05c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.04 1.46-4.04 4.15v2.48H7.6v3.22h2.72V22h3.18Z"/>
-            </svg>
-            Facebook
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="tiktok" aria-label="TikTok">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M15.5 2c.2 1.7 1.1 3.1 2.6 4 .9.6 1.9.9 2.9.9v3a8 8 0 0 1-3.9-1v6.1a6.1 6.1 0 1 1-6.1-6.1c.3 0 .7 0 1 .1v3.1a3 3 0 1 0 2 2.9V2h1.5Z"/>
-            </svg>
-            TikTok
-          </a>
-        </div>
       </div>
     </div>
   </header>
@@ -992,8 +699,7 @@
           <img src="logo.png" alt="Prestige Finish Logo" />
           <h3 style="margin:0 0 8px; font-size:28px;">Prestige Finish</h3>
           <p style="margin:0; color:var(--muted);">
-            Nu este un serviciu de volum. Este un spațiu în care fiecare mașină primește timp, atenție
-            și grijă reală pentru detalii.
+            Nu este un serviciu de volum. Este un spațiu în care fiecare mașină primește timp, atenție și grijă reală pentru detalii.
           </p>
         </div>
       </div>
@@ -1048,12 +754,10 @@
             <h3>Detailing interior</h3>
             <p>Serviciul principal al brandului, atât pentru clienți individuali, cât și pentru zona business.</p>
           </div>
-
           <div class="card">
             <h3>Servicii mobile</h3>
             <p>Deplasare la domiciliu pentru persoane fizice și intervenții la sediul firmei pentru colaborări corporate.</p>
           </div>
-
           <div class="card">
             <h3>Pachete dedicate</h3>
             <p>Structuri separate și personalizate atât pentru persoane fizice cât și pentru persoane juridice / flote.</p>
@@ -1067,8 +771,8 @@
         <div class="tag">De ce noi</div>
         <h2 class="section-title">O abordare premium, clară și controlată</h2>
         <p class="section-text">
-          Prestige Finish nu este gândit ca un serviciu de volum, ci ca un studio în care fiecare mașină
-          primește timp, atenție și grijă reală pentru detalii.
+          Prestige Finish nu este gândit ca un serviciu de volum, ci ca un studio în care fiecare mașină primește timp,
+          atenție și grijă reală pentru detalii.
         </p>
 
         <div class="grid-3">
@@ -1076,27 +780,22 @@
             <h3>Fără grabă</h3>
             <p>Fiecare mașină primește timpul necesar, fără compromisuri inutile.</p>
           </div>
-
           <div class="card">
             <h3>Nu lucrăm pe bandă</h3>
             <p>Nu urmărim volum mare, ci calitate constantă și controlată.</p>
           </div>
-
           <div class="card">
             <h3>Produse și materiale alese atent</h3>
             <p>Folosim soluții potrivite fiecărui tip de material, pentru rezultate corecte și sigure.</p>
           </div>
-
           <div class="card">
             <h3>Programări controlate</h3>
             <p>Proces clar de rezervare, evaluare și organizare mai bună a fiecărei lucrări.</p>
           </div>
-
           <div class="card">
             <h3>Imagine premium</h3>
             <p>Spațiul, comunicarea și serviciile sunt construite coerent, în jurul aceluiași standard.</p>
           </div>
-
           <div class="card">
             <h3>Experiență simplă</h3>
             <p>Contact rapid, comunicare clară și programare ușoară, fără complicații inutile.</p>
@@ -1151,89 +850,6 @@
       </div>
     </section>
 
-    <section id="rezultate" class="fade-in">
-      <div class="container">
-        <div class="tag">Rezultate</div>
-        <h2 class="section-title">Rezultate reale</h2>
-        <p class="section-text">
-          Aici este locul în care trebuie să pui fotografii reale cu lucrările tale. Chiar și primele lucrări
-          contează, pentru că exact ele construiesc încrederea.
-        </p>
-
-        <div class="gallery-grid">
-          <div class="gallery-card">
-            <img src="before-after-1.jpg" alt="Rezultat detailing 1">
-            <div class="label">Lucrare 1</div>
-            <div class="text">Înlocuiește această imagine cu un rezultat real înainte / după.</div>
-          </div>
-
-          <div class="gallery-card">
-            <img src="before-after-2.jpg" alt="Rezultat detailing 2">
-            <div class="label">Lucrare 2</div>
-            <div class="text">Poți pune interior, scaune, portbagaj sau tapițerie.</div>
-          </div>
-
-          <div class="gallery-card">
-            <img src="before-after-3.jpg" alt="Rezultat detailing 3">
-            <div class="label">Lucrare 3</div>
-            <div class="text">Folosește doar poze reale, clare și curate.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="before-after" class="coming fade-in">
-      <div class="container">
-        <div class="tag">Before / After</div>
-        <h2 class="section-title">Diferența se vede imediat</h2>
-        <p class="section-text">
-          Mută sliderul și vezi transformarea. Înlocuiește imaginile de mai jos cu pozele tale reale.
-        </p>
-
-        <div class="ba-grid">
-          <div class="ba-card">
-            <div class="ba-wrap" data-ba>
-              <img src="images/interior-dupa.jpg" alt="Interior după detailing" class="ba-img">
-              <div class="ba-overlay" style="width:50%;">
-                <img src="images/interior-inainte.jpg" alt="Interior înainte detailing" class="ba-img">
-              </div>
-              <input type="range" min="0" max="100" value="50" class="ba-range" aria-label="Before after slider">
-              <div class="ba-line" style="left:50%;"></div>
-              <div class="ba-handle" style="left:50%;"><span>↔</span></div>
-              <div class="ba-label ba-before">Înainte</div>
-              <div class="ba-label ba-after">După</div>
-            </div>
-            <div class="ba-caption">
-              <strong>Interior complet</strong>
-              <span>Ideal pentru poze cu diferență clară: scaune, bord, mochete, portbagaj.</span>
-            </div>
-          </div>
-
-          <div class="ba-card">
-            <div class="ba-wrap" data-ba>
-              <img src="images/faruri-dupa.jpg" alt="Faruri după restaurare" class="ba-img">
-              <div class="ba-overlay" style="width:50%;">
-                <img src="images/faruri-inainte.jpg" alt="Faruri înainte restaurare" class="ba-img">
-              </div>
-              <input type="range" min="0" max="100" value="50" class="ba-range" aria-label="Before after slider">
-              <div class="ba-line" style="left:50%;"></div>
-              <div class="ba-handle" style="left:50%;"><span>↔</span></div>
-              <div class="ba-label ba-before">Înainte</div>
-              <div class="ba-label ba-after">După</div>
-            </div>
-            <div class="ba-caption">
-              <strong>Restaurare faruri</strong>
-              <span>Perfect pentru diferențe vizibile rapid și foarte convingătoare.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="cta-center">
-          <a href="programari.html" class="btn btn-primary">Rezervă online</a>
-        </div>
-      </div>
-    </section>
-
     <section id="reviews" class="coming fade-in">
       <div class="container">
         <div class="tag">Recenzii</div>
@@ -1246,25 +862,17 @@
         <div class="review-grid">
           <div class="review-card">
             <div class="stars">★★★★★</div>
-            <p>
-              Aici poți pune primul feedback real primit de la un client, împreună cu o lucrare înainte / după.
-            </p>
+            <p>Aici poți pune primul feedback real primit de la un client, împreună cu o lucrare înainte / după.</p>
             <div class="review-name">Client real • în curând</div>
           </div>
-
           <div class="review-card">
             <div class="stars">★★★★★</div>
-            <p>
-              O recenzie scurtă, clară și sinceră valorează mai mult decât zece texte care par artificiale.
-            </p>
+            <p>O recenzie scurtă, clară și sinceră valorează mai mult decât zece texte care par artificiale.</p>
             <div class="review-name">Client real • în curând</div>
           </div>
-
           <div class="review-card">
             <div class="stars">★★★★★</div>
-            <p>
-              După primele lucrări, aici vei putea arăta exact cum au perceput clienții experiența Prestige Finish.
-            </p>
+            <p>După primele lucrări, aici vei putea arăta exact cum au perceput clienții experiența Prestige Finish.</p>
             <div class="review-name">Client real • în curând</div>
           </div>
         </div>
@@ -1276,8 +884,7 @@
         <div class="tag">Proces</div>
         <h2 class="section-title">Cum decurge colaborarea</h2>
         <p class="section-text">
-          Am gândit procesul cât mai simplu, astfel încât să știi clar ce urmează de la primul contact
-          până la predarea mașinii.
+          Am gândit procesul cât mai simplu, astfel încât să știi clar ce urmează de la primul contact până la predarea mașinii.
         </p>
 
         <div class="process-grid">
@@ -1286,60 +893,15 @@
             <h3>Rezervi online</h3>
             <div class="step-text">Alegi serviciul, data disponibilă și completezi evaluarea mașinii.</div>
           </div>
-
           <div class="step">
             <div class="step-number">2</div>
             <h3>Primești confirmarea</h3>
             <div class="step-text">Slotul tău este rezervat imediat, direct în sistem.</div>
           </div>
-
           <div class="step">
             <div class="step-number">3</div>
             <h3>Ajungi la atelier</h3>
             <div class="step-text">Ne ocupăm de mașina ta în intervalul rezervat.</div>
-          </div>
-
-          <div class="step">
-            <div class="step-number">4</div>
-            <h3>Realizăm intervenția</h3>
-            <div class="step-text">Lucrăm atent, cu focus pe curățenie, igienizare și detalii.</div>
-          </div>
-
-          <div class="step">
-            <div class="step-number">5</div>
-            <h3>Predăm mașina</h3>
-            <div class="step-text">Primești un interior vizibil îmbunătățit și o experiență premium.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="locatie" class="coming fade-in">
-      <div class="container">
-        <div class="tag">Locație</div>
-        <h2 class="section-title">Vizitează-ne în Ploiești</h2>
-        <p class="section-text">
-          Ne găsești la <strong>Strada Libertății, 107592 Ploiești</strong>. Poți deschide rapid locația în Waze sau Google Maps și ajungi direct la noi.
-        </p>
-
-        <div class="location-card">
-          <h3>Prestige Finish • Strada Libertății, 107592 Ploiești</h3>
-          <div class="location-meta">Ploiești • Acces rapid • Navigare directă</div>
-
-          <iframe
-            class="location-map"
-            src="https://www.google.com/maps?q=Strada%20Libert%C4%83%C8%9Bii%20107592%20Ploie%C8%99ti&z=17&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-
-          <p>
-            Pentru o experiență cât mai simplă, poți deschide direct navigarea în aplicația preferată și ajungi rapid la locația noastră.
-          </p>
-
-          <div class="location-actions">
-            <a class="btn btn-primary" href="https://waze.com/ul?q=Strada%20Libert%C4%83%C8%9Bii%20107592%20Ploie%C8%99ti&navigate=yes" target="_blank" rel="noopener noreferrer">Navighează cu Waze</a>
-            <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=Strada+Libertății+107592+Ploiești" target="_blank" rel="noopener noreferrer">Deschide în Google Maps</a>
           </div>
         </div>
       </div>
@@ -1352,7 +914,7 @@
           <h2 class="section-title">Contact Prestige Finish</h2>
           <p class="section-text">
             Pentru programări, informații sau colaborări, ne poți contacta direct telefonic, prin formularul de contact
-            sau prin sistemul de programare online. Alegi varianta care ți se potrivește cel mai bine.
+            sau prin sistemul de programare online.
           </p>
 
           <div class="hero-actions">
@@ -1419,25 +981,6 @@
     }, { threshold: 0.12 });
 
     fadeEls.forEach(el => observer.observe(el));
-
-    document.querySelectorAll('[data-ba]').forEach(function(wrapper) {
-      const range = wrapper.querySelector('.ba-range');
-      const overlay = wrapper.querySelector('.ba-overlay');
-      const line = wrapper.querySelector('.ba-line');
-      const handle = wrapper.querySelector('.ba-handle');
-
-      function updateSlider(value) {
-        overlay.style.width = value + '%';
-        line.style.left = value + '%';
-        handle.style.left = value + '%';
-      }
-
-      updateSlider(range.value);
-
-      range.addEventListener('input', function() {
-        updateSlider(this.value);
-      });
-    });
   </script>
 </body>
 </html>
