@@ -99,10 +99,6 @@
       justify-content: flex-end;
     }
 
-    .nav-links a {
-      transition: 0.2s ease;
-    }
-
     .nav-links a:hover {
       color: var(--text);
     }
@@ -132,12 +128,10 @@
       align-items: center;
       justify-content: center;
       transition: 0.2s ease;
-      box-shadow: var(--shadow);
     }
 
     .top-social:hover {
       transform: translateY(-2px);
-      border-color: rgba(212,175,55,0.35);
       background: rgba(212,175,55,0.08);
     }
 
@@ -159,7 +153,6 @@
       justify-content: center;
       cursor: pointer;
       flex-shrink: 0;
-      box-shadow: var(--shadow);
     }
 
     .menu-toggle svg {
@@ -247,10 +240,9 @@
       border-radius: 999px;
       border: 1px solid transparent;
       font-weight: 700;
-      transition: 0.2s ease;
-      box-shadow: var(--shadow);
-      cursor: pointer;
       text-align: center;
+      cursor: pointer;
+      transition: 0.2s ease;
     }
 
     .btn:hover { transform: translateY(-2px); }
@@ -365,13 +357,13 @@
     }
 
     .widget-holder {
-      min-height: 920px;
+      min-height: 980px;
       background: #0b0b0b;
     }
 
     .widget-holder iframe {
       width: 100% !important;
-      min-height: 920px !important;
+      min-height: 980px !important;
       border: 0 !important;
       border-radius: 20px !important;
       background: #0b0b0b !important;
@@ -425,11 +417,6 @@
       text-decoration: none;
       box-shadow: 0 8px 20px rgba(0,0,0,0.35);
       z-index: 9999;
-      transition: 0.3s ease;
-    }
-
-    .whatsapp-btn:hover {
-      transform: scale(1.08);
     }
 
     .whatsapp-btn img {
@@ -438,13 +425,8 @@
     }
 
     @media (max-width: 980px) {
-      .top-socials {
-        display: none;
-      }
-
-      .menu-toggle {
-        display: inline-flex;
-      }
+      .top-socials { display: none; }
+      .menu-toggle { display: inline-flex; }
 
       .nav-links {
         position: absolute;
@@ -459,46 +441,15 @@
         background: rgba(5,5,5,0.98);
         border: 1px solid var(--line);
         border-radius: 20px;
-        box-shadow: var(--shadow);
       }
 
-      .nav-links.active {
-        display: flex;
-      }
+      .nav-links.active { display: flex; }
 
       .nav-links a {
         padding: 14px 16px;
         border-radius: 14px;
         background: rgba(255,255,255,0.03);
         border: 1px solid rgba(255,255,255,0.04);
-      }
-
-      .nav-links .nav-cta {
-        text-align: center;
-      }
-
-      .mobile-socials {
-        display: flex;
-        gap: 10px;
-        padding-top: 6px;
-      }
-
-      .mobile-socials a {
-        flex: 1;
-        min-height: 48px;
-        border-radius: 14px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        border: 1px solid var(--line);
-        font-weight: 700;
-      }
-
-      .mobile-socials svg {
-        width: 18px;
-        height: 18px;
-        fill: currentColor;
       }
 
       .hero-grid,
@@ -526,7 +477,7 @@
 
       .widget-holder,
       .widget-holder iframe {
-        min-height: 980px !important;
+        min-height: 1100px !important;
       }
 
       .whatsapp-btn {
@@ -549,13 +500,13 @@
       <div class="nav-right">
         <div class="top-socials">
           <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.35 1.55a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.35 1.55a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z"/></svg>
           </a>
           <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8.2h2.77l.42-3.22H13.5V8.5c0-.93.26-1.56 1.59-1.56h1.7V4.05c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.04 1.46-4.04 4.15v2.48H7.6v3.22h2.72V22h3.18Z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M13.5 22v-8.2h2.77l.42-3.22H13.5V8.5c0-.93.26-1.56 1.59-1.56h1.7V4.05c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.04 1.46-4.04 4.15v2.48H7.6v3.22h2.72V22h3.18Z"/></svg>
           </a>
           <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="TikTok">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 2c.2 1.7 1.1 3.1 2.6 4 .9.6 1.9.9 2.9.9v3a8 8 0 0 1-3.9-1v6.1a6.1 6.1 0 1 1-6.1-6.1c.3 0 .7 0 1 .1v3.1a3 3 0 1 0 2 2.9V2h1.5Z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M15.5 2c.2 1.7 1.1 3.1 2.6 4 .9.6 1.9.9 2.9.9v3a8 8 0 0 1-3.9-1v6.1a6.1 6.1 0 1 1-6.1-6.1c.3 0 .7 0 1 .1v3.1a3 3 0 1 0 2 2.9V2h1.5Z"/></svg>
           </a>
         </div>
 
@@ -572,12 +523,6 @@
         <a href="flote.html" onclick="closeMenu()">Flote</a>
         <a href="formular-contact.html" onclick="closeMenu()">Contact</a>
         <a href="programari.html" class="nav-cta" onclick="closeMenu()">Programare online</a>
-
-        <div class="mobile-socials">
-          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
-          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
-          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TikTok</a>
-        </div>
       </div>
     </div>
   </header>
@@ -635,7 +580,7 @@
           </div>
           <div class="mini-card">
             <h3>Integrat</h3>
-            <p>Totul se întâmplă în pagină, fără formularul vechi simplificat.</p>
+            <p>Totul se întâmplă în pagină, fără să pară o platformă separată.</p>
           </div>
         </div>
       </div>
@@ -713,20 +658,6 @@
     function closeMenu() {
       document.getElementById('mobileMenu').classList.remove('active');
     }
-
-    document.addEventListener('click', function(event) {
-      const menu = document.getElementById('mobileMenu');
-      const toggle = document.querySelector('.menu-toggle');
-
-      if (!menu || !toggle) return;
-
-      const clickedInsideMenu = menu.contains(event.target);
-      const clickedToggle = toggle.contains(event.target);
-
-      if (!clickedInsideMenu && !clickedToggle) {
-        menu.classList.remove('active');
-      }
-    });
 
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
