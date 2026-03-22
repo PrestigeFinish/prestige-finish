@@ -6,7 +6,6 @@
   <title>Prestige Finish Corporate Care | Persoane juridice / flote</title>
   <link rel="icon" type="image/png" href="logo.png" />
   <meta name="description" content="Prestige Finish Corporate Care - servicii premium pentru persoane juridice și flote: detailing interior, întreținere recurentă, intervenții mobile la sediul firmei și soluții corporate." />
-  <meta name="keywords" content="detailing flote ploiesti, persoane juridice detailing, corporate detailing ploiesti, intretinere flote auto, detailing mobil firma, prestige finish corporate care">
 
   <style>
     :root {
@@ -18,8 +17,6 @@
       --line: rgba(212,175,55,0.18);
       --shadow: 0 20px 60px rgba(0,0,0,0.45);
       --green: #25D366;
-      --blue: #1877f2;
-      --black: #000000;
     }
 
     * { box-sizing: border-box; }
@@ -40,10 +37,7 @@
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
 
-    .container {
-      width: min(1180px, calc(100% - 32px));
-      margin: 0 auto;
-    }
+    .container { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
 
     .topbar {
       position: sticky;
@@ -63,13 +57,7 @@
       padding: 16px 0;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 0;
-    }
-
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
     .brand-logo {
       height: 54px;
       width: auto;
@@ -77,7 +65,6 @@
       object-fit: contain;
       flex-shrink: 0;
     }
-
     .brand-name {
       color: var(--gold);
       font-size: 22px;
@@ -86,11 +73,7 @@
       white-space: nowrap;
     }
 
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
+    .nav-right { display: flex; align-items: center; gap: 16px; }
 
     .nav-links {
       display: flex;
@@ -102,22 +85,7 @@
       justify-content: flex-end;
     }
 
-    .nav-links a {
-      transition: 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-    }
-
-    .nav-cta {
-      padding: 10px 16px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      color: var(--gold);
-      background: rgba(212,175,55,0.06);
-      font-weight: 700;
-    }
+    .nav-links a:hover { color: var(--text); }
 
     .top-socials {
       display: flex;
@@ -134,14 +102,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      transition: 0.2s ease;
       box-shadow: var(--shadow);
-    }
-
-    .top-social:hover {
-      transform: translateY(-2px);
-      border-color: rgba(212,175,55,0.35);
-      background: rgba(212,175,55,0.08);
     }
 
     .top-social svg {
@@ -161,14 +122,21 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      flex-shrink: 0;
-      box-shadow: var(--shadow);
     }
 
     .menu-toggle svg {
       width: 26px;
       height: 26px;
       stroke: var(--gold);
+    }
+
+    .nav-cta {
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--gold);
+      background: rgba(212,175,55,0.06);
+      font-weight: 700;
     }
 
     .hero {
@@ -221,7 +189,7 @@
 
     h1 {
       margin: 0 0 16px;
-      font-size: clamp(40px, 7vw, 78px);
+      font-size: clamp(42px, 7vw, 78px);
       line-height: 0.98;
       letter-spacing: -1px;
       max-width: 780px;
@@ -256,13 +224,10 @@
       border-radius: 999px;
       border: 1px solid transparent;
       font-weight: 700;
-      transition: 0.2s ease;
-      box-shadow: var(--shadow);
-      cursor: pointer;
       text-align: center;
+      cursor: pointer;
+      box-shadow: var(--shadow);
     }
-
-    .btn:hover { transform: translateY(-2px); }
 
     .btn-primary {
       background: linear-gradient(135deg, var(--gold), #f0d266);
@@ -275,11 +240,7 @@
       color: var(--text);
     }
 
-    .hero-points,
-    .grid-2,
-    .grid-3,
-    .grid-4,
-    .review-grid {
+    .hero-points, .grid-2, .grid-3, .review-grid, .process-grid {
       display: grid;
       gap: 20px;
     }
@@ -291,12 +252,10 @@
 
     .grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
     .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
-    .grid-4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
+    .review-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    .process-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
 
-    .mini-card,
-    .card,
-    .review-card,
-    .booking-card {
+    .mini-card, .card, .review-card, .booking-card, .step {
       border: 1px solid var(--line);
       background: var(--card);
       border-radius: 24px;
@@ -311,12 +270,7 @@
       font-size: 14px;
     }
 
-    .mini-card span,
-    .card p,
-    .section-text,
-    .contact-row span,
-    .review-card p,
-    .booking-card p {
+    .mini-card span, .card p, .section-text, .review-card p, .contact-row span, .booking-card p, .step-text {
       color: var(--muted);
     }
 
@@ -359,21 +313,9 @@
       box-shadow: 0 0 12px rgba(212,175,55,0.7);
     }
 
-    section {
-      padding: 78px 0;
-    }
-
-    .section-title {
-      font-size: clamp(30px, 4vw, 48px);
-      margin: 0 0 12px;
-    }
-
-    .section-text {
-      max-width: 760px;
-      margin: 0 0 28px;
-      font-size: 17px;
-    }
-
+    section { padding: 78px 0; }
+    .section-title { font-size: clamp(30px, 4vw, 48px); margin: 0 0 12px; }
+    .section-text { max-width: 760px; margin: 0 0 28px; font-size: 17px; }
     .tag {
       display: inline-flex;
       margin-bottom: 14px;
@@ -383,25 +325,29 @@
       letter-spacing: 1.4px;
     }
 
-    .card h3,
-    .review-card h3,
-    .booking-card h3 {
+    .card h3, .review-card h3, .booking-card h3, .step h3 {
       margin: 0 0 10px;
       font-size: 22px;
       color: var(--gold);
-    }
-
-    .price {
-      display: block;
-      margin-top: 14px;
-      color: var(--gold);
-      font-weight: 700;
     }
 
     .coming {
       background: linear-gradient(180deg, rgba(212,175,55,0.08), rgba(255,255,255,0.02));
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
+    }
+
+    .stars {
+      color: var(--gold);
+      font-size: 18px;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+
+    .review-name {
+      margin-top: 14px;
+      font-weight: 700;
+      color: var(--text);
     }
 
     .booking-grid {
@@ -416,29 +362,21 @@
       margin: 18px 0 24px;
     }
 
-    .booking-point {
-      color: var(--muted);
-    }
+    .booking-point { color: var(--muted); }
+    .booking-point strong { color: var(--text); }
 
-    .booking-point strong {
-      color: var(--text);
-    }
-
-    .review-grid {
-      grid-template-columns: repeat(3, minmax(0,1fr));
-    }
-
-    .stars {
+    .step-number {
+      width: 42px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: rgba(212,175,55,0.12);
+      border: 1px solid var(--line);
       color: var(--gold);
-      font-size: 18px;
-      margin-bottom: 10px;
-      letter-spacing: 2px;
-    }
-
-    .review-name {
-      margin-top: 14px;
       font-weight: 700;
-      color: var(--text);
+      margin-bottom: 14px;
     }
 
     .contact-wrap {
@@ -488,11 +426,6 @@
       text-decoration: none;
       box-shadow: 0 8px 20px rgba(0,0,0,0.35);
       z-index: 9999;
-      transition: 0.3s ease;
-    }
-
-    .whatsapp-btn:hover {
-      transform: scale(1.08);
     }
 
     .whatsapp-btn img {
@@ -511,25 +444,9 @@
       transform: translateY(0);
     }
 
-    #servicii, #pachete, #programare, #movement, #reviews, #contact {
-      scroll-margin-top: 100px;
-    }
-
-    @media (max-width: 1100px) {
-      .review-grid,
-      .booking-grid {
-        grid-template-columns: repeat(2, minmax(0,1fr));
-      }
-    }
-
     @media (max-width: 980px) {
-      .top-socials {
-        display: none;
-      }
-
-      .menu-toggle {
-        display: inline-flex;
-      }
+      .top-socials { display: none; }
+      .menu-toggle { display: inline-flex; }
 
       .nav-links {
         position: absolute;
@@ -544,12 +461,9 @@
         background: rgba(5,5,5,0.98);
         border: 1px solid var(--line);
         border-radius: 20px;
-        box-shadow: var(--shadow);
       }
 
-      .nav-links.active {
-        display: flex;
-      }
+      .nav-links.active { display: flex; }
 
       .nav-links a {
         padding: 14px 16px;
@@ -558,42 +472,7 @@
         border: 1px solid rgba(255,255,255,0.04);
       }
 
-      .nav-links .nav-cta {
-        text-align: center;
-      }
-
-      .mobile-socials {
-        display: flex;
-        gap: 10px;
-        padding-top: 6px;
-      }
-
-      .mobile-socials a {
-        flex: 1;
-        min-height: 48px;
-        border-radius: 14px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        border: 1px solid var(--line);
-        font-weight: 700;
-      }
-
-      .mobile-socials svg {
-        width: 18px;
-        height: 18px;
-        fill: currentColor;
-      }
-
-      .hero-grid,
-      .grid-2,
-      .grid-3,
-      .grid-4,
-      .contact-wrap,
-      .hero-points,
-      .review-grid,
-      .booking-grid {
+      .hero-grid, .grid-2, .grid-3, .hero-points, .review-grid, .process-grid, .booking-grid, .contact-wrap {
         grid-template-columns: 1fr;
       }
 
@@ -603,24 +482,9 @@
     }
 
     @media (max-width: 640px) {
-      .hero {
-        padding: 74px 0 42px;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-      }
-
-      .hero-actions .btn {
-        width: 100%;
-      }
-
-      .whatsapp-btn {
-        right: 16px;
-        left: 16px;
-        bottom: 16px;
-        justify-content: center;
-      }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; }
+      .whatsapp-btn { right: 16px; left: 16px; bottom: 16px; justify-content: center; }
     }
   </style>
 </head>
@@ -634,58 +498,23 @@
 
       <div class="nav-right">
         <div class="top-socials">
-          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.35 1.55a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z"/>
-            </svg>
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M13.5 22v-8.2h2.77l.42-3.22H13.5V8.5c0-.93.26-1.56 1.59-1.56h1.7V4.05c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.04 1.46-4.04 4.15v2.48H7.6v3.22h2.72V22h3.18Z"/>
-            </svg>
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="TikTok">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M15.5 2c.2 1.7 1.1 3.1 2.6 4 .9.6 1.9.9 2.9.9v3a8 8 0 0 1-3.9-1v6.1a6.1 6.1 0 1 1-6.1-6.1c.3 0 .7 0 1 .1v3.1a3 3 0 1 0 2 2.9V2h1.5Z"/>
-            </svg>
-          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.35 1.55a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z"/></svg></a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8.2h2.77l.42-3.22H13.5V8.5c0-.93.26-1.56 1.59-1.56h1.7V4.05c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.04 1.46-4.04 4.15v2.48H7.6v3.22h2.72V22h3.18Z"/></svg></a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M15.5 2c.2 1.7 1.1 3.1 2.6 4 .9.6 1.9.9 2.9.9v3a8 8 0 0 1-3.9-1v6.1a6.1 6.1 0 1 1-6.1-6.1c.3 0 .7 0 1 .1v3.1a3 3 0 1 0 2 2.9V2h1.5Z"/></svg></a>
         </div>
 
         <button class="menu-toggle" onclick="toggleMenu()" aria-label="Deschide meniul">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
-            <path d="M4 7H20M4 12H20M4 17H20" />
-          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 7H20M4 12H20M4 17H20" /></svg>
         </button>
       </div>
 
       <div class="nav-links" id="mobileMenu">
         <a href="#servicii" onclick="closeMenu()">Servicii</a>
         <a href="#pachete" onclick="closeMenu()">Pachete</a>
-        <a href="#programare" onclick="closeMenu()">Programare online</a>
-        <a href="#movement" onclick="closeMenu()">Corporate Movement</a>
+        <a href="programari.html" onclick="closeMenu()">Programare online</a>
         <a href="#reviews" onclick="closeMenu()">Recenzii</a>
-        <a href="#contact" class="nav-cta" onclick="closeMenu()">Contact</a>
-
-        <div class="mobile-socials">
-          <a href="#" target="_blank" rel="noopener noreferrer" class="instagram" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.35 1.55a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z"/>
-            </svg>
-            Instagram
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="facebook" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M13.5 22v-8.2h2.77l.42-3.22H13.5V8.5c0-.93.26-1.56 1.59-1.56h1.7V4.05c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.04 1.46-4.04 4.15v2.48H7.6v3.22h2.72V22h3.18Z"/>
-            </svg>
-            Facebook
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="tiktok" aria-label="TikTok">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M15.5 2c.2 1.7 1.1 3.1 2.6 4 .9.6 1.9.9 2.9.9v3a8 8 0 0 1-3.9-1v6.1a6.1 6.1 0 1 1-6.1-6.1c.3 0 .7 0 1 .1v3.1a3 3 0 1 0 2 2.9V2h1.5Z"/>
-            </svg>
-            TikTok
-          </a>
-        </div>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+        <a href="index.html" onclick="closeMenu()">Acasă</a>
       </div>
     </div>
   </header>
@@ -744,33 +573,18 @@
           Corporate Care este gândit pentru firme care vor întreținere consecventă, organizare mai bună și intervenții adaptate tipului de flotă.
         </p>
 
-        <div class="grid-4">
+        <div class="grid-3">
           <div class="card">
-            <div class="tag">Interior</div>
             <h3>Detailing interior flotă</h3>
             <p>Curățare completă a interiorului pentru mașini de companie, autoturisme executive sau vehicule de lucru.</p>
-            <span class="price">Serviciu principal</span>
           </div>
-
           <div class="card">
-            <div class="tag">Recurent</div>
             <h3>Întreținere periodică</h3>
             <p>Intervenții recurente pentru păstrarea constantă a unei imagini curate și profesionale.</p>
-            <span class="price">Disponibil</span>
           </div>
-
           <div class="card">
-            <div class="tag">Mobil</div>
             <h3>Intervenții la sediul firmei</h3>
             <p>Disponibil pentru anumite tipuri de servicii și colaborări, în funcție de locație și volum.</p>
-            <span class="price">La cerere</span>
-          </div>
-
-          <div class="card">
-            <div class="tag">Corporate</div>
-            <h3>Pachete dedicate</h3>
-            <p>Soluții adaptate numărului de vehicule, frecvenței și tipului de utilizare al flotei.</p>
-            <span class="price">Personalizat</span>
           </div>
         </div>
       </div>
@@ -788,25 +602,20 @@
           <div class="card">
             <h3>Corporate Essential</h3>
             <p>Întreținere regulată pentru vehiculele care au nevoie de o imagine curată și constantă.</p>
-            <span class="price">Pachet de bază</span>
           </div>
-
           <div class="card">
             <h3>Corporate Premium</h3>
             <p>Curățare mai amplă și atenție extinsă la detalii, pentru vehicule de reprezentare sau utilizare frecventă.</p>
-            <span class="price">Pachet recomandat</span>
           </div>
-
           <div class="card">
             <h3>Fleet Prestige Plan</h3>
             <p>Plan complet pentru flote și colaborări recurente, cu organizare dedicată și intervenții programate.</p>
-            <span class="price">Pachet premium personalizat</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="programare" class="coming fade-in">
+    <section class="coming fade-in">
       <div class="container">
         <div class="tag">Programare online</div>
         <h2 class="section-title">Rezervă direct online sau trimite o solicitare</h2>
@@ -816,87 +625,52 @@
 
         <div class="booking-grid">
           <div class="booking-card">
-            <h3>Programare simplă și rapidă</h3>
-            <p>
-              Utilă pentru rezervări punctuale, servicii standard și selectarea unui interval disponibil direct în sistem.
-            </p>
-
+            <h3>Programare simplă și clară</h3>
+            <p>Pentru rezervări punctuale poți folosi sistemul de programare online.</p>
             <div class="booking-points">
               <div class="booking-point">✔ <strong>Alegi serviciul</strong></div>
               <div class="booking-point">✔ <strong>Selectezi data și ora</strong></div>
               <div class="booking-point">✔ <strong>Completezi datele necesare</strong></div>
               <div class="booking-point">✔ <strong>Rezervarea intră direct în sistem</strong></div>
             </div>
-
             <a class="btn btn-primary" href="programari.html">Deschide programarea online</a>
           </div>
 
           <div class="booking-card">
             <h3>Formular de contact</h3>
-            <p>
-              Ideal pentru colaborări recurente, solicitări corporate, flote mai mari sau discuții privind pachete personalizate.
-            </p>
-
+            <p>Pentru colaborări recurente, volume mai mari sau cereri speciale poți trimite o solicitare directă.</p>
             <div class="booking-points">
               <div class="booking-point">• potrivit pentru firme și flote</div>
               <div class="booking-point">• util pentru cereri speciale</div>
               <div class="booking-point">• bun pentru colaborări recurente</div>
             </div>
-
-            <a class="btn btn-secondary" href="formular-contact.html">Deschide formularul de contact</a>
+            <a class="btn btn-secondary" href="formular-contact.html">Trimite formularul</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="movement" class="coming fade-in">
+    <section class="coming fade-in">
       <div class="container">
-        <div class="tag">Corporate Movement</div>
-        <h2 class="section-title">Serviciu mobil pentru companii și flote</h2>
-        <p class="section-text">
-          Corporate Movement este opțiunea prin care echipa Prestige Finish se poate deplasa la sediul companiei pentru servicii selectate,
-          în funcție de locație, numărul de vehicule și tipul intervenției.
-        </p>
+        <div class="tag">Proces</div>
+        <h2 class="section-title">Cum decurge colaborarea corporate</h2>
+        <p class="section-text">Pentru zona business, procesul trebuie să fie clar, eficient și ușor de integrat în activitatea firmei.</p>
 
-        <div class="grid-3">
-          <div class="card">
-            <h3>Intervenții la sediu</h3>
-            <p>Potrivite pentru firme care doresc eficiență și mai puțină deplasare a vehiculelor.</p>
+        <div class="process-grid">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Trimite solicitarea</h3>
+            <div class="step-text">Ne contactezi prin formular sau programare online, în funcție de nevoie.</div>
           </div>
-          <div class="card">
-            <h3>Organizare mai bună</h3>
-            <p>Planificare clară pentru echipe, programări și vehicule utilizate zilnic.</p>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Stabilim intervenția</h3>
+            <div class="step-text">Alegem tipul de serviciu, frecvența și modul de desfășurare.</div>
           </div>
-          <div class="card">
-            <h3>Adaptat colaborării</h3>
-            <p>Disponibil în funcție de tipul de colaborare, frecvență și cerințele operaționale.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="fade-in">
-      <div class="container">
-        <div class="tag">De ce noi</div>
-        <h2 class="section-title">Corporate Care înseamnă predictibilitate și standard</h2>
-        <p class="section-text">
-          Pentru zona business, accentul cade pe organizare, imagine și constanță. Serviciile sunt gândite pentru companii care apreciază claritatea și execuția corectă.
-        </p>
-
-        <div class="grid-3">
-          <div class="card">
-            <h3>Fără improvizații</h3>
-            <p>Intervențiile sunt planificate și realizate cu atenție, fără compromisuri inutile.</p>
-          </div>
-
-          <div class="card">
-            <h3>Materiale alese atent</h3>
-            <p>Produsele utilizate sunt selectate în funcție de suprafețe și scopul intervenției.</p>
-          </div>
-
-          <div class="card">
-            <h3>Colaborare clară</h3>
-            <p>Proces simplu pentru rezervări punctuale, solicitări corporate și colaborări recurente.</p>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Executăm lucrarea</h3>
+            <div class="step-text">Intervenția este realizată atent, organizat și în standardul stabilit.</div>
           </div>
         </div>
       </div>
@@ -906,32 +680,22 @@
       <div class="container">
         <div class="tag">Recenzii</div>
         <h2 class="section-title">Feedback real din colaborări reale</h2>
-        <p class="section-text">
-          După primele colaborări corporate, aici vei putea afișa feedback real din zona business și flote.
-        </p>
+        <p class="section-text">După primele colaborări corporate, aici vei putea afișa feedback real din zona business și flote.</p>
 
         <div class="review-grid">
           <div class="review-card">
             <div class="stars">★★★★★</div>
-            <p>
-              Aici poți pune un prim feedback real de la o companie sau un client business.
-            </p>
+            <p>Aici poți pune un prim feedback real de la o companie sau un client business.</p>
             <div class="review-name">Client corporate • în curând</div>
           </div>
-
           <div class="review-card">
             <div class="stars">★★★★★</div>
-            <p>
-              Recenziile din zona business au un impact mare atunci când sunt clare și autentice.
-            </p>
+            <p>Recenziile din zona business au un impact mare atunci când sunt clare și autentice.</p>
             <div class="review-name">Partener business • în curând</div>
           </div>
-
           <div class="review-card">
             <div class="stars">★★★★★</div>
-            <p>
-              După primele proiecte, aici vei putea arăta modul în care au perceput companiile colaborarea cu Prestige Finish.
-            </p>
+            <p>După primele proiecte, aici vei putea arăta modul în care au perceput companiile colaborarea cu Prestige Finish.</p>
             <div class="review-name">Flotă / companie • în curând</div>
           </div>
         </div>
@@ -983,34 +747,25 @@
     function toggleMenu() {
       document.getElementById('mobileMenu').classList.toggle('active');
     }
-
     function closeMenu() {
       document.getElementById('mobileMenu').classList.remove('active');
     }
-
     document.addEventListener('click', function(event) {
       const menu = document.getElementById('mobileMenu');
       const toggle = document.querySelector('.menu-toggle');
-
       if (!menu || !toggle) return;
-
       const clickedInsideMenu = menu.contains(event.target);
       const clickedToggle = toggle.contains(event.target);
-
       if (!clickedInsideMenu && !clickedToggle) {
         menu.classList.remove('active');
       }
     });
-
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.12 });
-
     fadeEls.forEach(el => observer.observe(el));
   </script>
 </body>
