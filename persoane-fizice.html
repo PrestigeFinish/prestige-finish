@@ -6,7 +6,6 @@
   <title>Prestige Finish Private Care | Persoane fizice</title>
   <link rel="icon" type="image/png" href="logo.png" />
   <meta name="description" content="Prestige Finish Private Care - servicii premium pentru persoane fizice: detailing interior, igienizare, detailing motor, restaurare faruri și programare online." />
-  <meta name="keywords" content="detailing interior ploiesti, persoane fizice, igienizare auto ploiesti, detailing motor ploiesti, restaurare faruri ploiesti, programare online detailing">
 
   <style>
     :root {
@@ -18,13 +17,10 @@
       --line: rgba(212,175,55,0.18);
       --shadow: 0 20px 60px rgba(0,0,0,0.45);
       --green: #25D366;
-      --blue: #1877f2;
-      --black: #000000;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
@@ -40,15 +36,10 @@
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
 
-    .container {
-      width: min(1180px, calc(100% - 32px));
-      margin: 0 auto;
-    }
+    .container { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
 
     .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      position: sticky; top: 0; z-index: 1000;
       background: rgba(5,5,5,0.88);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--line);
@@ -56,138 +47,47 @@
 
     .nav {
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 16px 0;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; padding: 16px 0;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 0;
-    }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .brand-logo { height: 54px; border-radius: 10px; object-fit: contain; flex-shrink: 0; }
+    .brand-name { color: var(--gold); font-size: 22px; font-weight: 700; white-space: nowrap; }
 
-    .brand-logo {
-      height: 54px;
-      width: auto;
-      border-radius: 10px;
-      object-fit: contain;
-      flex-shrink: 0;
-    }
-
-    .brand-name {
-      color: var(--gold);
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: 0.4px;
-      white-space: nowrap;
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
+    .nav-right { display: flex; align-items: center; gap: 16px; }
     .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      color: var(--muted);
-      font-size: 14px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
+      display: flex; align-items: center; gap: 18px;
+      color: var(--muted); font-size: 14px; flex-wrap: wrap; justify-content: flex-end;
     }
+    .nav-links a:hover { color: var(--text); }
 
-    .nav-links a {
-      transition: 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-    }
-
-    .nav-cta {
-      padding: 10px 16px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      color: var(--gold);
-      background: rgba(212,175,55,0.06);
-      font-weight: 700;
-    }
-
-    .top-socials {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
+    .top-socials { display: flex; align-items: center; gap: 10px; }
     .top-social {
-      width: 42px;
-      height: 42px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
+      width: 42px; height: 42px; border-radius: 999px; border: 1px solid var(--line);
       background: rgba(255,255,255,0.03);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: 0.2s ease;
+      display: inline-flex; align-items: center; justify-content: center;
       box-shadow: var(--shadow);
     }
-
-    .top-social:hover {
-      transform: translateY(-2px);
-      border-color: rgba(212,175,55,0.35);
-      background: rgba(212,175,55,0.08);
-    }
-
-    .top-social svg {
-      width: 18px;
-      height: 18px;
-      fill: var(--gold);
-    }
+    .top-social svg { width: 18px; height: 18px; fill: var(--gold); }
 
     .menu-toggle {
-      display: none;
-      width: 54px;
-      height: 54px;
-      border-radius: 18px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.03);
-      color: var(--gold);
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      flex-shrink: 0;
-      box-shadow: var(--shadow);
+      display: none; width: 54px; height: 54px; border-radius: 18px;
+      border: 1px solid var(--line); background: rgba(255,255,255,0.03);
+      color: var(--gold); align-items: center; justify-content: center; cursor: pointer;
     }
-
-    .menu-toggle svg {
-      width: 26px;
-      height: 26px;
-      stroke: var(--gold);
-    }
+    .menu-toggle svg { width: 26px; height: 26px; stroke: var(--gold); }
 
     .hero {
-      padding: 88px 0 56px;
-      position: relative;
-      overflow: hidden;
+      padding: 88px 0 56px; position: relative; overflow: hidden;
     }
-
     .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
+      content: ""; position: absolute; inset: 0;
       background: linear-gradient(90deg, rgba(5,5,5,0.96) 0%, rgba(5,5,5,0.88) 40%, rgba(5,5,5,0.62) 68%, rgba(5,5,5,0.84) 100%);
       pointer-events: none;
     }
-
     .hero-bg {
-      position: absolute;
-      inset: 0;
+      position: absolute; inset: 0;
       background:
         linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.22)),
         url('logo.png') center/contain no-repeat,
@@ -196,107 +96,46 @@
     }
 
     .hero-grid {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 34px;
-      align-items: start;
+      position: relative; z-index: 2;
+      display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 34px; align-items: start;
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--gold);
-      background: rgba(212,175,55,0.07);
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 18px;
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px;
+      color: var(--gold); background: rgba(212,175,55,0.07);
+      font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 18px;
     }
 
     h1 {
-      margin: 0 0 16px;
-      font-size: clamp(40px, 7vw, 78px);
-      line-height: 0.98;
-      letter-spacing: -1px;
-      max-width: 780px;
+      margin: 0 0 16px; font-size: clamp(42px, 7vw, 78px);
+      line-height: 0.98; letter-spacing: -1px; max-width: 780px;
     }
 
-    .hero p {
-      color: var(--muted);
-      font-size: 18px;
-      max-width: 760px;
-      margin: 0 0 28px;
-    }
+    .hero p { color: var(--muted); font-size: 18px; max-width: 760px; margin: 0 0 28px; }
 
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
-
-    .hero-note {
-      color: var(--gold);
-      font-size: 15px;
-      margin: 0 0 28px;
-    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 20px; }
+    .hero-note { color: var(--gold); font-size: 15px; margin: 0 0 28px; }
 
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 54px;
-      padding: 0 24px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      font-weight: 700;
-      transition: 0.2s ease;
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 54px; padding: 0 24px; border-radius: 999px;
+      border: 1px solid transparent; font-weight: 700; text-align: center; cursor: pointer;
       box-shadow: var(--shadow);
-      cursor: pointer;
-      text-align: center;
     }
+    .btn-primary { background: linear-gradient(135deg, var(--gold), #f0d266); color: #0a0a0a; }
+    .btn-secondary { background: transparent; border-color: var(--line); color: var(--text); }
 
-    .btn:hover { transform: translateY(-2px); }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--gold), #f0d266);
-      color: #0a0a0a;
+    .hero-points, .grid-2, .grid-3, .ba-grid, .review-grid {
+      display: grid; gap: 20px;
     }
-
-    .btn-secondary {
-      background: transparent;
-      border-color: var(--line);
-      color: var(--text);
-    }
-
-    .hero-points,
-    .grid-2,
-    .grid-3,
-    .grid-4,
-    .gallery-grid {
-      display: grid;
-      gap: 20px;
-    }
-
-    .hero-points {
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      max-width: 860px;
-    }
-
+    .hero-points { grid-template-columns: repeat(3, minmax(0,1fr)); max-width: 860px; }
     .grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
     .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
-    .grid-4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
+    .ba-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .review-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
 
-    .mini-card,
-    .card,
-    .review-card,
-    .booking-card {
+    .mini-card, .card, .review-card, .ba-card {
       border: 1px solid var(--line);
       background: var(--card);
       border-radius: 24px;
@@ -304,21 +143,8 @@
       box-shadow: var(--shadow);
     }
 
-    .mini-card strong {
-      display: block;
-      color: var(--gold);
-      margin-bottom: 6px;
-      font-size: 14px;
-    }
-
-    .mini-card span,
-    .card p,
-    .section-text,
-    .contact-row span,
-    .review-card p,
-    .booking-card p {
-      color: var(--muted);
-    }
+    .mini-card strong { display: block; color: var(--gold); margin-bottom: 6px; font-size: 14px; }
+    .mini-card span, .card p, .section-text, .review-card p, .contact-row span, .ba-caption span { color: var(--muted); }
 
     .hero-panel {
       border: 1px solid var(--line);
@@ -328,75 +154,50 @@
       box-shadow: var(--shadow);
       margin-top: 6px;
     }
-
     .hero-panel img {
-      width: 100%;
-      max-width: 300px;
-      margin: 0 auto 18px;
-      border-radius: 24px;
-      border: 1px solid var(--line);
-      background: #000;
+      width: 100%; max-width: 300px; margin: 0 auto 18px;
+      border-radius: 24px; border: 1px solid var(--line); background: #000;
     }
 
     .status {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--gold);
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 8px 12px;
-      background: rgba(212,175,55,0.06);
-      font-size: 13px;
-      margin-bottom: 14px;
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--gold); border: 1px solid var(--line); border-radius: 999px;
+      padding: 8px 12px; background: rgba(212,175,55,0.06);
+      font-size: 13px; margin-bottom: 14px;
     }
-
     .status-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--gold);
-      box-shadow: 0 0 12px rgba(212,175,55,0.7);
+      width: 8px; height: 8px; border-radius: 999px;
+      background: var(--gold); box-shadow: 0 0 12px rgba(212,175,55,0.7);
     }
 
-    section {
-      padding: 78px 0;
-    }
+    section { padding: 78px 0; }
+    .section-title { font-size: clamp(30px, 4vw, 48px); margin: 0 0 12px; }
+    .section-text { max-width: 760px; margin: 0 0 28px; font-size: 17px; }
+    .tag { display: inline-flex; margin-bottom: 14px; color: var(--gold); font-size: 12px; text-transform: uppercase; letter-spacing: 1.4px; }
 
-    .section-title {
-      font-size: clamp(30px, 4vw, 48px);
-      margin: 0 0 12px;
-    }
+    .card h3, .review-card h3, .ba-caption strong { margin: 0 0 10px; font-size: 22px; color: var(--gold); }
 
-    .section-text {
-      max-width: 760px;
-      margin: 0 0 28px;
-      font-size: 17px;
+    .ba-wrap {
+      position: relative; width: 100%; aspect-ratio: 16/10; overflow: hidden;
+      border-radius: 20px; border: 1px solid rgba(212,175,55,0.14); background: #0b0b0b;
     }
-
-    .tag {
-      display: inline-flex;
-      margin-bottom: 14px;
-      color: var(--gold);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1.4px;
+    .ba-img { width: 100%; height: 100%; object-fit: cover; user-select: none; pointer-events: none; }
+    .ba-overlay { position: absolute; inset: 0 auto 0 0; overflow: hidden; border-right: 2px solid rgba(255,255,255,0.85); }
+    .ba-range { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; z-index: 30; }
+    .ba-line { position: absolute; top: 0; bottom: 0; width: 2px; background: rgba(255,255,255,0.9); transform: translateX(-50%); z-index: 20; pointer-events: none; }
+    .ba-handle {
+      position: absolute; top: 50%; transform: translate(-50%, -50%);
+      width: 58px; height: 58px; border-radius: 999px;
+      background: linear-gradient(135deg, var(--gold), #f0d266); color: #111;
+      display: flex; align-items: center; justify-content: center; font-weight: 700; z-index: 21; pointer-events: none;
     }
-
-    .card h3,
-    .review-card h3,
-    .booking-card h3 {
-      margin: 0 0 10px;
-      font-size: 22px;
-      color: var(--gold);
+    .ba-label {
+      position: absolute; top: 14px; z-index: 22; padding: 8px 12px; border-radius: 999px;
+      font-size: 12px; font-weight: 700; border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(8px);
     }
-
-    .price {
-      display: block;
-      margin-top: 14px;
-      color: var(--gold);
-      font-weight: 700;
-    }
+    .ba-before { left: 14px; background: rgba(0,0,0,0.55); color: #fff; }
+    .ba-after { right: 14px; background: rgba(212,175,55,0.16); color: var(--gold); }
+    .ba-caption { padding: 16px 6px 4px; }
 
     .coming {
       background: linear-gradient(180deg, rgba(212,175,55,0.08), rgba(255,255,255,0.02));
@@ -404,92 +205,12 @@
       border-bottom: 1px solid var(--line);
     }
 
-    .booking-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
+    .stars { color: var(--gold); font-size: 18px; margin-bottom: 10px; letter-spacing: 2px; }
+    .review-name { margin-top: 14px; font-weight: 700; color: var(--text); }
 
-    .booking-points {
-      display: grid;
-      gap: 12px;
-      margin: 18px 0 24px;
-    }
-
-    .booking-point {
-      color: var(--muted);
-    }
-
-    .booking-point strong {
-      color: var(--text);
-    }
-
-    .gallery-grid {
-      grid-template-columns: repeat(3, minmax(0,1fr));
-    }
-
-    .gallery-card {
-      border: 1px solid var(--line);
-      background: var(--card);
-      border-radius: 24px;
-      padding: 14px;
-      box-shadow: var(--shadow);
-    }
-
-    .gallery-card img {
-      width: 100%;
-      border-radius: 16px;
-      object-fit: cover;
-    }
-
-    .gallery-card .label {
-      color: var(--gold);
-      font-size: 14px;
-      font-weight: 700;
-      margin-top: 12px;
-    }
-
-    .gallery-card .text {
-      color: var(--muted);
-      font-size: 14px;
-      margin-top: 4px;
-    }
-
-    .review-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 20px;
-    }
-
-    .stars {
-      color: var(--gold);
-      font-size: 18px;
-      margin-bottom: 10px;
-      letter-spacing: 2px;
-    }
-
-    .review-name {
-      margin-top: 14px;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .contact-wrap {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 24px;
-    }
-
-    .contact-row {
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .contact-row strong {
-      display: block;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
+    .contact-wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; }
+    .contact-row { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .contact-row strong { display: block; color: var(--text); margin-bottom: 4px; }
 
     footer {
       border-top: 1px solid var(--line);
@@ -497,164 +218,42 @@
       color: var(--muted);
       font-size: 14px;
     }
-
-    .footer-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
+    .footer-row { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
 
     .whatsapp-btn {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: var(--green);
-      color: white;
-      padding: 14px 22px;
-      font-size: 15px;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      border-radius: 30px;
-      text-decoration: none;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
-      z-index: 9999;
-      transition: 0.3s ease;
+      position: fixed; bottom: 25px; right: 25px;
+      background: var(--green); color: white; padding: 14px 22px;
+      font-size: 15px; font-weight: bold; display: flex; align-items: center; gap: 10px;
+      border-radius: 30px; text-decoration: none; box-shadow: 0 8px 20px rgba(0,0,0,0.35); z-index: 9999;
     }
+    .whatsapp-btn img { width: 22px; height: 22px; }
 
-    .whatsapp-btn:hover {
-      transform: scale(1.08);
-    }
-
-    .whatsapp-btn img {
-      width: 22px;
-      height: 22px;
-    }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    #servicii, #pachete, #programare, #movement, #reviews, #contact {
-      scroll-margin-top: 100px;
-    }
-
-    @media (max-width: 1100px) {
-      .review-grid,
-      .booking-grid {
-        grid-template-columns: repeat(2, minmax(0,1fr));
-      }
-    }
+    .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
 
     @media (max-width: 980px) {
-      .top-socials {
-        display: none;
-      }
-
-      .menu-toggle {
-        display: inline-flex;
-      }
-
+      .top-socials { display: none; }
+      .menu-toggle { display: inline-flex; }
       .nav-links {
-        position: absolute;
-        top: calc(100% + 10px);
-        right: 0;
-        left: 0;
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
-        padding: 18px;
-        background: rgba(5,5,5,0.98);
-        border: 1px solid var(--line);
-        border-radius: 20px;
-        box-shadow: var(--shadow);
+        position: absolute; top: calc(100% + 10px); right: 0; left: 0;
+        display: none; flex-direction: column; align-items: stretch; gap: 10px;
+        padding: 18px; background: rgba(5,5,5,0.98); border: 1px solid var(--line); border-radius: 20px;
       }
-
-      .nav-links.active {
-        display: flex;
-      }
-
+      .nav-links.active { display: flex; }
       .nav-links a {
-        padding: 14px 16px;
-        border-radius: 14px;
-        background: rgba(255,255,255,0.03);
-        border: 1px solid rgba(255,255,255,0.04);
+        padding: 14px 16px; border-radius: 14px;
+        background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.04);
       }
-
-      .nav-links .nav-cta {
-        text-align: center;
-      }
-
-      .mobile-socials {
-        display: flex;
-        gap: 10px;
-        padding-top: 6px;
-      }
-
-      .mobile-socials a {
-        flex: 1;
-        min-height: 48px;
-        border-radius: 14px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        border: 1px solid var(--line);
-        font-weight: 700;
-      }
-
-      .mobile-socials svg {
-        width: 18px;
-        height: 18px;
-        fill: currentColor;
-      }
-
-      .hero-grid,
-      .grid-2,
-      .grid-3,
-      .grid-4,
-      .contact-wrap,
-      .hero-points,
-      .gallery-grid,
-      .review-grid,
-      .booking-grid {
-        grid-template-columns: 1fr;
-      }
-
+      .hero-grid, .grid-2, .grid-3, .hero-points, .ba-grid, .review-grid, .contact-wrap { grid-template-columns: 1fr; }
       h1 { font-size: 48px; }
       .brand-logo { height: 44px; }
       .brand-name { font-size: 20px; }
     }
 
     @media (max-width: 640px) {
-      .hero {
-        padding: 74px 0 42px;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-      }
-
-      .hero-actions .btn {
-        width: 100%;
-      }
-
-      .whatsapp-btn {
-        right: 16px;
-        left: 16px;
-        bottom: 16px;
-        justify-content: center;
-      }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; }
+      .whatsapp-btn { right: 16px; left: 16px; bottom: 16px; justify-content: center; }
     }
   </style>
 </head>
@@ -668,58 +267,23 @@
 
       <div class="nav-right">
         <div class="top-socials">
-          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.35 1.55a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z"/>
-            </svg>
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M13.5 22v-8.2h2.77l.42-3.22H13.5V8.5c0-.93.26-1.56 1.59-1.56h1.7V4.05c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.04 1.46-4.04 4.15v2.48H7.6v3.22h2.72V22h3.18Z"/>
-            </svg>
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="TikTok">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M15.5 2c.2 1.7 1.1 3.1 2.6 4 .9.6 1.9.9 2.9.9v3a8 8 0 0 1-3.9-1v6.1a6.1 6.1 0 1 1-6.1-6.1c.3 0 .7 0 1 .1v3.1a3 3 0 1 0 2 2.9V2h1.5Z"/>
-            </svg>
-          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.35 1.55a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z"/></svg></a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8.2h2.77l.42-3.22H13.5V8.5c0-.93.26-1.56 1.59-1.56h1.7V4.05c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.04 1.46-4.04 4.15v2.48H7.6v3.22h2.72V22h3.18Z"/></svg></a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M15.5 2c.2 1.7 1.1 3.1 2.6 4 .9.6 1.9.9 2.9.9v3a8 8 0 0 1-3.9-1v6.1a6.1 6.1 0 1 1-6.1-6.1c.3 0 .7 0 1 .1v3.1a3 3 0 1 0 2 2.9V2h1.5Z"/></svg></a>
         </div>
 
         <button class="menu-toggle" onclick="toggleMenu()" aria-label="Deschide meniul">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
-            <path d="M4 7H20M4 12H20M4 17H20" />
-          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 7H20M4 12H20M4 17H20" /></svg>
         </button>
       </div>
 
       <div class="nav-links" id="mobileMenu">
         <a href="#servicii" onclick="closeMenu()">Servicii</a>
         <a href="#pachete" onclick="closeMenu()">Pachete</a>
-        <a href="#programare" onclick="closeMenu()">Programare online</a>
-        <a href="#movement" onclick="closeMenu()">Prestige Movement</a>
+        <a href="programari.html" onclick="closeMenu()">Programare online</a>
         <a href="#reviews" onclick="closeMenu()">Recenzii</a>
-        <a href="#contact" class="nav-cta" onclick="closeMenu()">Contact</a>
-
-        <div class="mobile-socials">
-          <a href="#" target="_blank" rel="noopener noreferrer" class="instagram" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.35 1.55a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z"/>
-            </svg>
-            Instagram
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="facebook" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M13.5 22v-8.2h2.77l.42-3.22H13.5V8.5c0-.93.26-1.56 1.59-1.56h1.7V4.05c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.04 1.46-4.04 4.15v2.48H7.6v3.22h2.72V22h3.18Z"/>
-            </svg>
-            Facebook
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="tiktok" aria-label="TikTok">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M15.5 2c.2 1.7 1.1 3.1 2.6 4 .9.6 1.9.9 2.9.9v3a8 8 0 0 1-3.9-1v6.1a6.1 6.1 0 1 1-6.1-6.1c.3 0 .7 0 1 .1v3.1a3 3 0 1 0 2 2.9V2h1.5Z"/>
-            </svg>
-            TikTok
-          </a>
-        </div>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+        <a href="index.html" onclick="closeMenu()">Acasă</a>
       </div>
     </div>
   </header>
@@ -729,7 +293,7 @@
       <div class="hero-bg"></div>
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Persoane fizice • Detailing Interior Premium</div>
+          <div class="eyebrow">Persoane fizice • Detailing interior premium</div>
           <h1>Servicii premium pentru persoane fizice</h1>
           <p>
             Prestige Finish Private Care este pagina dedicată clienților individuali care își doresc detailing interior premium,
@@ -778,33 +342,18 @@
           Începem cu servicii atent selecționate, astfel încât să livrăm rezultate impecabile și o experiență premium pentru fiecare client.
         </p>
 
-        <div class="grid-4">
+        <div class="grid-3">
           <div class="card">
-            <div class="tag">Interior</div>
             <h3>Detailing interior premium</h3>
             <p>Curățare completă a interiorului: scaune, plastice, bord, panouri uși, mochete și portbagaj.</p>
-            <span class="price">Serviciu principal</span>
           </div>
-
           <div class="card">
-            <div class="tag">Igienizare</div>
             <h3>Curățare și igienizare tapițerie</h3>
             <p>Curățare profundă a suprafețelor textile pentru un interior mai curat, mai plăcut și mai bine întreținut.</p>
-            <span class="price">Disponibil</span>
           </div>
-
           <div class="card">
-            <div class="tag">Motor</div>
             <h3>Detailing motor</h3>
             <p>Curățare atentă a compartimentului motor pentru un aspect îngrijit și o prezentare generală mai bună.</p>
-            <span class="price">Disponibil</span>
-          </div>
-
-          <div class="card">
-            <div class="tag">Faruri</div>
-            <h3>Restaurare faruri</h3>
-            <p>Disponibilă pentru anumite modele și doar în cazurile în care materialul și starea farului permit polish în siguranță.</p>
-            <span class="price">Evaluare individuală</span>
           </div>
         </div>
       </div>
@@ -822,119 +371,46 @@
           <div class="card">
             <h3>Essential Interior</h3>
             <p>Aspirare completă, curățare plastice, bord, geamuri interior și finisaj interior.</p>
-            <span class="price">Pachet de bază</span>
           </div>
-
           <div class="card">
             <h3>Premium Interior</h3>
             <p>Include Essential + curățare tapițerie, curățare portbagaj și atenție extinsă la detalii.</p>
-            <span class="price">Pachet recomandat</span>
           </div>
-
           <div class="card">
             <h3>Prestige Premium Pack</h3>
-            <p>
-              Experiența completă de detailing interior pentru un rezultat impecabil, cu atenție la fiecare detaliu
-              și intervenții aprofundate asupra zonelor esențiale ale interiorului.
-            </p>
-            <span class="price">Pachet complet premium</span>
+            <p>Experiența completă de detailing interior pentru un rezultat impecabil, cu atenție la fiecare detaliu.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="programare" class="coming fade-in">
+    <section class="coming fade-in">
       <div class="container">
-        <div class="tag">Programare online</div>
-        <h2 class="section-title">Rezervă-ți locul direct online</h2>
-        <p class="section-text">
-          Poți selecta serviciul dorit, intervalul disponibil și poți completa evaluarea mașinii direct în sistemul nostru de programări.
-        </p>
+        <div class="tag">Before / After</div>
+        <h2 class="section-title">Diferența se vede imediat</h2>
+        <p class="section-text">Deocamdată poți lăsa secțiunea activă fără poze. După ce refacem folderul images, le integrăm aici.</p>
 
-        <div class="booking-grid">
-          <div class="booking-card">
-            <h3>Programare simplă și rapidă</h3>
-            <p>
-              Am creat un sistem prin care poți rezerva direct online, fără discuții inutile înainte de programare.
-            </p>
-
-            <div class="booking-points">
-              <div class="booking-point">✔ <strong>Alegi serviciul dorit</strong></div>
-              <div class="booking-point">✔ <strong>Selectezi ziua și ora disponibilă</strong></div>
-              <div class="booking-point">✔ <strong>Completezi evaluarea mașinii</strong></div>
-              <div class="booking-point">✔ <strong>Primești rezervarea direct în sistem</strong></div>
+        <div class="ba-grid">
+          <div class="ba-card">
+            <div class="ba-wrap">
+              <div class="ba-label ba-before">Înainte</div>
+              <div class="ba-label ba-after">După</div>
             </div>
-
-            <a class="btn btn-primary" href="programari.html">Deschide programarea online</a>
-          </div>
-
-          <div class="booking-card">
-            <h3>Formular de contact</h3>
-            <p>
-              Dacă preferi să ne lași întâi o solicitare, să ceri detalii sau o recomandare de serviciu,
-              poți folosi și formularul de contact.
-            </p>
-
-            <div class="booking-points">
-              <div class="booking-point">• ideal pentru întrebări și cereri speciale</div>
-              <div class="booking-point">• util dacă nu știi exact ce serviciu ți se potrivește</div>
-              <div class="booking-point">• bun pentru solicitări mai complexe</div>
+            <div class="ba-caption">
+              <strong>Interior complet</strong>
+              <span>Pregătit pentru sliderul tău real înainte / după.</span>
             </div>
-
-            <a class="btn btn-secondary" href="formular-contact.html">Deschide formularul de contact</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="movement" class="coming fade-in">
-      <div class="container">
-        <div class="tag">Prestige Movement</div>
-        <h2 class="section-title">Serviciu mobil pentru persoane fizice</h2>
-        <p class="section-text">
-          Prestige Movement este serviciul prin care echipa Prestige Finish se poate deplasa la locația clientului pentru servicii selectate de detailing interior.
-          Este creat pentru persoanele care își doresc confort maxim și economie de timp.
-        </p>
-
-        <div class="grid-3">
-          <div class="card">
-            <h3>Confort</h3>
-            <p>Serviciul este ideal pentru clienții care preferă ca intervenția să fie realizată direct la locația lor.</p>
-          </div>
-          <div class="card">
-            <h3>Programare</h3>
-            <p>Disponibil pentru anumite tipuri de servicii și doar pe bază de programare prealabilă.</p>
-          </div>
-          <div class="card">
-            <h3>Disponibilitate</h3>
-            <p>Serviciul este oferit în funcție de locație, tipul lucrării și calendarul disponibil.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="fade-in">
-      <div class="container">
-        <div class="tag">De ce noi</div>
-        <h2 class="section-title">O experiență premium, fără compromisuri inutile</h2>
-        <p class="section-text">
-          Pentru zona de persoane fizice, ne concentrăm pe atenție reală la detalii, programări organizate și o experiență simplă și clară de la primul contact până la predare.
-        </p>
-
-        <div class="grid-3">
-          <div class="card">
-            <h3>Fără grabă</h3>
-            <p>Fiecare mașină primește timpul necesar, fără intervenții făcute în grabă.</p>
           </div>
 
-          <div class="card">
-            <h3>Materiale alese atent</h3>
-            <p>Produsele utilizate sunt selectate în funcție de suprafață, pentru rezultate corecte și sigure.</p>
-          </div>
-
-          <div class="card">
-            <h3>Programare clară</h3>
-            <p>Clientul știe din start ce rezervă, când vine și cum decurge experiența.</p>
+          <div class="ba-card">
+            <div class="ba-wrap">
+              <div class="ba-label ba-before">Înainte</div>
+              <div class="ba-label ba-after">După</div>
+            </div>
+            <div class="ba-caption">
+              <strong>Restaurare faruri</strong>
+              <span>Pregătit pentru exemple reale din lucrările tale.</span>
+            </div>
           </div>
         </div>
       </div>
@@ -944,32 +420,22 @@
       <div class="container">
         <div class="tag">Recenzii</div>
         <h2 class="section-title">Feedback real din lucrări reale</h2>
-        <p class="section-text">
-          Când vei avea primele lucrări și primele opinii reale, secțiunea aceasta va deveni una dintre cele mai importante pentru încrederea clienților noi.
-        </p>
+        <p class="section-text">După primele lucrări, aici vei putea afișa recenzii reale și exemple concrete.</p>
 
         <div class="review-grid">
           <div class="review-card">
             <div class="stars">★★★★★</div>
-            <p>
-              Aici poți pune primul feedback real primit de la un client, împreună cu o lucrare înainte / după.
-            </p>
+            <p>Aici poți pune primul feedback real primit de la un client.</p>
             <div class="review-name">Client real • în curând</div>
           </div>
-
           <div class="review-card">
             <div class="stars">★★★★★</div>
-            <p>
-              O recenzie scurtă, clară și sinceră valorează mai mult decât zece texte care par artificiale.
-            </p>
+            <p>O recenzie scurtă, clară și sinceră valorează mai mult decât texte artificiale.</p>
             <div class="review-name">Client real • în curând</div>
           </div>
-
           <div class="review-card">
             <div class="stars">★★★★★</div>
-            <p>
-              După primele lucrări, aici vei putea arăta exact cum au perceput clienții experiența Prestige Finish.
-            </p>
+            <p>Secțiunea poate deveni una dintre cele mai importante pentru încredere.</p>
             <div class="review-name">Client real • în curând</div>
           </div>
         </div>
@@ -1021,34 +487,25 @@
     function toggleMenu() {
       document.getElementById('mobileMenu').classList.toggle('active');
     }
-
     function closeMenu() {
       document.getElementById('mobileMenu').classList.remove('active');
     }
-
     document.addEventListener('click', function(event) {
       const menu = document.getElementById('mobileMenu');
       const toggle = document.querySelector('.menu-toggle');
-
       if (!menu || !toggle) return;
-
       const clickedInsideMenu = menu.contains(event.target);
       const clickedToggle = toggle.contains(event.target);
-
       if (!clickedInsideMenu && !clickedToggle) {
         menu.classList.remove('active');
       }
     });
-
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.12 });
-
     fadeEls.forEach(el => observer.observe(el));
   </script>
 </body>
