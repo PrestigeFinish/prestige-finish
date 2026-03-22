@@ -768,6 +768,63 @@
   .package-grid{
     grid-template-columns:1fr;
   }
+
+  .featured-pack{
+  position: relative;
+  border: 1px solid rgba(212,175,55,0.45);
+  background:
+    radial-gradient(circle at top right, rgba(212,175,55,0.14), transparent 32%),
+    linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  box-shadow:
+    0 0 0 1px rgba(212,175,55,0.10),
+    0 0 24px rgba(212,175,55,0.16),
+    0 24px 65px rgba(0,0,0,0.55);
+  animation: prestigeGlow 2.8s ease-in-out infinite;
+}
+
+.featured-pack:hover{
+  transform: translateY(-8px) scale(1.01);
+  box-shadow:
+    0 0 0 1px rgba(212,175,55,0.20),
+    0 0 34px rgba(212,175,55,0.26),
+    0 28px 75px rgba(0,0,0,0.62);
+}
+
+.prestige-badge{
+  background: linear-gradient(135deg, rgba(212,175,55,0.22), rgba(212,175,55,0.08));
+  border-color: rgba(212,175,55,0.34);
+  color: var(--gold);
+  box-shadow: 0 0 16px rgba(212,175,55,0.18);
+}
+
+.featured-pack h3{
+  text-shadow: 0 0 10px rgba(212,175,55,0.14);
+}
+
+.featured-pack .price-row strong{
+  text-shadow: 0 0 12px rgba(212,175,55,0.16);
+}
+
+@keyframes prestigeGlow{
+  0%{
+    box-shadow:
+      0 0 0 1px rgba(212,175,55,0.10),
+      0 0 18px rgba(212,175,55,0.12),
+      0 24px 65px rgba(0,0,0,0.55);
+  }
+  50%{
+    box-shadow:
+      0 0 0 1px rgba(212,175,55,0.18),
+      0 0 30px rgba(212,175,55,0.22),
+      0 24px 65px rgba(0,0,0,0.58);
+  }
+  100%{
+    box-shadow:
+      0 0 0 1px rgba(212,175,55,0.10),
+      0 0 18px rgba(212,175,55,0.12),
+      0 24px 65px rgba(0,0,0,0.55);
+  }
+}
 }
   </style>
 </head>
@@ -894,19 +951,18 @@
 
     <div class="package-grid">
       <div class="package-card featured">
-        <div class="package-badge">Recomandat</div>
-        <h3>Essential Interior</h3>
+        <h3>Basic interior</h3>
         <p class="package-subtitle">
-          Pachet de bază pentru întreținere corectă și aspect curat al interiorului.
+          Pachet de bază potrivit pentru păstrarea unui interior curat si plăcut între intervențiile mai complexe.
         </p>
 
         <ul class="package-features">
-          <li>Aspirare completă interior</li>
-          <li>Curățare plastice și bord</li>
-          <li>Ștergere elemente interioare</li>
-          <li>Curățare geamuri interior</li>
-          <li>Finisaj general interior</li>
-        </ul>
+  <li>Aspirare completă și uniformă a interiorului</li>
+  <li>Curățare și revitalizare suprafețe plastice și bord</li>
+  <li>Îndepărtare praf și impurități din zonele vizibile</li>
+  <li>Curățare geamuri interior pentru claritate maximă + tratament</li>
+  <li>Igienizare cu ozon a habitaclului</li>
+</ul>
 
         <div class="package-prices">
           <div class="price-row">
@@ -928,7 +984,7 @@
           href="https://wa.me/40757352371?text=Buna!%20Vreau%20detalii%20despre%20pachetul%20Essential%20Interior%20pentru%20persoane%20fizice."
           target="_blank"
           rel="noopener noreferrer">
-          Comandă pe WhatsApp
+          Programează pe WhatsApp
         </a>
       </div>
 
@@ -939,50 +995,84 @@
         </p>
 
         <ul class="package-features">
-          <li>Include baza de întreținere interioară</li>
-          <li>Atenție extinsă la detalii</li>
-          <li>Curățare mai aprofundată a suprafețelor</li>
-          <li>Portbagaj și zone mai greu accesibile</li>
-          <li>Aspect final mai bine finisat</li>
-        </ul>
+  <li>Include toate operațiunile din Essential Interior</li>
+  <li>Curățare tapițerie textilă (scaune / banchetă)</li>
+  <li>Curățare în profunzime covorașe și mochete </li>
+  <li>Curățare detaliată zone greu accesibile (șine, îmbinări, colțuri)</li>
+  <li>Curățare completă portbagaj</li>
+  <li>Igienizare și reîmprospătare interior</li>
+</ul>
 
-        <div class="package-note">
-          Prețul se stabilește în funcție de dimensiunea mașinii și nivelul de intervenție dorit.
-        </div>
+        <div class="package-prices">
+  <div class="price-row">
+    <span>Auto mic</span>
+    <strong>369 lei</strong>
+  </div>
+  <div class="price-row">
+    <span>Auto mediu (sedan)</span>
+    <strong>469 lei</strong>
+  </div>
+  <div class="price-row">
+    <span>Auto mare (SUV)</span>
+    <strong>569 lei</strong>
+  </div>
+</div>
 
         <a
           class="btn btn-secondary package-btn"
           href="https://wa.me/40757352371?text=Buna!%20Vreau%20detalii%20despre%20pachetul%20Premium%20Interior%20pentru%20persoane%20fizice."
           target="_blank"
           rel="noopener noreferrer">
-          Cere detalii pe WhatsApp
+          Programează pe WhatsApp
         </a>
       </div>
 
-      <div class="package-card">
-        <h3>Prestige Premium Pack</h3>
-        <p class="package-subtitle">
-          Varianta completă pentru clienții care vor experiența premium cap-coadă.
-        </p>
+      <div class="package-card highlight featured-pack">
 
-        <ul class="package-features">
-          <li>Experiență completă de detailing interior</li>
-          <li>Intervenție atentă și controlată</li>
-          <li>Accent pe detalii și finisaj</li>
-          <li>Ideal pentru mașini care au nevoie de reset complet</li>
-          <li>Potrivit pentru clienți care vor maximul posibil</li>
-        </ul>
+  <div class="package-badge prestige-badge">Top Prestige</div>
 
-        <div class="package-note">
-          Recomandat pentru lucrări mai ample și pentru clienți care vor pachetul complet.
-        </div>
+  <h3>Prestige Interior Pack</h3>
 
-        <a
-          class="btn btn-secondary package-btn"
-          href="https://wa.me/40757352371?text=Buna!%20Vreau%20detalii%20despre%20Prestige%20Premium%20Pack%20pentru%20persoane%20fizice."
-          target="_blank"
-          rel="noopener noreferrer">
-          Scrie-ne pe WhatsApp
+  <p class="package-subtitle">
+    Intervenție completă de detailing interior, dedicată mașinilor care necesită o curățare în profunzime și o readucere reală la un standard premium.
+  </p>
+
+  <ul class="package-features">
+    <li>Include toate etapele din pachetul Premium</li>
+    <li>Demontare și curățare scaune și banchete (dacă este necesar)</li>
+    <li>Curățare în profunzime tapițerie și mochete + tratament</li>
+    <li>Curățare completă portbagaj și spațiu roată de rezervă</li>
+    <li>Curățare sistem climatizare și eliminare mirosuri</li>
+    <li>Curățare zone greu accesibile (șine, spații înguste, detalii fine)</li>
+    <li>Degresare și igienizare completă suprafețe</li>
+    <li>Aplicare protecție pentru plastice și suprafețe interioare</li>
+    <li>Tratament dedicat pentru piele (hidratare + protecție)</li>
+    <li>Tratament pentru textil/pluș</li>
+  </ul>
+
+  <div class="package-prices">
+    <div class="price-row">
+      <span>Auto mic</span>
+      <strong>569 lei</strong>
+    </div>
+    <div class="price-row">
+      <span>Auto mediu (sedan)</span>
+      <strong>669 lei</strong>
+    </div>
+    <div class="price-row">
+      <span>Auto mare (SUV)</span>
+      <strong>769 lei</strong>
+    </div>
+  </div>
+
+  <a
+    class="btn btn-primary package-btn"
+    href="https://wa.me/40757352371?text=Buna!%20Vreau%20detalii%20despre%20Prestige%20Interior%20Pack%20pentru%20persoane%20fizice."
+    target="_blank"
+    rel="noopener noreferrer">
+    Programează pe WhatsApp
+  </a>
+</div>
         </a>
       </div>
     </div>
