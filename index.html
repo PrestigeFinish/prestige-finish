@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Prestige Finish | Curatare Canapele si Interior Auto Ploiesti</title>
+<title>Prestige Finish | Interior Care</title>
 
 <style>
 
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:#0b0b0b;
+background:#0a0a0a;
 color:white;
 }
 
@@ -19,43 +19,44 @@ header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 40px;
-border-bottom:1px solid rgba(212,175,55,0.2);
+padding:25px 50px;
 }
 
 .logo{
-font-weight:bold;
+font-size:22px;
 color:#d4af37;
-font-size:20px;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin-left:20px;
+font-weight:bold;
+letter-spacing:1px;
 }
 
 .hero{
-padding:80px 40px;
-max-width:1100px;
+height:90vh;
+display:flex;
+align-items:center;
+padding:0 50px;
+max-width:1200px;
 margin:auto;
 }
 
+.hero-content{
+max-width:600px;
+}
+
 .hero h1{
-font-size:42px;
+font-size:48px;
+line-height:1.2;
 margin-bottom:20px;
 }
 
 .hero p{
-color:#cfcfcf;
-max-width:600px;
+color:#bdbdbd;
 line-height:1.6;
 }
 
 .btn{
 display:inline-block;
-padding:14px 26px;
-margin-top:20px;
+margin-top:25px;
+padding:15px 30px;
 border-radius:30px;
 background:#d4af37;
 color:black;
@@ -65,60 +66,72 @@ margin-right:10px;
 }
 
 .section{
-max-width:1100px;
+max-width:1200px;
 margin:auto;
-padding:60px 40px;
+padding:80px 50px;
+}
+
+.section h2{
+font-size:32px;
+margin-bottom:20px;
 }
 
 .cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-margin-top:30px;
+gap:25px;
+margin-top:40px;
 }
 
 .card{
-padding:25px;
-border-radius:15px;
-background:rgba(255,255,255,0.03);
-border:1px solid rgba(212,175,55,0.15);
+padding:30px;
+border-radius:20px;
+background:rgba(255,255,255,0.02);
+border:1px solid rgba(212,175,55,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+border:1px solid rgba(212,175,55,0.4);
 }
 
 .card h3{
 color:#d4af37;
+margin-bottom:10px;
 }
 
-.steps{
-margin-top:30px;
-}
-
-.steps p{
-margin:10px 0;
+.divider{
+height:1px;
+background:rgba(212,175,55,0.2);
+margin:60px 0;
 }
 
 .contact{
-border-top:1px solid rgba(212,175,55,0.2);
-margin-top:60px;
-padding-top:40px;
+text-align:center;
+}
+
+.contact a{
+color:#d4af37;
+text-decoration:none;
 }
 
 footer{
 text-align:center;
 padding:30px;
-color:#888;
+color:#777;
 }
 
-.whatsapp-btn{
+.whatsapp{
 position:fixed;
 bottom:25px;
 right:25px;
 background:#25D366;
-color:white;
-padding:14px 20px;
+padding:15px 20px;
 border-radius:30px;
+color:white;
 text-decoration:none;
 font-weight:bold;
-box-shadow:0 8px 20px rgba(0,0,0,0.4);
 }
 
 </style>
@@ -127,54 +140,50 @@ box-shadow:0 8px 20px rgba(0,0,0,0.4);
 <body>
 
 <header>
-
 <div class="logo">Prestige Finish</div>
-
-<nav>
-<a href="#servicii">Servicii</a>
-<a href="#contact">Contact</a>
-</nav>
-
 </header>
 
 <section class="hero">
 
-<h1>Curatare profesionala canapele, saltele si interior auto</h1>
+<div class="hero-content">
+
+<h1>Redam prospetimea spatiilor in care traiesti</h1>
 
 <p>
-Redam prospetimea si confortul spatiilor in care traiesti. 
-Prestige Finish ofera servicii profesionale de curatare in profunzime, eliminare mirosuri si igienizare completa.
+Curatare profesionala pentru canapele, saltele si interior auto, cu accent pe igienizare reala si confort.
 </p>
 
-<a href="tel:+40753788848" class="btn">Suna acum</a>
-<a href="https://wa.me/40753788848" class="btn">Programeaza</a>
+<a href="https://link-simplybook-ul-tau" class="btn">Programeaza</a>
+<a href="tel:+40753788848" class="btn">Contact</a>
+
+</div>
 
 </section>
 
-<section id="servicii" class="section">
+<section class="section">
 
-<h2>Serviciile noastre</h2>
+<h2>Servicii</h2>
 
 <div class="cards">
 
 <div class="card">
-<h3>Curatare canapele</h3>
-<p>Indepartam petele, murdaria si mirosurile pentru un aspect si o senzatie de nou.</p>
+<h3>Canapele & coltare</h3>
+<p>Curatare in profunzime pentru eliminarea murdariei si improspatarea materialului.</p>
 </div>
 
 <div class="card">
-<h3>Curatare saltele</h3>
-<p>Eliminam bacterii, acarieni si impuritati pentru un somn mai sanatos.</p>
+<h3>Saltele</h3>
+<p>Igienizare profesionala pentru un mediu mai curat si mai sanatos.</p>
+</div>
+
+<div class="card">
+<h3>Fotolii & scaune</h3>
+<p>Curatare delicata si eficienta pentru piese utilizate zilnic.</p>
 </div>
 
 <div class="card">
 <h3>Interior auto</h3>
-<p>Curatare completa a scaunelor, mochetelor si elementelor interioare.</p>
-</div>
-
-<div class="card">
-<h3>Scaune si fotolii</h3>
-<p>Curatare profesionala pentru orice tip de material textil.</p>
+<p>Curatare si improspatare pentru scaune si textile auto.</p>
 </div>
 
 </div>
@@ -183,63 +192,51 @@ Prestige Finish ofera servicii profesionale de curatare in profunzime, eliminare
 
 <section class="section">
 
-<h2>De ce sa alegi Prestige Finish</h2>
+<h2>Mai mult decat curatare</h2>
 
 <div class="cards">
 
 <div class="card">
-<h3>Igienizare reala</h3>
-<p>Eliminam bacteriile si alergenii din profunzime.</p>
-</div>
-
-<div class="card">
-<h3>Uscare rapida</h3>
-<p>Materialele se usuca rapid si in siguranta.</p>
+<h3>Igienizare profunda</h3>
+<p>Eliminam murdaria si improspatam materialele in profunzime.</p>
 </div>
 
 <div class="card">
 <h3>Produse profesionale</h3>
-<p>Folosim solutii premium, sigure pentru materiale.</p>
+<p>Solutii sigure si eficiente pentru toate tipurile de materiale.</p>
 </div>
 
 <div class="card">
-<h3>Flexibilitate</h3>
-<p>Programari inclusiv seara pentru confortul tau.</p>
+<h3>Rezultat vizibil</h3>
+<p>Aspect curat si senzatie de prospetime dupa fiecare interventie.</p>
+</div>
+
+<div class="card">
+<h3>Program flexibil</h3>
+<p>Programari rapide, inclusiv seara.</p>
 </div>
 
 </div>
 
 </section>
 
-<section class="section">
+<div class="divider"></div>
 
-<h2>Cum functioneaza</h2>
+<section class="section contact">
 
-<div class="steps">
-<p>1. Ne contactezi telefonic sau pe WhatsApp</p>
-<p>2. Stabilim programarea</p>
-<p>3. Realizam curatarea profesionala</p>
-<p>4. Te bucuri de un spatiu curat si fresh</p>
-</div>
+<h2>Programeaza o interventie</h2>
 
-</section>
-
-<section id="contact" class="section contact">
-
-<h2>Contact</h2>
-
-<p>Telefon: <a href="tel:+40753788848">0753 788 848</a></p>
-<p>Email: prestigefinish.ro@gmail.com</p>
+<p>
+<a href="https://link-simplybook-ul-tau">Rezerva online</a> sau suna la <a href="tel:+40753788848">0753 788 848</a>
+</p>
 
 </section>
 
 <footer>
-© 2026 Prestige Finish
+© Prestige Finish
 </footer>
 
-<a href="https://wa.me/40753788848" class="whatsapp-btn">
-💬 WhatsApp
-</a>
+<a href="https://wa.me/40753788848" class="whatsapp">WhatsApp</a>
 
 </body>
 </html>
