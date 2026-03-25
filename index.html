@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prestige Finish | Curățare canapele, saltele și tapițerii de orice fel</title>
+  <title>Prestige Finish | Curățare profesională textile, piele și alcantara în Ploiești</title>
   <link rel="icon" type="image/png" href="logo.png" />
-  <meta name="description" content="Prestige Finish oferă curățare și igienizare profesională pentru canapele, saltele, scaune, fotolii și orice tip de tapițerie – textilă, piele sau alcantara." />
+  <meta name="description" content="Prestige Finish oferă curățare și igienizare profesională pentru canapele, saltele, scaune, fotolii și tapițerii din material textil, piele sau alcantara, la domiciliu sau la sediul firmei, în Ploiești." />
 
   <style>
     :root{
@@ -103,8 +103,13 @@
       justify-content:flex-end;
     }
 
-    .nav-links a{transition:.2s ease}
-    .nav-links a:hover{color:var(--text)}
+    .nav-links a{
+      transition:.2s ease;
+    }
+
+    .nav-links a:hover{
+      color:var(--text);
+    }
 
     .nav-cta{
       padding:10px 16px;
@@ -349,7 +354,8 @@
     .faq-card p,
     .section-text,
     .contact-row span,
-    .tiny{
+    .tiny,
+    .service-note{
       color:var(--muted);
     }
 
@@ -364,8 +370,19 @@
 
     .section-text{
       max-width:760px;
-      margin:0 0 28px;
+      margin:0 0 16px;
       font-size:17px;
+    }
+
+    .section-note{
+      max-width:860px;
+      margin:0 0 28px;
+      padding:14px 18px;
+      border-left:3px solid var(--gold);
+      border-radius:0 14px 14px 0;
+      background:rgba(212,175,55,0.06);
+      color:var(--text);
+      font-size:15px;
     }
 
     .tag{
@@ -411,6 +428,48 @@
       background:var(--gold);
       flex-shrink:0;
       box-shadow:0 0 10px rgba(212,175,55,0.5);
+    }
+
+    .service-list{
+      list-style:none;
+      padding:0;
+      margin:18px 0 0;
+      display:grid;
+      gap:12px;
+    }
+
+    .service-list li{
+      position:relative;
+      padding:14px 16px 14px 42px;
+      border:1px solid rgba(212,175,55,0.14);
+      border-radius:18px;
+      background:rgba(255,255,255,0.02);
+      color:var(--text);
+      transition:.2s ease;
+    }
+
+    .service-list li:hover{
+      border-color:var(--line-strong);
+      background:rgba(255,255,255,0.035);
+      transform:translateY(-2px);
+    }
+
+    .service-list li::before{
+      content:"✦";
+      position:absolute;
+      left:16px;
+      top:13px;
+      color:var(--gold);
+      font-size:16px;
+      line-height:1;
+    }
+
+    .service-label{
+      display:block;
+      color:var(--gold);
+      font-weight:700;
+      margin-bottom:2px;
+      font-size:14px;
     }
 
     .contact-row{
@@ -629,15 +688,15 @@
         </button>
       </div>
 
-    <div class="nav-links" id="mobileMenu">
-  <a href="#servicii" onclick="closeMenu()">Servicii</a>
-  <a href="persoane-fizice.html" onclick="closeMenu()">Persoane fizice</a>
-  <a href="flote.html" onclick="closeMenu()">Firme / spații comerciale</a>
-  <a href="#despre" onclick="closeMenu()">De ce noi</a>
-  <a href="#faq" onclick="closeMenu()">Întrebări</a>
-  <a href="#contact" onclick="closeMenu()">Contact</a>
-  <a href="programari.html" class="nav-cta" onclick="closeMenu()">Programare online</a>
-</div>
+      <div class="nav-links" id="mobileMenu">
+        <a href="#servicii" onclick="closeMenu()">Servicii</a>
+        <a href="persoane-fizice.html" onclick="closeMenu()">Persoane fizice</a>
+        <a href="flote.html" onclick="closeMenu()">Firme / spații comerciale</a>
+        <a href="#despre" onclick="closeMenu()">De ce noi</a>
+        <a href="#faq" onclick="closeMenu()">Întrebări</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+        <a href="programari.html" class="nav-cta" onclick="closeMenu()">Programare online</a>
+      </div>
     </div>
   </header>
 
@@ -646,11 +705,13 @@
       <div class="hero-bg"></div>
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Curățare profesională textile • Ploiești</div>
-          <h1>Curățare profesională canapele, saltele și tapițerii în Ploiești</h1>
+          <div class="eyebrow">Curățare profesională • Ploiești</div>
+          <h1>Curățare profesională pentru textile, piele și alcantara în Ploiești</h1>
           <p>
-            Prestige Finish oferă curățare și igienizare profesională pentru canapele, saltele, scaune, fotolii și tapițerii,
-            la domiciliu sau la sediul firmei. Intervenim atent, organizat și adaptat fiecărui material – textil, piele sau alcantara – pentru un rezultat curat, igienizat și vizibil.
+            Prestige Finish oferă curățare și igienizare profesională pentru canapele, saltele, scaune, fotolii și orice tip de tapițerie – textilă, piele sau alcantara – la domiciliu sau la sediul firmei.
+          </p>
+          <p>
+            Intervenim atent, organizat și adaptat fiecărui material – textil, piele sau alcantara – pentru un rezultat curat, igienizat și vizibil.
           </p>
 
           <div class="hero-actions">
@@ -667,11 +728,11 @@
             </div>
             <div class="mini-card">
               <strong>La firme</strong>
-              <span>Servicii pentru birouri, spații comerciale și zone de lucru cu mobilier textil.</span>
+              <span>Servicii pentru birouri, spații comerciale și zone de lucru cu mobilier textil sau piele.</span>
             </div>
             <div class="mini-card">
               <strong>Și auto, secundar</strong>
-              <span>Curățare interior auto și tapițerie auto, fără focus principal pe zona auto.</span>
+              <span>Curățare interior auto și tapițerie auto, formulată simplu și clar.</span>
             </div>
           </div>
         </div>
@@ -681,12 +742,12 @@
           <img src="logo.png" alt="Prestige Finish Logo" />
           <h3 style="margin:0 0 8px;font-size:28px;">Prestige Finish</h3>
           <p style="margin:0;color:var(--muted);">
-            Servicii construite în jurul ideii de curățare reală, igienizare și confort, fără complicații inutile și fără promisiuni goale.
+            Servicii construite în jurul ideii de curățare reală, igienizare și întreținere corectă pentru orice material: textil, piele sau alcantara.
           </p>
 
           <div class="quick-points">
             <div class="quick-point"><span class="quick-dot"></span><span>Canapele, saltele, scaune și fotolii</span></div>
-            <div class="quick-point"><span class="quick-dot"></span><span>Intervenții la domiciliu sau la firme</span></div>
+            <div class="quick-point"><span class="quick-dot"></span><span>Tapițerii textile, piele și alcantara</span></div>
             <div class="quick-point"><span class="quick-dot"></span><span>Programare online și contact rapid</span></div>
           </div>
         </div>
@@ -696,35 +757,71 @@
     <section id="servicii" class="coming fade-in">
       <div class="container">
         <div class="tag">Servicii principale</div>
-        <h2 class="section-title">Serviciile pe care le împingem în prim-plan</h2>
+        <h2 class="section-title">Servicii premium pe direcții clare</h2>
         <p class="section-text">
-          Focusul principal este pe curățare și igienizare textile, iar zona auto rămâne ca serviciu secundar, simplu și clar formulat.
+          Focusul principal este pe curățare și igienizare pentru casă și firme, iar zona auto rămâne ca serviciu secundar, simplu și clar formulat.
+        </p>
+
+        <p class="section-note">
+          Fiecare material este tratat diferit, cu soluții și tehnici dedicate, pentru a evita deteriorarea și pentru a obține un rezultat corect, curat și sigur.
         </p>
 
         <div class="grid-3">
           <div class="card">
-            <h3>Curățare canapele</h3>
-            <p>Curățare profesională pentru canapele textile, colțare și suprafețe tapițate, cu focus pe igienizare și reîmprospătare.</p>
+            <h3>Curățare canapele și colțare</h3>
+            <p>Serviciu dedicat pieselor utilizate frecvent în locuință sau în zone de așteptare.</p>
+            <ul class="service-list">
+              <li>
+                <span class="service-label">Textil</span>
+                Curățare pentru canapele și colțare din materiale textile, cu focus pe igienizare și reîmprospătare.
+              </li>
+              <li>
+                <span class="service-label">Piele</span>
+                Curățare și întreținere pentru piele naturală sau ecologică, fără abordări agresive.
+              </li>
+              <li>
+                <span class="service-label">Alcantara</span>
+                Curățare delicată, adaptată materialelor sensibile și finisajelor premium.
+              </li>
+            </ul>
           </div>
+
           <div class="card">
-            <h3>Curățare saltele</h3>
-            <p>Serviciu dedicat pentru saltele, cu accent pe igienizare, îndepărtarea murdăriei și reîmprospătarea materialului textil.</p>
+            <h3>Curățare saltele, scaune și fotolii</h3>
+            <p>Ideal pentru suprafețe care au nevoie de curățare atentă, igienizare și reîmprospătare vizibilă.</p>
+            <ul class="service-list">
+              <li>
+                <span class="service-label">Saltele</span>
+                Intervenție orientată spre curățare și menținerea unui ambient mai curat și mai bine întreținut.
+              </li>
+              <li>
+                <span class="service-label">Scaune</span>
+                Potrivit pentru scaune textile, piele sau mix de materiale, atât acasă cât și la firme.
+              </li>
+              <li>
+                <span class="service-label">Fotolii</span>
+                Curățare atentă pentru piese tapițate care necesită întreținere regulată sau reîmprospătare.
+              </li>
+            </ul>
           </div>
+
           <div class="card">
-            <h3>Curățare scaune și fotolii</h3>
-            <p>Pentru locuințe, birouri și spații comerciale, cu intervenție clară și organizată direct la locație.</p>
-          </div>
-          <div class="card">
-            <h3>Curățare tapițerii textile</h3>
-            <p>Potrivit pentru diferite suprafețe textile care necesită curățare profesională și reîmprospătare generală.</p>
-          </div>
-          <div class="card">
-            <h3>Intervenții la firme</h3>
-            <p>Ideal pentru birouri, săli de așteptare, spații comerciale și alte locații cu mobilier textil.</p>
-          </div>
-          <div class="card">
-            <h3>Curățare interior auto</h3>
-            <p>Serviciu secundar pentru interior auto și tapițerie auto, prezentat simplu și clar, fără poziționare de detailing.</p>
+            <h3>Tapițerii, firme și zona auto</h3>
+            <p>Servicii pentru diferite suprafețe și contexte, fără a complica inutil experiența clientului.</p>
+            <ul class="service-list">
+              <li>
+                <span class="service-label">Tapițerii variate</span>
+                Curățare pentru suprafețe textile, piele sau alcantara, în funcție de tipul materialului.
+              </li>
+              <li>
+                <span class="service-label">Firme / spații comerciale</span>
+                Intervenții la sediu pentru birouri, recepții, mobilier textil și zone folosite frecvent.
+              </li>
+              <li>
+                <span class="service-label">Interior auto</span>
+                Zonă secundară păstrată pentru curățare interior auto și tapițerie auto.
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -735,7 +832,7 @@
         <div class="tag">De ce noi</div>
         <h2 class="section-title">Servicii clare, poziționare corectă, experiență premium</h2>
         <p class="section-text">
-          Nu vindem vorbe mari. Vindem intervenții clare, organizare bună și rezultate curate, potrivite pentru clienți care vor un serviciu serios.
+          Nu vindem doar „curățenie”. Vindem intervenții corecte, organizare bună și o abordare adaptată materialului, astfel încât rezultatul să fie curat, sigur și credibil.
         </p>
 
         <div class="grid-3">
@@ -744,12 +841,12 @@
             <p>Lucrăm la domiciliu sau la sediul firmei, acolo unde este nevoie de intervenție.</p>
           </div>
           <div class="card">
-            <h3>Fără limbaj complicat</h3>
-            <p>Serviciile sunt prezentate clar, astfel încât clientul să înțeleagă imediat ce primește.</p>
+            <h3>Fără soluții universale</h3>
+            <p>Textilul, pielea și alcantara nu se tratează la fel. Asta face diferența dintre lucru corect și improvizație.</p>
           </div>
           <div class="card">
             <h3>Accent pe igienizare</h3>
-            <p>Poziționarea merge pe curățare reală, reîmprospătare și confort, nu pe termeni care sperie clientul.</p>
+            <p>Poziționarea merge pe curățare reală, reîmprospătare și confort, nu pe termeni inutil complicați.</p>
           </div>
           <div class="card">
             <h3>Programare organizată</h3>
@@ -772,7 +869,7 @@
         <div class="tag">Programare și contact</div>
         <h2 class="section-title">Alegi varianta cea mai simplă pentru tine</h2>
         <p class="section-text">
-          Dacă știi deja ce serviciu dorești, mergi direct în programarea online. Dacă ai nevoie de recomandare sau vrei să explici exact ce ai nevoie, folosește formularul de contact.
+          Dacă știi deja ce serviciu dorești, mergi direct în programarea online. Dacă ai nevoie de recomandare sau vrei să explici exact ce material și ce suprafață ai, folosește formularul de contact.
         </p>
 
         <div class="grid-2">
@@ -806,18 +903,18 @@
             <div class="faq-list">
               <div class="faq-item">
                 <button class="faq-q" type="button">
-                  <span>Lucrați la domiciliu?</span>
+                  <span>Lucrați doar pe textile?</span>
                   <span>+</span>
                 </button>
-                <div class="faq-a">Da. Serviciile principale sunt gândite exact pentru intervenții la domiciliu sau la sediul firmei.</div>
+                <div class="faq-a">Nu. Serviciile sunt formulate și pentru piele sau alcantara, în funcție de materialul existent.</div>
               </div>
 
               <div class="faq-item">
                 <button class="faq-q" type="button">
-                  <span>Lucrați și pentru firme?</span>
+                  <span>Lucrați la domiciliu?</span>
                   <span>+</span>
                 </button>
-                <div class="faq-a">Da. Putem interveni și pentru birouri, spații comerciale și alte locații cu mobilier textil.</div>
+                <div class="faq-a">Da. Serviciile principale sunt gândite exact pentru intervenții la domiciliu sau la sediul firmei.</div>
               </div>
             </div>
           </div>
@@ -886,7 +983,7 @@
   <footer>
     <div class="container footer-row">
       <div>© 2026 Prestige Finish. Toate drepturile rezervate.</div>
-      <div>Curățare textile • Ploiești</div>
+      <div>Curățare textile, piele și alcantara • Ploiești</div>
     </div>
   </footer>
 
