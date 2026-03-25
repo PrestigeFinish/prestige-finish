@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prestige Finish | Formular de contact</title>
   <link rel="icon" type="image/png" href="logo.png" />
-  <meta name="description" content="Contactează Prestige Finish pentru informații, programări, colaborări și solicitări speciale." />
+  <meta name="description" content="Contactează Prestige Finish pentru curățare canapele, saltele, scaune, fotolii, tapițerii, servicii la domiciliu sau la firme." />
 
   <style>
     :root{
@@ -258,7 +258,6 @@
       cursor:pointer;
       box-shadow:var(--shadow-soft);
       transition:.2s ease;
-      text-decoration:none;
     }
 
     .btn:hover{
@@ -662,14 +661,8 @@
     }
 
     .faq-item.active .faq-a{
-      max-height:160px;
+      max-height:180px;
       padding:0 18px 18px;
-    }
-
-    .coming{
-      background:linear-gradient(180deg, rgba(212,175,55,0.08), rgba(255,255,255,0.02));
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
     }
 
     .fade-in{
@@ -834,7 +827,7 @@
       <div class="nav-links" id="mobileMenu">
         <a href="index.html" onclick="closeMenu()">Acasă</a>
         <a href="persoane-fizice.html" onclick="closeMenu()">Persoane fizice</a>
-        <a href="flote.html" onclick="closeMenu()">Persoane juridice / flote</a>
+        <a href="flote.html" onclick="closeMenu()">Firme / spații comerciale</a>
         <a href="programari.html" onclick="closeMenu()">Programare online</a>
         <a href="formular-contact.html" class="nav-cta" onclick="closeMenu()">Formular de contact</a>
       </div>
@@ -849,7 +842,8 @@
           <div class="eyebrow">Formular de contact</div>
           <h1>Trimite solicitarea ta</h1>
           <p>
-            Completează câmpurile de mai jos și revenim către tine cu răspunsul potrivit, o recomandare clară sau detaliile necesare.
+            Completează câmpurile de mai jos dacă ai nevoie de informații, recomandare, ofertă sau vrei să ne spui exact
+            pentru ce tip de curățare ai nevoie: canapele, saltele, scaune, fotolii, textile sau servicii pentru firme.
           </p>
 
           <div class="hero-actions">
@@ -861,14 +855,14 @@
         <div class="info-card">
           <h2>Contact rapid</h2>
           <p>
-            Poți folosi formularul pentru întrebări, solicitări speciale, colaborări sau recomandări de servicii.
+            Formularul este util dacă vrei să explici exact ce ai nevoie înainte de programare sau dacă dorești o solicitare mai clară.
           </p>
 
           <div class="contact-list">
             <div class="contact-row"><strong>Telefon principal</strong><span>0757 352 371</span></div>
             <div class="contact-row"><strong>Telefon secundar</strong><span>0727 707 545</span></div>
             <div class="contact-row"><strong>Email studio</strong><span>prestige.finish@yahoo.com</span></div>
-            <div class="contact-row" style="border-bottom:none;"><strong>Locație</strong><span>Strada Libertății, 107592 Ploiești</span></div>
+            <div class="contact-row" style="border-bottom:none;"><strong>Acoperire</strong><span>La domiciliu sau la sediul firmei</span></div>
           </div>
 
           <div class="quick-actions">
@@ -883,9 +877,9 @@
           </div>
 
           <div class="highlight-card">
-            <h3>Răspuns mai clar, mai rapid</h3>
+            <h3>Ce poți cere prin formular</h3>
             <p>
-              Cu cât solicitarea este mai exactă, cu atât îți putem răspunde mai bine: serviciul dorit, tipul de client și ce ai nevoie concret.
+              Informații despre curățare canapele, saltele, scaune, fotolii, tapițerii, servicii pentru firme sau zona auto secundară.
             </p>
           </div>
         </div>
@@ -897,20 +891,24 @@
         <div class="tag">Contact</div>
         <h2 class="section-title">Spune-ne pe scurt cu ce te putem ajuta</h2>
         <p class="section-text">
-          Formularul de mai jos este potrivit atât pentru persoane fizice, cât și pentru persoane juridice / flote.
+          Formularul de mai jos este potrivit atât pentru persoane fizice, cât și pentru firme, spații comerciale sau cereri mai speciale.
         </p>
 
         <div class="grid-2">
           <div class="form-card">
-            <h2>Formular contact</h2>
+            <h2>Formular premium</h2>
             <p>
-              Trimite solicitarea direct din site. Mesajul ajunge direct catre echipa Prestige Finish
+              Trimite solicitarea direct din site. Mesajul ajunge pe emailul tău configurat în Formspree.
             </p>
 
             <div class="form-top-note">
-              Colegii nostri te contactează in cel mai scurt timp
+              Formular conectat direct la Formspree
             </div>
 
+            <div class="status-bar">
+              <span class="status-text">Draft salvat automat în browser</span>
+              <span class="draft-badge" id="draftBadge">Fără modificări salvate</span>
+            </div>
 
             <form id="contactForm" action="https://formspree.io/f/maqpgwqy" method="POST">
               <input type="hidden" name="_subject" value="Solicitare nouă - Prestige Finish">
@@ -938,33 +936,35 @@
                   <select id="tip-client" name="Tip client" required>
                     <option value="">Selectează</option>
                     <option value="Persoană fizică">Persoană fizică</option>
-                    <option value="Persoană juridică / flotă">Persoană juridică / flotă</option>
+                    <option value="Firmă / spațiu comercial">Firmă / spațiu comercial</option>
                   </select>
                 </div>
 
                 <div class="field">
-                  <label for="interes">Interes</label>
-                  <select id="interes" name="Interes" required>
+                  <label for="interes">Serviciul de interes</label>
+                  <select id="interes" name="Serviciu de interes" required>
                     <option value="">Selectează</option>
-                    <option value="Detailing interior">Detailing interior</option>
-                    <option value="Igienizare tapițerie">Igienizare tapițerie</option>
-                    <option value="Detailing motor">Detailing motor</option>
-                    <option value="Restaurare faruri">Restaurare faruri</option>
-                    <option value="Programare online">Programare online</option>
-                    <option value="Colaborare / ofertă">Colaborare / ofertă</option>
+                    <option value="Curățare canapele">Curățare canapele</option>
+                    <option value="Curățare saltele">Curățare saltele</option>
+                    <option value="Curățare scaune">Curățare scaune</option>
+                    <option value="Curățare fotolii">Curățare fotolii</option>
+                    <option value="Curățare tapițerii textile">Curățare tapițerii textile</option>
+                    <option value="Servicii pentru firme">Servicii pentru firme</option>
+                    <option value="Curățare interior auto">Curățare interior auto</option>
                     <option value="Altceva">Altceva</option>
                   </select>
                 </div>
 
                 <div class="field-full">
-                  <label>Selecție rapidă interes</label>
+                  <label>Selecție rapidă</label>
                   <div class="choice-pills" id="interestPills">
-                    <button type="button" class="choice-pill" data-value="Detailing interior">Detailing interior</button>
-                    <button type="button" class="choice-pill" data-value="Igienizare tapițerie">Igienizare</button>
-                    <button type="button" class="choice-pill" data-value="Detailing motor">Detailing motor</button>
-                    <button type="button" class="choice-pill" data-value="Restaurare faruri">Faruri</button>
-                    <button type="button" class="choice-pill" data-value="Programare online">Programare</button>
-                    <button type="button" class="choice-pill" data-value="Colaborare / ofertă">Ofertă</button>
+                    <button type="button" class="choice-pill" data-value="Curățare canapele">Canapele</button>
+                    <button type="button" class="choice-pill" data-value="Curățare saltele">Saltele</button>
+                    <button type="button" class="choice-pill" data-value="Curățare scaune">Scaune</button>
+                    <button type="button" class="choice-pill" data-value="Curățare fotolii">Fotolii</button>
+                    <button type="button" class="choice-pill" data-value="Curățare tapițerii textile">Tapițerii</button>
+                    <button type="button" class="choice-pill" data-value="Servicii pentru firme">Firme</button>
+                    <button type="button" class="choice-pill" data-value="Curățare interior auto">Auto</button>
                   </div>
                 </div>
 
@@ -973,7 +973,7 @@
                   <textarea id="mesaj" name="Mesaj" placeholder="Scrie-ne pe scurt ce ai nevoie..." required></textarea>
                   <div class="helper-row">
                     <div class="helper-text">
-                      Exemplu: model mașină, serviciul dorit, dacă vrei recomandare sau o estimare.
+                      Exemplu: ce tip de piesă ai, câte bucăți sunt, dacă este la domiciliu sau la firmă și în ce zonă.
                     </div>
                     <div class="counter"><span id="msgCount">0</span>/800</div>
                   </div>
@@ -1002,7 +1002,7 @@
             <div class="mini-info">
               <h3>Programare online</h3>
               <p>
-                Dacă știi deja ce serviciu dorești și vrei să alegi direct un interval disponibil, varianta cea mai rapidă este programarea online.
+                Dacă știi deja ce serviciu dorești și vrei să treci mai rapid prin proces, varianta cea mai simplă este programarea online.
               </p>
               <div class="submit-row">
                 <a href="programari.html" class="btn btn-primary">Deschide programarea</a>
@@ -1012,15 +1012,15 @@
             <div class="mini-grid">
               <div class="mini-info">
                 <h3>Persoane fizice</h3>
-                <p>Servicii premium dedicate clienților individuali.</p>
+                <p>Canapele, saltele, scaune, fotolii, tapițerii și servicii la domiciliu.</p>
                 <div class="submit-row">
                   <a href="persoane-fizice.html" class="btn btn-secondary">Vezi pagina</a>
                 </div>
               </div>
 
               <div class="mini-info">
-                <h3>Persoane juridice / flote</h3>
-                <p>Soluții corporate și servicii recurente pentru companii.</p>
+                <h3>Firme / spații comerciale</h3>
+                <p>Scaune, mobilier textil, recepții, birouri și intervenții la sediu.</p>
                 <div class="submit-row">
                   <a href="flote.html" class="btn btn-secondary">Vezi pagina</a>
                 </div>
@@ -1030,10 +1030,10 @@
             <div class="highlight-card">
               <h3>Când folosești formularul</h3>
               <div class="benefit-list">
-                <div class="benefit-item"><span class="benefit-dot"></span><span>când nu știi exact ce serviciu ți se potrivește</span></div>
-                <div class="benefit-item"><span class="benefit-dot"></span><span>când ai o solicitare specială</span></div>
-                <div class="benefit-item"><span class="benefit-dot"></span><span>când vrei colaborare sau ofertă</span></div>
-                <div class="benefit-item"><span class="benefit-dot"></span><span>când vrei răspuns înainte de programare</span></div>
+                <div class="benefit-item"><span class="benefit-dot"></span><span>când vrei să explici exact ce tip de curățare ai nevoie</span></div>
+                <div class="benefit-item"><span class="benefit-dot"></span><span>când vrei recomandare înainte de programare</span></div>
+                <div class="benefit-item"><span class="benefit-dot"></span><span>când ai nevoie de ofertă pentru firmă sau spațiu comercial</span></div>
+                <div class="benefit-item"><span class="benefit-dot"></span><span>când vrei să clarifici dacă este serviciu la domiciliu sau la sediu</span></div>
               </div>
             </div>
 
@@ -1042,63 +1042,34 @@
               <div class="faq-list">
                 <div class="faq-item">
                   <button class="faq-q" type="button">
-                    <span>Cât de repede răspundeți?</span>
+                    <span>Pot cere ofertă pentru mai multe piese?</span>
                     <span>+</span>
                   </button>
                   <div class="faq-a">
-                    De regulă, cât mai rapid posibil chiar si in afara programului de lucru.
+                    Da. În mesaj poți scrie exact ce tip de piese ai și câte sunt.
                   </div>
                 </div>
 
                 <div class="faq-item">
                   <button class="faq-q" type="button">
-                    <span>Este mai bine formularul sau programarea online?</span>
+                    <span>Pot cere servicii pentru firmă?</span>
                     <span>+</span>
                   </button>
                   <div class="faq-a">
-                    Dacă știi deja serviciul dorit, programarea online este mai rapidă. Dacă ai nevoie de recomandare, folosește formularul.
+                    Da. Selectezi „Firmă / spațiu comercial” și detaliezi necesarul în mesaj.
                   </div>
                 </div>
 
                 <div class="faq-item">
                   <button class="faq-q" type="button">
-                    <span>Pot cere ofertă pentru flotă?</span>
+                    <span>Zona auto mai este disponibilă?</span>
                     <span>+</span>
                   </button>
                   <div class="faq-a">
-                    Da. Selectează „Persoană juridică / flotă” și menționează în mesaj de ce tip de colaborare ai nevoie.
+                    Da, dar ca direcție secundară, formulată simplu: curățare interior auto.
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="coming fade-in">
-      <div class="container">
-        <div class="tag">Informații utile</div>
-        <h2 class="section-title">Alege varianta potrivită pentru tine</h2>
-        <p class="section-text">
-          Dacă vrei răspuns rapid la o întrebare sau o solicitare specială, formularul este alegerea bună.
-          Dacă știi deja ce serviciu dorești și vrei să rezervi direct un interval, folosește programarea online.
-        </p>
-
-        <div class="mini-grid">
-          <div class="mini-info">
-            <h3>Programare online</h3>
-            <p>Ideală dacă știi deja ce serviciu dorești și vrei să rezervi direct un interval disponibil.</p>
-            <div class="submit-row">
-              <a href="programari.html" class="btn btn-primary">Programează-te</a>
-            </div>
-          </div>
-
-          <div class="mini-info">
-            <h3>Formular de contact</h3>
-            <p>Ideal dacă ai nevoie de recomandare, detalii suplimentare sau o solicitare specială.</p>
-            <div class="submit-row">
-              <a href="#top" class="btn btn-secondary">Completează formularul</a>
             </div>
           </div>
         </div>
@@ -1109,7 +1080,7 @@
   <footer>
     <div class="container footer-row">
       <div>© 2026 Prestige Finish. Toate drepturile rezervate.</div>
-      <div>Formular de contact • Ploiești</div>
+      <div>Formular de contact • Curățare textile</div>
     </div>
   </footer>
 
@@ -1164,7 +1135,7 @@
     const replyTo = form.querySelector('input[name="_replyto"]');
     const interestSelect = document.getElementById('interes');
     const pills = document.querySelectorAll('.choice-pill');
-    const storageKey = 'prestige_contact_draft_v1';
+    const storageKey = 'prestige_contact_draft_v2';
 
     function updateCounter() {
       const len = msg.value.length;
