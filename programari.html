@@ -592,18 +592,47 @@
             </p>
 
             <div class="widget-box">
+  <div id="booking-widget"></div>
 
-              <!-- ÎNLOCUIEȘTE TOT CE ESTE ÎN ACEST BOX
-                   CU CODUL TĂU ACTUAL SIMPLYBOOK
-                   (script + container + orice folosești acum și funcționează) -->
-
-              <div class="widget-placeholder">
-                Lipește aici widgetul tău actual SimplyBook.<br><br>
-                Important: nu modifica scriptul original dacă acum funcționează.
-              </div>
-
-            </div>
-          </div>
+  <script src="//widget.simplybook.it/v2/widget/widget.js" type="text/javascript"></script>
+  <script>
+    window.addEventListener('load', function () {
+      new SimplybookWidget({
+        "widget_type":"iframe",
+        "widget_container_id":"booking-widget",
+        "url":"https://prestigefinish.simplybook.it",
+        "theme":"tender",
+        "theme_settings":{
+          "sb_base_color":"#d4af37",
+          "timeline_hide_unavailable":"1",
+          "hide_past_days":"0",
+          "timeline_show_end_time":"0",
+          "timeline_modern_display":"as_slots",
+          "display_item_mode":"block",
+          "booking_nav_bg_color":"#d4af37",
+          "body_bg_color":"#111111",
+          "sb_review_image":"",
+          "dark_font_color":"#111111",
+          "light_font_color":"#ffffff",
+          "btn_color_1":"#d4af37",
+          "sb_company_label_color":"#d4af37",
+          "hide_img_mode":"0",
+          "show_sidebar":"1",
+          "sb_busy":"#c7b3b3",
+          "sb_available":"#d6ebff"
+        },
+        "timeline":"modern",
+        "datepicker":"top_calendar",
+        "is_rtl":false,
+        "app_config":{
+          "clear_session":1,
+          "allow_switch_to_ada":0,
+          "predefined":[]
+        }
+      });
+    });
+  </script>
+</div>
 
           <div>
             <div class="mini-info">
