@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prestige Finish Corporate Care | Persoane juridice / flote</title>
+  <title>Prestige Finish | Servicii pentru firme și spații comerciale</title>
   <link rel="icon" type="image/png" href="logo.png" />
-  <meta name="description" content="Prestige Finish Corporate Care - servicii premium pentru persoane juridice și flote: detailing interior, întreținere recurentă, intervenții mobile și soluții corporate." />
+  <meta name="description" content="Prestige Finish oferă curățare profesională pentru firme, birouri, spații comerciale, scaune, fotolii, canapele și alte suprafețe textile, la sediul companiei." />
 
   <style>
     :root{
       --bg:#050505;
       --card:rgba(255,255,255,0.04);
-      --card-strong:rgba(255,255,255,0.06);
       --gold:#d4af37;
       --gold-soft:rgba(212,175,55,0.12);
       --text:#f5f2ea;
@@ -103,13 +102,8 @@
       justify-content:flex-end;
     }
 
-    .nav-links a{
-      transition:.2s ease;
-    }
-
-    .nav-links a:hover{
-      color:var(--text);
-    }
+    .nav-links a{transition:.2s ease}
+    .nav-links a:hover{color:var(--text)}
 
     .nav-cta{
       padding:10px 16px;
@@ -220,10 +214,10 @@
 
     h1{
       margin:0 0 16px;
-      font-size:clamp(40px,7vw,78px);
+      font-size:clamp(40px,7vw,74px);
       line-height:.98;
       letter-spacing:-1px;
-      max-width:780px;
+      max-width:820px;
     }
 
     .hero p{
@@ -261,9 +255,7 @@
       transition:.2s ease;
     }
 
-    .btn:hover{
-      transform:translateY(-2px);
-    }
+    .btn:hover{transform:translateY(-2px)}
 
     .btn-primary{
       background:linear-gradient(135deg,var(--gold),#f0d266);
@@ -279,7 +271,6 @@
     .hero-points,
     .grid-2,
     .grid-3,
-    .review-grid,
     .faq-grid,
     .contact-wrap,
     .process-grid{
@@ -289,19 +280,17 @@
 
     .hero-points{
       grid-template-columns:repeat(3,minmax(0,1fr));
-      max-width:900px;
+      max-width:920px;
     }
 
     .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
     .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .review-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
     .faq-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
     .contact-wrap{grid-template-columns:1.05fr .95fr}
     .process-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
 
     .mini-card,
     .card,
-    .review-card,
     .hero-panel,
     .info-box,
     .faq-card,
@@ -359,7 +348,6 @@
 
     .mini-card span,
     .card p,
-    .review-card p,
     .faq-card p,
     .section-text,
     .contact-row span,
@@ -393,7 +381,6 @@
     }
 
     .card h3,
-    .review-card h3,
     .faq-card h3,
     .info-box h3,
     .step h3{
@@ -406,19 +393,6 @@
       background:linear-gradient(180deg, rgba(212,175,55,0.08), rgba(255,255,255,0.02));
       border-top:1px solid var(--line);
       border-bottom:1px solid var(--line);
-    }
-
-    .stars{
-      color:var(--gold);
-      font-size:18px;
-      margin-bottom:10px;
-      letter-spacing:2px;
-    }
-
-    .review-name{
-      margin-top:14px;
-      font-weight:700;
-      color:var(--text);
     }
 
     .quick-points{
@@ -563,9 +537,7 @@
       transition:.2s ease;
     }
 
-    .whatsapp-btn:hover{
-      transform:scale(1.04);
-    }
+    .whatsapp-btn:hover{transform:scale(1.04)}
 
     .whatsapp-btn img{
       width:22px;
@@ -573,7 +545,6 @@
     }
 
     @media (max-width:1100px){
-      .review-grid,
       .grid-3,
       .process-grid{
         grid-template-columns:repeat(2,minmax(0,1fr));
@@ -612,7 +583,6 @@
       .grid-2,
       .grid-3,
       .hero-points,
-      .review-grid,
       .faq-grid,
       .contact-wrap,
       .process-grid{
@@ -625,18 +595,9 @@
     }
 
     @media (max-width:640px){
-      .hero{
-        padding:74px 0 42px;
-      }
-
-      .hero-actions{
-        flex-direction:column;
-      }
-
-      .hero-actions .btn{
-        width:100%;
-      }
-
+      .hero{padding:74px 0 42px}
+      .hero-actions{flex-direction:column}
+      .hero-actions .btn{width:100%}
       .whatsapp-btn{
         right:16px;
         left:16px;
@@ -674,9 +635,9 @@
 
       <div class="nav-links" id="mobileMenu">
         <a href="#servicii" onclick="closeMenu()">Servicii</a>
-        <a href="#pachete" onclick="closeMenu()">Pachete</a>
         <a href="#proces" onclick="closeMenu()">Proces</a>
-        <a href="#recenzii" onclick="closeMenu()">Recenzii</a>
+        <a href="#auto" onclick="closeMenu()">Auto</a>
+        <a href="#faq" onclick="closeMenu()">Întrebări</a>
         <a href="#contact" onclick="closeMenu()">Contact</a>
         <a href="programari.html" class="nav-cta" onclick="closeMenu()">Programare online</a>
       </div>
@@ -688,48 +649,48 @@
       <div class="hero-bg"></div>
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Persoane juridice / flote • Corporate Care</div>
-          <h1>Servicii premium pentru persoane juridice și flote</h1>
+          <div class="eyebrow">Servicii pentru firme • la sediu</div>
+          <h1>Curățare profesională pentru firme, birouri și spații comerciale</h1>
           <p>
-            Prestige Finish Corporate Care este direcția dedicată companiilor și flotelor auto care au nevoie de
-            întreținere recurentă, intervenții organizate și o imagine curată, coerentă și profesională.
+            Pagina dedicată zonei business este construită pentru companii care au nevoie de curățare și igienizare pentru
+            mobilier textil, scaune, fotolii, canapele, zone de așteptare și alte suprafețe utilizate frecvent la sediu.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="programari.html">Rezervă un interval</a>
-            <a class="btn btn-secondary" href="formular-contact.html">Formular de contact</a>
+            <a class="btn btn-primary" href="formular-contact.html">Solicită ofertă</a>
+            <a class="btn btn-secondary" href="programari.html">Programare online</a>
           </div>
 
-          <p class="hero-note">Se lucrează exclusiv pe bază de programare</p>
+          <p class="hero-note">Servicii disponibile la sediul firmei, pe bază de programare</p>
 
           <div class="hero-points">
             <div class="mini-card">
-              <strong>Servicii corporate</strong>
-              <span>Structură dedicată pentru companii, colaborări recurente și flote.</span>
+              <strong>Birouri</strong>
+              <span>Scaune, fotolii și zone textile care au nevoie de întreținere periodică.</span>
             </div>
             <div class="mini-card">
-              <strong>Organizare clară</strong>
-              <span>Programări controlate și intervenții planificate mai bine.</span>
+              <strong>Spații comerciale</strong>
+              <span>Zone de așteptare, recepții și mobilier textil folosit frecvent.</span>
             </div>
             <div class="mini-card">
-              <strong>Imagine premium</strong>
-              <span>Servicii gândite pentru firme care își doresc prezentare și standard.</span>
+              <strong>Corporate auto, secundar</strong>
+              <span>Păstrăm și zona auto corporate, dar ca direcție secundară.</span>
             </div>
           </div>
         </div>
 
         <div class="hero-panel">
-          <div class="status"><span class="status-dot"></span> Corporate Care</div>
+          <div class="status"><span class="status-dot"></span> Intervenții la sediul firmei</div>
           <img src="logo.png" alt="Prestige Finish Logo" />
           <h3 style="margin:0 0 8px;font-size:28px;">Prestige Finish</h3>
           <p style="margin:0;color:var(--muted);">
-            O direcție construită pentru companii care au nevoie de predictibilitate, prezentare corectă și servicii realizate atent.
+            Soluții gândite pentru companii care vor un spațiu mai curat, mai îngrijit și mai prezentabil, fără procese complicate.
           </p>
 
           <div class="quick-points">
-            <div class="quick-point"><span class="quick-dot"></span><span>Întreținere recurentă și organizată</span></div>
-            <div class="quick-point"><span class="quick-dot"></span><span>Imagine curată și profesională</span></div>
-            <div class="quick-point"><span class="quick-dot"></span><span>Soluții dedicate pentru companii și flote</span></div>
+            <div class="quick-point"><span class="quick-dot"></span><span>Intervenții organizate la sediu</span></div>
+            <div class="quick-point"><span class="quick-dot"></span><span>Mobilier textil, recepții, birouri, zone comune</span></div>
+            <div class="quick-point"><span class="quick-dot"></span><span>Formular clar pentru ofertă și colaborări</span></div>
           </div>
         </div>
       </div>
@@ -738,115 +699,99 @@
     <section id="servicii" class="coming fade-in">
       <div class="container">
         <div class="tag">Servicii</div>
-        <h2 class="section-title">Serviciile disponibile pentru persoane juridice și flote</h2>
+        <h2 class="section-title">Serviciile principale pentru firme și spații comerciale</h2>
         <p class="section-text">
-          Corporate Care este gândit pentru firme care vor întreținere consecventă, organizare mai bună și intervenții adaptate tipului de flotă.
+          Direcția principală este curățarea și igienizarea suprafețelor textile folosite în activitatea firmei.
         </p>
 
         <div class="grid-3">
           <div class="card">
-            <h3>Detailing interior flotă</h3>
-            <p>Curățare completă a interiorului pentru mașini de companie, autoturisme executive sau vehicule de lucru.</p>
+            <h3>Curățare scaune birou</h3>
+            <p>Potrivit pentru scaune textile utilizate zilnic în birouri și alte spații de lucru.</p>
+          </div>
+          <div class="card">
+            <h3>Curățare fotolii și canapele</h3>
+            <p>Pentru recepții, săli de așteptare, zone lounge și alte spații cu mobilier tapițat.</p>
+          </div>
+          <div class="card">
+            <h3>Curățare mobilier textil</h3>
+            <p>Serviciu adaptat pentru diferite tipuri de mobilier și suprafețe textile din sediul companiei.</p>
           </div>
           <div class="card">
             <h3>Întreținere periodică</h3>
-            <p>Intervenții recurente pentru păstrarea constantă a unei imagini curate și profesionale.</p>
+            <p>Ideală pentru companiile care au nevoie de o imagine constantă și de intervenții recurente.</p>
           </div>
           <div class="card">
-            <h3>Intervenții la sediul firmei</h3>
-            <p>Disponibil pentru anumite tipuri de servicii și colaborări, în funcție de locație și volum.</p>
+            <h3>Intervenții la sediu</h3>
+            <p>Ne deplasăm la locația firmei pentru o organizare mai simplă și mai eficientă.</p>
+          </div>
+          <div class="card">
+            <h3>Igienizare spații utilizate frecvent</h3>
+            <p>Orientat către zone cu trafic ridicat, unde aspectul și întreținerea contează constant.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="pachete" class="fade-in">
-      <div class="container">
-        <div class="tag">Pachete</div>
-        <h2 class="section-title">Pachete pentru companii și flote</h2>
-        <p class="section-text">
-          Pachetele corporate sunt create pentru a răspunde diferitelor niveluri de utilizare și întreținere din zona business.
-        </p>
-
-        <div class="grid-3">
-          <div class="card">
-            <h3>Corporate Essential</h3>
-            <p>Întreținere regulată pentru vehiculele care au nevoie de o imagine curată și constantă.</p>
-          </div>
-          <div class="card">
-            <h3>Corporate Premium</h3>
-            <p>Curățare mai amplă și atenție extinsă la detalii, pentru vehicule de reprezentare sau utilizare frecventă.</p>
-          </div>
-          <div class="card">
-            <h3>Fleet Prestige Plan</h3>
-            <p>Plan complet pentru flote și colaborări recurente, cu organizare dedicată și intervenții programate.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="proces" class="coming fade-in">
+    <section id="proces" class="fade-in">
       <div class="container">
         <div class="tag">Proces</div>
-        <h2 class="section-title">Cum decurge colaborarea corporate</h2>
+        <h2 class="section-title">Cum decurge colaborarea cu o firmă</h2>
         <p class="section-text">
-          Pentru zona business, procesul trebuie să fie clar, eficient și ușor de integrat în activitatea firmei.
+          Procesul este simplu, clar și gândit pentru a nu complica activitatea zilnică a companiei.
         </p>
 
         <div class="process-grid">
           <div class="step">
             <div class="step-number">1</div>
-            <h3>Trimiți solicitarea</h3>
-            <p>Prin formularul de contact sau programare online, în funcție de nevoia ta.</p>
+            <h3>Ne trimiți solicitarea</h3>
+            <p>Prin formularul de contact sau printr-un mesaj clar cu tipul de spațiu și necesarul firmei.</p>
           </div>
           <div class="step">
             <div class="step-number">2</div>
             <h3>Stabilim structura</h3>
-            <p>Clarificăm tipul de servicii, frecvența și modul de desfășurare.</p>
+            <p>Clarificăm ce suprafețe trebuie curățate, cât de des și în ce condiții se face intervenția.</p>
           </div>
           <div class="step">
             <div class="step-number">3</div>
-            <h3>Planificăm intervențiile</h3>
-            <p>Organizăm programările astfel încât activitatea firmei să fie afectată cât mai puțin.</p>
+            <h3>Planificăm intervenția</h3>
+            <p>Organizăm lucrarea astfel încât activitatea firmei să fie afectată cât mai puțin.</p>
           </div>
           <div class="step">
             <div class="step-number">4</div>
-            <h3>Executăm lucrarea</h3>
-            <p>Intervenția este realizată atent, organizat și la standardul stabilit.</p>
+            <h3>Executăm serviciul</h3>
+            <p>Intervenția este realizată la sediul firmei, clar, atent și organizat.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="recenzii" class="fade-in">
+    <section id="auto" class="coming fade-in">
       <div class="container">
-        <div class="tag">Recenzii</div>
-        <h2 class="section-title">Feedback real din colaborări reale</h2>
+        <div class="tag">Auto corporate</div>
+        <h2 class="section-title">Zona auto rămâne disponibilă, dar ca direcție secundară</h2>
         <p class="section-text">
-          După primele colaborări corporate, aici vei putea afișa feedback real din zona business și flote.
+          Pentru companiile care au nevoie și de intervenții pe zona auto, păstrăm serviciile într-o formulare simplă și clară.
         </p>
 
-        <div class="review-grid">
-          <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <p>Aici poți pune un prim feedback real de la o companie sau un client business.</p>
-            <div class="review-name">Client corporate • în curând</div>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Curățare interior auto</h3>
+            <p>Pentru mașini de serviciu, vehicule de reprezentare sau alte autoturisme utilizate de companie.</p>
           </div>
-          <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <p>Recenziile din zona business au un impact mare atunci când sunt clare și autentice.</p>
-            <div class="review-name">Partener business • în curând</div>
+          <div class="card">
+            <h3>Curățare tapițerie auto</h3>
+            <p>Pentru scaune, banchete și alte suprafețe textile din interiorul mașinii.</p>
           </div>
-          <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <p>După primele proiecte, aici vei putea arăta modul în care au perceput companiile colaborarea cu Prestige Finish.</p>
-            <div class="review-name">Flotă / companie • în curând</div>
+          <div class="card">
+            <h3>Igienizare auto corporate</h3>
+            <p>Serviciu orientat către întreținere și un interior mai curat și mai bine prezentat.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="coming fade-in">
+    <section id="faq" class="fade-in">
       <div class="container">
         <div class="tag">Întrebări frecvente</div>
         <h2 class="section-title">Ce întreabă clienții business cel mai des</h2>
@@ -857,18 +802,18 @@
             <div class="faq-list">
               <div class="faq-item">
                 <button class="faq-q" type="button">
-                  <span>Lucrați și pe bază de colaborare recurentă?</span>
+                  <span>Lucrați la sediul firmei?</span>
                   <span>+</span>
                 </button>
-                <div class="faq-a">Da. Pagina corporate este gândită tocmai pentru astfel de colaborări și planuri recurente.</div>
+                <div class="faq-a">Da. Pentru zona business, direcția principală este intervenția direct la sediul firmei.</div>
               </div>
 
               <div class="faq-item">
                 <button class="faq-q" type="button">
-                  <span>Pot cere ofertă personalizată?</span>
+                  <span>Putem cere ofertă personalizată?</span>
                   <span>+</span>
                 </button>
-                <div class="faq-a">Da. Cel mai bine este să folosești formularul de contact și să menționezi nevoia firmei tale.</div>
+                <div class="faq-a">Da. Formularul de contact este ideal pentru cereri mai ample, colaborări și oferte personalizate.</div>
               </div>
             </div>
           </div>
@@ -878,18 +823,18 @@
             <div class="faq-list">
               <div class="faq-item">
                 <button class="faq-q" type="button">
-                  <span>Intervențiile pot fi planificate clar?</span>
+                  <span>Se lucrează fără programare?</span>
                   <span>+</span>
                 </button>
-                <div class="faq-a">Da. Tocmai asta este ideea: structură clară, predictibilitate și programări controlate.</div>
+                <div class="faq-a">Nu. Intervențiile sunt organizate pe bază de programare, pentru o desfășurare clară și eficientă.</div>
               </div>
 
               <div class="faq-item">
                 <button class="faq-q" type="button">
-                  <span>Se poate lucra și la sediul firmei?</span>
+                  <span>Păstrați și partea de auto?</span>
                   <span>+</span>
                 </button>
-                <div class="faq-a">Pentru anumite servicii și colaborări, da, în funcție de tipul solicitării și locație.</div>
+                <div class="faq-a">Da, dar auto corporate rămâne o direcție secundară, nu focusul principal al paginii.</div>
               </div>
             </div>
           </div>
@@ -897,21 +842,20 @@
       </div>
     </section>
 
-    <section id="contact" class="fade-in">
+    <section id="contact" class="coming fade-in">
       <div class="container contact-wrap">
         <div>
           <div class="tag">Contact</div>
-          <h2 class="section-title">Contact pentru persoane juridice și flote</h2>
+          <h2 class="section-title">Contact pentru firme și spații comerciale</h2>
           <p class="section-text">
-            Pentru solicitări corporate, colaborări recurente, informații și rezervări, ne poți contacta direct telefonic
-            sau prin formularul de contact.
+            Pentru oferte, colaborări, intervenții recurente sau programări, ne poți contacta rapid telefonic, prin WhatsApp sau prin formularul de contact.
           </p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="tel:+40757352371">0757 352 371</a>
             <a class="btn btn-primary" href="tel:+40727707545">0727 707 545</a>
+            <a class="btn btn-secondary" href="formular-contact.html">Solicită ofertă</a>
             <a class="btn btn-secondary" href="programari.html">Programare online</a>
-            <a class="btn btn-secondary" href="formular-contact.html">Formular de contact</a>
           </div>
         </div>
 
@@ -919,8 +863,8 @@
           <div class="contact-row"><strong>Telefon principal</strong><span>0757 352 371</span></div>
           <div class="contact-row"><strong>Telefon secundar</strong><span>0727 707 545</span></div>
           <div class="contact-row"><strong>Email</strong><span>prestige.finish@yahoo.com</span></div>
-          <div class="contact-row"><strong>Tip clienți</strong><span>Persoane juridice / flote</span></div>
-          <div class="contact-row" style="border-bottom:none;"><strong>Status</strong><span>Programare online activă</span></div>
+          <div class="contact-row"><strong>Servicii principale</strong><span>Scaune birou, canapele, fotolii, mobilier textil, spații comerciale</span></div>
+          <div class="contact-row" style="border-bottom:none;"><strong>Status</strong><span>Intervenții la sediul firmei, pe bază de programare</span></div>
         </div>
       </div>
     </section>
@@ -928,14 +872,14 @@
 
   <footer>
     <div class="container footer-row">
-      <div>© 2026 Prestige Finish Corporate Care. Toate drepturile rezervate.</div>
-      <div>Persoane juridice / flote • Ploiești</div>
+      <div>© 2026 Prestige Finish. Toate drepturile rezervate.</div>
+      <div>Firme și spații comerciale • Curățare textile</div>
     </div>
   </footer>
 
-  <a href="https://wa.me/40757352371?text=Buna!%20Vreau%20informatii%20despre%20serviciile%20pentru%20persoane%20juridice%20si%20flote." class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+  <a href="https://wa.me/40757352371?text=Buna!%20Vreau%20informatii%20despre%20serviciile%20pentru%20firme%20si%20spatii%20comerciale." class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-    Programează acum
+    Scrie-ne pe WhatsApp
   </a>
 
   <script>
