@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prestige Finish | Servicii pentru firme și spații comerciale</title>
+  <title>Prestige Finish | Firme și spații comerciale - curățare textile, piele și alcantara</title>
   <link rel="icon" type="image/png" href="logo.png" />
-  <meta name="description" content="Prestige Finish oferă curățare profesională pentru firme, birouri, spații comerciale, scaune, fotolii, canapele și alte suprafețe textile, la sediul companiei." />
+  <meta name="description" content="Prestige Finish oferă pentru firme și spații comerciale curățare și igienizare profesională pentru scaune, fotolii, canapele și alte suprafețe din textil, piele sau alcantara, la sediul companiei." />
 
   <style>
     :root{
@@ -271,8 +271,8 @@
     .hero-points,
     .grid-2,
     .grid-3,
-    .faq-grid,
     .contact-wrap,
+    .faq-grid,
     .process-grid{
       display:grid;
       gap:20px;
@@ -285,8 +285,8 @@
 
     .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
     .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .faq-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
     .contact-wrap{grid-template-columns:1.05fr .95fr}
+    .faq-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
     .process-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
 
     .mini-card,
@@ -351,7 +351,7 @@
     .faq-card p,
     .section-text,
     .contact-row span,
-    .tiny,
+    .section-note,
     .step p{
       color:var(--muted);
     }
@@ -367,8 +367,18 @@
 
     .section-text{
       max-width:760px;
-      margin:0 0 28px;
+      margin:0 0 16px;
       font-size:17px;
+    }
+
+    .section-note{
+      max-width:860px;
+      margin:0 0 28px;
+      padding:14px 18px;
+      border-left:3px solid var(--gold);
+      border-radius:0 14px 14px 0;
+      background:rgba(212,175,55,0.06);
+      font-size:15px;
     }
 
     .tag{
@@ -381,8 +391,9 @@
     }
 
     .card h3,
-    .faq-card h3,
+    .hero-panel h3,
     .info-box h3,
+    .faq-card h3,
     .step h3{
       margin:0 0 10px;
       font-size:22px;
@@ -415,6 +426,48 @@
       background:var(--gold);
       flex-shrink:0;
       box-shadow:0 0 10px rgba(212,175,55,0.5);
+    }
+
+    .service-list{
+      list-style:none;
+      padding:0;
+      margin:18px 0 0;
+      display:grid;
+      gap:12px;
+    }
+
+    .service-list li{
+      position:relative;
+      padding:14px 16px 14px 42px;
+      border:1px solid rgba(212,175,55,0.14);
+      border-radius:18px;
+      background:rgba(255,255,255,0.02);
+      color:var(--text);
+      transition:.2s ease;
+    }
+
+    .service-list li:hover{
+      border-color:var(--line-strong);
+      background:rgba(255,255,255,0.035);
+      transform:translateY(-2px);
+    }
+
+    .service-list li::before{
+      content:"✦";
+      position:absolute;
+      left:16px;
+      top:13px;
+      color:var(--gold);
+      font-size:16px;
+      line-height:1;
+    }
+
+    .service-label{
+      display:block;
+      color:var(--gold);
+      font-weight:700;
+      margin-bottom:2px;
+      font-size:14px;
     }
 
     .step-number{
@@ -547,7 +600,7 @@
     @media (max-width:1100px){
       .grid-3,
       .process-grid{
-        grid-template-columns:repeat(2,minmax(0,1fr));
+        grid-template-columns:1fr;
       }
     }
 
@@ -649,11 +702,14 @@
       <div class="hero-bg"></div>
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Servicii pentru firme • la sediu</div>
-          <h1>Curățare profesională pentru firme, birouri și spații comerciale</h1>
+          <div class="eyebrow">Firme și spații comerciale • la sediu</div>
+          <h1>Curățare profesională pentru textile, piele și alcantara în zona business</h1>
           <p>
             Pagina dedicată zonei business este construită pentru companii care au nevoie de curățare și igienizare pentru
-            mobilier textil, scaune, fotolii, canapele, zone de așteptare și alte suprafețe utilizate frecvent la sediu.
+            scaune birou, fotolii, canapele, recepții, zone de așteptare și alte suprafețe utilizate frecvent la sediu.
+          </p>
+          <p>
+            Intervențiile sunt adaptate materialului — textil, piele sau alcantara — pentru un rezultat corect, curat și prezentabil.
           </p>
 
           <div class="hero-actions">
@@ -665,15 +721,15 @@
 
           <div class="hero-points">
             <div class="mini-card">
-              <strong>Birouri</strong>
-              <span>Scaune, fotolii și zone textile care au nevoie de întreținere periodică.</span>
+              <strong>Scaune și fotolii</strong>
+              <span>Ideal pentru birouri, săli de meeting și zone de lucru folosite zilnic.</span>
             </div>
             <div class="mini-card">
-              <strong>Spații comerciale</strong>
-              <span>Zone de așteptare, recepții și mobilier textil folosit frecvent.</span>
+              <strong>Canapele și recepții</strong>
+              <span>Potrivite pentru recepții, lounge-uri și zone de așteptare cu trafic constant.</span>
             </div>
             <div class="mini-card">
-              <strong>Corporate auto, secundar</strong>
+              <strong>Auto corporate, secundar</strong>
               <span>Păstrăm și zona auto corporate, dar ca direcție secundară.</span>
             </div>
           </div>
@@ -684,12 +740,12 @@
           <img src="logo.png" alt="Prestige Finish Logo" />
           <h3 style="margin:0 0 8px;font-size:28px;">Prestige Finish</h3>
           <p style="margin:0;color:var(--muted);">
-            Soluții gândite pentru companii care vor un spațiu mai curat, mai îngrijit și mai prezentabil, fără procese complicate.
+            Soluții gândite pentru companii care vor spații mai curate, mai îngrijite și mai prezentabile, fără procese complicate și fără improvizații.
           </p>
 
           <div class="quick-points">
+            <div class="quick-point"><span class="quick-dot"></span><span>Textil, piele și alcantara tratate diferit</span></div>
             <div class="quick-point"><span class="quick-dot"></span><span>Intervenții organizate la sediu</span></div>
-            <div class="quick-point"><span class="quick-dot"></span><span>Mobilier textil, recepții, birouri, zone comune</span></div>
             <div class="quick-point"><span class="quick-dot"></span><span>Formular clar pentru ofertă și colaborări</span></div>
           </div>
         </div>
@@ -701,33 +757,69 @@
         <div class="tag">Servicii</div>
         <h2 class="section-title">Serviciile principale pentru firme și spații comerciale</h2>
         <p class="section-text">
-          Direcția principală este curățarea și igienizarea suprafețelor textile folosite în activitatea firmei.
+          Direcția principală este curățarea și igienizarea suprafețelor utilizate frecvent în activitatea companiei, cu abordare diferită pentru fiecare material.
+        </p>
+
+        <p class="section-note">
+          În zona business, întreținerea corectă a materialelor contează atât pentru imagine, cât și pentru durata lor de viață. De aceea, textilul, pielea și alcantara sunt tratate separat.
         </p>
 
         <div class="grid-3">
           <div class="card">
-            <h3>Curățare scaune birou</h3>
-            <p>Potrivit pentru scaune textile utilizate zilnic în birouri și alte spații de lucru.</p>
+            <h3>Scaune birou și scaune de lucru</h3>
+            <p>Potrivit pentru scaune utilizate zilnic în birouri și alte spații de lucru, cu intervenție adaptată materialului.</p>
+            <ul class="service-list">
+              <li>
+                <span class="service-label">Scaune textile</span>
+                Curățare pentru materiale textile folosite intensiv, cu focus pe aspect curat și întreținere.
+              </li>
+              <li>
+                <span class="service-label">Scaune din piele</span>
+                Curățare și întreținere pentru piele naturală sau ecologică, fără tratamente agresive.
+              </li>
+              <li>
+                <span class="service-label">Scaune alcantara</span>
+                Intervenție delicată pentru materiale sensibile și finisaje premium.
+              </li>
+            </ul>
           </div>
+
           <div class="card">
-            <h3>Curățare fotolii și canapele</h3>
-            <p>Pentru recepții, săli de așteptare, zone lounge și alte spații cu mobilier tapițat.</p>
+            <h3>Fotolii, canapele și recepții</h3>
+            <p>Ideal pentru zone de așteptare, recepții, lounge-uri și alte spații cu mobilier tapițat folosit frecvent.</p>
+            <ul class="service-list">
+              <li>
+                <span class="service-label">Textil</span>
+                Curățare pentru mobilier textil din recepții și zone comune.
+              </li>
+              <li>
+                <span class="service-label">Piele</span>
+                Curățare și întreținere pentru mobilier business din piele sau ecopiele.
+              </li>
+              <li>
+                <span class="service-label">Alcantara</span>
+                Curățare atentă pentru suprafețe premium care necesită grijă suplimentară.
+              </li>
+            </ul>
           </div>
+
           <div class="card">
-            <h3>Curățare mobilier textil</h3>
-            <p>Serviciu adaptat pentru diferite tipuri de mobilier și suprafețe textile din sediul companiei.</p>
-          </div>
-          <div class="card">
-            <h3>Întreținere periodică</h3>
-            <p>Ideală pentru companiile care au nevoie de o imagine constantă și de intervenții recurente.</p>
-          </div>
-          <div class="card">
-            <h3>Intervenții la sediu</h3>
-            <p>Ne deplasăm la locația firmei pentru o organizare mai simplă și mai eficientă.</p>
-          </div>
-          <div class="card">
-            <h3>Igienizare spații utilizate frecvent</h3>
-            <p>Orientat către zone cu trafic ridicat, unde aspectul și întreținerea contează constant.</p>
+            <h3>Mobilier textil și zone corporate</h3>
+            <p>Servicii pentru diferite tipuri de suprafețe și zone utilizate frecvent în companie.</p>
+            <ul class="service-list">
+              <li>
+                <span class="service-label">Zone comune</span>
+                Recepții, săli de așteptare, zone lounge, spații de întâlnire.
+              </li>
+              <li>
+                <span class="service-label">Mobilier variat</span>
+                Curățare pentru textil, piele sau alcantara, în funcție de materialul existent.
+              </li>
+              <li>
+                <span class="service-label">Întreținere constantă</span>
+                Potrivit pentru companii care vor o imagine mai bine întreținută în mod regulat.
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -744,13 +836,13 @@
         <div class="process-grid">
           <div class="step">
             <div class="step-number">1</div>
-            <h3>Ne trimiți solicitarea</h3>
+            <h3>Trimiți solicitarea</h3>
             <p>Prin formularul de contact sau printr-un mesaj clar cu tipul de spațiu și necesarul firmei.</p>
           </div>
           <div class="step">
             <div class="step-number">2</div>
             <h3>Stabilim structura</h3>
-            <p>Clarificăm ce suprafețe trebuie curățate, cât de des și în ce condiții se face intervenția.</p>
+            <p>Clarificăm ce suprafețe trebuie curățate, din ce material sunt și cum organizăm intervenția.</p>
           </div>
           <div class="step">
             <div class="step-number">3</div>
@@ -760,7 +852,7 @@
           <div class="step">
             <div class="step-number">4</div>
             <h3>Executăm serviciul</h3>
-            <p>Intervenția este realizată la sediul firmei, clar, atent și organizat.</p>
+            <p>Intervenția este realizată atent, la sediul firmei, cu abordare adaptată fiecărui material.</p>
           </div>
         </div>
       </div>
@@ -781,7 +873,7 @@
           </div>
           <div class="card">
             <h3>Curățare tapițerie auto</h3>
-            <p>Pentru scaune, banchete și alte suprafețe textile din interiorul mașinii.</p>
+            <p>Pentru scaune, banchete și alte suprafețe din textil, piele sau alcantara din interiorul mașinii.</p>
           </div>
           <div class="card">
             <h3>Igienizare auto corporate</h3>
@@ -810,10 +902,10 @@
 
               <div class="faq-item">
                 <button class="faq-q" type="button">
-                  <span>Putem cere ofertă personalizată?</span>
+                  <span>Lucrați doar pe textile?</span>
                   <span>+</span>
                 </button>
-                <div class="faq-a">Da. Formularul de contact este ideal pentru cereri mai ample, colaborări și oferte personalizate.</div>
+                <div class="faq-a">Nu. Putem lucra și pe piele sau alcantara, în funcție de materialul suprafeței.</div>
               </div>
             </div>
           </div>
@@ -823,10 +915,10 @@
             <div class="faq-list">
               <div class="faq-item">
                 <button class="faq-q" type="button">
-                  <span>Se lucrează fără programare?</span>
+                  <span>Putem cere ofertă personalizată?</span>
                   <span>+</span>
                 </button>
-                <div class="faq-a">Nu. Intervențiile sunt organizate pe bază de programare, pentru o desfășurare clară și eficientă.</div>
+                <div class="faq-a">Da. Formularul de contact este ideal pentru cereri mai ample, colaborări și oferte personalizate.</div>
               </div>
 
               <div class="faq-item">
@@ -863,7 +955,7 @@
           <div class="contact-row"><strong>Telefon principal</strong><span>0757 352 371</span></div>
           <div class="contact-row"><strong>Telefon secundar</strong><span>0727 707 545</span></div>
           <div class="contact-row"><strong>Email</strong><span>prestige.finish@yahoo.com</span></div>
-          <div class="contact-row"><strong>Servicii principale</strong><span>Scaune birou, canapele, fotolii, mobilier textil, spații comerciale</span></div>
+          <div class="contact-row"><strong>Servicii principale</strong><span>Scaune birou, fotolii, canapele, recepții, textil, piele, alcantara</span></div>
           <div class="contact-row" style="border-bottom:none;"><strong>Status</strong><span>Intervenții la sediul firmei, pe bază de programare</span></div>
         </div>
       </div>
@@ -873,7 +965,7 @@
   <footer>
     <div class="container footer-row">
       <div>© 2026 Prestige Finish. Toate drepturile rezervate.</div>
-      <div>Firme și spații comerciale • Curățare textile</div>
+      <div>Firme și spații comerciale • Textil, piele și alcantara</div>
     </div>
   </footer>
 
