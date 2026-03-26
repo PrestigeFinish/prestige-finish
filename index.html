@@ -3,24 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prestige Finish | Curățare profesională textile, piele și alcantara în Ploiești</title>
-  <link rel="icon" type="image/png" href="logo.jpeg" />
-  <meta name="description" content="Prestige Finish oferă curățare și igienizare profesională pentru canapele, saltele, scaune, fotolii și tapițerii din material textil, piele sau alcantara, la domiciliu sau la sediul firmei, în Ploiești." />
+  <title>Prestige Finish | Curățare profesională canapele, saltele și tapițerii</title>
+  <link rel="icon" type="image/jpeg" href="logo.jpeg" />
+  <meta name="description" content="Prestige Finish oferă curățare și igienizare profesională pentru canapele, colțare, saltele, scaune, fotolii și tapițerii din textil, piele sau alcantara, la domiciliu sau la sediul firmei." />
 
   <style>
     :root{
       --bg:#050505;
+      --bg-soft:#0b0b0b;
       --card:rgba(255,255,255,0.04);
       --card-strong:rgba(255,255,255,0.06);
       --gold:#d4af37;
+      --gold-2:#f0d266;
       --gold-soft:rgba(212,175,55,0.12);
+      --gold-line:rgba(212,175,55,0.18);
+      --gold-line-strong:rgba(212,175,55,0.34);
       --text:#f5f2ea;
-      --muted:#c5bea9;
-      --line:rgba(212,175,55,0.18);
-      --line-strong:rgba(212,175,55,0.34);
+      --muted:#c8c1ae;
       --green:#25D366;
       --shadow:0 20px 60px rgba(0,0,0,0.45);
       --shadow-soft:0 10px 30px rgba(0,0,0,0.25);
+      --glow:0 0 14px rgba(212,175,55,0.18);
+      --radius:28px;
     }
 
     *{box-sizing:border-box}
@@ -28,11 +32,11 @@
     body{
       margin:0;
       font-family:Arial,Helvetica,sans-serif;
-      background:
-        radial-gradient(circle at top right, rgba(212,175,55,0.16), transparent 24%),
-        radial-gradient(circle at bottom left, rgba(212,175,55,0.10), transparent 20%),
-        var(--bg);
       color:var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(212,175,55,0.12), transparent 24%),
+        radial-gradient(circle at bottom left, rgba(212,175,55,0.08), transparent 20%),
+        var(--bg);
       line-height:1.6;
       overflow-x:hidden;
     }
@@ -42,7 +46,7 @@
     button{font:inherit}
 
     .container{
-      width:min(1180px,calc(100% - 32px));
+      width:min(1200px, calc(100% - 32px));
       margin:0 auto;
     }
 
@@ -50,9 +54,9 @@
       position:sticky;
       top:0;
       z-index:1000;
-      background:rgba(5,5,5,0.88);
+      background:rgba(5,5,5,0.82);
       backdrop-filter:blur(14px);
-      border-bottom:1px solid var(--line);
+      border-bottom:1px solid var(--gold-line);
     }
 
     .nav{
@@ -60,31 +64,39 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:16px;
+      gap:18px;
       padding:16px 0;
     }
 
     .brand{
       display:flex;
       align-items:center;
-      gap:12px;
+      gap:14px;
       min-width:0;
     }
 
     .brand-logo{
-      height:80px;
+      height:72px;
       width:auto;
-      border-radius:10px;
+      border-radius:18px;
       object-fit:contain;
       flex-shrink:0;
+      filter:drop-shadow(0 0 10px rgba(212,175,55,0.28));
+      transition:transform .25s ease, filter .25s ease;
+    }
+
+    .brand:hover .brand-logo{
+      transform:translateY(-2px) scale(1.02);
+      filter:drop-shadow(0 0 18px rgba(212,175,55,0.42));
     }
 
     .brand-name{
       color:var(--gold);
-      font-size:22px;
+      font-size:28px;
       font-weight:700;
       letter-spacing:0.4px;
       white-space:nowrap;
+      text-shadow:0 0 12px rgba(212,175,55,0.10);
     }
 
     .nav-right{
@@ -105,19 +117,39 @@
 
     .nav-links a{
       transition:.2s ease;
+      position:relative;
     }
 
     .nav-links a:hover{
       color:var(--text);
     }
 
+    .nav-links a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:-6px;
+      height:1px;
+      background:linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity:0;
+      transform:scaleX(.6);
+      transition:.2s ease;
+    }
+
+    .nav-links a:hover::after{
+      opacity:1;
+      transform:scaleX(1);
+    }
+
     .nav-cta{
-      padding:10px 16px;
+      padding:11px 18px;
       border-radius:999px;
-      border:1px solid var(--line);
+      border:1px solid var(--gold-line);
       color:var(--gold);
       background:rgba(212,175,55,0.06);
       font-weight:700;
+      box-shadow:var(--glow);
     }
 
     .top-socials{
@@ -130,7 +162,7 @@
       width:42px;
       height:42px;
       border-radius:999px;
-      border:1px solid var(--line);
+      border:1px solid var(--gold-line);
       background:rgba(255,255,255,0.03);
       display:inline-flex;
       align-items:center;
@@ -142,7 +174,8 @@
     .top-social:hover{
       transform:translateY(-2px);
       background:rgba(212,175,55,0.08);
-      border-color:var(--line-strong);
+      border-color:var(--gold-line-strong);
+      box-shadow:0 0 16px rgba(212,175,55,0.12);
     }
 
     .top-social svg{
@@ -153,15 +186,16 @@
 
     .menu-toggle{
       display:none;
-      width:54px;
-      height:54px;
+      width:56px;
+      height:56px;
       border-radius:18px;
-      border:1px solid var(--line);
+      border:1px solid var(--gold-line);
       background:rgba(255,255,255,0.03);
       color:var(--gold);
       align-items:center;
       justify-content:center;
       cursor:pointer;
+      box-shadow:var(--shadow-soft);
     }
 
     .menu-toggle svg{
@@ -171,16 +205,16 @@
     }
 
     .hero{
-      padding:92px 0 60px;
       position:relative;
       overflow:hidden;
+      padding:90px 0 62px;
     }
 
     .hero::after{
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(90deg, rgba(5,5,5,0.96) 0%, rgba(5,5,5,0.88) 40%, rgba(5,5,5,0.64) 68%, rgba(5,5,5,0.84) 100%);
+      background:linear-gradient(90deg, rgba(5,5,5,.96) 0%, rgba(5,5,5,.88) 40%, rgba(5,5,5,.64) 68%, rgba(5,5,5,.84) 100%);
       pointer-events:none;
     }
 
@@ -188,10 +222,17 @@
       position:absolute;
       inset:0;
       background:
-        linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)),
+        linear-gradient(rgba(0,0,0,.18), rgba(0,0,0,.18)),
         url('logo.jpeg') center/contain no-repeat,
-        radial-gradient(circle at center, rgba(212,175,55,0.10), transparent 35%);
-      opacity:.09;
+        radial-gradient(circle at center, rgba(212,175,55,.12), transparent 34%);
+      opacity:.08;
+      animation:heroFloat 10s ease-in-out infinite;
+    }
+
+    @keyframes heroFloat{
+      0%{transform:scale(1) translateY(0)}
+      50%{transform:scale(1.02) translateY(-6px)}
+      100%{transform:scale(1) translateY(0)}
     }
 
     .hero-grid{
@@ -208,36 +249,38 @@
       align-items:center;
       gap:8px;
       padding:8px 14px;
-      border:1px solid var(--line);
+      border:1px solid var(--gold-line);
       border-radius:999px;
       color:var(--gold);
-      background:rgba(212,175,55,0.07);
+      background:rgba(212,175,55,.07);
       font-size:12px;
       letter-spacing:1.5px;
       text-transform:uppercase;
       margin-bottom:18px;
+      box-shadow:var(--glow);
     }
 
     h1{
       margin:0 0 16px;
-      font-size:clamp(40px,7vw,76px);
+      font-size:clamp(42px,7vw,78px);
       line-height:.98;
       letter-spacing:-1px;
-      max-width:820px;
+      max-width:860px;
+      text-shadow:0 0 18px rgba(212,175,55,0.05);
     }
 
     .hero p{
       color:var(--muted);
       font-size:18px;
       max-width:760px;
-      margin:0 0 28px;
+      margin:0 0 24px;
     }
 
     .hero-actions{
       display:flex;
       gap:14px;
       flex-wrap:wrap;
-      margin-bottom:18px;
+      margin-bottom:20px;
     }
 
     .hero-note{
@@ -250,7 +293,7 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-height:54px;
+      min-height:56px;
       padding:0 24px;
       border-radius:999px;
       border:1px solid transparent;
@@ -261,64 +304,90 @@
       transition:.2s ease;
     }
 
-    .btn:hover{transform:translateY(-2px)}
+    .btn:hover{
+      transform:translateY(-2px);
+    }
 
     .btn-primary{
-      background:linear-gradient(135deg,var(--gold),#f0d266);
+      background:linear-gradient(135deg, var(--gold), var(--gold-2));
       color:#0a0a0a;
+      box-shadow:0 0 18px rgba(212,175,55,.18);
     }
 
     .btn-secondary{
       background:transparent;
-      border-color:var(--line);
+      border-color:var(--gold-line);
       color:var(--text);
+    }
+
+    .btn-whatsapp{
+      background:var(--green);
+      color:#fff;
     }
 
     .hero-points,
     .grid-2,
     .grid-3,
+    .package-grid,
     .faq-grid,
-    .contact-wrap{
+    .contact-wrap,
+    .mini-grid{
       display:grid;
       gap:20px;
     }
 
     .hero-points{
       grid-template-columns:repeat(3,minmax(0,1fr));
-      max-width:920px;
+      max-width:980px;
     }
 
     .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
     .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .package-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
     .faq-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .contact-wrap{grid-template-columns:1.05fr .95fr}
+    .contact-wrap{grid-template-columns:1.08fr .92fr}
+    .mini-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 
     .mini-card,
     .card,
     .hero-panel,
     .info-box,
+    .package-card,
     .faq-card{
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.02));
-      border-radius:26px;
-      padding:22px;
+      border:1px solid var(--gold-line);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border-radius:var(--radius);
+      padding:24px;
       box-shadow:var(--shadow);
     }
 
     .hero-panel{
       background:
-        radial-gradient(circle at top right, rgba(212,175,55,0.08), transparent 30%),
-        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.025));
-      padding:26px;
+        radial-gradient(circle at top right, rgba(212,175,55,.08), transparent 32%),
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.025));
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-panel::before{
+      content:"";
+      position:absolute;
+      inset:auto -40% -55% auto;
+      width:280px;
+      height:280px;
+      background:radial-gradient(circle, rgba(212,175,55,.14), transparent 65%);
+      pointer-events:none;
     }
 
     .hero-panel img{
       width:100%;
-      max-width:300px;
-      margin:0 auto 18px;
-      border-radius:24px;
-      border:1px solid var(--line);
+      max-width:360px;
+      margin:0 auto 20px;
+      border-radius:26px;
+      border:1px solid var(--gold-line);
       background:#000;
+      box-shadow:0 0 20px rgba(212,175,55,.10);
     }
 
     .status{
@@ -326,12 +395,13 @@
       align-items:center;
       gap:8px;
       color:var(--gold);
-      border:1px solid var(--line);
+      border:1px solid var(--gold-line);
       border-radius:999px;
       padding:8px 12px;
-      background:rgba(212,175,55,0.06);
+      background:rgba(212,175,55,.06);
       font-size:13px;
       margin-bottom:14px;
+      box-shadow:var(--glow);
     }
 
     .status-dot{
@@ -339,23 +409,31 @@
       height:8px;
       border-radius:999px;
       background:var(--gold);
-      box-shadow:0 0 12px rgba(212,175,55,0.7);
+      box-shadow:0 0 12px rgba(212,175,55,0.8);
+      animation:pulse 2s infinite;
+    }
+
+    @keyframes pulse{
+      0%{transform:scale(1);opacity:1}
+      50%{transform:scale(1.4);opacity:.65}
+      100%{transform:scale(1);opacity:1}
     }
 
     .mini-card strong{
       display:block;
       color:var(--gold);
       margin-bottom:6px;
-      font-size:14px;
+      font-size:15px;
     }
 
     .mini-card span,
+    .section-text,
+    .section-note,
     .card p,
     .faq-card p,
-    .section-text,
     .contact-row span,
-    .tiny,
-    .service-note{
+    .package-subtitle,
+    .package-note{
       color:var(--muted);
     }
 
@@ -369,20 +447,20 @@
     }
 
     .section-text{
-      max-width:760px;
+      max-width:780px;
       margin:0 0 16px;
       font-size:17px;
     }
 
     .section-note{
-      max-width:860px;
+      max-width:900px;
       margin:0 0 28px;
       padding:14px 18px;
       border-left:3px solid var(--gold);
       border-radius:0 14px 14px 0;
-      background:rgba(212,175,55,0.06);
-      color:var(--text);
+      background:rgba(212,175,55,.06);
       font-size:15px;
+      box-shadow:var(--glow);
     }
 
     .tag{
@@ -395,23 +473,38 @@
     }
 
     .card h3,
+    .info-box h3,
     .faq-card h3,
-    .info-box h3{
+    .package-card h3{
       margin:0 0 10px;
-      font-size:22px;
+      font-size:24px;
       color:var(--gold);
+      position:relative;
+    }
+
+    .card h3::after,
+    .package-card h3::after,
+    .info-box h3::after,
+    .faq-card h3::after{
+      content:"";
+      display:block;
+      width:44px;
+      height:2px;
+      background:linear-gradient(90deg, var(--gold), transparent);
+      margin-top:8px;
+      box-shadow:var(--glow);
     }
 
     .coming{
-      background:linear-gradient(180deg, rgba(212,175,55,0.08), rgba(255,255,255,0.02));
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(212,175,55,.08), rgba(255,255,255,.02));
+      border-top:1px solid var(--gold-line);
+      border-bottom:1px solid var(--gold-line);
     }
 
     .quick-points{
       display:grid;
       gap:12px;
-      margin-top:16px;
+      margin-top:18px;
     }
 
     .quick-point{
@@ -427,7 +520,7 @@
       border-radius:999px;
       background:var(--gold);
       flex-shrink:0;
-      box-shadow:0 0 10px rgba(212,175,55,0.5);
+      box-shadow:0 0 10px rgba(212,175,55,.55);
     }
 
     .service-list{
@@ -441,17 +534,18 @@
     .service-list li{
       position:relative;
       padding:14px 16px 14px 42px;
-      border:1px solid rgba(212,175,55,0.14);
+      border:1px solid rgba(212,175,55,.14);
       border-radius:18px;
-      background:rgba(255,255,255,0.02);
+      background:rgba(255,255,255,.02);
       color:var(--text);
       transition:.2s ease;
     }
 
     .service-list li:hover{
-      border-color:var(--line-strong);
-      background:rgba(255,255,255,0.035);
+      border-color:var(--gold-line-strong);
+      background:rgba(255,255,255,.04);
       transform:translateY(-2px);
+      box-shadow:0 0 18px rgba(212,175,55,.08);
     }
 
     .service-list li::before{
@@ -472,31 +566,123 @@
       font-size:14px;
     }
 
-    .contact-row{
-      padding:14px 0;
-      border-bottom:1px solid rgba(255,255,255,0.08);
-    }
-
-    .contact-row strong{
-      display:block;
-      color:var(--text);
-      margin-bottom:4px;
-    }
-
-    .map-wrap{
-      border-radius:22px;
+    .package-card{
+      position:relative;
       overflow:hidden;
-      border:1px solid var(--line);
-      margin-top:18px;
-      box-shadow:var(--shadow-soft);
+      transition:.25s ease;
     }
 
-    .map-wrap iframe{
+    .package-card:hover{
+      transform:translateY(-6px);
+      border-color:var(--gold-line-strong);
+      box-shadow:0 24px 65px rgba(0,0,0,.52), 0 0 18px rgba(212,175,55,.08);
+    }
+
+    .package-card.featured{
+      border-color:rgba(212,175,55,.36);
+      box-shadow:0 26px 75px rgba(0,0,0,.55), 0 0 24px rgba(212,175,55,.12);
+      animation:goldGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes goldGlow{
+      0%{box-shadow:0 26px 75px rgba(0,0,0,.55), 0 0 12px rgba(212,175,55,.10)}
+      50%{box-shadow:0 26px 75px rgba(0,0,0,.55), 0 0 24px rgba(212,175,55,.18)}
+      100%{box-shadow:0 26px 75px rgba(0,0,0,.55), 0 0 12px rgba(212,175,55,.10)}
+    }
+
+    .package-badge{
+      display:inline-flex;
+      margin-bottom:14px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--gold-line);
+      background:rgba(212,175,55,.10);
+      color:var(--gold);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.6px;
+      text-transform:uppercase;
+      box-shadow:var(--glow);
+    }
+
+    .package-subtitle{
+      margin:0 0 18px;
+      font-size:15px;
+    }
+
+    .package-features{
+      list-style:none;
+      padding:0;
+      margin:0 0 20px;
+      display:grid;
+      gap:10px;
+    }
+
+    .package-features li{
+      position:relative;
+      padding-left:22px;
+      color:var(--text);
+      font-size:14px;
+    }
+
+    .package-features li::before{
+      content:"✓";
+      position:absolute;
+      left:0;
+      top:0;
+      color:var(--gold);
+      font-weight:700;
+    }
+
+    .package-prices{
+      margin:18px 0 22px;
+      border-top:1px solid rgba(255,255,255,.08);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      padding:14px 0;
+      display:grid;
+      gap:12px;
+    }
+
+    .price-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+    }
+
+    .price-row span{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .price-row strong{
+      color:var(--gold);
+      font-size:20px;
+      white-space:nowrap;
+    }
+
+    .package-note{
+      font-size:13px;
+      margin:8px 0 18px;
+    }
+
+    .package-btn{
       width:100%;
-      height:320px;
-      border:0;
-      display:block;
-      filter:grayscale(1) contrast(1.1);
+    }
+
+    .addon-card{
+      border:1px solid rgba(212,175,55,.24);
+      background:
+        radial-gradient(circle at top right, rgba(212,175,55,.08), transparent 34%),
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border-radius:24px;
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .addon-highlight{
+      color:var(--gold);
+      font-weight:700;
     }
 
     .faq-list{
@@ -506,9 +692,9 @@
     }
 
     .faq-item{
-      border:1px solid var(--line);
+      border:1px solid var(--gold-line);
       border-radius:20px;
-      background:rgba(255,255,255,0.025);
+      background:rgba(255,255,255,.025);
       overflow:hidden;
     }
 
@@ -546,8 +732,19 @@
     }
 
     .faq-item.active .faq-a{
-      max-height:180px;
+      max-height:220px;
       padding:0 18px 18px;
+    }
+
+    .contact-row{
+      padding:14px 0;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .contact-row strong{
+      display:block;
+      color:var(--text);
+      margin-bottom:4px;
     }
 
     .fade-in{
@@ -562,7 +759,7 @@
     }
 
     footer{
-      border-top:1px solid var(--line);
+      border-top:1px solid var(--gold-line);
       padding:28px 0 40px;
       color:var(--muted);
       font-size:14px;
@@ -580,7 +777,7 @@
       bottom:25px;
       right:25px;
       background:var(--green);
-      color:white;
+      color:#fff;
       padding:14px 22px;
       font-size:15px;
       font-weight:bold;
@@ -588,13 +785,14 @@
       align-items:center;
       gap:10px;
       border-radius:30px;
-      text-decoration:none;
-      box-shadow:0 8px 20px rgba(0,0,0,0.35);
+      box-shadow:0 8px 20px rgba(0,0,0,.35);
       z-index:9999;
       transition:.2s ease;
     }
 
-    .whatsapp-btn:hover{transform:scale(1.04)}
+    .whatsapp-btn:hover{
+      transform:scale(1.04);
+    }
 
     .whatsapp-btn img{
       width:22px;
@@ -602,8 +800,9 @@
     }
 
     @media (max-width:1100px){
-      .grid-3{
-        grid-template-columns:repeat(2,minmax(0,1fr));
+      .grid-3,
+      .package-grid{
+        grid-template-columns:1fr;
       }
     }
 
@@ -621,8 +820,8 @@
         align-items:stretch;
         gap:10px;
         padding:18px;
-        background:rgba(5,5,5,0.98);
-        border:1px solid var(--line);
+        background:rgba(5,5,5,.98);
+        border:1px solid var(--gold-line);
         border-radius:20px;
       }
 
@@ -631,22 +830,24 @@
       .nav-links a{
         padding:14px 16px;
         border-radius:14px;
-        background:rgba(255,255,255,0.03);
-        border:1px solid rgba(255,255,255,0.04);
+        background:rgba(255,255,255,.03);
+        border:1px solid rgba(255,255,255,.04);
       }
 
       .hero-grid,
       .grid-2,
       .grid-3,
       .hero-points,
+      .package-grid,
       .faq-grid,
-      .contact-wrap{
+      .contact-wrap,
+      .mini-grid{
         grid-template-columns:1fr;
       }
 
+      .brand-logo{height:54px}
+      .brand-name{font-size:22px}
       h1{font-size:48px}
-      .brand-logo{height:44px}
-      .brand-name{font-size:20px}
     }
 
     @media (max-width:640px){
@@ -692,9 +893,9 @@
         <a href="#servicii" onclick="closeMenu()">Servicii</a>
         <a href="persoane-fizice.html" onclick="closeMenu()">Persoane fizice</a>
         <a href="flote.html" onclick="closeMenu()">Firme / spații comerciale</a>
-        <a href="#despre" onclick="closeMenu()">De ce noi</a>
+        <a href="#pachete" onclick="closeMenu()">Pachete</a>
         <a href="#faq" onclick="closeMenu()">Întrebări</a>
-        <a href="#contact" onclick="closeMenu()">Contact</a>
+        <a href="formular-contact.html" onclick="closeMenu()">Contact</a>
         <a href="programari.html" class="nav-cta" onclick="closeMenu()">Programare online</a>
       </div>
     </div>
@@ -705,21 +906,22 @@
       <div class="hero-bg"></div>
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Curățare profesională • Ploiești</div>
-          <h1>Curățare profesională pentru textile, piele și alcantara în Ploiești</h1>
+          <div class="eyebrow">Curat. Corect. Profesional.</div>
+          <h1>Curățare profesională pentru canapele, saltele și tapițerii</h1>
           <p>
-            Prestige Finish oferă curățare și igienizare profesională pentru canapele, saltele, scaune, fotolii și orice tip de tapițerie – textilă, piele sau alcantara – la domiciliu sau la sediul firmei.
+            Prestige Finish oferă curățare și igienizare profesională pentru canapele, colțare, saltele, scaune, fotolii și alte suprafețe tapițate, inclusiv textil, piele și alcantara.
           </p>
           <p>
-            Intervenim atent, organizat și adaptat fiecărui material – textil, piele sau alcantara – pentru un rezultat curat, igienizat și vizibil.
+            Intervenim la domiciliu sau la sediul firmei, cu o abordare atentă, organizată și adaptată materialului, pentru un rezultat curat, vizibil și premium.
           </p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="programari.html">Programare online</a>
-            <a class="btn btn-secondary" href="formular-contact.html">Formular de contact</a>
+            <a class="btn btn-secondary" href="#pachete">Vezi pachetele</a>
+            <a class="btn btn-whatsapp" href="https://wa.me/40757352371?text=Buna!%20Vreau%20informatii%20despre%20serviciile%20Prestige%20Finish." target="_blank" rel="noopener noreferrer">Scrie pe WhatsApp</a>
           </div>
 
-          <p class="hero-note">Servicii disponibile la domiciliu sau la sediul firmei, pe bază de programare</p>
+          <p class="hero-note">Intervenții pe bază de programare • persoane fizice și firme • textil, piele și alcantara</p>
 
           <div class="hero-points">
             <div class="mini-card">
@@ -728,19 +930,19 @@
             </div>
             <div class="mini-card">
               <strong>La firme</strong>
-              <span>Servicii pentru birouri, spații comerciale și zone de lucru cu mobilier textil sau piele.</span>
+              <span>Servicii pentru birouri, recepții, spații comerciale și zone de așteptare.</span>
             </div>
             <div class="mini-card">
-              <strong>Și auto, secundar</strong>
-              <span>Curățare interior auto și tapițerie auto, formulată simplu și clar.</span>
+              <strong>Materiale diferite</strong>
+              <span>Textil, piele și alcantara tratate diferit, cu soluții și metode potrivite.</span>
             </div>
           </div>
         </div>
 
         <div class="hero-panel">
           <div class="status"><span class="status-dot"></span> Programare activă</div>
-          <img src="logo.jpeg" alt="Prestige Finish Logo" />
-          <h3 style="margin:0 0 8px;font-size:28px;">Prestige Finish</h3>
+          <img src="logo.jpeg" alt="Prestige Finish">
+          <h3 style="margin:0 0 8px;font-size:30px;">Prestige Finish</h3>
           <p style="margin:0;color:var(--muted);">
             Servicii construite în jurul ideii de curățare reală, igienizare și întreținere corectă pentru orice material: textil, piele sau alcantara.
           </p>
@@ -757,23 +959,23 @@
     <section id="servicii" class="coming fade-in">
       <div class="container">
         <div class="tag">Servicii principale</div>
-        <h2 class="section-title">Servicii premium pe direcții clare</h2>
+        <h2 class="section-title">Servicii premium, clar prezentate</h2>
         <p class="section-text">
-          Focusul principal este pe curățare și igienizare pentru casă și firme, iar zona auto rămâne ca serviciu secundar, simplu și clar formulat.
+          Am construit oferta astfel încât clientul să înțeleagă rapid ce alegere i se potrivește: curățare pentru casă, pentru firmă și opțiuni premium pentru întreținere și protecție.
         </p>
 
         <p class="section-note">
-          Fiecare material este tratat diferit, cu soluții și tehnici dedicate, pentru a evita deteriorarea și pentru a obține un rezultat corect, curat și sigur.
+          Fiecare material necesită o abordare diferită. Textilul, pielea și alcantara nu pot fi tratate la fel, iar alegerea corectă a metodei face diferența între un rezultat bun și unul făcut la întâmplare.
         </p>
 
         <div class="grid-3">
           <div class="card">
-            <h3>Curățare canapele și colțare</h3>
-            <p>Serviciu dedicat pieselor utilizate frecvent în locuință sau în zone de așteptare.</p>
+            <h3>Canapele și colțare</h3>
+            <p>Servicii dedicate suprafețelor utilizate frecvent în locuință sau în zone de așteptare.</p>
             <ul class="service-list">
               <li>
                 <span class="service-label">Textil</span>
-                Curățare pentru canapele și colțare din materiale textile, cu focus pe igienizare și reîmprospătare.
+                Curățare pentru canapele și colțare textile, cu focus pe igienizare și reîmprospătare.
               </li>
               <li>
                 <span class="service-label">Piele</span>
@@ -781,13 +983,13 @@
               </li>
               <li>
                 <span class="service-label">Alcantara</span>
-                Curățare delicată, adaptată materialelor sensibile și finisajelor premium.
+                Curățare delicată pentru materiale sensibile și finisaje premium.
               </li>
             </ul>
           </div>
 
           <div class="card">
-            <h3>Curățare saltele, scaune și fotolii</h3>
+            <h3>Saltele, scaune și fotolii</h3>
             <p>Ideal pentru suprafețe care au nevoie de curățare atentă, igienizare și reîmprospătare vizibilă.</p>
             <ul class="service-list">
               <li>
@@ -796,7 +998,7 @@
               </li>
               <li>
                 <span class="service-label">Scaune</span>
-                Potrivit pentru scaune textile, piele sau mix de materiale, atât acasă cât și la firme.
+                Potrivite pentru textile, piele sau combinații de materiale, atât acasă cât și la firme.
               </li>
               <li>
                 <span class="service-label">Fotolii</span>
@@ -806,20 +1008,20 @@
           </div>
 
           <div class="card">
-            <h3>Tapițerii, firme și zona auto</h3>
-            <p>Servicii pentru diferite suprafețe și contexte, fără a complica inutil experiența clientului.</p>
+            <h3>Persoane fizice și firme</h3>
+            <p>Serviciile sunt formulate simplu, astfel încât să funcționeze clar și pentru domiciliu, și pentru companii.</p>
             <ul class="service-list">
               <li>
-                <span class="service-label">Tapițerii variate</span>
-                Curățare pentru suprafețe textile, piele sau alcantara, în funcție de tipul materialului.
+                <span class="service-label">Acasă</span>
+                Curățare pentru canapele, saltele, scaune, fotolii și alte suprafețe tapițate.
               </li>
               <li>
-                <span class="service-label">Firme / spații comerciale</span>
-                Intervenții la sediu pentru birouri, recepții, mobilier textil și zone folosite frecvent.
+                <span class="service-label">Business</span>
+                Intervenții pentru birouri, recepții, scaune birou, canapele și zone comune.
               </li>
               <li>
-                <span class="service-label">Interior auto</span>
-                Zonă secundară păstrată pentru curățare interior auto și tapițerie auto.
+                <span class="service-label">Rapid</span>
+                Programare online, formular de contact și WhatsApp pentru răspuns mai rapid.
               </li>
             </ul>
           </div>
@@ -827,38 +1029,115 @@
       </div>
     </section>
 
-    <section id="despre" class="fade-in">
+    <section id="pachete" class="fade-in">
       <div class="container">
-        <div class="tag">De ce noi</div>
-        <h2 class="section-title">Servicii clare, poziționare corectă, experiență premium</h2>
+        <div class="tag">Pachete și prețuri</div>
+        <h2 class="section-title">Pachete clare, ușor de înțeles</h2>
         <p class="section-text">
-          Nu vindem doar „curățenie”. Vindem intervenții corecte, organizare bună și o abordare adaptată materialului, astfel încât rezultatul să fie curat, sigur și credibil.
+          Prețurile finale pot varia în funcție de material, gradul de murdărie și suprafață, dar baza de pornire este clară și transparentă.
         </p>
 
-        <div class="grid-3">
-          <div class="card">
-            <h3>Ne deplasăm la client</h3>
-            <p>Lucrăm la domiciliu sau la sediul firmei, acolo unde este nevoie de intervenție.</p>
+        <div class="package-grid">
+          <div class="package-card">
+            <div class="package-badge">Basic</div>
+            <h3>Refresh</h3>
+            <p class="package-subtitle">
+              Varianta potrivită pentru întreținere regulată, reîmprospătare și curățare corectă a suprafețelor utilizate frecvent.
+            </p>
+
+            <ul class="package-features">
+              <li>Curățare standard pentru suprafețe textile</li>
+              <li>Reîmprospătare și îmbunătățirea aspectului general</li>
+              <li>Potrivit pentru întreținere și utilizare normală</li>
+              <li>Ideal pentru canapele, scaune și fotolii</li>
+            </ul>
+
+            <div class="package-prices">
+              <div class="price-row">
+                <span>Canapea 2-3 locuri</span>
+                <strong>de la 150 lei</strong>
+              </div>
+              <div class="price-row">
+                <span>Fotoliu</span>
+                <strong>de la 100 lei</strong>
+              </div>
+              <div class="price-row">
+                <span>Set 4 scaune</span>
+                <strong>de la 120 lei</strong>
+              </div>
+            </div>
+
+            <p class="package-note">Recomandat pentru întreținere regulată și suprafețe fără încărcare mare.</p>
+
+            <a class="btn btn-secondary package-btn" href="programari.html">Programează</a>
           </div>
-          <div class="card">
-            <h3>Fără soluții universale</h3>
-            <p>Textilul, pielea și alcantara nu se tratează la fel. Asta face diferența dintre lucru corect și improvizație.</p>
+
+          <div class="package-card featured">
+            <div class="package-badge">Recomandat</div>
+            <h3>Premium Care</h3>
+            <p class="package-subtitle">
+              Varianta principală pentru clienții care vor curățare mai amplă, atenție la detalii și un rezultat mai bine finisat.
+            </p>
+
+            <ul class="package-features">
+              <li>Curățare aprofundată pentru suprafețe utilizate intens</li>
+              <li>Potrivit pentru textil, piele și alcantara</li>
+              <li>Tratament adaptat materialului și gradului de murdărie</li>
+              <li>Ideal pentru canapele, colțare și saltele</li>
+            </ul>
+
+            <div class="package-prices">
+              <div class="price-row">
+                <span>Colțar</span>
+                <strong>de la 300 lei</strong>
+              </div>
+              <div class="price-row">
+                <span>Saltea</span>
+                <strong>de la 200 lei</strong>
+              </div>
+              <div class="price-row">
+                <span>Canapea 2-3 locuri</span>
+                <strong>de la 220 lei</strong>
+              </div>
+            </div>
+
+            <p class="package-note">Pachetul cel mai echilibrat între rezultat, atenție și valoare.</p>
+
+            <a class="btn btn-primary package-btn" href="programari.html">Programează online</a>
           </div>
-          <div class="card">
-            <h3>Accent pe igienizare</h3>
-            <p>Poziționarea merge pe curățare reală, reîmprospătare și confort, nu pe termeni inutil complicați.</p>
-          </div>
-          <div class="card">
-            <h3>Programare organizată</h3>
-            <p>Ai programare online, formular de contact și opțiune rapidă de WhatsApp.</p>
-          </div>
-          <div class="card">
-            <h3>Util atât pentru acasă, cât și pentru firme</h3>
-            <p>Poți comunica simplu atât către persoane fizice, cât și către companii.</p>
-          </div>
-          <div class="card">
-            <h3>Auto rămâne secundar</h3>
-            <p>Nu renunți la auto, doar îl formulezi mai simplu și mai natural pentru clientul obișnuit.</p>
+
+          <div class="package-card">
+            <div class="package-badge">Prestige</div>
+            <h3>Prestige Protection</h3>
+            <p class="package-subtitle">
+              Pentru suprafețe care au nevoie nu doar de curățare, ci și de protecție suplimentară și întreținere premium.
+            </p>
+
+            <ul class="package-features">
+              <li>Curățare completă și atentă</li>
+              <li>Potrivit pentru materiale sensibile și finisaje premium</li>
+              <li>Recomandat pentru zone cu utilizare intensă</li>
+              <li>Poate include opțional protecție hidrofobă</li>
+            </ul>
+
+            <div class="package-prices">
+              <div class="price-row">
+                <span>Canapea / colțar premium</span>
+                <strong>de la 350 lei</strong>
+              </div>
+              <div class="price-row">
+                <span>Suprafețe piele / alcantara</span>
+                <strong>de la 250 lei</strong>
+              </div>
+              <div class="price-row">
+                <span>Intervenție personalizată</span>
+                <strong>la cerere</strong>
+              </div>
+            </div>
+
+            <p class="package-note">Pentru clienții care vor mai mult decât curat: protecție, întreținere și prezentare premium.</p>
+
+            <a class="btn btn-secondary package-btn" href="https://wa.me/40757352371?text=Buna!%20Vreau%20detalii%20despre%20pachetul%20Prestige%20Protection." target="_blank" rel="noopener noreferrer">Cere detalii pe WhatsApp</a>
           </div>
         </div>
       </div>
@@ -866,33 +1145,71 @@
 
     <section class="coming fade-in">
       <div class="container">
-        <div class="tag">Programare și contact</div>
-        <h2 class="section-title">Alegi varianta cea mai simplă pentru tine</h2>
+        <div class="tag">Opționale premium</div>
+        <h2 class="section-title">Protecție hidrofobă și opțiuni extra</h2>
         <p class="section-text">
-          Dacă știi deja ce serviciu dorești, mergi direct în programarea online. Dacă ai nevoie de recomandare sau vrei să explici exact ce material și ce suprafață ai, folosește formularul de contact.
+          Pe lângă curățare, poți alege și opțiuni premium care cresc durata efectului și ajută la întreținerea suprafețelor în timp.
         </p>
 
         <div class="grid-2">
-          <div class="info-box">
-            <h3>Programare online</h3>
-            <p>Alegi serviciul, trimiți datele și stabilim intervenția într-un mod clar și organizat.</p>
-            <p style="margin-top:18px;">
-              <a href="programari.html" class="btn btn-primary">Deschide programarea online</a>
+          <div class="addon-card">
+            <h3>Protecție hidrofobă</h3>
+            <p>
+              <span class="addon-highlight">Opțional, contra cost.</span> Aplicăm tratament hidrofob pentru materialele compatibile, cu rol de protecție suplimentară împotriva absorbției rapide a lichidelor și a murdăriei.
             </p>
+            <p>
+              Este o opțiune foarte bună pentru suprafețe folosite frecvent sau pentru clienții care vor întreținere mai ușoară în timp.
+            </p>
+            <p class="package-note">Disponibilitatea se stabilește în funcție de material și suprafață.</p>
           </div>
 
-          <div class="info-box">
-            <h3>Formular de contact</h3>
-            <p>Ideal pentru cereri speciale, informații suplimentare, colaborări sau solicitări mai ample.</p>
-            <p style="margin-top:18px;">
-              <a href="formular-contact.html" class="btn btn-secondary">Deschide formularul de contact</a>
-            </p>
+          <div class="addon-card">
+            <h3>Alte opțiuni disponibile</h3>
+            <ul class="service-list" style="margin-top:0;">
+              <li>
+                <span class="service-label">Tratament piele</span>
+                Întreținere și curățare pentru suprafețe din piele naturală sau ecologică.
+              </li>
+              <li>
+                <span class="service-label">Suprafețe suplimentare</span>
+                Extra piese, elemente adiționale sau zone care necesită intervenție separată.
+              </li>
+              <li>
+                <span class="service-label">Solicitare personalizată</span>
+                Pentru lucrări mai ample, mix de suprafețe sau intervenții la firme.
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="faq" class="fade-in">
+    <section class="fade-in">
+      <div class="container">
+        <div class="tag">De ce noi</div>
+        <h2 class="section-title">Curățare făcută corect, nu superficial</h2>
+        <p class="section-text">
+          Prestige Finish nu este construit pe grabă sau volum. Ideea centrală este simplă: curățare reală, prezentare premium și o experiență care inspiră încredere.
+        </p>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>Adaptat materialului</h3>
+            <p>Textilul, pielea și alcantara nu sunt tratate la fel. Asta face diferența dintre rezultat corect și improvizație.</p>
+          </div>
+          <div class="card">
+            <h3>La domiciliu sau la firmă</h3>
+            <p>Intervențiile sunt gândite pentru confortul clientului și pentru organizare bună, fără deplasări inutile.</p>
+          </div>
+          <div class="card">
+            <h3>Structură clară</h3>
+            <p>Programare online, pachete, opționale și contact rapid – totul gândit simplu și profesionist.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="coming fade-in">
       <div class="container">
         <div class="tag">Întrebări frecvente</div>
         <h2 class="section-title">Ce întreabă clienții cel mai des</h2>
@@ -906,7 +1223,15 @@
                   <span>Lucrați doar pe textile?</span>
                   <span>+</span>
                 </button>
-                <div class="faq-a">Nu. Serviciile sunt formulate și pentru piele sau alcantara, în funcție de materialul existent.</div>
+                <div class="faq-a">Nu. Lucrăm și pe piele sau alcantara, în funcție de materialul suprafeței și de tipul intervenției.</div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-q" type="button">
+                  <span>Se poate aplica protecție hidrofobă?</span>
+                  <span>+</span>
+                </button>
+                <div class="faq-a">Da, pentru materialele compatibile. Este o opțiune premium, disponibilă contra cost, în funcție de suprafață și material.</div>
               </div>
 
               <div class="faq-item">
@@ -914,30 +1239,66 @@
                   <span>Lucrați la domiciliu?</span>
                   <span>+</span>
                 </button>
-                <div class="faq-a">Da. Serviciile principale sunt gândite exact pentru intervenții la domiciliu sau la sediul firmei.</div>
+                <div class="faq-a">Da. Intervențiile sunt organizate la domiciliu sau la sediul firmei, pe bază de programare.</div>
               </div>
             </div>
           </div>
 
           <div class="faq-card">
-            <h3>Despre organizare</h3>
+            <h3>Despre preț și organizare</h3>
             <div class="faq-list">
               <div class="faq-item">
                 <button class="faq-q" type="button">
-                  <span>Se lucrează fără programare?</span>
+                  <span>Prețurile sunt fixe?</span>
                   <span>+</span>
                 </button>
-                <div class="faq-a">Nu. Intervențiile sunt organizate pe bază de programare.</div>
+                <div class="faq-a">Prețurile de pe site reprezintă baza de pornire. Valoarea finală poate varia în funcție de material, suprafață și gradul de murdărie.</div>
               </div>
 
               <div class="faq-item">
                 <button class="faq-q" type="button">
-                  <span>Zona auto rămâne disponibilă?</span>
+                  <span>Pot cere o recomandare înainte de programare?</span>
                   <span>+</span>
                 </button>
-                <div class="faq-a">Da, dar ca direcție secundară, formulată simplu: curățare interior auto și tapițerie auto.</div>
+                <div class="faq-a">Da. Poți folosi formularul de contact sau WhatsApp și revenim cu recomandarea potrivită.</div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-q" type="button">
+                  <span>Lucrați și pentru firme?</span>
+                  <span>+</span>
+                </button>
+                <div class="faq-a">Da. Avem pagină dedicată pentru firme și spații comerciale, cu servicii adaptate zonei business.</div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fade-in">
+      <div class="container">
+        <div class="tag">Programare și contact</div>
+        <h2 class="section-title">Alegi varianta cea mai simplă pentru tine</h2>
+        <p class="section-text">
+          Dacă știi deja ce serviciu dorești, mergi direct în programarea online. Dacă vrei să clarifici materialul, suprafața sau opțiunile premium, scrie-ne direct pe WhatsApp sau folosește formularul de contact.
+        </p>
+
+        <div class="mini-grid">
+          <div class="info-box">
+            <h3>Programare online</h3>
+            <p>Alegi serviciul, completezi informațiile importante și stabilim intervenția într-un mod clar și organizat.</p>
+            <p style="margin-top:18px;">
+              <a href="programari.html" class="btn btn-primary">Deschide programarea online</a>
+            </p>
+          </div>
+
+          <div class="info-box">
+            <h3>Formular de contact</h3>
+            <p>Ideal pentru cereri speciale, recomandări, firme, lucrări mai ample sau solicitări personalizate.</p>
+            <p style="margin-top:18px;">
+              <a href="formular-contact.html" class="btn btn-secondary">Deschide formularul de contact</a>
+            </p>
           </div>
         </div>
       </div>
@@ -955,26 +1316,15 @@
           <div class="hero-actions">
             <a class="btn btn-primary" href="tel:+40757352371">0757 352 371</a>
             <a class="btn btn-primary" href="tel:+40727707545">0727 707 545</a>
-            <a class="btn btn-secondary" href="programari.html">Programare online</a>
-            <a class="btn btn-secondary" href="formular-contact.html">Formular de contact</a>
+            <a class="btn btn-whatsapp" href="https://wa.me/40757352371?text=Buna!%20Vreau%20mai%20multe%20informatii%20despre%20serviciile%20Prestige%20Finish." target="_blank" rel="noopener noreferrer">WhatsApp</a>
           </div>
         </div>
 
         <div class="info-box">
-          <div class="contact-row"><strong>Telefon principal</strong><span>0757 352 371</span></div>
-          <div class="contact-row"><strong>Telefon secundar</strong><span>0727 707 545</span></div>
           <div class="contact-row"><strong>Email</strong><span>prestige.finish@yahoo.com</span></div>
-          <div class="contact-row"><strong>Locație</strong><span>Strada Libertății, 107592 Ploiești</span></div>
-          <div class="contact-row" style="border-bottom:none;"><strong>Acoperire</strong><span>La domiciliu sau la sediul firmei</span></div>
-
-          <div class="map-wrap">
-            <iframe
-              src="https://www.google.com/maps?q=Strada%20Libert%C4%83%C8%9Bii%2C%20107592%20Ploie%C8%99ti&z=15&output=embed"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Prestige Finish - locație">
-            </iframe>
-          </div>
+          <div class="contact-row"><strong>Acoperire</strong><span>Intervenții la domiciliu sau la sediul firmei, pe bază de programare</span></div>
+          <div class="contact-row"><strong>Disponibilitate</strong><span>Programare online, WhatsApp și formular de contact</span></div>
+          <div class="contact-row" style="border-bottom:none;"><strong>Servicii principale</strong><span>Canapele, colțare, saltele, scaune, fotolii, textile, piele și alcantara</span></div>
         </div>
       </div>
     </section>
@@ -983,11 +1333,11 @@
   <footer>
     <div class="container footer-row">
       <div>© 2026 Prestige Finish. Toate drepturile rezervate.</div>
-      <div>Curățare textile, piele și alcantara • Ploiești</div>
+      <div>Curat. Corect. Profesional.</div>
     </div>
   </footer>
 
-  <a href="https://wa.me/40757352371?text=Buna!%20Vreau%20informatii%20despre%20serviciile%20de%20curatare%20Prestige%20Finish." class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+  <a href="https://wa.me/40757352371?text=Buna!%20Vreau%20informatii%20despre%20serviciile%20Prestige%20Finish." class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
     Scrie-ne pe WhatsApp
   </a>
