@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prestige Finish | Curățenie după renovări și mutări</title>
   <link rel="icon" type="image/jpeg" href="logo.jpeg" />
-  <meta name="description" content="Prestige Finish oferă servicii profesionale de curățenie după renovări și mutări în Prahova. Îndepărtăm praful, murdăria și urmele de construcție, pentru un spațiu gata de locuit." />
+  <meta name="description" content="Prestige Finish oferă servicii profesionale de curățenie după renovări și mutări în Prahova și județele apropiate. Îndepărtăm praful, murdăria și urmele de construcție pentru un spațiu gata de locuit, predat sau utilizat." />
 
   <style>
     :root{
@@ -122,13 +122,6 @@
       align-items:center;
       justify-content:center;
       box-shadow:var(--shadow);
-      transition:.2s ease;
-    }
-
-    .top-social:hover{
-      transform:translateY(-2px);
-      background:rgba(212,175,55,.08);
-      border-color:var(--line-strong);
     }
 
     .top-social svg{
@@ -474,21 +467,6 @@
       font-size:17px;
     }
 
-    .footer{
-      padding:28px 0 40px;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    .footer-wrap{
-      display:flex;
-      justify-content:space-between;
-      gap:20px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-
     .fade-in{
       opacity:0;
       transform:translateY(28px);
@@ -500,7 +478,71 @@
       transform:translateY(0);
     }
 
-    @media (max-width: 980px){
+    footer{
+      border-top:1px solid var(--line);
+      padding:28px 0 40px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .footer-row{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .whatsapp-btn{
+      position:fixed;
+      bottom:25px;
+      right:25px;
+      background:var(--green);
+      color:white;
+      padding:14px 22px;
+      font-size:15px;
+      font-weight:bold;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      border-radius:30px;
+      text-decoration:none;
+      box-shadow:0 8px 20px rgba(0,0,0,0.35);
+      z-index:9999;
+    }
+
+    .whatsapp-btn img{
+      width:22px;
+      height:22px;
+    }
+
+    @media (max-width:980px){
+      .top-socials{display:none;}
+      .menu-toggle{display:inline-flex;}
+
+      .nav-links{
+        position:absolute;
+        top:calc(100% + 10px);
+        right:0;
+        left:0;
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+        gap:10px;
+        padding:18px;
+        background:rgba(5,5,5,0.98);
+        border:1px solid var(--line);
+        border-radius:20px;
+      }
+
+      .nav-links.active{display:flex;}
+
+      .nav-links a{
+        padding:14px 16px;
+        border-radius:14px;
+        background:rgba(255,255,255,0.03);
+        border:1px solid rgba(255,255,255,0.04);
+      }
+
       .hero-grid,
       .grid-2,
       .grid-3,
@@ -508,366 +550,336 @@
         grid-template-columns:1fr;
       }
 
-      .nav-links,
-      .top-socials,
-      .nav-cta{
-        display:none;
-      }
-
-      .menu-toggle{
-        display:flex;
-      }
-
-      .brand-name{
-        font-size:20px;
-      }
-
-      .brand-logo{
-        height:58px;
-      }
+      h1{font-size:46px;}
+      .brand-logo{height:54px;}
+      .brand-name{font-size:20px;}
     }
 
-    @media (max-width: 640px){
-      .hero{
-        padding-top:64px;
-      }
-
-      h1{
-        font-size:clamp(34px, 10vw, 54px);
-      }
-
-      .hero p,
-      .section-text,
-      .cta-box p{
-        font-size:16px;
-      }
-
-      .btn{
-        width:100%;
-      }
-
-      .hero-actions{
-        flex-direction:column;
-      }
+    @media (max-width:640px){
+      .hero{padding:74px 0 42px;}
+      .hero-actions{flex-direction:column;}
+      .hero-actions .btn{width:100%;}
+      .whatsapp-btn{right:16px;left:16px;bottom:16px;justify-content:center;}
     }
   </style>
 </head>
 <body>
-
   <header class="topbar">
-    <div class="container">
-      <nav class="nav">
-        <a class="brand" href="index.html">
-          <img src="logo.jpeg" alt="Prestige Finish" class="brand-logo" />
-          <span class="brand-name">Prestige Finish</span>
-        </a>
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <img src="logo.jpeg" alt="Prestige Finish Logo" class="brand-logo">
+        <span class="brand-name">Prestige Finish</span>
+      </a>
 
-        <div class="nav-right">
-          <div class="nav-links">
-            <a href="index.html">Acasă</a>
-            <a href="persoane-fizice.html">Persoane fizice</a>
-            <a href="flote.html">Firme</a>
-            <a href="curatenie-renovari.html">După renovări</a>
-            <a href="programari.html">Programări</a>
-            <a href="formular-contact.html">Contact</a>
-          </div>
-
-          <a class="nav-cta" href="formular-contact.html">Solicită ofertă</a>
-
-          <div class="top-socials">
-            <a class="top-social" href="https://wa.me/40757352371" target="_blank" aria-label="WhatsApp">
-              <svg viewBox="0 0 32 32" aria-hidden="true">
-                <path d="M19.11 17.27c-.28-.14-1.63-.8-1.88-.89-.25-.09-.43-.14-.61.14-.18.28-.7.89-.86 1.07-.16.18-.32.2-.6.07-.28-.14-1.16-.43-2.22-1.37-.82-.73-1.37-1.63-1.53-1.91-.16-.28-.02-.43.12-.57.13-.13.28-.32.43-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27 0 1.34.98 2.64 1.11 2.82.14.18 1.92 2.93 4.66 4.11.65.28 1.16.45 1.56.58.66.21 1.26.18 1.73.11.53-.08 1.63-.67 1.86-1.31.23-.64.23-1.19.16-1.31-.07-.11-.25-.18-.53-.32zM16.02 3.2C9.03 3.2 3.37 8.86 3.37 15.85c0 2.23.58 4.4 1.68 6.31L3 29l7.03-1.84a12.6 12.6 0 0 0 5.99 1.52h.01c6.98 0 12.65-5.66 12.65-12.65S23 3.2 16.02 3.2zm0 23.16h-.01a10.5 10.5 0 0 1-5.35-1.47l-.38-.23-4.17 1.09 1.11-4.07-.25-.42a10.48 10.48 0 0 1-1.61-5.57c0-5.79 4.71-10.5 10.51-10.5 2.8 0 5.43 1.09 7.41 3.08a10.41 10.41 0 0 1 3.08 7.42c0 5.79-4.72 10.5-10.51 10.5z"/>
-              </svg>
-            </a>
-          </div>
-
-          <button class="menu-toggle" id="menuToggle" aria-label="Deschide meniul">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
-              <path d="M4 7h16M4 12h16M4 17h16" />
-            </svg>
-          </button>
+      <div class="nav-right">
+        <div class="top-socials">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.35 1.55a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z"/></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M13.5 22v-8.2h2.77l.42-3.22H13.5V8.5c0-.93.26-1.56 1.59-1.56h1.7V4.05c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.04 1.46-4.04 4.15v2.48H7.6v3.22h2.72V22h3.18Z"/></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="TikTok">
+            <svg viewBox="0 0 24 24"><path d="M15.5 2c.2 1.7 1.1 3.1 2.6 4 .9.6 1.9.9 2.9.9v3a8 8 0 0 1-3.9-1v6.1a6.1 6.1 0 1 1-6.1-6.1c.3 0 .7 0 1 .1v3.1a3 3 0 1 0 2 2.9V2h1.5Z"/></svg>
+          </a>
         </div>
-      </nav>
+
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Deschide meniul">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 7H20M4 12H20M4 17H20"/></svg>
+        </button>
+      </div>
+
+      <div class="nav-links" id="mobileMenu">
+        <a href="index.html" onclick="closeMenu()">Acasă</a>
+        <a href="persoane-fizice.html" onclick="closeMenu()">Persoane fizice</a>
+        <a href="flote.html" onclick="closeMenu()">Firme / spații comerciale</a>
+        <a href="curatenie-renovari.html" onclick="closeMenu()">După renovări</a>
+        <a href="programari.html" onclick="closeMenu()">Programare online</a>
+        <a href="formular-contact.html" class="nav-cta" onclick="closeMenu()">Formular de contact</a>
+      </div>
     </div>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero fade-in">
       <div class="hero-bg"></div>
-      <div class="container">
-        <div class="hero-grid">
-          <div class="fade-in">
-            <span class="eyebrow">Curățenie completă după renovări</span>
-            <h1>Curățenie după renovări și mutări – spațiu gata de locuit</h1>
-            <p>
-              Ai terminat renovarea și a rămas praful peste tot? Prestige Finish îți oferă
-              curățenie profesională după renovări și mutări, pentru apartamente, case și spații
-              pregătite pentru locuire, închiriere sau vânzare.
-            </p>
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Curățenie după renovări și mutări</div>
+          <h1>Curățenie după renovări și mutări – spațiu gata de locuit, predat sau utilizat</h1>
+          <p>
+            Ai terminat renovarea și spațiul nu este încă pregătit? Prestige Finish oferă curățenie profesională după renovări și mutări pentru apartamente, case, birouri și spații comerciale care au nevoie de o intervenție completă după lucrări.
+          </p>
+          <p>
+            Eliminăm praful, murdăria, urmele de construcție și aspectul de „șantier rămas la final”, astfel încât spațiul să poată fi folosit, mobilat, predat sau pus în circulație într-o formă corectă.
+          </p>
 
-            <div class="hero-schedule">
-              Intervenții rapide • Program flexibil • Soluții profesionale
-            </div>
-
-            <div class="hero-actions">
-              <a href="formular-contact.html" class="btn btn-primary">Solicită ofertă rapidă</a>
-              <a href="https://wa.me/40757352371" target="_blank" class="btn btn-whatsapp">Scrie pe WhatsApp</a>
-              <a href="tel:+40757352371" class="btn btn-secondary">Sună acum</a>
-            </div>
-
-            <p class="hero-note">
-              Eliminăm praful, urmele de construcție și murdăria de după renovare, astfel încât tu să intri într-un spațiu curat și pregătit.
-            </p>
+          <div class="hero-schedule">
+            Intervenții pe bază de programare • persoane fizice și companii • disponibilitate în Prahova și județele apropiate
           </div>
 
-          <div class="hero-panel fade-in">
-            <h3>Ce rezolvăm pentru tine</h3>
-            <p>
-              După orice renovare rămân urme greu de gestionat: praf fin, stropi, murdărie,
-              geamuri încărcate, băi și bucătării care nu pot fi folosite imediat.
-            </p>
-
-            <ul class="service-list">
-              <li>
-                <span class="service-label">Praf fin în toată locuința</span>
-                Curățăm atent suprafețele, colțurile și zonele sensibile după lucrări.
-              </li>
-              <li>
-                <span class="service-label">Geamuri, rame și pervazuri</span>
-                Îndepărtăm urmele și depunerile rămase după renovare.
-              </li>
-              <li>
-                <span class="service-label">Baie și bucătărie</span>
-                Curățare completă pentru un spațiu pregătit de utilizare.
-              </li>
-              <li>
-                <span class="service-label">Podele și finisaje</span>
-                Gresie, parchet și alte suprafețe curățate cu atenție și grijă.
-              </li>
-            </ul>
+          <div class="hero-actions">
+            <a href="formular-contact.html" class="btn btn-primary">Solicită ofertă rapidă</a>
+            <a href="https://wa.me/40757352371?text=Buna!%20Vreau%20mai%20multe%20informatii%20despre%20curatenia%20dupa%20renovari." target="_blank" class="btn btn-whatsapp">Scrie pe WhatsApp</a>
+            <a href="tel:+40757352371" class="btn btn-secondary">Sună acum</a>
           </div>
+
+          <p class="hero-note">
+            Prahova • Dâmbovița • Buzău • Ilfov • Ialomița • Brașov • și alte zone apropiate, în funcție de tipul lucrării
+          </p>
+        </div>
+
+        <div class="hero-panel">
+          <h3>Ce rezolvăm pentru tine</h3>
+          <p>
+            După lucrări, spațiul poate arăta finalizat, dar în realitate nu este pregătit pentru utilizare. Intervenția noastră este gândită exact pentru această etapă.
+          </p>
+
+          <ul class="service-list">
+            <li>
+              <span class="service-label">Praf fin în toată încăperea</span>
+              Curățare atentă a suprafețelor, colțurilor și zonelor afectate de lucrări.
+            </li>
+            <li>
+              <span class="service-label">Urme rămase după renovare</span>
+              Spațiul este adus într-o formă curată, ordonată și prezentabilă.
+            </li>
+            <li>
+              <span class="service-label">Pregătire pentru mutare sau predare</span>
+              Potrivit pentru locuințe, spații comerciale sau proprietăți destinate închirierii.
+            </li>
+            <li>
+              <span class="service-label">Solicitări rezidențiale și business</span>
+              Pentru persoane fizice, firme și proprietăți aflate în reorganizare sau deschidere.
+            </li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section>
+    <section class="fade-in">
       <div class="container">
-        <span class="tag fade-in">Problema clientului</span>
-        <h2 class="section-title fade-in">Știm cât de greu este după o renovare</h2>
-        <p class="section-text fade-in">
-          Când lucrarea pare terminată, de fapt începe partea obositoare: praful se așază peste tot,
-          geamurile sunt murdare, baia și bucătăria nu pot fi folosite imediat, iar spațiul nu este încă pregătit pentru mutare.
+        <div class="tag">Problema reală după lucrări</div>
+        <h2 class="section-title">Spațiul pare gata, dar încă nu este pregătit</h2>
+        <p class="section-text">
+          După renovare sau amenajare rămân frecvent praf, murdărie, urme vizibile și un aspect general care nu permite încă utilizarea normală a spațiului. Aici intervine serviciul nostru.
         </p>
-        <div class="section-note fade-in">
-          Nu trebuie să te ocupi tu de ultima parte. Noi venim și transformăm spațiul într-un loc curat, ordonat și gata de folosit.
+
+        <div class="section-note">
+          Nu este vorba doar despre „puțin praf”, ci despre etapa finală în care spațiul trebuie adus la un standard clar de prezentare și utilizare.
         </div>
 
         <div class="grid-3">
-          <div class="card fade-in">
-            <h3>Praf de construcție</h3>
+          <div class="card">
+            <h3>Pentru locuințe</h3>
             <p>
-              Praful fin rămâne pe mobilier, pe pereți, pe plinte, pe geamuri și în zone greu accesibile.
+              Apartamente și case care trebuie pregătite pentru mutare, mobilare sau predare după terminarea lucrărilor.
             </p>
           </div>
-
-          <div class="card fade-in">
-            <h3>Urme după lucrări</h3>
+          <div class="card">
+            <h3>Pentru firme</h3>
             <p>
-              După renovare rămân deseori pete, urme și depuneri care strică aspectul final al locuinței.
+              Birouri, recepții, spații comerciale sau alte locații care trebuie puse rapid în funcțiune sau prezentate corect.
             </p>
           </div>
-
-          <div class="card fade-in">
-            <h3>Pierdere de timp</h3>
+          <div class="card">
+            <h3>Pentru proprietăți de predat</h3>
             <p>
-              În loc să te muți sau să predai spațiul, ajungi să pierzi ore sau zile întregi cu curățenia.
+              Spații care urmează să fie închiriate, vândute, deschise sau predate către client, beneficiar ori chiriaș.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section>
+    <section class="fade-in">
       <div class="container">
         <div class="grid-2">
-          <div class="info-card fade-in">
+          <div class="info-card">
             <span class="tag">Servicii incluse</span>
-            <h2>Ce include curățenia după renovări</h2>
+            <h2>Ce poate include intervenția</h2>
             <p>
-              Fiecare intervenție este adaptată spațiului și nivelului de murdărie, dar în mod uzual serviciul poate include:
+              Fiecare lucrare este analizată în funcție de spațiu și de stadiul în care se află, dar serviciul poate include:
             </p>
 
             <ul class="service-list">
               <li><span class="service-label">Îndepărtare praf fin</span> Curățare generală a suprafețelor și zonelor afectate de lucrări.</li>
-              <li><span class="service-label">Curățare geamuri și rame</span> Pentru un aspect final curat și luminos.</li>
-              <li><span class="service-label">Curățare baie</span> Igienizare obiecte sanitare, faianță și detalii.</li>
-              <li><span class="service-label">Curățare bucătărie</span> Suprafețe, mobilier exterior, gresie și zone de lucru.</li>
-              <li><span class="service-label">Spălare pardoseli</span> Gresie, parchet și alte suprafețe lavabile.</li>
-              <li><span class="service-label">Finisare finală</span> Aspect ordonat, curat și pregătit pentru mutare sau predare.</li>
+              <li><span class="service-label">Geamuri, rame și pervazuri</span> Pentru un aspect final mai curat și mai prezentabil.</li>
+              <li><span class="service-label">Baie și bucătărie</span> Spații pregătite pentru utilizare normală.</li>
+              <li><span class="service-label">Podele și suprafețe lavabile</span> Gresie, parchet și alte zone care necesită finisare finală.</li>
+              <li><span class="service-label">Ordine vizuală finală</span> Spațiul este adus într-o formă coerentă, curată și pregătită pentru următorul pas.</li>
             </ul>
           </div>
 
-          <div class="info-card fade-in">
+          <div class="info-card">
             <span class="tag">Pentru cine este potrivit</span>
-            <h2>Când ai nevoie de acest serviciu</h2>
+            <h2>Când ai nevoie de această pagină</h2>
             <p>
-              Acest serviciu este ideal dacă te regăsești în una dintre situațiile de mai jos:
+              Pagina de renovări este potrivită dacă solicitarea ta nu este despre canapele și textile, ci despre spațiul în ansamblu.
             </p>
 
             <ul class="service-list">
-              <li><span class="service-label">Ai terminat renovarea</span> și vrei să intri într-un spațiu curat.</li>
-              <li><span class="service-label">Te pregătești de mutare</span> și vrei locuința gata pentru mobilare.</li>
-              <li><span class="service-label">Vrei să vinzi sau să închiriezi</span> și ai nevoie de un aspect impecabil.</li>
-              <li><span class="service-label">Ai predat lucrările</span> dar spațiul nu este încă prezentabil.</li>
-              <li><span class="service-label">Nu ai timp</span> sau nu vrei să te ocupi singur de partea finală.</li>
+              <li><span class="service-label">Ai terminat renovarea</span> și vrei să intri într-un spațiu pregătit pentru locuit sau lucru.</li>
+              <li><span class="service-label">Te pregătești de mutare</span> și ai nevoie ca spațiul să fie pus la punct înainte de mobilare.</li>
+              <li><span class="service-label">Vrei să predai o proprietate</span> pentru închiriere, vânzare, deschidere sau prezentare.</li>
+              <li><span class="service-label">Ai un spațiu business nou amenajat</span> și vrei să-l aduci la un standard bun înainte de utilizare.</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section>
+    <section class="fade-in">
       <div class="container">
-        <span class="tag fade-in">Cum lucrăm</span>
-        <h2 class="section-title fade-in">Proces simplu și clar</h2>
-        <p class="section-text fade-in">
-          Ne spui ce tip de spațiu ai și în ce stadiu se află, iar noi îți oferim rapid o direcție clară și o estimare.
+        <span class="tag">Cum lucrăm</span>
+        <h2 class="section-title">Proces simplu, clar și ușor de înțeles</h2>
+        <p class="section-text">
+          Ne trimiți detaliile lucrării, analizăm tipul spațiului, gradul de complexitate și zona, apoi îți oferim o direcție clară pentru intervenție.
         </p>
 
         <ul class="steps">
-          <li class="fade-in">
+          <li>
             <div class="step-number">1</div>
             <div>
               <strong>Ne contactezi</strong>
-              <p>Ne trimiți un mesaj, ne suni sau completezi formularul de contact.</p>
+              <p>Prin formular, telefon sau WhatsApp, cu datele principale despre spațiu și stadiul lucrării.</p>
             </div>
           </li>
 
-          <li class="fade-in">
+          <li>
             <div class="step-number">2</div>
             <div>
-              <strong>Stabilim detaliile</strong>
-              <p>Discutăm suprafața, nivelul de murdărie și intervalul în care ai nevoie de intervenție.</p>
+              <strong>Analizăm solicitarea</strong>
+              <p>Ținem cont de dimensiune, tipul spațiului, localizare și nivelul de intervenție necesar.</p>
             </div>
           </li>
 
-          <li class="fade-in">
+          <li>
             <div class="step-number">3</div>
             <div>
-              <strong>Venim și curățăm</strong>
-              <p>Intervenim cu soluții profesionale și atenție la detalii, pentru un rezultat curat și ordonat.</p>
+              <strong>Stabilim organizarea</strong>
+              <p>Fixăm intervalul disponibil și condițiile potrivite pentru lucrarea ta.</p>
             </div>
           </li>
 
-          <li class="fade-in">
+          <li>
             <div class="step-number">4</div>
             <div>
               <strong>Predăm spațiul</strong>
-              <p>Locuința sau spațiul este pregătit pentru mutare, amenajare sau predare.</p>
+              <p>Locuința sau spațiul este adus într-o formă curată și pregătită pentru următorul pas.</p>
             </div>
           </li>
         </ul>
       </div>
     </section>
 
-    <section>
+    <section class="fade-in">
       <div class="container">
+        <span class="tag">Arie de acoperire</span>
+        <h2 class="section-title">Prahova și județele apropiate</h2>
+        <p class="section-text">
+          Prestige Finish oferă curățenie după renovări și mutări în întreg județul Prahova, cu disponibilitate extinsă și pentru județele din proximitate, în funcție de tipul lucrării, volum, distanță și organizarea programărilor.
+        </p>
+
+        <div class="section-note">
+          Pot fi analizate profesionist solicitări din Dâmbovița, Buzău, Ilfov, Ialomița și Brașov, precum și din alte zone apropiate, atunci când lucrarea justifică deplasarea și organizarea echipei.
+        </div>
+
         <div class="grid-3">
-          <div class="mini-info fade-in">
-            <h3>Rapiditate</h3>
+          <div class="mini-info">
+            <h3>Prahova</h3>
             <p>
-              Știm că după renovare timpul contează. Programările se fac rapid, în funcție de disponibilitate.
+              Aria principală de intervenție pentru lucrări rezidențiale, business și proprietăți pregătite pentru predare.
             </p>
           </div>
 
-          <div class="mini-info fade-in">
-            <h3>Seriozitate</h3>
+          <div class="mini-info">
+            <h3>Județe apropiate</h3>
             <p>
-              Punem accent pe comunicare clară, punctualitate și rezultate vizibile.
+              Disponibilitate extinsă pentru lucrări din proximitate, cu evaluare clară a deplasării și a complexității.
             </p>
           </div>
 
-          <div class="mini-info fade-in">
-            <h3>Atenție la detalii</h3>
+          <div class="mini-info">
+            <h3>Lucrări care justifică deplasarea</h3>
             <p>
-              Curățenia finală nu înseamnă doar „să fie ok”, ci să arate bine și să fie pregătită pentru folosire.
+              Solicitări mai ample, spații comerciale, proprietăți de predat sau intervenții după renovări și amenajări.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section>
+    <section class="fade-in">
       <div class="container">
         <div class="grid-2">
-          <div class="info-card fade-in">
+          <div class="info-card">
             <span class="tag">Contact</span>
             <h2>Solicită o ofertă rapidă</h2>
             <p>
-              Dacă ai terminat renovarea și vrei să intri direct într-un spațiu curat, scrie-ne sau sună-ne.
+              Dacă ai terminat renovarea și vrei să aduci spațiul la forma în care poate fi folosit sau predat, trimite-ne detaliile și revenim cu direcția potrivită.
             </p>
 
             <div class="contact-list">
               <div class="contact-row">
                 <strong>Telefon</strong>
-                <span>+40 7XX XXX XXX</span>
+                <span>0757 352 371</span>
               </div>
 
               <div class="contact-row">
-                <strong>WhatsApp</strong>
-                <span>Răspuns rapid pentru detalii și programări</span>
+                <strong>Acoperire</strong>
+                <span>Prahova și județele apropiate, în funcție de lucrare și disponibilitate</span>
               </div>
 
               <div class="contact-row">
-                <strong>Formular contact</strong>
-                <span>Trimite cererea ta și revenim cât mai curând</span>
+                <strong>Solicitare recomandată</strong>
+                <span>Formular de contact sau WhatsApp, pentru evaluare mai clară</span>
               </div>
             </div>
 
             <div class="hero-actions" style="margin-top:22px;">
               <a href="formular-contact.html" class="btn btn-primary">Trimite cerere</a>
-              <a href="https://wa.me/40757352371" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+              <a href="https://wa.me/40757352371?text=Buna!%20Vreau%20mai%20multe%20informatii%20despre%20curatenia%20dupa%20renovari." target="_blank" class="btn btn-whatsapp">WhatsApp</a>
             </div>
           </div>
 
-          <div class="info-card fade-in">
+          <div class="info-card">
             <span class="tag">Servicii complementare</span>
             <h2>Ai nevoie și de alte servicii?</h2>
             <p>
-              Pe lângă curățenia după renovări și mutări, poți vedea și celelalte servicii Prestige Finish:
+              Dacă, pe lângă spațiul general, ai și mobilier sau textile care trebuie incluse într-o intervenție separată, poți vedea și paginile dedicate.
             </p>
 
             <ul class="service-list">
               <li>
                 <span class="service-label">Persoane fizice</span>
-                Curățare canapele, colțare, saltele, fotolii și alte textile.
+                Pentru canapele, colțare, saltele, fotolii, covoare și textile decorative.
               </li>
               <li>
-                <span class="service-label">Firme și spații comerciale</span>
-                Intervenții mobile pentru spații profesionale și zone de trafic intens.
+                <span class="service-label">Firme / spații comerciale</span>
+                Pentru birouri, recepții, hoteluri, Airbnb, restaurante și alte locații business.
               </li>
               <li>
-                <span class="service-label">Programări online</span>
-                Trimite rapid o solicitare direct din site.
+                <span class="service-label">Programare online</span>
+                Pentru solicitări standard care se potrivesc fluxului obișnuit de programare.
               </li>
             </ul>
 
             <div class="hero-actions" style="margin-top:22px;">
-              <a href="persoane-fizice.html" class="btn btn-secondary">Vezi persoane fizice</a>
-              <a href="flote.html" class="btn btn-secondary">Vezi firme</a>
+              <a href="persoane-fizice.html" class="btn btn-secondary">Persoane fizice</a>
+              <a href="flote.html" class="btn btn-secondary">Firme</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section>
+    <section class="fade-in">
       <div class="container">
-        <div class="cta-box fade-in">
-          <h2>Ai terminat renovarea? Noi ne ocupăm de partea finală.</h2>
+        <div class="cta-box">
+          <h2>Ai terminat renovarea? Noi ne ocupăm de etapa finală.</h2>
           <p>
-            Îți lăsăm spațiul curat, ordonat și pregătit pentru următorul pas: mutare, mobilare, închiriere sau predare.
+            Îți lăsăm spațiul într-o formă curată, ordonată și pregătită pentru mutare, predare, închiriere sau utilizare.
           </p>
           <div class="hero-actions" style="justify-content:center;">
             <a href="formular-contact.html" class="btn btn-primary">Solicită ofertă acum</a>
@@ -878,83 +890,46 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-wrap">
-        <div>© Prestige Finish. Toate drepturile rezervate.</div>
-        <div>
-          <a href="index.html">Acasă</a> •
-          <a href="persoane-fizice.html">Persoane fizice</a> •
-          <a href="flote.html">Firme</a> •
-          <a href="programari.html">Programări</a> •
-          <a href="formular-contact.html">Contact</a>
-        </div>
-      </div>
+  <footer>
+    <div class="container footer-row">
+      <div>© 2026 Prestige Finish. Toate drepturile rezervate.</div>
+      <div>Prahova și județele apropiate • intervenții mobile • programări pe bază de disponibilitate</div>
     </div>
   </footer>
 
+  <a href="https://wa.me/40757352371?text=Buna!%20Vreau%20mai%20multe%20informatii%20despre%20curatenia%20dupa%20renovari." class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    Scrie-ne pe WhatsApp
+  </a>
+
   <script>
-    const faders = document.querySelectorAll('.fade-in');
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('active');
+    }
+
+    function closeMenu() {
+      document.getElementById('mobileMenu').classList.remove('active');
+    }
+
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('mobileMenu');
+      const toggle = document.querySelector('.menu-toggle');
+      if (!menu || !toggle) return;
+      const clickedInsideMenu = menu.contains(event.target);
+      const clickedToggle = toggle.contains(event.target);
+      if (!clickedInsideMenu && !clickedToggle) {
+        menu.classList.remove('active');
+      }
+    });
+
+    const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.12 });
 
-    faders.forEach(el => observer.observe(el));
-
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.querySelector('.nav-links');
-    const topSocials = document.querySelector('.top-socials');
-    const navCta = document.querySelector('.nav-cta');
-
-    if(menuToggle){
-      menuToggle.addEventListener('click', () => {
-        const exists = document.getElementById('mobileMenu');
-        if(exists){
-          exists.remove();
-          return;
-        }
-
-        const mobileMenu = document.createElement('div');
-        mobileMenu.id = 'mobileMenu';
-        mobileMenu.style.position = 'absolute';
-        mobileMenu.style.top = '100%';
-        mobileMenu.style.left = '0';
-        mobileMenu.style.right = '0';
-        mobileMenu.style.marginTop = '10px';
-        mobileMenu.style.padding = '16px';
-        mobileMenu.style.border = '1px solid rgba(212,175,55,0.18)';
-        mobileMenu.style.borderRadius = '22px';
-        mobileMenu.style.background = 'rgba(5,5,5,0.96)';
-        mobileMenu.style.boxShadow = '0 20px 60px rgba(0,0,0,0.45)';
-        mobileMenu.style.display = 'grid';
-        mobileMenu.style.gap = '12px';
-        mobileMenu.style.zIndex = '2000';
-
-        mobileMenu.innerHTML = `
-          <a href="index.html">Acasă</a>
-          <a href="persoane-fizice.html">Persoane fizice</a>
-          <a href="flote.html">Firme</a>
-          <a href="curatenie-renovari.html">După renovări</a>
-          <a href="programari.html">Programări</a>
-          <a href="formular-contact.html">Contact</a>
-          <a href="https://wa.me/40757352371" target="_blank">WhatsApp</a>
-        `;
-
-        document.querySelector('.nav').appendChild(mobileMenu);
-      });
-    }
-
-    document.addEventListener('click', (e) => {
-      const mobileMenu = document.getElementById('mobileMenu');
-      if(!mobileMenu) return;
-      if(!e.target.closest('.nav')) {
-        mobileMenu.remove();
-      }
-    });
+    fadeEls.forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
