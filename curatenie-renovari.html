@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prestige Finish | Curățenie după renovări și mutări</title>
+  <link rel="icon" type="image/jpeg" href="logo.jpeg" />
+  <meta name="description" content="Prestige Finish oferă servicii profesionale de curățenie după renovări și mutări în Prahova. Îndepărtăm praful, murdăria și urmele de construcție, pentru un spațiu gata de locuit." />
+
+  <style>
+    :root{
+      --bg:#050505;
+      --card:rgba(255,255,255,0.04);
+      --gold:#d4af37;
+      --gold-2:#f0d266;
+      --text:#f5f2ea;
+      --muted:#c5bea9;
+      --line:rgba(212,175,55,0.18);
+      --line-strong:rgba(212,175,55,0.34);
+      --shadow:0 20px 60px rgba(0,0,0,0.45);
+      --green:#25D366;
+      --glow:0 0 16px rgba(212,175,55,0.16);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(212,175,55,0.16), transparent 24%),
+        radial-gradient(circle at bottom left, rgba(212,175,55,0.10), transparent 20%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    button{font:inherit}
+
+    .container{
+      width:min(1180px, calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(5,5,5,0.88);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:16px 0;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+
+    .brand-logo{
+      height:68px;
+      width:auto;
+      border-radius:14px;
+      object-fit:contain;
+      flex-shrink:0;
+      filter:drop-shadow(0 0 10px rgba(212,175,55,0.25));
+    }
+
+    .brand-name{
+      color:var(--gold);
+      font-size:24px;
+      font-weight:700;
+      letter-spacing:.4px;
+      white-space:nowrap;
+    }
+
+    .nav-right{
+      display:flex;
+      align-items:center;
+      gap:16px;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      color:var(--muted);
+      font-size:14px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .nav-links a:hover{color:var(--text);}
+
+    .top-socials{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .top-social{
+      width:42px;
+      height:42px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:var(--shadow);
+      transition:.2s ease;
+    }
+
+    .top-social:hover{
+      transform:translateY(-2px);
+      background:rgba(212,175,55,.08);
+      border-color:var(--line-strong);
+    }
+
+    .top-social svg{
+      width:18px;
+      height:18px;
+      fill:var(--gold);
+    }
+
+    .menu-toggle{
+      display:none;
+      width:54px;
+      height:54px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:var(--gold);
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+    }
+
+    .menu-toggle svg{
+      width:26px;
+      height:26px;
+      stroke:var(--gold);
+    }
+
+    .nav-cta{
+      padding:10px 16px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      color:var(--gold);
+      background:rgba(212,175,55,.06);
+      font-weight:700;
+      box-shadow:var(--glow);
+    }
+
+    .hero{
+      padding:88px 0 44px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(90deg, rgba(5,5,5,.96) 0%, rgba(5,5,5,.88) 40%, rgba(5,5,5,.62) 68%, rgba(5,5,5,.84) 100%);
+      pointer-events:none;
+    }
+
+    .hero-bg{
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(rgba(0,0,0,.22), rgba(0,0,0,.22)),
+        url('logo.jpeg') center/contain no-repeat,
+        radial-gradient(circle at center, rgba(212,175,55,.10), transparent 35%);
+      opacity:.10;
+    }
+
+    .hero-grid{
+      position:relative;
+      z-index:2;
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:34px;
+      align-items:start;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 14px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:var(--gold);
+      background:rgba(212,175,55,.07);
+      font-size:12px;
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+      margin-bottom:18px;
+      box-shadow:var(--glow);
+    }
+
+    h1{
+      margin:0 0 16px;
+      font-size:clamp(38px,7vw,72px);
+      line-height:.98;
+      letter-spacing:-1px;
+      max-width:780px;
+    }
+
+    .hero p{
+      color:var(--muted);
+      font-size:18px;
+      max-width:760px;
+      margin:0 0 22px;
+    }
+
+    .hero-schedule{
+      display:inline-block;
+      margin:0 0 26px;
+      padding:12px 16px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:rgba(212,175,55,.06);
+      color:var(--text);
+      box-shadow:var(--glow);
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom:20px;
+    }
+
+    .hero-note{
+      color:var(--gold);
+      font-size:15px;
+      margin:0 0 24px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:54px;
+      padding:0 24px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-weight:700;
+      text-align:center;
+      cursor:pointer;
+      box-shadow:var(--shadow);
+      transition:.2s ease;
+    }
+
+    .btn:hover{transform:translateY(-2px)}
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--gold), var(--gold-2));
+      color:#0a0a0a;
+    }
+
+    .btn-secondary{
+      background:transparent;
+      border-color:var(--line);
+      color:var(--text);
+    }
+
+    .btn-whatsapp{
+      background:var(--green);
+      color:#fff;
+    }
+
+    section{padding:52px 0 78px;}
+
+    .grid-2,
+    .grid-3,
+    .mini-grid{
+      display:grid;
+      gap:24px;
+    }
+
+    .grid-2{grid-template-columns:1.05fr .95fr;}
+    .grid-3{grid-template-columns:repeat(3,1fr);}
+    .mini-grid{grid-template-columns:repeat(2,1fr);}
+
+    .card,
+    .info-card,
+    .mini-info,
+    .hero-panel{
+      border:1px solid var(--line);
+      background:var(--card);
+      border-radius:28px;
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-panel{
+      background:
+        radial-gradient(circle at top right, rgba(212,175,55,.08), transparent 32%),
+        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+    }
+
+    .card h3,
+    .info-card h2,
+    .mini-info h3,
+    .hero-panel h3{
+      margin:0 0 12px;
+      color:var(--gold);
+    }
+
+    .card p,
+    .info-card p,
+    .mini-info p,
+    .section-text,
+    .contact-row span,
+    .hero-panel p{
+      color:var(--muted);
+    }
+
+    .section-title{
+      font-size:clamp(30px,4vw,48px);
+      margin:0 0 12px;
+    }
+
+    .section-text{
+      max-width:760px;
+      margin:0 0 28px;
+      font-size:17px;
+    }
+
+    .section-note{
+      max-width:920px;
+      margin:0 0 28px;
+      padding:14px 18px;
+      border-left:3px solid var(--gold);
+      border-radius:0 14px 14px 0;
+      background:rgba(212,175,55,.06);
+      color:var(--text);
+      font-size:15px;
+      box-shadow:var(--glow);
+    }
+
+    .tag{
+      display:inline-flex;
+      margin-bottom:14px;
+      color:var(--gold);
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:1.4px;
+    }
+
+    .service-list{
+      list-style:none;
+      padding:0;
+      margin:18px 0 0;
+      display:grid;
+      gap:12px;
+    }
+
+    .service-list li{
+      position:relative;
+      padding:14px 16px 14px 42px;
+      border:1px solid rgba(212,175,55,.14);
+      border-radius:18px;
+      background:rgba(255,255,255,.02);
+      color:var(--text);
+    }
+
+    .service-list li::before{
+      content:"✦";
+      position:absolute;
+      left:16px;
+      top:13px;
+      color:var(--gold);
+      font-size:16px;
+      line-height:1;
+    }
+
+    .service-label{
+      display:block;
+      color:var(--gold);
+      font-weight:700;
+      margin-bottom:2px;
+      font-size:14px;
+    }
+
+    .contact-list{
+      display:grid;
+      gap:18px;
+      margin-top:12px;
+    }
+
+    .contact-row{
+      padding-bottom:14px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .contact-row strong{
+      display:block;
+      color:var(--text);
+      margin-bottom:4px;
+    }
+
+    .steps{
+      list-style:none;
+      padding:0;
+      margin:18px 0 0;
+      display:grid;
+      gap:14px;
+    }
+
+    .steps li{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      padding:16px;
+      border:1px solid rgba(212,175,55,.14);
+      border-radius:18px;
+      background:rgba(255,255,255,.02);
+    }
+
+    .step-number{
+      width:34px;
+      height:34px;
+      min-width:34px;
+      border-radius:999px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(212,175,55,.12);
+      border:1px solid var(--line);
+      color:var(--gold);
+      font-weight:700;
+    }
+
+    .cta-box{
+      text-align:center;
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:34px 24px;
+      background:
+        radial-gradient(circle at top right, rgba(212,175,55,.08), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      box-shadow:var(--shadow);
+    }
+
+    .cta-box h2{
+      margin:0 0 12px;
+      color:var(--gold);
+      font-size:clamp(28px,4vw,42px);
+    }
+
+    .cta-box p{
+      max-width:760px;
+      margin:0 auto 22px;
+      color:var(--muted);
+      font-size:17px;
+    }
+
+    .footer{
+      padding:28px 0 40px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .footer-wrap{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .fade-in{
+      opacity:0;
+      transform:translateY(28px);
+      transition:opacity .7s ease, transform .7s ease;
+    }
+
+    .fade-in.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    @media (max-width: 980px){
+      .hero-grid,
+      .grid-2,
+      .grid-3,
+      .mini-grid{
+        grid-template-columns:1fr;
+      }
+
+      .nav-links,
+      .top-socials,
+      .nav-cta{
+        display:none;
+      }
+
+      .menu-toggle{
+        display:flex;
+      }
+
+      .brand-name{
+        font-size:20px;
+      }
+
+      .brand-logo{
+        height:58px;
+      }
+    }
+
+    @media (max-width: 640px){
+      .hero{
+        padding-top:64px;
+      }
+
+      h1{
+        font-size:clamp(34px, 10vw, 54px);
+      }
+
+      .hero p,
+      .section-text,
+      .cta-box p{
+        font-size:16px;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .hero-actions{
+        flex-direction:column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container">
+      <nav class="nav">
+        <a class="brand" href="index.html">
+          <img src="logo.jpeg" alt="Prestige Finish" class="brand-logo" />
+          <span class="brand-name">Prestige Finish</span>
+        </a>
+
+        <div class="nav-right">
+          <div class="nav-links">
+            <a href="index.html">Acasă</a>
+            <a href="persoane-fizice.html">Persoane fizice</a>
+            <a href="flote.html">Firme</a>
+            <a href="curatenie-renovari.html">După renovări</a>
+            <a href="programari.html">Programări</a>
+            <a href="formular-contact.html">Contact</a>
+          </div>
+
+          <a class="nav-cta" href="formular-contact.html">Solicită ofertă</a>
+
+          <div class="top-socials">
+            <a class="top-social" href="https://wa.me/407XXXXXXXX" target="_blank" aria-label="WhatsApp">
+              <svg viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M19.11 17.27c-.28-.14-1.63-.8-1.88-.89-.25-.09-.43-.14-.61.14-.18.28-.7.89-.86 1.07-.16.18-.32.2-.6.07-.28-.14-1.16-.43-2.22-1.37-.82-.73-1.37-1.63-1.53-1.91-.16-.28-.02-.43.12-.57.13-.13.28-.32.43-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27 0 1.34.98 2.64 1.11 2.82.14.18 1.92 2.93 4.66 4.11.65.28 1.16.45 1.56.58.66.21 1.26.18 1.73.11.53-.08 1.63-.67 1.86-1.31.23-.64.23-1.19.16-1.31-.07-.11-.25-.18-.53-.32zM16.02 3.2C9.03 3.2 3.37 8.86 3.37 15.85c0 2.23.58 4.4 1.68 6.31L3 29l7.03-1.84a12.6 12.6 0 0 0 5.99 1.52h.01c6.98 0 12.65-5.66 12.65-12.65S23 3.2 16.02 3.2zm0 23.16h-.01a10.5 10.5 0 0 1-5.35-1.47l-.38-.23-4.17 1.09 1.11-4.07-.25-.42a10.48 10.48 0 0 1-1.61-5.57c0-5.79 4.71-10.5 10.51-10.5 2.8 0 5.43 1.09 7.41 3.08a10.41 10.41 0 0 1 3.08 7.42c0 5.79-4.72 10.5-10.51 10.5z"/>
+              </svg>
+            </a>
+          </div>
+
+          <button class="menu-toggle" id="menuToggle" aria-label="Deschide meniul">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="container">
+        <div class="hero-grid">
+          <div class="fade-in">
+            <span class="eyebrow">Curățenie completă după renovări</span>
+            <h1>Curățenie după renovări și mutări – spațiu gata de locuit</h1>
+            <p>
+              Ai terminat renovarea și a rămas praful peste tot? Prestige Finish îți oferă
+              curățenie profesională după renovări și mutări, pentru apartamente, case și spații
+              pregătite pentru locuire, închiriere sau vânzare.
+            </p>
+
+            <div class="hero-schedule">
+              Intervenții rapide • Program flexibil • Soluții profesionale
+            </div>
+
+            <div class="hero-actions">
+              <a href="formular-contact.html" class="btn btn-primary">Solicită ofertă rapidă</a>
+              <a href="https://wa.me/407XXXXXXXX" target="_blank" class="btn btn-whatsapp">Scrie pe WhatsApp</a>
+              <a href="tel:+407XXXXXXXX" class="btn btn-secondary">Sună acum</a>
+            </div>
+
+            <p class="hero-note">
+              Eliminăm praful, urmele de construcție și murdăria de după renovare, astfel încât tu să intri într-un spațiu curat și pregătit.
+            </p>
+          </div>
+
+          <div class="hero-panel fade-in">
+            <h3>Ce rezolvăm pentru tine</h3>
+            <p>
+              După orice renovare rămân urme greu de gestionat: praf fin, stropi, murdărie,
+              geamuri încărcate, băi și bucătării care nu pot fi folosite imediat.
+            </p>
+
+            <ul class="service-list">
+              <li>
+                <span class="service-label">Praf fin în toată locuința</span>
+                Curățăm atent suprafețele, colțurile și zonele sensibile după lucrări.
+              </li>
+              <li>
+                <span class="service-label">Geamuri, rame și pervazuri</span>
+                Îndepărtăm urmele și depunerile rămase după renovare.
+              </li>
+              <li>
+                <span class="service-label">Baie și bucătărie</span>
+                Curățare completă pentru un spațiu pregătit de utilizare.
+              </li>
+              <li>
+                <span class="service-label">Podele și finisaje</span>
+                Gresie, parchet și alte suprafețe curățate cu atenție și grijă.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <span class="tag fade-in">Problema clientului</span>
+        <h2 class="section-title fade-in">Știm cât de greu este după o renovare</h2>
+        <p class="section-text fade-in">
+          Când lucrarea pare terminată, de fapt începe partea obositoare: praful se așază peste tot,
+          geamurile sunt murdare, baia și bucătăria nu pot fi folosite imediat, iar spațiul nu este încă pregătit pentru mutare.
+        </p>
+        <div class="section-note fade-in">
+          Nu trebuie să te ocupi tu de ultima parte. Noi venim și transformăm spațiul într-un loc curat, ordonat și gata de folosit.
+        </div>
+
+        <div class="grid-3">
+          <div class="card fade-in">
+            <h3>Praf de construcție</h3>
+            <p>
+              Praful fin rămâne pe mobilier, pe pereți, pe plinte, pe geamuri și în zone greu accesibile.
+            </p>
+          </div>
+
+          <div class="card fade-in">
+            <h3>Urme după lucrări</h3>
+            <p>
+              După renovare rămân deseori pete, urme și depuneri care strică aspectul final al locuinței.
+            </p>
+          </div>
+
+          <div class="card fade-in">
+            <h3>Pierdere de timp</h3>
+            <p>
+              În loc să te muți sau să predai spațiul, ajungi să pierzi ore sau zile întregi cu curățenia.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="grid-2">
+          <div class="info-card fade-in">
+            <span class="tag">Servicii incluse</span>
+            <h2>Ce include curățenia după renovări</h2>
+            <p>
+              Fiecare intervenție este adaptată spațiului și nivelului de murdărie, dar în mod uzual serviciul poate include:
+            </p>
+
+            <ul class="service-list">
+              <li><span class="service-label">Îndepărtare praf fin</span> Curățare generală a suprafețelor și zonelor afectate de lucrări.</li>
+              <li><span class="service-label">Curățare geamuri și rame</span> Pentru un aspect final curat și luminos.</li>
+              <li><span class="service-label">Curățare baie</span> Igienizare obiecte sanitare, faianță și detalii.</li>
+              <li><span class="service-label">Curățare bucătărie</span> Suprafețe, mobilier exterior, gresie și zone de lucru.</li>
+              <li><span class="service-label">Spălare pardoseli</span> Gresie, parchet și alte suprafețe lavabile.</li>
+              <li><span class="service-label">Finisare finală</span> Aspect ordonat, curat și pregătit pentru mutare sau predare.</li>
+            </ul>
+          </div>
+
+          <div class="info-card fade-in">
+            <span class="tag">Pentru cine este potrivit</span>
+            <h2>Când ai nevoie de acest serviciu</h2>
+            <p>
+              Acest serviciu este ideal dacă te regăsești în una dintre situațiile de mai jos:
+            </p>
+
+            <ul class="service-list">
+              <li><span class="service-label">Ai terminat renovarea</span> și vrei să intri într-un spațiu curat.</li>
+              <li><span class="service-label">Te pregătești de mutare</span> și vrei locuința gata pentru mobilare.</li>
+              <li><span class="service-label">Vrei să vinzi sau să închiriezi</span> și ai nevoie de un aspect impecabil.</li>
+              <li><span class="service-label">Ai predat lucrările</span> dar spațiul nu este încă prezentabil.</li>
+              <li><span class="service-label">Nu ai timp</span> sau nu vrei să te ocupi singur de partea finală.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <span class="tag fade-in">Cum lucrăm</span>
+        <h2 class="section-title fade-in">Proces simplu și clar</h2>
+        <p class="section-text fade-in">
+          Ne spui ce tip de spațiu ai și în ce stadiu se află, iar noi îți oferim rapid o direcție clară și o estimare.
+        </p>
+
+        <ul class="steps">
+          <li class="fade-in">
+            <div class="step-number">1</div>
+            <div>
+              <strong>Ne contactezi</strong>
+              <p>Ne trimiți un mesaj, ne suni sau completezi formularul de contact.</p>
+            </div>
+          </li>
+
+          <li class="fade-in">
+            <div class="step-number">2</div>
+            <div>
+              <strong>Stabilim detaliile</strong>
+              <p>Discutăm suprafața, nivelul de murdărie și intervalul în care ai nevoie de intervenție.</p>
+            </div>
+          </li>
+
+          <li class="fade-in">
+            <div class="step-number">3</div>
+            <div>
+              <strong>Venim și curățăm</strong>
+              <p>Intervenim cu soluții profesionale și atenție la detalii, pentru un rezultat curat și ordonat.</p>
+            </div>
+          </li>
+
+          <li class="fade-in">
+            <div class="step-number">4</div>
+            <div>
+              <strong>Predăm spațiul</strong>
+              <p>Locuința sau spațiul este pregătit pentru mutare, amenajare sau predare.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="grid-3">
+          <div class="mini-info fade-in">
+            <h3>Rapiditate</h3>
+            <p>
+              Știm că după renovare timpul contează. Programările se fac rapid, în funcție de disponibilitate.
+            </p>
+          </div>
+
+          <div class="mini-info fade-in">
+            <h3>Seriozitate</h3>
+            <p>
+              Punem accent pe comunicare clară, punctualitate și rezultate vizibile.
+            </p>
+          </div>
+
+          <div class="mini-info fade-in">
+            <h3>Atenție la detalii</h3>
+            <p>
+              Curățenia finală nu înseamnă doar „să fie ok”, ci să arate bine și să fie pregătită pentru folosire.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="grid-2">
+          <div class="info-card fade-in">
+            <span class="tag">Contact</span>
+            <h2>Solicită o ofertă rapidă</h2>
+            <p>
+              Dacă ai terminat renovarea și vrei să intri direct într-un spațiu curat, scrie-ne sau sună-ne.
+            </p>
+
+            <div class="contact-list">
+              <div class="contact-row">
+                <strong>Telefon</strong>
+                <span>+40 7XX XXX XXX</span>
+              </div>
+
+              <div class="contact-row">
+                <strong>WhatsApp</strong>
+                <span>Răspuns rapid pentru detalii și programări</span>
+              </div>
+
+              <div class="contact-row">
+                <strong>Formular contact</strong>
+                <span>Trimite cererea ta și revenim cât mai curând</span>
+              </div>
+            </div>
+
+            <div class="hero-actions" style="margin-top:22px;">
+              <a href="formular-contact.html" class="btn btn-primary">Trimite cerere</a>
+              <a href="https://wa.me/407XXXXXXXX" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+            </div>
+          </div>
+
+          <div class="info-card fade-in">
+            <span class="tag">Servicii complementare</span>
+            <h2>Ai nevoie și de alte servicii?</h2>
+            <p>
+              Pe lângă curățenia după renovări și mutări, poți vedea și celelalte servicii Prestige Finish:
+            </p>
+
+            <ul class="service-list">
+              <li>
+                <span class="service-label">Persoane fizice</span>
+                Curățare canapele, colțare, saltele, fotolii și alte textile.
+              </li>
+              <li>
+                <span class="service-label">Firme și spații comerciale</span>
+                Intervenții mobile pentru spații profesionale și zone de trafic intens.
+              </li>
+              <li>
+                <span class="service-label">Programări online</span>
+                Trimite rapid o solicitare direct din site.
+              </li>
+            </ul>
+
+            <div class="hero-actions" style="margin-top:22px;">
+              <a href="persoane-fizice.html" class="btn btn-secondary">Vezi persoane fizice</a>
+              <a href="flote.html" class="btn btn-secondary">Vezi firme</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta-box fade-in">
+          <h2>Ai terminat renovarea? Noi ne ocupăm de partea finală.</h2>
+          <p>
+            Îți lăsăm spațiul curat, ordonat și pregătit pentru următorul pas: mutare, mobilare, închiriere sau predare.
+          </p>
+          <div class="hero-actions" style="justify-content:center;">
+            <a href="formular-contact.html" class="btn btn-primary">Solicită ofertă acum</a>
+            <a href="tel:+407XXXXXXXX" class="btn btn-secondary">Sună acum</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-wrap">
+        <div>© Prestige Finish. Toate drepturile rezervate.</div>
+        <div>
+          <a href="index.html">Acasă</a> •
+          <a href="persoane-fizice.html">Persoane fizice</a> •
+          <a href="flote.html">Firme</a> •
+          <a href="programari.html">Programări</a> •
+          <a href="formular-contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    faders.forEach(el => observer.observe(el));
+
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.querySelector('.nav-links');
+    const topSocials = document.querySelector('.top-socials');
+    const navCta = document.querySelector('.nav-cta');
+
+    if(menuToggle){
+      menuToggle.addEventListener('click', () => {
+        const exists = document.getElementById('mobileMenu');
+        if(exists){
+          exists.remove();
+          return;
+        }
+
+        const mobileMenu = document.createElement('div');
+        mobileMenu.id = 'mobileMenu';
+        mobileMenu.style.position = 'absolute';
+        mobileMenu.style.top = '100%';
+        mobileMenu.style.left = '0';
+        mobileMenu.style.right = '0';
+        mobileMenu.style.marginTop = '10px';
+        mobileMenu.style.padding = '16px';
+        mobileMenu.style.border = '1px solid rgba(212,175,55,0.18)';
+        mobileMenu.style.borderRadius = '22px';
+        mobileMenu.style.background = 'rgba(5,5,5,0.96)';
+        mobileMenu.style.boxShadow = '0 20px 60px rgba(0,0,0,0.45)';
+        mobileMenu.style.display = 'grid';
+        mobileMenu.style.gap = '12px';
+        mobileMenu.style.zIndex = '2000';
+
+        mobileMenu.innerHTML = `
+          <a href="index.html">Acasă</a>
+          <a href="persoane-fizice.html">Persoane fizice</a>
+          <a href="flote.html">Firme</a>
+          <a href="curatenie-renovari.html">După renovări</a>
+          <a href="programari.html">Programări</a>
+          <a href="formular-contact.html">Contact</a>
+          <a href="https://wa.me/40757352371" target="_blank">WhatsApp</a>
+        `;
+
+        document.querySelector('.nav').appendChild(mobileMenu);
+      });
+    }
+
+    document.addEventListener('click', (e) => {
+      const mobileMenu = document.getElementById('mobileMenu');
+      if(!mobileMenu) return;
+      if(!e.target.closest('.nav')) {
+        mobileMenu.remove();
+      }
+    });
+  </script>
+</body>
+</html>
