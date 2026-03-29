@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prestige Finish | Persoane fizice</title>
   <link rel="icon" type="image/jpeg" href="logo.jpeg" />
-  <meta name="description" content="Prestige Finish oferă pentru persoane fizice servicii profesionale de igienizare și recondiționare pentru canapele, colțare, saltele, scaune, fotolii, covoare, draperii și anumite tipuri de perdele." />
+  <meta name="description" content="Prestige Finish oferă pentru persoane fizice servicii profesionale de igienizare și recondiționare pentru canapele, colțare, saltele, scaune, fotolii, covoare, draperii și anumite tipuri de perdele, plus acces rapid către curățenie după renovări și mutări." />
 
   <style>
     :root{
@@ -432,60 +432,34 @@
     .package-features{
       list-style:none;
       padding:0;
-      margin:0 0 20px;
+      margin:0 0 18px;
       display:grid;
       gap:10px;
     }
 
     .package-features li{
       position:relative;
-      padding-left:22px;
+      padding-left:20px;
       color:var(--text);
-      font-size:14px;
     }
 
     .package-features li::before{
-      content:"✓";
+      content:"•";
       position:absolute;
       left:0;
       top:0;
       color:var(--gold);
-      font-weight:700;
-    }
-
-    .package-prices{
-      margin:18px 0 22px;
-      border-top:1px solid rgba(255,255,255,.08);
-      border-bottom:1px solid rgba(255,255,255,.08);
-      padding:14px 0;
-      display:grid;
-      gap:12px;
-    }
-
-    .price-row{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:14px;
-    }
-
-    .price-row span{
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    .price-row strong{
-      color:var(--gold);
       font-size:18px;
-      white-space:nowrap;
+      line-height:1.2;
     }
 
-    .package-note{
-      font-size:13px;
-      margin:8px 0 18px;
+    .package-price{
+      font-size:32px;
+      line-height:1;
+      font-weight:800;
+      color:var(--gold);
+      margin:8px 0 10px;
     }
-
-    .package-btn{width:100%;}
 
     .fade-in{
       opacity:0;
@@ -532,10 +506,6 @@
 
     .whatsapp-btn img{width:22px;height:22px;}
 
-    @media (max-width: 1100px){
-      .grid-3,.package-grid{grid-template-columns:1fr;}
-    }
-
     @media (max-width: 980px){
       .top-socials{display:none;}
       .menu-toggle{display:inline-flex;}
@@ -564,7 +534,7 @@
         border:1px solid rgba(255,255,255,0.04);
       }
 
-      .hero-grid, .grid-2, .mini-grid, .grid-3, .package-grid{
+      .hero-grid, .grid-2, .grid-3, .mini-grid, .package-grid{
         grid-template-columns:1fr;
       }
 
@@ -591,9 +561,15 @@
 
       <div class="nav-right">
         <div class="top-socials">
-          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.35 1.55a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z"/></svg></a>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8.2h2.77l.42-3.22H13.5V8.5c0-.93.26-1.56 1.59-1.56h1.7V4.05c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.04 1.46-4.04 4.15v2.48H7.6v3.22h2.72V22h3.18Z"/></svg></a>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M15.5 2c.2 1.7 1.1 3.1 2.6 4 .9.6 1.9.9 2.9.9v3a8 8 0 0 1-3.9-1v6.1a6.1 6.1 0 1 1-6.1-6.1c.3 0 .7 0 1 .1v3.1a3 3 0 1 0 2 2.9V2h1.5Z"/></svg></a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.35 1.55a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z"/></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M13.5 22v-8.2h2.77l.42-3.22H13.5V8.5c0-.93.26-1.56 1.59-1.56h1.7V4.05c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.04 1.46-4.04 4.15v2.48H7.6v3.22h2.72V22h3.18Z"/></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="TikTok">
+            <svg viewBox="0 0 24 24"><path d="M15.5 2c.2 1.7 1.1 3.1 2.6 4 .9.6 1.9.9 2.9.9v3a8 8 0 0 1-3.9-1v6.1a6.1 6.1 0 1 1-6.1-6.1c.3 0 .7 0 1 .1v3.1a3 3 0 1 0 2 2.9V2h1.5Z"/></svg>
+          </a>
         </div>
 
         <button class="menu-toggle" onclick="toggleMenu()" aria-label="Deschide meniul">
@@ -605,6 +581,7 @@
         <a href="index.html" onclick="closeMenu()">Acasă</a>
         <a href="persoane-fizice.html" onclick="closeMenu()">Persoane fizice</a>
         <a href="flote.html" onclick="closeMenu()">Firme / spații comerciale</a>
+        <a href="curatenie-renovari.html" onclick="closeMenu()">După renovări</a>
         <a href="programari.html" onclick="closeMenu()">Programare online</a>
         <a href="formular-contact.html" class="nav-cta" onclick="closeMenu()">Formular de contact</a>
       </div>
@@ -655,37 +632,43 @@
         <div class="tag">Servicii premium, clar prezentate</div>
         <h2 class="section-title">Tot ce ține de confortul și imaginea spațiului tău</h2>
         <p class="section-text">
-          Oferta pentru persoane fizice este gândită clar și profesionist, fără servicii aruncate la întâmplare. Totul este structurat pe suprafețe reale și nevoi reale din locuință.
+          Oferta pentru persoane fizice este gândită clar și profesionist, fără servicii aruncate la întâmplare. Fiecare categorie este tratată separat, pentru ca tu să înțelegi rapid ce putem prelua și cum se poziționează serviciul.
         </p>
 
         <div class="grid-3">
           <div class="card">
-            <h3>Mobilier tapițat</h3>
-            <p>Intervenții pentru piesele utilizate frecvent în locuință, cu accent pe imagine, igienizare și întreținere corectă.</p>
+            <h3>Canapele, colțare și fotolii</h3>
+            <p>
+              Intervenții dedicate pieselor de mobilier utilizate cel mai des în locuință, cu accent pe imagine, confort și întreținerea corectă a materialului.
+            </p>
             <ul class="service-list">
-              <li><span class="service-label">Canapele & colțare</span>Suprafețe textile, piele sau alcantara.</li>
-              <li><span class="service-label">Fotolii & scaune</span>Piese utilizate zilnic, în living, dining sau birou.</li>
-              <li><span class="service-label">Saltele</span>Suprafețe care necesită standard mai ridicat de igienizare.</li>
+              <li><span class="service-label">Canapele</span> Fixe sau extensibile, în funcție de dimensiune și structură.</li>
+              <li><span class="service-label">Colțare</span> Configurații diferite, evaluate separat în funcție de suprafață.</li>
+              <li><span class="service-label">Fotolii</span> Piese individuale sau incluse în lucrări mixte.</li>
             </ul>
           </div>
 
           <div class="card">
-            <h3>Covoare & textile decorative</h3>
-            <p>Am extins oferta și pentru textile decorative și suprafețe de podea, într-un mod coerent și premium.</p>
+            <h3>Saltele, scaune și zone de uz frecvent</h3>
+            <p>
+              Pentru suprafețe care cer un nivel mai ridicat de atenție și igienizare, mai ales în spațiile utilizate zilnic.
+            </p>
             <ul class="service-list">
-              <li><span class="service-label">Covoare</span>Tarif calculat pe mp, în funcție de dimensiune și gradul de încărcare.</li>
-              <li><span class="service-label">Draperii</span>Lucrări tarifate în funcție de lungime, lățime și dimensiune.</li>
-              <li><span class="service-label">Anumite perdele</span>Disponibile pentru lucrări compatibile cu fluxul de intervenție.</li>
+              <li><span class="service-label">Saltele</span> Lucrări realizate în funcție de dimensiune și accesibilitate.</li>
+              <li><span class="service-label">Scaune</span> Dining, birou sau alte zone de utilizare constantă.</li>
+              <li><span class="service-label">Solicitări mixte</span> Mai multe suprafețe în aceeași intervenție.</li>
             </ul>
           </div>
 
           <div class="card">
-            <h3>Confort fără complicații</h3>
-            <p>Serviciile sunt gândite pentru clientul care vrea rezultat și organizare, nu pierdere de timp.</p>
+            <h3>Covoare și textile decorative</h3>
+            <p>
+              O zonă separată, gândită logic pentru completarea serviciilor din locuință, fără să rupem direcția premium a brandului.
+            </p>
             <ul class="service-list">
-              <li><span class="service-label">La domiciliu</span>Intervenții mobile, pe bază de programare.</li>
-              <li><span class="service-label">Program flexibil</span>Disponibil și seara, după încheierea programului tău.</li>
-              <li><span class="service-label">Deplasări extinse</span>Prahova și, la cerere, în afara județului.</li>
+              <li><span class="service-label">Covoare</span> Tarifare pe mp, în funcție de dimensiune și gradul de încărcare.</li>
+              <li><span class="service-label">Draperii</span> Lucrări evaluate în funcție de suprafață și complexitate.</li>
+              <li><span class="service-label">Anumite perdele</span> Disponibile doar pentru tipurile compatibile cu fluxul de intervenție.</li>
             </ul>
           </div>
         </div>
@@ -694,124 +677,153 @@
 
     <section class="fade-in">
       <div class="container">
-        <div class="tag">Pachete și prețuri</div>
-        <h2 class="section-title">Pachete clare pentru persoane fizice</h2>
+        <div class="tag">Materiale & abordare</div>
+        <h2 class="section-title">Textil, piele și alcantara tratate diferențiat</h2>
         <p class="section-text">
-          Prețurile afișate reprezintă baza de pornire. Valoarea finală se stabilește în funcție de dimensiune, material, gradul de încărcare și opțiunile suplimentare selectate.
+          Nu toate suprafețele sunt tratate la fel. Tocmai de aceea păstrăm o abordare clară și diferențiată, în funcție de material, dimensiune și tipul lucrării.
+        </p>
+
+        <div class="mini-grid">
+          <div class="mini-info">
+            <h3>Textil</h3>
+            <p>
+              Categoria cea mai frecvent întâlnită în locuințe, cu variații mari de structură, culoare și grad de utilizare.
+            </p>
+          </div>
+
+          <div class="mini-info">
+            <h3>Piele</h3>
+            <p>
+              Necesită o poziționare separată și o atenție diferită față de suprafețele textile obișnuite.
+            </p>
+          </div>
+
+          <div class="mini-info">
+            <h3>Alcantara</h3>
+            <p>
+              Material sensibil, care trebuie abordat cu mai multă atenție și evaluat corect înainte de intervenție.
+            </p>
+          </div>
+
+          <div class="mini-info">
+            <h3>Lucrări mixte</h3>
+            <p>
+              Dacă ai mai multe suprafețe și materiale diferite, putem construi o ofertă clară pentru întreg spațiul.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fade-in">
+      <div class="container">
+        <div class="tag">Pachete orientative</div>
+        <h2 class="section-title">Structură clară pentru cele mai solicitate intervenții</h2>
+        <p class="section-text">
+          Pachetele de mai jos sunt orientative și păstrează aceeași logică premium: claritate, poziționare și evaluare corectă în funcție de suprafață și complexitate.
         </p>
 
         <div class="package-grid">
           <div class="package-card">
-            <div class="package-badge">Refresh</div>
-            <h3>Refresh</h3>
-            <p class="package-subtitle">Pachet destinat intervențiilor standard, pentru reîmprospătarea suprafețelor și menținerea unui aspect curat și igienizat.</p>
-
+            <div class="package-badge">Living</div>
+            <h3>Pachet canapele & colțare</h3>
+            <p class="package-subtitle">
+              Potrivit pentru piesele principale de mobilier din zona de relaxare a locuinței.
+            </p>
+            <div class="package-price">de la 150 lei</div>
             <ul class="package-features">
-              <li>Variantă de intrare, clară și eficientă</li>
-              <li>Poziționat pentru întreținere și lucrări standard</li>
-              <li>Potrivit pentru intervenții regulate și suprafețe cu încărcare moderată</li>
+              <li>Canapele fixe sau extensibile</li>
+              <li>Colțare în diferite configurații</li>
+              <li>Evaluare în funcție de suprafață și material</li>
             </ul>
-
-            <div class="package-prices">
-              <div class="price-row"><span>Scaun textil</span><strong>de la 40 lei / bucată</strong></div>
-              <div class="price-row"><span>Fotoliu</span><strong>de la 80 lei</strong></div>
-              <div class="price-row"><span>Canapea 2 locuri</span><strong>de la 120 lei</strong></div>
-              <div class="price-row"><span>Canapea 3 locuri / mai mare</span><strong>de la 180 lei</strong></div>
-              <div class="price-row"><span>Colțar</span><strong>de la 120 lei</strong></div>
-              <div class="price-row"><span>Saltea</span><strong>de la 150 lei</strong></div>
-              <div class="price-row"><span>Covor</span><strong>de la 35 lei / mp</strong></div>
-              <div class="price-row"><span>Draperii / anumite perdele</span><strong>de la 80 lei</strong></div>
-            </div>
-
-            <p class="package-note">Prețurile finale pot varia în funcție de dimensiune și gradul de încărcare.</p>
-            <a class="btn btn-secondary package-btn" href="programari.html">Alege Refresh</a>
-          </div>
-
-          <div class="package-card">
-            <div class="package-badge">Premium</div>
-            <h3>Premium</h3>
-            <p class="package-subtitle">Include un protocol extins de lucru și un timp de execuție mai generos, oferind un rezultat mai uniform și stabil pentru suprafețele cu utilizare intensă.</p>
-
-            <ul class="package-features">
-              <li>Timp suplimentar de execuție față de Refresh</li>
-              <li>Protocol mai complet și rezultat mai bine stabilizat vizual</li>
-              <li>Diferență clară de valoare pentru lucrări mai solicitante</li>
-            </ul>
-
-            <div class="package-prices">
-              <div class="price-row"><span>Scaun textil</span><strong>de la 60 lei / bucată</strong></div>
-              <div class="price-row"><span>Fotoliu</span><strong>de la 100 lei</strong></div>
-              <div class="price-row"><span>Canapea 2 locuri</span><strong>de la 150 lei</strong></div>
-              <div class="price-row"><span>Canapea 3 locuri / mai mare</span><strong>de la 210 lei</strong></div>
-              <div class="price-row"><span>Colțar</span><strong>de la 150 lei</strong></div>
-              <div class="price-row"><span>Saltea</span><strong>de la 180 lei</strong></div>
-              <div class="price-row"><span>Covor</span><strong>de la 45 lei / mp</strong></div>
-              <div class="price-row"><span>Draperii / anumite perdele</span><strong>de la 100 lei</strong></div>
-            </div>
-
-            <p class="package-note">Prețurile finale pot varia în funcție de dimensiune și gradul de încărcare.</p>
-            <a class="btn btn-primary package-btn" href="programari.html">Alege Premium</a>
+            <p class="package-note">Prețul final poate varia în funcție de dimensiune, tipul materialului și gradul de dificultate.</p>
+            <a href="programari.html" class="btn btn-secondary">Programează</a>
           </div>
 
           <div class="package-card featured">
-            <div class="package-badge">Pachet de top</div>
-            <h3>Prestige</h3>
-            <p class="package-subtitle">Pachet complet, conceput pentru lucrări care necesită atenție extinsă, timp suplimentar și un nivel ridicat de execuție.</p>
-
+            <div class="package-badge">Igienizare</div>
+            <h3>Pachet saltele & scaune</h3>
+            <p class="package-subtitle">
+              O variantă potrivită pentru zonele care cer frecvent atenție sporită și igienizare regulată.
+            </p>
+            <div class="package-price">de la 120 lei</div>
             <ul class="package-features">
-              <li>Varianta premium superioară din structură</li>
-              <li>Timp mai generos de execuție și nivel mai ridicat de finisare vizuală</li>
-              <li>Compatibil mai bun cu opțiuni suplimentare și lucrări premium</li>
+              <li>Saltele simple sau matrimoniale</li>
+              <li>Scaune pentru dining sau birou</li>
+              <li>Lucrări individuale sau mixte</li>
             </ul>
-
-            <div class="package-prices">
-              <div class="price-row"><span>Scaun textil</span><strong>de la 65 lei / bucată</strong></div>
-              <div class="price-row"><span>Fotoliu</span><strong>de la 125 lei</strong></div>
-              <div class="price-row"><span>Canapea 2 locuri</span><strong>de la 165 lei</strong></div>
-              <div class="price-row"><span>Canapea 3 locuri / mai mare</span><strong>de la 225 lei</strong></div>
-              <div class="price-row"><span>Colțar</span><strong>de la 165 lei</strong></div>
-              <div class="price-row"><span>Saltea</span><strong>de la 195 lei</strong></div>
-              <div class="price-row"><span>Covor</span><strong>de la 55 lei / mp</strong></div>
-              <div class="price-row"><span>Draperii / anumite perdele</span><strong>de la 120 lei</strong></div>
-            </div>
-
-            <p class="package-note">Prețurile finale pot varia în funcție de dimensiune și gradul de încărcare.</p>
-            <a class="btn btn-primary package-btn" href="programari.html">Alege Prestige</a>
+            <p class="package-note">Evaluarea se face în funcție de dimensiune, număr de piese și modul de acces.</p>
+            <a href="formular-contact.html" class="btn btn-primary">Solicită ofertă</a>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="fade-in">
-      <div class="container grid-2">
-        <div class="mini-info">
-          <h3>Transport & deplasare</h3>
-          <p>
-            Serviciile se realizează la domiciliu. Costul de deplasare nu este inclus în pachete și se stabilește în funcție de zonă, distanță și complexitatea lucrării.
-          </p>
-        </div>
-
-        <div class="mini-info">
-          <h3>Program flexibil</h3>
-          <p>
-            Intervențiile se realizează exclusiv pe bază de programare, inclusiv în intervale de seară, în funcție de disponibilitatea echipelor.
-          </p>
+          <div class="package-card">
+            <div class="package-badge">Textile</div>
+            <h3>Pachet covoare & decorative</h3>
+            <p class="package-subtitle">
+              Pentru covoare, draperii și anumite tipuri de perdele compatibile cu fluxul nostru de lucru.
+            </p>
+            <div class="package-price">de la 15 lei/mp</div>
+            <ul class="package-features">
+              <li>Covoare tarifate la mp</li>
+              <li>Draperii și perdele eligibile</li>
+              <li>Solicitări personalizate</li>
+            </ul>
+            <p class="package-note">Costul final depinde de suprafață, volum și tipul exact de lucrare.</p>
+            <a href="formular-contact.html" class="btn btn-secondary">Cere detalii</a>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="fade-in">
       <div class="container">
-        <div class="tag">Programare și contact</div>
-        <h2 class="section-title">Alegi varianta cea mai simplă pentru tine</h2>
+        <div class="tag">Extindere logică</div>
+        <h2 class="section-title">Ai terminat o renovare? Avem acum și pagină dedicată pentru asta</h2>
         <p class="section-text">
-          Dacă știi deja ce serviciu dorești, mergi direct în programarea online. Dacă vrei recomandare sau o solicitare personalizată, folosește formularul de contact.
+          Pagina pentru persoane fizice rămâne focusată pe mobilier, covoare și textile decorative. Dacă însă ai nevoie de un spațiu pregătit pentru mutare sau după lucrări, am separat clar serviciul într-o pagină dedicată.
+        </p>
+
+        <div class="grid-2">
+          <div class="info-card">
+            <h2>De ce este utilă separarea</h2>
+            <p>
+              Renovările și mutările au o logică diferită față de serviciile de canapele și textile. Tocmai de aceea, mesajul este mai clar atunci când fiecare serviciu are pagina lui.
+            </p>
+            <ul class="service-list">
+              <li><span class="service-label">Mai clar pentru client</span> Înțelegi imediat ce tip de serviciu ți se potrivește.</li>
+              <li><span class="service-label">Mai clar pentru Google</span> Fiecare pagină are rolul și mesajul ei.</li>
+              <li><span class="service-label">Mai profesionist</span> Nu amestecăm servicii foarte diferite într-un singur loc.</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h2>Când mergi în pagina nouă</h2>
+            <p>
+              Dacă nu cauți doar mobilier sau textile, ci ai nevoie de un spațiu pregătit după lucrări sau înainte de mutare, intră direct în pagina dedicată.
+            </p>
+            <div class="hero-actions" style="margin-top:18px;">
+              <a href="curatenie-renovari.html" class="btn btn-primary">Vezi pagina de renovări</a>
+              <a href="formular-contact.html" class="btn btn-secondary">Solicită ofertă</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fade-in">
+      <div class="container">
+        <div class="tag">Programare și ofertare</div>
+        <h2 class="section-title">Alegi varianta potrivită pentru tipul tău de solicitare</h2>
+        <p class="section-text">
+          Dacă știi deja ce ai nevoie, programarea online este cea mai rapidă variantă. Dacă ai mai multe suprafețe, materiale diferite sau o solicitare mai amplă, recomandarea principală rămâne formularul de contact.
         </p>
 
         <div class="mini-grid">
           <div class="mini-info">
             <h3>Programare online</h3>
-            <p>Selecție rapidă a serviciului, calendar disponibil și formular clar, construit pentru intervenții mobile.</p>
+            <p>
+              Varianta potrivită când știi deja ce suprafață vrei să programezi și preferi să alegi direct un interval disponibil.
+            </p>
             <div class="hero-actions">
               <a href="programari.html" class="btn btn-primary">Deschide programarea</a>
             </div>
@@ -819,9 +831,11 @@
 
           <div class="mini-info">
             <h3>Formular de contact</h3>
-            <p>Ideal pentru cereri speciale, suprafețe multiple, textile decorative și solicitări personalizate.</p>
+            <p>
+              Ideal pentru solicitări mai ample, combinații de suprafețe, materiale diferite sau cereri personalizate.
+            </p>
             <div class="hero-actions">
-              <a href="formular-contact.html" class="btn btn-secondary">Deschide formularul</a>
+              <a href="formular-contact.html" class="btn btn-secondary">Trimite solicitare</a>
             </div>
           </div>
         </div>
