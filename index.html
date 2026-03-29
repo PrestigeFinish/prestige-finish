@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Curățare canapele, colțare și saltele în Prahova | Prestige Finish</title>
   <link rel="icon" type="image/jpeg" href="logo.jpeg" />
-  <meta name="description" content="Prestige Finish oferă servicii profesionale de curățare canapele, colțare, saltele, covoare și tapițerii în Prahova. Intervenții rapide la domiciliu sau firme." />
+  <meta name="description" content="Prestige Finish oferă servicii profesionale de curățare canapele, colțare, saltele, covoare și tapițerii în Prahova, plus curățenie după renovări și mutări. Intervenții rapide la domiciliu sau firme." />
 
   <style>
     :root{
@@ -596,7 +596,7 @@
 
     @keyframes goldGlow{
       0%{box-shadow:0 26px 75px rgba(0,0,0,.55), 0 0 12px rgba(212,175,55,.12)}
-      50%{box-shadow:0 26px 75px rgba(0,0,0,.55), 0 0 28px rgba(212,175,55,.24)}
+      50%{box-shadow:0 26px 75px rgba(0,0,0,.55), 0 0 24px rgba(212,175,55,.24)}
       100%{box-shadow:0 26px 75px rgba(0,0,0,.55), 0 0 12px rgba(212,175,55,.12)}
     }
 
@@ -623,121 +623,56 @@
     .package-features{
       list-style:none;
       padding:0;
-      margin:0 0 20px;
+      margin:0 0 18px;
       display:grid;
-      gap:10px;
+      gap:12px;
     }
 
     .package-features li{
       position:relative;
       padding-left:22px;
       color:var(--text);
-      font-size:14px;
     }
 
     .package-features li::before{
-      content:"✓";
+      content:"•";
       position:absolute;
       left:0;
       top:0;
       color:var(--gold);
       font-weight:700;
-    }
-
-    .package-prices{
-      margin:18px 0 22px;
-      border-top:1px solid rgba(255,255,255,.08);
-      border-bottom:1px solid rgba(255,255,255,.08);
-      padding:14px 0;
-      display:grid;
-      gap:12px;
-    }
-
-    .price-row{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:14px;
-    }
-
-    .price-row span{
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    .price-row strong{
-      color:var(--gold);
       font-size:18px;
-      white-space:nowrap;
+      line-height:1.2;
+    }
+
+    .package-price{
+      font-size:32px;
+      line-height:1;
+      font-weight:800;
+      color:var(--gold);
+      margin:8px 0 8px;
     }
 
     .package-note{
-      font-size:13px;
-      margin:8px 0 18px;
+      font-size:14px;
+      margin:0 0 18px;
     }
-
-    .package-btn{width:100%}
 
     .notice-wrap{
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
       gap:20px;
-      margin-top:28px;
+      margin-top:24px;
     }
 
-    .faq-list{
+    .contact-list{
       display:grid;
-      gap:14px;
-      margin-top:18px;
-    }
-
-    .faq-item{
-      border:1px solid var(--line);
-      border-radius:20px;
-      background:rgba(255,255,255,.025);
-      overflow:hidden;
-    }
-
-    .faq-q{
-      width:100%;
-      background:none;
-      border:none;
-      color:var(--text);
-      text-align:left;
-      padding:18px 18px;
-      font-weight:700;
-      cursor:pointer;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:16px;
-    }
-
-    .faq-q span:last-child{
-      color:var(--gold);
-      font-size:20px;
-      transition:.2s ease;
-    }
-
-    .faq-item.active .faq-q span:last-child{
-      transform:rotate(45deg);
-    }
-
-    .faq-a{
-      max-height:0;
-      overflow:hidden;
-      transition:max-height .3s ease;
-      padding:0 18px;
-      color:var(--muted);
-    }
-
-    .faq-item.active .faq-a{
-      max-height:260px;
-      padding:0 18px 18px;
+      gap:18px;
+      margin-top:12px;
     }
 
     .contact-row{
-      padding:14px 0;
+      padding-bottom:14px;
       border-bottom:1px solid rgba(255,255,255,.08);
     }
 
@@ -745,6 +680,15 @@
       display:block;
       color:var(--text);
       margin-bottom:4px;
+    }
+
+    .faq-card{
+      transition:.2s ease;
+    }
+
+    .faq-card:hover{
+      transform:translateY(-4px);
+      border-color:var(--line-strong);
     }
 
     .fade-in{
@@ -777,7 +721,7 @@
       bottom:25px;
       right:25px;
       background:var(--green);
-      color:#fff;
+      color:white;
       padding:14px 22px;
       font-size:15px;
       font-weight:bold;
@@ -785,7 +729,8 @@
       align-items:center;
       gap:10px;
       border-radius:30px;
-      box-shadow:0 8px 20px rgba(0,0,0,.35);
+      text-decoration:none;
+      box-shadow:0 8px 20px rgba(0,0,0,0.35);
       z-index:9999;
       transition:.2s ease;
     }
@@ -797,18 +742,15 @@
       height:22px;
     }
 
-    @media (max-width:1100px){
+    @media (max-width: 1100px){
       .grid-3,
-      .package-grid{
-        grid-template-columns:1fr;
-      }
-
+      .package-grid,
       .notice-wrap{
         grid-template-columns:1fr;
       }
     }
 
-    @media (max-width:980px){
+    @media (max-width: 980px){
       .top-socials{display:none}
       .menu-toggle{display:inline-flex}
 
@@ -822,7 +764,7 @@
         align-items:stretch;
         gap:10px;
         padding:18px;
-        background:rgba(5,5,5,.98);
+        background:rgba(5,5,5,0.98);
         border:1px solid var(--line);
         border-radius:20px;
       }
@@ -832,27 +774,27 @@
       .nav-links a{
         padding:14px 16px;
         border-radius:14px;
-        background:rgba(255,255,255,.03);
-        border:1px solid rgba(255,255,255,.04);
+        background:rgba(255,255,255,0.03);
+        border:1px solid rgba(255,255,255,0.04);
       }
 
       .hero-grid,
       .grid-2,
       .grid-3,
-      .hero-points,
       .package-grid,
       .faq-grid,
+      .mini-grid,
       .contact-wrap,
-      .mini-grid{
+      .hero-points{
         grid-template-columns:1fr;
       }
 
-      .brand-logo{height:58px}
-      .brand-name{font-size:22px}
-      h1{font-size:48px}
+      h1{font-size:46px}
+      .brand-logo{height:54px}
+      .brand-name{font-size:20px}
     }
 
-    @media (max-width:640px){
+    @media (max-width: 640px){
       .hero{padding:74px 0 42px}
       .hero-actions{flex-direction:column}
       .hero-actions .btn{width:100%}
@@ -868,7 +810,7 @@
 <body>
   <header class="topbar">
     <div class="container nav">
-      <a href="#top" class="brand">
+      <a href="index.html" class="brand">
         <img src="logo.jpeg" alt="Prestige Finish Logo" class="brand-logo">
         <span class="brand-name">Prestige Finish</span>
       </a>
@@ -878,101 +820,106 @@
           <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Instagram">
             <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.35 1.55a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z"/></svg>
           </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Facebook">
-            <svg viewBox="0 0 24 24"><path d="M13.5 22v-8.2h2.77l.42-3.22H13.5V8.5c0-.93.26-1.56 1.59-1.56h1.7V4.05c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.04 1.46-4.04 4.15v2.48H7.6v3.22h2.72V22h3.18Z"/></svg>
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="TikTok">
-            <svg viewBox="0 0 24 24"><path d="M15.5 2c.2 1.7 1.1 3.1 2.6 4 .9.6 1.9.9 2.9.9v3a8 8 0 0 1-3.9-1v6.1a6.1 6.1 0 1 1-6.1-6.1c.3 0 .7 0 1 .1v3.1a3 3 0 1 0 2 2.9V2h1.5Z"/></svg>
+          <a href="https://wa.me/40757352371?text=Buna!%20Vreau%20mai%20multe%20informatii%20despre%20serviciile%20Prestige%20Finish." target="_blank" rel="noopener noreferrer" class="top-social" aria-label="WhatsApp">
+            <svg viewBox="0 0 32 32"><path d="M19.11 17.27c-.28-.14-1.63-.8-1.88-.89-.25-.09-.43-.14-.61.14-.18.28-.7.89-.86 1.07-.16.18-.32.2-.6.07-.28-.14-1.16-.43-2.22-1.37-.82-.73-1.37-1.63-1.53-1.91-.16-.28-.02-.43.12-.57.13-.13.28-.32.43-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27 0 1.34.98 2.64 1.11 2.82.14.18 1.92 2.93 4.66 4.11.65.28 1.16.45 1.56.58.66.21 1.26.18 1.73.11.53-.08 1.63-.67 1.86-1.31.23-.64.23-1.19.16-1.31-.07-.11-.25-.18-.53-.32zM16.02 3.2C9.03 3.2 3.37 8.86 3.37 15.85c0 2.23.58 4.4 1.68 6.31L3 29l7.03-1.84a12.6 12.6 0 0 0 5.99 1.52h.01c6.98 0 12.65-5.66 12.65-12.65S23 3.2 16.02 3.2zm0 23.16h-.01a10.5 10.5 0 0 1-5.35-1.47l-.38-.23-4.17 1.09 1.11-4.07-.25-.42a10.48 10.48 0 0 1-1.61-5.57c0-5.79 4.71-10.5 10.51-10.5 2.8 0 5.43 1.09 7.41 3.08a10.41 10.41 0 0 1 3.08 7.42c0 5.79-4.72 10.5-10.51 10.5z"/></svg>
           </a>
         </div>
 
-        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Deschide meniul">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 7H20M4 12H20M4 17H20"/></svg>
+        <button class="menu-toggle" aria-label="Deschide meniul" onclick="toggleMenu()">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
         </button>
-      </div>
 
-      <div class="nav-links" id="mobileMenu">
-        <a href="#servicii" onclick="closeMenu()">Servicii</a>
-        <a href="persoane-fizice.html" onclick="closeMenu()">Persoane fizice</a>
-        <a href="flote.html" onclick="closeMenu()">Firme / spații comerciale</a>
-        <a href="#pachete" onclick="closeMenu()">Pachete</a>
-        <a href="#faq" onclick="closeMenu()">Întrebări</a>
-        <a href="formular-contact.html" onclick="closeMenu()">Formular de contact</a>
-        <a href="programari.html" class="nav-cta" onclick="closeMenu()">Programare online</a>
+        <div class="nav-links" id="navLinks">
+          <a href="index.html" onclick="closeMenu()">Acasă</a>
+          <a href="persoane-fizice.html" onclick="closeMenu()">Persoane fizice</a>
+          <a href="flote.html" onclick="closeMenu()">Persoane juridice / flote</a>
+          <a href="curatenie-renovari.html" onclick="closeMenu()">După renovări</a>
+          <a href="programari.html" onclick="closeMenu()">Programare online</a>
+          <a href="formular-contact.html" class="nav-cta" onclick="closeMenu()">Formular de contact</a>
+        </div>
       </div>
     </div>
   </header>
 
-  <main id="top">
-    <section class="hero fade-in">
+  <main>
+    <section class="hero">
       <div class="hero-bg"></div>
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Curat. Corect. Profesional.</div>
-          <h1>Servicii profesionale de igienizare și recondiționare pentru mobilier, textile și suprafețe decorative</h1>
+      <div class="container">
+        <div class="hero-grid">
+          <div class="fade-in">
+            <div class="eyebrow">Corect. Profesional.</div>
+            <h1>Servicii profesionale de igienizare și recondiționare pentru mobilier, textile și suprafețe decorative</h1>
 
-          <p>
-Prestige Finish oferă servicii profesionale de igienizare și recondiționare pentru canapele, colțare, saltele, scaune, fotolii, covoare, draperii și anumite tipuri de perdele, inclusiv suprafețe din textil, piele și alcantara.
-</p>
-          <p>
-Intervențiile sunt realizate la domiciliu sau în spații comerciale din Prahova și zonele limitrofe, folosind echipamente profesionale și soluții sigure pentru toate tipurile de materiale, cu rezultate vizibile încă de la prima aplicare.
-</p>
+            <p>
+              Prestige Finish oferă servicii profesionale de igienizare și recondiționare pentru canapele, colțare, saltele, scaune, fotolii, covoare, draperii și anumite tipuri de perdele, inclusiv suprafețe din textil, piele și alcantara.
+            </p>
+            <p>
+              Intervențiile sunt realizate la domiciliu sau în spații comerciale din Prahova și zonele limitrofe, folosind echipamente profesionale și soluții sigure pentru toate tipurile de materiale, cu rezultate vizibile încă de la prima aplicare.
+            </p>
 
-          <div class="hero-schedule">
-            Intervenții realizate la domiciliu sau sediul firmelor, inclusiv în intervale de seară (după ora 16:00–17:00), adaptate programului tău.
+            <div class="hero-schedule">
+              Intervenții realizate la domiciliu sau sediul firmelor, inclusiv în intervale de seară (după ora 16:00–17:00), adaptate programului tău.
+            </div>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="programari.html">Programare online</a>
+              <a class="btn btn-secondary" href="formular-contact.html">Formular de contact</a>
+              <a class="btn btn-whatsapp" href="https://wa.me/40757352371?text=Buna!%20Vreau%20mai%20multe%20informatii%20despre%20serviciile%20Prestige%20Finish." target="_blank" rel="noopener noreferrer">Trimite detalii pe WhatsApp</a>
+            </div>
+
+            <p class="hero-note">Prahova și împrejurimi • intervenții mobile • programare exclusivă • disponibil și seara</p>
+
+            <div class="hero-points">
+              <div class="mini-card">
+                <strong>Mobilier & textile</strong>
+                <span>Canapele, saltele, scaune, fotolii, covoare, draperii și anumite perdele.</span>
+              </div>
+              <div class="mini-card">
+                <strong>Program flexibil</strong>
+                <span>Disponibilitate inclusiv în intervale de seară, în funcție de programările active și echipe.</span>
+              </div>
+              <div class="mini-card">
+                <strong>Acoperire extinsă</strong>
+                <span>Intervenții în Prahova și, la cerere, în afara județului, în funcție de lucrare și pachetul ales.</span>
+              </div>
+            </div>
           </div>
 
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="programari.html">Programare online</a>
-            <a class="btn btn-secondary" href="formular-contact.html">Formular de contact</a>
-            <a class="btn btn-whatsapp" href="https://wa.me/40757352371?text=Buna!%20Vreau%20mai%20multe%20informatii%20despre%20serviciile%20Prestige%20Finish." target="_blank" rel="noopener noreferrer">Trimite detalii pe WhatsApp</a>
-          </div>
+          <div class="hero-panel fade-in">
+            <div class="status"><span class="status-dot"></span> Programare activă</div>
+            <img src="logo.jpeg" alt="Prestige Finish">
+            <h3 style="margin:0 0 8px;font-size:30px;">Prestige Finish</h3>
+            <p style="margin:0;color:var(--muted);">
+              Poziționare premium, intervenții mobile și o abordare construită pe rezultat, prezentare și diferențiere reală.
+            </p>
 
-          <p class="hero-note">Prahova și împrejurimi • intervenții mobile • programare exclusivă • disponibil și seara</p>
-
-          <div class="hero-points">
-            <div class="mini-card">
-              <strong>Mobilier & textile</strong>
-              <span>Canapele, saltele, scaune, fotolii, covoare, draperii și anumite perdele.</span>
+            <div class="quick-points">
+              <div class="quick-point">
+                <div class="quick-dot"></div>
+                <div>Servicii pentru persoane fizice, business și solicitări personalizate.</div>
+              </div>
+              <div class="quick-point">
+                <div class="quick-dot"></div>
+                <div>Materiale evaluate diferențiat: textil, piele, alcantara și textile decorative.</div>
+              </div>
+              <div class="quick-point">
+                <div class="quick-dot"></div>
+                <div>Curățenie după renovări și mutări, disponibilă prin pagina dedicată.</div>
+              </div>
             </div>
-            <div class="mini-card">
-              <strong>Program flexibil</strong>
-              <span>Disponibilitate inclusiv în intervale de seară, în funcție de programările active și echipe.</span>
-            </div>
-            <div class="mini-card">
-              <strong>Acoperire extinsă</strong>
-              <span>Intervenții în Prahova și, la cerere, în afara județului, în funcție de lucrare și pachetul ales.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-panel">
-          <div class="status"><span class="status-dot"></span> Programare activă</div>
-          <img src="logo.jpeg" alt="Prestige Finish">
-          <h3 style="margin:0 0 8px;font-size:30px;">Prestige Finish</h3>
-          <p style="margin:0;color:var(--muted);">
-            Poziționare premium, intervenții mobile și o abordare construită pe rezultat, prezentare și diferențiere reală.
-          </p>
-
-          <div class="quick-points">
-            <div class="quick-point"><span class="quick-dot"></span><span>Textil, piele și alcantara tratate diferit</span></div>
-            <div class="quick-point"><span class="quick-dot"></span><span>Covoare integrate coerent în ofertă</span></div>
-            <div class="quick-point"><span class="quick-dot"></span><span>Programare online + WhatsApp + formular dedicat</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="servicii" class="coming fade-in">
+    <section class="fade-in">
       <div class="container">
-        <div class="tag">Servicii premium, clar prezentate</div>
-        <h2 class="section-title">O ofertă construită pentru claritate, diferențiere și valoare</h2>
+        <div class="tag">Servicii principale</div>
+        <h2 class="section-title">Structură clară pentru locuințe, business și intervenții speciale</h2>
         <p class="section-text">
-          Am structurat serviciile astfel încât clientul să înțeleagă rapid ce alegere i se potrivește: mobilier pentru locuință, intervenții pentru firme, textile decorative și opțiuni premium de protecție.
-        </p>
-
-        <p class="section-note">
-          Fiecare material necesită o abordare diferită. Textilul, pielea și alcantara nu pot fi tratate la fel, iar covoarele și textilele decorative cer o evaluare corectă în funcție de structură, dimensiune și gradul de încărcare.
+          Am organizat oferta astfel încât fiecare tip de client să poată ajunge rapid exact la serviciul potrivit: pentru locuință, pentru firme sau pentru spații care necesită curățenie după renovări și mutări.
         </p>
 
         <div class="grid-3">
@@ -1036,109 +983,107 @@ Intervențiile sunt realizate la domiciliu sau în spații comerciale din Prahov
       </div>
     </section>
 
+    <section class="coming fade-in">
+      <div class="container">
+        <div class="tag">Nou în structură</div>
+        <h2 class="section-title">Curățenie după renovări și mutări</h2>
+        <p class="section-text">
+          Am adăugat o pagină dedicată pentru spațiile care nu mai au nevoie doar de igienizare de mobilier, ci de o intervenție completă după lucrări, renovări sau înainte de mutare.
+        </p>
+        <div class="grid-2">
+          <div class="info-box">
+            <h3>Când este potrivit acest serviciu</h3>
+            <ul class="service-list">
+              <li>
+                <span class="service-label">După renovare</span>
+                Pentru apartamente sau case în care a rămas praf fin, murdărie și urme de construcție.
+              </li>
+              <li>
+                <span class="service-label">Înainte de mutare</span>
+                Când ai nevoie ca spațiul să fie pregătit pentru mobilare sau utilizare.
+              </li>
+              <li>
+                <span class="service-label">Înainte de închiriere sau vânzare</span>
+                Pentru un aspect curat, prezentabil și gata de predare.
+              </li>
+            </ul>
+          </div>
+
+          <div class="info-box">
+            <h3>Ce găsești în pagina dedicată</h3>
+            <ul class="service-list">
+              <li>
+                <span class="service-label">Explicație clară a serviciului</span>
+                Fără să amestecăm renovările cu zona de canapele și textile.
+              </li>
+              <li>
+                <span class="service-label">Poziționare separată</span>
+                Pentru un mesaj mai clar, atât pentru client, cât și pentru Google.
+              </li>
+              <li>
+                <span class="service-label">Acces direct</span>
+                Poți merge imediat în pagina nouă și solicita ofertă rapid.
+              </li>
+            </ul>
+
+            <div class="hero-actions" style="margin-top:20px;">
+              <a class="btn btn-primary" href="curatenie-renovari.html">Vezi pagina de renovări</a>
+              <a class="btn btn-secondary" href="formular-contact.html">Solicită ofertă</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="pachete" class="fade-in">
       <div class="container">
         <div class="tag">Pachete și prețuri</div>
         <h2 class="section-title">Pachete clare, cu prețuri separate pe fiecare tip de suprafață</h2>
         <p class="section-text">
-          Prețurile afișate reprezintă baza de pornire. Valoarea finală se stabilește în funcție de dimensiune, material, gradul de încărcare și opțiunile suplimentare selectate.
+          Prețurile afișate reprezintă baza de pornire. Evaluarea finală poate varia în funcție de dimensiune, material, gradul de încărcare, complexitatea lucrării și zona de deplasare.
         </p>
 
         <div class="package-grid">
           <div class="package-card">
-            <div class="package-badge">Refresh</div>
-            <h3>Refresh</h3>
-            <p class="package-subtitle">
-              Pachet destinat intervențiilor standard, pentru reîmprospătarea suprafețelor și menținerea unui aspect curat și igienizat.
-            </p>
-
+            <div class="package-badge">Canapele & colțare</div>
+            <h3>Pachet living</h3>
+            <p class="package-subtitle">Pentru suprafețe textile, piele sau alcantara, tratate diferențiat.</p>
+            <div class="package-price">de la 150 lei</div>
             <ul class="package-features">
-              <li>Variantă de intrare, clară și eficientă</li>
-              <li>Poziționat pentru întreținere și lucrări standard</li>
-              <li>Potrivit pentru intervenții regulate și suprafețe cu încărcare moderată</li>
+              <li>Canapele fixe sau extensibile</li>
+              <li>Colțare în diverse configurații</li>
+              <li>Evaluare în funcție de material și suprafață</li>
             </ul>
-
-            <div class="package-prices">
-              <div class="price-row"><span>Scaun textil</span><strong>de la 40 lei / bucată</strong></div>
-              <div class="price-row"><span>Fotoliu</span><strong>de la 80 lei</strong></div>
-              <div class="price-row"><span>Canapea 2 locuri</span><strong>de la 120 lei</strong></div>
-              <div class="price-row"><span>Canapea 3 locuri / mai mare</span><strong>de la 180 lei</strong></div>
-              <div class="price-row"><span>Colțar</span><strong>de la 120 lei</strong></div>
-              <div class="price-row"><span>Saltea</span><strong>de la 150 lei</strong></div>
-              <div class="price-row"><span>Covor</span><strong>de la 35 lei / mp</strong></div>
-              <div class="price-row"><span>Draperii / anumite perdele</span><strong>de la 80 lei</strong></div>
-              <div class="price-row"><span>Canapea piele</span><strong>de la 200 lei</strong></div>
-              <div class="price-row"><span>Colțar piele</span><strong>de la 150 lei</strong></div>
-              <div class="price-row"><span>Scaun piele</span><strong>de la 70 lei / bucată</strong></div>
-            </div>
-
-            <p class="package-note">Suprafețele din piele sunt tarifate fără tratament dedicat.</p>
-
-            <a class="btn btn-secondary package-btn" href="programari.html">Alege Refresh</a>
-          </div>
-
-          <div class="package-card">
-            <div class="package-badge">Premium</div>
-            <h3>Premium</h3>
-            <p class="package-subtitle">
-              Include un protocol extins de lucru și un timp de execuție mai generos, oferind un rezultat mai uniform și stabil pentru suprafețele cu utilizare intensă.
-            </p>
-
-            <ul class="package-features">
-              <li>Timp suplimentar de execuție față de Refresh</li>
-              <li>Protocol mai complet și rezultat mai bine stabilizat vizual</li>
-              <li>Diferență clară de valoare pentru lucrări mai solicitante</li>
-            </ul>
-
-            <div class="package-prices">
-              <div class="price-row"><span>Scaun textil</span><strong>de la 60 lei / bucată</strong></div>
-              <div class="price-row"><span>Fotoliu</span><strong>de la 100 lei</strong></div>
-              <div class="price-row"><span>Canapea 2 locuri</span><strong>de la 150 lei</strong></div>
-              <div class="price-row"><span>Canapea 3 locuri / mai mare</span><strong>de la 210 lei</strong></div>
-              <div class="price-row"><span>Colțar</span><strong>de la 150 lei</strong></div>
-              <div class="price-row"><span>Saltea</span><strong>de la 180 lei</strong></div>
-              <div class="price-row"><span>Covor</span><strong>de la 45 lei / mp</strong></div>
-              <div class="price-row"><span>Draperii / anumite perdele</span><strong>de la 100 lei</strong></div>
-              <div class="price-row"><span>Canapea piele</span><strong>de la 230 lei</strong></div>
-              <div class="price-row"><span>Colțar piele</span><strong>de la 180 lei</strong></div>
-              <div class="price-row"><span>Scaun piele</span><strong>de la 90 lei / bucată</strong></div>
-            </div>
-
-            <p class="package-note">Suprafețele din piele sunt tarifate fără tratament dedicat.</p>
-
-            <a class="btn btn-primary package-btn" href="programari.html">Alege Premium</a>
+            <p class="package-note">Prețul final se stabilește în funcție de dimensiune și tipul intervenției.</p>
+            <a href="persoane-fizice.html" class="btn btn-secondary">Vezi detalii</a>
           </div>
 
           <div class="package-card featured">
-            <div class="package-badge">Pachet de top</div>
-            <h3>Prestige</h3>
-            <p class="package-subtitle">
-              Pachet complet, conceput pentru lucrări care necesită atenție extinsă, timp suplimentar și un nivel ridicat de execuție. Diferența de valoare este construită clar și vizibil.
-            </p>
-
+            <div class="package-badge">Saltele & textile</div>
+            <h3>Pachet igienizare</h3>
+            <p class="package-subtitle">Pentru suprafețe care necesită standard mai ridicat de igienizare și întreținere.</p>
+            <div class="package-price">de la 120 lei</div>
             <ul class="package-features">
-              <li>Varianta premium superioară din structură</li>
-              <li>Timp mai generos de execuție și nivel mai ridicat de finisare vizuală</li>
-              <li>Compatibil mai bun cu opțiuni suplimentare și lucrări premium</li>
+              <li>Saltele simple sau matrimoniale</li>
+              <li>Scaune, fotolii și elemente textile</li>
+              <li>Intervenții dedicate pentru uz rezidențial sau business</li>
             </ul>
+            <p class="package-note">Baza de preț diferă în funcție de suprafață, material și accesibilitate.</p>
+            <a href="persoane-fizice.html" class="btn btn-primary">Vezi servicii</a>
+          </div>
 
-            <div class="package-prices">
-              <div class="price-row"><span>Scaun textil</span><strong>de la 65 lei / bucată</strong></div>
-              <div class="price-row"><span>Fotoliu</span><strong>de la 125 lei</strong></div>
-              <div class="price-row"><span>Canapea 2 locuri</span><strong>de la 165 lei</strong></div>
-              <div class="price-row"><span>Canapea 3 locuri / mai mare</span><strong>de la 225 lei</strong></div>
-              <div class="price-row"><span>Colțar</span><strong>de la 165 lei</strong></div>
-              <div class="price-row"><span>Saltea</span><strong>de la 195 lei</strong></div>
-              <div class="price-row"><span>Covor</span><strong>de la 55 lei / mp</strong></div>
-              <div class="price-row"><span>Draperii / anumite perdele</span><strong>de la 120 lei</strong></div>
-              <div class="price-row"><span>Canapea piele</span><strong>de la 245 lei</strong></div>
-              <div class="price-row"><span>Colțar piele</span><strong>de la 195 lei</strong></div>
-              <div class="price-row"><span>Scaun piele</span><strong>de la 95 lei / bucată</strong></div>
-            </div>
-
-            <p class="package-note">Suprafețele din piele sunt tarifate fără tratament dedicat.</p>
-
-            <a class="btn btn-primary package-btn" href="programari.html">Alege Prestige</a>
+          <div class="package-card">
+            <div class="package-badge">Covoare & decorative</div>
+            <h3>Pachet textile premium</h3>
+            <p class="package-subtitle">Tarifare separată pentru covoare, draperii și anumite tipuri de perdele.</p>
+            <div class="package-price">de la 15 lei/mp</div>
+            <ul class="package-features">
+              <li>Covoare tarifate la mp</li>
+              <li>Draperii și perdele eligibile</li>
+              <li>Solicitări personalizate și mix de suprafețe</li>
+            </ul>
+            <p class="package-note">Se calculează în funcție de tipul lucrării, dimensiune și volum.</p>
+            <a href="formular-contact.html" class="btn btn-secondary">Cere ofertă</a>
           </div>
         </div>
 
@@ -1146,36 +1091,7 @@ Intervențiile sunt realizate la domiciliu sau în spații comerciale din Prahov
           <div class="notice-card">
             <h3>Transport & deplasare</h3>
             <p class="notice-text">
-              Serviciile se realizează la domiciliu sau la sediul clientului. Costul de deplasare nu este inclus în pachete și se stabilește în funcție de zonă, distanță și complexitatea lucrării.
-            </p>
-          </div>
-
-          <div class="notice-card">
-            <h3>Program flexibil</h3>
-            <p class="notice-text">
-              Intervențiile se realizează exclusiv pe bază de programare, inclusiv în intervale de seară, în funcție de disponibilitatea echipelor. Majoritatea lucrărilor pot fi planificate după ora 16:00–17:00.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="coming fade-in">
-      <div class="container">
-        <div class="tag">Opționale premium</div>
-        <h2 class="section-title">Protecție hidrofobă și opțiuni suplimentare</h2>
-        <p class="section-text">
-          Pe lângă curățare, poți alege și opțiuni premium care cresc durata efectului și ajută la întreținerea suprafețelor în timp.
-        </p>
-
-        <div class="grid-2">
-          <div class="notice-card">
-            <h3>Protecție hidrofobă</h3>
-            <p class="notice-text">
-              Tratament hidrofob disponibil contra cost pentru materialele compatibile, cu rol de protecție suplimentară împotriva absorbției rapide a lichidelor și a murdăriei.
-            </p>
-            <p class="notice-text">
-              Se stabilește separat, în funcție de suprafață, material și tipul intervenției.
+              Costul de deplasare nu este inclus și se stabilește separat, în funcție de zonă, distanță și complexitatea lucrării.
             </p>
           </div>
 
@@ -1192,7 +1108,7 @@ Intervențiile sunt realizate la domiciliu sau în spații comerciale din Prahov
               </li>
               <li>
                 <span class="service-label">Solicitare personalizată</span>
-                Pentru lucrări mai ample, mix de suprafețe sau intervenții la firme.
+                Pentru lucrări mai ample, mix de suprafețe, firme sau renovări.
               </li>
             </ul>
           </div>
@@ -1226,121 +1142,28 @@ Intervențiile sunt realizate la domiciliu sau în spații comerciale din Prahov
     </section>
 
     <section class="fade-in">
-  <div class="container">
-    <div class="tag">Arie de acoperire</div>
-    <h2 class="section-title">Zone acoperite în Prahova</h2>
-    <p class="section-text">
-      Prestige Finish oferă servicii premium de curățare și igienizare pentru canapele, colțare, saltele, scaune, fotolii, covoare, draperii și anumite tipuri de perdele în întreg județul Prahova, cu intervenții la domiciliu sau la sediul firmelor.
-    </p>
-
-    <div class="section-note">
-      Acoperim principalele orașe și localități din județ, în funcție de programare, tipul lucrării și disponibilitatea echipelor.
-    </div>
-
-    <div class="grid-3">
-      <div class="card">
-        <h3>Ploiești & împrejurimi</h3>
-        <ul class="service-list">
-          <li>Ploiești</li>
-          <li>Blejoi</li>
-          <li>Bucov</li>
-          <li>Berceni</li>
-          <li>Barcănești</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Câmpina & zona centrală</h3>
-        <ul class="service-list">
-          <li>Câmpina</li>
-          <li>Breaza</li>
-          <li>Comarnic</li>
-          <li>Băicoi</li>
-          <li>Boldești-Scăeni</li>
-          <li>Plopeni</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Valea Prahovei & estul județului</h3>
-        <ul class="service-list">
-          <li>Sinaia</li>
-          <li>Bușteni</li>
-          <li>Azuga</li>
-          <li>Mizil</li>
-          <li>Urlați</li>
-          <li>Vălenii de Munte</li>
-        </ul>
-      </div>
-    </div>
-
-    <p class="section-text" style="margin-top: 28px;">
-      Pentru alte localități din Prahova sau pentru deplasări extinse, intervențiile se stabilesc în funcție de programare, distanță și complexitatea lucrării.
-    </p>
-  </div>
-</section>
-    <section id="faq" class="coming fade-in">
       <div class="container">
-        <div class="tag">Întrebări clienți</div>
-        <h2 class="section-title">Răspunsuri clare la întrebările importante</h2>
+        <div class="tag">Arie de acoperire</div>
+        <h2 class="section-title">Zone acoperite în Prahova</h2>
+        <p class="section-text">
+          Prestige Finish oferă servicii premium de curățare și igienizare pentru canapele, colțare, saltele, scaune, fotolii, covoare, draperii și anumite tipuri de perdele în întreg județul Prahova, cu intervenții la domiciliu sau la sediul firmelor.
+        </p>
+        <div class="section-note">
+          Pentru lucrări mai ample, mix de suprafețe sau curățenie după renovări, se pot analiza și solicitări din afara județului, în funcție de distanță, program și tipul intervenției.
+        </div>
 
-        <div class="faq-grid">
-          <div class="faq-card">
-            <h3>Despre deplasare</h3>
-            <div class="faq-list">
-              <div class="faq-item">
-                <button class="faq-q" type="button">
-                  <span>Vă deplasați și în afara zonei?</span>
-                  <span>+</span>
-                </button>
-                <div class="faq-a">Da. Ne deplasăm în Prahova și în afara județului, în funcție de tipul lucrării și pachetul ales. Pentru lucrări mai ample sau intervenții multiple, acoperim fără probleme distanțe medii și mari.</div>
-              </div>
-
-              <div class="faq-item">
-                <button class="faq-q" type="button">
-                  <span>Transportul este inclus?</span>
-                  <span>+</span>
-                </button>
-                <div class="faq-a">Nu. Costul de deplasare nu este inclus în pachete și se stabilește separat, în funcție de zonă, distanță și complexitatea lucrării.</div>
-              </div>
-
-              <div class="faq-item">
-                <button class="faq-q" type="button">
-                  <span>Se poate lucra la domiciliu sau firmă?</span>
-                  <span>+</span>
-                </button>
-                <div class="faq-a">Da. Toate serviciile sunt gândite pentru intervenții la domiciliu sau la sediul firmelor, fără a fi necesară deplasarea clientului.</div>
-              </div>
-            </div>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Ploiești & apropiere</h3>
+            <p>Intervenții rapide în Ploiești și zonele foarte apropiate, în funcție de programări și intervalele disponibile.</p>
           </div>
-
-          <div class="faq-card">
-            <h3>Despre program și preț</h3>
-            <div class="faq-list">
-              <div class="faq-item">
-                <button class="faq-q" type="button">
-                  <span>Lucrați și seara?</span>
-                  <span>+</span>
-                </button>
-                <div class="faq-a">Da. Lucrările sunt programate flexibil, inclusiv în intervale de seară, pentru a respecta programul clienților. Intervențiile sunt realizate, de regulă, după încheierea programului de lucru, în funcție de disponibilitatea echipelor.</div>
-              </div>
-
-              <div class="faq-item">
-                <button class="faq-q" type="button">
-                  <span>Cum se calculează prețul la covoare?</span>
-                  <span>+</span>
-                </button>
-                <div class="faq-a">Pentru covoare, tariful este calculat pe metru pătrat. Valoarea finală depinde de dimensiune, grosime, gradul de încărcare și pachetul ales.</div>
-              </div>
-
-              <div class="faq-item">
-                <button class="faq-q" type="button">
-                  <span>Cum se stabilește prețul final?</span>
-                  <span>+</span>
-                </button>
-                <div class="faq-a">Prețul final se stabilește în funcție de dimensiune, material, gradul de murdărie și opțiunile alese. Prețurile afișate reprezintă punctul de pornire.</div>
-              </div>
-            </div>
+          <div class="card">
+            <h3>Tot județul Prahova</h3>
+            <p>Acoperire extinsă pentru lucrări rezidențiale și business, cu evaluare clară a deplasării.</p>
+          </div>
+          <div class="card">
+            <h3>În afara județului</h3>
+            <p>Disponibil la cerere pentru lucrări care justifică deplasarea și organizarea echipei.</p>
           </div>
         </div>
       </div>
@@ -1348,53 +1171,88 @@ Intervențiile sunt realizate la domiciliu sau în spații comerciale din Prahov
 
     <section class="fade-in">
       <div class="container">
-        <div class="tag">Programare și contact</div>
-        <h2 class="section-title">Alegi varianta cea mai simplă pentru tine</h2>
-        <p class="section-text">
-          Dacă știi deja ce serviciu dorești, mergi direct în programarea online. Dacă vrei recomandare, clarificare de material sau o ofertă personalizată, folosește formularul de contact sau WhatsApp.
-        </p>
+        <div class="tag">Întrebări frecvente</div>
+        <h2 class="section-title">Ce întreabă cel mai des clienții</h2>
 
-        <div class="mini-grid">
-          <div class="info-box">
-            <h3>Programare online</h3>
-            <p>Selecție rapidă a serviciului, calendar disponibil și formular clar, construit pentru intervenții mobile.</p>
-            <p style="margin-top:18px;">
-              <a href="programari.html" class="btn btn-primary">Deschide programarea online</a>
-            </p>
+        <div class="faq-grid">
+          <div class="faq-card">
+            <h3>Lucrați și seara?</h3>
+            <p>Da, în funcție de programările active și de tipul lucrării, intervențiile pot fi planificate și în intervale de seară.</p>
           </div>
 
-          <div class="info-box">
-            <h3>Formular de contact</h3>
-            <p>Ideal pentru cereri speciale, suprafețe multiple, firme, lucrări mai ample și solicitări personalizate.</p>
-            <p style="margin-top:18px;">
-              <a href="formular-contact.html" class="btn btn-secondary">Deschide formularul de contact</a>
-            </p>
+          <div class="faq-card">
+            <h3>Lucrați doar în Prahova?</h3>
+            <p>Nu exclusiv. Prahova este aria principală, dar se pot analiza și solicitări din afara județului.</p>
+          </div>
+
+          <div class="faq-card">
+            <h3>Pot solicita și curățenie după renovări?</h3>
+            <p>Da. Pentru asta există acum pagina dedicată „După renovări”, astfel încât serviciul să fie prezentat separat și clar.</p>
+          </div>
+
+          <div class="faq-card">
+            <h3>Prețul este fix?</h3>
+            <p>Nu întotdeauna. Prețurile afișate reprezintă baze de pornire și pot varia în funcție de suprafață, material și complexitate.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="coming fade-in">
-      <div class="container contact-wrap">
-        <div>
-          <div class="tag">Contact</div>
-          <h2 class="section-title">Contact Prestige Finish</h2>
-          <p class="section-text">
-            Pentru programări, informații sau colaborări, ne poți contacta direct telefonic, prin WhatsApp, prin formularul de contact sau prin sistemul de programare online.
-          </p>
+    <section class="fade-in">
+      <div class="container">
+        <div class="contact-wrap">
+          <div class="info-box">
+            <div class="tag">Contact rapid</div>
+            <h3>Ai nevoie de detalii, ofertă sau programare?</h3>
+            <p>
+              Poți alege varianta cea mai simplă pentru tine: programare online, formular de contact sau mesaj direct pe WhatsApp.
+            </p>
 
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="tel:+40757352371">0757 352 371</a>
-            <a class="btn btn-primary" href="tel:+40727707545">0727 707 545</a>
-            <a class="btn btn-whatsapp" href="https://wa.me/40757352371?text=Buna!%20Vreau%20mai%20multe%20informatii%20despre%20serviciile%20Prestige%20Finish." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <div class="contact-list">
+              <div class="contact-row">
+                <strong>Telefon</strong>
+                <span>0757 352 371</span>
+              </div>
+              <div class="contact-row">
+                <strong>Adresă</strong>
+                <span>Strada Libertății, 107592 Ploiești</span>
+              </div>
+              <div class="contact-row">
+                <strong>Programări</strong>
+                <span>Exclusiv pe bază de solicitare și disponibilitate</span>
+              </div>
+            </div>
+
+            <div class="hero-actions" style="margin-top:22px;">
+              <a class="btn btn-primary" href="programari.html">Programare online</a>
+              <a class="btn btn-secondary" href="formular-contact.html">Formular de contact</a>
+            </div>
           </div>
-        </div>
 
-        <div class="info-box">
-          <div class="contact-row"><strong>Email</strong><span>prestige.finish@yahoo.com</span></div>
-          <div class="contact-row"><strong>Acoperire</strong><span>Intervenții în Prahova și, la cerere, în afara județului</span></div>
-          <div class="contact-row"><strong>Disponibilitate</strong><span>Programare online, WhatsApp și formular de contact</span></div>
-          <div class="contact-row" style="border-bottom:none;"><strong>Intervale de lucru</strong><span>Inclusiv în intervale de seară, în funcție de disponibilitatea echipelor</span></div>
+          <div class="info-box">
+            <div class="tag">Navigare rapidă</div>
+            <h3>Alege exact pagina care te interesează</h3>
+            <ul class="service-list">
+              <li>
+                <span class="service-label">Persoane fizice</span>
+                Pentru canapele, colțare, saltele, fotolii, covoare și textile decorative.
+              </li>
+              <li>
+                <span class="service-label">Persoane juridice / flote</span>
+                Pentru spații comerciale, recepții, birouri, Airbnb, hoteluri și alte locații business.
+              </li>
+              <li>
+                <span class="service-label">După renovări</span>
+                Pentru apartamente, case sau spații pregătite de mutare, închiriere sau predare.
+              </li>
+            </ul>
+
+            <div class="hero-actions" style="margin-top:22px;">
+              <a class="btn btn-secondary" href="persoane-fizice.html">Persoane fizice</a>
+              <a class="btn btn-secondary" href="flote.html">Firme</a>
+              <a class="btn btn-secondary" href="curatenie-renovari.html">După renovări</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1403,51 +1261,35 @@ Intervențiile sunt realizate la domiciliu sau în spații comerciale din Prahov
   <footer>
     <div class="container footer-row">
       <div>© 2026 Prestige Finish. Toate drepturile rezervate.</div>
-      <div>Curat. Corect. Profesional.</div>
+      <div>Prahova • intervenții mobile • programări pe bază de disponibilitate</div>
     </div>
   </footer>
 
-  <a href="https://wa.me/40757352371?text=Buna!%20Vreau%20mai%20multe%20informatii%20despre%20serviciile%20Prestige%20Finish." class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+  <a class="whatsapp-btn" href="https://wa.me/40757352371?text=Buna!%20Vreau%20mai%20multe%20informatii%20despre%20serviciile%20Prestige%20Finish." target="_blank" rel="noopener noreferrer">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp">
     Scrie-ne pe WhatsApp
   </a>
 
   <script>
-    function toggleMenu() {
-      document.getElementById('mobileMenu').classList.toggle('active');
-    }
+    const fadeElements = document.querySelectorAll('.fade-in');
 
-    function closeMenu() {
-      document.getElementById('mobileMenu').classList.remove('active');
-    }
-
-    document.addEventListener('click', function(event) {
-      const menu = document.getElementById('mobileMenu');
-      const toggle = document.querySelector('.menu-toggle');
-      if (!menu || !toggle) return;
-      const clickedInsideMenu = menu.contains(event.target);
-      const clickedToggle = toggle.contains(event.target);
-      if (!clickedInsideMenu && !clickedToggle) {
-        menu.classList.remove('active');
-      }
-    });
-
-    const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
+        if(entry.isIntersecting){
           entry.target.classList.add('visible');
         }
       });
     }, { threshold: 0.12 });
 
-    fadeEls.forEach(el => observer.observe(el));
+    fadeElements.forEach(el => observer.observe(el));
 
-    document.querySelectorAll('.faq-item').forEach(item => {
-      item.querySelector('.faq-q').addEventListener('click', () => {
-        item.classList.toggle('active');
-      });
-    });
+    function toggleMenu(){
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    function closeMenu(){
+      document.getElementById('navLinks').classList.remove('active');
+    }
   </script>
 </body>
 </html>
