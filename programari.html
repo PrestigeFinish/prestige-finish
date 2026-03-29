@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prestige Finish | Programare online</title>
   <link rel="icon" type="image/png" href="logo.jpeg" />
-  <meta name="description" content="Programare online pentru curățare canapele, saltele, scaune, fotolii, tapițerii, servicii pentru firme, curățare interior auto și solicitări pentru curățenie după renovări." />
+  <meta name="description" content="Programare online pentru curățare canapele, saltele, scaune, fotolii, tapițerii, servicii pentru firme și solicitări pentru curățenie după renovări." />
 
   <style>
     :root{
@@ -579,23 +579,57 @@
         <div class="tag">Calendar disponibil</div>
         <h2 class="section-title">Alege ziua și intervalul potrivit</h2>
         <p class="section-text">
-          Widgetul de mai jos este zona principală de programare. Poți selecta serviciul, intervalul disponibil și poți trimite cererea direct din această pagină. În fișierul actual există deja integrarea widgetului de programare și logica aferentă, așa că aici doar o păstrezi și, dacă vrei, înlocuiești cu embed-ul tău final.  [oai_citation:2‡programari.html.txt](sediment://file_00000000079072468b6386b2ae7a85b5)
+          Selectează serviciul dorit, alege intervalul disponibil și trimite rapid cererea de programare direct din această pagină.
         </p>
 
         <div class="grid-2">
           <div class="widget-card">
             <h2>Programare online Prestige Finish</h2>
             <p>
-              Dacă folosești deja un widget extern, păstrezi embed-ul tău aici. Mai jos îți las structură completă, cu un placeholder curat.
+              Dacă știi deja ce serviciu dorești, poți face programarea direct aici, în doar câțiva pași.
             </p>
 
             <div class="widget-box">
-              <!-- Înlocuiește src-ul de mai jos cu linkul tău real de programare -->
-              <iframe
-                src="https://cal.com/"
-                title="Programare online Prestige Finish"
-                loading="lazy">
-              </iframe>
+              <div id="booking-widget"></div>
+
+              <script src="//widget.simplybook.it/v2/widget/widget.js" type="text/javascript"></script>
+              <script>
+                window.addEventListener('load', function () {
+                  new SimplybookWidget({
+                    "widget_type":"iframe",
+                    "widget_container_id":"booking-widget",
+                    "url":"https://prestigefinish.simplybook.it",
+                    "theme":"tender",
+                    "theme_settings":{
+                      "sb_base_color":"#d4af37",
+                      "timeline_hide_unavailable":"1",
+                      "hide_past_days":"0",
+                      "timeline_show_end_time":"0",
+                      "timeline_modern_display":"as_slots",
+                      "display_item_mode":"block",
+                      "booking_nav_bg_color":"#d4af37",
+                      "body_bg_color":"#111111",
+                      "sb_review_image":"",
+                      "dark_font_color":"#111111",
+                      "light_font_color":"#ffffff",
+                      "btn_color_1":"#d4af37",
+                      "sb_company_label_color":"#d4af37",
+                      "hide_img_mode":"0",
+                      "show_sidebar":"1",
+                      "sb_busy":"#c7b3b3",
+                      "sb_available":"#d6ebff"
+                    },
+                    "timeline":"modern",
+                    "datepicker":"top_calendar",
+                    "is_rtl":false,
+                    "app_config":{
+                      "clear_session":1,
+                      "allow_switch_to_ada":0,
+                      "predefined":[]
+                    }
+                  });
+                });
+              </script>
             </div>
           </div>
 
