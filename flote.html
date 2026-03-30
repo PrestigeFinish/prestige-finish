@@ -137,11 +137,11 @@
     .nav-cta{
       padding:10px 16px;
       border-radius:999px;
-      border:1px solid var(--line);
-      color:var(--gold);
-      background:rgba(212,175,55,.06);
+      border:1px solid transparent;
+      color:#0a0a0a;
+      background:linear-gradient(135deg, var(--gold), var(--gold-2));
       font-weight:700;
-      box-shadow:var(--glow);
+      box-shadow:0 0 18px rgba(212,175,55,.18);
     }
 
     .hero{
@@ -245,19 +245,18 @@
       cursor:pointer;
       box-shadow:var(--shadow);
       transition:.2s ease;
+      color:#0a0a0a;
+      background:linear-gradient(135deg, var(--gold), var(--gold-2));
     }
 
     .btn:hover{transform:translateY(-2px)}
 
-    .btn-primary{
-      background:linear-gradient(135deg, var(--gold), var(--gold-2));
-      color:#0a0a0a;
-    }
-
+    .btn-primary,
     .btn-secondary{
-      background:transparent;
-      border-color:var(--line);
-      color:var(--text);
+      color:#0a0a0a;
+      background:linear-gradient(135deg, var(--gold), var(--gold-2));
+      border-color:transparent;
+      box-shadow:0 0 18px rgba(212,175,55,.18);
     }
 
     section{padding:52px 0 78px;}
@@ -666,6 +665,35 @@
     </section>
 
     <section class="fade-in">
+      <div class="container grid-2">
+        <div class="mini-info">
+          <h3>Transport & deplasare</h3>
+          <p>
+            Prețurile și ofertele nu includ transportul. Costul de deplasare se stabilește separat, în funcție de zonă, distanță, județ și complexitatea lucrării.
+          </p>
+        </div>
+
+        <div class="mini-info">
+          <h3>Opțiuni suplimentare disponibile</h3>
+          <ul class="service-list" style="margin-top:0;">
+            <li>
+              <span class="service-label">Tratament piele</span>
+              Întreținere și curățare pentru suprafețe din piele naturală sau ecologică.
+            </li>
+            <li>
+              <span class="service-label">Efect hidrofob pentru textile</span>
+              Protecție suplimentară pentru anumite materiale textile, în funcție de compatibilitate și tipul lucrării.
+            </li>
+            <li>
+              <span class="service-label">Solicitare personalizată</span>
+              Pentru volume mai mari, mix de suprafețe, materiale diferite sau cerințe business speciale.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="fade-in">
       <div class="container">
         <div class="tag">Extindere logică pentru solicitări ample</div>
         <h2 class="section-title">Ai o locație nou amenajată sau renovată? Avem și pagină dedicată</h2>
@@ -697,24 +725,6 @@
               <a href="formular-contact.html" class="btn btn-secondary">Solicită ofertă</a>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="fade-in">
-      <div class="container grid-2">
-        <div class="mini-info">
-          <h3>Transport & deplasare</h3>
-          <p>
-            Serviciile se realizează la sediul clientului. Costul de deplasare nu este inclus și se stabilește în funcție de zonă, distanță și complexitatea lucrării.
-          </p>
-        </div>
-
-        <div class="mini-info">
-          <h3>Program business-friendly</h3>
-          <p>
-            Lucrăm și în afara intervalului standard, inclusiv seara, pentru a reduce cât mai mult impactul asupra activității normale.
-          </p>
         </div>
       </div>
     </section>
