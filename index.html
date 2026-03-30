@@ -10,7 +10,6 @@
   <style>
     :root{
       --bg:#050505;
-      --bg-soft:#0b0b0b;
       --card:rgba(255,255,255,0.04);
       --gold:#d4af37;
       --gold-2:#f0d266;
@@ -49,11 +48,12 @@
       margin:0 auto;
     }
 
+    /* HEADER */
     .topbar{
       position:sticky;
       top:0;
       z-index:1000;
-      background:rgba(5,5,5,0.84);
+      background:rgba(5,5,5,0.92);
       backdrop-filter:blur(14px);
       border-bottom:1px solid var(--line);
     }
@@ -72,36 +72,97 @@
       align-items:center;
       gap:14px;
       min-width:0;
+      flex:1;
+      overflow:hidden;
     }
 
     .brand-logo{
-      height:78px;
+      height:64px;
       width:auto;
-      border-radius:18px;
+      border-radius:14px;
       object-fit:contain;
       flex-shrink:0;
-      filter:drop-shadow(0 0 12px rgba(212,175,55,0.32));
-      transition:transform .25s ease, filter .25s ease;
-    }
-
-    .brand:hover .brand-logo{
-      transform:translateY(-2px) scale(1.02);
-      filter:drop-shadow(0 0 20px rgba(212,175,55,0.45));
+      filter:drop-shadow(0 0 10px rgba(212,175,55,0.22));
     }
 
     .brand-name{
       color:var(--gold);
-      font-size:28px;
+      font-size:24px;
       font-weight:700;
-      letter-spacing:0.4px;
+      letter-spacing:.4px;
       white-space:nowrap;
-      text-shadow:0 0 12px rgba(212,175,55,0.10);
+      overflow:hidden;
+      text-overflow:ellipsis;
+      min-width:0;
     }
 
     .nav-right{
       display:flex;
       align-items:center;
-      gap:16px;
+      gap:14px;
+      flex-shrink:0;
+    }
+
+    .top-socials{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .top-social{
+      width:44px;
+      height:44px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.03);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:var(--shadow-soft);
+      transition:.2s ease;
+      flex-shrink:0;
+    }
+
+    .top-social:hover{
+      transform:translateY(-2px);
+      background:rgba(212,175,55,0.08);
+      border-color:var(--line-strong);
+    }
+
+    .top-social svg{
+      width:18px;
+      height:18px;
+      fill:var(--gold);
+    }
+
+    .top-social.whatsapp-top{
+      background:linear-gradient(135deg, var(--gold), var(--gold-2));
+      border-color:transparent;
+      box-shadow:0 0 18px rgba(212,175,55,.18);
+    }
+
+    .top-social.whatsapp-top svg{
+      fill:#0a0a0a;
+    }
+
+    .menu-toggle{
+      display:none;
+      width:54px;
+      height:54px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.03);
+      color:var(--gold);
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      flex-shrink:0;
+    }
+
+    .menu-toggle svg{
+      width:26px;
+      height:26px;
+      stroke:var(--gold);
     }
 
     .nav-links{
@@ -123,24 +184,6 @@
       color:var(--text);
     }
 
-    .nav-links a::after{
-      content:"";
-      position:absolute;
-      left:0;
-      right:0;
-      bottom:-6px;
-      height:1px;
-      background:linear-gradient(90deg, transparent, var(--gold), transparent);
-      opacity:0;
-      transform:scaleX(.6);
-      transition:.2s ease;
-    }
-
-    .nav-links a:hover::after{
-      opacity:1;
-      transform:scaleX(1);
-    }
-
     .nav-cta{
       padding:11px 18px;
       border-radius:999px;
@@ -151,58 +194,7 @@
       box-shadow:0 0 18px rgba(212,175,55,.18);
     }
 
-    .top-socials{
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-
-    .top-social{
-      width:42px;
-      height:42px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,0.03);
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      box-shadow:var(--shadow-soft);
-      transition:.2s ease;
-    }
-
-    .top-social:hover{
-      transform:translateY(-2px);
-      background:rgba(212,175,55,0.08);
-      border-color:var(--line-strong);
-      box-shadow:0 0 16px rgba(212,175,55,0.12);
-    }
-
-    .top-social svg{
-      width:18px;
-      height:18px;
-      fill:var(--gold);
-    }
-
-    .menu-toggle{
-      display:none;
-      width:56px;
-      height:56px;
-      border-radius:18px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,0.03);
-      color:var(--gold);
-      align-items:center;
-      justify-content:center;
-      cursor:pointer;
-      box-shadow:var(--shadow-soft);
-    }
-
-    .menu-toggle svg{
-      width:26px;
-      height:26px;
-      stroke:var(--gold);
-    }
-
+    /* HERO */
     .hero{
       position:relative;
       overflow:hidden;
@@ -225,13 +217,6 @@
         url('logo.jpeg') center/contain no-repeat,
         radial-gradient(circle at center, rgba(212,175,55,.12), transparent 34%);
       opacity:.08;
-      animation:heroFloat 10s ease-in-out infinite;
-    }
-
-    @keyframes heroFloat{
-      0%{transform:scale(1) translateY(0)}
-      50%{transform:scale(1.02) translateY(-6px)}
-      100%{transform:scale(1) translateY(0)}
     }
 
     .hero-grid{
@@ -265,7 +250,6 @@
       line-height:.98;
       letter-spacing:-1px;
       max-width:860px;
-      text-shadow:0 0 18px rgba(212,175,55,0.05);
     }
 
     .hero p{
@@ -318,15 +302,6 @@
 
     .btn:hover{transform:translateY(-2px)}
 
-    .btn-primary,
-    .btn-secondary,
-    .btn-whatsapp{
-      color:#0a0a0a;
-      background:linear-gradient(135deg, var(--gold), var(--gold-2));
-      border-color:transparent;
-      box-shadow:0 0 18px rgba(212,175,55,.18);
-    }
-
     .hero-points,
     .grid-2,
     .grid-3,
@@ -375,16 +350,6 @@
       overflow:hidden;
     }
 
-    .hero-panel::before{
-      content:"";
-      position:absolute;
-      inset:auto -40% -55% auto;
-      width:280px;
-      height:280px;
-      background:radial-gradient(circle, rgba(212,175,55,.14), transparent 65%);
-      pointer-events:none;
-    }
-
     .hero-panel img{
       width:100%;
       max-width:360px;
@@ -421,13 +386,6 @@
       border-radius:999px;
       background:var(--gold);
       box-shadow:0 0 12px rgba(212,175,55,0.8);
-      animation:pulse 2s infinite;
-    }
-
-    @keyframes pulse{
-      0%{transform:scale(1);opacity:1}
-      50%{transform:scale(1.4);opacity:.65}
-      100%{transform:scale(1);opacity:1}
     }
 
     .mini-card strong{
@@ -493,22 +451,6 @@
       margin:0 0 10px;
       font-size:24px;
       color:var(--gold);
-      position:relative;
-    }
-
-    .card h3::after,
-    .package-card h3::after,
-    .info-box h3::after,
-    .faq-card h3::after,
-    .notice-card h3::after,
-    .promo-card h3::after{
-      content:"";
-      display:block;
-      width:44px;
-      height:2px;
-      background:linear-gradient(90deg, var(--gold), transparent);
-      margin-top:8px;
-      box-shadow:var(--glow);
     }
 
     .coming{
@@ -557,13 +499,6 @@
       transition:.2s ease;
     }
 
-    .service-list li:hover{
-      border-color:var(--line-strong);
-      background:rgba(255,255,255,.04);
-      transform:translateY(-2px);
-      box-shadow:0 0 18px rgba(212,175,55,.08);
-    }
-
     .service-list li::before{
       content:"✦";
       position:absolute;
@@ -588,23 +523,10 @@
       transition:.25s ease;
     }
 
-    .package-card:hover{
-      transform:translateY(-6px);
-      border-color:var(--line-strong);
-      box-shadow:0 24px 65px rgba(0,0,0,.52), 0 0 18px rgba(212,175,55,.08);
-    }
-
     .package-card.featured{
       border-color:rgba(212,175,55,.42);
       box-shadow:0 26px 75px rgba(0,0,0,.55), 0 0 24px rgba(212,175,55,.18);
-      animation:goldGlow 3s ease-in-out infinite;
       transform:scale(1.03);
-    }
-
-    @keyframes goldGlow{
-      0%{box-shadow:0 26px 75px rgba(0,0,0,.55), 0 0 12px rgba(212,175,55,.12)}
-      50%{box-shadow:0 26px 75px rgba(0,0,0,.55), 0 0 24px rgba(212,175,55,.24)}
-      100%{box-shadow:0 26px 75px rgba(0,0,0,.55), 0 0 12px rgba(212,175,55,.12)}
     }
 
     .package-badge{
@@ -686,11 +608,6 @@
       transition:.2s ease;
     }
 
-    .faq-card:hover{
-      transform:translateY(-4px);
-      border-color:var(--line-strong);
-    }
-
     .fade-in{
       opacity:0;
       transform:translateY(28px);
@@ -742,7 +659,7 @@
       height:22px;
     }
 
-    @media (max-width: 1100px){
+    @media (max-width:1100px){
       .grid-3,
       .package-grid,
       .notice-wrap{
@@ -750,9 +667,27 @@
       }
     }
 
-    @media (max-width: 980px){
-      .top-socials{display:none}
-      .menu-toggle{display:inline-flex}
+    @media (max-width:980px){
+      .top-socials{
+        display:none;
+      }
+
+      .menu-toggle{
+        display:inline-flex;
+      }
+
+      .brand{
+        flex:1;
+        min-width:0;
+      }
+
+      .brand-logo{
+        height:54px;
+      }
+
+      .brand-name{
+        font-size:20px;
+      }
 
       .nav-links{
         position:absolute;
@@ -769,7 +704,9 @@
         border-radius:20px;
       }
 
-      .nav-links.active{display:flex}
+      .nav-links.active{
+        display:flex;
+      }
 
       .nav-links a{
         padding:14px 16px;
@@ -791,11 +728,9 @@
       }
 
       h1{font-size:46px}
-      .brand-logo{height:54px}
-      .brand-name{font-size:20px}
     }
 
-    @media (max-width: 640px){
+    @media (max-width:640px){
       .hero{padding:74px 0 42px}
       .hero-actions{flex-direction:column}
       .hero-actions .btn{width:100%}
@@ -804,6 +739,12 @@
         left:16px;
         bottom:16px;
         justify-content:center;
+      }
+      .brand-name{
+        font-size:18px;
+      }
+      .brand-logo{
+        height:48px;
       }
     }
   </style>
@@ -818,19 +759,27 @@
 
       <div class="nav-right">
         <div class="top-socials">
-          <a href="https://www.instagram.com/prestigefinish.home?igsh=MW41eHNvN2I0emhwbw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Instagram">
+          <a href="https://www.instagram.com/prestigefinish" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Instagram">
             <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.35 1.55a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z"/></svg>
           </a>
-          <a href="https://www.facebook.com/share/1CCz7KrMae/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Facebook">
+
+          <a href="https://www.facebook.com/prestigefinish" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Facebook">
             <svg viewBox="0 0 24 24"><path d="M13.5 22v-8.2h2.77l.42-3.22H13.5V8.5c0-.93.26-1.56 1.59-1.56h1.7V4.05c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.04 1.46-4.04 4.15v2.48H7.6v3.22h2.72V22h3.18Z"/></svg>
           </a>
-          <a href="www.tiktok.com/@prestige.finish7" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="TikTok">
+
+          <a href="https://www.tiktok.com/@prestigefinish" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="TikTok">
             <svg viewBox="0 0 24 24"><path d="M15.5 2c.2 1.7 1.1 3.1 2.6 4 .9.6 1.9.9 2.9.9v3a8 8 0 0 1-3.9-1v6.1a6.1 6.1 0 1 1-6.1-6.1c.3 0 .7 0 1 .1v3.1a3 3 0 1 0 2 2.9V2h1.5Z"/></svg>
+          </a>
+
+          <a href="https://wa.me/40757352371" target="_blank" rel="noopener noreferrer" class="top-social whatsapp-top" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.5 0 .16 5.34.16 11.91c0 2.1.55 4.15 1.6 5.95L0 24l6.32-1.66a11.87 11.87 0 0 0 5.75 1.47h.01c6.57 0 11.91-5.34 11.91-11.91 0-3.18-1.24-6.16-3.47-8.42Zm-8.45 18.3h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.75.98 1-3.65-.24-.38a9.87 9.87 0 0 1-1.52-5.23C2.17 6.42 6.58 2 12.08 2c2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.9 7c0 5.5-4.42 9.9-9.9 9.9Zm5.43-7.42c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.77.97-.95 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.88-.78-1.48-1.74-1.65-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.9-2.19-.24-.58-.48-.5-.66-.51h-.56c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5s1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.1 4.49.71.31 1.27.5 1.7.63.72.23 1.38.2 1.9.12.58-.09 1.76-.72 2-1.41.25-.69.25-1.28.17-1.4-.07-.12-.27-.2-.57-.35Z"/></svg>
           </a>
         </div>
 
         <button class="menu-toggle" onclick="toggleMenu()" aria-label="Deschide meniul">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 7H20M4 12H20M4 17H20"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+            <path d="M4 7H20M4 12H20M4 17H20"/>
+          </svg>
         </button>
       </div>
 
@@ -867,9 +816,9 @@
           </div>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="programari.html">Programare online</a>
-            <a class="btn btn-secondary" href="formular-contact.html">Formular de contact</a>
-            <a class="btn btn-whatsapp" href="https://wa.me/40757352371?text=Buna!%20Vreau%20mai%20multe%20informatii%20despre%20serviciile%20Prestige%20Finish." target="_blank" rel="noopener noreferrer">Trimite detalii pe WhatsApp</a>
+            <a class="btn" href="programari.html">Programare online</a>
+            <a class="btn" href="formular-contact.html">Formular de contact</a>
+            <a class="btn" href="https://wa.me/40757352371?text=Buna!%20Vreau%20mai%20multe%20informatii%20despre%20serviciile%20Prestige%20Finish." target="_blank" rel="noopener noreferrer">Trimite detalii pe WhatsApp</a>
           </div>
 
           <p class="hero-note">
@@ -927,8 +876,8 @@
             Ai terminat renovarea și spațiul nu este încă pregătit pentru locuit, mutare, predare sau închiriere? Am introdus un serviciu dedicat pentru apartamente, case, birouri și spații comerciale care au nevoie de curățenie completă după lucrări.
           </p>
           <div class="hero-actions" style="margin-top:18px;">
-            <a class="btn btn-primary" href="curatenie-renovari.html">Vezi serviciul</a>
-            <a class="btn btn-secondary" href="formular-contact.html">Solicită ofertă</a>
+            <a class="btn" href="curatenie-renovari.html">Vezi serviciul</a>
+            <a class="btn" href="formular-contact.html">Solicită ofertă</a>
           </div>
         </div>
       </div>
@@ -945,20 +894,11 @@
         <div class="grid-3">
           <div class="card">
             <h3>Mobilier pentru locuință</h3>
-            <p>Servicii dedicate pieselor utilizate frecvent în viața de zi cu zi, cu accent pe imagine, igienizare și întreținere corectă.</p>
+            <p>Servicii dedicate pieselor utilizate frecvent în viața de zi cu zi, cu accent pe imagine, igienizare și întreținerea corectă a materialului.</p>
             <ul class="service-list">
-              <li>
-                <span class="service-label">Canapele & colțare</span>
-                Suprafețe textile, din piele sau alcantara, tratate diferențiat.
-              </li>
-              <li>
-                <span class="service-label">Fotolii & scaune</span>
-                Pentru zone de relaxare, dining, birou sau alte spații cu utilizare constantă.
-              </li>
-              <li>
-                <span class="service-label">Saltele</span>
-                Lucrări dedicate suprafețelor care necesită standard mai ridicat de igienizare.
-              </li>
+              <li><span class="service-label">Canapele & colțare</span>Suprafețe textile, din piele sau alcantara, tratate diferențiat.</li>
+              <li><span class="service-label">Fotolii & scaune</span>Pentru zone de relaxare, dining, birou sau alte spații cu utilizare constantă.</li>
+              <li><span class="service-label">Saltele</span>Lucrări dedicate suprafețelor care necesită standard mai ridicat de igienizare.</li>
             </ul>
           </div>
 
@@ -966,18 +906,9 @@
             <h3>Covoare & textile decorative</h3>
             <p>Am extins oferta într-un mod logic și premium și pentru textile decorative și suprafețe de podea.</p>
             <ul class="service-list">
-              <li>
-                <span class="service-label">Covoare</span>
-                Tarif calculat pe mp, în funcție de dimensiune, grosime și gradul de încărcare.
-              </li>
-              <li>
-                <span class="service-label">Draperii</span>
-                Tarif de pornire în funcție de lungime, lățime și tipul lucrării.
-              </li>
-              <li>
-                <span class="service-label">Anumite tipuri de perdele</span>
-                Disponibile pentru lucrări compatibile cu fluxul și evaluarea noastră de intervenție.
-              </li>
+              <li><span class="service-label">Covoare</span>Tarif calculat pe mp, în funcție de dimensiune, grosime și gradul de încărcare.</li>
+              <li><span class="service-label">Draperii</span>Tarif de pornire în funcție de lungime, lățime și tipul lucrării.</li>
+              <li><span class="service-label">Anumite tipuri de perdele</span>Disponibile pentru lucrări compatibile cu fluxul și evaluarea noastră de intervenție.</li>
             </ul>
           </div>
 
@@ -985,18 +916,9 @@
             <h3>Locuințe, companii & renovări</h3>
             <p>Oferta este gândită atât pentru persoane fizice, cât și pentru firme, recepții, birouri, spații comerciale și proprietăți aflate după renovare.</p>
             <ul class="service-list">
-              <li>
-                <span class="service-label">Acasă</span>
-                Intervenții la domiciliu, pe bază de programare și disponibilitate.
-              </li>
-              <li>
-                <span class="service-label">Business</span>
-                Lucrări la sediul clientului, inclusiv după încheierea programului de lucru.
-              </li>
-              <li>
-                <span class="service-label">După renovări</span>
-                Curățenie completă pentru spații pregătite de mutare, predare sau utilizare.
-              </li>
+              <li><span class="service-label">Acasă</span>Intervenții la domiciliu, pe bază de programare și disponibilitate.</li>
+              <li><span class="service-label">Business</span>Lucrări la sediul clientului, inclusiv după încheierea programului de lucru.</li>
+              <li><span class="service-label">După renovări</span>Curățenie completă pentru spații pregătite de mutare, predare sau utilizare.</li>
             </ul>
           </div>
         </div>
@@ -1015,41 +937,23 @@
           <div class="info-box">
             <h3>Când este potrivit acest serviciu</h3>
             <ul class="service-list">
-              <li>
-                <span class="service-label">După renovare</span>
-                Pentru apartamente, case, birouri sau spații comerciale în care a rămas praf fin, murdărie și urme de construcție.
-              </li>
-              <li>
-                <span class="service-label">Înainte de mutare</span>
-                Când ai nevoie ca spațiul să fie pregătit pentru mobilare sau utilizare.
-              </li>
-              <li>
-                <span class="service-label">Înainte de predare</span>
-                Pentru închiriere, vânzare, deschidere sau relansare a unui spațiu.
-              </li>
+              <li><span class="service-label">După renovare</span>Pentru apartamente, case, birouri sau spații comerciale în care a rămas praf fin, murdărie și urme de construcție.</li>
+              <li><span class="service-label">Înainte de mutare</span>Când ai nevoie ca spațiul să fie pregătit pentru mobilare sau utilizare.</li>
+              <li><span class="service-label">Înainte de predare</span>Pentru închiriere, vânzare, deschidere sau relansare a unui spațiu.</li>
             </ul>
           </div>
 
           <div class="info-box">
             <h3>De ce este separat</h3>
             <ul class="service-list">
-              <li>
-                <span class="service-label">Mesaj mai clar</span>
-                Renovările și mutările au alt tip de logică față de serviciile de mobilier și textile.
-              </li>
-              <li>
-                <span class="service-label">Poziționare mai bună</span>
-                Fiecare pagină vorbește direct cu clientul potrivit.
-              </li>
-              <li>
-                <span class="service-label">Acces direct</span>
-                Poți merge imediat în pagina nouă și solicita ofertă rapid.
-              </li>
+              <li><span class="service-label">Mesaj mai clar</span>Renovările și mutările au alt tip de logică față de serviciile de mobilier și textile.</li>
+              <li><span class="service-label">Poziționare mai bună</span>Fiecare pagină vorbește direct cu clientul potrivit.</li>
+              <li><span class="service-label">Acces direct</span>Poți merge imediat în pagina nouă și solicita ofertă rapid.</li>
             </ul>
 
             <div class="hero-actions" style="margin-top:20px;">
-              <a class="btn btn-primary" href="curatenie-renovari.html">Vezi pagina de renovări</a>
-              <a class="btn btn-secondary" href="formular-contact.html">Solicită ofertă</a>
+              <a class="btn" href="curatenie-renovari.html">Vezi pagina de renovări</a>
+              <a class="btn" href="formular-contact.html">Solicită ofertă</a>
             </div>
           </div>
         </div>
@@ -1076,7 +980,7 @@
               <li>Evaluare în funcție de material și suprafață</li>
             </ul>
             <p class="package-note">Prețul final se stabilește în funcție de dimensiune și tipul intervenției.</p>
-            <a href="persoane-fizice.html" class="btn btn-secondary">Vezi detalii</a>
+            <a href="persoane-fizice.html" class="btn">Vezi detalii</a>
           </div>
 
           <div class="package-card featured">
@@ -1090,7 +994,7 @@
               <li>Intervenții dedicate pentru uz rezidențial sau business</li>
             </ul>
             <p class="package-note">Baza de preț diferă în funcție de suprafață, material și accesibilitate.</p>
-            <a href="persoane-fizice.html" class="btn btn-primary">Vezi servicii</a>
+            <a href="persoane-fizice.html" class="btn">Vezi servicii</a>
           </div>
 
           <div class="package-card">
@@ -1104,7 +1008,7 @@
               <li>Solicitări personalizate și mix de suprafețe</li>
             </ul>
             <p class="package-note">Se calculează în funcție de tipul lucrării, dimensiune și volum.</p>
-            <a href="formular-contact.html" class="btn btn-secondary">Cere ofertă</a>
+            <a href="formular-contact.html" class="btn">Cere ofertă</a>
           </div>
         </div>
 
@@ -1119,18 +1023,9 @@
           <div class="notice-card">
             <h3>Opțiuni suplimentare disponibile</h3>
             <ul class="service-list" style="margin-top:0;">
-              <li>
-                <span class="service-label">Tratament piele</span>
-                Întreținere și curățare pentru suprafețe din piele naturală sau ecologică.
-              </li>
-              <li>
-                <span class="service-label">Efect hidrofob pentru textile</span>
-                Protecție suplimentară pentru anumite materiale textile, în funcție de compatibilitate și tipul lucrării.
-              </li>
-              <li>
-                <span class="service-label">Solicitare personalizată</span>
-                Pentru lucrări mai ample, mix de suprafețe, intervenții la firme sau renovări.
-              </li>
+              <li><span class="service-label">Tratament piele</span>Întreținere și curățare pentru suprafețe din piele naturală sau ecologică.</li>
+              <li><span class="service-label">Efect hidrofob pentru textile</span>Protecție suplimentară pentru anumite materiale textile, în funcție de compatibilitate și tipul lucrării.</li>
+              <li><span class="service-label">Solicitare personalizată</span>Pentru lucrări mai ample, mix de suprafețe, intervenții la firme sau renovări.</li>
             </ul>
           </div>
         </div>
@@ -1245,8 +1140,8 @@
             </div>
 
             <div class="hero-actions" style="margin-top:22px;">
-              <a class="btn btn-primary" href="programari.html">Programare online</a>
-              <a class="btn btn-secondary" href="formular-contact.html">Formular de contact</a>
+              <a class="btn" href="programari.html">Programare online</a>
+              <a class="btn" href="formular-contact.html">Formular de contact</a>
             </div>
           </div>
 
@@ -1254,24 +1149,15 @@
             <div class="tag">Navigare rapidă</div>
             <h3>Alege exact pagina care te interesează</h3>
             <ul class="service-list">
-              <li>
-                <span class="service-label">Persoane fizice</span>
-                Pentru canapele, colțare, saltele, fotolii, covoare și textile decorative.
-              </li>
-              <li>
-                <span class="service-label">Firme / spații comerciale</span>
-                Pentru recepții, birouri, Airbnb, hoteluri și alte locații business.
-              </li>
-              <li>
-                <span class="service-label">După renovări</span>
-                Pentru apartamente, case, birouri sau spații pregătite de mutare, predare ori deschidere.
-              </li>
+              <li><span class="service-label">Persoane fizice</span>Pentru canapele, colțare, saltele, fotolii, covoare și textile decorative.</li>
+              <li><span class="service-label">Firme / spații comerciale</span>Pentru recepții, birouri, Airbnb, hoteluri și alte locații business.</li>
+              <li><span class="service-label">După renovări</span>Pentru apartamente, case, birouri sau spații pregătite de mutare, predare ori deschidere.</li>
             </ul>
 
             <div class="hero-actions" style="margin-top:22px;">
-              <a class="btn btn-secondary" href="persoane-fizice.html">Persoane fizice</a>
-              <a class="btn btn-secondary" href="flote.html">Firme</a>
-              <a class="btn btn-secondary" href="curatenie-renovari.html">După renovări</a>
+              <a class="btn" href="persoane-fizice.html">Persoane fizice</a>
+              <a class="btn" href="flote.html">Firme</a>
+              <a class="btn" href="curatenie-renovari.html">După renovări</a>
             </div>
           </div>
         </div>
@@ -1311,6 +1197,17 @@
     function closeMenu(){
       document.getElementById('mobileMenu').classList.remove('active');
     }
+
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('mobileMenu');
+      const toggle = document.querySelector('.menu-toggle');
+      if (!menu || !toggle) return;
+      const clickedInsideMenu = menu.contains(event.target);
+      const clickedToggle = toggle.contains(event.target);
+      if (!clickedInsideMenu && !clickedToggle) {
+        menu.classList.remove('active');
+      }
+    });
   </script>
 </body>
 </html>
