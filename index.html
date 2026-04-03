@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prestige Finish | Detailing interior premium în Prahova</title>
   <link rel="icon" type="image/png" href="logo.png" />
-  <meta name="description" content="Prestige Finish oferă detailing interior premium în Prahova, pentru persoane fizice și companii, cu intervenții realizate în atelierul dedicat sau mobil, în funcție de lucrare." />
+  <meta name="description" content="Prestige Finish oferă servicii de detailing interior premium în Prahova, pentru persoane fizice și companii. Programare online, formular de contact și servicii complementare pentru textile și tapițerii." />
 
   <style>
     :root{
@@ -26,7 +26,6 @@
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-
     body{
       margin:0;
       font-family:Arial,Helvetica,sans-serif;
@@ -268,7 +267,7 @@
     }
 
     .btn-primary{
-      background:linear-gradient(135deg,var(--gold),var(--gold-2));
+      background:linear-gradient(135deg,var(--gold),#f0d266);
       color:#0a0a0a;
     }
 
@@ -278,18 +277,11 @@
       color:var(--text);
     }
 
-    .btn-whatsapp{
-      background:var(--green);
-      color:#fff;
-    }
-
     .hero-points,
     .grid-2,
     .grid-3,
     .faq-grid,
-    .contact-wrap,
-    .service-grid,
-    .textile-grid{
+    .contact-wrap{
       display:grid;
       gap:20px;
     }
@@ -303,16 +295,13 @@
     .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
     .faq-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
     .contact-wrap{grid-template-columns:1.05fr .95fr}
-    .service-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .textile-grid{grid-template-columns:1.15fr .85fr}
 
     .mini-card,
     .card,
     .hero-panel,
     .info-box,
     .faq-card,
-    .price-card,
-    .textile-card{
+    .service-bridge{
       border:1px solid var(--line);
       background:linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.02));
       border-radius:26px;
@@ -370,9 +359,7 @@
     .section-text,
     .contact-row span,
     .tiny,
-    .price-note,
-    .price-subtitle,
-    .textile-card p{
+    .service-bridge p{
       color:var(--muted);
     }
 
@@ -403,11 +390,16 @@
     .card h3,
     .faq-card h3,
     .info-box h3,
-    .price-card h3,
-    .textile-card h3{
+    .service-bridge h3{
       margin:0 0 10px;
       font-size:22px;
       color:var(--gold);
+    }
+
+    .coming{
+      background:linear-gradient(180deg, rgba(212,175,55,0.08), rgba(255,255,255,0.02));
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
     }
 
     .quick-points{
@@ -430,132 +422,6 @@
       background:var(--gold);
       flex-shrink:0;
       box-shadow:0 0 10px rgba(212,175,55,0.5);
-    }
-
-    .service-list{
-      list-style:none;
-      padding:0;
-      margin:18px 0 0;
-      display:grid;
-      gap:12px;
-    }
-
-    .service-list li{
-      position:relative;
-      padding:14px 16px 14px 42px;
-      border:1px solid rgba(212,175,55,0.14);
-      border-radius:18px;
-      background:rgba(255,255,255,0.02);
-      color:var(--text);
-    }
-
-    .service-list li::before{
-      content:"✦";
-      position:absolute;
-      left:16px;
-      top:13px;
-      color:var(--gold);
-      font-size:16px;
-      line-height:1;
-    }
-
-    .service-label{
-      display:block;
-      color:var(--gold);
-      font-weight:700;
-      margin-bottom:2px;
-      font-size:14px;
-    }
-
-    .price-grid{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:20px;
-    }
-
-    .price-card{
-      position:relative;
-      overflow:hidden;
-      transition:.25s ease;
-    }
-
-    .price-card:hover{
-      transform:translateY(-6px);
-      border-color:var(--line-strong);
-    }
-
-    .price-card.featured{
-      border-color:rgba(212,175,55,0.42);
-      transform:scale(1.03);
-    }
-
-    .price-badge{
-      display:inline-flex;
-      margin-bottom:14px;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(212,175,55,0.12);
-      color:var(--gold);
-      font-size:12px;
-      font-weight:700;
-      letter-spacing:.6px;
-      text-transform:uppercase;
-    }
-
-    .price-subtitle{
-      margin:0 0 18px;
-      font-size:15px;
-    }
-
-    .price-value{
-      font-size:42px;
-      font-weight:800;
-      color:var(--text);
-      line-height:1;
-      margin-bottom:8px;
-    }
-
-    .price-value span{
-      font-size:16px;
-      color:var(--muted);
-      font-weight:600;
-    }
-
-    .price-note{
-      font-size:13px;
-      margin-bottom:18px;
-    }
-
-    .price-features{
-      list-style:none;
-      padding:0;
-      margin:0 0 18px;
-      display:grid;
-      gap:10px;
-    }
-
-    .price-features li{
-      position:relative;
-      padding-left:22px;
-      color:var(--text);
-      font-size:15px;
-    }
-
-    .price-features li::before{
-      content:"•";
-      position:absolute;
-      left:0;
-      top:0;
-      color:var(--gold);
-      font-size:18px;
-      line-height:1.2;
-    }
-
-    .textile-card{
-      background:
-        radial-gradient(circle at top right, rgba(212,175,55,0.08), transparent 30%),
-        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.025));
     }
 
     .contact-row{
@@ -674,14 +540,8 @@
 
     @media (max-width:1100px){
       .hero-points,
-      .grid-3,
-      .price-grid,
-      .service-grid{
+      .grid-3{
         grid-template-columns:1fr;
-      }
-
-      .price-card.featured{
-        transform:none;
       }
     }
 
@@ -716,8 +576,7 @@
       .hero-grid,
       .grid-2,
       .faq-grid,
-      .contact-wrap,
-      .textile-grid{
+      .contact-wrap{
         grid-template-columns:1fr;
       }
 
@@ -767,10 +626,9 @@
 
       <div class="nav-links" id="mobileMenu">
         <a href="index.html" onclick="closeMenu()">Acasă</a>
-        <a href="#servicii" onclick="closeMenu()">Servicii</a>
-        <a href="#preturi" onclick="closeMenu()">Prețuri</a>
-        <a href="#contact" onclick="closeMenu()">Contact</a>
-        <a href="persoane-fizice.html" onclick="closeMenu()">Textile & canapele</a>
+        <a href="persoane-fizice.html" onclick="closeMenu()">Persoane fizice</a>
+        <a href="flote.html" onclick="closeMenu()">Companii</a>
+        <a href="formular-contact.html" onclick="closeMenu()">Contact</a>
         <a href="programari.html" class="nav-cta" onclick="closeMenu()">Programare online</a>
       </div>
     </div>
@@ -784,225 +642,109 @@
           <div class="eyebrow">Detailing interior premium</div>
           <h1>Detailing interior premium în Prahova</h1>
           <p>
-            Prestige Finish oferă servicii premium de detailing interior pentru persoane fizice și companii, cu intervenții realizate în atelierul dedicat sau mobil, în funcție de tipul lucrării.
-          </p>
-          <p>
-            Curățăm, igienizăm și tratăm corect textilele, pielea și detaliile care schimbă complet experiența din interiorul mașinii, păstrând un standard vizual și profesional pe măsura brandului.
+            Prestige Finish oferă servicii premium de detailing interior pentru persoane fizice și companii, cu intervenții realizate atent, organizat și orientate spre un rezultat vizibil.
           </p>
 
           <div class="hero-actions">
-            <a href="programari.html" class="btn btn-primary">Programare online</a>
-            <a href="https://wa.me/40757352371?text=Buna!%20Vreau%20mai%20multe%20informatii%20despre%20detailingul%20interior." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">WhatsApp</a>
-            <a href="#preturi" class="btn btn-secondary">Vezi pachetele</a>
+            <a class="btn btn-primary" href="programari.html">Rezervă un interval</a>
+            <a class="btn btn-secondary" href="formular-contact.html">Formular de contact</a>
           </div>
 
-          <p class="hero-note">
-            Atelier dedicat • intervenții mobile în Prahova • persoane fizice • companii
-          </p>
+          <p class="hero-note">Se lucrează exclusiv pe bază de programare</p>
 
           <div class="hero-points">
             <div class="mini-card">
-              <strong>Standard premium</strong>
-              <span>Interior curat în profunzime, lucrat atent și corect.</span>
+              <strong>Focus pe interior</strong>
+              <span>Servicii dedicate curățării și întreținerii atente a interiorului auto.</span>
             </div>
             <div class="mini-card">
-              <strong>Textile & piele</strong>
-              <span>Tratamente dedicate pentru materiale care cer abordare corectă.</span>
+              <strong>Programare online</strong>
+              <span>Alegi serviciul, intervalul și completezi evaluarea mașinii direct în site.</span>
             </div>
             <div class="mini-card">
-              <strong>Flexibilitate reală</strong>
-              <span>În atelier sau mobil, în funcție de lucrare și de rezultat.</span>
+              <strong>Persoane fizice și companii</strong>
+              <span>Structură clară pentru clienți individuali și colaborări business.</span>
             </div>
           </div>
         </div>
 
         <div class="hero-panel">
-          <div class="status">
-            <span class="status-dot"></span>
-            Prestige Finish • Where your car meets perfection
-          </div>
-
-          <img src="logo.png" alt="Prestige Finish Logo">
-
-          <h3 style="margin:0 0 10px;font-size:22px;color:var(--gold);">Interior premium. Experiență premium.</h3>
-          <p style="margin:0 0 16px;color:var(--muted);">
-            Lucrăm cu atenție la detalii, cu accent pe curățare profundă, materiale tratate corect și un rezultat care se vede și se simte imediat.
+          <div class="status"><span class="status-dot"></span> Programare online activă</div>
+          <img src="logo.png" alt="Prestige Finish Logo" />
+          <h3 style="margin:0 0 8px;font-size:28px;">Prestige Finish</h3>
+          <p style="margin:0;color:var(--muted);">
+            Este un spațiu în care fiecare mașină primește timp, atenție și grijă reală pentru detalii.
           </p>
 
           <div class="quick-points">
-            <div class="quick-point"><span class="quick-dot"></span><span>Detailing interior complet</span></div>
-            <div class="quick-point"><span class="quick-dot"></span><span>Tratamente textile și piele</span></div>
+            <div class="quick-point"><span class="quick-dot"></span><span>Experiență premium și organizată</span></div>
+            <div class="quick-point"><span class="quick-dot"></span><span>Comunicare clară și programări controlate</span></div>
             <div class="quick-point"><span class="quick-dot"></span><span>Servicii pentru persoane fizice și companii</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="fade-in">
+    <section id="despre" class="fade-in">
       <div class="container">
-        <div class="tag">De ce Prestige Finish</div>
-        <h2 class="section-title">Un brand construit pe standard, nu pe compromis</h2>
+        <div class="tag">Clienți</div>
+        <h2 class="section-title">Două direcții clare. Același standard premium.</h2>
         <p class="section-text">
-          Prestige Finish este poziționat pentru clienții care caută mai mult decât o simplă curățare. Livrăm o experiență premium, o prezentare premium și un rezultat care susține imaginea mașinii și confortul din interior.
+          Pentru o experiență cât mai clară și intuitivă, Prestige Finish este structurat pe două direcții distincte: servicii dedicate persoanelor fizice și soluții business pentru companii, flote și colaborări recurente.
+        </p>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Persoane fizice</h3>
+            <p>
+              Pagina dedicată clienților individuali include serviciile de detailing interior premium, tratamente pentru textile și piele, programare online și opțiuni de solicitare personalizată.
+            </p>
+            <div class="hero-actions" style="margin-top:14px;">
+              <a class="btn btn-primary" href="persoane-fizice.html">Vezi pagina dedicată</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Companii & flote</h3>
+            <p>
+              Pentru colaborări business, întreținere flotă sau intervenții organizate la nivel de companie, există pagină separată dedicată soluțiilor corporate.
+            </p>
+            <div class="hero-actions" style="margin-top:14px;">
+              <a class="btn btn-primary" href="flote.html">Vezi soluțiile pentru companii</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicii" class="coming fade-in">
+      <div class="container">
+        <div class="tag">Servicii</div>
+        <h2 class="section-title">Servicii disponibile în universul Prestige Finish</h2>
+        <p class="section-text">
+          Direcția principală rămâne detailingul interior premium, însă oferta este construită astfel încât să răspundă coerent atât nevoilor auto, cât și lucrărilor complementare pe textile și tapițerii.
         </p>
 
         <div class="grid-3">
           <div class="card">
-            <h3>Atenție la detalii</h3>
-            <p>Lucrăm interiorul cu grijă, fără grabă și fără improvizații care compromit rezultatul final.</p>
-          </div>
-          <div class="card">
-            <h3>Atelier dedicat</h3>
-            <p>Lucrările se pot realiza în spațiul dedicat sau mobil, în funcție de cerințele fiecărei intervenții.</p>
-          </div>
-          <div class="card">
-            <h3>Servicii complete</h3>
-            <p>Auto, textile, persoane fizice și companii, toate într-un ecosistem clar și bine organizat.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="servicii" class="fade-in">
-      <div class="container">
-        <div class="tag">Servicii</div>
-        <h2 class="section-title">Servicii de detailing interior</h2>
-        <p class="section-text">
-          Fiecare serviciu este gândit pentru a îmbunătăți clar starea interiorului, aspectul materialelor și senzația de confort la fiecare utilizare.
-        </p>
-
-        <div class="service-grid">
-          <div class="card">
-            <h3>Detailing interior complet</h3>
+            <h3>Detailing interior premium</h3>
             <p>
-              Intervenție orientată spre rezultat real, cu accent pe curățare profundă, detalii fine și un aspect final curat, echilibrat și premium.
+              Curățare atentă, în profunzime, pentru interioare care au nevoie de ordine, prospețime și un standard vizibil în fiecare detaliu.
             </p>
-            <ul class="service-list">
-              <li><span class="service-label">Curățare în profunzime</span>Mai mult decât o simplă aspirare și ștergere.</li>
-              <li><span class="service-label">Detalii fine</span>Zone greu accesibile, plastice, muchii, spații neglijate frecvent.</li>
-              <li><span class="service-label">Aspect final premium</span>Interior ordonat, curat și plăcut vizual.</li>
-            </ul>
           </div>
 
           <div class="card">
-            <h3>Tratamente textile</h3>
+            <h3>Tratamente textile & piele</h3>
             <p>
-              Pentru scaune textile, mochetă și alte suprafețe similare, cu accent pe curățare atentă și protecție în funcție de material.
+              Soluții adaptate materialelor sensibile, pentru un rezultat corect și echilibrat, fără abordări superficiale.
             </p>
-            <ul class="service-list">
-              <li><span class="service-label">Curățare și extracție</span>Textile lucrate corect și fără compromisuri.</li>
-              <li><span class="service-label">Împrospătare vizibilă</span>Interior mai curat și mai plăcut la utilizare.</li>
-              <li><span class="service-label">Protecție opțională</span>Tratament pentru textile, în funcție de lucrare.</li>
-            </ul>
           </div>
 
           <div class="card">
-            <h3>Curățare și întreținere piele</h3>
+            <h3>Intervenții pentru companii</h3>
             <p>
-              Pentru interioare din piele sau cu elemente din piele, cu produse și abordări care păstrează materialul într-o stare mai bună.
+              Lucrări dedicate colaborărilor recurente, flotelor și proiectelor care cer organizare, claritate și execuție consecventă.
             </p>
-            <ul class="service-list">
-              <li><span class="service-label">Curățare delicată</span>Fără abordări agresive și fără produse nepotrivite.</li>
-              <li><span class="service-label">Întreținere</span>Aspect mai îngrijit și senzație mai plăcută în utilizare.</li>
-              <li><span class="service-label">Rezultat elegant</span>Interiorul păstrează o imagine premium.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="preturi" class="fade-in">
-      <div class="container">
-        <div class="tag">Pachete disponibile</div>
-        <h2 class="section-title">Pachete Prestige Finish</h2>
-        <p class="section-text">
-          Pachetele de mai jos sunt construite pentru nevoi diferite, de la împrospătare generală până la intervenții mai ample, cu accent pe detalii și materiale sensibile.
-        </p>
-
-        <div class="price-grid">
-          <div class="price-card">
-            <div class="price-badge">Pachet 1</div>
-            <h3>Interior Refresh</h3>
-            <p class="price-subtitle">Pentru mașini care au nevoie de un plus clar de curățenie și prospețime.</p>
-            <div class="price-value">249 <span>lei de la</span></div>
-            <p class="price-note">Preț orientativ</p>
-            <ul class="price-features">
-              <li>Aspirare completă</li>
-              <li>Curățare generală interior</li>
-              <li>Ștergere și finisare suprafețe</li>
-              <li>Împrospătare generală</li>
-            </ul>
-            <a href="https://wa.me/40757352371?text=Buna!%20Ma%20intereseaza%20pachetul%20Interior%20Refresh." target="_blank" rel="noopener noreferrer" class="btn btn-primary">Alege pachetul</a>
-          </div>
-
-          <div class="price-card featured">
-            <div class="price-badge">Pachet recomandat</div>
-            <h3>Interior Premium</h3>
-            <p class="price-subtitle">Pachetul ideal pentru un rezultat vizibil, curat și premium.</p>
-            <div class="price-value">399 <span>lei de la</span></div>
-            <p class="price-note">Preț orientativ</p>
-            <ul class="price-features">
-              <li>Curățare profundă interior</li>
-              <li>Scaune textile / tapițerie lucrate atent</li>
-              <li>Detalii fine și zone greu accesibile</li>
-              <li>Curățare plastice și finisaj premium</li>
-            </ul>
-            <a href="https://wa.me/40757352371?text=Buna!%20Ma%20intereseaza%20pachetul%20Interior%20Premium." target="_blank" rel="noopener noreferrer" class="btn btn-primary">Alege pachetul</a>
-          </div>
-
-          <div class="price-card">
-            <div class="price-badge">Pachet complet</div>
-            <h3>Interior Premium Plus</h3>
-            <p class="price-subtitle">Pentru interioare mai complexe sau pentru clienți care vor o intervenție amplă.</p>
-            <div class="price-value">549 <span>lei de la</span></div>
-            <p class="price-note">Preț orientativ</p>
-            <ul class="price-features">
-              <li>Tot ce include Interior Premium</li>
-              <li>Accent puternic pe textile și detalii</li>
-              <li>Tratament textile sau piele, după caz</li>
-              <li>Intervenție extinsă și finisaj superior</li>
-            </ul>
-            <a href="https://wa.me/40757352371?text=Buna!%20Ma%20intereseaza%20pachetul%20Interior%20Premium%20Plus." target="_blank" rel="noopener noreferrer" class="btn btn-primary">Alege pachetul</a>
-          </div>
-        </div>
-
-        <p class="section-text" style="margin-top:24px;">
-          Prețul final poate varia în funcție de dimensiunea mașinii, materialele interioare, gradul de murdărie și tipul intervenției.
-        </p>
-      </div>
-    </section>
-
-    <section class="fade-in">
-      <div class="container">
-        <div class="tag">Atelier sau mobil</div>
-        <h2 class="section-title">Intervenții în atelierul dedicat sau mobile, în funcție de lucrare</h2>
-        <p class="section-text">
-          Unele lucrări sunt ideale în atelier, altele pot fi analizate pentru deplasare mobilă în Prahova. Important este să alegem varianta care susține cel mai bine rezultatul final.
-        </p>
-
-        <div class="grid-2">
-          <div class="info-box">
-            <h3>În atelier</h3>
-            <p>
-              Varianta recomandată pentru detailing interior premium complet, lucrări ample și atenție maximă la detalii.
-            </p>
-            <ul class="service-list">
-              <li><span class="service-label">Control mai bun</span>Condiții stabile pentru un rezultat curat și profesionist.</li>
-              <li><span class="service-label">Timp de lucru corect</span>Fără grabă și fără compromisuri.</li>
-              <li><span class="service-label">Experiență premium</span>Clientul înțelege că lucrăm organizat și serios.</li>
-            </ul>
-          </div>
-
-          <div class="info-box">
-            <h3>Mobil în Prahova</h3>
-            <p>
-              Disponibil pentru anumite lucrări, în funcție de zonă, tipul interiorului și nivelul intervenției necesare.
-            </p>
-            <ul class="service-list">
-              <li><span class="service-label">Flexibilitate</span>Putem analiza lucrări în toată Prahova.</li>
-              <li><span class="service-label">Doar când are sens</span>Alegem varianta potrivită pentru rezultat, nu doar pentru comoditate.</li>
-              <li><span class="service-label">Programare clară</span>Totul se stabilește înainte, simplu și transparent.</li>
-            </ul>
           </div>
         </div>
       </div>
@@ -1011,84 +753,45 @@
     <section class="fade-in">
       <div class="container">
         <div class="tag">Servicii complementare</div>
-        <h2 class="section-title">Textile, canapele și soluții pentru domicilii și companii</h2>
+        <h2 class="section-title">Textile, canapele și tapițerii pentru domicilii și spații comerciale</h2>
+        <p class="section-text">
+          Pe lângă detailingul interior auto, Prestige Finish oferă și servicii profesionale pentru curățarea canapelelor, saltelelor, scaunelor și altor textile, atât pentru domicilii, cât și pentru companii, hoteluri, recepții și spații comerciale.
+        </p>
 
-        <div class="textile-grid">
-          <div class="textile-card">
-            <h3>Oferim și servicii profesionale pentru textile</h3>
-            <p>
-              Pe lângă detailingul interior auto, Prestige Finish oferă și soluții pentru curățarea canapelelor, saltelelor, scaunelor și altor textile, atât pentru domicilii, cât și pentru firme, hoteluri, Airbnb și spații comerciale.
-            </p>
-            <p>
-              Pentru ca site-ul să rămână clar și bine organizat, aceste servicii au pagină dedicată separată.
-            </p>
+        <div class="service-bridge">
+          <h3>Pagină dedicată pentru textile</h3>
+          <p>
+            Pentru a păstra experiența din site clară și bine organizată, serviciile pentru textile și tapițerii sunt prezentate separat, într-o pagină dedicată.
+          </p>
 
-            <div class="hero-actions" style="margin-top:18px;">
-              <a href="persoane-fizice.html" class="btn btn-primary">Vezi serviciile pentru textile</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <h3>Unde se potrivesc aceste servicii</h3>
-            <ul class="service-list">
-              <li><span class="service-label">Domicilii</span>Canapele, saltele, scaune și alte textile.</li>
-              <li><span class="service-label">Companii</span>Recepții, birouri, săli de așteptare și spații comerciale.</li>
-              <li><span class="service-label">HoReCa</span>Hoteluri, Airbnb, pensiuni și alte spații de cazare.</li>
-            </ul>
+          <div class="hero-actions" style="margin-top:14px;">
+            <a class="btn btn-primary" href="persoane-fizice.html">Vezi serviciile pentru textile</a>
           </div>
         </div>
       </div>
     </section>
 
     <section id="contact" class="fade-in">
-      <div class="container">
-        <div class="tag">Contact</div>
-        <h2 class="section-title">Prestige Finish pentru persoane fizice și companii</h2>
-        <p class="section-text">
-          Ne poți contacta pentru detailing interior premium, servicii pentru flote, lucrări pentru companii sau servicii complementare pentru textile și tapițerii.
-        </p>
+      <div class="container contact-wrap">
+        <div>
+          <div class="tag">Contact</div>
+          <h2 class="section-title">Contact Prestige Finish</h2>
+          <p class="section-text">
+            Pentru programări, informații sau colaborări, ne poți contacta direct telefonic, prin formularul de contact sau prin sistemul de programare online.
+          </p>
 
-        <div class="contact-wrap">
-          <div class="info-box">
-            <h3>Date de contact</h3>
-
-            <div class="contact-row">
-              <strong>Telefon</strong>
-              <span>0757 352 371</span>
-            </div>
-
-            <div class="contact-row">
-              <strong>Arie principală</strong>
-              <span>Prahova</span>
-            </div>
-
-            <div class="contact-row">
-              <strong>Tip intervenții</strong>
-              <span>În atelier sau mobil, în funcție de lucrare</span>
-            </div>
-
-            <div class="contact-row" style="border-bottom:none;">
-              <strong>Clienți</strong>
-              <span>Persoane fizice și companii</span>
-            </div>
-
-            <div class="hero-actions" style="margin-top:18px;">
-              <a href="tel:+40757352371" class="btn btn-primary">Sună acum</a>
-              <a href="https://wa.me/40757352371?text=Buna!%20Vreau%20mai%20multe%20informatii%20despre%20serviciile%20Prestige%20Finish." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">WhatsApp</a>
-            </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:+40757352371">0757 352 371</a>
+            <a class="btn btn-secondary" href="programari.html">Programare online</a>
+            <a class="btn btn-secondary" href="formular-contact.html">Formular de contact</a>
           </div>
+        </div>
 
-          <div class="info-box">
-            <h3>Programare și solicitări</h3>
-            <p>
-              Pentru programări rapide poți folosi pagina dedicată, iar pentru cereri mai complexe poți folosi formularul de contact.
-            </p>
-
-            <div class="hero-actions" style="margin-top:18px;">
-              <a href="programari.html" class="btn btn-primary">Programare online</a>
-              <a href="formular-contact.html" class="btn btn-secondary">Formular de contact</a>
-            </div>
-          </div>
+        <div class="info-box">
+          <div class="contact-row"><strong>Telefon principal</strong><span>0757 352 371</span></div>
+          <div class="contact-row"><strong>Email</strong><span>prestige.finish@yahoo.com</span></div>
+          <div class="contact-row"><strong>Arie principală</strong><span>Prahova</span></div>
+          <div class="contact-row" style="border-bottom:none;"><strong>Tip clienți</strong><span>Persoane fizice și companii</span></div>
         </div>
       </div>
     </section>
@@ -1096,46 +799,48 @@
     <section class="fade-in">
       <div class="container">
         <div class="tag">Întrebări frecvente</div>
-        <h2 class="section-title">Întrebări frecvente</h2>
+        <h2 class="section-title">Întrebări utile înainte de programare</h2>
 
-        <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-q">
-              <span>Lucrați doar în atelier?</span>
-              <span>+</span>
-            </button>
-            <div class="faq-a">
-              <p>Nu. Putem analiza și intervenții mobile în Prahova, în funcție de tipul lucrării și de condițiile potrivite pentru rezultat bun.</p>
+        <div class="faq-grid">
+          <div class="faq-card">
+            <h3>Despre servicii</h3>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-q" type="button">
+                  <span>Lucrați doar pentru persoane fizice?</span>
+                  <span>+</span>
+                </button>
+                <div class="faq-a">Nu. Prestige Finish lucrează atât pentru persoane fizice, cât și pentru companii și flote.</div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-q" type="button">
+                  <span>Oferiți și servicii pentru canapele?</span>
+                  <span>+</span>
+                </button>
+                <div class="faq-a">Da. Există o pagină dedicată pentru serviciile de curățare textile și tapițerii.</div>
+              </div>
             </div>
           </div>
 
-          <div class="faq-item">
-            <button class="faq-q">
-              <span>Aveți servicii și pentru companii?</span>
-              <span>+</span>
-            </button>
-            <div class="faq-a">
-              <p>Da. Lucrăm atât pentru persoane fizice, cât și pentru companii, inclusiv flote și spații comerciale.</p>
-            </div>
-          </div>
+          <div class="faq-card">
+            <h3>Despre contact</h3>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-q" type="button">
+                  <span>Pot cere recomandare înainte?</span>
+                  <span>+</span>
+                </button>
+                <div class="faq-a">Da. Pentru asta este ideal formularul de contact.</div>
+              </div>
 
-          <div class="faq-item">
-            <button class="faq-q">
-              <span>Oferiți și curățare canapele?</span>
-              <span>+</span>
-            </button>
-            <div class="faq-a">
-              <p>Da. Serviciile pentru textile, canapele, saltele și alte tapițerii sunt disponibile pe pagina dedicată.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-q">
-              <span>Cum se stabilește prețul final?</span>
-              <span>+</span>
-            </button>
-            <div class="faq-a">
-              <p>Prețul final depinde de dimensiunea mașinii, materialele interioare, gradul de murdărie și tipul intervenției.</p>
+              <div class="faq-item">
+                <button class="faq-q" type="button">
+                  <span>Pot rezerva direct online?</span>
+                  <span>+</span>
+                </button>
+                <div class="faq-a">Da. În pagina de programare online alegi serviciul și vezi intervalele disponibile.</div>
+              </div>
             </div>
           </div>
         </div>
