@@ -3,632 +3,257 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prestige Finish | Persoane fizice</title>
-  <link rel="icon" type="image/jpeg" href="logo.jpeg" />
-  <meta name="description" content="Prestige Finish oferă pentru persoane fizice servicii profesionale de igienizare și recondiționare pentru canapele, colțare, saltele, scaune, fotolii, covoare, draperii și anumite tipuri de perdele, plus acces rapid către curățenie după renovări și mutări." />
+  <title>Prestige Finish Private Care | Persoane fizice</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+  <meta name="description" content="Prestige Finish Private Care - servicii premium pentru persoane fizice: detailing interior, igienizare, detailing motor, restaurare faruri și programare online." />
 
   <style>
-    :root{
-      --bg:#050505;
-      --card:rgba(255,255,255,0.04);
-      --gold:#d4af37;
-      --gold-2:#f0d266;
-      --gold-soft:rgba(212,175,55,0.12);
-      --line:rgba(212,175,55,0.18);
-      --line-strong:rgba(212,175,55,0.34);
-      --text:#f5f2ea;
-      --muted:#c8c1ae;
-      --green:#25D366;
-      --shadow:0 20px 60px rgba(0,0,0,0.45);
-      --shadow-soft:0 10px 30px rgba(0,0,0,0.25);
-      --glow:0 0 16px rgba(212,175,55,0.16);
+    :root {
+      --bg: #050505;
+      --card: rgba(255,255,255,0.04);
+      --gold: #d4af37;
+      --text: #f5f2ea;
+      --muted: #c5bea9;
+      --line: rgba(212,175,55,0.18);
+      --shadow: 0 20px 60px rgba(0,0,0,0.45);
+      --green: #25D366;
     }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-
-    body{
-      margin:0;
-      font-family:Arial,Helvetica,sans-serif;
-      color:var(--text);
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
       background:
-        radial-gradient(circle at top right, rgba(212,175,55,0.14), transparent 24%),
-        radial-gradient(circle at bottom left, rgba(212,175,55,0.08), transparent 20%),
+        radial-gradient(circle at top right, rgba(212,175,55,0.16), transparent 24%),
+        radial-gradient(circle at bottom left, rgba(212,175,55,0.10), transparent 20%),
         var(--bg);
-      line-height:1.6;
-      overflow-x:hidden;
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    button{font:inherit}
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
-    .container{
-      width:min(1200px, calc(100% - 32px));
-      margin:0 auto;
+    .container { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+
+    .topbar {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(5,5,5,0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
     }
 
-    .topbar{
-      position:sticky;
-      top:0;
-      z-index:1000;
-      background:rgba(5,5,5,0.92);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid var(--line);
+    .nav {
+      position: relative;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; padding: 16px 0;
     }
 
-    .nav{
-      position:relative;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:18px;
-      padding:16px 0;
-    }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .brand-logo { height: 54px; border-radius: 10px; object-fit: contain; flex-shrink: 0; }
+    .brand-name { color: var(--gold); font-size: 22px; font-weight: 700; white-space: nowrap; }
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      min-width:0;
-      flex:1;
-      overflow:hidden;
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .nav-links {
+      display: flex; align-items: center; gap: 18px;
+      color: var(--muted); font-size: 14px; flex-wrap: wrap; justify-content: flex-end;
     }
+    .nav-links a:hover { color: var(--text); }
 
-    .brand-logo{
-      height:64px;
-      width:auto;
-      border-radius:14px;
-      object-fit:contain;
-      flex-shrink:0;
-      filter:drop-shadow(0 0 10px rgba(212,175,55,0.22));
+    .top-socials { display: flex; align-items: center; gap: 10px; }
+    .top-social {
+      width: 42px; height: 42px; border-radius: 999px; border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      display: inline-flex; align-items: center; justify-content: center;
+      box-shadow: var(--shadow);
     }
+    .top-social svg { width: 18px; height: 18px; fill: var(--gold); }
 
-    .brand-name{
-      color:var(--gold);
-      font-size:24px;
-      font-weight:700;
-      letter-spacing:.4px;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      min-width:0;
+    .menu-toggle {
+      display: none; width: 54px; height: 54px; border-radius: 18px;
+      border: 1px solid var(--line); background: rgba(255,255,255,0.03);
+      color: var(--gold); align-items: center; justify-content: center; cursor: pointer;
     }
+    .menu-toggle svg { width: 26px; height: 26px; stroke: var(--gold); }
 
-    .nav-right{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      flex-shrink:0;
+    .hero {
+      padding: 88px 0 56px; position: relative; overflow: hidden;
     }
-
-    .top-socials{
-      display:flex;
-      align-items:center;
-      gap:10px;
+    .hero::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(5,5,5,0.96) 0%, rgba(5,5,5,0.88) 40%, rgba(5,5,5,0.62) 68%, rgba(5,5,5,0.84) 100%);
+      pointer-events: none;
     }
-
-    .top-social{
-      width:44px;
-      height:44px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,0.03);
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      box-shadow:var(--shadow-soft);
-      transition:.2s ease;
-      flex-shrink:0;
-    }
-
-    .top-social:hover{
-      transform:translateY(-2px);
-      background:rgba(212,175,55,0.08);
-      border-color:var(--line-strong);
-    }
-
-    .top-social svg{
-      width:18px;
-      height:18px;
-      fill:var(--gold);
-    }
-
-    .top-social.whatsapp-top{
-      background:linear-gradient(135deg, var(--gold), var(--gold-2));
-      border-color:transparent;
-      box-shadow:0 0 18px rgba(212,175,55,.18);
-    }
-
-    .top-social.whatsapp-top svg{
-      fill:#0a0a0a;
-    }
-
-    .menu-toggle{
-      display:none;
-      width:54px;
-      height:54px;
-      border-radius:18px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,0.03);
-      color:var(--gold);
-      align-items:center;
-      justify-content:center;
-      cursor:pointer;
-      flex-shrink:0;
-    }
-
-    .menu-toggle svg{
-      width:26px;
-      height:26px;
-      stroke:var(--gold);
-    }
-
-    .nav-links{
-      display:flex;
-      align-items:center;
-      gap:18px;
-      color:var(--muted);
-      font-size:14px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-
-    .nav-links a{
-      transition:.2s ease;
-      position:relative;
-    }
-
-    .nav-links a:hover{
-      color:var(--text);
-    }
-
-    .nav-cta{
-      padding:11px 18px;
-      border-radius:999px;
-      border:1px solid transparent;
-      color:#0a0a0a;
-      background:linear-gradient(135deg, var(--gold), var(--gold-2));
-      font-weight:700;
-      box-shadow:0 0 18px rgba(212,175,55,.18);
-    }
-
-    .hero{
-      position:relative;
-      overflow:hidden;
-      padding:92px 0 46px;
-    }
-
-    .hero::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(90deg, rgba(5,5,5,.96) 0%, rgba(5,5,5,.88) 40%, rgba(5,5,5,.64) 68%, rgba(5,5,5,.84) 100%);
-      pointer-events:none;
-    }
-
-    .hero-bg{
-      position:absolute;
-      inset:0;
+    .hero-bg {
+      position: absolute; inset: 0;
       background:
-        linear-gradient(rgba(0,0,0,.18), rgba(0,0,0,.18)),
-        url('logo.jpeg') center/contain no-repeat,
-        radial-gradient(circle at center, rgba(212,175,55,.12), transparent 34%);
-      opacity:.08;
+        linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.22)),
+        url('logo.png') center/contain no-repeat,
+        radial-gradient(circle at center, rgba(212,175,55,0.10), transparent 35%);
+      opacity: 0.10;
     }
 
-    .hero-grid{
-      position:relative;
-      z-index:2;
-      display:grid;
-      grid-template-columns:1.08fr .92fr;
-      gap:34px;
-      align-items:start;
+    .hero-grid {
+      position: relative; z-index: 2;
+      display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 34px; align-items: start;
     }
 
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 14px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      color:var(--gold);
-      background:rgba(212,175,55,.07);
-      font-size:12px;
-      letter-spacing:1.5px;
-      text-transform:uppercase;
-      margin-bottom:18px;
-      box-shadow:var(--glow);
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px;
+      color: var(--gold); background: rgba(212,175,55,0.07);
+      font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 18px;
     }
 
-    h1{
-      margin:0 0 16px;
-      font-size:clamp(40px,7vw,72px);
-      line-height:.98;
-      letter-spacing:-1px;
-      max-width:820px;
+    h1 {
+      margin: 0 0 16px; font-size: clamp(42px, 7vw, 78px);
+      line-height: 0.98; letter-spacing: -1px; max-width: 780px;
     }
 
-    .hero p{
-      color:var(--muted);
-      font-size:18px;
-      max-width:760px;
-      margin:0 0 22px;
+    .hero p { color: var(--muted); font-size: 18px; max-width: 760px; margin: 0 0 28px; }
+
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 20px; }
+    .hero-note { color: var(--gold); font-size: 15px; margin: 0 0 28px; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 54px; padding: 0 24px; border-radius: 999px;
+      border: 1px solid transparent; font-weight: 700; text-align: center; cursor: pointer;
+      box-shadow: var(--shadow);
+    }
+    .btn-primary { background: linear-gradient(135deg, var(--gold), #f0d266); color: #0a0a0a; }
+    .btn-secondary { background: transparent; border-color: var(--line); color: var(--text); }
+
+    .hero-points, .grid-2, .grid-3, .ba-grid, .review-grid {
+      display: grid; gap: 20px;
+    }
+    .hero-points { grid-template-columns: repeat(3, minmax(0,1fr)); max-width: 860px; }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    .ba-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .review-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+
+    .mini-card, .card, .review-card, .ba-card {
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: var(--shadow);
     }
 
-    .hero-schedule{
-      display:inline-block;
-      margin:0 0 26px;
-      padding:12px 16px;
-      border-radius:16px;
-      border:1px solid var(--line);
-      background:rgba(212,175,55,.06);
-      color:var(--text);
-      box-shadow:var(--glow);
+    .mini-card strong { display: block; color: var(--gold); margin-bottom: 6px; font-size: 14px; }
+    .mini-card span, .card p, .section-text, .review-card p, .contact-row span, .ba-caption span { color: var(--muted); }
+
+    .hero-panel {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(212,175,55,0.10), rgba(255,255,255,0.03));
+      border-radius: 30px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+      margin-top: 6px;
+    }
+    .hero-panel img {
+      width: 100%; max-width: 300px; margin: 0 auto 18px;
+      border-radius: 24px; border: 1px solid var(--line); background: #000;
     }
 
-    .hero-actions{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      margin-bottom:20px;
+    .status {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--gold); border: 1px solid var(--line); border-radius: 999px;
+      padding: 8px 12px; background: rgba(212,175,55,0.06);
+      font-size: 13px; margin-bottom: 14px;
+    }
+    .status-dot {
+      width: 8px; height: 8px; border-radius: 999px;
+      background: var(--gold); box-shadow: 0 0 12px rgba(212,175,55,0.7);
     }
 
-    .hero-note{
-      color:var(--gold);
-      font-size:15px;
-      margin:0 0 24px;
+    section { padding: 78px 0; }
+    .section-title { font-size: clamp(30px, 4vw, 48px); margin: 0 0 12px; }
+    .section-text { max-width: 760px; margin: 0 0 28px; font-size: 17px; }
+    .tag { display: inline-flex; margin-bottom: 14px; color: var(--gold); font-size: 12px; text-transform: uppercase; letter-spacing: 1.4px; }
+
+    .card h3, .review-card h3, .ba-caption strong { margin: 0 0 10px; font-size: 22px; color: var(--gold); }
+
+    .ba-wrap {
+      position: relative; width: 100%; aspect-ratio: 16/10; overflow: hidden;
+      border-radius: 20px; border: 1px solid rgba(212,175,55,0.14); background: #0b0b0b;
+    }
+    .ba-img { width: 100%; height: 100%; object-fit: cover; user-select: none; pointer-events: none; }
+    .ba-overlay { position: absolute; inset: 0 auto 0 0; overflow: hidden; border-right: 2px solid rgba(255,255,255,0.85); }
+    .ba-range { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; z-index: 30; }
+    .ba-line { position: absolute; top: 0; bottom: 0; width: 2px; background: rgba(255,255,255,0.9); transform: translateX(-50%); z-index: 20; pointer-events: none; }
+    .ba-handle {
+      position: absolute; top: 50%; transform: translate(-50%, -50%);
+      width: 58px; height: 58px; border-radius: 999px;
+      background: linear-gradient(135deg, var(--gold), #f0d266); color: #111;
+      display: flex; align-items: center; justify-content: center; font-weight: 700; z-index: 21; pointer-events: none;
+    }
+    .ba-label {
+      position: absolute; top: 14px; z-index: 22; padding: 8px 12px; border-radius: 999px;
+      font-size: 12px; font-weight: 700; border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(8px);
+    }
+    .ba-before { left: 14px; background: rgba(0,0,0,0.55); color: #fff; }
+    .ba-after { right: 14px; background: rgba(212,175,55,0.16); color: var(--gold); }
+    .ba-caption { padding: 16px 6px 4px; }
+
+    .coming {
+      background: linear-gradient(180deg, rgba(212,175,55,0.08), rgba(255,255,255,0.02));
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:56px;
-      padding:0 24px;
-      border-radius:999px;
-      border:1px solid transparent;
-      font-weight:700;
-      text-align:center;
-      cursor:pointer;
-      box-shadow:var(--shadow-soft);
-      transition:.2s ease;
-      color:#0a0a0a;
-      background:linear-gradient(135deg, var(--gold), var(--gold-2));
+    .stars { color: var(--gold); font-size: 18px; margin-bottom: 10px; letter-spacing: 2px; }
+    .review-name { margin-top: 14px; font-weight: 700; color: var(--text); }
+
+    .contact-wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; }
+    .contact-row { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .contact-row strong { display: block; color: var(--text); margin-bottom: 4px; }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0 40px;
+      color: var(--muted);
+      font-size: 14px;
     }
+    .footer-row { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
 
-    .btn:hover{transform:translateY(-2px)}
-
-    .grid-2,
-    .grid-3,
-    .mini-grid,
-    .package-grid{
-      display:grid;
-      gap:20px;
+    .whatsapp-btn {
+      position: fixed; bottom: 25px; right: 25px;
+      background: var(--green); color: white; padding: 14px 22px;
+      font-size: 15px; font-weight: bold; display: flex; align-items: center; gap: 10px;
+      border-radius: 30px; text-decoration: none; box-shadow: 0 8px 20px rgba(0,0,0,0.35); z-index: 9999;
     }
+    .whatsapp-btn img { width: 22px; height: 22px; }
 
-    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .mini-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .package-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-    .card,
-    .info-box,
-    .mini-info,
-    .notice-card,
-    .package-card{
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border-radius:28px;
-      padding:24px;
-      box-shadow:var(--shadow);
-    }
-
-    section{padding:78px 0}
-
-    .section-title{
-      font-size:clamp(30px,4vw,48px);
-      margin:0 0 12px;
-    }
-
-    .section-text{
-      max-width:780px;
-      margin:0 0 16px;
-      font-size:17px;
-      color:var(--muted);
-    }
-
-    .section-note{
-      max-width:920px;
-      margin:0 0 28px;
-      padding:14px 18px;
-      border-left:3px solid var(--gold);
-      border-radius:0 14px 14px 0;
-      background:rgba(212,175,55,.06);
-      font-size:15px;
-      color:var(--muted);
-      box-shadow:var(--glow);
-    }
-
-    .tag{
-      display:inline-flex;
-      margin-bottom:14px;
-      color:var(--gold);
-      font-size:12px;
-      text-transform:uppercase;
-      letter-spacing:1.4px;
-    }
-
-    .card h3,
-    .info-box h3,
-    .mini-info h3,
-    .notice-card h3,
-    .package-card h3{
-      margin:0 0 10px;
-      font-size:24px;
-      color:var(--gold);
-    }
-
-    .card p,
-    .info-box p,
-    .mini-info p,
-    .notice-card p,
-    .package-subtitle,
-    .package-note,
-    .contact-row span{
-      color:var(--muted);
-    }
-
-    .service-list{
-      list-style:none;
-      padding:0;
-      margin:18px 0 0;
-      display:grid;
-      gap:12px;
-    }
-
-    .service-list li{
-      position:relative;
-      padding:14px 16px 14px 42px;
-      border:1px solid rgba(212,175,55,.14);
-      border-radius:18px;
-      background:rgba(255,255,255,.02);
-      color:var(--text);
-    }
-
-    .service-list li::before{
-      content:"✦";
-      position:absolute;
-      left:16px;
-      top:13px;
-      color:var(--gold);
-      font-size:16px;
-      line-height:1;
-    }
-
-    .service-label{
-      display:block;
-      color:var(--gold);
-      font-weight:700;
-      margin-bottom:2px;
-      font-size:14px;
-    }
-
-    .package-card.featured{
-      border-color:rgba(212,175,55,.42);
-      box-shadow:0 26px 75px rgba(0,0,0,.55), 0 0 24px rgba(212,175,55,.18);
-      transform:scale(1.03);
-    }
-
-    .package-badge{
-      display:inline-flex;
-      margin-bottom:14px;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(212,175,55,.12);
-      color:var(--gold);
-      font-size:12px;
-      font-weight:700;
-      letter-spacing:.6px;
-      text-transform:uppercase;
-      box-shadow:var(--glow);
-    }
-
-    .package-subtitle{
-      margin:0 0 18px;
-      font-size:15px;
-    }
-
-    .package-features{
-      list-style:none;
-      padding:0;
-      margin:0 0 18px;
-      display:grid;
-      gap:12px;
-    }
-
-    .package-features li{
-      position:relative;
-      padding-left:22px;
-      color:var(--text);
-    }
-
-    .package-features li::before{
-      content:"•";
-      position:absolute;
-      left:0;
-      top:0;
-      color:var(--gold);
-      font-weight:700;
-      font-size:18px;
-      line-height:1.2;
-    }
-
-    .package-price{
-      font-size:32px;
-      line-height:1;
-      font-weight:800;
-      color:var(--gold);
-      margin:8px 0 8px;
-    }
-
-    .package-note{
-      font-size:14px;
-      margin:0 0 18px;
-    }
-
-    .contact-list{
-      display:grid;
-      gap:18px;
-      margin-top:12px;
-    }
-
-    .contact-row{
-      padding-bottom:14px;
-      border-bottom:1px solid rgba(255,255,255,.08);
-    }
-
-    .contact-row strong{
-      display:block;
-      color:var(--text);
-      margin-bottom:4px;
-    }
-
-    .fade-in{
-      opacity:0;
-      transform:translateY(28px);
-      transition:opacity .7s ease, transform .7s ease;
-    }
-
-    .fade-in.visible{
-      opacity:1;
-      transform:translateY(0);
-    }
-
-    footer{
-      border-top:1px solid var(--line);
-      padding:28px 0 40px;
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    .footer-row{
-      display:flex;
-      justify-content:space-between;
-      gap:18px;
-      flex-wrap:wrap;
-    }
-
-    .whatsapp-btn{
-      position:fixed;
-      bottom:25px;
-      right:25px;
-      background:var(--green);
-      color:white;
-      padding:14px 22px;
-      font-size:15px;
-      font-weight:bold;
-      display:flex;
-      align-items:center;
-      gap:10px;
-      border-radius:30px;
-      text-decoration:none;
-      box-shadow:0 8px 20px rgba(0,0,0,0.35);
-      z-index:9999;
-      transition:.2s ease;
-    }
-
-    .whatsapp-btn:hover{transform:scale(1.04)}
-
-    .whatsapp-btn img{
-      width:22px;
-      height:22px;
-    }
-
-    @media (max-width:1100px){
-      .grid-3,
-      .package-grid{
-        grid-template-columns:1fr;
+    @media (max-width: 980px) {
+      .top-socials { display: none; }
+      .menu-toggle { display: inline-flex; }
+      .nav-links {
+        position: absolute; top: calc(100% + 10px); right: 0; left: 0;
+        display: none; flex-direction: column; align-items: stretch; gap: 10px;
+        padding: 18px; background: rgba(5,5,5,0.98); border: 1px solid var(--line); border-radius: 20px;
       }
+      .nav-links.active { display: flex; }
+      .nav-links a {
+        padding: 14px 16px; border-radius: 14px;
+        background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.04);
+      }
+      .hero-grid, .grid-2, .grid-3, .hero-points, .ba-grid, .review-grid, .contact-wrap { grid-template-columns: 1fr; }
+      h1 { font-size: 48px; }
+      .brand-logo { height: 44px; }
+      .brand-name { font-size: 20px; }
     }
 
-    @media (max-width:980px){
-      .top-socials{
-        display:none;
-      }
-
-      .menu-toggle{
-        display:inline-flex;
-      }
-
-      .brand{
-        flex:1;
-        min-width:0;
-      }
-
-      .brand-logo{
-        height:54px;
-      }
-
-      .brand-name{
-        font-size:20px;
-      }
-
-      .nav-links{
-        position:absolute;
-        top:calc(100% + 10px);
-        right:0;
-        left:0;
-        display:none;
-        flex-direction:column;
-        align-items:stretch;
-        gap:10px;
-        padding:18px;
-        background:rgba(5,5,5,0.98);
-        border:1px solid var(--line);
-        border-radius:20px;
-      }
-
-      .nav-links.active{
-        display:flex;
-      }
-
-      .nav-links a{
-        padding:14px 16px;
-        border-radius:14px;
-        background:rgba(255,255,255,0.03);
-        border:1px solid rgba(255,255,255,0.04);
-      }
-
-      .hero-grid,
-      .grid-2,
-      .grid-3,
-      .mini-grid,
-      .package-grid{
-        grid-template-columns:1fr;
-      }
-
-      h1{font-size:46px}
-    }
-
-    @media (max-width:640px){
-      .hero{padding:74px 0 42px}
-      .hero-actions{flex-direction:column}
-      .hero-actions .btn{width:100%}
-      .whatsapp-btn{
-        right:16px;
-        left:16px;
-        bottom:16px;
-        justify-content:center;
-      }
-      .brand-name{
-        font-size:18px;
-      }
-      .brand-logo{
-        height:48px;
-      }
+    @media (max-width: 640px) {
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; }
+      .whatsapp-btn { right: 16px; left: 16px; bottom: 16px; justify-content: center; }
     }
   </style>
 </head>
@@ -636,43 +261,29 @@
   <header class="topbar">
     <div class="container nav">
       <a href="index.html" class="brand">
-        <img src="logo.jpeg" alt="Prestige Finish Logo" class="brand-logo">
+        <img src="logo.png" alt="Prestige Finish Logo" class="brand-logo">
         <span class="brand-name">Prestige Finish</span>
       </a>
 
       <div class="nav-right">
         <div class="top-socials">
-          <a href="https://www.instagram.com/prestigefinish" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Instagram">
-            <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.35 1.55a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z"/></svg>
-          </a>
-
-          <a href="https://www.facebook.com/prestigefinish" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Facebook">
-            <svg viewBox="0 0 24 24"><path d="M13.5 22v-8.2h2.77l.42-3.22H13.5V8.5c0-.93.26-1.56 1.59-1.56h1.7V4.05c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.04 1.46-4.04 4.15v2.48H7.6v3.22h2.72V22h3.18Z"/></svg>
-          </a>
-
-          <a href="https://www.tiktok.com/@prestigefinish" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="TikTok">
-            <svg viewBox="0 0 24 24"><path d="M15.5 2c.2 1.7 1.1 3.1 2.6 4 .9.6 1.9.9 2.9.9v3a8 8 0 0 1-3.9-1v6.1a6.1 6.1 0 1 1-6.1-6.1c.3 0 .7 0 1 .1v3.1a3 3 0 1 0 2 2.9V2h1.5Z"/></svg>
-          </a>
-
-          <a href="https://wa.me/40757352371" target="_blank" rel="noopener noreferrer" class="top-social whatsapp-top" aria-label="WhatsApp">
-            <svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.5 0 .16 5.34.16 11.91c0 2.1.55 4.15 1.6 5.95L0 24l6.32-1.66a11.87 11.87 0 0 0 5.75 1.47h.01c6.57 0 11.91-5.34 11.91-11.91 0-3.18-1.24-6.16-3.47-8.42Zm-8.45 18.3h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.75.98 1-3.65-.24-.38a9.87 9.87 0 0 1-1.52-5.23C2.17 6.42 6.58 2 12.08 2c2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.9 7c0 5.5-4.42 9.9-9.9 9.9Zm5.43-7.42c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.77.97-.95 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.88-.78-1.48-1.74-1.65-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.9-2.19-.24-.58-.48-.5-.66-.51h-.56c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5s1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.1 4.49.71.31 1.27.5 1.7.63.72.23 1.38.2 1.9.12.58-.09 1.76-.72 2-1.41.25-.69.25-1.28.17-1.4-.07-.12-.27-.2-.57-.35Z"/></svg>
-          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.35 1.55a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z"/></svg></a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8.2h2.77l.42-3.22H13.5V8.5c0-.93.26-1.56 1.59-1.56h1.7V4.05c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.04 1.46-4.04 4.15v2.48H7.6v3.22h2.72V22h3.18Z"/></svg></a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M15.5 2c.2 1.7 1.1 3.1 2.6 4 .9.6 1.9.9 2.9.9v3a8 8 0 0 1-3.9-1v6.1a6.1 6.1 0 1 1-6.1-6.1c.3 0 .7 0 1 .1v3.1a3 3 0 1 0 2 2.9V2h1.5Z"/></svg></a>
         </div>
 
         <button class="menu-toggle" onclick="toggleMenu()" aria-label="Deschide meniul">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
-            <path d="M4 7H20M4 12H20M4 17H20"/>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 7H20M4 12H20M4 17H20" /></svg>
         </button>
       </div>
 
       <div class="nav-links" id="mobileMenu">
-        <a href="index.html" onclick="closeMenu()">Acasă</a>
-        <a href="persoane-fizice.html" onclick="closeMenu()">Persoane fizice</a>
-        <a href="flote.html" onclick="closeMenu()">Firme / spații comerciale</a>
-        <a href="curatenie-renovari.html" onclick="closeMenu()">După renovări</a>
+        <a href="#servicii" onclick="closeMenu()">Servicii</a>
+        <a href="#pachete" onclick="closeMenu()">Pachete</a>
         <a href="programari.html" onclick="closeMenu()">Programare online</a>
-        <a href="formular-contact.html" class="nav-cta" onclick="closeMenu()">Formular de contact</a>
+        <a href="#reviews" onclick="closeMenu()">Recenzii</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+        <a href="index.html" onclick="closeMenu()">Acasă</a>
       </div>
     </div>
   </header>
@@ -682,296 +293,179 @@
       <div class="hero-bg"></div>
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Persoane fizice</div>
-          <h1>Servicii premium pentru locuință, confort și imagine</h1>
+          <div class="eyebrow">Persoane fizice • Detailing interior premium</div>
+          <h1>Servicii premium pentru persoane fizice</h1>
           <p>
-            Pagina dedicată persoanelor fizice este construită pentru intervenții la domiciliu asupra canapelelor, colțarelor, saltelelor, scaunelor, fotoliilor, covoarelor, draperiilor și anumitor tipuri de perdele.
+            Prestige Finish Private Care este pagina dedicată clienților individuali care își doresc detailing interior premium,
+            igienizare completă, detailing motor și servicii mobile selectate, realizate cu atenție la detalii și focus pe confort.
           </p>
-          <p>
-            Lucrăm cu atenție pe suprafețe din textil, piele și alcantara, iar pentru solicitările mai ample sau pentru lucrări după renovări ai acces rapid și către pagina dedicată.
-          </p>
-
-          <div class="hero-schedule">
-            Intervenții disponibile inclusiv în intervale de seară, după ora 16:00–17:00, în funcție de disponibilitatea echipelor.
-          </div>
 
           <div class="hero-actions">
-            <a class="btn" href="programari.html">Programare online</a>
-            <a class="btn" href="formular-contact.html">Formular de contact</a>
-            <a class="btn" href="https://wa.me/40757352371?text=Buna!%20Vreau%20mai%20multe%20informatii%20despre%20serviciile%20pentru%20persoane%20fizice." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a class="btn btn-primary" href="programari.html">Rezervă un interval</a>
+            <a class="btn btn-secondary" href="formular-contact.html">Formular de contact</a>
           </div>
 
-          <p class="hero-note">
-            Prahova și împrejurimi • intervenții la domiciliu • programare exclusivă • disponibil și seara
-          </p>
+          <p class="hero-note">Se lucrează exclusiv pe bază de programare</p>
+
+          <div class="hero-points">
+            <div class="mini-card">
+              <strong>Detailing interior</strong>
+              <span>Serviciul principal al paginii dedicate persoanelor fizice.</span>
+            </div>
+            <div class="mini-card">
+              <strong>Programare rapidă</strong>
+              <span>Poți selecta serviciul și intervalul direct online.</span>
+            </div>
+            <div class="mini-card">
+              <strong>Confort premium</strong>
+              <span>Servicii gândite pentru clienți care caută calitate și experiență plăcută.</span>
+            </div>
+          </div>
         </div>
 
-        <div class="info-box">
-          <h3>Ce acoperim</h3>
-          <p>
-            Intervențiile sunt gândite pentru suprafețe utilizate zilnic în locuință, cu accent pe igienizare, imagine și întreținerea corectă a materialului.
+        <div class="hero-panel">
+          <div class="status"><span class="status-dot"></span> Private Care</div>
+          <img src="logo.png" alt="Prestige Finish Logo" />
+          <h3 style="margin:0 0 8px; font-size:28px;">Prestige Finish</h3>
+          <p style="margin:0; color:var(--muted);">
+            O experiență dedicată persoanelor fizice, construită în jurul unui interior curat, îngrijit și confortabil.
           </p>
-
-          <div class="contact-list">
-            <div class="contact-row">
-              <strong>Mobilier</strong>
-              <span>Canapele, colțare, fotolii, scaune, saltele</span>
-            </div>
-            <div class="contact-row">
-              <strong>Textile decorative</strong>
-              <span>Covoare, draperii și anumite tipuri de perdele</span>
-            </div>
-            <div class="contact-row">
-              <strong>Materiale</strong>
-              <span>Textil, piele și alcantara</span>
-            </div>
-            <div class="contact-row" style="border-bottom:none;">
-              <strong>Program</strong>
-              <span>Inclusiv în intervale de seară, în funcție de disponibilitate</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
 
-    <section class="fade-in">
+    <section id="servicii" class="coming fade-in">
       <div class="container">
-        <div class="tag">Servicii premium, clar prezentate</div>
-        <h2 class="section-title">Tot ce ține de confortul și imaginea spațiului tău</h2>
+        <div class="tag">Servicii</div>
+        <h2 class="section-title">Serviciile disponibile pentru persoane fizice</h2>
         <p class="section-text">
-          Oferta pentru persoane fizice este gândită clar și profesionist, fără servicii aruncate la întâmplare. Fiecare categorie este tratată separat, pentru ca tu să înțelegi rapid ce putem prelua și cum se poziționează serviciul.
+          Începem cu servicii atent selecționate, astfel încât să livrăm rezultate impecabile și o experiență premium pentru fiecare client.
         </p>
 
         <div class="grid-3">
           <div class="card">
-            <h3>Canapele, colțare și fotolii</h3>
-            <p>
-              Intervenții dedicate pieselor de mobilier utilizate cel mai des în locuință, cu accent pe imagine, confort și întreținerea corectă a materialului.
-            </p>
-            <ul class="service-list">
-              <li><span class="service-label">Canapele</span>Fixe sau extensibile, în funcție de dimensiune și structură.</li>
-              <li><span class="service-label">Colțare</span>Configurații diferite, evaluate separat în funcție de suprafață.</li>
-              <li><span class="service-label">Fotolii</span>Piese individuale sau incluse în lucrări mixte.</li>
-            </ul>
+            <h3>Detailing interior premium</h3>
+            <p>Curățare completă a interiorului: scaune, plastice, bord, panouri uși, mochete și portbagaj.</p>
           </div>
-
           <div class="card">
-            <h3>Saltele, scaune și zone de uz frecvent</h3>
-            <p>
-              Pentru suprafețe care cer un nivel mai ridicat de atenție și igienizare, mai ales în spațiile utilizate zilnic.
-            </p>
-            <ul class="service-list">
-              <li><span class="service-label">Saltele</span>Lucrări realizate în funcție de dimensiune și accesibilitate.</li>
-              <li><span class="service-label">Scaune</span>Dining, birou sau alte zone de utilizare constantă.</li>
-              <li><span class="service-label">Solicitări mixte</span>Mai multe suprafețe în aceeași intervenție.</li>
-            </ul>
+            <h3>Curățare și igienizare tapițerie</h3>
+            <p>Curățare profundă a suprafețelor textile pentru un interior mai curat, mai plăcut și mai bine întreținut.</p>
           </div>
-
           <div class="card">
-            <h3>Covoare și textile decorative</h3>
-            <p>
-              O zonă separată, gândită logic pentru completarea serviciilor din locuință, fără să rupem direcția premium a brandului.
-            </p>
-            <ul class="service-list">
-              <li><span class="service-label">Covoare</span>Tarifare pe mp, în funcție de dimensiune și gradul de încărcare.</li>
-              <li><span class="service-label">Draperii</span>Lucrări evaluate în funcție de suprafață și complexitate.</li>
-              <li><span class="service-label">Anumite perdele</span>Disponibile doar pentru tipurile compatibile cu fluxul de intervenție.</li>
-            </ul>
+            <h3>Detailing motor</h3>
+            <p>Curățare atentă a compartimentului motor pentru un aspect îngrijit și o prezentare generală mai bună.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="fade-in">
+    <section id="pachete" class="fade-in">
       <div class="container">
-        <div class="tag">Materiale & abordare</div>
-        <h2 class="section-title">Textil, piele și alcantara tratate diferențiat</h2>
+        <div class="tag">Pachete</div>
+        <h2 class="section-title">Pachete pentru persoane fizice</h2>
         <p class="section-text">
-          Nu toate suprafețele sunt tratate la fel. Tocmai de aceea păstrăm o abordare clară și diferențiată, în funcție de material, dimensiune și tipul lucrării.
+          Pachetele sunt gândite pentru diferite niveluri de întreținere, de la întreținere regulată până la curățare aprofundată.
         </p>
 
-        <div class="mini-grid">
-          <div class="mini-info">
-            <h3>Textil</h3>
-            <p>
-              Categoria cea mai frecvent întâlnită în locuințe, cu variații mari de structură, culoare și grad de utilizare.
-            </p>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Essential Interior</h3>
+            <p>Aspirare completă, curățare plastice, bord, geamuri interior și finisaj interior.</p>
           </div>
-
-          <div class="mini-info">
-            <h3>Piele</h3>
-            <p>
-              Necesită o poziționare separată și o atenție diferită față de suprafețele textile obișnuite.
-            </p>
+          <div class="card">
+            <h3>Premium Interior</h3>
+            <p>Include Essential + curățare tapițerie, curățare portbagaj și atenție extinsă la detalii.</p>
           </div>
-
-          <div class="mini-info">
-            <h3>Alcantara</h3>
-            <p>
-              Material sensibil, care trebuie abordat cu mai multă atenție și evaluat corect înainte de intervenție.
-            </p>
-          </div>
-
-          <div class="mini-info">
-            <h3>Lucrări mixte</h3>
-            <p>
-              Dacă ai mai multe suprafețe și materiale diferite, putem construi o ofertă clară pentru întreg spațiul.
-            </p>
+          <div class="card">
+            <h3>Prestige Premium Pack</h3>
+            <p>Experiența completă de detailing interior pentru un rezultat impecabil, cu atenție la fiecare detaliu.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="fade-in">
+    <section class="coming fade-in">
       <div class="container">
-        <div class="tag">Pachete orientative</div>
-        <h2 class="section-title">Structură clară pentru cele mai solicitate intervenții</h2>
-        <p class="section-text">
-          Pachetele de mai jos sunt orientative și păstrează aceeași logică premium: claritate, poziționare și evaluare corectă în funcție de suprafață și complexitate.
-        </p>
+        <div class="tag">Before / After</div>
+        <h2 class="section-title">Diferența se vede imediat</h2>
+        <p class="section-text">Deocamdată poți lăsa secțiunea activă fără poze. După ce refacem folderul images, le integrăm aici.</p>
 
-        <div class="package-grid">
-          <div class="package-card">
-            <div class="package-badge">Living</div>
-            <h3>Pachet canapele & colțare</h3>
-            <p class="package-subtitle">
-              Potrivit pentru piesele principale de mobilier din zona de relaxare a locuinței.
-            </p>
-            <div class="package-price">de la 150 lei</div>
-            <ul class="package-features">
-              <li>Canapele fixe sau extensibile</li>
-              <li>Colțare în diferite configurații</li>
-              <li>Evaluare în funcție de suprafață și material</li>
-            </ul>
-            <p class="package-note">Prețul final poate varia în funcție de dimensiune, tipul materialului și gradul de dificultate.</p>
-            <a href="programari.html" class="btn">Programează</a>
+        <div class="ba-grid">
+          <div class="ba-card">
+            <div class="ba-wrap">
+              <div class="ba-label ba-before">Înainte</div>
+              <div class="ba-label ba-after">După</div>
+            </div>
+            <div class="ba-caption">
+              <strong>Interior complet</strong>
+              <span>Pregătit pentru sliderul tău real înainte / după.</span>
+            </div>
           </div>
 
-          <div class="package-card featured">
-            <div class="package-badge">Igienizare</div>
-            <h3>Pachet saltele & scaune</h3>
-            <p class="package-subtitle">
-              O variantă potrivită pentru zonele care cer frecvent atenție sporită și igienizare regulată.
-            </p>
-            <div class="package-price">de la 120 lei</div>
-            <ul class="package-features">
-              <li>Saltele simple sau matrimoniale</li>
-              <li>Scaune pentru dining sau birou</li>
-              <li>Lucrări individuale sau mixte</li>
-            </ul>
-            <p class="package-note">Evaluarea se face în funcție de dimensiune, număr de piese și modul de acces.</p>
-            <a href="formular-contact.html" class="btn">Solicită ofertă</a>
-          </div>
-
-          <div class="package-card">
-            <div class="package-badge">Textile</div>
-            <h3>Pachet covoare & decorative</h3>
-            <p class="package-subtitle">
-              Pentru covoare, draperii și anumite tipuri de perdele compatibile cu fluxul nostru de lucru.
-            </p>
-            <div class="package-price">de la 15 lei/mp</div>
-            <ul class="package-features">
-              <li>Covoare tarifate la mp</li>
-              <li>Draperii și perdele eligibile</li>
-              <li>Solicitări personalizate</li>
-            </ul>
-            <p class="package-note">Costul final depinde de suprafață, volum și tipul exact de lucrare.</p>
-            <a href="formular-contact.html" class="btn">Cere detalii</a>
-          </div>
-        </div>
-
-        <div class="grid-2" style="margin-top:24px;">
-          <div class="notice-card">
-            <h3>Transport & deplasare</h3>
-            <p>
-              Prețurile afișate nu includ transportul. Costul de deplasare se stabilește separat, în funcție de zonă, distanță, județ și complexitatea lucrării.
-            </p>
-          </div>
-
-          <div class="notice-card">
-            <h3>Opțiuni suplimentare disponibile</h3>
-            <ul class="service-list" style="margin-top:0;">
-              <li>
-                <span class="service-label">Tratament piele</span>
-                Întreținere și curățare pentru suprafețe din piele naturală sau ecologică.
-              </li>
-              <li>
-                <span class="service-label">Efect hidrofob pentru textile</span>
-                Protecție suplimentară pentru anumite materiale textile, în funcție de compatibilitate și tipul lucrării.
-              </li>
-              <li>
-                <span class="service-label">Solicitare personalizată</span>
-                Pentru combinații de suprafețe, materiale diferite sau lucrări mai ample.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="fade-in">
-      <div class="container">
-        <div class="tag">Extindere logică</div>
-        <h2 class="section-title">Ai terminat o renovare? Avem acum și pagină dedicată pentru asta</h2>
-        <p class="section-text">
-          Pagina pentru persoane fizice rămâne focusată pe mobilier, covoare și textile decorative. Dacă însă ai nevoie de un spațiu pregătit pentru mutare sau după lucrări, am separat clar serviciul într-o pagină dedicată.
-        </p>
-
-        <div class="grid-2">
-          <div class="info-box">
-            <h3>De ce este utilă separarea</h3>
-            <p>
-              Renovările și mutările au o logică diferită față de serviciile de canapele și textile. Tocmai de aceea, mesajul este mai clar atunci când fiecare serviciu are pagina lui.
-            </p>
-            <ul class="service-list">
-              <li><span class="service-label">Mai clar pentru client</span>Înțelegi imediat ce tip de serviciu ți se potrivește.</li>
-              <li><span class="service-label">Mai clar pentru Google</span>Fiecare pagină are rolul și mesajul ei.</li>
-              <li><span class="service-label">Mai profesionist</span>Nu amestecăm servicii foarte diferite într-un singur loc.</li>
-            </ul>
-          </div>
-
-          <div class="info-box">
-            <h3>Când mergi în pagina nouă</h3>
-            <p>
-              Dacă nu cauți doar mobilier sau textile, ci ai nevoie de un spațiu pregătit după lucrări sau înainte de mutare, intră direct în pagina dedicată.
-            </p>
-            <div class="hero-actions" style="margin-top:18px;">
-              <a href="curatenie-renovari.html" class="btn">Vezi pagina de renovări</a>
-              <a href="formular-contact.html" class="btn">Solicită ofertă</a>
+          <div class="ba-card">
+            <div class="ba-wrap">
+              <div class="ba-label ba-before">Înainte</div>
+              <div class="ba-label ba-after">După</div>
+            </div>
+            <div class="ba-caption">
+              <strong>Restaurare faruri</strong>
+              <span>Pregătit pentru exemple reale din lucrările tale.</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="fade-in">
+    <section id="reviews" class="coming fade-in">
       <div class="container">
-        <div class="tag">Programare și ofertare</div>
-        <h2 class="section-title">Alegi varianta potrivită pentru tipul tău de solicitare</h2>
-        <p class="section-text">
-          Dacă știi deja ce ai nevoie, programarea online este cea mai rapidă variantă. Dacă ai mai multe suprafețe, materiale diferite sau o solicitare mai amplă, recomandarea principală rămâne formularul de contact.
-        </p>
+        <div class="tag">Recenzii</div>
+        <h2 class="section-title">Feedback real din lucrări reale</h2>
+        <p class="section-text">După primele lucrări, aici vei putea afișa recenzii reale și exemple concrete.</p>
 
-        <div class="mini-grid">
-          <div class="mini-info">
-            <h3>Programare online</h3>
-            <p>
-              Varianta potrivită când știi deja ce suprafață vrei să programezi și preferi să alegi direct un interval disponibil.
-            </p>
-            <div class="hero-actions">
-              <a href="programari.html" class="btn">Deschide programarea</a>
-            </div>
+        <div class="review-grid">
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>Aici poți pune primul feedback real primit de la un client.</p>
+            <div class="review-name">Client real • în curând</div>
           </div>
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>O recenzie scurtă, clară și sinceră valorează mai mult decât texte artificiale.</p>
+            <div class="review-name">Client real • în curând</div>
+          </div>
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>Secțiunea poate deveni una dintre cele mai importante pentru încredere.</p>
+            <div class="review-name">Client real • în curând</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="mini-info">
-            <h3>Formular de contact</h3>
-            <p>
-              Ideal pentru solicitări mai ample, combinații de suprafețe, materiale diferite sau cereri personalizate.
-            </p>
-            <div class="hero-actions">
-              <a href="formular-contact.html" class="btn">Trimite solicitare</a>
-            </div>
+    <section id="contact" class="fade-in">
+      <div class="container contact-wrap">
+        <div>
+          <div class="tag">Contact</div>
+          <h2 class="section-title">Contact pentru persoane fizice</h2>
+          <p class="section-text">
+            Pentru programări, informații și interes privind serviciile Prestige Finish Private Care, ne poți contacta direct
+            sau poți folosi programarea online ori formularul de contact.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:+40757352371">0757 352 371</a>
+            <a class="btn btn-primary" href="tel:+40727707545">0727 707 545</a>
+            <a class="btn btn-secondary" href="programari.html">Programare online</a>
+            <a class="btn btn-secondary" href="formular-contact.html">Formular de contact</a>
           </div>
+        </div>
+
+        <div class="card">
+          <div class="contact-row"><strong>Telefon principal</strong><span>0757 352 371</span></div>
+          <div class="contact-row"><strong>Telefon secundar</strong><span>0727 707 545</span></div>
+          <div class="contact-row"><strong>Tip clienți</strong><span>Persoane fizice</span></div>
+          <div class="contact-row"><strong>Locație</strong><span>Strada Libertății, 107592 Ploiești</span></div>
+          <div class="contact-row" style="border-bottom:none;"><strong>Status</strong><span>Programare online activă</span></div>
         </div>
       </div>
     </section>
@@ -979,25 +473,23 @@
 
   <footer>
     <div class="container footer-row">
-      <div>© 2026 Prestige Finish. Toate drepturile rezervate.</div>
-      <div>Curat. Corect. Profesional.</div>
+      <div>© 2026 Prestige Finish Private Care. Toate drepturile rezervate.</div>
+      <div>Persoane fizice • Ploiești</div>
     </div>
   </footer>
 
-  <a href="https://wa.me/40757352371?text=Buna!%20Vreau%20mai%20multe%20informatii%20despre%20serviciile%20pentru%20persoane%20fizice." class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+  <a href="https://wa.me/40757352371?text=Buna!%20Vreau%20informatii%20despre%20serviciile%20pentru%20persoane%20fizice." class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-    Scrie-ne pe WhatsApp
+    Programează acum
   </a>
 
   <script>
     function toggleMenu() {
       document.getElementById('mobileMenu').classList.toggle('active');
     }
-
     function closeMenu() {
       document.getElementById('mobileMenu').classList.remove('active');
     }
-
     document.addEventListener('click', function(event) {
       const menu = document.getElementById('mobileMenu');
       const toggle = document.querySelector('.menu-toggle');
@@ -1008,14 +500,12 @@
         menu.classList.remove('active');
       }
     });
-
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.12 });
-
     fadeEls.forEach(el => observer.observe(el));
   </script>
 </body>
