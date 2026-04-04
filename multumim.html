@@ -4,24 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prestige Finish | Mulțumim</title>
-  <link rel="icon" type="image/jpeg" href="logo.jpeg" />
-  <meta name="description" content="Mulțumim pentru solicitare. Prestige Finish a primit mesajul tău și va reveni cât mai curând cu răspunsul potrivit." />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <meta name="description" content="Mulțumim pentru solicitare. Revenim către tine cât mai curând." />
 
   <style>
     :root{
       --bg:#050505;
       --card:rgba(255,255,255,0.04);
       --gold:#d4af37;
-      --gold-2:#f0d266;
       --gold-soft:rgba(212,175,55,0.12);
+      --text:#f5f2ea;
+      --muted:#c5bea9;
       --line:rgba(212,175,55,0.18);
       --line-strong:rgba(212,175,55,0.34);
-      --text:#f5f2ea;
-      --muted:#c8c1ae;
-      --green:#25D366;
       --shadow:0 20px 60px rgba(0,0,0,0.45);
-      --shadow-soft:0 10px 30px rgba(0,0,0,0.25);
-      --glow:0 0 16px rgba(212,175,55,0.16);
+      --green:#25D366;
+      --success:#7dffbf;
     }
 
     *{box-sizing:border-box}
@@ -29,22 +27,23 @@
 
     body{
       margin:0;
+      min-height:100vh;
       font-family:Arial,Helvetica,sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at top right, rgba(212,175,55,0.14), transparent 24%),
-        radial-gradient(circle at bottom left, rgba(212,175,55,0.08), transparent 20%),
+        radial-gradient(circle at top right, rgba(212,175,55,0.15), transparent 24%),
+        radial-gradient(circle at bottom left, rgba(212,175,55,0.10), transparent 20%),
         var(--bg);
-      line-height:1.6;
       overflow-x:hidden;
+      display:flex;
+      flex-direction:column;
     }
 
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
-    button{font:inherit}
 
     .container{
-      width:min(1200px, calc(100% - 32px));
+      width:min(1100px, calc(100% - 32px));
       margin:0 auto;
     }
 
@@ -52,7 +51,7 @@
       position:sticky;
       top:0;
       z-index:1000;
-      background:rgba(5,5,5,0.92);
+      background:rgba(5,5,5,0.88);
       backdrop-filter:blur(14px);
       border-bottom:1px solid var(--line);
     }
@@ -62,106 +61,37 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:18px;
+      gap:16px;
       padding:16px 0;
     }
 
     .brand{
       display:flex;
       align-items:center;
-      gap:14px;
+      gap:12px;
       min-width:0;
-      flex:1;
-      overflow:hidden;
     }
 
     .brand-logo{
-      height:64px;
+      height:54px;
       width:auto;
-      border-radius:14px;
+      border-radius:10px;
       object-fit:contain;
       flex-shrink:0;
-      filter:drop-shadow(0 0 10px rgba(212,175,55,0.22));
     }
 
     .brand-name{
       color:var(--gold);
-      font-size:24px;
+      font-size:22px;
       font-weight:700;
-      letter-spacing:.4px;
+      letter-spacing:0.4px;
       white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      min-width:0;
     }
 
     .nav-right{
       display:flex;
       align-items:center;
-      gap:14px;
-      flex-shrink:0;
-    }
-
-    .top-socials{
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-
-    .top-social{
-      width:44px;
-      height:44px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,0.03);
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      box-shadow:var(--shadow-soft);
-      transition:.2s ease;
-      flex-shrink:0;
-    }
-
-    .top-social:hover{
-      transform:translateY(-2px);
-      background:rgba(212,175,55,0.08);
-      border-color:var(--line-strong);
-    }
-
-    .top-social svg{
-      width:18px;
-      height:18px;
-      fill:var(--gold);
-    }
-
-    .top-social.whatsapp-top{
-      background:linear-gradient(135deg, var(--gold), var(--gold-2));
-      border-color:transparent;
-      box-shadow:0 0 18px rgba(212,175,55,.18);
-    }
-
-    .top-social.whatsapp-top svg{
-      fill:#0a0a0a;
-    }
-
-    .menu-toggle{
-      display:none;
-      width:54px;
-      height:54px;
-      border-radius:18px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,0.03);
-      color:var(--gold);
-      align-items:center;
-      justify-content:center;
-      cursor:pointer;
-      flex-shrink:0;
-    }
-
-    .menu-toggle svg{
-      width:26px;
-      height:26px;
-      stroke:var(--gold);
+      gap:16px;
     }
 
     .nav-links{
@@ -176,7 +106,6 @@
 
     .nav-links a{
       transition:.2s ease;
-      position:relative;
     }
 
     .nav-links a:hover{
@@ -184,220 +113,243 @@
     }
 
     .nav-cta{
-      padding:11px 18px;
+      padding:10px 16px;
       border-radius:999px;
-      border:1px solid transparent;
-      color:#0a0a0a;
-      background:linear-gradient(135deg, var(--gold), var(--gold-2));
+      border:1px solid var(--line);
+      color:var(--gold);
+      background:rgba(212,175,55,0.06);
       font-weight:700;
-      box-shadow:0 0 18px rgba(212,175,55,.18);
     }
 
-    .hero{
-      position:relative;
-      overflow:hidden;
-      padding:110px 0 70px;
-      min-height:calc(100vh - 90px);
+    .top-socials{
       display:flex;
       align-items:center;
+      gap:10px;
     }
 
-    .hero::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(90deg, rgba(5,5,5,.96) 0%, rgba(5,5,5,.88) 40%, rgba(5,5,5,.64) 68%, rgba(5,5,5,.84) 100%);
-      pointer-events:none;
-    }
-
-    .hero-bg{
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(rgba(0,0,0,.18), rgba(0,0,0,.18)),
-        url('logo.jpeg') center/contain no-repeat,
-        radial-gradient(circle at center, rgba(212,175,55,.12), transparent 34%);
-      opacity:.08;
-    }
-
-    .hero-wrap{
-      position:relative;
-      z-index:2;
-      width:100%;
-    }
-
-    .thankyou-card{
-      max-width:860px;
-      margin:0 auto;
-      border:1px solid var(--line);
-      background:
-        radial-gradient(circle at top right, rgba(212,175,55,.08), transparent 30%),
-        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.025));
-      border-radius:32px;
-      padding:34px 28px;
-      box-shadow:var(--shadow);
-      text-align:center;
-    }
-
-    .check-wrap{
-      width:88px;
-      height:88px;
-      margin:0 auto 22px;
+    .top-social{
+      width:42px;
+      height:42px;
       border-radius:999px;
-      display:flex;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.03);
+      display:inline-flex;
       align-items:center;
       justify-content:center;
-      background:rgba(212,175,55,.12);
-      border:1px solid var(--line);
-      box-shadow:var(--glow);
+      box-shadow:0 10px 30px rgba(0,0,0,0.25);
+      transition:.2s ease;
     }
 
-    .check-wrap svg{
-      width:40px;
-      height:40px;
+    .top-social:hover{
+      transform:translateY(-2px);
+      background:rgba(212,175,55,0.08);
+      border-color:var(--line-strong);
+    }
+
+    .top-social svg{
+      width:18px;
+      height:18px;
       fill:var(--gold);
     }
 
-    .eyebrow{
+    .menu-toggle{
+      display:none;
+      width:54px;
+      height:54px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.03);
+      color:var(--gold);
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+    }
+
+    .menu-toggle svg{
+      width:26px;
+      height:26px;
+      stroke:var(--gold);
+    }
+
+    .page-wrap{
+      flex:1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:48px 0 64px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .page-wrap::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.12)),
+        url('logo.png') center/contain no-repeat,
+        radial-gradient(circle at center, rgba(212,175,55,0.10), transparent 35%);
+      opacity:.07;
+      pointer-events:none;
+    }
+
+    .thankyou-card{
+      position:relative;
+      z-index:2;
+      width:min(860px, 100%);
+      border:1px solid var(--line);
+      background:
+        radial-gradient(circle at top right, rgba(212,175,55,0.08), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border-radius:32px;
+      padding:42px 28px;
+      text-align:center;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .badge{
       display:inline-flex;
       align-items:center;
       gap:8px;
-      padding:8px 14px;
-      border:1px solid var(--line);
+      padding:10px 16px;
       border-radius:999px;
+      background:var(--gold-soft);
+      border:1px solid var(--line);
       color:var(--gold);
-      background:rgba(212,175,55,.07);
-      font-size:12px;
-      letter-spacing:1.5px;
-      text-transform:uppercase;
-      margin-bottom:18px;
-      box-shadow:var(--glow);
+      font-size:13px;
+      font-weight:700;
+      margin-bottom:20px;
+    }
+
+    .success-ring{
+      width:94px;
+      height:94px;
+      border-radius:999px;
+      margin:0 auto 20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(0,255,150,0.25);
+      box-shadow:0 0 0 10px rgba(0,255,150,0.04);
+      animation:pulse 2s infinite;
+    }
+
+    .success-ring svg{
+      width:44px;
+      height:44px;
+      fill:var(--success);
+    }
+
+    @keyframes pulse{
+      0%{box-shadow:0 0 0 0 rgba(0,255,150,0.12)}
+      70%{box-shadow:0 0 0 18px rgba(0,255,150,0)}
+      100%{box-shadow:0 0 0 0 rgba(0,255,150,0)}
     }
 
     h1{
-      margin:0 0 14px;
-      font-size:clamp(38px,6vw,64px);
+      margin:0 0 12px;
+      font-size:clamp(34px, 6vw, 60px);
       line-height:1.02;
-      letter-spacing:-1px;
+      color:var(--text);
     }
 
     .lead{
-      max-width:700px;
-      margin:0 auto 14px;
+      max-width:680px;
+      margin:0 auto 26px;
       color:var(--muted);
       font-size:18px;
     }
 
-    .sublead{
-      max-width:720px;
-      margin:0 auto 28px;
-      color:var(--muted);
-      font-size:16px;
+    .highlight{
+      color:var(--gold);
+      font-weight:700;
     }
 
-    .hero-actions{
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:18px;
+      margin:28px 0 30px;
+      text-align:left;
+    }
+
+    .info-card{
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:rgba(255,255,255,0.025);
+      padding:18px;
+    }
+
+    .info-card strong{
+      display:block;
+      color:var(--gold);
+      margin-bottom:6px;
+      font-size:15px;
+    }
+
+    .info-card span{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .actions{
       display:flex;
+      justify-content:center;
       gap:14px;
       flex-wrap:wrap;
-      justify-content:center;
-      margin-bottom:26px;
+      margin-top:8px;
     }
 
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-height:56px;
+      min-height:54px;
       padding:0 24px;
       border-radius:999px;
       border:1px solid transparent;
       font-weight:700;
       text-align:center;
       cursor:pointer;
-      box-shadow:var(--shadow-soft);
       transition:.2s ease;
+      box-shadow:0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--gold), #f0d266);
       color:#0a0a0a;
-      background:linear-gradient(135deg, var(--gold), var(--gold-2));
     }
 
-    .btn:hover{transform:translateY(-2px)}
-
-    .mini-grid{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:18px;
-      margin-top:12px;
-      text-align:left;
-    }
-
-    .mini-card{
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      border-radius:24px;
-      padding:20px;
-      box-shadow:var(--shadow-soft);
-    }
-
-    .mini-card h3{
-      margin:0 0 10px;
-      color:var(--gold);
-      font-size:20px;
-    }
-
-    .mini-card p{
-      margin:0;
-      color:var(--muted);
-      font-size:15px;
-    }
-
-    .next-steps{
-      margin-top:28px;
-      padding:18px 20px;
-      border:1px solid rgba(212,175,55,.16);
-      border-radius:22px;
-      background:rgba(212,175,55,.05);
-      text-align:left;
-    }
-
-    .next-steps h3{
-      margin:0 0 10px;
-      color:var(--gold);
-      font-size:22px;
-    }
-
-    .next-steps ul{
-      list-style:none;
-      padding:0;
-      margin:0;
-      display:grid;
-      gap:10px;
-    }
-
-    .next-steps li{
-      position:relative;
-      padding-left:22px;
+    .btn-secondary{
+      background:transparent;
+      border-color:var(--line);
       color:var(--text);
     }
 
-    .next-steps li::before{
-      content:"•";
-      position:absolute;
-      left:0;
-      top:0;
+    .note{
+      margin-top:22px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .mini-links{
+      display:flex;
+      justify-content:center;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-top:16px;
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    .mini-links a:hover{
       color:var(--gold);
-      font-size:18px;
-      line-height:1.2;
-    }
-
-    .fade-in{
-      opacity:0;
-      transform:translateY(28px);
-      transition:opacity .7s ease, transform .7s ease;
-    }
-
-    .fade-in.visible{
-      opacity:1;
-      transform:translateY(0);
     }
 
     footer{
@@ -433,34 +385,36 @@
       transition:.2s ease;
     }
 
-    .whatsapp-btn:hover{transform:scale(1.04)}
+    .whatsapp-btn:hover{
+      transform:scale(1.04);
+    }
 
     .whatsapp-btn img{
       width:22px;
       height:22px;
     }
 
+    .confetti{
+      position:fixed;
+      top:-10px;
+      width:10px;
+      height:18px;
+      opacity:.95;
+      pointer-events:none;
+      z-index:99999;
+      animation:fall linear forwards;
+    }
+
+    @keyframes fall{
+      to{
+        transform:translateY(110vh) rotate(540deg);
+        opacity:.15;
+      }
+    }
+
     @media (max-width:980px){
-      .top-socials{
-        display:none;
-      }
-
-      .menu-toggle{
-        display:inline-flex;
-      }
-
-      .brand{
-        flex:1;
-        min-width:0;
-      }
-
-      .brand-logo{
-        height:54px;
-      }
-
-      .brand-name{
-        font-size:20px;
-      }
+      .top-socials{display:none}
+      .menu-toggle{display:inline-flex}
 
       .nav-links{
         position:absolute;
@@ -477,9 +431,7 @@
         border-radius:20px;
       }
 
-      .nav-links.active{
-        display:flex;
-      }
+      .nav-links.active{display:flex}
 
       .nav-links a{
         padding:14px 16px;
@@ -488,25 +440,28 @@
         border:1px solid rgba(255,255,255,0.04);
       }
 
-      .mini-grid{
+      .info-grid{
         grid-template-columns:1fr;
       }
 
-      h1{
-        font-size:44px;
-      }
+      .brand-logo{height:44px}
+      .brand-name{font-size:20px}
     }
 
     @media (max-width:640px){
-      .hero{
-        padding:78px 0 50px;
+      .page-wrap{
+        padding:34px 0 54px;
       }
 
-      .hero-actions{
+      .thankyou-card{
+        padding:34px 18px;
+      }
+
+      .actions{
         flex-direction:column;
       }
 
-      .hero-actions .btn{
+      .actions .btn{
         width:100%;
       }
 
@@ -516,18 +471,6 @@
         bottom:16px;
         justify-content:center;
       }
-
-      .brand-name{
-        font-size:18px;
-      }
-
-      .brand-logo{
-        height:48px;
-      }
-
-      .thankyou-card{
-        padding:28px 20px;
-      }
     }
   </style>
 </head>
@@ -535,109 +478,95 @@
   <header class="topbar">
     <div class="container nav">
       <a href="index.html" class="brand">
-        <img src="logo.jpeg" alt="Prestige Finish Logo" class="brand-logo">
+        <img src="logo.png" alt="Prestige Finish Logo" class="brand-logo">
         <span class="brand-name">Prestige Finish</span>
       </a>
 
       <div class="nav-right">
         <div class="top-socials">
-          <a href="https://www.instagram.com/prestigefinish" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Instagram">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Instagram">
             <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.35 1.55a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z"/></svg>
           </a>
-
-          <a href="https://www.facebook.com/prestigefinish" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Facebook">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Facebook">
             <svg viewBox="0 0 24 24"><path d="M13.5 22v-8.2h2.77l.42-3.22H13.5V8.5c0-.93.26-1.56 1.59-1.56h1.7V4.05c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.04 1.46-4.04 4.15v2.48H7.6v3.22h2.72V22h3.18Z"/></svg>
           </a>
-
-          <a href="https://www.tiktok.com/@prestigefinish" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="TikTok">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="TikTok">
             <svg viewBox="0 0 24 24"><path d="M15.5 2c.2 1.7 1.1 3.1 2.6 4 .9.6 1.9.9 2.9.9v3a8 8 0 0 1-3.9-1v6.1a6.1 6.1 0 1 1-6.1-6.1c.3 0 .7 0 1 .1v3.1a3 3 0 1 0 2 2.9V2h1.5Z"/></svg>
-          </a>
-
-          <a href="https://wa.me/40757352371" target="_blank" rel="noopener noreferrer" class="top-social whatsapp-top" aria-label="WhatsApp">
-            <svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.5 0 .16 5.34.16 11.91c0 2.1.55 4.15 1.6 5.95L0 24l6.32-1.66a11.87 11.87 0 0 0 5.75 1.47h.01c6.57 0 11.91-5.34 11.91-11.91 0-3.18-1.24-6.16-3.47-8.42Zm-8.45 18.3h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.75.98 1-3.65-.24-.38a9.87 9.87 0 0 1-1.52-5.23C2.17 6.42 6.58 2 12.08 2c2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.9 7c0 5.5-4.42 9.9-9.9 9.9Zm5.43-7.42c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.77.97-.95 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.88-.78-1.48-1.74-1.65-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.9-2.19-.24-.58-.48-.5-.66-.51h-.56c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5s1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.1 4.49.71.31 1.27.5 1.7.63.72.23 1.38.2 1.9.12.58-.09 1.76-.72 2-1.41.25-.69.25-1.28.17-1.4-.07-.12-.27-.2-.57-.35Z"/></svg>
           </a>
         </div>
 
         <button class="menu-toggle" onclick="toggleMenu()" aria-label="Deschide meniul">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
-            <path d="M4 7H20M4 12H20M4 17H20"/>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 7H20M4 12H20M4 17H20"/></svg>
         </button>
       </div>
 
       <div class="nav-links" id="mobileMenu">
         <a href="index.html" onclick="closeMenu()">Acasă</a>
         <a href="persoane-fizice.html" onclick="closeMenu()">Persoane fizice</a>
-        <a href="flote.html" onclick="closeMenu()">Firme / spații comerciale</a>
-        <a href="curatenie-renovari.html" onclick="closeMenu()">După renovări</a>
+        <a href="flote.html" onclick="closeMenu()">Persoane juridice / flote</a>
         <a href="programari.html" onclick="closeMenu()">Programare online</a>
         <a href="formular-contact.html" class="nav-cta" onclick="closeMenu()">Formular de contact</a>
       </div>
     </div>
   </header>
 
-  <main class="hero fade-in">
-    <div class="hero-bg"></div>
-    <div class="container hero-wrap">
+  <div class="page-wrap">
+    <div class="container">
       <div class="thankyou-card">
-        <div class="check-wrap">
-          <svg viewBox="0 0 24 24">
-            <path d="M9.55 18.2 4.8 13.45l1.4-1.4 3.35 3.35 8.25-8.25 1.4 1.4Z"/>
-          </svg>
+        <div class="badge">Solicitare trimisă cu succes</div>
+
+        <div class="success-ring">
+          <svg viewBox="0 0 24 24"><path d="M9.55 18.2 4.8 13.45l1.4-1.4 3.35 3.35 8.25-8.25 1.4 1.4Z"/></svg>
         </div>
 
-        <div class="eyebrow">Solicitare trimisă</div>
-        <h1>Mulțumim! Am primit mesajul tău.</h1>
+        <h1>Mulțumim!</h1>
         <p class="lead">
-          Solicitarea ta a fost trimisă cu succes către Prestige Finish.
-        </p>
-        <p class="sublead">
-          Revenim cât mai curând cu răspunsul potrivit, în funcție de detaliile transmise. Dacă este o solicitare urgentă, ne poți contacta și direct prin WhatsApp sau telefonic.
+          Solicitarea ta a fost trimisă cu succes către <span class="highlight">Prestige Finish</span>.
+          Revenim către tine cât mai curând, cu un răspuns, o recomandare sau detaliile necesare.
         </p>
 
-        <div class="hero-actions">
-          <a href="index.html" class="btn">Înapoi la acasă</a>
-          <a href="programari.html" class="btn">Programare online</a>
-          <a href="https://wa.me/40757352371?text=Buna!%20Am%20trimis%20formularul%20si%20vreau%20sa%20revin%20cu%20detalii." class="btn" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-        </div>
-
-        <div class="mini-grid">
-          <div class="mini-card">
-            <h3>Programare directă</h3>
-            <p>Dacă știi deja ce serviciu vrei, poți merge direct în pagina de programare online.</p>
+        <div class="info-grid">
+          <div class="info-card">
+            <strong>Ce urmează</strong>
+            <span>Verificăm mesajul și revenim cât mai rapid posibil.</span>
           </div>
-
-          <div class="mini-card">
-            <h3>Solicitare după renovări</h3>
-            <p>Dacă ai nevoie de un spațiu pregătit după lucrări sau înainte de mutare, vezi pagina dedicată.</p>
+          <div class="info-card">
+            <strong>Ai nevoie urgent?</strong>
+            <span>Ne poți suna direct pentru răspuns mai rapid.</span>
           </div>
-
-          <div class="mini-card">
-            <h3>Contact rapid</h3>
-            <p>Pentru clarificări rapide sau cereri urgente, ne poți suna la 0757 352 371.</p>
+          <div class="info-card">
+            <strong>Vrei să rezervi direct?</strong>
+            <span>Poți merge imediat în pagina de programare online.</span>
           </div>
         </div>
 
-        <div class="next-steps">
-          <h3>Ce poți face acum</h3>
-          <ul>
-            <li>Revii pe pagina principală și alegi serviciul care te interesează.</li>
-            <li>Intri direct în programarea online dacă ai deja o cerere clară.</li>
-            <li>Ne scrii pe WhatsApp dacă vrei să adaugi detalii suplimentare la solicitare.</li>
-          </ul>
+        <div class="actions">
+          <a href="index.html" class="btn btn-primary">Înapoi la site</a>
+          <a href="programari.html" class="btn btn-secondary">Programare online</a>
+          <a href="tel:+40757352371" class="btn btn-secondary">Sună acum</a>
+        </div>
+
+        <div class="mini-links">
+          <a href="persoane-fizice.html">Servicii persoane fizice</a>
+          <a href="flote.html">Persoane juridice / flote</a>
+          <a href="formular-contact.html">Trimite altă solicitare</a>
+        </div>
+
+        <div class="note">
+          Prestige Finish • Strada Libertății, 107592 Ploiești • 0757 352 371
         </div>
       </div>
     </div>
-  </main>
+  </div>
 
   <footer>
     <div class="container footer-row">
       <div>© 2026 Prestige Finish. Toate drepturile rezervate.</div>
-      <div>Curat. Corect. Profesional.</div>
+      <div>Mulțumim pentru încredere • Ploiești</div>
     </div>
   </footer>
 
-  <a href="https://wa.me/40757352371?text=Buna!%20Am%20trimis%20formularul%20si%20vreau%20sa%20revin%20cu%20detalii." class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+  <a href="https://wa.me/40757352371?text=Buna!%20Am%20trimis%20o%20solicitare%20si%20vreau%20sa%20mai%20adaug%20cateva%20detalii." class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
     Scrie-ne pe WhatsApp
   </a>
@@ -662,14 +591,21 @@
       }
     });
 
-    const fadeEls = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.12 });
+    function burstConfetti() {
+      const colors = ['#d4af37', '#ffffff', '#25D366'];
+      for (let i = 0; i < 42; i++) {
+        const conf = document.createElement('div');
+        conf.className = 'confetti';
+        conf.style.left = Math.random() * 100 + 'vw';
+        conf.style.background = colors[Math.floor(Math.random() * colors.length)];
+        conf.style.animationDuration = (Math.random() * 2 + 2.5) + 's';
+        conf.style.transform = `translateY(0) rotate(${Math.random() * 180}deg)`;
+        document.body.appendChild(conf);
+        setTimeout(() => conf.remove(), 5000);
+      }
+    }
 
-    fadeEls.forEach(el => observer.observe(el));
+    window.addEventListener('load', burstConfetti);
   </script>
 </body>
 </html>
