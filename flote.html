@@ -5,486 +5,644 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prestige Finish Corporate Care | Persoane juridice / flote</title>
   <link rel="icon" type="image/png" href="logo.png" />
-  <meta name="description" content="Prestige Finish Corporate Care - servicii premium pentru persoane juridice și flote: detailing interior, întreținere recurentă, intervenții mobile la sediul firmei și soluții corporate." />
+  <meta name="description" content="Prestige Finish Corporate Care - servicii premium pentru persoane juridice și flote: detailing interior, întreținere recurentă, intervenții mobile și soluții corporate." />
 
   <style>
-    :root {
-      --bg: #050505;
-      --card: rgba(255,255,255,0.04);
-      --gold: #d4af37;
-      --text: #f5f2ea;
-      --muted: #c5bea9;
-      --line: rgba(212,175,55,0.18);
-      --shadow: 0 20px 60px rgba(0,0,0,0.45);
-      --green: #25D366;
+    :root{
+      --bg:#050505;
+      --card:rgba(255,255,255,0.04);
+      --card-strong:rgba(255,255,255,0.06);
+      --gold:#d4af37;
+      --gold-soft:rgba(212,175,55,0.12);
+      --text:#f5f2ea;
+      --muted:#c5bea9;
+      --line:rgba(212,175,55,0.18);
+      --line-strong:rgba(212,175,55,0.34);
+      --green:#25D366;
+      --shadow:0 20px 60px rgba(0,0,0,0.45);
+      --shadow-soft:0 10px 30px rgba(0,0,0,0.25);
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
       background:
         radial-gradient(circle at top right, rgba(212,175,55,0.16), transparent 24%),
         radial-gradient(circle at bottom left, rgba(212,175,55,0.10), transparent 20%),
         var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
+      color:var(--text);
+      line-height:1.6;
+      overflow-x:hidden;
     }
 
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    button{font:inherit}
 
-    .container { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(5,5,5,0.88);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--line);
+    .container{
+      width:min(1180px,calc(100% - 32px));
+      margin:0 auto;
     }
 
-    .nav {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 16px 0;
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(5,5,5,0.88);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
     }
 
-    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
-    .brand-logo {
-      height: 54px;
-      width: auto;
-      border-radius: 10px;
-      object-fit: contain;
-      flex-shrink: 0;
-    }
-    .brand-name {
-      color: var(--gold);
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: 0.4px;
-      white-space: nowrap;
+    .nav{
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:16px 0;
     }
 
-    .nav-right { display: flex; align-items: center; gap: 16px; }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      color: var(--muted);
-      font-size: 14px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
     }
 
-    .nav-links a:hover { color: var(--text); }
-
-    .top-socials {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .brand-logo{
+      height:54px;
+      width:auto;
+      border-radius:10px;
+      object-fit:contain;
+      flex-shrink:0;
     }
 
-    .top-social {
-      width: 42px;
-      height: 42px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.03);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: var(--shadow);
+    .brand-name{
+      color:var(--gold);
+      font-size:22px;
+      font-weight:700;
+      letter-spacing:0.4px;
+      white-space:nowrap;
     }
 
-    .top-social svg {
-      width: 18px;
-      height: 18px;
-      fill: var(--gold);
+    .nav-right{
+      display:flex;
+      align-items:center;
+      gap:16px;
     }
 
-    .menu-toggle {
-      display: none;
-      width: 54px;
-      height: 54px;
-      border-radius: 18px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.03);
-      color: var(--gold);
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      color:var(--muted);
+      font-size:14px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
     }
 
-    .menu-toggle svg {
-      width: 26px;
-      height: 26px;
-      stroke: var(--gold);
+    .nav-links a{
+      transition:.2s ease;
     }
 
-    .nav-cta {
-      padding: 10px 16px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      color: var(--gold);
-      background: rgba(212,175,55,0.06);
-      font-weight: 700;
+    .nav-links a:hover{
+      color:var(--text);
     }
 
-    .hero {
-      padding: 88px 0 56px;
-      position: relative;
-      overflow: hidden;
+    .nav-cta{
+      padding:10px 16px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      color:var(--gold);
+      background:rgba(212,175,55,0.06);
+      font-weight:700;
     }
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(5,5,5,0.96) 0%, rgba(5,5,5,0.88) 40%, rgba(5,5,5,0.62) 68%, rgba(5,5,5,0.84) 100%);
-      pointer-events: none;
+    .top-socials{
+      display:flex;
+      align-items:center;
+      gap:10px;
     }
 
-    .hero-bg {
-      position: absolute;
-      inset: 0;
+    .top-social{
+      width:42px;
+      height:42px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.03);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:var(--shadow-soft);
+      transition:.2s ease;
+    }
+
+    .top-social:hover{
+      transform:translateY(-2px);
+      background:rgba(212,175,55,0.08);
+      border-color:var(--line-strong);
+    }
+
+    .top-social svg{
+      width:18px;
+      height:18px;
+      fill:var(--gold);
+    }
+
+    .menu-toggle{
+      display:none;
+      width:54px;
+      height:54px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.03);
+      color:var(--gold);
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+    }
+
+    .menu-toggle svg{
+      width:26px;
+      height:26px;
+      stroke:var(--gold);
+    }
+
+    .hero{
+      padding:92px 0 56px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(90deg, rgba(5,5,5,0.96) 0%, rgba(5,5,5,0.88) 40%, rgba(5,5,5,0.64) 68%, rgba(5,5,5,0.84) 100%);
+      pointer-events:none;
+    }
+
+    .hero-bg{
+      position:absolute;
+      inset:0;
       background:
-        linear-gradient(rgba(0,0,0,0.22), rgba(0,0,0,0.22)),
+        linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)),
         url('logo.png') center/contain no-repeat,
         radial-gradient(circle at center, rgba(212,175,55,0.10), transparent 35%);
-      opacity: 0.10;
+      opacity:.09;
     }
 
-    .hero-grid {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 34px;
-      align-items: start;
+    .hero-grid{
+      position:relative;
+      z-index:2;
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:34px;
+      align-items:start;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--gold);
-      background: rgba(212,175,55,0.07);
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 18px;
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 14px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:var(--gold);
+      background:rgba(212,175,55,0.07);
+      font-size:12px;
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+      margin-bottom:18px;
     }
 
-    h1 {
-      margin: 0 0 16px;
-      font-size: clamp(42px, 7vw, 78px);
-      line-height: 0.98;
-      letter-spacing: -1px;
-      max-width: 780px;
+    h1{
+      margin:0 0 16px;
+      font-size:clamp(40px,7vw,78px);
+      line-height:.98;
+      letter-spacing:-1px;
+      max-width:780px;
     }
 
-    .hero p {
-      color: var(--muted);
-      font-size: 18px;
-      max-width: 760px;
-      margin: 0 0 28px;
+    .hero p{
+      color:var(--muted);
+      font-size:18px;
+      max-width:760px;
+      margin:0 0 28px;
     }
 
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom:18px;
     }
 
-    .hero-note {
-      color: var(--gold);
-      font-size: 15px;
-      margin: 0 0 28px;
+    .hero-note{
+      color:var(--gold);
+      font-size:15px;
+      margin:0 0 24px;
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 54px;
-      padding: 0 24px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      font-weight: 700;
-      text-align: center;
-      cursor: pointer;
-      box-shadow: var(--shadow);
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:54px;
+      padding:0 24px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-weight:700;
+      text-align:center;
+      cursor:pointer;
+      box-shadow:var(--shadow-soft);
+      transition:.2s ease;
     }
 
-    .btn-primary {
-      background: linear-gradient(135deg, var(--gold), #f0d266);
-      color: #0a0a0a;
+    .btn:hover{
+      transform:translateY(-2px);
     }
 
-    .btn-secondary {
-      background: transparent;
-      border-color: var(--line);
-      color: var(--text);
+    .btn-primary{
+      background:linear-gradient(135deg,var(--gold),#f0d266);
+      color:#0a0a0a;
     }
 
-    .hero-points, .grid-2, .grid-3, .review-grid, .process-grid {
-      display: grid;
-      gap: 20px;
+    .btn-secondary{
+      background:transparent;
+      border-color:var(--line);
+      color:var(--text);
     }
 
-    .hero-points {
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      max-width: 860px;
+    .hero-points,
+    .grid-2,
+    .grid-3,
+    .review-grid,
+    .faq-grid,
+    .contact-wrap,
+    .process-grid{
+      display:grid;
+      gap:20px;
     }
 
-    .grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
-    .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
-    .review-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
-    .process-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
-
-    .mini-card, .card, .review-card, .booking-card, .step {
-      border: 1px solid var(--line);
-      background: var(--card);
-      border-radius: 24px;
-      padding: 22px;
-      box-shadow: var(--shadow);
+    .hero-points{
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      max-width:900px;
     }
 
-    .mini-card strong {
-      display: block;
-      color: var(--gold);
-      margin-bottom: 6px;
-      font-size: 14px;
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .review-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .faq-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .contact-wrap{grid-template-columns:1.05fr .95fr}
+    .process-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+
+    .mini-card,
+    .card,
+    .review-card,
+    .hero-panel,
+    .info-box,
+    .faq-card,
+    .step{
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.02));
+      border-radius:26px;
+      padding:22px;
+      box-shadow:var(--shadow);
     }
 
-    .mini-card span, .card p, .section-text, .review-card p, .contact-row span, .booking-card p, .step-text {
-      color: var(--muted);
+    .hero-panel{
+      background:
+        radial-gradient(circle at top right, rgba(212,175,55,0.08), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.025));
+      padding:26px;
     }
 
-    .hero-panel {
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(212,175,55,0.10), rgba(255,255,255,0.03));
-      border-radius: 30px;
-      padding: 26px;
-      box-shadow: var(--shadow);
-      margin-top: 6px;
+    .hero-panel img{
+      width:100%;
+      max-width:300px;
+      margin:0 auto 18px;
+      border-radius:24px;
+      border:1px solid var(--line);
+      background:#000;
     }
 
-    .hero-panel img {
-      width: 100%;
-      max-width: 300px;
-      margin: 0 auto 18px;
-      border-radius: 24px;
-      border: 1px solid var(--line);
-      background: #000;
+    .status{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:var(--gold);
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:8px 12px;
+      background:rgba(212,175,55,0.06);
+      font-size:13px;
+      margin-bottom:14px;
     }
 
-    .status {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--gold);
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 8px 12px;
-      background: rgba(212,175,55,0.06);
-      font-size: 13px;
-      margin-bottom: 14px;
+    .status-dot{
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background:var(--gold);
+      box-shadow:0 0 12px rgba(212,175,55,0.7);
     }
 
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--gold);
-      box-shadow: 0 0 12px rgba(212,175,55,0.7);
+    .mini-card strong{
+      display:block;
+      color:var(--gold);
+      margin-bottom:6px;
+      font-size:14px;
     }
 
-    section { padding: 78px 0; }
-    .section-title { font-size: clamp(30px, 4vw, 48px); margin: 0 0 12px; }
-    .section-text { max-width: 760px; margin: 0 0 28px; font-size: 17px; }
-    .tag {
-      display: inline-flex;
-      margin-bottom: 14px;
-      color: var(--gold);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1.4px;
+    .mini-card span,
+    .card p,
+    .review-card p,
+    .faq-card p,
+    .section-text,
+    .contact-row span,
+    .tiny,
+    .step p{
+      color:var(--muted);
     }
 
-    .card h3, .review-card h3, .booking-card h3, .step h3 {
-      margin: 0 0 10px;
-      font-size: 22px;
-      color: var(--gold);
+    section{
+      padding:78px 0;
     }
 
-    .coming {
-      background: linear-gradient(180deg, rgba(212,175,55,0.08), rgba(255,255,255,0.02));
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+    .section-title{
+      font-size:clamp(30px,4vw,48px);
+      margin:0 0 12px;
     }
 
-    .stars {
-      color: var(--gold);
-      font-size: 18px;
-      margin-bottom: 10px;
-      letter-spacing: 2px;
+    .section-text{
+      max-width:760px;
+      margin:0 0 28px;
+      font-size:17px;
     }
 
-    .review-name {
-      margin-top: 14px;
-      font-weight: 700;
-      color: var(--text);
+    .tag{
+      display:inline-flex;
+      margin-bottom:14px;
+      color:var(--gold);
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:1.4px;
     }
 
-    .booking-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
+    .card h3,
+    .review-card h3,
+    .faq-card h3,
+    .info-box h3,
+    .step h3{
+      margin:0 0 10px;
+      font-size:22px;
+      color:var(--gold);
     }
 
-    .booking-points {
-      display: grid;
-      gap: 12px;
-      margin: 18px 0 24px;
+    .coming{
+      background:linear-gradient(180deg, rgba(212,175,55,0.08), rgba(255,255,255,0.02));
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
     }
 
-    .booking-point { color: var(--muted); }
-    .booking-point strong { color: var(--text); }
-
-    .step-number {
-      width: 42px;
-      height: 42px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 999px;
-      background: rgba(212,175,55,0.12);
-      border: 1px solid var(--line);
-      color: var(--gold);
-      font-weight: 700;
-      margin-bottom: 14px;
+    .stars{
+      color:var(--gold);
+      font-size:18px;
+      margin-bottom:10px;
+      letter-spacing:2px;
     }
 
-    .contact-wrap {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 24px;
+    .review-name{
+      margin-top:14px;
+      font-weight:700;
+      color:var(--text);
     }
 
-    .contact-row {
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+    .quick-points{
+      display:grid;
+      gap:12px;
+      margin-top:16px;
     }
 
-    .contact-row strong {
-      display: block;
-      color: var(--text);
-      margin-bottom: 4px;
+    .quick-point{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
     }
 
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 28px 0 40px;
-      color: var(--muted);
-      font-size: 14px;
+    .quick-dot{
+      width:10px;
+      height:10px;
+      margin-top:7px;
+      border-radius:999px;
+      background:var(--gold);
+      flex-shrink:0;
+      box-shadow:0 0 10px rgba(212,175,55,0.5);
     }
 
-    .footer-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
+    .step-number{
+      width:42px;
+      height:42px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:999px;
+      background:rgba(212,175,55,0.12);
+      border:1px solid var(--line);
+      color:var(--gold);
+      font-weight:700;
+      margin-bottom:14px;
     }
 
-    .whatsapp-btn {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: var(--green);
-      color: white;
-      padding: 14px 22px;
-      font-size: 15px;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      border-radius: 30px;
-      text-decoration: none;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
-      z-index: 9999;
+    .contact-row{
+      padding:14px 0;
+      border-bottom:1px solid rgba(255,255,255,0.08);
     }
 
-    .whatsapp-btn img {
-      width: 22px;
-      height: 22px;
+    .contact-row strong{
+      display:block;
+      color:var(--text);
+      margin-bottom:4px;
     }
 
-    .fade-in {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
+    .faq-list{
+      display:grid;
+      gap:14px;
+      margin-top:18px;
     }
 
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .faq-item{
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:rgba(255,255,255,0.025);
+      overflow:hidden;
     }
 
-    @media (max-width: 980px) {
-      .top-socials { display: none; }
-      .menu-toggle { display: inline-flex; }
+    .faq-q{
+      width:100%;
+      background:none;
+      border:none;
+      color:var(--text);
+      text-align:left;
+      padding:18px 18px;
+      font-weight:700;
+      cursor:pointer;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+    }
 
-      .nav-links {
-        position: absolute;
-        top: calc(100% + 10px);
-        right: 0;
-        left: 0;
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
-        padding: 18px;
-        background: rgba(5,5,5,0.98);
-        border: 1px solid var(--line);
-        border-radius: 20px;
+    .faq-q span:last-child{
+      color:var(--gold);
+      font-size:20px;
+      transition:.2s ease;
+    }
+
+    .faq-item.active .faq-q span:last-child{
+      transform:rotate(45deg);
+    }
+
+    .faq-a{
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .3s ease;
+      padding:0 18px;
+      color:var(--muted);
+    }
+
+    .faq-item.active .faq-a{
+      max-height:180px;
+      padding:0 18px 18px;
+    }
+
+    .fade-in{
+      opacity:0;
+      transform:translateY(28px);
+      transition:opacity .7s ease, transform .7s ease;
+    }
+
+    .fade-in.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    footer{
+      border-top:1px solid var(--line);
+      padding:28px 0 40px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .footer-row{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .whatsapp-btn{
+      position:fixed;
+      bottom:25px;
+      right:25px;
+      background:var(--green);
+      color:white;
+      padding:14px 22px;
+      font-size:15px;
+      font-weight:bold;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      border-radius:30px;
+      text-decoration:none;
+      box-shadow:0 8px 20px rgba(0,0,0,0.35);
+      z-index:9999;
+      transition:.2s ease;
+    }
+
+    .whatsapp-btn:hover{
+      transform:scale(1.04);
+    }
+
+    .whatsapp-btn img{
+      width:22px;
+      height:22px;
+    }
+
+    @media (max-width:1100px){
+      .review-grid,
+      .grid-3,
+      .process-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+    }
+
+    @media (max-width:980px){
+      .top-socials{display:none}
+      .menu-toggle{display:inline-flex}
+
+      .nav-links{
+        position:absolute;
+        top:calc(100% + 10px);
+        right:0;
+        left:0;
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+        gap:10px;
+        padding:18px;
+        background:rgba(5,5,5,0.98);
+        border:1px solid var(--line);
+        border-radius:20px;
       }
 
-      .nav-links.active { display: flex; }
+      .nav-links.active{display:flex}
 
-      .nav-links a {
-        padding: 14px 16px;
-        border-radius: 14px;
-        background: rgba(255,255,255,0.03);
-        border: 1px solid rgba(255,255,255,0.04);
+      .nav-links a{
+        padding:14px 16px;
+        border-radius:14px;
+        background:rgba(255,255,255,0.03);
+        border:1px solid rgba(255,255,255,0.04);
       }
 
-      .hero-grid, .grid-2, .grid-3, .hero-points, .review-grid, .process-grid, .booking-grid, .contact-wrap {
-        grid-template-columns: 1fr;
+      .hero-grid,
+      .grid-2,
+      .grid-3,
+      .hero-points,
+      .review-grid,
+      .faq-grid,
+      .contact-wrap,
+      .process-grid{
+        grid-template-columns:1fr;
       }
 
-      h1 { font-size: 48px; }
-      .brand-logo { height: 44px; }
-      .brand-name { font-size: 20px; }
+      h1{font-size:48px}
+      .brand-logo{height:44px}
+      .brand-name{font-size:20px}
     }
 
-    @media (max-width: 640px) {
-      .hero-actions { flex-direction: column; }
-      .hero-actions .btn { width: 100%; }
-      .whatsapp-btn { right: 16px; left: 16px; bottom: 16px; justify-content: center; }
+    @media (max-width:640px){
+      .hero{
+        padding:74px 0 42px;
+      }
+
+      .hero-actions{
+        flex-direction:column;
+      }
+
+      .hero-actions .btn{
+        width:100%;
+      }
+
+      .whatsapp-btn{
+        right:16px;
+        left:16px;
+        bottom:16px;
+        justify-content:center;
+      }
     }
   </style>
 </head>
@@ -498,23 +656,29 @@
 
       <div class="nav-right">
         <div class="top-socials">
-          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.35 1.55a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z"/></svg></a>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8.2h2.77l.42-3.22H13.5V8.5c0-.93.26-1.56 1.59-1.56h1.7V4.05c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.04 1.46-4.04 4.15v2.48H7.6v3.22h2.72V22h3.18Z"/></svg></a>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M15.5 2c.2 1.7 1.1 3.1 2.6 4 .9.6 1.9.9 2.9.9v3a8 8 0 0 1-3.9-1v6.1a6.1 6.1 0 1 1-6.1-6.1c.3 0 .7 0 1 .1v3.1a3 3 0 1 0 2 2.9V2h1.5Z"/></svg></a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.35 1.55a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z"/></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M13.5 22v-8.2h2.77l.42-3.22H13.5V8.5c0-.93.26-1.56 1.59-1.56h1.7V4.05c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.04 1.46-4.04 4.15v2.48H7.6v3.22h2.72V22h3.18Z"/></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="top-social" aria-label="TikTok">
+            <svg viewBox="0 0 24 24"><path d="M15.5 2c.2 1.7 1.1 3.1 2.6 4 .9.6 1.9.9 2.9.9v3a8 8 0 0 1-3.9-1v6.1a6.1 6.1 0 1 1-6.1-6.1c.3 0 .7 0 1 .1v3.1a3 3 0 1 0 2 2.9V2h1.5Z"/></svg>
+          </a>
         </div>
 
         <button class="menu-toggle" onclick="toggleMenu()" aria-label="Deschide meniul">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 7H20M4 12H20M4 17H20" /></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 7H20M4 12H20M4 17H20"/></svg>
         </button>
       </div>
 
       <div class="nav-links" id="mobileMenu">
         <a href="#servicii" onclick="closeMenu()">Servicii</a>
         <a href="#pachete" onclick="closeMenu()">Pachete</a>
-        <a href="programari.html" onclick="closeMenu()">Programare online</a>
-        <a href="#reviews" onclick="closeMenu()">Recenzii</a>
+        <a href="#proces" onclick="closeMenu()">Proces</a>
+        <a href="#recenzii" onclick="closeMenu()">Recenzii</a>
         <a href="#contact" onclick="closeMenu()">Contact</a>
-        <a href="index.html" onclick="closeMenu()">Acasă</a>
+        <a href="programari.html" class="nav-cta" onclick="closeMenu()">Programare online</a>
       </div>
     </div>
   </header>
@@ -557,10 +721,16 @@
         <div class="hero-panel">
           <div class="status"><span class="status-dot"></span> Corporate Care</div>
           <img src="logo.png" alt="Prestige Finish Logo" />
-          <h3 style="margin:0 0 8px; font-size:28px;">Prestige Finish</h3>
-          <p style="margin:0; color:var(--muted);">
+          <h3 style="margin:0 0 8px;font-size:28px;">Prestige Finish</h3>
+          <p style="margin:0;color:var(--muted);">
             O direcție construită pentru companii care au nevoie de predictibilitate, prezentare corectă și servicii realizate atent.
           </p>
+
+          <div class="quick-points">
+            <div class="quick-point"><span class="quick-dot"></span><span>Întreținere recurentă și organizată</span></div>
+            <div class="quick-point"><span class="quick-dot"></span><span>Imagine curată și profesională</span></div>
+            <div class="quick-point"><span class="quick-dot"></span><span>Soluții dedicate pentru companii și flote</span></div>
+          </div>
         </div>
       </div>
     </section>
@@ -615,72 +785,46 @@
       </div>
     </section>
 
-    <section class="coming fade-in">
-      <div class="container">
-        <div class="tag">Programare online</div>
-        <h2 class="section-title">Rezervă direct online sau trimite o solicitare</h2>
-        <p class="section-text">
-          Pentru solicitări rapide poți folosi programarea online, iar pentru colaborări, volume mai mari sau cereri speciale poți trimite formularul de contact.
-        </p>
-
-        <div class="booking-grid">
-          <div class="booking-card">
-            <h3>Programare simplă și clară</h3>
-            <p>Pentru rezervări punctuale poți folosi sistemul de programare online.</p>
-            <div class="booking-points">
-              <div class="booking-point">✔ <strong>Alegi serviciul</strong></div>
-              <div class="booking-point">✔ <strong>Selectezi data și ora</strong></div>
-              <div class="booking-point">✔ <strong>Completezi datele necesare</strong></div>
-              <div class="booking-point">✔ <strong>Rezervarea intră direct în sistem</strong></div>
-            </div>
-            <a class="btn btn-primary" href="programari.html">Deschide programarea online</a>
-          </div>
-
-          <div class="booking-card">
-            <h3>Formular de contact</h3>
-            <p>Pentru colaborări recurente, volume mai mari sau cereri speciale poți trimite o solicitare directă.</p>
-            <div class="booking-points">
-              <div class="booking-point">• potrivit pentru firme și flote</div>
-              <div class="booking-point">• util pentru cereri speciale</div>
-              <div class="booking-point">• bun pentru colaborări recurente</div>
-            </div>
-            <a class="btn btn-secondary" href="formular-contact.html">Trimite formularul</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="coming fade-in">
+    <section id="proces" class="coming fade-in">
       <div class="container">
         <div class="tag">Proces</div>
         <h2 class="section-title">Cum decurge colaborarea corporate</h2>
-        <p class="section-text">Pentru zona business, procesul trebuie să fie clar, eficient și ușor de integrat în activitatea firmei.</p>
+        <p class="section-text">
+          Pentru zona business, procesul trebuie să fie clar, eficient și ușor de integrat în activitatea firmei.
+        </p>
 
         <div class="process-grid">
           <div class="step">
             <div class="step-number">1</div>
-            <h3>Trimite solicitarea</h3>
-            <div class="step-text">Ne contactezi prin formular sau programare online, în funcție de nevoie.</div>
+            <h3>Trimiți solicitarea</h3>
+            <p>Prin formularul de contact sau programare online, în funcție de nevoia ta.</p>
           </div>
           <div class="step">
             <div class="step-number">2</div>
-            <h3>Stabilim intervenția</h3>
-            <div class="step-text">Alegem tipul de serviciu, frecvența și modul de desfășurare.</div>
+            <h3>Stabilim structura</h3>
+            <p>Clarificăm tipul de servicii, frecvența și modul de desfășurare.</p>
           </div>
           <div class="step">
             <div class="step-number">3</div>
+            <h3>Planificăm intervențiile</h3>
+            <p>Organizăm programările astfel încât activitatea firmei să fie afectată cât mai puțin.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
             <h3>Executăm lucrarea</h3>
-            <div class="step-text">Intervenția este realizată atent, organizat și în standardul stabilit.</div>
+            <p>Intervenția este realizată atent, organizat și la standardul stabilit.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="reviews" class="coming fade-in">
+    <section id="recenzii" class="fade-in">
       <div class="container">
         <div class="tag">Recenzii</div>
         <h2 class="section-title">Feedback real din colaborări reale</h2>
-        <p class="section-text">După primele colaborări corporate, aici vei putea afișa feedback real din zona business și flote.</p>
+        <p class="section-text">
+          După primele colaborări corporate, aici vei putea afișa feedback real din zona business și flote.
+        </p>
 
         <div class="review-grid">
           <div class="review-card">
@@ -697,6 +841,57 @@
             <div class="stars">★★★★★</div>
             <p>După primele proiecte, aici vei putea arăta modul în care au perceput companiile colaborarea cu Prestige Finish.</p>
             <div class="review-name">Flotă / companie • în curând</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="coming fade-in">
+      <div class="container">
+        <div class="tag">Întrebări frecvente</div>
+        <h2 class="section-title">Ce întreabă clienții business cel mai des</h2>
+
+        <div class="faq-grid">
+          <div class="faq-card">
+            <h3>Despre colaborare</h3>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-q" type="button">
+                  <span>Lucrați și pe bază de colaborare recurentă?</span>
+                  <span>+</span>
+                </button>
+                <div class="faq-a">Da. Pagina corporate este gândită tocmai pentru astfel de colaborări și planuri recurente.</div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-q" type="button">
+                  <span>Pot cere ofertă personalizată?</span>
+                  <span>+</span>
+                </button>
+                <div class="faq-a">Da. Cel mai bine este să folosești formularul de contact și să menționezi nevoia firmei tale.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-card">
+            <h3>Despre organizare</h3>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-q" type="button">
+                  <span>Intervențiile pot fi planificate clar?</span>
+                  <span>+</span>
+                </button>
+                <div class="faq-a">Da. Tocmai asta este ideea: structură clară, predictibilitate și programări controlate.</div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-q" type="button">
+                  <span>Se poate lucra și la sediul firmei?</span>
+                  <span>+</span>
+                </button>
+                <div class="faq-a">Pentru anumite servicii și colaborări, da, în funcție de tipul solicitării și locație.</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -720,11 +915,11 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="info-box">
           <div class="contact-row"><strong>Telefon principal</strong><span>0757 352 371</span></div>
           <div class="contact-row"><strong>Telefon secundar</strong><span>0727 707 545</span></div>
+          <div class="contact-row"><strong>Email</strong><span>prestige.finish@yahoo.com</span></div>
           <div class="contact-row"><strong>Tip clienți</strong><span>Persoane juridice / flote</span></div>
-          <div class="contact-row"><strong>Locație</strong><span>Strada Libertății, 107592 Ploiești</span></div>
           <div class="contact-row" style="border-bottom:none;"><strong>Status</strong><span>Programare online activă</span></div>
         </div>
       </div>
@@ -747,9 +942,11 @@
     function toggleMenu() {
       document.getElementById('mobileMenu').classList.toggle('active');
     }
+
     function closeMenu() {
       document.getElementById('mobileMenu').classList.remove('active');
     }
+
     document.addEventListener('click', function(event) {
       const menu = document.getElementById('mobileMenu');
       const toggle = document.querySelector('.menu-toggle');
@@ -760,13 +957,23 @@
         menu.classList.remove('active');
       }
     });
+
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
       });
     }, { threshold: 0.12 });
+
     fadeEls.forEach(el => observer.observe(el));
+
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.querySelector('.faq-q').addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
   </script>
 </body>
 </html>
