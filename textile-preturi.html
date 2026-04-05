@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prestige Finish Interior Care | Prețuri</title>
+  <link rel="icon" type="image/jpeg" href="logo.jpeg" />
+  <meta name="description" content="Prestige Finish Interior Care - prețuri orientative pentru curățare canapele, saltele, mochete, piele, alcantara și servicii pentru persoane fizice și firme." />
+
+  <style>
+    :root{
+      --bg:#050505;
+      --card:rgba(255,255,255,0.04);
+      --card-strong:rgba(255,255,255,0.06);
+      --gold:#d4af37;
+      --gold-soft:rgba(212,175,55,0.12);
+      --text:#f5f2ea;
+      --muted:#c5bea9;
+      --line:rgba(212,175,55,0.18);
+      --line-strong:rgba(212,175,55,0.34);
+      --green:#25D366;
+      --shadow:0 20px 60px rgba(0,0,0,0.45);
+      --shadow-soft:0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(212,175,55,0.16), transparent 24%),
+        radial-gradient(circle at bottom left, rgba(212,175,55,0.10), transparent 20%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    button{font:inherit}
+
+    .container{
+      width:min(1180px,calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(5,5,5,0.88);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:16px 0;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+
+    .brand-logo{
+      height:54px;
+      width:auto;
+      border-radius:10px;
+      object-fit:contain;
+      flex-shrink:0;
+      background:#000;
+    }
+
+    .brand-name{
+      color:var(--gold);
+      font-size:22px;
+      font-weight:700;
+      letter-spacing:0.4px;
+      white-space:nowrap;
+    }
+
+    .nav-right{
+      display:flex;
+      align-items:center;
+      gap:16px;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      color:var(--muted);
+      font-size:14px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .nav-links a{
+      transition:.2s ease;
+    }
+
+    .nav-links a:hover{
+      color:var(--text);
+    }
+
+    .nav-cta{
+      padding:10px 16px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      color:var(--gold);
+      background:rgba(212,175,55,0.06);
+      font-weight:700;
+      white-space:nowrap;
+    }
+
+    .top-socials{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .top-social{
+      width:42px;
+      height:42px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.03);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:var(--shadow-soft);
+      transition:.2s ease;
+    }
+
+    .top-social:hover{
+      transform:translateY(-2px);
+      background:rgba(212,175,55,0.08);
+      border-color:var(--line-strong);
+    }
+
+    .top-social svg{
+      width:18px;
+      height:18px;
+      fill:var(--gold);
+    }
+
+    .menu-toggle{
+      display:none;
+      width:54px;
+      height:54px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.03);
+      color:var(--gold);
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+    }
+
+    .menu-toggle svg{
+      width:26px;
+      height:26px;
+      stroke:var(--gold);
+    }
+
+    .hero{
+      padding:92px 0 56px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(90deg, rgba(5,5,5,0.96) 0%, rgba(5,5,5,0.88) 40%, rgba(5,5,5,0.64) 68%, rgba(5,5,5,0.84) 100%);
+      pointer-events:none;
+    }
+
+    .hero-bg{
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)),
+        url('logo.jpeg') center/contain no-repeat,
+        radial-gradient(circle at center, rgba(212,175,55,0.10), transparent 35%);
+      opacity:.09;
+    }
+
+    .hero-grid{
+      position:relative;
+      z-index:2;
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:34px;
+      align-items:start;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 14px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:var(--gold);
+      background:rgba(212,175,55,0.07);
+      font-size:12px;
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+      margin-bottom:18px;
+    }
+
+    h1{
+      margin:0 0 16px;
+      font-size:clamp(40px,7vw,78px);
+      line-height:.98;
+      letter-spacing:-1px;
+      max-width:840px;
+    }
+
+    .hero p{
+      color:var(--muted);
+      font-size:18px;
+      max-width:760px;
+      margin:0 0 28px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom:18px;
+    }
+
+    .hero-note{
+      color:var(--gold);
+      font-size:15px;
+      margin:0 0 24px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:54px;
+      padding:0 24px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-weight:700;
+      text-align:center;
+      cursor:pointer;
+      box-shadow:var(--shadow-soft);
+      transition:.2s ease;
+    }
+
+    .btn:hover{ transform:translateY(-2px); }
+
+    .btn-primary{
+      background:linear-gradient(135deg,var(--gold),#f0d266);
+      color:#0a0a0a;
+    }
+
+    .btn-secondary{
+      background:transparent;
+      border-color:var(--line);
+      color:var(--text);
+    }
+
+    .hero-points,
+    .grid-2,
+    .grid-3,
+    .contact-wrap{
+      display:grid;
+      gap:20px;
+    }
+
+    .hero-points{
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      max-width:900px;
+    }
+
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .contact-wrap{grid-template-columns:1.05fr .95fr}
+
+    .mini-card,
+    .card,
+    .hero-panel,
+    .info-box{
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.02));
+      border-radius:26px;
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-panel{
+      background:
+        radial-gradient(circle at top right, rgba(212,175,55,0.08), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.025));
+      padding:26px;
+    }
+
+    .hero-panel img{
+      width:100%;
+      max-width:320px;
+      margin:0 auto 18px;
+      border-radius:24px;
+      border:1px solid var(--line);
+      background:#000;
+    }
+
+    .status{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:var(--gold);
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:8px 12px;
+      background:rgba(212,175,55,0.06);
+      font-size:13px;
+      margin-bottom:14px;
+    }
+
+    .status-dot{
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background:var(--gold);
+      box-shadow:0 0 12px rgba(212,175,55,0.7);
+    }
+
+    .mini-card strong{
+      display:block;
+      color:var(--gold);
+      margin-bottom:6px;
+      font-size:14px;
+    }
+
+    .mini-card span,
+    .card p,
+    .section-text,
+    .contact-row span,
+    .tiny,
+    .info-box p,
+    .price-note{
+      color:var(--muted);
+    }
+
+    section{
+      padding:78px 0;
+    }
+
+    .section-title{
+      font-size:clamp(30px,4vw,48px);
+      margin:0 0 12px;
+    }
+
+    .section-text{
+      max-width:760px;
+      margin:0 0 28px;
+      font-size:17px;
+    }
+
+    .tag{
+      display:inline-flex;
+      margin-bottom:14px;
+      color:var(--gold);
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:1.4px;
+    }
+
+    .card h3,
+    .info-box h3{
+      margin:0 0 10px;
+      font-size:22px;
+      color:var(--gold);
+    }
+
+    .coming{
+      background:linear-gradient(180deg, rgba(212,175,55,0.08), rgba(255,255,255,0.02));
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .quick-points{
+      display:grid;
+      gap:12px;
+      margin-top:16px;
+    }
+
+    .quick-point{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+
+    .quick-dot{
+      width:10px;
+      height:10px;
+      margin-top:7px;
+      border-radius:999px;
+      background:var(--gold);
+      flex-shrink:0;
+      box-shadow:0 0 10px rgba(212,175,55,0.5);
+    }
+
+    .price-table{
+      display:grid;
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .price-row{
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      padding:16px 18px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(255,255,255,0.025);
+    }
+
+    .price-row strong{
+      color:var(--text);
+      display:block;
+      margin-bottom:4px;
+    }
+
+    .price-row span{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .price-value{
+      color:var(--gold);
+      font-weight:700;
+      white-space:nowrap;
+      align-self:center;
+    }
+
+    .contact-row{
+      padding:14px 0;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .contact-row strong{
+      display:block;
+      color:var(--text);
+      margin-bottom:4px;
+    }
+
+    .fade-in{
+      opacity:0;
+      transform:translateY(28px);
+      transition:opacity .7s ease, transform .7s ease;
+    }
+
+    .fade-in.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    #acasa, #persoane, #firme, #extra, #contact{
+      scroll-margin-top:100px;
+    }
+
+    @media (max-width:1100px){
+      .grid-3{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+    }
+
+    @media (max-width:980px){
+      .top-socials{display:none}
+      .menu-toggle{display:inline-flex}
+
+      .nav-links{
+        position:absolute;
+        top:calc(100% + 10px);
+        right:0;
+        left:0;
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+        gap:10px;
+        padding:18px;
+        background:rgba(5,5,5,0.98);
+        border:1px solid var(--line);
+        border-radius:20px;
+      }
+
+      .nav-links.open{
+        display:flex;
+      }
+
+      .hero-grid,
+      .grid-2,
+      .contact-wrap{
+        grid-template-columns:1fr;
+      }
+
+      .hero-points,
+      .grid-3{
+        grid-template-columns:1fr;
+      }
+
+      .brand-name{font-size:18px}
+    }
+
+    @media (max-width:640px){
+      h1{font-size:40px}
+      .hero{padding:82px 0 48px}
+      .btn{width:100%}
+      .hero-actions{flex-direction:column}
+
+      .price-row{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .price-value{
+        align-self:flex-start;
+      }
+
+      .whatsapp-btn{
+        right:14px;
+        left:14px;
+        justify-content:center;
+        bottom:14px;
+      }
+    }
+
+    .whatsapp-btn{
+      position:fixed;
+      bottom:25px;
+      right:25px;
+      background:var(--green);
+      color:white;
+      padding:14px 22px;
+      font-size:15px;
+      font-weight:bold;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      border-radius:30px;
+      text-decoration:none;
+      box-shadow:0 8px 20px rgba(0,0,0,0.35);
+      z-index:9999;
+      transition:.3s ease;
+    }
+
+    .whatsapp-btn:hover{
+      transform:scale(1.08);
+    }
+
+    .whatsapp-btn img{
+      width:22px;
+      height:22px;
+    }
+
+    footer{
+      border-top:1px solid var(--line);
+      padding:28px 0 40px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .footer-row{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container nav">
+      <a href="textile-index.html" class="brand">
+        <img src="logo.jpeg" alt="Prestige Finish Interior Care" class="brand-logo" />
+        <span class="brand-name">Prestige Finish Interior Care</span>
+      </a>
+
+      <div class="nav-right">
+        <nav class="nav-links" id="navLinks">
+          <a href="textile-index.html">Acasă</a>
+          <a href="#persoane">Persoane fizice</a>
+          <a href="#firme">Firme</a>
+          <a href="#extra">Extra-opțiuni</a>
+          <a href="#contact">Contact</a>
+          <a href="index.html" class="nav-cta">Auto Detailing</a>
+        </nav>
+
+        <div class="top-socials">
+          <a class="top-social" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2Zm5 3.1A4.7 4.7 0 1 1 7.3 12 4.7 4.7 0 0 1 12 7.3Zm0 2.2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5Zm5.1-3.5a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1Z"/></svg>
+          </a>
+          <a class="top-social" href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.5 1.6-1.5h1.7V4.8a20.7 20.7 0 0 0-2.4-.1c-2.4 0-4.1 1.4-4.1 4.2V11H7.6v3h2.7v8Z"/></svg>
+          </a>
+          <a class="top-social" href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg viewBox="0 0 24 24"><path d="M16.5 2c.4 2.1 1.7 3.8 3.8 4.3v3a8 8 0 0 1-3.8-1.1v6.2a6.4 6.4 0 1 1-6.4-6.4c.3 0 .6 0 .9.1v3.1a3.4 3.4 0 1 0 2.5 3.2V2Z"/></svg>
+          </a>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Deschide meniul">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero fade-in" id="acasa">
+    <div class="hero-bg"></div>
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Prestige Finish · Interior Care · Prețuri</div>
+        <h1>Prețuri orientative, prezentate clar și premium</h1>
+        <p>
+          Am separat pagina de prețuri ca să fie ușor de înțeles, fără aglomerație și fără confuzie.
+          Aici vezi repere pentru persoane fizice, firme și extra-opțiuni, cu mențiunea că oferta finală
+          se adaptează în funcție de material, dimensiune și complexitate.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#persoane" class="btn btn-primary">Prețuri persoane fizice</a>
+          <a href="#firme" class="btn btn-secondary">Prețuri firme</a>
+        </div>
+
+        <p class="hero-note">
+          Canapele · saltele · mochete · scaune · piele · alcantara · tratamente · colaborări
+        </p>
+
+        <div class="hero-points">
+          <div class="mini-card">
+            <strong>Prețuri orientative</strong>
+            <span>Repere clare, bune pentru a înțelege zona de buget înainte de discuție.</span>
+          </div>
+          <div class="mini-card">
+            <strong>Separare logică</strong>
+            <span>Persoane fizice, firme și extra-opțiuni sunt prezentate distinct, fără amestec.</span>
+          </div>
+          <div class="mini-card">
+            <strong>Ofertare corectă</strong>
+            <span>Prețul final se confirmă după detalii, poze, dimensiune și nivelul real al intervenției.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-panel">
+        <div class="status">
+          <span class="status-dot"></span>
+          <span>Prețuri separate, structură premium</span>
+        </div>
+
+        <img src="logo.jpeg" alt="Prestige Finish Interior Care" />
+
+        <div class="quick-points">
+          <div class="quick-point">
+            <span class="quick-dot"></span>
+            <span>Repere pentru persoane fizice</span>
+          </div>
+          <div class="quick-point">
+            <span class="quick-dot"></span>
+            <span>Repere pentru firme și spații profesionale</span>
+          </div>
+          <div class="quick-point">
+            <span class="quick-dot"></span>
+            <span>Extra-opțiuni și tratamente</span>
+          </div>
+          <div class="quick-point">
+            <span class="quick-dot"></span>
+            <span>Estimare rapidă pe baza pozelor</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="persoane" class="fade-in">
+    <div class="container">
+      <span class="tag">Persoane fizice</span>
+      <h2 class="section-title">Prețuri orientative pentru locuințe</h2>
+      <p class="section-text">
+        Potrivite pentru canapele, saltele, scaune, mochete și alte piese textile sau tapițate din locuințe.
+      </p>
+
+      <div class="grid-2">
+        <div class="info-box">
+          <h3>Textile & tapițerii</h3>
+          <div class="price-table">
+            <div class="price-row">
+              <div>
+                <strong>Canapea 2 locuri</strong>
+                <span>Curățare textilă standard</span>
+              </div>
+              <div class="price-value">de la 150 lei</div>
+            </div>
+
+            <div class="price-row">
+              <div>
+                <strong>Canapea 3 locuri</strong>
+                <span>În funcție de dimensiune și material</span>
+              </div>
+              <div class="price-value">de la 180 lei</div>
+            </div>
+
+            <div class="price-row">
+              <div>
+                <strong>Colțar</strong>
+                <span>Format standard / modular</span>
+              </div>
+              <div class="price-value">de la 250 lei</div>
+            </div>
+
+            <div class="price-row">
+              <div>
+                <strong>Fotoliu</strong>
+                <span>Piesă individuală</span>
+              </div>
+              <div class="price-value">de la 80 lei</div>
+            </div>
+
+            <div class="price-row">
+              <div>
+                <strong>Scaun textil</strong>
+                <span>Dining, birou, decorativ</span>
+              </div>
+              <div class="price-value">de la 25 lei / buc</div>
+            </div>
+
+            <div class="price-row">
+              <div>
+                <strong>Mochetă</strong>
+                <span>Suprafețe rezidențiale</span>
+              </div>
+              <div class="price-value">de la 12 lei / mp</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <h3>Saltele & suprafețe speciale</h3>
+          <div class="price-table">
+            <div class="price-row">
+              <div>
+                <strong>Saltea single</strong>
+                <span>O parte / întreținere</span>
+              </div>
+              <div class="price-value">de la 120 lei</div>
+            </div>
+
+            <div class="price-row">
+              <div>
+                <strong>Saltea matrimonială</strong>
+                <span>În funcție de dimensiune</span>
+              </div>
+              <div class="price-value">de la 180 lei</div>
+            </div>
+
+            <div class="price-row">
+              <div>
+                <strong>Tăblie pat tapițată</strong>
+                <span>Piesă individuală</span>
+              </div>
+              <div class="price-value">de la 90 lei</div>
+            </div>
+
+            <div class="price-row">
+              <div>
+                <strong>Banchetă / taburet</strong>
+                <span>Dimensiune standard</span>
+              </div>
+              <div class="price-value">de la 60 lei</div>
+            </div>
+
+            <div class="price-row">
+              <div>
+                <strong>Piesă specială</strong>
+                <span>Formă sau material atipic</span>
+              </div>
+              <div class="price-value">ofertă rapidă</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="tiny" style="margin-top:18px;">
+        * Pentru persoane fizice, prețul final depinde de material, dimensiune, gradul de murdărie și dacă se dorește doar curățare sau și tratament extra.
+      </p>
+    </div>
+  </section>
+
+  <section class="coming fade-in" id="firme">
+    <div class="container">
+      <span class="tag">Firme & spații profesionale</span>
+      <h2 class="section-title">Repere pentru birouri, cabinete și colaborări business</h2>
+      <p class="section-text">
+        În zona business, prețul depinde mai mult de volum, acces, frecvență și tipul locației.
+        Totuși, reperele de mai jos te ajută să înțelegi zona de pornire.
+      </p>
+
+      <div class="grid-2">
+        <div class="info-box">
+          <h3>Lucrări punctuale</h3>
+          <div class="price-table">
+            <div class="price-row">
+              <div>
+                <strong>Scaun birou</strong>
+                <span>Textil sau tapițat</span>
+              </div>
+              <div class="price-value">de la 25 lei / buc</div>
+            </div>
+
+            <div class="price-row">
+              <div>
+                <strong>Canapea recepție</strong>
+                <span>În funcție de dimensiune</span>
+              </div>
+              <div class="price-value">de la 180 lei</div>
+            </div>
+
+            <div class="price-row">
+              <div>
+                <strong>Fotoliu / piesă lounge</strong>
+                <span>Pentru recepții, waiting area</span>
+              </div>
+              <div class="price-value">de la 90 lei</div>
+            </div>
+
+            <div class="price-row">
+              <div>
+                <strong>Mochetă</strong>
+                <span>Birou, hol, recepție</span>
+              </div>
+              <div class="price-value">de la 12 lei / mp</div>
+            </div>
+
+            <div class="price-row">
+              <div>
+                <strong>Pachet mic business</strong>
+                <span>Intervenție punctuală</span>
+              </div>
+              <div class="price-value">de la 250 lei</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <h3>Colaborări & recurență</h3>
+          <div class="quick-points">
+            <div class="quick-point">
+              <span class="quick-dot"></span>
+              <span>Ofertă personalizată în funcție de volum și frecvență</span>
+            </div>
+            <div class="quick-point">
+              <span class="quick-dot"></span>
+              <span>Potrivit pentru birouri, recepții, cabinete și apartamente regim hotelier</span>
+            </div>
+            <div class="quick-point">
+              <span class="quick-dot"></span>
+              <span>Foarte util pentru business-uri care vor să mențină standardul constant</span>
+            </div>
+            <div class="quick-point">
+              <span class="quick-dot"></span>
+              <span>Estimare rapidă pe baza pozelor și a numărului de piese</span>
+            </div>
+          </div>
+
+          <p class="tiny" style="margin-top:18px;">
+            * Pentru firme, recomandarea bună este ofertarea personalizată, nu simpla raportare la un preț fix pe piesă.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="extra" class="fade-in">
+    <div class="container">
+      <span class="tag">Extra-opțiuni</span>
+      <h2 class="section-title">Tratamente și opțiuni suplimentare</h2>
+      <p class="section-text">
+        Acestea nu sunt obligatorii, dar pot completa foarte bine intervenția, mai ales pentru materiale sensibile sau pentru clienți care vor rezultat premium complet.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Curățare piele</h3>
+          <p>Întreținere pentru piele naturală sau ecologică.</p>
+          <p class="price-note"><strong style="color:var(--gold)">de la 180 lei</strong></p>
+        </div>
+
+        <div class="card">
+          <h3>Întreținere alcantara</h3>
+          <p>Pentru suprafețe care cer abordare atentă.</p>
+          <p class="price-note"><strong style="color:var(--gold)">de la 180 lei</strong></p>
+        </div>
+
+        <div class="card">
+          <h3>Tratament piele</h3>
+          <p>Protecție și întreținere după curățare.</p>
+          <p class="price-note"><strong style="color:var(--gold)">de la 80 lei extra</strong></p>
+        </div>
+
+        <div class="card">
+          <h3>Tratament hidrofob textil</h3>
+          <p>Opțiune utilă pentru anumite materiale textile.</p>
+          <p class="price-note"><strong style="color:var(--gold)">de la 70 lei extra</strong></p>
+        </div>
+
+        <div class="card">
+          <h3>Evaluare piese premium</h3>
+          <p>Pentru suprafețe sensibile sau piese atipice.</p>
+          <p class="price-note"><strong style="color:var(--gold)">ofertă rapidă</strong></p>
+        </div>
+
+        <div class="card">
+          <h3>Intervenții recurente</h3>
+          <p>Pentru clienți care vor standard constant în timp.</p>
+          <p class="price-note"><strong style="color:var(--gold)">preț personalizat</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="coming fade-in">
+    <div class="container">
+      <span class="tag">Cum se stabilește prețul final</span>
+      <h2 class="section-title">Ce influențează oferta reală</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Dimensiune</h3>
+          <p>O canapea mică și un colțar mare nu pot avea aceeași logică de preț.</p>
+        </div>
+        <div class="card">
+          <h3>Material</h3>
+          <p>Textil, piele și alcantara cer abordări și timp diferit.</p>
+        </div>
+        <div class="card">
+          <h3>Complexitate</h3>
+          <p>Gradul de murdărie, accesul și tratamentele extra pot modifica oferta finală.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="fade-in">
+    <div class="container contact-wrap">
+      <div class="info-box">
+        <span class="tag">Contact</span>
+        <h2 class="section-title">Trimite poze și îți spunem rapid în ce zonă de preț te încadrezi</h2>
+        <p class="section-text">
+          Cel mai rapid mod de a primi o estimare bună este să ne trimiți poze și câteva detalii despre piesele sau suprafața care trebuie curățată.
+        </p>
+
+        <div class="contact-row">
+          <strong>Telefon</strong>
+          <span>0757 352 371</span>
+        </div>
+        <div class="contact-row">
+          <strong>Email</strong>
+          <span>contact@prestigefinish.ro</span>
+        </div>
+        <div class="contact-row">
+          <strong>Pagină</strong>
+          <span>Prețuri orientative Interior Care</span>
+        </div>
+        <div class="contact-row">
+          <strong>Răspuns</strong>
+          <span>Estimare rapidă pe baza pozelor</span>
+        </div>
+
+        <div class="hero-actions" style="margin-top:22px;">
+          <a href="tel:0757352371" class="btn btn-primary">Sună acum</a>
+          <a href="formular-contact.html" class="btn btn-secondary">Formular contact</a>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <h3>Ce ne ajută să ofertăm corect</h3>
+        <div class="quick-points">
+          <div class="quick-point">
+            <span class="quick-dot"></span>
+            <span>Tipul piesei sau suprafeței</span>
+          </div>
+          <div class="quick-point">
+            <span class="quick-dot"></span>
+            <span>Materialul aproximativ: textil, piele, alcantara</span>
+          </div>
+          <div class="quick-point">
+            <span class="quick-dot"></span>
+            <span>Numărul pieselor sau dimensiunea suprafeței</span>
+          </div>
+          <div class="quick-point">
+            <span class="quick-dot"></span>
+            <span>Dacă vrei doar curățare sau și tratament extra</span>
+          </div>
+        </div>
+
+        <p class="tiny" style="margin-top:18px;">
+          După această pagină, mai rămâne ideal `textile-contact.html`, ca să închizi mini-site-ul Interior Care complet și separat de auto.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-row">
+      <div>© 2025 Prestige Finish Interior Care. Toate drepturile rezervate.</div>
+      <div>
+        <a href="textile-index.html">Interior Care</a> ·
+        <a href="index.html">Auto Detailing</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-btn" href="https://wa.me/40757352371" target="_blank" rel="noopener">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp">
+    WhatsApp rapid
+  </a>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    if(menuToggle && navLinks){
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+    }
+
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    fadeEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
