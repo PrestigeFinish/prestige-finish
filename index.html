@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prestige Finish | Detailing interior premium în Ploiești</title>
+  <title>Prestige Finish | Detailing auto premium în Ploiești</title>
   <link rel="icon" type="image/png" href="logo.png" />
-  <meta name="description" content="Prestige Finish oferă servicii de detailing interior premium în Ploiești, pentru persoane fizice și flote. Programare online, formular de contact și experiență premium." />
+  <meta name="description" content="Prestige Finish oferă servicii premium de detailing auto în Ploiești pentru persoane fizice și flote: detailing interior, polish, protecții ceramice, tratamente piele, recondiționări faruri și PPF faruri & stopuri." />
 
   <style>
     :root{
@@ -104,7 +104,7 @@
     }
 
     .nav-links a{
-      transition:.2s ease;
+      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
     }
 
     .nav-links a:hover{
@@ -136,7 +136,7 @@
       align-items:center;
       justify-content:center;
       box-shadow:var(--shadow-soft);
-      transition:.2s ease;
+      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
     }
 
     .top-social:hover{
@@ -247,6 +247,8 @@
     }
 
     .btn{
+      position:relative;
+      overflow:hidden;
       display:inline-flex;
       align-items:center;
       justify-content:center;
@@ -258,12 +260,20 @@
       text-align:center;
       cursor:pointer;
       box-shadow:var(--shadow-soft);
-      transition:.2s ease;
+      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
     }
 
+    .btn::after,.nav-cta::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.22) 45%, transparent 100%);transform:translateX(-130%);transition:transform .55s ease;pointer-events:none;}
+
+    .btn:hover::after,.nav-cta:hover::after{transform:translateX(130%)}
+
     .btn:hover{
-      transform:translateY(-2px);
+      transform:translateY(-2px) scale(1.02);
+      box-shadow:0 12px 30px rgba(212,175,55,0.30);
+      filter:brightness(1.03);
     }
+
+    .btn:active,.nav-cta:active{transform:scale(.98)}
 
     .btn-primary{
       background:linear-gradient(135deg,var(--gold),#f0d266);
@@ -454,6 +464,21 @@
       margin-bottom:4px;
     }
 
+
+    .service-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .service-card{min-height:300px;background-size:cover;background-position:center;position:relative;padding:0;overflow:hidden}
+    .service-card::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.82));}
+    .service-overlay{position:absolute;left:0;right:0;bottom:0;padding:22px;z-index:2}
+    .service-overlay h3{margin:0 0 8px;font-size:24px;color:#fff}
+    .service-overlay p{margin:0;color:#ece6d7}
+    .service-card:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(0,0,0,.35)}
+    .accreditation-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .brand-proof{border:1px solid var(--line);border-radius:24px;padding:24px;background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));box-shadow:var(--shadow-soft);text-align:center}
+    .brand-proof img{height:90px;width:auto;margin:0 auto 12px;object-fit:contain;border-radius:14px}
+    .brand-proof strong{display:block;color:var(--gold);font-size:18px}
+    .offer-box{border:1px solid var(--line-strong);border-radius:28px;padding:28px;background:radial-gradient(circle at top right, rgba(212,175,55,.12), transparent 32%), linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));box-shadow:var(--shadow)}
+    .offer-badge{display:inline-flex;padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(212,175,55,.1);color:var(--gold);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:12px}
+
     .map-wrap{
       border-radius:22px;
       overflow:hidden;
@@ -501,7 +526,7 @@
     .faq-q span:last-child{
       color:var(--gold);
       font-size:20px;
-      transition:.2s ease;
+      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
     }
 
     .faq-item.active .faq-q span:last-child{
@@ -562,7 +587,7 @@
       text-decoration:none;
       box-shadow:0 8px 20px rgba(0,0,0,0.35);
       z-index:9999;
-      transition:.2s ease;
+      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
     }
 
     .whatsapp-btn:hover{
@@ -634,6 +659,8 @@
       }
 
       .hero-actions .btn{
+      position:relative;
+      overflow:hidden;
         width:100%;
       }
 
@@ -678,6 +705,7 @@
         <a href="#contact" onclick="closeMenu()">Contact</a>
         <a href="persoane-fizice.html" onclick="closeMenu()">Persoane fizice</a>
         <a href="flote.html" onclick="closeMenu()">Persoane juridice / flote</a>
+        <a href="textile-index.html" onclick="closeMenu()">Interior Care</a>
         <a href="programari.html" class="nav-cta" onclick="closeMenu()">Programare online</a>
       </div>
     </div>
@@ -689,10 +717,9 @@
       <div class="container hero-grid">
         <div>
           <div class="eyebrow">Prestige Finish Detailing Studio • Ploiești</div>
-          <h1>WHERE YOUR CAR MEETS PREFECTION</h1>
+          <h1>Detailing auto premium, construit în jurul detaliilor care contează</h1>
           <p>
-            Prestige Finish este construit pentru clienții care își doresc mai mult decât o simplă curățare.
-            Ne concentrăm pe detailing interior premium, igienizare atentă și o experiență clară, elegantă și organizată.
+            Prestige Finish este dedicat clienților care caută standard premium, finisaj impecabil și o experiență clară de la primul contact. Lucrăm controlat, cu accent pe interior, polish, protecții și servicii specializate pentru un rezultat vizibil și coerent.
           </p>
 
           <div class="hero-actions">
@@ -730,6 +757,10 @@
             <div class="quick-point"><span class="quick-dot"></span><span>Experiență premium și organizată</span></div>
             <div class="quick-point"><span class="quick-dot"></span><span>Comunicare clară și programări controlate</span></div>
             <div class="quick-point"><span class="quick-dot"></span><span>Servicii pentru persoane fizice și companii</span></div>
+          </div>
+          <div class="hero-actions" style="margin-top:18px;">
+            <a class="btn btn-primary" href="https://maps.app.goo.gl/ojGYPjuhrN9AXSDi7" target="_blank" rel="noopener noreferrer">Google Maps</a>
+            <a class="btn btn-secondary" href="https://www.waze.com/ul?ll=44.9024193%2C26.0127298&navigate=yes" target="_blank" rel="noopener noreferrer">Waze</a>
           </div>
         </div>
       </div>
@@ -770,28 +801,79 @@
       </div>
     </section>
 
+    
     <section id="servicii" class="coming fade-in">
       <div class="container">
-        <div class="tag">Servicii</div>
-        <h2 class="section-title">Servicii premium pe direcții clare</h2>
-        <p class="section-text">
-          Prestige Finish este construit pentru a răspunde diferit solicitărilor persoanelor fizice și ale companiilor,
-          prin pagini dedicate și servicii prezentate clar.
-        </p>
+        <div class="tag">Servicii premium</div>
+        <h2 class="section-title">Servicii auto specializate, prezentate clar și premium</h2>
+        <p class="section-text">Pe lângă detailingul interior, Prestige Finish include servicii premium de corecție, protecție și recondiționare, construite pentru clienți care urmăresc rezultat real și prezentare impecabilă.</p>
 
-        <div class="grid-3">
-          <div class="card">
-            <h3>Detailing interior</h3>
-            <p>Serviciul principal al brandului, atât pentru clienți individuali, cât și pentru zona business.</p>
+        <div class="grid-3 service-grid">
+          <div class="card service-card" style="background-image:url('assets/serv-interior.jpeg')">
+            <div class="service-overlay"><h3>Detailing interior</h3><p>Curățare atentă, igienizare și finisaj premium pentru habitacluri care trebuie să arate impecabil.</p></div>
           </div>
-         <div class="card">
-  <h3>Programare online</h3>
-  <p>Sistem clar de rezervare, construit pentru o experiență rapidă, organizată și ușor de urmărit de la primul pas.</p>
-</div>
-          <div class="card">
-            <h3>Pachete dedicate</h3>
-            <p>Structuri separate și personalizate atât pentru persoane fizice cât și pentru persoane juridice / flote.</p>
+          <div class="card service-card" style="background-image:url('assets/serv-polish.jpeg')">
+            <div class="service-overlay"><h3>Polish</h3><p>Corecție vizuală și rafinare a finisajului pentru un aspect profund, curat și bine controlat.</p></div>
           </div>
+          <div class="card service-card" style="background-image:url('assets/serv-ceramic.jpeg')">
+            <div class="service-overlay"><h3>Protecții ceramice</h3><p>Protecție premium pentru vehicule care trebuie să păstreze aspectul și întreținerea la un nivel superior.</p></div>
+          </div>
+          <div class="card service-card" style="background-image:url('assets/serv-leather.jpeg')">
+            <div class="service-overlay"><h3>Tratamente piele</h3><p>Întreținere și revitalizare pentru piele, cu accent pe aspect, confort și prezentare premium.</p></div>
+          </div>
+          <div class="card service-card" style="background-image:url('assets/serv-ppf-lights.jpeg')">
+            <div class="service-overlay"><h3>PPF faruri & stopuri</h3><p>Protecție discretă și profesionistă pentru elementele optice cele mai expuse în utilizarea zilnică.</p></div>
+          </div>
+          <div class="card service-card" style="background-image:url('assets/serv-polish.jpeg')">
+            <div class="service-overlay"><h3>Recondiționări faruri</h3><p>Claritate, aspect îngrijit și îmbunătățire vizibilă pentru faruri afectate de uzură sau oxidare.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fade-in">
+      <div class="container">
+        <div class="tag">Acreditări</div>
+        <h2 class="section-title">Soluții și standarde profesionale utilizate în detailingul premium</h2>
+        <p class="section-text">Prestige Finish lucrează cu sisteme și produse profesionale recunoscute în detailing-ul premium, selectate pentru consistență, siguranță și finisaj corect.</p>
+        <div class="accreditation-grid">
+          <div class="brand-proof"><img src="assets/acred-koch.jpeg" alt="Koch Chemie"><strong>Koch Chemie</strong></div>
+          <div class="brand-proof"><img src="assets/acred-zymol.jpeg" alt="Zymöl"><strong>Zymöl</strong></div>
+          <div class="brand-proof"><img src="assets/acred-rupes.jpeg" alt="Rupes"><strong>Rupes</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="coming fade-in">
+      <div class="container">
+        <div class="tag">Interior Care</div>
+        <h2 class="section-title">Servicii dedicate și pentru textile, piele și spații interioare</h2>
+        <p class="section-text">Pe lângă zona de auto, Prestige Finish include și ramura Interior Care: curățare profesională pentru canapele, saltele, piele, mochete, spații comerciale și lucrări realizate de echipe specializate în funcție de complexitatea intervenției.</p>
+        <div class="grid-2">
+          <div class="info-box">
+            <h3>Locuințe & spații comerciale</h3>
+            <p>Curățare profesională pentru textile, piele și suprafețe interioare, cu pagini separate pentru persoane fizice și business.</p>
+            <p style="margin-top:18px;"><a href="textile-index.html" class="btn btn-primary">Descoperă Interior Care</a></p>
+          </div>
+          <div class="info-box">
+            <h3>Curățenie după renovări</h3>
+            <p>Intervenții dedicate pentru locuințe, birouri și spații comerciale care trebuie aduse la un standard curat și prezentabil după renovare sau amenajare.</p>
+            <p style="margin-top:18px;"><a href="curatenie-renovari.html" class="btn btn-primary">Vezi serviciul</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fade-in">
+      <div class="container">
+        <div class="tag">Oferte</div>
+        <h2 class="section-title">Oferte speciale, ușor de actualizat</h2>
+        <p class="section-text">Secțiunea de mai jos este gândită să poată fi actualizată rapid, săptămânal, în funcție de serviciile sau campaniile pe care vrei să le promovezi.</p>
+        <div class="offer-box">
+          <span class="offer-badge">Ofertă actuală</span>
+          <h3>Detailing interior premium + igienizare</h3>
+          <p>Exemplu de text editabil: pachet promoțional valabil în limita locurilor disponibile, adaptat în funcție de sezon sau campanie.</p>
+          <a href="programari.html" class="btn btn-primary">Rezervă un interval</a>
         </div>
       </div>
     </section>
@@ -940,11 +1022,11 @@
           <div class="contact-row"><strong>Telefon principal</strong><span>0757 352 371</span></div>
           <div class="contact-row"><strong>Telefon secundar</strong><span>0727 707 545</span></div>
           <div class="contact-row"><strong>Email</strong><span>prestige.finish@yahoo.com</span></div>
-          <div class="contact-row"><strong>Locație</strong><span>Strada Libertății, 107592 Ploiești</span></div>
+          <div class="contact-row"><strong>Locație</strong><span>Acces direct din DN1, în zona industrială Ploiești Triaj</span></div>
 
           <div class="map-wrap">
             <iframe
-              src="https://www.google.com/maps?q=Strada%20Libert%C4%83%C8%9Bii%2C%20107592%20Ploie%C8%99ti&z=15&output=embed"
+              src="https://www.google.com/maps?q=44.9024193,26.0127298&z=16&output=embed"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               title="Prestige Finish - locație">

@@ -105,7 +105,7 @@
     }
 
     .nav-links a{
-      transition:.2s ease;
+      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
     }
 
     .nav-links a:hover{
@@ -137,7 +137,7 @@
       align-items:center;
       justify-content:center;
       box-shadow:0 10px 30px rgba(0,0,0,0.25);
-      transition:.2s ease;
+      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
     }
 
     .top-social:hover{
@@ -303,6 +303,8 @@
     }
 
     .btn{
+      position:relative;
+      overflow:hidden;
       display:inline-flex;
       align-items:center;
       justify-content:center;
@@ -313,13 +315,21 @@
       font-weight:700;
       text-align:center;
       cursor:pointer;
-      transition:.2s ease;
+      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
       box-shadow:0 10px 30px rgba(0,0,0,0.25);
     }
 
+    .btn::after,.nav-cta::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.22) 45%, transparent 100%);transform:translateX(-130%);transition:transform .55s ease;pointer-events:none;}
+
+    .btn:hover::after,.nav-cta:hover::after{transform:translateX(130%)}
+
     .btn:hover{
-      transform:translateY(-2px);
+      transform:translateY(-2px) scale(1.02);
+      box-shadow:0 12px 30px rgba(212,175,55,0.30);
+      filter:brightness(1.03);
     }
+
+    .btn:active,.nav-cta:active{transform:scale(.98)}
 
     .btn-primary{
       background:linear-gradient(135deg, var(--gold), #f0d266);
@@ -382,7 +392,7 @@
       text-decoration:none;
       box-shadow:0 8px 20px rgba(0,0,0,0.35);
       z-index:9999;
-      transition:.2s ease;
+      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
     }
 
     .whatsapp-btn:hover{
@@ -462,6 +472,8 @@
       }
 
       .actions .btn{
+      position:relative;
+      overflow:hidden;
         width:100%;
       }
 

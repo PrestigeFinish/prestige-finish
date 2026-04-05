@@ -104,7 +104,7 @@
     }
 
     .nav-links a{
-      transition:.2s ease;
+      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
     }
 
     .nav-links a:hover{
@@ -136,7 +136,7 @@
       align-items:center;
       justify-content:center;
       box-shadow:var(--shadow-soft);
-      transition:.2s ease;
+      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
     }
 
     .top-social:hover{
@@ -247,6 +247,8 @@
     }
 
     .btn{
+      position:relative;
+      overflow:hidden;
       display:inline-flex;
       align-items:center;
       justify-content:center;
@@ -258,12 +260,20 @@
       text-align:center;
       cursor:pointer;
       box-shadow:var(--shadow-soft);
-      transition:.2s ease;
+      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
     }
 
+    .btn::after,.nav-cta::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.22) 45%, transparent 100%);transform:translateX(-130%);transition:transform .55s ease;pointer-events:none;}
+
+    .btn:hover::after,.nav-cta:hover::after{transform:translateX(130%)}
+
     .btn:hover{
-      transform:translateY(-2px);
+      transform:translateY(-2px) scale(1.02);
+      box-shadow:0 12px 30px rgba(212,175,55,0.30);
+      filter:brightness(1.03);
     }
+
+    .btn:active,.nav-cta:active{transform:scale(.98)}
 
     .btn-primary{
       background:linear-gradient(135deg,var(--gold),#f0d266);
@@ -499,7 +509,7 @@
     .faq-q span:last-child{
       color:var(--gold);
       font-size:20px;
-      transition:.2s ease;
+      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
     }
 
     .faq-item.active .faq-q span:last-child{
@@ -560,7 +570,7 @@
       text-decoration:none;
       box-shadow:0 8px 20px rgba(0,0,0,0.35);
       z-index:9999;
-      transition:.2s ease;
+      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
     }
 
     .whatsapp-btn:hover{
@@ -634,6 +644,8 @@
       }
 
       .hero-actions .btn{
+      position:relative;
+      overflow:hidden;
         width:100%;
       }
 
@@ -822,15 +834,15 @@
     <section id="recenzii" class="fade-in">
       <div class="container">
         <div class="tag">Recenzii</div>
-        <h2 class="section-title">Feedback real din colaborări reale</h2>
+        <h2 class="section-title">Experiență construită pentru colaborări premium</h2>
         <p class="section-text">
-          După primele colaborări corporate, aici vei putea afișa feedback real din zona business și flote.
+          Prestige Finish este construit pentru colaborări business care pun accent pe imagine, consecvență și o relație clar organizată.
         </p>
 
         <div class="review-grid">
           <div class="review-card">
             <div class="stars">★★★★★</div>
-            <p>Aici poți pune un prim feedback real de la o companie sau un client business.</p>
+            <p>Serviciile business sunt gândite pentru companii care vor standard clar, intervenții organizate și o prezentare premium a flotei sau a spațiului de recepție.</p>
             <div class="review-name">Client corporate • în curând</div>
           </div>
           <div class="review-card">
@@ -840,7 +852,7 @@
           </div>
           <div class="review-card">
             <div class="stars">★★★★★</div>
-            <p>După primele proiecte, aici vei putea arăta modul în care au perceput companiile colaborarea cu Prestige Finish.</p>
+            <p>Colaborările corporate sunt tratate diferențiat, cu accent pe comunicare, predictibilitate și imagine premium.</p>
             <div class="review-name">Flotă / companie • în curând</div>
           </div>
         </div>

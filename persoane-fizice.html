@@ -104,7 +104,7 @@
     }
 
     .nav-links a{
-      transition:.2s ease;
+      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
     }
 
     .nav-links a:hover{
@@ -136,7 +136,7 @@
       align-items:center;
       justify-content:center;
       box-shadow:var(--shadow-soft);
-      transition:.2s ease;
+      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
     }
 
     .top-social:hover{
@@ -247,6 +247,8 @@
     }
 
     .btn{
+      position:relative;
+      overflow:hidden;
       display:inline-flex;
       align-items:center;
       justify-content:center;
@@ -258,12 +260,20 @@
       text-align:center;
       cursor:pointer;
       box-shadow:var(--shadow-soft);
-      transition:.2s ease;
+      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
     }
 
+    .btn::after,.nav-cta::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.22) 45%, transparent 100%);transform:translateX(-130%);transition:transform .55s ease;pointer-events:none;}
+
+    .btn:hover::after,.nav-cta:hover::after{transform:translateX(130%)}
+
     .btn:hover{
-      transform:translateY(-2px);
+      transform:translateY(-2px) scale(1.02);
+      box-shadow:0 12px 30px rgba(212,175,55,0.30);
+      filter:brightness(1.03);
     }
+
+    .btn:active,.nav-cta:active{transform:scale(.98)}
 
     .btn-primary{
       background:linear-gradient(135deg,var(--gold),#f0d266);
@@ -501,7 +511,7 @@
     .faq-q span:last-child{
       color:var(--gold);
       font-size:20px;
-      transition:.2s ease;
+      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
     }
 
     .faq-item.active .faq-q span:last-child{
@@ -562,7 +572,7 @@
       text-decoration:none;
       box-shadow:0 8px 20px rgba(0,0,0,0.35);
       z-index:9999;
-      transition:.2s ease;
+      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
     }
 
     .whatsapp-btn:hover{
@@ -635,6 +645,8 @@
       }
 
       .hero-actions .btn{
+      position:relative;
+      overflow:hidden;
         width:100%;
       }
 
@@ -1083,20 +1095,20 @@
     <section id="galerie" class="coming fade-in">
       <div class="container">
         <div class="tag">Galerie</div>
-        <h2 class="section-title">Pregătit pentru before / after</h2>
+        <h2 class="section-title">Rezultate și prezentare premium</h2>
         <p class="section-text">
-          Secțiunea este pregătită pentru pozele tale reale. Când ai imaginile finale, le putem integra imediat aici.
+          Poți păstra această zonă pentru imagini reale de rezultat, într-un format coerent cu identitatea premium a brandului.
         </p>
 
         <div class="gallery-grid">
           <div class="gallery-card">
-            <div class="gallery-placeholder">Spațiu pregătit pentru before / after interior</div>
+            <div class="gallery-placeholder">Exemplu de zonă dedicată rezultatelor interioare</div>
             <h3 style="margin-top:16px;">Interior complet</h3>
-            <span>Poți pune aici o comparație clară înainte / după.</span>
+            <span>Poți integra aici rezultate vizuale reale, într-un format elegant și clar.</span>
           </div>
 
           <div class="gallery-card">
-            <div class="gallery-placeholder">Spațiu pregătit pentru before / after faruri</div>
+            <div class="gallery-placeholder">Exemplu de zonă dedicată recondiționărilor faruri</div>
             <h3 style="margin-top:16px;">Restaurare faruri</h3>
             <span>Ideal pentru exemple rapide, vizuale și convingătoare.</span>
           </div>
