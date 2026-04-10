@@ -14,10 +14,6 @@
   </url>
 
   <url>
-    <loc>https://prestigefinish.ro/curatenie-renovari.html</loc>
-  </url>
-
-  <url>
     <loc>https://prestigefinish.ro/programari.html</loc>
   </url>
 
@@ -26,7 +22,32 @@
   </url>
 
   <url>
-    <loc>https://prestigefinish.ro/multumim.html</loc>
+    <loc>https://prestigefinish.ro/curatenie-renovari.html</loc>
+  </url>
+
+  <!-- TEXTILE -->
+  <url>
+    <loc>https://prestigefinish.ro/textile-index.html</loc>
+  </url>
+
+  <url>
+    <loc>https://prestigefinish.ro/textile-persoane.html</loc>
+  </url>
+
+  <url>
+    <loc>https://prestigefinish.ro/textile-firme.html</loc>
+  </url>
+
+  <url>
+    <loc>https://prestigefinish.ro/textile-servicii.html</loc>
+  </url>
+
+  <url>
+    <loc>https://prestigefinish.ro/textile-preturi.html</loc>
+  </url>
+
+  <url>
+    <loc>https://prestigefinish.ro/textile-contact.html</loc>
   </url>
 
 </urlset>
