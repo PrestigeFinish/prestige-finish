@@ -60,15 +60,17 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:16px;
+      gap:24px;
       padding:16px 0;
+      flex-wrap:nowrap;
     }
 
     .brand{
       display:flex;
       align-items:center;
       gap:12px;
-      min-width:0;
+      min-width:max-content;
+      flex-shrink:0;
     }
 
     .brand-logo{
@@ -90,16 +92,18 @@
     .nav-right{
       display:flex;
       align-items:center;
-      gap:16px;
+      gap:12px;
+      margin-left:auto;
+      flex-shrink:0;
     }
 
     .nav-links{
       display:flex;
       align-items:center;
-      gap:18px;
+      gap:14px;
       color:var(--muted);
       font-size:14px;
-      flex-wrap:wrap;
+      flex-wrap:nowrap;
       justify-content:flex-end;
     }
 
@@ -772,6 +776,21 @@
         grid-template-columns:1fr;
       }
     }
+    @media (max-width:1200px){
+  .brand-name{
+    font-size:20px;
+  }
+
+  .nav-links{
+    gap:10px;
+    font-size:13px;
+  }
+
+  .top-social{
+    width:38px;
+    height:38px;
+  }
+}
 
     @media (max-width:980px){
       .top-socials{display:none}
