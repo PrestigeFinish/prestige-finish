@@ -5,12 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prestige Finish | Formular de contact</title>
   <link rel="icon" type="image/png" href="logo.png" />
-  <meta name="description" content="Contactează Prestige Finish pentru informații, programări, corecție estetică, protecții ceramice, protecții hidrofobe, colaborări și solicitări speciale." />
+  <meta name="description" content="Contactează Prestige Finish pentru programări, recomandări, corecție estetică, protecții ceramice, colaborări corporate și solicitări speciale." />
 
   <style>
     :root{
       --bg:#050505;
-      --bg-soft:#0b0b0b;
       --card:rgba(255,255,255,0.04);
       --gold:#d4af37;
       --gold-soft:rgba(212,175,55,0.12);
@@ -25,7 +24,6 @@
       --success-bg:rgba(0,255,150,0.08);
       --danger:#ff8b8b;
       --danger-bg:rgba(255,0,0,0.08);
-      --radius:28px;
     }
 
     *{box-sizing:border-box}
@@ -66,7 +64,7 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:24px;
+      gap:16px;
       padding:16px 0;
     }
 
@@ -74,8 +72,7 @@
       display:flex;
       align-items:center;
       gap:12px;
-      min-width:max-content;
-      flex-shrink:0;
+      min-width:0;
     }
 
     .brand-logo{
@@ -97,18 +94,16 @@
     .nav-right{
       display:flex;
       align-items:center;
-      gap:12px;
-      margin-left:auto;
-      flex-shrink:0;
+      gap:16px;
     }
 
     .nav-links{
       display:flex;
       align-items:center;
-      gap:14px;
+      gap:18px;
       color:var(--muted);
       font-size:14px;
-      flex-wrap:nowrap;
+      flex-wrap:wrap;
       justify-content:flex-end;
     }
 
@@ -120,28 +115,18 @@
       color:var(--text);
     }
 
-    .nav-cta,
-    .btn{
+    .nav-cta{
+      padding:10px 16px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      color:var(--gold);
+      background:rgba(212,175,55,0.06);
+      font-weight:700;
       position:relative;
       overflow:hidden;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:54px;
-      padding:0 24px;
-      border-radius:999px;
-      border:none;
-      font-weight:700;
-      text-align:center;
-      cursor:pointer;
-      box-shadow:var(--shadow-soft);
-      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
-      background:linear-gradient(135deg,var(--gold),#f0d266);
-      color:#0a0a0a !important;
-      text-decoration:none;
     }
 
-    .btn::after,.nav-cta::after{
+    .nav-cta::after{
       content:"";
       position:absolute;
       inset:0;
@@ -151,20 +136,13 @@
       pointer-events:none;
     }
 
-    .btn:hover::after,.nav-cta:hover::after{
-      transform:translateX(130%);
-    }
-
-    .btn:hover,.nav-cta:hover{
-      transform:translateY(-2px) scale(1.02);
-      box-shadow:0 12px 30px rgba(212,175,55,0.30);
-      filter:brightness(1.03);
-    }
+    .nav-cta:hover::after{transform:translateX(130%)}
 
     .top-socials{
       display:flex;
       align-items:center;
       gap:10px;
+      margin-left:6px;
     }
 
     .top-social{
@@ -178,6 +156,7 @@
       justify-content:center;
       box-shadow:var(--shadow-soft);
       transition:.22s ease;
+      flex-shrink:0;
     }
 
     .top-social:hover{
@@ -212,7 +191,7 @@
     }
 
     .hero{
-      padding:78px 0 52px;
+      padding:88px 0 34px;
       position:relative;
       overflow:hidden;
     }
@@ -239,8 +218,8 @@
       position:relative;
       z-index:2;
       display:grid;
-      grid-template-columns:1.08fr .92fr;
-      gap:24px;
+      grid-template-columns:1.04fr .96fr;
+      gap:28px;
       align-items:start;
     }
 
@@ -261,25 +240,128 @@
 
     h1{
       margin:0 0 16px;
-      font-size:clamp(38px,7vw,70px);
+      font-size:clamp(38px,7vw,72px);
       line-height:.98;
       letter-spacing:-1px;
       max-width:760px;
     }
 
-    .hero-copy p{
+    .hero p{
       color:var(--muted);
       font-size:18px;
       max-width:760px;
-      margin:0 0 22px;
+      margin:0 0 28px;
     }
 
     .hero-actions{
       display:flex;
       gap:14px;
       flex-wrap:wrap;
-      margin-bottom:20px;
     }
+
+    .btn{
+      position:relative;
+      overflow:hidden;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:54px;
+      padding:0 24px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-weight:700;
+      text-align:center;
+      cursor:pointer;
+      box-shadow:var(--shadow-soft);
+      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
+    }
+
+    .btn::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.22) 45%, transparent 100%);
+      transform:translateX(-130%);
+      transition:transform .55s ease;
+      pointer-events:none;
+    }
+
+    .btn:hover::after{transform:translateX(130%)}
+
+    .btn:hover{
+      transform:translateY(-2px) scale(1.02);
+      box-shadow:0 12px 30px rgba(212,175,55,0.30);
+      filter:brightness(1.03);
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,var(--gold),#f0d266);
+      color:#0a0a0a;
+    }
+
+    .btn-dark{
+      background:rgba(255,255,255,0.03);
+      color:var(--text);
+      border:1px solid var(--line);
+    }
+
+    .hero-panel,
+    .form-card,
+    .info-card,
+    .mini-card,
+    .faq-card{
+      border:1px solid var(--line);
+      background:
+        radial-gradient(circle at top right, rgba(212,175,55,0.06), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border-radius:26px;
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-panel h3,
+    .form-card h2,
+    .info-card h3,
+    .mini-card h3,
+    .faq-card h3{
+      margin:0 0 12px;
+      color:var(--gold);
+    }
+
+    .hero-panel p,
+    .form-card p,
+    .info-card p,
+    .mini-card p,
+    .faq-card p,
+    .section-text,
+    .contact-row span,
+    .helper-text{
+      color:var(--muted);
+    }
+
+    .status{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:var(--gold);
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:8px 12px;
+      background:rgba(212,175,55,0.06);
+      font-size:13px;
+      margin-bottom:14px;
+    }
+
+    .status-dot{
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background:var(--gold);
+      box-shadow:0 0 12px rgba(212,175,55,0.7);
+      flex-shrink:0;
+    }
+
+    section{padding:28px 0 78px}
 
     .tag{
       display:inline-flex;
@@ -290,104 +372,22 @@
       letter-spacing:1.4px;
     }
 
-    .grid-2,
-    .mini-grid,
-    .quick-actions{
-      display:grid;
-      gap:18px;
-    }
-
-    .grid-2{grid-template-columns:1.08fr .92fr}
-    .mini-grid{grid-template-columns:1fr 1fr}
-    .quick-actions{grid-template-columns:1fr 1fr}
-
-    .form-card,
-    .info-card,
-    .mini-info,
-    .highlight-card,
-    .faq-card{
-      border:1px solid var(--line);
-      background:
-        radial-gradient(circle at top right, rgba(212,175,55,0.06), transparent 32%),
-        linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.02));
-      border-radius:var(--radius);
-      padding:24px;
-      box-shadow:var(--shadow);
-    }
-
-    .form-card h2,
-    .info-card h2,
-    .mini-info h3,
-    .highlight-card h3,
-    .faq-card h3{
+    .section-title{
+      font-size:clamp(30px,4vw,48px);
       margin:0 0 12px;
-      color:var(--gold);
     }
 
-    .form-card p,
-    .info-card p,
-    .mini-info p,
-    .highlight-card p,
-    .faq-card p,
-    .contact-row span,
-    .helper-text,
-    .tiny{
-      color:var(--muted);
+    .section-text{
+      max-width:760px;
+      margin:0 0 28px;
+      font-size:17px;
     }
 
-    .contact-list{
+    .layout{
       display:grid;
-      gap:18px;
-      margin-top:12px;
-    }
-
-    .contact-row{
-      padding-bottom:14px;
-      border-bottom:1px solid rgba(255,255,255,0.08);
-    }
-
-    .contact-row strong{
-      display:block;
-      color:var(--text);
-      margin-bottom:4px;
-    }
-
-    .quick-card{
-      border:1px solid var(--line);
-      border-radius:20px;
-      background:rgba(255,255,255,0.025);
-      padding:16px;
-      transition:.22s ease;
-    }
-
-    .quick-card:hover{
-      transform:translateY(-2px);
-      border-color:var(--line-strong);
-      background:rgba(255,255,255,0.04);
-    }
-
-    .quick-card strong{
-      display:block;
-      color:var(--text);
-      margin-bottom:4px;
-    }
-
-    .highlight-card{
-      margin-top:18px;
-      background:linear-gradient(180deg, rgba(212,175,55,0.08), rgba(255,255,255,0.02));
-    }
-
-    .form-top-note{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:10px 14px;
-      border-radius:999px;
-      background:rgba(212,175,55,0.08);
-      border:1px solid var(--line);
-      color:var(--gold);
-      font-size:13px;
-      margin:8px 0 18px;
+      grid-template-columns:1.08fr .92fr;
+      gap:24px;
+      align-items:start;
     }
 
     .form-grid{
@@ -427,8 +427,6 @@
       font-family:Arial,Helvetica,sans-serif;
       transition:.22s ease;
       appearance:none;
-      -webkit-appearance:none;
-      -moz-appearance:none;
     }
 
     input::placeholder,
@@ -441,42 +439,29 @@
     textarea:focus{
       border-color:rgba(212,175,55,0.46);
       box-shadow:0 0 0 3px rgba(212,175,55,0.10);
-      background:#111;
+      background:#101010;
     }
 
     select{
-      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23d4af37' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-image:
+        linear-gradient(45deg, transparent 50%, var(--gold) 50%),
+        linear-gradient(135deg, var(--gold) 50%, transparent 50%);
+      background-position:
+        calc(100% - 22px) calc(50% - 3px),
+        calc(100% - 16px) calc(50% - 3px);
+      background-size:6px 6px, 6px 6px;
       background-repeat:no-repeat;
-      background-position:right 14px center;
-      padding-right:44px;
+      padding-right:42px;
     }
 
     select option{
       background:#0b0b0b;
-      color:#f5f2ea;
+      color:var(--text);
     }
 
     textarea{
       resize:vertical;
       min-height:160px;
-    }
-
-    .helper-row{
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      align-items:center;
-      margin-top:2px;
-    }
-
-    .helper-text{
-      font-size:13px;
-    }
-
-    .counter{
-      font-size:12px;
-      color:var(--muted);
-      white-space:nowrap;
     }
 
     .choice-pills{
@@ -487,7 +472,7 @@
     }
 
     .choice-pill{
-      padding:8px 12px;
+      padding:10px 14px;
       border-radius:999px;
       border:1px solid var(--line);
       background:rgba(255,255,255,0.025);
@@ -500,9 +485,27 @@
 
     .choice-pill:hover,
     .choice-pill.active{
-      color:#0a0a0a;
+      color:var(--gold);
       border-color:var(--line-strong);
-      background:linear-gradient(135deg,var(--gold),#f0d266);
+      background:var(--gold-soft);
+    }
+
+    .helper-row{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:center;
+      margin-top:6px;
+    }
+
+    .helper-text{
+      font-size:13px;
+    }
+
+    .counter{
+      font-size:12px;
+      color:var(--muted);
+      white-space:nowrap;
     }
 
     .submit-row{
@@ -516,7 +519,7 @@
     .submit-main{
       appearance:none;
       border:none;
-      min-width:210px;
+      min-width:220px;
     }
 
     .loader{
@@ -556,27 +559,28 @@
       color:var(--danger);
     }
 
-    .benefit-list{
+    .contact-list{
       display:grid;
-      gap:12px;
-      margin-top:14px;
+      gap:18px;
+      margin-top:12px;
     }
 
-    .benefit-item{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      color:var(--muted);
+    .contact-row{
+      padding-bottom:14px;
+      border-bottom:1px solid rgba(255,255,255,0.08);
     }
 
-    .benefit-dot{
-      width:10px;
-      height:10px;
-      margin-top:7px;
-      border-radius:999px;
-      background:var(--gold);
-      flex-shrink:0;
-      box-shadow:0 0 10px rgba(212,175,55,0.5);
+    .contact-row strong{
+      display:block;
+      color:var(--text);
+      margin-bottom:4px;
+    }
+
+    .mini-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:18px;
+      margin-top:18px;
     }
 
     .faq-list{
@@ -610,7 +614,7 @@
     .faq-q span:last-child{
       color:var(--gold);
       font-size:20px;
-      transition:.22s ease;
+      transition:transform .22s ease;
     }
 
     .faq-item.active .faq-q span:last-child{
@@ -626,30 +630,8 @@
     }
 
     .faq-item.active .faq-a{
-      max-height:200px;
+      max-height:180px;
       padding:0 18px 18px;
-    }
-
-    .coming{
-      background:linear-gradient(180deg, rgba(212,175,55,0.08), rgba(255,255,255,0.02));
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-    }
-
-    section{
-      padding:34px 0 78px;
-    }
-
-    .section-title{
-      font-size:clamp(30px,4vw,48px);
-      margin:0 0 12px;
-    }
-
-    .section-text{
-      max-width:760px;
-      margin:0 0 28px;
-      font-size:17px;
-      color:var(--muted);
     }
 
     .fade-in{
@@ -705,29 +687,8 @@
       height:22px;
     }
 
-    .confetti{
-      position:fixed;
-      top:-10px;
-      width:10px;
-      height:18px;
-      opacity:.9;
-      pointer-events:none;
-      z-index:99999;
-      animation:fall linear forwards;
-    }
-
-    @keyframes fall{
-      to{
-        transform:translateY(110vh) rotate(540deg);
-        opacity:.2;
-      }
-    }
-
-    @media (max-width:1150px){
-      .top-socials{display:none}
-    }
-
     @media (max-width:980px){
+      .top-socials{display:none}
       .menu-toggle{display:inline-flex}
 
       .nav-links{
@@ -755,10 +716,8 @@
       }
 
       .hero-grid,
-      .grid-2,
-      .mini-grid,
-      .form-grid,
-      .quick-actions{
+      .layout,
+      .form-grid{
         grid-template-columns:1fr;
       }
 
@@ -771,14 +730,21 @@
     @media (max-width:640px){
       .hero{padding:74px 0 42px}
       .hero-actions,
-      .submit-row{flex-direction:column}
+      .submit-row{
+        flex-direction:column;
+      }
+
       .hero-actions .btn,
       .submit-row .btn,
-      .submit-main{width:100%}
+      .submit-main{
+        width:100%;
+      }
+
       .helper-row{
         flex-direction:column;
         align-items:flex-start;
       }
+
       .whatsapp-btn{
         right:16px;
         left:16px;
@@ -817,7 +783,7 @@
       <div class="nav-links" id="mobileMenu">
         <a href="index.html" onclick="closeMenu()">Acasă</a>
         <a href="persoane-fizice.html" onclick="closeMenu()">Persoane fizice</a>
-        <a href="flote.html" onclick="closeMenu()">Persoane juridice / flote</a>
+        <a href="flote.html" onclick="closeMenu()">Flote</a>
         <a href="programari.html" onclick="closeMenu()">Programare online</a>
         <a href="formular-contact.html" class="nav-cta" onclick="closeMenu()">Formular de contact</a>
       </div>
@@ -828,27 +794,43 @@
     <section class="hero fade-in">
       <div class="hero-bg"></div>
       <div class="container hero-grid">
-        <div class="hero-copy">
+        <div>
           <div class="eyebrow">Formular de contact</div>
           <h1>Trimite solicitarea ta</h1>
           <p>
-            Completează câmpurile de mai jos și revenim către tine cu răspunsul potrivit, o recomandare clară sau detaliile necesare.
+            Completează formularul și revenim către tine cu răspunsul potrivit, o recomandare clară sau detaliile necesare pentru serviciul dorit.
           </p>
 
           <div class="hero-actions">
-            <a class="btn" href="programari.html">Programare online</a>
-            <a class="btn" href="tel:+40757352371">Sună acum</a>
+            <a class="btn btn-primary" href="#contactFormSection">Completează formularul</a>
+            <a class="btn btn-dark" href="programari.html">Prefer programare online</a>
           </div>
+        </div>
 
-          <div class="form-card" style="margin-top:10px;">
-            <h2>Formular contact</h2>
+        <div class="hero-panel">
+          <div class="status"><span class="status-dot"></span> Contact direct</div>
+          <h3>Prestige Finish</h3>
+          <p>
+            Pentru întrebări, solicitări speciale, recomandări de servicii sau colaborări, formularul este varianta cea mai clară și bine structurată.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contactFormSection" class="fade-in">
+      <div class="container">
+        <div class="tag">Contact</div>
+        <h2 class="section-title">Formular de contact</h2>
+        <p class="section-text">
+          Formularul este potrivit atât pentru persoane fizice, cât și pentru persoane juridice / flote.
+        </p>
+
+        <div class="layout">
+          <div class="form-card">
+            <h2>Trimite solicitarea</h2>
             <p>
-              Trimite solicitarea direct din site. Mesajul ajunge direct către echipa Prestige Finish.
+              Completează câmpurile de mai jos și mesajul ajunge direct către echipa Prestige Finish.
             </p>
-
-            <div class="form-top-note">
-              Colegii noștri te contactează în cel mai scurt timp
-            </div>
 
             <form id="contactForm" action="https://formspree.io/f/maqpgwqy" method="POST">
               <input type="hidden" name="_subject" value="Solicitare nouă - Prestige Finish">
@@ -874,7 +856,7 @@
                 <div class="field">
                   <label for="tip-client">Tip client</label>
                   <select id="tip-client" name="Tip client" required>
-                    <option value="Persoană fizică">Persoană fizică</option>
+                    <option value="Persoană fizică" selected>Persoană fizică</option>
                     <option value="Persoană juridică / flotă">Persoană juridică / flotă</option>
                   </select>
                 </div>
@@ -882,23 +864,19 @@
                 <div class="field">
                   <label for="interes">Interes</label>
                   <select id="interes" name="Interes" required>
-                    <option value="Detailing interior">Detailing interior</option>
-                    <option value="Igienizare tapițerie">Igienizare tapițerie</option>
-                    <option value="Detailing motor">Detailing motor</option>
-                    <option value="Corecție estetică">Corecție estetică</option>
-                    <option value="Polish de întreținere">Polish de întreținere</option>
-                    <option value="Polish corectiv">Polish corectiv</option>
-                    <option value="Protecții ceramice">Protecții ceramice</option>
-                    <option value="Protecții hidrofobe geamuri">Protecții hidrofobe geamuri</option>
-                    <option value="PPF faruri și stopuri">PPF faruri și stopuri</option>
-                    <option value="Restaurare faruri">Restaurare faruri</option>
+                    <option value="Detailing interior" selected>Detailing interior</option>
+                    <option value="Corecție estetică / polish">Corecție estetică / polish</option>
+                    <option value="Protecție ceramică">Protecție ceramică</option>
+                    <option value="Protecție hidrofobă geamuri">Protecție hidrofobă geamuri</option>
                     <option value="Tratamente piele">Tratamente piele</option>
                     <option value="Tratamente textile / alcantara">Tratamente textile / alcantara</option>
-                    <option value="Basic Protection">Basic Protection</option>
-                    <option value="Prestige Protection">Prestige Protection</option>
+                    <option value="Protecție plastice">Protecție plastice</option>
+                    <option value="Protecție jante">Protecție jante</option>
+                    <option value="Recondiționare faruri">Recondiționare faruri</option>
+                    <option value="PPF faruri / stopuri">PPF faruri / stopuri</option>
                     <option value="Programare online">Programare online</option>
                     <option value="Colaborare / ofertă">Colaborare / ofertă</option>
-                    <option value="Altceva">Altceva</option>
+                    <option value="Altă solicitare">Altă solicitare</option>
                   </select>
                 </div>
 
@@ -906,19 +884,14 @@
                   <label>Selecție rapidă interes</label>
                   <div class="choice-pills" id="interestPills">
                     <button type="button" class="choice-pill" data-value="Detailing interior">Detailing interior</button>
-                    <button type="button" class="choice-pill" data-value="Igienizare tapițerie">Igienizare</button>
-                    <button type="button" class="choice-pill" data-value="Detailing motor">Detailing motor</button>
-                    <button type="button" class="choice-pill" data-value="Corecție estetică">Corecție estetică</button>
-                    <button type="button" class="choice-pill" data-value="Polish corectiv">Polish corectiv</button>
-                    <button type="button" class="choice-pill" data-value="Protecții ceramice">Ceramică</button>
-                    <button type="button" class="choice-pill" data-value="Protecții hidrofobe geamuri">Hidrofob geamuri</button>
-                    <button type="button" class="choice-pill" data-value="PPF faruri și stopuri">PPF faruri</button>
-                    <button type="button" class="choice-pill" data-value="Restaurare faruri">Faruri</button>
+                    <button type="button" class="choice-pill" data-value="Corecție estetică / polish">Corecție / polish</button>
+                    <button type="button" class="choice-pill" data-value="Protecție ceramică">Ceramică</button>
+                    <button type="button" class="choice-pill" data-value="Protecție hidrofobă geamuri">Hidrofob</button>
                     <button type="button" class="choice-pill" data-value="Tratamente piele">Piele</button>
-                    <button type="button" class="choice-pill" data-value="Tratamente textile / alcantara">Textile / alcantara</button>
-                    <button type="button" class="choice-pill" data-value="Basic Protection">Basic Protection</button>
-                    <button type="button" class="choice-pill" data-value="Prestige Protection">Prestige Protection</button>
-                    <button type="button" class="choice-pill" data-value="Programare online">Programare</button>
+                    <button type="button" class="choice-pill" data-value="Tratamente textile / alcantara">Textile</button>
+                    <button type="button" class="choice-pill" data-value="Protecție plastice">Plastice</button>
+                    <button type="button" class="choice-pill" data-value="Protecție jante">Jante</button>
+                    <button type="button" class="choice-pill" data-value="Recondiționare faruri">Faruri</button>
                     <button type="button" class="choice-pill" data-value="Colaborare / ofertă">Ofertă</button>
                   </div>
                 </div>
@@ -928,7 +901,7 @@
                   <textarea id="mesaj" name="Mesaj" placeholder="Scrie-ne pe scurt ce ai nevoie..." required></textarea>
                   <div class="helper-row">
                     <div class="helper-text">
-                      Exemplu: model mașină, serviciul dorit, dacă vrei recomandare sau o estimare.
+                      Poți menționa modelul mașinii, serviciul dorit, tipul de protecție sau dacă vrei o recomandare.
                     </div>
                     <div class="counter"><span id="msgCount">0</span>/800</div>
                   </div>
@@ -936,11 +909,11 @@
               </div>
 
               <div class="submit-row">
-                <button type="submit" class="btn submit-main" id="submitBtn">
+                <button type="submit" class="btn btn-primary submit-main" id="submitBtn">
                   <span>Trimite solicitarea</span>
                   <span class="loader" id="loader"></span>
                 </button>
-                <a href="programari.html" class="btn">Prefer programare online</a>
+                <a href="programari.html" class="btn btn-dark">Prefer programare online</a>
               </div>
 
               <div class="inline-state success" id="successBox">
@@ -952,103 +925,75 @@
               </div>
             </form>
           </div>
-        </div>
 
-        <div class="info-card">
-          <h2>Contact rapid</h2>
-          <p>
-            Poți folosi formularul pentru întrebări, solicitări speciale, colaborări sau recomandări de servicii.
-          </p>
+          <div>
+            <div class="info-card">
+              <h3>Contact rapid</h3>
 
-          <div class="contact-list">
-            <div class="contact-row"><strong>Telefon principal</strong><span>0757 352 371</span></div>
-            <div class="contact-row"><strong>Telefon secundar</strong><span>0727 707 545</span></div>
-            <div class="contact-row"><strong>Email studio</strong><span>prestige.finish@yahoo.com</span></div>
-            <div class="contact-row" style="border-bottom:none;"><strong>Locație</strong><span>Acces direct din DN1, în zona industrială Ploiești Triaj</span></div>
-          </div>
+              <div class="contact-list">
+                <div class="contact-row"><strong>Telefon principal</strong><span>0757 352 371</span></div>
+                <div class="contact-row"><strong>Telefon secundar</strong><span>0727 707 545</span></div>
+                <div class="contact-row"><strong>Email studio</strong><span>prestige.finish@yahoo.com</span></div>
+                <div class="contact-row" style="border-bottom:none;"><strong>Locație</strong><span>Ploiești Triaj • acces direct din DN1</span></div>
+              </div>
 
-          <div class="quick-actions">
-            <a class="quick-card" href="tel:+40757352371">
-              <strong>Sună acum</strong>
-              <span class="tiny">Discuți direct pentru programare sau detalii</span>
-            </a>
-            <a class="quick-card" href="https://wa.me/40757352371?text=Buna!%20Vreau%20mai%20multe%20informatii%20despre%20serviciile%20Prestige%20Finish." target="_blank" rel="noopener noreferrer">
-              <strong>Scrie pe WhatsApp</strong>
-              <span class="tiny">Ideal pentru răspuns rapid și clar</span>
-            </a>
-          </div>
-
-          <div class="highlight-card">
-            <h3>Când folosești formularul</h3>
-            <div class="benefit-list">
-              <div class="benefit-item"><span class="benefit-dot"></span><span>când nu știi exact ce serviciu ți se potrivește</span></div>
-              <div class="benefit-item"><span class="benefit-dot"></span><span>când vrei corecție estetică, protecții sau tratamente dedicate</span></div>
-              <div class="benefit-item"><span class="benefit-dot"></span><span>când ai o solicitare specială</span></div>
-              <div class="benefit-item"><span class="benefit-dot"></span><span>când vrei colaborare sau ofertă</span></div>
+              <div class="hero-actions" style="margin-top:18px;">
+                <a class="btn btn-primary" href="tel:+40757352371">Sună acum</a>
+                <a class="btn btn-dark" href="https://wa.me/40757352371?text=Buna!%20Vreau%20mai%20multe%20informatii%20despre%20serviciile%20Prestige%20Finish." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+              </div>
             </div>
-          </div>
 
-          <div class="faq-card">
-            <h3>Întrebări frecvente</h3>
-            <div class="faq-list">
-              <div class="faq-item">
-                <button class="faq-q" type="button">
-                  <span>Cât de repede răspundeți?</span>
-                  <span>+</span>
-                </button>
-                <div class="faq-a">
-                  De regulă, cât mai rapid posibil, inclusiv în afara programului de lucru dacă este posibil.
+            <div class="mini-grid">
+              <div class="mini-card">
+                <h3>Persoane fizice</h3>
+                <p>Detalii dedicate pentru clienții individuali, cu pachete, corecție estetică și protecții premium.</p>
+                <div class="hero-actions" style="margin-top:16px;margin-bottom:0;">
+                  <a href="persoane-fizice.html" class="btn btn-primary">Vezi pagina</a>
                 </div>
               </div>
 
-              <div class="faq-item">
-                <button class="faq-q" type="button">
-                  <span>Este mai bine formularul sau programarea online?</span>
-                  <span>+</span>
-                </button>
-                <div class="faq-a">
-                  Dacă știi deja serviciul dorit, programarea online este mai rapidă. Dacă ai nevoie de recomandare, folosește formularul.
-                </div>
-              </div>
-
-              <div class="faq-item">
-                <button class="faq-q" type="button">
-                  <span>Pot cere ofertă pentru flotă?</span>
-                  <span>+</span>
-                </button>
-                <div class="faq-a">
-                  Da. Selectează „Persoană juridică / flotă” și menționează în mesaj de ce tip de colaborare ai nevoie.
+              <div class="mini-card">
+                <h3>Persoane juridice / flote</h3>
+                <p>Soluții business și colaborări recurente pentru companii și flote auto.</p>
+                <div class="hero-actions" style="margin-top:16px;margin-bottom:0;">
+                  <a href="flote.html" class="btn btn-primary">Vezi pagina</a>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="coming fade-in">
-      <div class="container">
-        <div class="tag">Informații utile</div>
-        <h2 class="section-title">Alege varianta potrivită pentru tine</h2>
-        <p class="section-text">
-          Dacă vrei răspuns rapid la o întrebare sau o solicitare specială, formularul este alegerea bună.
-          Dacă știi deja ce serviciu dorești și vrei să rezervi direct un interval, folosește programarea online.
-        </p>
+            <div class="faq-card" style="margin-top:18px;">
+              <h3>Întrebări frecvente</h3>
+              <div class="faq-list">
+                <div class="faq-item">
+                  <button class="faq-q" type="button">
+                    <span>Cât de repede răspundeți?</span>
+                    <span>+</span>
+                  </button>
+                  <div class="faq-a">
+                    De regulă, răspunsul se face cât mai rapid posibil, în funcție de intervalul în care este trimisă solicitarea.
+                  </div>
+                </div>
 
-        <div class="mini-grid">
-          <div class="mini-info">
-            <h3>Programare online</h3>
-            <p>Ideală dacă știi deja ce serviciu dorești și vrei să rezervi direct un interval disponibil.</p>
-            <div class="submit-row">
-              <a href="programari.html" class="btn">Programează-te</a>
-            </div>
-          </div>
+                <div class="faq-item">
+                  <button class="faq-q" type="button">
+                    <span>Pot cere recomandare înainte de programare?</span>
+                    <span>+</span>
+                  </button>
+                  <div class="faq-a">
+                    Da. Formularul este potrivit exact pentru recomandări, clarificări și solicitări speciale.
+                  </div>
+                </div>
 
-          <div class="mini-info">
-            <h3>Formular de contact</h3>
-            <p>Ideal dacă ai nevoie de recomandare, detalii suplimentare sau o solicitare specială.</p>
-            <div class="submit-row">
-              <a href="#top" class="btn">Completează formularul</a>
+                <div class="faq-item">
+                  <button class="faq-q" type="button">
+                    <span>Pot cere ofertă pentru flotă?</span>
+                    <span>+</span>
+                  </button>
+                  <div class="faq-a">
+                    Da. Selectezi tipul de client pentru persoane juridice / flotă și menționezi în mesaj ce tip de colaborare urmărești.
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1058,7 +1003,7 @@
 
   <footer>
     <div class="container footer-row">
-      <div>© 2026 Prestige Finish. Toate drepturile rezervate.</div>
+      <div>©️ 2026 Prestige Finish. Toate drepturile rezervate.</div>
       <div>Formular de contact • Ploiești</div>
     </div>
   </footer>
@@ -1144,7 +1089,6 @@
 
       successBox.style.display = 'none';
       errorBox.style.display = 'none';
-
       replyTo.value = emailInput.value.trim();
 
       if (!form.reportValidity()) return;
@@ -1163,37 +1107,21 @@
 
         if (response.ok) {
           successBox.style.display = 'block';
-          successBox.classList.add('success');
           form.reset();
+          interestSelect.selectedIndex = 0;
           syncPills();
           updateCounter();
-          burstConfetti();
           window.scrollTo({ top: form.offsetTop - 80, behavior: 'smooth' });
         } else {
           errorBox.style.display = 'block';
-          errorBox.classList.add('error');
         }
       } catch (err) {
         errorBox.style.display = 'block';
-        errorBox.classList.add('error');
       } finally {
         submitBtn.disabled = false;
         loader.style.display = 'none';
       }
     });
-
-    function burstConfetti() {
-      const colors = ['#d4af37', '#ffffff', '#25D366'];
-      for (let i = 0; i < 30; i++) {
-        const conf = document.createElement('div');
-        conf.className = 'confetti';
-        conf.style.left = Math.random() * 100 + 'vw';
-        conf.style.background = colors[Math.floor(Math.random() * colors.length)];
-        conf.style.animationDuration = (Math.random() * 2 + 2.5) + 's';
-        document.body.appendChild(conf);
-        setTimeout(() => conf.remove(), 5000);
-      }
-    }
 
     syncPills();
     updateCounter();
