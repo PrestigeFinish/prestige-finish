@@ -5,13 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prestige Finish Private Care | Persoane fizice</title>
   <link rel="icon" type="image/png" href="logo.png" />
-  <meta name="description" content="Prestige Finish Private Care - servicii premium pentru persoane fizice: detailing interior, igienizare, detailing motor, restaurare faruri și programare online." />
+  <meta name="description" content="Prestige Finish Private Care - servicii premium pentru persoane fizice: detailing interior, igienizare, detailing motor, corecție estetică, protecții dedicate și programare online." />
 
   <style>
     :root{
       --bg:#050505;
       --card:rgba(255,255,255,0.04);
-      --card-strong:rgba(255,255,255,0.06);
       --gold:#d4af37;
       --gold-soft:rgba(212,175,55,0.12);
       --text:#f5f2ea;
@@ -25,6 +24,7 @@
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
+
     body{
       margin:0;
       font-family:Arial,Helvetica,sans-serif;
@@ -104,20 +104,11 @@
     }
 
     .nav-links a{
-      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
+      transition:.22s ease;
     }
 
     .nav-links a:hover{
       color:var(--text);
-    }
-
-    .nav-cta{
-      padding:10px 16px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      color:var(--gold);
-      background:rgba(212,175,55,0.06);
-      font-weight:700;
     }
 
     .top-socials{
@@ -136,7 +127,7 @@
       align-items:center;
       justify-content:center;
       box-shadow:var(--shadow-soft);
-      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
+      transition:.22s ease;
     }
 
     .top-social:hover{
@@ -168,6 +159,49 @@
       width:26px;
       height:26px;
       stroke:var(--gold);
+    }
+
+    .btn,
+    .nav-cta{
+      position:relative;
+      overflow:hidden;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:54px;
+      padding:0 24px;
+      border-radius:999px;
+      border:none;
+      font-weight:700;
+      text-align:center;
+      cursor:pointer;
+      box-shadow:var(--shadow-soft);
+      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
+      background:linear-gradient(135deg,var(--gold),#f0d266);
+      color:#0a0a0a !important;
+    }
+
+    .btn::after,
+    .nav-cta::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.22) 45%, transparent 100%);
+      transform:translateX(-130%);
+      transition:transform .55s ease;
+      pointer-events:none;
+    }
+
+    .btn:hover::after,
+    .nav-cta:hover::after{
+      transform:translateX(130%);
+    }
+
+    .btn:hover,
+    .nav-cta:hover{
+      transform:translateY(-2px) scale(1.02);
+      box-shadow:0 12px 30px rgba(212,175,55,0.30);
+      filter:brightness(1.03);
     }
 
     .hero{
@@ -246,54 +280,15 @@
       margin:0 0 24px;
     }
 
-    .btn{
-      position:relative;
-      overflow:hidden;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:54px;
-      padding:0 24px;
-      border-radius:999px;
-      border:1px solid transparent;
-      font-weight:700;
-      text-align:center;
-      cursor:pointer;
-      box-shadow:var(--shadow-soft);
-      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
-    }
-
-    .btn::after,.nav-cta::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.22) 45%, transparent 100%);transform:translateX(-130%);transition:transform .55s ease;pointer-events:none;}
-
-    .btn:hover::after,.nav-cta:hover::after{transform:translateX(130%)}
-
-    .btn:hover{
-      transform:translateY(-2px) scale(1.02);
-      box-shadow:0 12px 30px rgba(212,175,55,0.30);
-      filter:brightness(1.03);
-    }
-
-    .btn:active,.nav-cta:active{transform:scale(.98)}
-
-    .btn-primary{
-      background:linear-gradient(135deg,var(--gold),#f0d266);
-      color:#0a0a0a;
-    }
-
-    .btn-secondary{
-      background:linear-gradient(135deg,var(--gold),#f0d266);
-      color:#0a0a0a;
-      border:none;
-      box-shadow:0 8px 22px rgba(212,175,55,0.22);
-    }
-
     .hero-points,
     .grid-2,
     .grid-3,
-    .review-grid,
     .faq-grid,
     .contact-wrap,
-    .gallery-grid{
+    .gallery-grid,
+    .package-grid,
+    .premium-price-cards,
+    .surface-grid{
       display:grid;
       gap:20px;
     }
@@ -305,30 +300,29 @@
 
     .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
     .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .review-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
     .faq-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
     .contact-wrap{grid-template-columns:1.05fr .95fr}
     .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .package-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .premium-price-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .surface-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 
     .mini-card,
     .card,
-    .review-card,
     .hero-panel,
     .info-box,
     .faq-card,
-    .gallery-card{
+    .gallery-card,
+    .package-card,
+    .premium-price-card,
+    .surface-card{
       border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.02));
+      background:
+        radial-gradient(circle at top right, rgba(212,175,55,0.06), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
       border-radius:26px;
       padding:22px;
       box-shadow:var(--shadow);
-    }
-
-    .hero-panel{
-      background:
-        radial-gradient(circle at top right, rgba(212,175,55,0.08), transparent 30%),
-        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.025));
-      padding:26px;
     }
 
     .hero-panel img{
@@ -370,12 +364,14 @@
 
     .mini-card span,
     .card p,
-    .review-card p,
     .faq-card p,
     .section-text,
     .contact-row span,
-    .tiny,
-    .gallery-card span{
+    .gallery-card span,
+    .package-subtitle,
+    .surface-card p,
+    .surface-meta,
+    .pack-note{
       color:var(--muted);
     }
 
@@ -404,10 +400,12 @@
     }
 
     .card h3,
-    .review-card h3,
     .faq-card h3,
     .info-box h3,
-    .gallery-card h3{
+    .gallery-card h3,
+    .package-card h3,
+    .premium-price-card h3,
+    .surface-card h3{
       margin:0 0 10px;
       font-size:22px;
       color:var(--gold);
@@ -417,35 +415,6 @@
       background:linear-gradient(180deg, rgba(212,175,55,0.08), rgba(255,255,255,0.02));
       border-top:1px solid var(--line);
       border-bottom:1px solid var(--line);
-    }
-
-    .gallery-placeholder{
-      width:100%;
-      aspect-ratio:16/10;
-      border-radius:20px;
-      border:1px dashed rgba(212,175,55,0.30);
-      background:
-        linear-gradient(180deg, rgba(212,175,55,0.08), rgba(255,255,255,0.02));
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:var(--gold);
-      font-weight:700;
-      text-align:center;
-      padding:20px;
-    }
-
-    .stars{
-      color:var(--gold);
-      font-size:18px;
-      margin-bottom:10px;
-      letter-spacing:2px;
-    }
-
-    .review-name{
-      margin-top:14px;
-      font-weight:700;
-      color:var(--text);
     }
 
     .quick-points{
@@ -468,6 +437,212 @@
       background:var(--gold);
       flex-shrink:0;
       box-shadow:0 0 10px rgba(212,175,55,0.5);
+    }
+
+    .package-card,
+    .premium-price-card,
+    .surface-card{
+      position:relative;
+      transition:.25s ease;
+      overflow:hidden;
+    }
+
+    .package-card:hover,
+    .premium-price-card:hover,
+    .surface-card:hover{
+      transform:translateY(-6px);
+      border-color:var(--line-strong);
+      box-shadow:0 24px 65px rgba(0,0,0,0.52);
+    }
+
+    .package-card.featured{
+      border-color:rgba(212,175,55,0.35);
+    }
+
+    .package-badge,
+    .price-badge,
+    .surface-badge,
+    .featured-label{
+      display:inline-flex;
+      margin-bottom:14px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(212,175,55,0.10);
+      color:var(--gold);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.6px;
+      text-transform:uppercase;
+    }
+
+    .featured-label{
+      position:absolute;
+      top:18px;
+      right:18px;
+      margin-bottom:0;
+    }
+
+    .package-card h3,
+    .premium-price-card h3{
+      font-size:28px;
+      line-height:1.08;
+    }
+
+    .package-features{
+      list-style:none;
+      padding:0;
+      margin:0 0 20px;
+      display:grid;
+      gap:10px;
+    }
+
+    .package-features li{
+      position:relative;
+      padding-left:22px;
+      color:var(--text);
+      font-size:14px;
+    }
+
+    .package-features li::before{
+      content:"✓";
+      position:absolute;
+      left:0;
+      top:0;
+      color:var(--gold);
+      font-weight:700;
+    }
+
+    .package-prices,
+    .price-list{
+      margin:18px 0 22px;
+      border-top:1px solid rgba(255,255,255,0.08);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      padding:14px 0;
+      display:grid;
+      gap:12px;
+    }
+
+    .price-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+    }
+
+    .price-row span{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .price-row strong{
+      color:var(--gold);
+      font-size:20px;
+      white-space:nowrap;
+    }
+
+    .package-btn{
+      width:100%;
+    }
+
+    .price-card-top{
+      margin-bottom:18px;
+    }
+
+    .price-features{
+      display:grid;
+      gap:10px;
+      margin:18px 0 22px;
+    }
+
+    .price-feature{
+      position:relative;
+      padding-left:18px;
+      color:var(--text);
+      font-size:15px;
+    }
+
+    .price-feature::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:9px;
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background:var(--gold);
+      box-shadow:0 0 10px rgba(212,175,55,0.5);
+    }
+
+    .pack-note{
+      margin:14px 0 0;
+      font-size:14px;
+    }
+
+    .gallery-placeholder{
+      width:100%;
+      aspect-ratio:16/10;
+      border-radius:20px;
+      border:1px dashed rgba(212,175,55,0.30);
+      background:linear-gradient(180deg, rgba(212,175,55,0.08), rgba(255,255,255,0.02));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--gold);
+      font-weight:700;
+      text-align:center;
+      padding:20px;
+    }
+
+    .surface-card{
+      display:grid;
+      grid-template-columns:220px 1fr;
+      gap:20px;
+      align-items:start;
+    }
+
+    .surface-image{
+      width:100%;
+      aspect-ratio:1/1;
+      border-radius:20px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.03);
+    }
+
+    .surface-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .surface-meta{
+      margin:0 0 14px;
+      font-size:14px;
+    }
+
+    .surface-list{
+      display:grid;
+      gap:8px;
+      margin:16px 0 0;
+    }
+
+    .surface-list div{
+      position:relative;
+      padding-left:18px;
+      color:var(--text);
+      font-size:14px;
+    }
+
+    .surface-list div::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:8px;
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background:var(--gold);
     }
 
     .contact-row{
@@ -512,7 +687,7 @@
     .faq-q span:last-child{
       color:var(--gold);
       font-size:20px;
-      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
+      transition:transform .22s ease;
     }
 
     .faq-item.active .faq-q span:last-child{
@@ -528,7 +703,7 @@
     }
 
     .faq-item.active .faq-a{
-      max-height:180px;
+      max-height:220px;
       padding:0 18px 18px;
     }
 
@@ -573,7 +748,7 @@
       text-decoration:none;
       box-shadow:0 8px 20px rgba(0,0,0,0.35);
       z-index:9999;
-      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
+      transition:.22s ease;
     }
 
     .whatsapp-btn:hover{
@@ -584,42 +759,17 @@
       width:22px;
       height:22px;
     }
-.premium-price-cards{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:24px;
-  align-items:stretch;
-}
 
-.premium-price-card{
-  position:relative;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  min-height:100%;
-  border:1px solid var(--line);
-  border-radius:28px;
-  padding:26px;
-  background:
-    radial-gradient(circle at top right, rgba(212,175,55,0.10), transparent 28%),
-    linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.02));
-  box-shadow:var(--shadow);
-  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-}
-
-.premium-price-card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 26px 60px rgba(0,0,0,0.42);
-  border-color:var(--line-strong);
-}
-
-.featured-card{
-  border-color:rgba(212,175,55,0.34);
-  box-shadow:0 24px 55
     @media (max-width:1100px){
-      .review-grid,
-      .grid-3{
-        grid-template-columns:repeat(2,minmax(0,1fr));
+      .grid-3,
+      .package-grid,
+      .premium-price-cards,
+      .surface-grid{
+        grid-template-columns:1fr;
+      }
+
+      .surface-card{
+        grid-template-columns:1fr;
       }
     }
 
@@ -655,7 +805,6 @@
       .grid-2,
       .grid-3,
       .hero-points,
-      .review-grid,
       .faq-grid,
       .contact-wrap,
       .gallery-grid{
@@ -668,19 +817,9 @@
     }
 
     @media (max-width:640px){
-      .hero{
-        padding:74px 0 42px;
-      }
-
-      .hero-actions{
-        flex-direction:column;
-      }
-
-      .hero-actions .btn{
-      position:relative;
-      overflow:hidden;
-        width:100%;
-      }
+      .hero{padding:74px 0 42px}
+      .hero-actions{flex-direction:column}
+      .hero-actions .btn{width:100%}
 
       .whatsapp-btn{
         right:16px;
@@ -689,194 +828,13 @@
         justify-content:center;
       }
     }
-    .package-grid{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:22px;
-  margin-top:24px;
-}
-
-.package-card{
-  position:relative;
-  border:1px solid var(--line);
-  background:
-    radial-gradient(circle at top right, rgba(212,175,55,0.06), transparent 30%),
-    linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
-  border-radius:28px;
-  padding:24px;
-  box-shadow:var(--shadow);
-  transition:.25s ease;
-  overflow:hidden;
-}
-
-.package-card:hover{
-  transform:translateY(-6px);
-  border-color:var(--line-strong);
-  box-shadow:0 24px 65px rgba(0,0,0,0.52);
-}
-
-.package-card.featured{
-  border-color:rgba(212,175,55,0.35);
-  box-shadow:0 26px 75px rgba(0,0,0,0.55);
-}
-
-.package-badge{
-  display:inline-flex;
-  margin-bottom:14px;
-  padding:8px 12px;
-  border-radius:999px;
-  border:1px solid var(--line);
-  background:rgba(212,175,55,0.10);
-  color:var(--gold);
-  font-size:12px;
-  font-weight:700;
-  letter-spacing:.6px;
-  text-transform:uppercase;
-}
-
-.package-card h3{
-  margin:0 0 10px;
-  font-size:28px;
-  color:var(--gold);
-  line-height:1.08;
-}
-
-.package-subtitle{
-  margin:0 0 18px;
-  color:var(--muted);
-  font-size:15px;
-}
-
-.package-features{
-  list-style:none;
-  padding:0;
-  margin:0 0 20px;
-  display:grid;
-  gap:10px;
-}
-
-.package-features li{
-  position:relative;
-  padding-left:22px;
-  color:var(--text);
-  font-size:14px;
-}
-
-.package-features li::before{
-  content:"✓";
-  position:absolute;
-  left:0;
-  top:0;
-  color:var(--gold);
-  font-weight:700;
-}
-
-.package-prices{
-  margin:18px 0 22px;
-  border-top:1px solid rgba(255,255,255,0.08);
-  border-bottom:1px solid rgba(255,255,255,0.08);
-  padding:14px 0;
-  display:grid;
-  gap:12px;
-}
-
-.price-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:14px;
-}
-
-.price-row span{
-  color:var(--muted);
-  font-size:14px;
-}
-
-.price-row strong{
-  color:var(--gold);
-  font-size:20px;
-  white-space:nowrap;
-}
-
-.package-note{
-  color:var(--muted);
-  font-size:14px;
-  margin:8px 0 22px;
-}
-
-.package-btn{
-  width:100%;
-}
-
-@media (max-width:1100px){
-  .package-grid{
-    grid-template-columns:1fr;
-  }
-
-  .featured-pack{
-  position: relative;
-  border: 1px solid rgba(212,175,55,0.45);
-  background:
-    radial-gradient(circle at top right, rgba(212,175,55,0.14), transparent 32%),
-    linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
-  box-shadow:
-    0 0 0 1px rgba(212,175,55,0.10),
-    0 0 24px rgba(212,175,55,0.16),
-    0 24px 65px rgba(0,0,0,0.55);
-  animation: prestigeGlow 2.8s ease-in-out infinite;
-}
-
-.featured-pack:hover{
-  transform: translateY(-8px) scale(1.01);
-  box-shadow:
-    0 0 0 1px rgba(212,175,55,0.20),
-    0 0 34px rgba(212,175,55,0.26),
-    0 28px 75px rgba(0,0,0,0.62);
-}
-
-.prestige-badge{
-  background: linear-gradient(135deg, rgba(212,175,55,0.22), rgba(212,175,55,0.08));
-  border-color: rgba(212,175,55,0.34);
-  color: var(--gold);
-  box-shadow: 0 0 16px rgba(212,175,55,0.18);
-}
-
-.featured-pack h3{
-  text-shadow: 0 0 10px rgba(212,175,55,0.14);
-}
-
-.featured-pack .price-row strong{
-  text-shadow: 0 0 12px rgba(212,175,55,0.16);
-}
-
-@keyframes prestigeGlow{
-  0%{
-    box-shadow:
-      0 0 0 1px rgba(212,175,55,0.10),
-      0 0 18px rgba(212,175,55,0.12),
-      0 24px 65px rgba(0,0,0,0.55);
-  }
-  50%{
-    box-shadow:
-      0 0 0 1px rgba(212,175,55,0.18),
-      0 0 30px rgba(212,175,55,0.22),
-      0 24px 65px rgba(0,0,0,0.58);
-  }
-  100%{
-    box-shadow:
-      0 0 0 1px rgba(212,175,55,0.10),
-      0 0 18px rgba(212,175,55,0.12),
-      0 24px 65px rgba(0,0,0,0.55);
-  }
-}
-}
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="container nav">
       <a href="index.html" class="brand">
-        <img src="logo.png" alt="Prestige Finish Logo" class="brand-logo">
+        <img src="logo.png" alt="Prestige Finish Logo" class="brand-logo" />
         <span class="brand-name">Prestige Finish</span>
       </a>
 
@@ -901,6 +859,9 @@
       <div class="nav-links" id="mobileMenu">
         <a href="#servicii" onclick="closeMenu()">Servicii</a>
         <a href="#pachete" onclick="closeMenu()">Pachete</a>
+        <a href="#corectie-protectie" onclick="closeMenu()">Corecție & protecție</a>
+        <a href="#basic-protection" onclick="closeMenu()">Basic Protection</a>
+        <a href="#prestige-protection" onclick="closeMenu()">Prestige Protection</a>
         <a href="#galerie" onclick="closeMenu()">Galerie</a>
         <a href="#contact" onclick="closeMenu()">Contact</a>
         <a href="textile-index.html" onclick="closeMenu()">Interior Care</a>
@@ -918,12 +879,12 @@
           <h1>Servicii premium pentru persoane fizice</h1>
           <p>
             Prestige Finish Private Care este pagina dedicată clienților individuali care își doresc detailing interior premium,
-            igienizare completă, detailing motor și servicii realizate cu atenție reală la detalii.
+            igienizare completă, corecție estetică și protecții dedicate pentru fiecare suprafață importantă a mașinii.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="programari.html">Rezervă un interval</a>
-            <a class="btn btn-primary" href="formular-contact.html">Formular de contact</a>
+            <a class="btn" href="programari.html">Rezervă un interval</a>
+            <a class="btn" href="formular-contact.html">Formular de contact</a>
           </div>
 
           <p class="hero-note">Se lucrează exclusiv pe bază de programare</p>
@@ -931,15 +892,15 @@
           <div class="hero-points">
             <div class="mini-card">
               <strong>Detailing interior</strong>
-              <span>Serviciul principal al paginii dedicate persoanelor fizice.</span>
+              <span>Servicii dedicate clienților care urmăresc un interior impecabil.</span>
             </div>
             <div class="mini-card">
-              <strong>Programare rapidă</strong>
-              <span>Poți selecta serviciul și intervalul direct online.</span>
+              <strong>Corecție & protecție</strong>
+              <span>Polish și protecții dedicate pentru un aspect premium și întreținere mai ușoară.</span>
             </div>
             <div class="mini-card">
-              <strong>Confort premium</strong>
-              <span>Servicii gândite pentru clienți care caută calitate și experiență plăcută.</span>
+              <strong>Sisteme dedicate</strong>
+              <span>Basic Protection by Koch Chemie și Prestige Protection by Gtechniq.</span>
             </div>
           </div>
         </div>
@@ -949,13 +910,13 @@
           <img src="logo.png" alt="Prestige Finish Logo" />
           <h3 style="margin:0 0 8px;font-size:28px;">Prestige Finish</h3>
           <p style="margin:0;color:var(--muted);">
-            O experiență dedicată persoanelor fizice, construită în jurul unui interior curat, îngrijit și confortabil.
+            O experiență dedicată persoanelor fizice, construită în jurul unui standard premium, de la curățare și igienizare până la corecție estetică și protecție pe fiecare suprafață.
           </p>
 
           <div class="quick-points">
             <div class="quick-point"><span class="quick-dot"></span><span>Grijă reală pentru detalii</span></div>
             <div class="quick-point"><span class="quick-dot"></span><span>Fără grabă, fără compromisuri</span></div>
-            <div class="quick-point"><span class="quick-dot"></span><span>Comunicare clară și organizare bună</span></div>
+            <div class="quick-point"><span class="quick-dot"></span><span>Pachete clar diferențiate</span></div>
           </div>
         </div>
       </div>
@@ -986,233 +947,459 @@
       </div>
     </section>
 
-<section id="pachete" class="fade-in">
-  <div class="container">
-    <div class="tag">Pachete</div>
-    <h2 class="section-title">Pachete pentru persoane fizice</h2>
-    <p class="section-text">
-      Am păstrat o structură clară, ușor de înțeles și simplu de accesat, astfel încât să poți alege rapid pachetul potrivit pentru mașina ta.
-    </p>
-
-    <div class="package-grid">
-      <div class="package-card featured">
-        <h3>Basic interior</h3>
-        <p class="package-subtitle">
-          Pachet de bază potrivit pentru păstrarea unui interior curat si plăcut între intervențiile mai complexe.
+    <section id="pachete" class="fade-in">
+      <div class="container">
+        <div class="tag">Pachete interior</div>
+        <h2 class="section-title">Pachete pentru persoane fizice</h2>
+        <p class="section-text">
+          Am păstrat o structură clară, ușor de înțeles și simplu de accesat, astfel încât să poți alege rapid pachetul potrivit pentru mașina ta.
         </p>
 
-        <ul class="package-features">
-  <li>Aspirare completă și uniformă a interiorului</li>
-  <li>Curățare și revitalizare suprafețe plastice și bord</li>
-  <li>Îndepărtare praf și impurități din zonele vizibile</li>
-  <li>Curățare geamuri interior pentru claritate maximă + tratament</li>
-  <li>Igienizare cu ozon a habitaclului</li>
-</ul>
+        <div class="package-grid">
+          <div class="package-card featured">
+            <div class="package-badge">Basic</div>
+            <h3>Basic Interior</h3>
+            <p class="package-subtitle">Pachet de bază potrivit pentru păstrarea unui interior curat și plăcut între intervențiile mai complexe.</p>
 
-        <div class="package-prices">
-          <div class="price-row">
-            <span>Auto mic</span>
-            <strong>269 lei</strong>
+            <ul class="package-features">
+              <li>Aspirare completă și uniformă a interiorului</li>
+              <li>Curățare și revitalizare suprafețe plastice și bord</li>
+              <li>Îndepărtare praf și impurități din zonele vizibile</li>
+              <li>Curățare geamuri interior pentru claritate maximă</li>
+              <li>Igienizare cu ozon a habitaclului</li>
+            </ul>
+
+            <div class="package-prices">
+              <div class="price-row"><span>Auto mic</span><strong>269 lei</strong></div>
+              <div class="price-row"><span>Auto mediu (sedan)</span><strong>369 lei</strong></div>
+              <div class="price-row"><span>Auto mare (SUV)</span><strong>469 lei</strong></div>
+            </div>
+
+            <a class="btn package-btn" href="https://wa.me/40757352371?text=Buna!%20Vreau%20detalii%20despre%20pachetul%20Basic%20Interior." target="_blank" rel="noopener noreferrer">
+              Programează pe WhatsApp
+            </a>
           </div>
-          <div class="price-row">
-            <span>Auto mediu (sedan)</span>
-            <strong>369 lei</strong>
+
+          <div class="package-card">
+            <div class="package-badge">Premium</div>
+            <h3>Premium Interior</h3>
+            <p class="package-subtitle">Pachet extins pentru clienții care își doresc o curățare mai amplă și mai atentă.</p>
+
+            <ul class="package-features">
+              <li>Include toate operațiunile din Basic Interior</li>
+              <li>Curățare tapițerie textilă</li>
+              <li>Curățare în profunzime covorașe și mochete</li>
+              <li>Curățare detaliată zone greu accesibile</li>
+              <li>Curățare completă portbagaj</li>
+              <li>Igienizare și reîmprospătare interior</li>
+            </ul>
+
+            <div class="package-prices">
+              <div class="price-row"><span>Auto mic</span><strong>369 lei</strong></div>
+              <div class="price-row"><span>Auto mediu (sedan)</span><strong>469 lei</strong></div>
+              <div class="price-row"><span>Auto mare (SUV)</span><strong>569 lei</strong></div>
+            </div>
+
+            <a class="btn package-btn" href="https://wa.me/40757352371?text=Buna!%20Vreau%20detalii%20despre%20pachetul%20Premium%20Interior." target="_blank" rel="noopener noreferrer">
+              Programează pe WhatsApp
+            </a>
           </div>
-          <div class="price-row">
-            <span>Auto mare (SUV)</span>
-            <strong>469 lei</strong>
+
+          <div class="package-card featured">
+            <div class="package-badge">Top Prestige</div>
+            <h3>Prestige Interior Pack</h3>
+            <p class="package-subtitle">Intervenție completă de detailing interior, dedicată mașinilor care necesită o curățare în profunzime și o readucere reală la un standard premium.</p>
+
+            <ul class="package-features">
+              <li>Include toate etapele din pachetul Premium</li>
+              <li>Demontare și curățare scaune și banchete dacă este necesar</li>
+              <li>Curățare în profunzime tapițerie și mochete</li>
+              <li>Curățare completă portbagaj și spațiu roată de rezervă</li>
+              <li>Curățare sistem climatizare și eliminare mirosuri</li>
+              <li>Aplicare protecție pentru plastice și suprafețe interioare</li>
+              <li>Tratament dedicat pentru piele</li>
+              <li>Tratament pentru textil / pluș</li>
+            </ul>
+
+            <div class="package-prices">
+              <div class="price-row"><span>Auto mic</span><strong>569 lei</strong></div>
+              <div class="price-row"><span>Auto mediu (sedan)</span><strong>669 lei</strong></div>
+              <div class="price-row"><span>Auto mare (SUV)</span><strong>769 lei</strong></div>
+            </div>
+
+            <a class="btn package-btn" href="https://wa.me/40757352371?text=Buna!%20Vreau%20detalii%20despre%20Prestige%20Interior%20Pack." target="_blank" rel="noopener noreferrer">
+              Programează pe WhatsApp
+            </a>
           </div>
         </div>
-
-        <a
-          class="btn btn-primary package-btn"
-          href="https://wa.me/40757352371?text=Buna!%20Vreau%20detalii%20despre%20pachetul%20Essential%20Interior%20pentru%20persoane%20fizice."
-          target="_blank"
-          rel="noopener noreferrer">
-          Programează pe WhatsApp
-        </a>
       </div>
+    </section>
 
-      <div class="package-card">
-        <h3>Premium Interior</h3>
-        <p class="package-subtitle">
-          Pachet extins pentru clienții care își doresc o curățare mai amplă și mai atentă.
+    <section class="coming fade-in" id="corectie-protectie">
+      <div class="container">
+        <div class="tag">Corecție & protecție</div>
+        <h2 class="section-title">Corecție estetică & protecție ceramică</h2>
+        <p class="section-text">
+          Servicii dedicate corecției estetice a lacului și protecției, pentru clienții care urmăresc un aspect curat, luciu controlat și protecție premium pe termen lung.
         </p>
 
-        <ul class="package-features">
-  <li>Include toate operațiunile din Essential Interior</li>
-  <li>Curățare tapițerie textilă (scaune / banchetă)</li>
-  <li>Curățare în profunzime covorașe și mochete </li>
-  <li>Curățare detaliată zone greu accesibile (șine, îmbinări, colțuri)</li>
-  <li>Curățare completă portbagaj</li>
-  <li>Igienizare și reîmprospătare interior</li>
-</ul>
+        <div class="premium-price-cards">
+          <div class="premium-price-card fade-in">
+            <div class="price-card-top">
+              <span class="price-badge">Corecție</span>
+              <h3>Polish de întreținere</h3>
+              <p>Refresh vizual, îmbunătățirea luciului și uniformizarea aspectului exterior.</p>
+            </div>
 
-        <div class="package-prices">
-  <div class="price-row">
-    <span>Auto mic</span>
-    <strong>369 lei</strong>
-  </div>
-  <div class="price-row">
-    <span>Auto mediu (sedan)</span>
-    <strong>469 lei</strong>
-  </div>
-  <div class="price-row">
-    <span>Auto mare (SUV)</span>
-    <strong>569 lei</strong>
-  </div>
-</div>
+            <div class="price-features">
+              <div class="price-feature">Îmbunătățire luciu general</div>
+              <div class="price-feature">Corecție ușoară vizuală</div>
+              <div class="price-feature">Aspect mai curat și uniform</div>
+            </div>
 
-        <a
-          class="btn btn-primary package-btn"
-          href="https://wa.me/40757352371?text=Buna!%20Vreau%20detalii%20despre%20pachetul%20Premium%20Interior%20pentru%20persoane%20fizice."
-          target="_blank"
-          rel="noopener noreferrer">
-          Programează pe WhatsApp
-        </a>
+            <div class="price-list">
+              <div class="price-row"><span>Auto mic</span><strong>de la 500 lei</strong></div>
+              <div class="price-row"><span>Auto mediu</span><strong>de la 650 lei</strong></div>
+              <div class="price-row"><span>Auto mare / SUV</span><strong>de la 800 lei</strong></div>
+            </div>
+
+            <a class="btn package-btn" href="https://wa.me/40757352371?text=Buna!%20Vreau%20detalii%20despre%20polishul%20de%20intretinere." target="_blank" rel="noopener noreferrer">
+              Programează pe WhatsApp
+            </a>
+          </div>
+
+          <div class="premium-price-card fade-in" style="position:relative;border-color:rgba(212,175,55,0.34);">
+            <div class="featured-label">Recomandat</div>
+            <div class="price-card-top">
+              <span class="price-badge">Corecție estetică</span>
+              <h3>Polish corectiv</h3>
+              <p>Serviciu recomandat pentru mașini care prezintă holograme, zgârieturi fine sau uzură estetică vizibilă.</p>
+            </div>
+
+            <div class="price-features">
+              <div class="price-feature">Corecție estetică într-un pas</div>
+              <div class="price-feature">Claritate și profunzime mai bună</div>
+              <div class="price-feature">Aspect premium al lacului</div>
+            </div>
+
+            <div class="price-list">
+              <div class="price-row"><span>Auto mic</span><strong>de la 900 lei</strong></div>
+              <div class="price-row"><span>Auto mediu</span><strong>de la 1200 lei</strong></div>
+              <div class="price-row"><span>Auto mare / SUV</span><strong>de la 1500 lei</strong></div>
+            </div>
+
+            <a class="btn package-btn" href="https://wa.me/40757352371?text=Buna!%20Vreau%20detalii%20despre%20polishul%20corectiv." target="_blank" rel="noopener noreferrer">
+              Programează pe WhatsApp
+            </a>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="package-card highlight featured-pack">
+    <section id="basic-protection" class="fade-in">
+      <div class="container">
+        <div class="tag">Basic Protection</div>
+        <h2 class="section-title">Pachet complet Basic Protection by Koch Chemie</h2>
+        <p class="section-text">
+          Pachet orientat către protecție dedicată pe fiecare suprafață importantă a mașinii, folosind soluții Koch Chemie alese în funcție de tipul materialului și de rolul fiecărei zone.
+        </p>
 
-  <div class="package-badge prestige-badge">Top Prestige</div>
+        <div class="premium-price-cards" style="margin-bottom:24px;">
+          <div class="premium-price-card">
+            <div class="price-card-top">
+              <span class="price-badge">Pachet complet</span>
+              <h3>Basic Protection Pack</h3>
+              <p>Abordare tehnică, clară și eficientă, construită pe suprafețe dedicate și întreținere mai ușoară în timp.</p>
+            </div>
 
-  <h3>Prestige Interior Pack</h3>
+            <div class="price-features">
+              <div class="price-feature">Protecție dedicată pentru vopsea</div>
+              <div class="price-feature">Protecție dedicată pentru jante</div>
+              <div class="price-feature">Soluții separate pentru piele, plastice, textile și geamuri</div>
+            </div>
 
-  <p class="package-subtitle">
-    Intervenție completă de detailing interior, dedicată mașinilor care necesită o curățare în profunzime și o readucere reală la un standard premium.
-  </p>
+            <div class="price-list">
+              <div class="price-row"><span>Auto mic</span><strong>de la 1400 lei</strong></div>
+              <div class="price-row"><span>Auto mediu</span><strong>de la 1700 lei</strong></div>
+              <div class="price-row"><span>Auto mare / SUV</span><strong>de la 2100 lei</strong></div>
+            </div>
 
-  <ul class="package-features">
-    <li>Include toate etapele din pachetul Premium</li>
-    <li>Demontare și curățare scaune și banchete (dacă este necesar)</li>
-    <li>Curățare în profunzime tapițerie și mochete + tratament</li>
-    <li>Curățare completă portbagaj și spațiu roată de rezervă</li>
-    <li>Curățare sistem climatizare și eliminare mirosuri</li>
-    <li>Curățare zone greu accesibile (șine, spații înguste, detalii fine)</li>
-    <li>Degresare și igienizare completă suprafețe</li>
-    <li>Aplicare protecție pentru plastice și suprafețe interioare</li>
-    <li>Tratament dedicat pentru piele (hidratare + protecție)</li>
-    <li>Tratament pentru textil/pluș</li>
-  </ul>
+            <a class="btn package-btn" href="https://wa.me/40757352371?text=Buna!%20Vreau%20detalii%20despre%20Basic%20Protection%20by%20Koch%20Chemie." target="_blank" rel="noopener noreferrer">
+              Cere detalii pe WhatsApp
+            </a>
+          </div>
 
-  <div class="package-prices">
-    <div class="price-row">
-      <span>Auto mic</span>
-      <strong>569 lei</strong>
-    </div>
-    <div class="price-row">
-      <span>Auto mediu (sedan)</span>
-      <strong>669 lei</strong>
-    </div>
-    <div class="price-row">
-      <span>Auto mare (SUV)</span>
-      <strong>769 lei</strong>
-    </div>
-  </div>
+          <div class="premium-price-card">
+            <div class="price-card-top">
+              <span class="price-badge">Important</span>
+              <h3>Aplicare individuală</h3>
+              <p>Dacă nu se alege un pachet complet, fiecare tratament se poate calcula separat, în funcție de suprafața tratată și de necesarul real de pregătire.</p>
+            </div>
 
-  <a
-    class="btn btn-primary package-btn"
-    href="https://wa.me/40757352371?text=Buna!%20Vreau%20detalii%20despre%20Prestige%20Interior%20Pack%20pentru%20persoane%20fizice."
-    target="_blank"
-    rel="noopener noreferrer">
-    Programează pe WhatsApp
-  </a>
-</div>
-        </a>
+            <div class="price-features">
+              <div class="price-feature">Ofertare separată pe element</div>
+              <div class="price-feature">Potrivită pentru clienții care vor doar anumite suprafețe</div>
+              <div class="price-feature">Evaluare în funcție de dimensiune și stare</div>
+            </div>
+
+            <p class="pack-note">
+              Tratamentele individuale pentru vopsea, jante, piele, plastice, textile și geamuri se calculează separat dacă nu se alege un pachet specific.
+            </p>
+          </div>
+        </div>
+
+        <div class="surface-grid">
+          <div class="surface-card">
+            <div class="surface-image">
+              <img src="assets/koch-paint-c002.jpeg" alt="Koch Chemie C0.02 pentru vopsea" />
+            </div>
+            <div>
+              <span class="surface-badge">Vopsea / caroserie</span>
+              <h3>Ceramic Allround C0.02</h3>
+              <p class="surface-meta">Protecție dedicată suprafețelor vopsite, pentru luciu, hidrofobie și întreținere mai ușoară.</p>
+              <div class="surface-list">
+                <div>Protecție pentru lac și vopsea</div>
+                <div>Ajută la respingerea apei și murdăriei</div>
+                <div>Ideal după pregătirea corectă a suprafeței</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="surface-card">
+            <div class="surface-image">
+              <img src="assets/koch-rims-cr001.jpeg" alt="Koch Chemie Cr0.01 pentru jante" />
+            </div>
+            <div>
+              <span class="surface-badge">Jante</span>
+              <h3>Ceramic Rims Cr0.01</h3>
+              <p class="surface-meta">Protecție dedicată jantelor, pentru depuneri mai reduse și întreținere mai simplă.</p>
+              <div class="surface-list">
+                <div>Protecție specială pentru jante</div>
+                <div>Curățare mai ușoară în timp</div>
+                <div>Potrivită pentru utilizare constantă</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="surface-card">
+            <div class="surface-image">
+              <img src="assets/koch-leather.jpeg" alt="Koch Chemie pentru piele" />
+            </div>
+            <div>
+              <span class="surface-badge">Piele</span>
+              <h3>Soluție dedicată pentru piele</h3>
+              <p class="surface-meta">Îngrijire și protecție pentru pielea auto, cu accent pe aspect îngrijit și întreținere controlată.</p>
+              <div class="surface-list">
+                <div>Curățare și protecție dedicată</div>
+                <div>Ajută la menținerea unui aspect premium</div>
+                <div>Potrivită pentru interior cu piele naturală sau tratată</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="surface-card">
+            <div class="surface-image">
+              <img src="assets/koch-plastic.jpeg" alt="Koch Chemie pentru plastice" />
+            </div>
+            <div>
+              <span class="surface-badge">Plastice</span>
+              <h3>Soluție dedicată pentru plastice</h3>
+              <p class="surface-meta">Protecție pentru elementele din plastic, pentru aspect uniform și întreținere mai bună.</p>
+              <div class="surface-list">
+                <div>Ideal pentru plastice interioare și exterioare</div>
+                <div>Aspect mai bine întreținut</div>
+                <div>Ajută la protecția împotriva uzurii vizibile</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="surface-card">
+            <div class="surface-image">
+              <img src="assets/koch-textile.jpeg" alt="Koch Chemie pentru textile și alcantara" />
+            </div>
+            <div>
+              <span class="surface-badge">Textile / pluș / alcantara</span>
+              <h3>Soluție dedicată pentru textile</h3>
+              <p class="surface-meta">Protecție pentru textile, pluș și alcantara, gândită pentru suprafețe sensibile și întreținere mai simplă.</p>
+              <div class="surface-list">
+                <div>Ajută la respingerea murdăriei și umezelii</div>
+                <div>Nu încarcă inutil materialul</div>
+                <div>Potrivită pentru suprafețe textile sensibile</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="surface-card">
+            <div class="surface-image">
+              <img src="assets/koch-glass.jpeg" alt="Koch Chemie pentru geamuri" />
+            </div>
+            <div>
+              <span class="surface-badge">Geamuri</span>
+              <h3>Soluție dedicată pentru geamuri</h3>
+              <p class="surface-meta">Protecție hidrofobă pentru sticlă și geamuri, pentru vizibilitate mai bună și comportament mai bun pe ploaie.</p>
+              <div class="surface-list">
+                <div>Efect hidrofob pe suprafețele de sticlă</div>
+                <div>Îmbunătățește vizibilitatea în condiții dificile</div>
+                <div>Ideală ca serviciu premium suplimentar</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-   <section class="coming fade-in" id="corectie-protectie">
-  <div class="container">
-    <div class="tag">Corecție & protecție</div>
-    <h2 class="section-title">Corecție estetică & protecție ceramică</h2>
-    <p class="section-text">
-      Servicii dedicate corecției estetice a lacului și protecției ceramice, pentru clienții care urmăresc un aspect curat, luciu controlat și protecție premium pe termen lung.
-    </p>
+    </section>
 
-    <div class="grid-3 premium-price-cards">
-      <div class="card premium-price-card fade-in">
-        <div class="price-card-top">
-          <span class="price-badge">Corecție</span>
-          <h3>Polish de întreținere</h3>
-          <p>
-            Refresh vizual, îmbunătățirea luciului și uniformizarea aspectului exterior pentru mașini care au nevoie de un plus de claritate și prezentare.
-          </p>
+    <section id="prestige-protection" class="coming fade-in">
+      <div class="container">
+        <div class="tag">Prestige Protection</div>
+        <h2 class="section-title">Pachet complet Prestige Protection by Gtechniq</h2>
+        <p class="section-text">
+          Pachet premium orientat către protecție avansată și prezentare superioară, cu soluții Gtechniq alese pentru suprafețe dedicate și un nivel mai ridicat de exclusivitate.
+        </p>
+
+        <div class="premium-price-cards" style="margin-bottom:24px;">
+          <div class="premium-price-card" style="position:relative;border-color:rgba(212,175,55,0.34);">
+            <div class="featured-label">Premium</div>
+            <div class="price-card-top">
+              <span class="price-badge">Pachet complet</span>
+              <h3>Prestige Protection Pack</h3>
+              <p>Abordare premium orientată către protecție avansată, întreținere mai ușoară și o prezentare de nivel superior pentru fiecare suprafață importantă a mașinii.</p>
+            </div>
+
+            <div class="price-features">
+              <div class="price-feature">Sistem premium Gtechniq pe suprafețe dedicate</div>
+              <div class="price-feature">Protecție avansată pentru vopsea, jante, geamuri și interior</div>
+              <div class="price-feature">Potrivit pentru clienții care urmăresc nivel superior de protecție</div>
+            </div>
+
+            <div class="price-list">
+              <div class="price-row"><span>Auto mic</span><strong>de la 2200 lei</strong></div>
+              <div class="price-row"><span>Auto mediu</span><strong>de la 2600 lei</strong></div>
+              <div class="price-row"><span>Auto mare / SUV</span><strong>de la 3200 lei</strong></div>
+            </div>
+
+            <a class="btn package-btn" href="https://wa.me/40757352371?text=Buna!%20Vreau%20detalii%20despre%20Prestige%20Protection%20by%20Gtechniq." target="_blank" rel="noopener noreferrer">
+              Cere detalii pe WhatsApp
+            </a>
+          </div>
+
+          <div class="premium-price-card">
+            <div class="price-card-top">
+              <span class="price-badge">Aplicare separată</span>
+              <h3>Tratament individual pe element</h3>
+              <p>Dacă nu se alege un pachet complet, fiecare tratament se poate calcula separat, în funcție de suprafața tratată și nivelul de pregătire necesar.</p>
+            </div>
+
+            <div class="price-features">
+              <div class="price-feature">Ofertare separată pe vopsea, jante, piele, plastice, textile și geamuri</div>
+              <div class="price-feature">Potrivită pentru clienții care vor doar anumite suprafețe premium</div>
+              <div class="price-feature">Evaluare în funcție de dimensiune și stare</div>
+            </div>
+
+            <p class="pack-note">
+              Tratamentele individuale se pot calcula separat dacă nu se alege un pachet specific Prestige Protection.
+            </p>
+          </div>
         </div>
 
-        <div class="price-features">
-          <div class="price-feature">Îmbunătățire luciu general</div>
-          <div class="price-feature">Corecție ușoară vizuală</div>
-          <div class="price-feature">Aspect mai curat și uniform</div>
-        </div>
+        <div class="surface-grid">
+          <div class="surface-card">
+            <div class="surface-image">
+              <img src="assets/gtechniq-paint.jpeg" alt="Gtechniq pentru vopsea" />
+            </div>
+            <div>
+              <span class="surface-badge">Vopsea / caroserie</span>
+              <h3>Soluție premium pentru vopsea</h3>
+              <p class="surface-meta">Protecție premium pentru suprafețele vopsite, orientată către luciu, claritate și întreținere facilă.</p>
+              <div class="surface-list">
+                <div>Nivel superior de protecție</div>
+                <div>Aspect premium al lacului</div>
+                <div>Ideal în combinație cu polish corectiv</div>
+              </div>
+            </div>
+          </div>
 
-        <div class="price-list">
-          <div class="price-row"><span>Auto mic</span><strong>de la 500 lei</strong></div>
-          <div class="price-row"><span>Auto mediu</span><strong>de la 650 lei</strong></div>
-          <div class="price-row"><span>Auto mare / SUV</span><strong>de la 800 lei</strong></div>
-        </div>
+          <div class="surface-card">
+            <div class="surface-image">
+              <img src="assets/gtechniq-wheels.jpeg" alt="Gtechniq pentru jante" />
+            </div>
+            <div>
+              <span class="surface-badge">Jante</span>
+              <h3>Soluție premium pentru jante</h3>
+              <p class="surface-meta">Protecție dedicată jantelor, pentru depuneri mai reduse și o întreținere mult mai simplă în timp.</p>
+              <div class="surface-list">
+                <div>Protecție dedicată zonei expuse</div>
+                <div>Ajută la curățare mai rapidă</div>
+                <div>Ideală pentru utilizare frecventă</div>
+              </div>
+            </div>
+          </div>
 
-        <a class="btn btn-primary package-btn" href="https://wa.me/40757352371?text=Buna!%20Vreau%20detalii%20despre%20polishul%20de%20intretinere." target="_blank" rel="noopener noreferrer">
-          Programează pe WhatsApp
-        </a>
+          <div class="surface-card">
+            <div class="surface-image">
+              <img src="assets/gtechniq-leather.jpeg" alt="Gtechniq pentru piele" />
+            </div>
+            <div>
+              <span class="surface-badge">Piele</span>
+              <h3>Soluție premium pentru piele</h3>
+              <p class="surface-meta">Tratament dedicat pentru piele, orientat către protecție, întreținere și păstrarea unui aspect premium în timp.</p>
+              <div class="surface-list">
+                <div>Protecție dedicată suprafețelor din piele</div>
+                <div>Ajută la menținerea unui aspect curat</div>
+                <div>Potrivit pentru interioare premium</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="surface-card">
+            <div class="surface-image">
+              <img src="assets/gtechniq-plastic.jpeg" alt="Gtechniq pentru plastice" />
+            </div>
+            <div>
+              <span class="surface-badge">Plastice</span>
+              <h3>Soluție premium pentru plastice</h3>
+              <p class="surface-meta">Protecție pentru plastice și elemente trim, cu accent pe aspect uniform și protecție împotriva degradării vizibile.</p>
+              <div class="surface-list">
+                <div>Potrivită pentru plastice exterioare și elemente trim</div>
+                <div>Ajută la menținerea unui aspect îngrijit</div>
+                <div>Complement bun pentru protecția completă a mașinii</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="surface-card">
+            <div class="surface-image">
+              <img src="assets/gtechniq-fabric.jpeg" alt="Gtechniq pentru textile" />
+            </div>
+            <div>
+              <span class="surface-badge">Textile / pluș / alcantara</span>
+              <h3>Soluție premium pentru textile</h3>
+              <p class="surface-meta">Protecție dedicată pentru textile, pluș și alcantara, pentru clienții care vor un nivel superior de întreținere.</p>
+              <div class="surface-list">
+                <div>Ajută la respingerea murdăriei și umezelii</div>
+                <div>Potrivită pentru suprafețe sensibile</div>
+                <div>Ideală în completarea detailingului interior premium</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="surface-card">
+            <div class="surface-image">
+              <img src="assets/gtechniq-glass.jpeg" alt="Gtechniq pentru geamuri" />
+            </div>
+            <div>
+              <span class="surface-badge">Geamuri</span>
+              <h3>Soluție premium pentru geamuri</h3>
+              <p class="surface-meta">Protecție dedicată suprafețelor din sticlă, pentru efect hidrofob și vizibilitate îmbunătățită în condiții dificile.</p>
+              <div class="surface-list">
+                <div>Efect hidrofob premium</div>
+                <div>Ajută la vizibilitate mai bună pe ploaie</div>
+                <div>Excelentă ca upgrade pentru pachetul complet</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div class="card premium-price-card featured-card fade-in">
-        <div class="featured-label">Recomandat</div>
-        <div class="price-card-top">
-          <span class="price-badge">Corecție estetică</span>
-          <h3>Polish corectiv</h3>
-          <p>
-            Serviciu recomandat pentru mașini care prezintă holograme, zgârieturi fine sau un nivel vizibil de uzură estetică și au nevoie de rafinare reală a finisajului.
-          </p>
-        </div>
-
-        <div class="price-features">
-          <div class="price-feature">Corecție estetică într-un pas</div>
-          <div class="price-feature">Claritate și profunzime mai bună</div>
-          <div class="price-feature">Aspect premium al lacului</div>
-        </div>
-
-        <div class="price-list">
-          <div class="price-row"><span>Auto mic</span><strong>de la 900 lei</strong></div>
-          <div class="price-row"><span>Auto mediu</span><strong>de la 1200 lei</strong></div>
-          <div class="price-row"><span>Auto mare / SUV</span><strong>de la 1500 lei</strong></div>
-        </div>
-
-        <a class="btn btn-primary package-btn" href="https://wa.me/40757352371?text=Buna!%20Vreau%20detalii%20despre%20polishul%20corectiv." target="_blank" rel="noopener noreferrer">
-          Programează pe WhatsApp
-        </a>
-      </div>
-
-      <div class="card premium-price-card fade-in">
-        <div class="price-card-top">
-          <span class="price-badge">Protecție</span>
-          <h3>Protecție ceramică</h3>
-          <p>
-            Soluție premium pentru protecția caroseriei, menținerea luciului și întreținere mai ușoară, aplicată în funcție de starea mașinii și pregătirea suprafeței.
-          </p>
-        </div>
-
-        <div class="price-features">
-          <div class="price-feature">Protecție ceramică profesională</div>
-          <div class="price-feature">Întreținere mai ușoară</div>
-          <div class="price-feature">Pachet disponibil și cu polish</div>
-        </div>
-
-        <div class="price-list">
-          <div class="price-row"><span>Protecție ceramică</span><strong>de la 1200 lei</strong></div>
-          <div class="price-row"><span>Polish + ceramică</span><strong>de la 1800 lei</strong></div>
-          <div class="price-row"><span>Elemente suplimentare</span><strong>ofertă personalizată</strong></div>
-        </div>
-
-        <a class="btn btn-primary package-btn" href="https://wa.me/40757352371?text=Buna!%20Vreau%20detalii%20despre%20protectia%20ceramica." target="_blank" rel="noopener noreferrer">
-          Programează pe WhatsApp
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <section id="galerie" class="coming fade-in">
       <div class="container">
@@ -1230,8 +1417,8 @@
           </div>
 
           <div class="gallery-card">
-            <div class="gallery-placeholder">Exemplu de zonă dedicată recondiționărilor faruri</div>
-            <h3 style="margin-top:16px;">Restaurare faruri</h3>
+            <div class="gallery-placeholder">Exemplu de zonă dedicată corecției și protecției</div>
+            <h3 style="margin-top:16px;">Corecție & protecție</h3>
             <span>Ideal pentru exemple rapide, vizuale și convingătoare.</span>
           </div>
         </div>
@@ -1248,19 +1435,16 @@
             <h3>Despre servicii</h3>
             <div class="faq-list">
               <div class="faq-item">
-                <button class="faq-q" type="button">
-                  <span>Pot cere recomandare înainte?</span>
-                  <span>+</span>
-                </button>
+                <button class="faq-q" type="button"><span>Pot cere recomandare înainte?</span><span>+</span></button>
                 <div class="faq-a">Da. Pentru asta poți folosi formularul de contact și îți răspundem clar, în funcție de nevoie.</div>
               </div>
-
               <div class="faq-item">
-                <button class="faq-q" type="button">
-                  <span>Lucrați doar interior?</span>
-                  <span>+</span>
-                </button>
-                <div class="faq-a">Focusul principal este detailingul interior și serviciile conexe prezentate în pagină.</div>
+                <button class="faq-q" type="button"><span>Lucrați doar interior?</span><span>+</span></button>
+                <div class="faq-a">Nu. Pe lângă zona de interior, există și servicii dedicate pentru corecție estetică și protecții pe suprafețe dedicate.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" type="button"><span>Care este diferența între Basic și Prestige Protection?</span><span>+</span></button>
+                <div class="faq-a">Basic Protection este construit pe sistemul Koch Chemie, iar Prestige Protection pe un sistem premium Gtechniq, cu poziționare mai exclusivistă și protecții orientate către nivel superior.</div>
               </div>
             </div>
           </div>
@@ -1269,19 +1453,16 @@
             <h3>Despre programări</h3>
             <div class="faq-list">
               <div class="faq-item">
-                <button class="faq-q" type="button">
-                  <span>Se lucrează fără programare?</span>
-                  <span>+</span>
-                </button>
+                <button class="faq-q" type="button"><span>Se lucrează fără programare?</span><span>+</span></button>
                 <div class="faq-a">Nu. Se lucrează exclusiv pe bază de programare.</div>
               </div>
-
               <div class="faq-item">
-                <button class="faq-q" type="button">
-                  <span>Pot rezerva direct online?</span>
-                  <span>+</span>
-                </button>
+                <button class="faq-q" type="button"><span>Pot rezerva direct online?</span><span>+</span></button>
                 <div class="faq-a">Da. Dacă știi deja ce serviciu dorești, mergi direct în pagina de programare online.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" type="button"><span>Tratamentele se pot aplica și separat?</span><span>+</span></button>
+                <div class="faq-a">Da. Dacă nu se alege un pachet complet, tratamentele pe suprafețe individuale se pot calcula separat, în funcție de necesitate și de starea reală a mașinii.</div>
               </div>
             </div>
           </div>
@@ -1295,15 +1476,14 @@
           <div class="tag">Contact</div>
           <h2 class="section-title">Contact pentru persoane fizice</h2>
           <p class="section-text">
-            Pentru programări, informații și interes privind serviciile Prestige Finish Private Care, ne poți contacta direct
-            sau poți folosi programarea online ori formularul de contact.
+            Pentru programări, informații și interes privind serviciile Prestige Finish Private Care, ne poți contacta direct sau poți folosi programarea online ori formularul de contact.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="tel:+40757352371">0757 352 371</a>
-            <a class="btn btn-primary" href="tel:+40727707545">0727 707 545</a>
-            <a class="btn btn-primary" href="programari.html">Programare online</a>
-            <a class="btn btn-primary" href="formular-contact.html">Formular de contact</a>
+            <a class="btn" href="tel:+40757352371">0757 352 371</a>
+            <a class="btn" href="tel:+40727707545">0727 707 545</a>
+            <a class="btn" href="programari.html">Programare online</a>
+            <a class="btn" href="formular-contact.html">Formular de contact</a>
           </div>
         </div>
 
@@ -1312,7 +1492,6 @@
           <div class="contact-row"><strong>Telefon secundar</strong><span>0727 707 545</span></div>
           <div class="contact-row"><strong>Email</strong><span>prestige.finish@yahoo.com</span></div>
           <div class="contact-row"><strong>Tip clienți</strong><span>Persoane fizice</span></div>
-          
         </div>
       </div>
     </section>
@@ -1326,7 +1505,7 @@
   </footer>
 
   <a href="https://wa.me/40757352371?text=Buna!%20Vreau%20informatii%20despre%20serviciile%20pentru%20persoane%20fizice." class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
     Programează acum
   </a>
 
