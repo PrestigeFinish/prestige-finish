@@ -5,26 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prestige Finish | Programare online</title>
   <link rel="icon" type="image/png" href="logo.png" />
-  <meta name="description" content="Programează online serviciile Prestige Finish. Alege serviciul, data dorită și ora preferată, iar noi revenim pentru confirmare." />
+  <meta name="description" content="Programare online Prestige Finish pentru detailing interior, corecție estetică, protecții ceramice, faruri și servicii premium auto." />
 
   <style>
     :root{
       --bg:#050505;
+      --card:rgba(255,255,255,0.04);
+      --card-strong:rgba(255,255,255,0.06);
       --gold:#d4af37;
-      --gold-strong:#f0d266;
       --gold-soft:rgba(212,175,55,0.12);
       --text:#f5f2ea;
       --muted:#c5bea9;
       --line:rgba(212,175,55,0.18);
-      --line-strong:rgba(212,175,55,0.36);
+      --line-strong:rgba(212,175,55,0.34);
       --green:#25D366;
-      --danger:#ff8b8b;
-      --success:#7dffbf;
-      --success-soft:rgba(125,255,191,0.10);
-      --danger-soft:rgba(255,139,139,0.12);
-      --shadow:0 24px 70px rgba(0,0,0,0.5);
+      --danger:#ff8d8d;
+      --shadow:0 20px 60px rgba(0,0,0,0.45);
       --shadow-soft:0 10px 30px rgba(0,0,0,0.25);
-      --radius:28px;
     }
 
     *{box-sizing:border-box}
@@ -34,20 +31,20 @@
       margin:0;
       font-family:Arial,Helvetica,sans-serif;
       background:
-        radial-gradient(circle at top right, rgba(212,175,55,0.12), transparent 24%),
-        radial-gradient(circle at bottom left, rgba(212,175,55,0.08), transparent 20%),
+        radial-gradient(circle at top right, rgba(212,175,55,0.16), transparent 24%),
+        radial-gradient(circle at bottom left, rgba(212,175,55,0.10), transparent 20%),
         var(--bg);
       color:var(--text);
-      line-height:1.55;
+      line-height:1.6;
       overflow-x:hidden;
     }
 
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
-    button,input,textarea,select{font:inherit}
+    button,input,select,textarea{font:inherit}
 
     .container{
-      width:min(1240px,calc(100% - 32px));
+      width:min(1180px,calc(100% - 32px));
       margin:0 auto;
     }
 
@@ -55,25 +52,25 @@
       position:sticky;
       top:0;
       z-index:1000;
-      background:rgba(5,5,5,0.9);
+      background:rgba(5,5,5,0.88);
       backdrop-filter:blur(14px);
       border-bottom:1px solid var(--line);
     }
 
     .nav{
+      position:relative;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:24px;
+      gap:16px;
       padding:16px 0;
-      position:relative;
     }
 
     .brand{
       display:flex;
       align-items:center;
       gap:12px;
-      min-width:max-content;
+      min-width:0;
     }
 
     .brand-logo{
@@ -95,64 +92,28 @@
     .nav-right{
       display:flex;
       align-items:center;
-      gap:14px;
-      margin-left:auto;
+      gap:16px;
     }
 
     .nav-links{
       display:flex;
       align-items:center;
-      gap:14px;
+      gap:18px;
       color:var(--muted);
       font-size:14px;
-      flex-wrap:nowrap;
+      flex-wrap:wrap;
+      justify-content:flex-end;
     }
 
-    .nav-links a{
-      transition:.22s ease;
-    }
+    .nav-links a:hover{color:var(--text)}
 
-    .nav-links a:hover{
-      color:var(--text);
-    }
-
-    .nav-cta,
-    .btn{
-      position:relative;
-      overflow:hidden;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:52px;
-      padding:0 22px;
+    .nav-cta{
+      padding:10px 16px;
       border-radius:999px;
-      border:none;
+      border:1px solid var(--line);
+      color:var(--gold);
+      background:rgba(212,175,55,0.06);
       font-weight:700;
-      cursor:pointer;
-      text-align:center;
-      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
-      background:linear-gradient(135deg,var(--gold),var(--gold-strong));
-      color:#0a0a0a !important;
-      box-shadow:var(--shadow-soft);
-    }
-
-    .btn::after,.nav-cta::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.22) 45%, transparent 100%);
-      transform:translateX(-130%);
-      transition:transform .55s ease;
-      pointer-events:none;
-    }
-
-    .btn:hover::after,.nav-cta:hover::after{
-      transform:translateX(130%);
-    }
-
-    .btn:hover,.nav-cta:hover{
-      transform:translateY(-2px) scale(1.02);
-      box-shadow:0 12px 30px rgba(212,175,55,0.28);
     }
 
     .top-socials{
@@ -206,7 +167,7 @@
     }
 
     .hero{
-      padding:84px 0 34px;
+      padding:86px 0 26px;
       position:relative;
       overflow:hidden;
     }
@@ -215,7 +176,7 @@
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(90deg, rgba(5,5,5,0.96) 0%, rgba(5,5,5,0.88) 40%, rgba(5,5,5,0.62) 68%, rgba(5,5,5,0.84) 100%);
+      background:linear-gradient(90deg, rgba(5,5,5,0.96) 0%, rgba(5,5,5,0.88) 40%, rgba(5,5,5,0.64) 68%, rgba(5,5,5,0.84) 100%);
       pointer-events:none;
     }
 
@@ -233,8 +194,8 @@
       position:relative;
       z-index:2;
       display:grid;
-      grid-template-columns:1fr 380px;
-      gap:24px;
+      grid-template-columns:1.05fr .95fr;
+      gap:28px;
       align-items:start;
     }
 
@@ -254,14 +215,14 @@
     }
 
     h1{
-      margin:0 0 14px;
-      font-size:clamp(40px,7vw,76px);
-      line-height:.96;
-      letter-spacing:-1.2px;
+      margin:0 0 16px;
+      font-size:clamp(38px,7vw,72px);
+      line-height:.98;
+      letter-spacing:-1px;
       max-width:760px;
     }
 
-    .hero-copy p{
+    .hero p{
       color:var(--muted);
       font-size:18px;
       max-width:760px;
@@ -274,78 +235,100 @@
       flex-wrap:wrap;
     }
 
-    .hero-side,
-    .booking-shell,
-    .summary-panel,
-    .faq-card{
+    .btn{
+      position:relative;
+      overflow:hidden;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:54px;
+      padding:0 24px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-weight:700;
+      text-align:center;
+      cursor:pointer;
+      box-shadow:var(--shadow-soft);
+      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
+    }
+
+    .btn::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.22) 45%, transparent 100%);
+      transform:translateX(-130%);
+      transition:transform .55s ease;
+      pointer-events:none;
+    }
+
+    .btn:hover::after{transform:translateX(130%)}
+
+    .btn:hover{
+      transform:translateY(-2px) scale(1.02);
+      box-shadow:0 12px 30px rgba(212,175,55,0.30);
+      filter:brightness(1.03);
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,var(--gold),#f0d266);
+      color:#0a0a0a;
+    }
+
+    .hero-panel,
+    .section-card,
+    .summary-card,
+    .service-card,
+    .calendar-card,
+    .time-card,
+    .final-card{
       border:1px solid var(--line);
       background:
-        radial-gradient(circle at top right, rgba(212,175,55,0.08), transparent 30%),
-        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
-      border-radius:var(--radius);
+        radial-gradient(circle at top right, rgba(212,175,55,0.06), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.02));
+      border-radius:28px;
       box-shadow:var(--shadow);
     }
 
-    .hero-side{
-      padding:24px;
-    }
-
-    .hero-side h3,
-    .summary-panel h3,
-    .faq-card h3{
-      margin:0 0 10px;
-      color:var(--gold);
-      font-size:24px;
-    }
-
-    .hero-side p,
-    .summary-panel p,
-    .faq-card p,
-    .helper,
-    .muted{
-      color:var(--muted);
-    }
-
-    .hero-points{
-      display:grid;
-      gap:12px;
-      margin-top:18px;
-    }
-
-    .hero-point{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-    }
-
-    .hero-dot{
-      width:10px;
-      height:10px;
-      margin-top:7px;
-      border-radius:999px;
-      background:var(--gold);
-      box-shadow:0 0 10px rgba(212,175,55,0.5);
-      flex-shrink:0;
-    }
-
-    section{
-      padding:28px 0 78px;
-    }
-
-    .booking-layout{
-      display:grid;
-      grid-template-columns:1.08fr .92fr;
-      gap:24px;
-      align-items:start;
-    }
-
-    .booking-shell{
+    .hero-panel{
       padding:26px;
     }
 
-    .section-tag{
+    .hero-panel img{
+      width:100%;
+      max-width:280px;
+      margin:0 auto 18px;
+      border-radius:22px;
+      border:1px solid var(--line);
+      background:#000;
+    }
+
+    .status{
       display:inline-flex;
-      margin-bottom:12px;
+      align-items:center;
+      gap:8px;
+      color:var(--gold);
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:8px 12px;
+      background:rgba(212,175,55,0.06);
+      font-size:13px;
+      margin-bottom:14px;
+    }
+
+    .status-dot{
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background:var(--gold);
+      box-shadow:0 0 12px rgba(212,175,55,0.7);
+    }
+
+    section{padding:24px 0 72px}
+
+    .tag{
+      display:inline-flex;
+      margin-bottom:14px;
       color:var(--gold);
       font-size:12px;
       text-transform:uppercase;
@@ -353,464 +336,450 @@
     }
 
     .section-title{
+      font-size:clamp(30px,4vw,46px);
       margin:0 0 12px;
-      font-size:clamp(30px,4vw,48px);
     }
 
     .section-text{
-      margin:0 0 24px;
-      max-width:760px;
-      color:var(--muted);
+      max-width:780px;
+      margin:0 0 28px;
       font-size:17px;
+      color:var(--muted);
     }
 
-    .service-grid{
+    .steps-bar{
+      position:sticky;
+      top:87px;
+      z-index:900;
+      margin-bottom:24px;
+    }
+
+    .steps-inner{
+      border:1px solid var(--line);
+      background:rgba(5,5,5,0.92);
+      backdrop-filter:blur(12px);
+      border-radius:24px;
+      padding:10px;
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:10px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .step-btn{
+      border:1px solid rgba(255,255,255,0.06);
+      background:rgba(255,255,255,0.02);
+      color:var(--muted);
+      min-height:56px;
+      border-radius:18px;
+      padding:10px 14px;
+      font-weight:700;
+      cursor:pointer;
+      transition:.22s ease;
+    }
+
+    .step-btn.active,
+    .step-btn:hover{
+      color:var(--gold);
+      border-color:var(--line-strong);
+      background:rgba(212,175,55,0.08);
+    }
+
+    .layout{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:24px;
+      align-items:start;
+    }
+
+    .main-stack{
+      display:grid;
+      gap:24px;
+    }
+
+    .section-card,
+    .summary-card{
+      padding:24px;
+    }
+
+    .services-grid{
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:16px;
-      margin-bottom:20px;
+      gap:18px;
     }
 
     .service-card{
-      border:1px solid var(--line);
-      border-radius:22px;
-      background:rgba(255,255,255,0.025);
-      padding:18px;
-      cursor:pointer;
+      overflow:hidden;
       transition:.22s ease;
-      min-height:100%;
+      cursor:pointer;
+      position:relative;
     }
 
     .service-card:hover{
       transform:translateY(-4px);
       border-color:var(--line-strong);
-      box-shadow:0 16px 34px rgba(0,0,0,0.35);
     }
 
-    .service-card.active{
-      border-color:rgba(212,175,55,0.38);
-      background:
-        radial-gradient(circle at top right, rgba(212,175,55,0.14), transparent 30%),
-        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
-      box-shadow:
-        0 0 0 1px rgba(212,175,55,0.12),
-        0 0 24px rgba(212,175,55,0.10),
-        0 16px 34px rgba(0,0,0,0.35);
+    .service-top{
+      height:180px;
+      background-size:cover;
+      background-position:center;
+      position:relative;
     }
 
-    .service-badge{
-      display:inline-flex;
-      margin-bottom:10px;
-      padding:7px 11px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(212,175,55,0.10);
-      color:var(--gold);
-      font-size:11px;
-      font-weight:700;
-      letter-spacing:.6px;
-      text-transform:uppercase;
+    .service-top::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.55));
     }
 
-    .service-card h4{
+    .service-body{
+      padding:18px;
+    }
+
+    .service-body h3{
       margin:0 0 8px;
-      color:var(--text);
-      font-size:20px;
+      color:var(--gold);
+      font-size:22px;
     }
 
-    .service-card p{
-      margin:0;
+    .service-body p{
+      margin:0 0 14px;
       color:var(--muted);
       font-size:14px;
     }
 
-    .calendar-wrap{
-      border:1px solid var(--line);
-      border-radius:24px;
-      background:rgba(255,255,255,0.02);
-      padding:18px;
-      margin-bottom:20px;
-    }
-
-    .calendar-top{
+    .service-meta{
       display:flex;
-      align-items:center;
       justify-content:space-between;
       gap:12px;
-      margin-bottom:14px;
+      align-items:center;
+      font-size:13px;
+      color:var(--muted);
     }
 
-    .calendar-title{
-      font-size:24px;
-      font-weight:700;
-      color:var(--gold);
-    }
-
-    .calendar-nav{
+    .service-check{
+      position:absolute;
+      top:14px;
+      right:14px;
+      z-index:3;
+      width:34px;
+      height:34px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.16);
+      background:rgba(0,0,0,0.45);
       display:flex;
       align-items:center;
-      gap:10px;
+      justify-content:center;
+      color:#fff;
+      font-weight:700;
     }
 
-    .calendar-nav button{
-      width:42px;
-      height:42px;
-      border-radius:14px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,0.03);
-      color:var(--gold);
-      cursor:pointer;
-      transition:.22s ease;
-      font-size:20px;
+    .service-card.selected{
+      border-color:rgba(212,175,55,0.42);
+      box-shadow:0 18px 44px rgba(212,175,55,0.08);
     }
 
-    .calendar-nav button:hover{
-      background:rgba(212,175,55,0.10);
-      border-color:var(--line-strong);
-      transform:translateY(-2px);
+    .service-card.selected .service-check{
+      background:var(--gold);
+      color:#111;
+      border-color:var(--gold);
     }
 
-    .calendar-head,
-    .calendar-grid{
-      display:grid;
-      grid-template-columns:repeat(7,minmax(0,1fr));
-      gap:8px;
+    .calendar-card,
+    .time-card,
+    .final-card{
+      padding:24px;
     }
 
     .calendar-head{
-      margin-bottom:8px;
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      align-items:center;
+      margin-bottom:20px;
     }
 
-    .calendar-head div{
-      text-align:center;
+    .calendar-head h3,
+    .time-card h3,
+    .final-card h3,
+    .summary-card h3{
+      margin:0;
+      color:var(--gold);
+      font-size:22px;
+    }
+
+    .month-nav{
+      display:flex;
+      gap:10px;
+    }
+
+    .month-btn{
+      width:54px;
+      height:54px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.03);
+      color:var(--gold);
+      font-size:24px;
+      cursor:pointer;
+      transition:.22s ease;
+    }
+
+    .month-btn:hover{
+      background:rgba(212,175,55,0.08);
+      border-color:var(--line-strong);
+    }
+
+    .weekdays{
+      display:grid;
+      grid-template-columns:repeat(7,minmax(0,1fr));
+      gap:10px;
+      margin-bottom:12px;
       color:var(--gold);
       font-size:12px;
       letter-spacing:.8px;
       text-transform:uppercase;
-      padding:8px 0;
+      text-align:center;
     }
 
-    .calendar-day{
-      min-height:74px;
-      border-radius:18px;
-      border:1px solid rgba(255,255,255,0.05);
+    .calendar-grid{
+      display:grid;
+      grid-template-columns:repeat(7,minmax(0,1fr));
+      gap:10px;
+    }
+
+    .day-cell{
+      min-height:92px;
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,0.06);
       background:rgba(255,255,255,0.02);
       padding:10px 8px;
       display:flex;
       flex-direction:column;
       justify-content:space-between;
-      align-items:flex-start;
-      cursor:pointer;
+      align-items:center;
+      text-align:center;
       transition:.22s ease;
-      color:var(--text);
+      cursor:pointer;
     }
 
-    .calendar-day:hover{
-      transform:translateY(-2px);
-      border-color:var(--line-strong);
-      background:rgba(212,175,55,0.08);
-    }
-
-    .calendar-day.muted-day{
-      opacity:.22;
-      cursor:default;
+    .day-cell.empty{
+      visibility:hidden;
       pointer-events:none;
     }
 
-    .calendar-day.disabled{
-      opacity:.42;
-      cursor:not-allowed;
-      background:rgba(255,255,255,0.015);
-      border-color:rgba(255,255,255,0.04);
-    }
-
-    .calendar-day.disabled:hover{
-      transform:none;
-      background:rgba(255,255,255,0.015);
-    }
-
-    .calendar-day.selected{
-      border-color:rgba(212,175,55,0.42);
-      background:
-        radial-gradient(circle at top right, rgba(212,175,55,0.14), transparent 35%),
-        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
-      box-shadow:0 0 0 1px rgba(212,175,55,0.12), 0 10px 20px rgba(0,0,0,0.25);
-    }
-
-    .calendar-number{
+    .day-number{
       font-size:16px;
       font-weight:700;
+      color:var(--text);
     }
 
-    .calendar-status{
-      font-size:11px;
+    .day-status{
+      font-size:12px;
+      line-height:1.2;
       color:var(--muted);
+      white-space:normal;
+      word-break:break-word;
+      padding:0 2px;
     }
 
-    .time-wrap{
-      border:1px solid var(--line);
-      border-radius:24px;
-      background:rgba(255,255,255,0.02);
-      padding:18px;
-      margin-bottom:18px;
+    .day-cell.past,
+    .day-cell.closed{
+      opacity:.4;
+      cursor:not-allowed;
     }
 
-    .time-title{
-      margin:0 0 14px;
-      font-size:20px;
-      color:var(--gold);
+    .day-cell.available:hover{
+      transform:translateY(-2px);
+      border-color:var(--line-strong);
+      background:rgba(212,175,55,0.06);
     }
 
-    .time-grid{
+    .day-cell.selected{
+      border-color:rgba(212,175,55,0.45);
+      box-shadow:0 0 0 2px rgba(212,175,55,0.14) inset;
+      background:rgba(212,175,55,0.08);
+    }
+
+    .day-cell.full{
+      opacity:.55;
+      cursor:not-allowed;
+    }
+
+    .times-grid{
       display:grid;
       grid-template-columns:repeat(4,minmax(0,1fr));
-      gap:12px;
+      gap:14px;
+      margin-top:18px;
     }
 
     .time-slot{
-      min-height:54px;
-      border-radius:16px;
-      border:1px solid var(--line);
+      min-height:62px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,0.08);
       background:rgba(255,255,255,0.025);
       color:var(--text);
-      padding:0 16px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      font-weight:700;
       cursor:pointer;
       transition:.22s ease;
-      font-weight:700;
     }
 
     .time-slot:hover{
       transform:translateY(-2px);
       border-color:var(--line-strong);
-      background:rgba(212,175,55,0.08);
+      background:rgba(212,175,55,0.06);
     }
 
-    .time-slot.active{
-      background:linear-gradient(135deg,var(--gold),var(--gold-strong));
-      color:#0a0a0a;
-      border-color:transparent;
-      box-shadow:0 10px 24px rgba(212,175,55,0.18);
+    .time-slot.selected{
+      background:linear-gradient(135deg,var(--gold),#f0d266);
+      color:#111;
+      border-color:var(--gold);
     }
 
-    .time-slot.disabled{
+    .time-slot.blocked{
       opacity:.35;
-      pointer-events:none;
-      background:rgba(255,255,255,0.02);
-      color:var(--danger);
-      border-color:rgba(255,255,255,0.04);
+      cursor:not-allowed;
+      text-decoration:line-through;
     }
 
-    .form-grid{
+    .hint{
+      color:var(--muted);
+      font-size:14px;
+      margin-top:12px;
+    }
+
+    .summary-list{
       display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:16px;
+      gap:12px;
+      margin:18px 0 20px;
     }
 
-    .field,
-    .field-full{
+    .summary-item{
+      border:1px solid rgba(255,255,255,0.06);
+      border-radius:16px;
+      background:rgba(255,255,255,0.02);
+      padding:12px 14px;
+      color:var(--text);
+      font-size:14px;
+    }
+
+    .summary-empty{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .selected-services-tags{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
+
+    .selected-tag{
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(212,175,55,0.08);
+      color:var(--gold);
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .final-form{
+      display:grid;
+      gap:16px;
+      margin-top:18px;
+    }
+
+    .field{
       display:flex;
       flex-direction:column;
       gap:8px;
     }
 
-    .field-full{
-      grid-column:1 / -1;
-    }
-
     label{
       font-size:14px;
-      font-weight:700;
       color:var(--text);
+      font-weight:700;
+      letter-spacing:.2px;
     }
 
-    input, textarea, select{
+    input,textarea{
       width:100%;
       border:1px solid rgba(212,175,55,0.16);
-      background:#0b0b0b;
+      background:rgba(255,255,255,0.03);
       color:var(--text);
       border-radius:16px;
       padding:14px 16px;
       font-size:15px;
       outline:none;
+      font-family:Arial,Helvetica,sans-serif;
       transition:.22s ease;
-      appearance:none;
-      -webkit-appearance:none;
-      -moz-appearance:none;
     }
 
-    select{
-      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23d4af37' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
-      background-repeat:no-repeat;
-      background-position:right 14px center;
-      padding-right:44px;
+    input::placeholder,
+    textarea::placeholder{
+      color:#a39b86;
     }
 
-    select option{
-      background:#0b0b0b;
-      color:#f5f2ea;
+    input:focus,
+    textarea:focus{
+      border-color:rgba(212,175,55,0.46);
+      box-shadow:0 0 0 3px rgba(212,175,55,0.10);
+      background:rgba(255,255,255,0.045);
     }
 
     textarea{
       resize:vertical;
-      min-height:130px;
-    }
-
-    input::placeholder,textarea::placeholder{
-      color:#a39b86;
-    }
-
-    input:focus,textarea:focus,select:focus{
-      border-color:rgba(212,175,55,0.46);
-      box-shadow:0 0 0 3px rgba(212,175,55,0.10);
-      background:#111;
-    }
-
-    .booking-submit{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      margin-top:20px;
-      align-items:center;
-    }
-
-    .submit-main{
-      min-width:240px;
-    }
-
-    .loader{
-      display:none;
-      width:18px;
-      height:18px;
-      border:2px solid rgba(0,0,0,0.2);
-      border-top-color:#000;
-      border-radius:999px;
-      animation:spin .8s linear infinite;
-      margin-left:10px;
-    }
-
-    @keyframes spin{
-      to{transform:rotate(360deg)}
+      min-height:140px;
     }
 
     .inline-state{
       display:none;
-      margin-top:18px;
+      margin-top:16px;
       padding:14px 16px;
       border-radius:16px;
-      border:1px solid transparent;
       font-size:14px;
       font-weight:700;
     }
 
     .inline-state.success{
-      background:var(--success-soft);
-      border-color:rgba(125,255,191,0.22);
-      color:var(--success);
+      background:rgba(0,255,150,0.08);
+      border:1px solid rgba(0,255,150,0.25);
+      color:#7dffbf;
     }
 
     .inline-state.error{
-      background:var(--danger-soft);
-      border-color:rgba(255,139,139,0.20);
+      background:rgba(255,0,0,0.08);
+      border:1px solid rgba(255,0,0,0.20);
       color:var(--danger);
     }
 
-    .summary-panel{
-      padding:24px;
+    .summary-card{
       position:sticky;
-      top:98px;
+      top:170px;
     }
 
-    .summary-block{
-      border:1px solid rgba(255,255,255,0.06);
-      background:rgba(255,255,255,0.02);
-      border-radius:20px;
-      padding:16px;
-      margin-top:14px;
+    .summary-card h3{
+      margin:0 0 8px;
     }
 
-    .summary-label{
-      color:var(--gold);
-      font-size:12px;
-      text-transform:uppercase;
-      letter-spacing:.8px;
-      margin-bottom:6px;
+    .summary-row{
+      padding:12px 0;
+      border-bottom:1px solid rgba(255,255,255,0.08);
     }
 
-    .summary-value{
-      font-size:18px;
-      font-weight:700;
+    .summary-row strong{
+      display:block;
       color:var(--text);
+      margin-bottom:4px;
     }
 
-    .summary-note{
-      margin-top:18px;
-      padding:14px 16px;
-      border-radius:18px;
-      border:1px solid var(--line);
-      background:rgba(212,175,55,0.08);
-      color:var(--gold);
-      font-size:14px;
-    }
-
-    .faq-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:18px;
-      margin-top:20px;
-    }
-
-    .faq-list{
-      display:grid;
-      gap:14px;
-      margin-top:18px;
-    }
-
-    .faq-item{
-      border:1px solid var(--line);
-      border-radius:20px;
-      background:rgba(255,255,255,0.025);
-      overflow:hidden;
-    }
-
-    .faq-q{
-      width:100%;
-      background:none;
-      border:none;
-      color:var(--text);
-      text-align:left;
-      padding:18px;
-      font-weight:700;
-      cursor:pointer;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:16px;
-    }
-
-    .faq-q span:last-child{
-      color:var(--gold);
-      font-size:20px;
-      transition:.22s ease;
-    }
-
-    .faq-item.active .faq-q span:last-child{
-      transform:rotate(45deg);
-    }
-
-    .faq-a{
-      max-height:0;
-      overflow:hidden;
-      transition:max-height .3s ease;
-      padding:0 18px;
+    .summary-row span{
       color:var(--muted);
-    }
-
-    .faq-item.active .faq-a{
-      max-height:180px;
-      padding:0 18px 18px;
+      font-size:14px;
     }
 
     .fade-in{
@@ -857,44 +826,26 @@
       transition:.22s ease;
     }
 
-    .whatsapp-btn:hover{
-      transform:scale(1.04);
-    }
+    .whatsapp-btn:hover{transform:scale(1.04)}
 
     .whatsapp-btn img{
       width:22px;
       height:22px;
     }
 
-    .confetti{
-      position:fixed;
-      top:-10px;
-      width:10px;
-      height:18px;
-      opacity:.9;
-      pointer-events:none;
-      z-index:99999;
-      animation:fall linear forwards;
-    }
-
-    @keyframes fall{
-      to{
-        transform:translateY(110vh) rotate(540deg);
-        opacity:.2;
-      }
-    }
-
-    @media (max-width:1150px){
-      .top-socials{display:none}
+    @media (max-width:1100px){
+      .layout,
       .hero-grid{
         grid-template-columns:1fr;
       }
-      .summary-panel{
+
+      .summary-card{
         position:static;
       }
     }
 
     @media (max-width:980px){
+      .top-socials{display:none}
       .menu-toggle{display:inline-flex}
 
       .nav-links{
@@ -921,46 +872,59 @@
         border:1px solid rgba(255,255,255,0.04);
       }
 
-      .booking-layout,
-      .faq-grid,
-      .form-grid,
-      .service-grid,
-      .time-grid{
-        grid-template-columns:1fr;
+      .services-grid,
+      .times-grid{
+        grid-template-columns:1fr 1fr;
       }
 
-      h1{font-size:48px}
+      .steps-inner{
+        grid-template-columns:1fr 1fr;
+      }
+
+      h1{font-size:46px}
       .brand-logo{height:44px}
       .brand-name{font-size:20px}
     }
 
     @media (max-width:640px){
-      .hero{
-        padding:72px 0 38px;
+      .hero{padding:74px 0 20px}
+      .hero-actions{flex-direction:column}
+      .hero-actions .btn{width:100%}
+
+      .services-grid,
+      .times-grid{
+        grid-template-columns:1fr;
       }
 
-      .hero-actions,
-      .booking-submit{
-        flex-direction:column;
+      .calendar-grid{
+        gap:8px;
       }
 
-      .hero-actions .btn,
-      .booking-submit .btn,
-      .submit-main{
-        width:100%;
-      }
-
-      .calendar-day{
-        min-height:64px;
+      .day-cell{
+        min-height:82px;
+        border-radius:18px;
         padding:8px 6px;
       }
 
-      .calendar-number{
-        font-size:14px;
+      .day-number{
+        font-size:15px;
       }
 
-      .calendar-status{
-        font-size:10px;
+      .day-status{
+        font-size:11px;
+      }
+
+      .steps-bar{
+        top:78px;
+      }
+
+      .steps-inner{
+        grid-template-columns:1fr;
+      }
+
+      .month-btn{
+        width:50px;
+        height:50px;
       }
 
       .whatsapp-btn{
@@ -1002,8 +966,7 @@
         <a href="index.html" onclick="closeMenu()">Acasă</a>
         <a href="persoane-fizice.html" onclick="closeMenu()">Persoane fizice</a>
         <a href="flote.html" onclick="closeMenu()">Persoane juridice / flote</a>
-        <a href="formular-contact.html" onclick="closeMenu()">Contact</a>
-        <a href="textile-index.html" onclick="closeMenu()">Interior Care</a>
+        <a href="formular-contact.html" onclick="closeMenu()">Formular de contact</a>
         <a href="programari.html" class="nav-cta" onclick="closeMenu()">Programare online</a>
       </div>
     </div>
@@ -1013,274 +976,249 @@
     <section class="hero fade-in">
       <div class="hero-bg"></div>
       <div class="container hero-grid">
-        <div class="hero-copy">
+        <div>
           <div class="eyebrow">Programare online</div>
-          <h1>Stabilește data și ora dorită</h1>
+          <h1>Rezervă serviciile dorite direct din site</h1>
           <p>
-            Alege serviciul care te interesează, selectează ziua și ora preferată, apoi trimite cererea de programare.
+            Selectezi serviciile, alegi data și ora potrivită, apoi trimiți cererea de programare într-un format clar și ușor de completat.
           </p>
 
           <div class="hero-actions">
-            <a class="btn" href="#booking-zone">Începe programarea</a>
-            <a class="btn" href="formular-contact.html">Formular de contact</a>
+            <a class="btn btn-primary" href="#booking-flow">Începe programarea</a>
+            <a class="btn btn-primary" href="formular-contact.html">Prefer formularul de contact</a>
           </div>
         </div>
 
-        <div class="hero-side">
-          <h3>Prestige Finish</h3>
-          <p>
-            Programările se stabilesc exclusiv pe bază de rezervare, pentru a păstra timpul necesar fiecărei lucrări și standardul premium al serviciilor oferite.
+        <div class="hero-panel">
+          <div class="status"><span class="status-dot"></span> Programare structurată</div>
+          <img src="logo.png" alt="Prestige Finish Logo" />
+          <h3 style="margin:0 0 8px;font-size:28px;">Prestige Finish</h3>
+          <p style="margin:0;color:var(--muted);">
+            O pagină de rezervare construită pentru claritate: alegi exact serviciile, data potrivită și ora disponibilă, apoi trimiți solicitarea completă.
           </p>
-
-          <div class="hero-points">
-            <div class="hero-point"><span class="hero-dot"></span><span>servicii dedicate detailingului auto premium</span></div>
-            <div class="hero-point"><span class="hero-dot"></span><span>selectare clară a serviciului, zilei și orei</span></div>
-            <div class="hero-point"><span class="hero-dot"></span><span>confirmare rapidă prin telefon sau WhatsApp</span></div>
-          </div>
         </div>
       </div>
     </section>
 
-    <section id="booking-zone" class="fade-in">
-      <div class="container booking-layout">
-        <div class="booking-shell">
-          <span class="section-tag">Programare</span>
-          <h2 class="section-title">Alege serviciul dorit</h2>
-          <p class="section-text">
-            Selectează serviciul, data și ora preferată pentru a trimite cererea de programare.
-          </p>
-
-          <div class="service-grid" id="serviceGrid">
-            <div class="service-card active" data-value="Detailing interior">
-              <span class="service-badge">Interior</span>
-              <h4>Detailing interior</h4>
-              <p>Curățare atentă, igienizare și finisaj premium pentru habitacluri bine întreținute.</p>
-            </div>
-
-            <div class="service-card" data-value="Premium Interior">
-              <span class="service-badge">Interior</span>
-              <h4>Premium Interior</h4>
-              <p>Intervenție extinsă pentru clienții care își doresc o curățare mai amplă.</p>
-            </div>
-
-            <div class="service-card" data-value="Prestige Interior Pack">
-              <span class="service-badge">Top Prestige</span>
-              <h4>Prestige Interior Pack</h4>
-              <p>Pachet complet dedicat interioarelor care necesită timp și atenție reală.</p>
-            </div>
-
-            <div class="service-card" data-value="Detailing motor">
-              <span class="service-badge">Auto</span>
-              <h4>Detailing motor</h4>
-              <p>Curățare atentă a compartimentului motor pentru un aspect îngrijit.</p>
-            </div>
-
-            <div class="service-card" data-value="Polish de întreținere">
-              <span class="service-badge">Corecție</span>
-              <h4>Polish de întreținere</h4>
-              <p>Refresh vizual și plus de claritate pentru mașini cu uzură estetică ușoară.</p>
-            </div>
-
-            <div class="service-card" data-value="Polish corectiv">
-              <span class="service-badge">Corecție estetică</span>
-              <h4>Polish corectiv</h4>
-              <p>Serviciu recomandat pentru holograme, zgârieturi fine și aspect neuniform.</p>
-            </div>
-
-            <div class="service-card" data-value="Protecții ceramice">
-              <span class="service-badge">Protecție</span>
-              <h4>Protecții ceramice</h4>
-              <p>Protecție premium pentru caroserie și întreținere mai ușoară în timp.</p>
-            </div>
-
-            <div class="service-card" data-value="Protecții hidrofobe geamuri">
-              <span class="service-badge">Protecție</span>
-              <h4>Hidrofob geamuri</h4>
-              <p>Tratament pentru vizibilitate mai bună și comportament mai bun pe ploaie.</p>
-            </div>
-
-            <div class="service-card" data-value="PPF faruri și stopuri">
-              <span class="service-badge">PPF</span>
-              <h4>PPF faruri & stopuri</h4>
-              <p>Protecție transparentă pentru elementele optice expuse la uzură.</p>
-            </div>
-
-            <div class="service-card" data-value="Recondiționări faruri">
-              <span class="service-badge">Faruri</span>
-              <h4>Recondiționări faruri</h4>
-              <p>Serviciu pentru faruri afectate de matuire, oxidare sau pierdere de claritate.</p>
-            </div>
-
-            <div class="service-card" data-value="Basic Protection">
-              <span class="service-badge">Koch Chemie</span>
-              <h4>Basic Protection</h4>
-              <p>Pachet complet de protecții pe suprafețe, construit pe sistem Koch Chemie.</p>
-            </div>
-
-            <div class="service-card" data-value="Prestige Protection">
-              <span class="service-badge">Gtechniq</span>
-              <h4>Prestige Protection</h4>
-              <p>Pachet premium orientat către protecție avansată și exclusivitate.</p>
-            </div>
-          </div>
-
-          <div class="calendar-wrap">
-            <div class="calendar-top">
-              <div class="calendar-title" id="calendarTitle">Aprilie 2026</div>
-              <div class="calendar-nav">
-                <button type="button" id="prevMonth" aria-label="Luna anterioară">‹</button>
-                <button type="button" id="nextMonth" aria-label="Luna următoare">›</button>
-              </div>
-            </div>
-
-            <div class="calendar-head">
-              <div>Lun</div>
-              <div>Mar</div>
-              <div>Mie</div>
-              <div>Joi</div>
-              <div>Vin</div>
-              <div>Sâm</div>
-              <div>Dum</div>
-            </div>
-
-            <div class="calendar-grid" id="calendarGrid"></div>
-          </div>
-
-          <div class="time-wrap">
-            <h3 class="time-title">Alege ora dorită</h3>
-            <div class="time-grid" id="timeGrid"></div>
-          </div>
-
-          <form id="bookingForm" action="https://formspree.io/f/maqpgwqy" method="POST">
-            <input type="hidden" name="_subject" value="Programare nouă - Prestige Finish">
-            <input type="hidden" name="_replyto" value="">
-            <input type="hidden" name="Tip solicitare" value="Programare online">
-            <input type="hidden" name="Serviciu selectat" id="hiddenService" value="Detailing interior">
-            <input type="hidden" name="Data selectată" id="hiddenDateValue" value="">
-            <input type="hidden" name="Ora selectată" id="hiddenTimeValue" value="">
-            <input type="text" name="_gotcha" style="display:none">
-
-            <div class="form-grid">
-              <div class="field">
-                <label for="nume">Nume</label>
-                <input type="text" id="nume" name="Nume" placeholder="Numele tău" required autocomplete="name">
-              </div>
-
-              <div class="field">
-                <label for="telefon">Telefon</label>
-                <input type="tel" id="telefon" name="Telefon" placeholder="07xx xxx xxx" required autocomplete="tel">
-              </div>
-
-              <div class="field">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="Email" placeholder="adresa ta de email" required autocomplete="email">
-              </div>
-
-              <div class="field">
-                <label for="tip-client">Tip client</label>
-                <select id="tip-client" name="Tip client" required>
-                  <option value="Persoană fizică">Persoană fizică</option>
-                  <option value="Persoană juridică / flotă">Persoană juridică / flotă</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label for="displayDate">Data aleasă</label>
-                <input type="text" id="displayDate" placeholder="Alege o zi din calendar" readonly required>
-              </div>
-
-              <div class="field">
-                <label for="displayTime">Ora aleasă</label>
-                <input type="text" id="displayTime" placeholder="Alege o oră" readonly required>
-              </div>
-
-              <div class="field-full">
-                <label for="mesaj">Detalii suplimentare</label>
-                <textarea id="mesaj" name="Detalii suplimentare" placeholder="Model mașină, starea actuală, observații sau orice alte detalii utile."></textarea>
-                <div class="helper">Te contactăm pentru confirmarea finală a programării.</div>
-              </div>
-            </div>
-
-            <div class="booking-submit">
-              <button type="submit" class="btn submit-main" id="submitBtn">
-                <span>Trimite cererea de programare</span>
-                <span class="loader" id="loader"></span>
-              </button>
-              <a class="btn" href="formular-contact.html">Formular de contact</a>
-            </div>
-
-            <div class="inline-state success" id="successBox">
-              ✔ Cererea de programare a fost trimisă cu succes.
-            </div>
-
-            <div class="inline-state error" id="errorBox">
-              ✖ A apărut o problemă la trimitere. Încearcă din nou sau contactează-ne telefonic.
-            </div>
-          </form>
-        </div>
-
-        <div class="summary-panel">
-          <h3>Rezumat selecție</h3>
-          <p>Verifică detaliile alese înainte de trimiterea cererii.</p>
-
-          <div class="summary-block">
-            <div class="summary-label">Serviciu</div>
-            <div class="summary-value" id="summaryService">Detailing interior</div>
-          </div>
-
-          <div class="summary-block">
-            <div class="summary-label">Data</div>
-            <div class="summary-value" id="summaryDate">Neselectată</div>
-          </div>
-
-          <div class="summary-block">
-            <div class="summary-label">Ora</div>
-            <div class="summary-value" id="summaryTime">Neselectată</div>
-          </div>
-
-          <div class="summary-note">
-            Pentru servicii precum corecție estetică, protecții ceramice sau pachete complexe, recomandăm menționarea unor detalii suplimentare despre mașină.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="fade-in">
+    <section id="booking-flow" class="fade-in">
       <div class="container">
-        <span class="section-tag">Întrebări frecvente</span>
-        <h2 class="section-title">Informații utile înainte de programare</h2>
-        <p class="section-text">
-          Câteva răspunsuri rapide la întrebările pe care le primim cel mai des.
-        </p>
+        <div class="steps-bar">
+          <div class="steps-inner">
+            <button type="button" class="step-btn active" data-target="servicesSection">1. Servicii</button>
+            <button type="button" class="step-btn" data-target="calendarSection">2. Data</button>
+            <button type="button" class="step-btn" data-target="timeSection">3. Ora</button>
+            <button type="button" class="step-btn" data-target="finalSection">4. Finalizare</button>
+          </div>
+        </div>
 
-        <div class="faq-grid">
-          <div class="faq-card">
-            <h3>Despre servicii</h3>
-            <div class="faq-list">
-              <div class="faq-item">
-                <button class="faq-q" type="button"><span>Pot cere recomandare înainte să aleg serviciul?</span><span>+</span></button>
-                <div class="faq-a">Da. Dacă nu ești sigur ce variantă ți se potrivește, ne poți scrie detalii despre mașină și te ghidăm către serviciul potrivit.</div>
+        <div class="layout">
+          <div class="main-stack">
+            <div class="section-card" id="servicesSection">
+              <div class="tag">Pasul 1</div>
+              <h2 class="section-title">Alege unul sau mai multe servicii</h2>
+              <p class="section-text">
+                Poți selecta mai multe servicii în aceeași cerere, în funcție de ce ai nevoie pentru mașina ta.
+              </p>
+
+              <div class="services-grid" id="servicesGrid">
+                <div class="service-card" data-service="Detailing interior premium" data-image="assets/serv-interior.jpeg">
+                  <div class="service-check">+</div>
+                  <div class="service-top" style="background-image:url('assets/serv-interior.jpeg')"></div>
+                  <div class="service-body">
+                    <h3>Detailing interior</h3>
+                    <p>Curățare atentă, igienizare și finisaj premium pentru habitacluri care trebuie să arate impecabil.</p>
+                    <div class="service-meta">
+                      <span>Interior</span>
+                      <span>Premium</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="service-card" data-service="Polish de întreținere / corecție estetică" data-image="assets/serv-polish.jpeg">
+                  <div class="service-check">+</div>
+                  <div class="service-top" style="background-image:url('assets/serv-polish.jpeg')"></div>
+                  <div class="service-body">
+                    <h3>Polish / corecție</h3>
+                    <p>Corecție vizuală, rafinare și îmbunătățirea clarității pentru un aspect exterior mai curat și mai uniform.</p>
+                    <div class="service-meta">
+                      <span>Exterior</span>
+                      <span>Corecție</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="service-card" data-service="Protecție ceramică" data-image="assets/serv-ceramic.jpeg">
+                  <div class="service-check">+</div>
+                  <div class="service-top" style="background-image:url('assets/serv-ceramic.jpeg')"></div>
+                  <div class="service-body">
+                    <h3>Protecție ceramică</h3>
+                    <p>Protecție premium pentru luciu, claritate și întreținere mai ușoară a suprafețelor exterioare.</p>
+                    <div class="service-meta">
+                      <span>Protecție</span>
+                      <span>Ceramică</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="service-card" data-service="Tratamente piele" data-image="assets/serv-leather.jpeg">
+                  <div class="service-check">+</div>
+                  <div class="service-top" style="background-image:url('assets/serv-leather.jpeg')"></div>
+                  <div class="service-body">
+                    <h3>Tratamente piele</h3>
+                    <p>Curățare, hidratare și întreținere atentă pentru suprafețele din piele auto.</p>
+                    <div class="service-meta">
+                      <span>Interior</span>
+                      <span>Piele</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="service-card" data-service="PPF faruri și stopuri" data-image="assets/serv-ppf-lights.jpeg">
+                  <div class="service-check">+</div>
+                  <div class="service-top" style="background-image:url('assets/serv-ppf-lights.jpeg')"></div>
+                  <div class="service-body">
+                    <h3>PPF faruri & stopuri</h3>
+                    <p>Protecție transparentă pentru elementele optice expuse la uzură și micro-zgârieturi.</p>
+                    <div class="service-meta">
+                      <span>Protecție</span>
+                      <span>Faruri</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="service-card" data-service="Recondiționări faruri" data-image="assets/serv-faruri.jpeg">
+                  <div class="service-check">+</div>
+                  <div class="service-top" style="background-image:url('assets/serv-faruri.jpeg')"></div>
+                  <div class="service-body">
+                    <h3>Recondiționări faruri</h3>
+                    <p>Serviciu dedicat farurilor afectate de matuire, oxidare sau pierdere de claritate.</p>
+                    <div class="service-meta">
+                      <span>Faruri</span>
+                      <span>Restaurare</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="faq-item">
-                <button class="faq-q" type="button"><span>Polishul și protecția ceramică necesită evaluare?</span><span>+</span></button>
-                <div class="faq-a">În multe cazuri, da. Starea lacului și dimensiunea mașinii influențează recomandarea finală.</div>
+
+              <div class="hint">Poți selecta mai multe servicii.</div>
+            </div>
+
+            <div class="calendar-card" id="calendarSection">
+              <div class="tag">Pasul 2</div>
+              <div class="calendar-head">
+                <h3>Alege data dorită</h3>
+                <div class="month-nav">
+                  <button class="month-btn" id="prevMonth" type="button">‹</button>
+                  <button class="month-btn" id="nextMonth" type="button">›</button>
+                </div>
               </div>
+
+              <div id="monthTitle" style="font-size:clamp(28px,4vw,44px);font-weight:800;color:var(--gold);margin-bottom:18px;"></div>
+
+              <div class="weekdays">
+                <div>Lun</div>
+                <div>Mar</div>
+                <div>Mie</div>
+                <div>Joi</div>
+                <div>Vin</div>
+                <div>Sâm</div>
+                <div>Dum</div>
+              </div>
+
+              <div class="calendar-grid" id="calendarGrid"></div>
+            </div>
+
+            <div class="time-card" id="timeSection">
+              <div class="tag">Pasul 3</div>
+              <h3>Alege ora dorită</h3>
+              <p class="section-text" style="margin-bottom:10px;">
+                Intervalele disponibile sunt afișate din 2 în 2 ore.
+              </p>
+              <div class="times-grid" id="timesGrid"></div>
+            </div>
+
+            <div class="final-card" id="finalSection">
+              <div class="tag">Pasul 4</div>
+              <h3>Finalizare programare</h3>
+              <p class="section-text" style="margin-bottom:12px;">
+                Completează datele și trimite solicitarea.
+              </p>
+
+              <form id="bookingForm" action="https://formspree.io/f/maqpgwqy" method="POST" class="final-form">
+                <input type="hidden" name="_subject" value="Programare nouă - Prestige Finish">
+                <input type="hidden" name="_replyto" value="">
+                <input type="text" name="_gotcha" style="display:none">
+
+                <input type="hidden" id="selectedServicesInput" name="Servicii selectate">
+                <input type="hidden" id="selectedDateInput" name="Data dorită">
+                <input type="hidden" id="selectedTimeInput" name="Ora dorită">
+
+                <div class="field">
+                  <label for="nume">Nume</label>
+                  <input type="text" id="nume" name="Nume" placeholder="Numele tău" required>
+                </div>
+
+                <div class="field">
+                  <label for="telefon">Telefon</label>
+                  <input type="tel" id="telefon" name="Telefon" placeholder="07xx xxx xxx" required>
+                </div>
+
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="Email" placeholder="adresa ta de email" required>
+                </div>
+
+                <div class="field">
+                  <label for="masina">Mașină</label>
+                  <input type="text" id="masina" name="Mașină" placeholder="Ex: BMW X5 / Audi A4 / Mercedes C Class">
+                </div>
+
+                <div class="field">
+                  <label for="mesaj">Detalii suplimentare</label>
+                  <textarea id="mesaj" name="Mesaj" placeholder="Poți menționa detalii despre starea mașinii sau ce vrei să urmărim în mod special."></textarea>
+                </div>
+
+                <div class="hero-actions" style="margin-bottom:0;">
+                  <button type="submit" class="btn btn-primary">Trimite programarea</button>
+                  <a href="formular-contact.html" class="btn btn-primary">Prefer formularul de contact</a>
+                </div>
+
+                <div class="inline-state success" id="successBox">
+                  ✔ Programarea a fost trimisă cu succes.
+                </div>
+
+                <div class="inline-state error" id="errorBox">
+                  ✖ A apărut o problemă. Verifică selecțiile și încearcă din nou.
+                </div>
+              </form>
             </div>
           </div>
 
-          <div class="faq-card">
-            <h3>Despre programări</h3>
-            <div class="faq-list">
-              <div class="faq-item">
-                <button class="faq-q" type="button"><span>Pot modifica programarea după ce am trimis cererea?</span><span>+</span></button>
-                <div class="faq-a">Da. Ne poți contacta telefonic sau pe WhatsApp și revenim cu actualizarea dorită, în funcție de disponibilitate.</div>
-              </div>
-              <div class="faq-item">
-                <button class="faq-q" type="button"><span>Lucrați și pentru persoane juridice sau flote?</span><span>+</span></button>
-                <div class="faq-a">Da. Pentru persoane juridice și flote există și pagină dedicată, iar cererile se pot trimite și prin această secțiune.</div>
-              </div>
+          <aside class="summary-card">
+            <div class="tag">Rezumat</div>
+            <h3>Selecția ta</h3>
+
+            <div class="summary-row">
+              <strong>Servicii</strong>
+              <span id="summaryServices">Nu ai selectat încă niciun serviciu.</span>
+              <div class="selected-services-tags" id="summaryTags"></div>
             </div>
-          </div>
+
+            <div class="summary-row">
+              <strong>Data</strong>
+              <span id="summaryDate">Nu ai ales încă o dată.</span>
+            </div>
+
+            <div class="summary-row">
+              <strong>Ora</strong>
+              <span id="summaryTime">Nu ai ales încă o oră.</span>
+            </div>
+
+            <div class="summary-row" style="border-bottom:none;">
+              <strong>Trimite cererea</strong>
+              <span>După completarea datelor, programarea ajunge direct în email.</span>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
@@ -1293,7 +1231,7 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/40757352371?text=Buna!%20Vreau%20sa%20fac%20o%20programare%20la%20Prestige%20Finish." class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+  <a href="https://wa.me/40757352371?text=Buna!%20Vreau%20sa%20fac%20o%20programare." class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
     Scrie-ne pe WhatsApp
   </a>
@@ -1318,294 +1256,333 @@
       }
     });
 
-    document.querySelectorAll('.faq-item').forEach(item => {
-      item.querySelector('.faq-q').addEventListener('click', () => {
-        item.classList.toggle('active');
-      });
-    });
-
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
       });
     }, { threshold: 0.12 });
     fadeEls.forEach(el => observer.observe(el));
-
-    const serviceCards = document.querySelectorAll('.service-card');
-    const hiddenService = document.getElementById('hiddenService');
-    const hiddenDateValue = document.getElementById('hiddenDateValue');
-    const hiddenTimeValue = document.getElementById('hiddenTimeValue');
-
-    const summaryService = document.getElementById('summaryService');
-    const summaryDate = document.getElementById('summaryDate');
-    const summaryTime = document.getElementById('summaryTime');
-    const displayDate = document.getElementById('displayDate');
-    const displayTime = document.getElementById('displayTime');
-
-    const calendarTitle = document.getElementById('calendarTitle');
-    const calendarGrid = document.getElementById('calendarGrid');
-    const prevMonth = document.getElementById('prevMonth');
-    const nextMonth = document.getElementById('nextMonth');
-    const timeGrid = document.getElementById('timeGrid');
-
-    const today = new Date();
-    today.setHours(0,0,0,0);
-
-    let currentMonth = today.getMonth();
-    let currentYear = today.getFullYear();
-    let selectedDateISO = '';
-    let selectedTime = '';
-
-    const fixedHours = ['09:00', '11:00', '13:00', '15:00', '17:00'];
-
-    const blockedSlots = {
-      '2026-04-18': ['09:00', '13:00'],
-      '2026-04-21': ['11:00', '15:00'],
-      '2026-04-25': ['17:00']
-    };
 
     const monthNames = [
       'Ianuarie','Februarie','Martie','Aprilie','Mai','Iunie',
       'Iulie','August','Septembrie','Octombrie','Noiembrie','Decembrie'
     ];
 
-    function formatISO(date){
+    const fullDays = [
+      '2026-04-18',
+      '2026-04-25'
+    ];
+
+    const blockedTimes = {
+      '2026-04-10': ['12:00'],
+      '2026-04-15': ['10:00'],
+      '2026-04-17': ['14:00','16:00'],
+      '2026-04-22': ['12:00','14:00'],
+      '2026-04-29': ['10:00']
+    };
+
+    const fixedSlots = ['10:00', '12:00', '14:00', '16:00', '18:00'];
+
+    const calendarGrid = document.getElementById('calendarGrid');
+    const monthTitle = document.getElementById('monthTitle');
+    const timesGrid = document.getElementById('timesGrid');
+    const summaryServices = document.getElementById('summaryServices');
+    const summaryDate = document.getElementById('summaryDate');
+    const summaryTime = document.getElementById('summaryTime');
+    const summaryTags = document.getElementById('summaryTags');
+    const selectedServicesInput = document.getElementById('selectedServicesInput');
+    const selectedDateInput = document.getElementById('selectedDateInput');
+    const selectedTimeInput = document.getElementById('selectedTimeInput');
+    const bookingForm = document.getElementById('bookingForm');
+    const successBox = document.getElementById('successBox');
+    const errorBox = document.getElementById('errorBox');
+    const emailInput = document.getElementById('email');
+    const replyInput = bookingForm.querySelector('input[name="_replyto"]');
+
+    const serviceCards = document.querySelectorAll('.service-card');
+    const stepButtons = document.querySelectorAll('.step-btn');
+
+    let selectedServices = [];
+    let selectedDate = null;
+    let selectedTime = null;
+    let currentDate = new Date();
+
+    currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+
+    function formatDateISO(date) {
       const y = date.getFullYear();
-      const m = String(date.getMonth() + 1).padStart(2,'0');
-      const d = String(date.getDate()).padStart(2,'0');
+      const m = String(date.getMonth() + 1).padStart(2, '0');
+      const d = String(date.getDate()).padStart(2, '0');
       return `${y}-${m}-${d}`;
     }
 
-    function formatRomanianFromISO(iso){
-      const [y,m,d] = iso.split('-');
-      return `${d}.${m}.${y}`;
+    function formatDateRO(date) {
+      const zi = String(date.getDate()).padStart(2, '0');
+      const luna = String(date.getMonth() + 1).padStart(2, '0');
+      const an = date.getFullYear();
+      return `${zi}.${luna}.${an}`;
     }
 
-    function isSunday(date){
-      return date.getDay() === 0;
+    function isPastDay(date) {
+      const today = new Date();
+      today.setHours(0,0,0,0);
+      const compare = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+      return compare < today;
     }
 
-    function isPast(date){
-      return date < today;
-    }
-
-    function isDisabledDate(date){
-      return isSunday(date) || isPast(date);
-    }
-
-    function renderCalendar(month, year){
+    function renderCalendar() {
       calendarGrid.innerHTML = '';
-      calendarTitle.textContent = `${monthNames[month]} ${year}`;
+      monthTitle.textContent = `${monthNames[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
 
-      const firstDay = new Date(year, month, 1);
-      const lastDay = new Date(year, month + 1, 0);
+      const firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+      const lastDay = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
 
       let startDay = firstDay.getDay();
       startDay = startDay === 0 ? 6 : startDay - 1;
 
-      for(let i = 0; i < startDay; i++){
+      for (let i = 0; i < startDay; i++) {
         const empty = document.createElement('div');
-        empty.className = 'calendar-day muted-day';
+        empty.className = 'day-cell empty';
         calendarGrid.appendChild(empty);
       }
 
-      for(let day = 1; day <= lastDay.getDate(); day++){
-        const date = new Date(year, month, day);
-        date.setHours(0,0,0,0);
+      for (let day = 1; day <= lastDay.getDate(); day++) {
+        const date = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
+        const iso = formatDateISO(date);
+        const dow = date.getDay();
+        const sunday = dow === 0;
+        const past = isPastDay(date);
+        const full = fullDays.includes(iso);
 
-        const iso = formatISO(date);
-        const disabled = isDisabledDate(date);
+        const cell = document.createElement('button');
+        cell.type = 'button';
+        cell.className = 'day-cell';
+        cell.dataset.date = iso;
 
-        const dayEl = document.createElement('button');
-        dayEl.type = 'button';
-        dayEl.className = 'calendar-day';
-        if(disabled) dayEl.classList.add('disabled');
-        if(selectedDateISO === iso) dayEl.classList.add('selected');
+        const num = document.createElement('div');
+        num.className = 'day-number';
+        num.textContent = day;
 
-        let statusText = 'Disponibil';
-        if(isSunday(date)) statusText = 'Închis';
-        else if(isPast(date)) statusText = 'Trecută';
+        const status = document.createElement('div');
+        status.className = 'day-status';
 
-        dayEl.innerHTML = `
-          <span class="calendar-number">${day}</span>
-          <span class="calendar-status">${statusText}</span>
-        `;
-
-        if(!disabled){
-          dayEl.addEventListener('click', () => {
-            selectedDateISO = iso;
-            hiddenDateValue.value = formatRomanianFromISO(iso);
-            displayDate.value = formatRomanianFromISO(iso);
-            summaryDate.textContent = formatRomanianFromISO(iso);
-
-            selectedTime = '';
-            hiddenTimeValue.value = '';
-            displayTime.value = '';
-            summaryTime.textContent = 'Neselectată';
-
-            renderCalendar(currentMonth, currentYear);
-            renderTimeSlots();
+        if (past) {
+          cell.classList.add('past');
+          status.textContent = 'Trecută';
+          cell.disabled = true;
+        } else if (sunday) {
+          cell.classList.add('closed');
+          status.textContent = 'Închis';
+          cell.disabled = true;
+        } else if (full) {
+          cell.classList.add('full');
+          status.textContent = 'Complet';
+          cell.disabled = true;
+        } else {
+          cell.classList.add('available');
+          status.textContent = 'Disponibil';
+          cell.addEventListener('click', () => {
+            selectedDate = iso;
+            selectedTime = null;
+            updateSummary();
+            renderCalendar();
+            renderTimes();
+            activateStep('timeSection');
+            scrollToSection('timeSection');
           });
         }
 
-        calendarGrid.appendChild(dayEl);
+        if (selectedDate === iso) {
+          cell.classList.add('selected');
+        }
+
+        cell.appendChild(num);
+        cell.appendChild(status);
+        calendarGrid.appendChild(cell);
       }
     }
 
-    function renderTimeSlots(){
-      timeGrid.innerHTML = '';
+    function renderTimes() {
+      timesGrid.innerHTML = '';
 
-      fixedHours.forEach(hour => {
-        const slot = document.createElement('button');
-        slot.type = 'button';
-        slot.className = 'time-slot';
-        slot.textContent = hour;
-        slot.dataset.value = hour;
+      fixedSlots.forEach(slot => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'time-slot';
+        btn.textContent = slot;
 
-        if(selectedDateISO && blockedSlots[selectedDateISO] && blockedSlots[selectedDateISO].includes(hour)){
-          slot.classList.add('disabled');
+        if (!selectedDate) {
+          btn.classList.add('blocked');
+          btn.disabled = true;
+        } else {
+          const blocked = blockedTimes[selectedDate] || [];
+          if (blocked.includes(slot)) {
+            btn.classList.add('blocked');
+            btn.disabled = true;
+          } else {
+            btn.addEventListener('click', () => {
+              selectedTime = slot;
+              updateSummary();
+              renderTimes();
+              activateStep('finalSection');
+              scrollToSection('finalSection');
+            });
+          }
         }
 
-        if(selectedTime === hour){
-          slot.classList.add('active');
+        if (selectedTime === slot) {
+          btn.classList.add('selected');
         }
 
-        if(!slot.classList.contains('disabled')){
-          slot.addEventListener('click', () => {
-            selectedTime = hour;
-            hiddenTimeValue.value = hour;
-            displayTime.value = hour;
-            summaryTime.textContent = hour;
-            renderTimeSlots();
-          });
-        }
-
-        timeGrid.appendChild(slot);
+        timesGrid.appendChild(btn);
       });
+    }
+
+    function updateSummary() {
+      if (selectedServices.length) {
+        summaryServices.textContent = `${selectedServices.length} serviciu(e) selectat(e)`;
+      } else {
+        summaryServices.textContent = 'Nu ai selectat încă niciun serviciu.';
+      }
+
+      summaryTags.innerHTML = '';
+      selectedServices.forEach(service => {
+        const tag = document.createElement('div');
+        tag.className = 'selected-tag';
+        tag.textContent = service;
+        summaryTags.appendChild(tag);
+      });
+
+      if (selectedDate) {
+        const [year, month, day] = selectedDate.split('-');
+        summaryDate.textContent = `${day}.${month}.${year}`;
+      } else {
+        summaryDate.textContent = 'Nu ai ales încă o dată.';
+      }
+
+      summaryTime.textContent = selectedTime ? selectedTime : 'Nu ai ales încă o oră.';
+
+      selectedServicesInput.value = selectedServices.join(', ');
+      selectedDateInput.value = selectedDate ? summaryDate.textContent : '';
+      selectedTimeInput.value = selectedTime || '';
     }
 
     serviceCards.forEach(card => {
       card.addEventListener('click', () => {
-        const value = card.dataset.value;
-        serviceCards.forEach(c => c.classList.remove('active'));
-        card.classList.add('active');
-        hiddenService.value = value;
-        summaryService.textContent = value;
+        const serviceName = card.dataset.service;
+
+        if (selectedServices.includes(serviceName)) {
+          selectedServices = selectedServices.filter(item => item !== serviceName);
+          card.classList.remove('selected');
+          card.querySelector('.service-check').textContent = '+';
+        } else {
+          selectedServices.push(serviceName);
+          card.classList.add('selected');
+          card.querySelector('.service-check').textContent = '✓';
+        }
+
+        updateSummary();
+
+        if (selectedServices.length) {
+          activateStep('calendarSection');
+          scrollToSection('calendarSection');
+        }
       });
     });
 
-    prevMonth.addEventListener('click', () => {
-      currentMonth--;
-      if(currentMonth < 0){
-        currentMonth = 11;
-        currentYear--;
-      }
-      renderCalendar(currentMonth, currentYear);
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const offset = window.innerWidth <= 640 ? 120 : 130;
+      window.scrollTo({
+        top: el.getBoundingClientRect().top + window.pageYOffset - offset,
+        behavior: 'smooth'
+      });
+    }
+
+    function activateStep(id) {
+      stepButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.target === id);
+      });
+    }
+
+    stepButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        activateStep(btn.dataset.target);
+        scrollToSection(btn.dataset.target);
+      });
     });
 
-    nextMonth.addEventListener('click', () => {
-      currentMonth++;
-      if(currentMonth > 11){
-        currentMonth = 0;
-        currentYear++;
-      }
-      renderCalendar(currentMonth, currentYear);
+    document.getElementById('prevMonth').addEventListener('click', () => {
+      currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1);
+      renderCalendar();
     });
 
-    renderCalendar(currentMonth, currentYear);
-    renderTimeSlots();
+    document.getElementById('nextMonth').addEventListener('click', () => {
+      currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1);
+      renderCalendar();
+    });
 
-    const form = document.getElementById('bookingForm');
-    const submitBtn = document.getElementById('submitBtn');
-    const loader = document.getElementById('loader');
-    const successBox = document.getElementById('successBox');
-    const errorBox = document.getElementById('errorBox');
-    const emailInput = document.getElementById('email');
-
-    form.addEventListener('submit', async function(e){
+    bookingForm.addEventListener('submit', async function(e) {
       e.preventDefault();
 
       successBox.style.display = 'none';
       errorBox.style.display = 'none';
 
-      if(!hiddenDateValue.value){
-        errorBox.textContent = '✖ Selectează mai întâi data dorită.';
+      if (!selectedServices.length || !selectedDate || !selectedTime) {
+        errorBox.textContent = '✖ Te rugăm să selectezi serviciile, data și ora înainte de trimitere.';
         errorBox.style.display = 'block';
         return;
       }
 
-      if(!hiddenTimeValue.value){
-        errorBox.textContent = '✖ Selectează mai întâi ora dorită.';
-        errorBox.style.display = 'block';
-        return;
-      }
+      replyInput.value = emailInput.value.trim();
 
-      form.querySelector('input[name="_replyto"]').value = emailInput.value.trim();
+      if (!bookingForm.reportValidity()) return;
 
-      if(!form.reportValidity()) return;
+      const formData = new FormData(bookingForm);
 
-      submitBtn.disabled = true;
-      loader.style.display = 'inline-block';
-
-      const formData = new FormData(form);
-
-      try{
-        const response = await fetch(form.action, {
-          method:'POST',
-          body:formData,
-          headers:{ 'Accept':'application/json' }
+      try {
+        const response = await fetch(bookingForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
         });
 
-        if(response.ok){
+        if (response.ok) {
+          successBox.textContent = '✔ Programarea a fost trimisă cu succes.';
           successBox.style.display = 'block';
-          form.reset();
+          bookingForm.reset();
 
-          serviceCards.forEach(c => c.classList.remove('active'));
-          serviceCards[0].classList.add('active');
-          hiddenService.value = 'Detailing interior';
-          summaryService.textContent = 'Detailing interior';
+          selectedServices = [];
+          selectedDate = null;
+          selectedTime = null;
 
-          hiddenDateValue.value = '';
-          selectedDateISO = '';
-          displayDate.value = '';
-          summaryDate.textContent = 'Neselectată';
+          serviceCards.forEach(card => {
+            card.classList.remove('selected');
+            card.querySelector('.service-check').textContent = '+';
+          });
 
-          hiddenTimeValue.value = '';
-          selectedTime = '';
-          displayTime.value = '';
-          summaryTime.textContent = 'Neselectată';
-
-          renderCalendar(currentMonth, currentYear);
-          renderTimeSlots();
-
-          burstConfetti();
-          window.scrollTo({ top: form.offsetTop - 80, behavior: 'smooth' });
-        }else{
-          errorBox.textContent = '✖ A apărut o problemă la trimitere. Încearcă din nou sau contactează-ne telefonic.';
+          updateSummary();
+          renderCalendar();
+          renderTimes();
+          activateStep('servicesSection');
+          scrollToSection('top');
+        } else {
+          errorBox.textContent = '✖ A apărut o problemă la trimitere. Încearcă din nou.';
           errorBox.style.display = 'block';
         }
-      }catch(err){
-        errorBox.textContent = '✖ A apărut o problemă la trimitere. Încearcă din nou sau contactează-ne telefonic.';
+      } catch(err) {
+        errorBox.textContent = '✖ A apărut o problemă la trimitere. Încearcă din nou.';
         errorBox.style.display = 'block';
-      }finally{
-        submitBtn.disabled = false;
-        loader.style.display = 'none';
       }
     });
 
-    function burstConfetti() {
-      const colors = ['#d4af37', '#ffffff', '#25D366'];
-      for (let i = 0; i < 30; i++) {
-        const conf = document.createElement('div');
-        conf.className = 'confetti';
-        conf.style.left = Math.random() * 100 + 'vw';
-        conf.style.background = colors[Math.floor(Math.random() * colors.length)];
-        conf.style.animationDuration = (Math.random() * 2 + 2.5) + 's';
-        document.body.appendChild(conf);
-        setTimeout(() => conf.remove(), 5000);
-      }
-    }
+    renderCalendar();
+    renderTimes();
+    updateSummary();
   </script>
 </body>
 </html>
