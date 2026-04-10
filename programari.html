@@ -1363,10 +1363,10 @@
 
     const today = new Date();
     today.setDate(today.getDate() + 1);
-    const yyyy = today.getFullYear();
-    const mm = String(today.getMonth() + 1).padStart(2, '0');
-    const dd = String(today.getDate()).padStart(2, '0');
-    document.getElementById('data-dorita').min = `${yyyy}-${mm}-${dd}`;
+    const anul = today.getFullYear();
+    const ziua = String(today.getMonth() + 1).padStart(2, '0');
+    const luna = String(today.getDate()).padStart(2, '0');
+    document.getElementById('data-dorita').min = `${anul}-${luna}-${ziua}`;
   </script>
 </body>
 </html>
