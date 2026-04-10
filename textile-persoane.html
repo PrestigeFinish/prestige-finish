@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Prestige Finish Interior Care | Curățare premium textile, piele și spații interioare</title>
-  <link href="logo.jpeg" rel="icon" type="image/jpeg"/>
-  <meta content="Prestige Finish Interior Care oferă curățare premium pentru canapele, saltele, tapițerii, piele, mochete și spații interioare, pentru persoane fizice și companii." name="description"/>
-
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prestige Finish Interior Care | Persoane fizice</title>
+  <link rel="icon" type="image/jpeg" href="logo.jpeg"/>
+  <meta name="description" content="Prestige Finish Interior Care oferă servicii premium pentru persoane fizice: curățare canapele, saltele, mochete, piele, alcantara și tratamente de întreținere pentru locuințe."/>
   <style>
     :root{
       --bg:#050505;
@@ -78,6 +77,7 @@
       border-radius:10px;
       object-fit:contain;
       flex-shrink:0;
+      background:#000;
     }
 
     .brand-name{
@@ -122,7 +122,7 @@
       font-weight:700;
       position:relative;
       overflow:hidden;
-      transition:transform .22s ease, box-shadow .22s ease;
+      white-space:nowrap;
     }
 
     .nav-cta::after{
@@ -136,16 +136,11 @@
     }
 
     .nav-cta:hover::after{transform:translateX(130%)}
-    .nav-cta:hover{
-      transform:translateY(-2px);
-      box-shadow:0 12px 30px rgba(212,175,55,0.25);
-    }
 
     .top-socials{
       display:flex;
       align-items:center;
       gap:10px;
-      margin-left:6px;
     }
 
     .top-social{
@@ -247,7 +242,7 @@
       font-size:clamp(40px,7vw,76px);
       line-height:.96;
       letter-spacing:-1px;
-      max-width:780px;
+      max-width:860px;
     }
 
     .hero p{
@@ -313,9 +308,10 @@
     .hero-points,
     .grid-2,
     .grid-3,
+    .package-grid,
+    .price-grid,
     .faq-grid,
-    .contact-wrap,
-    .offer-wrap{
+    .contact-wrap{
       display:grid;
       gap:20px;
     }
@@ -327,17 +323,18 @@
 
     .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
     .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .package-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .price-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
     .faq-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
     .contact-wrap{grid-template-columns:1.05fr .95fr}
-    .offer-wrap{grid-template-columns:1fr 1fr; align-items:center}
 
     .mini-card,
     .card,
     .hero-panel,
     .info-box,
     .faq-card,
-    .offer-box,
-    .offer-image-box{
+    .package-card,
+    .price-card{
       border:1px solid var(--line);
       background:linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.02));
       border-radius:26px;
@@ -354,7 +351,7 @@
 
     .hero-panel img{
       width:100%;
-      max-width:300px;
+      max-width:320px;
       margin:0 auto 18px;
       border-radius:24px;
       border:1px solid var(--line);
@@ -382,21 +379,25 @@
       box-shadow:0 0 12px rgba(212,175,55,0.7);
     }
 
-    .mini-card strong{
-      display:block;
+    .mini-card strong,
+    .package-badge{
+      display:inline-flex;
       color:var(--gold);
-      margin-bottom:6px;
-      font-size:14px;
+      margin-bottom:10px;
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.6px;
+      text-transform:uppercase;
     }
 
     .mini-card span,
     .card p,
+    .info-box p,
     .faq-card p,
     .section-text,
     .contact-row span,
-    .tiny,
-    .offer-text,
-    .offer-list li{
+    .price-note,
+    .package-subtitle{
       color:var(--muted);
     }
 
@@ -423,9 +424,10 @@
     }
 
     .card h3,
-    .faq-card h3,
     .info-box h3,
-    .offer-box h3{
+    .faq-card h3,
+    .package-card h3,
+    .price-card h3{
       margin:0 0 10px;
       font-size:22px;
       color:var(--gold);
@@ -459,113 +461,108 @@
       box-shadow:0 0 10px rgba(212,175,55,0.5);
     }
 
-    .service-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-
-    .service-card{
-      min-height:290px;
-      background-size:cover;
-      background-position:center;
+    .package-card{
       position:relative;
-      padding:0;
+      transition:.22s ease;
       overflow:hidden;
-      transition:transform .22s ease, box-shadow .22s ease;
     }
 
-    .service-card::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.82));
-    }
-
-    .service-overlay{
-      position:absolute;
-      left:0;
-      right:0;
-      bottom:0;
-      padding:22px;
-      z-index:2;
-    }
-
-    .service-overlay h3{
-      margin:0 0 8px;
-      font-size:24px;
-      color:#fff;
-    }
-
-    .service-overlay p{
-      margin:0;
-      color:#ece6d7;
-    }
-
-    .service-card:hover{
+    .package-card:hover,
+    .price-card:hover,
+    .card:hover{
       transform:translateY(-6px);
+      border-color:var(--line-strong);
       box-shadow:0 22px 50px rgba(0,0,0,.35);
     }
 
-    .offer-special{
-      padding:78px 0;
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
+    .package-card.featured{
+      border-color:rgba(212,175,55,0.35);
       background:
-        radial-gradient(circle at top right, rgba(212,175,55,0.18), transparent 30%),
-        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+        radial-gradient(circle at top right, rgba(212,175,55,0.12), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
     }
 
-    .offer-badge{
-      display:inline-flex;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(212,175,55,.1);
-      color:var(--gold);
-      font-size:12px;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.8px;
-      margin-bottom:14px;
-    }
-
-    .offer-title{
-      font-size:clamp(32px,5vw,52px);
-      margin:0 0 14px;
-      line-height:1.02;
-    }
-
-    .offer-text{
-      font-size:17px;
+    .package-subtitle{
       margin:0 0 18px;
+      font-size:15px;
     }
 
-    .offer-list{
+    .package-list{
       list-style:none;
       padding:0;
-      margin:0 0 22px;
+      margin:0 0 18px;
       display:grid;
       gap:10px;
     }
 
-    .offer-actions{
-      display:flex;
+    .package-list li{
+      position:relative;
+      padding-left:20px;
+      color:var(--text);
+      font-size:14px;
+    }
+
+    .package-list li::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:8px;
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background:var(--gold);
+      box-shadow:0 0 10px rgba(212,175,55,0.45);
+    }
+
+    .package-note{
+      color:var(--muted);
+      font-size:14px;
+      margin-top:8px;
+    }
+
+    .price-table{
+      display:grid;
       gap:14px;
-      flex-wrap:wrap;
+      margin-top:18px;
     }
 
-    .offer-image-box{
-      padding:14px;
-      overflow:hidden;
+    .price-row{
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      padding:16px 18px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(255,255,255,0.025);
     }
 
-    .offer-image-box img{
-      width:100%;
-      border-radius:20px;
-      animation:offerFloat 4s ease-in-out infinite;
+    .price-row strong{
+      color:var(--text);
+      display:block;
+      margin-bottom:4px;
     }
 
-    @keyframes offerFloat{
-      0%{transform:translateY(0)}
-      50%{transform:translateY(-12px)}
-      100%{transform:translateY(0)}
+    .price-row span{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .price-value{
+      color:var(--gold);
+      font-weight:700;
+      white-space:nowrap;
+      align-self:center;
+    }
+
+    .contact-row{
+      padding:14px 0;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .contact-row strong{
+      display:block;
+      color:var(--text);
+      margin-bottom:4px;
     }
 
     .faq-list{
@@ -615,19 +612,8 @@
     }
 
     .faq-item.active .faq-a{
-      max-height:180px;
+      max-height:220px;
       padding:0 18px 18px;
-    }
-
-    .contact-row{
-      padding:14px 0;
-      border-bottom:1px solid rgba(255,255,255,0.08);
-    }
-
-    .contact-row strong{
-      display:block;
-      color:var(--text);
-      margin-bottom:4px;
     }
 
     .fade-in{
@@ -671,11 +657,11 @@
       text-decoration:none;
       box-shadow:0 8px 20px rgba(0,0,0,0.35);
       z-index:9999;
-      transition:transform .22s ease, box-shadow .22s ease;
+      transition:.22s ease;
     }
 
     .whatsapp-btn:hover{
-      transform:scale(1.04);
+      transform:scale(1.05);
     }
 
     .whatsapp-btn img{
@@ -684,7 +670,8 @@
     }
 
     @media (max-width:1100px){
-      .grid-3{
+      .grid-3,
+      .package-grid{
         grid-template-columns:repeat(2,minmax(0,1fr));
       }
     }
@@ -708,7 +695,7 @@
         border-radius:20px;
       }
 
-      .nav-links.active{display:flex}
+      .nav-links.open{display:flex}
 
       .nav-links a{
         padding:14px 16px;
@@ -721,35 +708,32 @@
       .grid-2,
       .grid-3,
       .hero-points,
+      .package-grid,
+      .price-grid,
       .faq-grid,
-      .contact-wrap,
-      .offer-wrap{
+      .contact-wrap{
         grid-template-columns:1fr;
       }
 
       h1{font-size:48px}
+      .brand-name{font-size:18px}
       .brand-logo{height:44px}
-      .brand-name{font-size:20px}
     }
 
     @media (max-width:640px){
-      .hero{padding:74px 0 42px}
-
-      .hero-actions,
-      .offer-actions{
+      .hero{padding:82px 0 48px}
+      .hero-actions{flex-direction:column}
+      .hero-actions .btn{width:100%}
+      .price-row{
         flex-direction:column;
+        align-items:flex-start;
       }
-
-      .hero-actions .btn,
-      .offer-actions .btn{
-        width:100%;
-      }
-
+      .price-value{align-self:flex-start}
       .whatsapp-btn{
-        right:16px;
-        left:16px;
-        bottom:16px;
+        right:14px;
+        left:14px;
         justify-content:center;
+        bottom:14px;
       }
     }
   </style>
@@ -757,38 +741,37 @@
 <body>
   <header class="topbar">
     <div class="container nav">
-      <a class="brand" href="#top">
-        <img alt="Prestige Finish Interior Care Logo" class="brand-logo" src="logo.jpeg"/>
-        <span class="brand-name">Interior Care</span>
+      <a href="textile-index.html" class="brand">
+        <img src="logo.jpeg" alt="Prestige Finish Interior Care" class="brand-logo"/>
+        <span class="brand-name">Prestige Finish Interior Care</span>
       </a>
 
       <div class="nav-right">
+        <nav class="nav-links" id="navLinks">
+          <a href="textile-index.html">Acasă</a>
+          <a href="textile-persoane.html">Persoane fizice</a>
+          <a href="textile-firme.html">Firme</a>
+          <a href="textile-servicii.html">Servicii</a>
+          <a href="textile-preturi.html">Prețuri</a>
+          <a href="textile-contact.html">Contact</a>
+          <a href="index.html" class="nav-cta">Auto Detailing</a>
+        </nav>
+
         <div class="top-socials">
-          <a aria-label="Instagram" class="top-social" href="#" rel="noopener noreferrer" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.35 1.55a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z"></path></svg>
+          <a class="top-social" href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2Zm5 3.1A4.7 4.7 0 1 1 7.3 12 4.7 4.7 0 0 1 12 7.3Zm0 2.2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5Zm5.1-3.5a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1Z"/></svg>
           </a>
-          <a aria-label="Facebook" class="top-social" href="#" rel="noopener noreferrer" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M13.5 22v-8.2h2.77l.42-3.22H13.5V8.5c0-.93.26-1.56 1.59-1.56h1.7V4.05c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.04 1.46-4.04 4.15v2.48H7.6v3.22h2.72V22h3.18Z"></path></svg>
+          <a class="top-social" href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.5 1.6-1.5h1.7V4.8a20.7 20.7 0 0 0-2.4-.1c-2.4 0-4.1 1.4-4.1 4.2V11H7.6v3h2.7v8Z"/></svg>
           </a>
-          <a aria-label="TikTok" class="top-social" href="#" rel="noopener noreferrer" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M15.5 2c.2 1.7 1.1 3.1 2.6 4 .9.6 1.9.9 2.9.9v3a8 8 0 0 1-3.9-1v6.1a6.1 6.1 0 1 1-6.1-6.1c.3 0 .7 0 1 .1v3.1a3 3 0 1 0 2 2.9V2h1.5Z"></path></svg>
+          <a class="top-social" href="#" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24"><path d="M16.5 2c.4 2.1 1.7 3.8 3.8 4.3v3a8 8 0 0 1-3.8-1.1v6.2a6.4 6.4 0 1 1-6.4-6.4c.3 0 .6 0 .9.1v3.1a3.4 3.4 0 1 0 2.5 3.2V2Z"/></svg>
           </a>
         </div>
 
-        <button aria-label="Deschide meniul" class="menu-toggle" onclick="toggleMenu()">
-          <svg fill="none" stroke-width="2" viewBox="0 0 24 24"><path d="M4 7H20M4 12H20M4 17H20"></path></svg>
+        <button class="menu-toggle" id="menuToggle" aria-label="Deschide meniul">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
-      </div>
-
-      <div class="nav-links" id="mobileMenu">
-        <a href="#despre" onclick="closeMenu()">Despre</a>
-        <a href="#servicii" onclick="closeMenu()">Servicii</a>
-        <a href="#contact" onclick="closeMenu()">Contact</a>
-        <a href="textile-persoane.html" onclick="closeMenu()">Persoane fizice</a>
-        <a href="textile-firme.html" onclick="closeMenu()">Business</a>
-        <a href="textile-servicii.html" onclick="closeMenu()">Servicii</a>
-        <a href="textile-preturi.html" onclick="closeMenu()">Prețuri</a>
-        <a class="nav-cta" href="textile-contact.html" onclick="closeMenu()">Contact</a>
       </div>
     </div>
   </header>
@@ -798,202 +781,45 @@
       <div class="hero-bg"></div>
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Prestige Finish Interior Care</div>
-          <h1>Clean spaces. Real comfort.</h1>
+          <div class="eyebrow">Prestige Finish · Interior Care · Persoane fizice</div>
+          <h1>Îngrijire premium pentru spațiile în care trăiești</h1>
           <p>
-            Curățare premium pentru textile, tapițerii, piele și spații interioare, construită pentru clienți care caută igienă reală, confort și o prezentare impecabilă a spațiului în care trăiesc sau lucrează.
+            Servicii dedicate pentru canapele, saltele, mochete, scaune, piele și alcantara, construite pentru locuințe care au nevoie de mai mult decât o simplă curățare: un rezultat vizibil, o senzație reală de prospețime și o imagine bine întreținută.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="textile-contact.html">Solicită o evaluare</a>
-            <a class="btn btn-primary" href="textile-preturi.html">Vezi prețurile</a>
+            <a href="#pachete" class="btn btn-primary">Vezi pachetele</a>
+            <a href="textile-contact.html" class="btn btn-primary">Solicită ofertă</a>
           </div>
 
-          <p class="hero-note">Intervenții realizate controlat, doar pe bază de programare</p>
+          <p class="hero-note">Canapele · colțare · saltele · scaune · mochete · piele · alcantara · tratamente de întreținere</p>
 
           <div class="hero-points">
             <div class="mini-card">
-              <strong>Confort & igienă</strong>
-              <span>Curățare profesională orientată către un spațiu mai curat, mai plăcut și mai bine întreținut.</span>
+              <strong>Confort real</strong>
+              <span>Accent pe senzația de spațiu curat, plăcut și bine întreținut în locuința ta.</span>
             </div>
             <div class="mini-card">
-              <strong>Locuințe & business</strong>
-              <span>Structură clară pentru persoane fizice și pentru spații profesionale.</span>
+              <strong>Materiale diferite</strong>
+              <span>Textilul, pielea și alcantara cer intervenții adaptate, nu aceeași abordare pentru toate.</span>
             </div>
             <div class="mini-card">
-              <strong>Imagine premium</strong>
-              <span>Servicii construite pentru rezultate vizibile și prezentare impecabilă.</span>
+              <strong>Prezentare premium</strong>
+              <span>Servicii gândite pentru clienți care urmăresc rezultat, nu doar o listă simplă de prețuri.</span>
             </div>
           </div>
         </div>
 
         <div class="hero-panel">
-          <div class="status"><span class="status-dot"></span> Interior Care activ</div>
-          <img alt="Interior Care Logo" src="logo.jpeg"/>
-          <h3 style="margin:0 0 8px;font-size:28px;">Prestige Finish Interior Care</h3>
-          <p style="margin:0;color:var(--muted);">
-            O extensie premium a brandului Prestige Finish, dedicată spațiilor interioare, textilelor, tapițeriilor și suprafețelor care au nevoie de îngrijire reală și standard ridicat.
-          </p>
+          <div class="status"><span class="status-dot"></span><span>Ramură dedicată Interior Care</span></div>
+          <img src="logo.jpeg" alt="Prestige Finish Interior Care"/>
+          <h3 style="margin:0 0 8px;font-size:28px;">Pentru locuințe care trebuie să arate impecabil</h3>
 
           <div class="quick-points">
-            <div class="quick-point"><span class="quick-dot"></span><span>Curățare profesională pentru textile și tapițerii</span></div>
-            <div class="quick-point"><span class="quick-dot"></span><span>Intervenții dedicate pentru locuințe și business</span></div>
-            <div class="quick-point"><span class="quick-dot"></span><span>Servicii construite în jurul confortului și igienei</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="offer-special fade-in">
-      <div class="container">
-        <div class="tag">Highlight</div>
-        <h2 class="section-title">Intervenții premium pentru spațiile care contează</h2>
-        <p class="section-text">
-          De la canapele și saltele până la piele, mochete și zone profesionale, Interior Care este construit pentru clienții care își doresc un spațiu curat, bine întreținut și prezentabil.
-        </p>
-
-        <div class="offer-wrap">
-          <div class="offer-image-box">
-            <img alt="Curățare premium textile și interioare" src="assets/textile-hero.jpeg"/>
-          </div>
-
-          <div class="offer-box">
-            <span class="offer-badge">Standard premium</span>
-            <h3>Ce urmărește Interior Care</h3>
-            <p class="offer-text">
-              Nu este doar despre curățare. Este despre senzația de spațiu bine întreținut, despre igienă reală și despre confortul pe care îl simți imediat după intervenție.
-            </p>
-
-            <ul class="offer-list">
-              <li>✔ Curățare profesională pentru textile și tapițerii</li>
-              <li>✔ Îngrijire dedicată pentru piele și suprafețe sensibile</li>
-              <li>✔ Soluții adaptate pentru locuințe și spații comerciale</li>
-              <li>✔ Rezultat orientat spre confort, igienă și imagine premium</li>
-            </ul>
-
-            <div class="offer-actions">
-              <a class="btn btn-primary" href="textile-persoane.html">Pentru persoane fizice</a>
-              <a class="btn btn-primary" href="textile-firme.html">Pentru business</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="fade-in" id="despre">
-      <div class="container">
-        <div class="tag">Direcții</div>
-        <h2 class="section-title">Două direcții clare. Același standard premium.</h2>
-        <p class="section-text">
-          Pentru o experiență cât mai clară și intuitivă, Interior Care este împărțit pe două direcții distincte: servicii pentru persoane fizice și soluții dedicate spațiilor profesionale.
-        </p>
-
-        <div class="grid-2">
-          <div class="card">
-            <h3>Persoane fizice</h3>
-            <p>
-              Servicii dedicate pentru canapele, saltele, tapițerii, piele și suprafețe textile din locuințe, cu accent pe confort, igienă și prezentare premium.
-            </p>
-            <p style="margin-top:18px;">
-              <a class="btn btn-primary" href="textile-persoane.html">Vezi pagina pentru persoane fizice</a>
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Business & spații profesionale</h3>
-            <p>
-              Soluții pentru birouri, recepții, spații comerciale, mobilier textil și zone de lucru care trebuie să păstreze un standard curat și prezentabil.
-            </p>
-            <p style="margin-top:18px;">
-              <a class="btn btn-primary" href="textile-firme.html">Vezi pagina business</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="coming fade-in" id="servicii">
-      <div class="container">
-        <div class="tag">Servicii</div>
-        <h2 class="section-title">Servicii premium pentru textile, piele și spații interioare</h2>
-        <p class="section-text">
-          Interior Care reunește servicii construite pentru întreținerea atentă a textilelor, tapițeriilor și suprafețelor interioare, atât în locuințe, cât și în spații profesionale.
-        </p>
-
-        <div class="grid-3 service-grid">
-          <div class="card service-card" style="background-image:url('assets/textile-canapele.jpeg')">
-            <div class="service-overlay">
-              <h3>Canapele & fotolii</h3>
-              <p>Curățare profesională pentru textile și tapițerii care trebuie să arate curat, îngrijit și prezentabil.</p>
-            </div>
-          </div>
-
-          <div class="card service-card" style="background-image:url('assets/textile-saltele.jpeg')">
-            <div class="service-overlay">
-              <h3>Saltele</h3>
-              <p>Intervenții dedicate pentru un plus de igienă, prospețime și întreținere corectă a spațiului de odihnă.</p>
-            </div>
-          </div>
-
-          <div class="card service-card" style="background-image:url('assets/textile-piele.jpeg')">
-            <div class="service-overlay">
-              <h3>Piele</h3>
-              <p>Îngrijire atentă pentru suprafețe din piele, cu accent pe curățare, aspect premium și întreținere controlată.</p>
-            </div>
-          </div>
-
-          <div class="card service-card" style="background-image:url('assets/textile-mocheta.jpeg')">
-            <div class="service-overlay">
-              <h3>Mochete & covoare</h3>
-              <p>Curățare pentru suprafețe textile care au nevoie de reîmprospătare și o prezentare mai curată.</p>
-            </div>
-          </div>
-
-          <div class="card service-card" style="background-image:url('assets/textile-business.jpeg')">
-            <div class="service-overlay">
-              <h3>Spații comerciale</h3>
-              <p>Intervenții pentru recepții, birouri și zone profesionale care trebuie să păstreze un standard ridicat.</p>
-            </div>
-          </div>
-
-          <div class="card service-card" style="background-image:url('assets/textile-renovari.jpeg')">
-            <div class="service-overlay">
-              <h3>Curățenie după renovări</h3>
-              <p>Serviciu dedicat spațiilor care trebuie aduse la un standard curat și prezentabil după lucrări sau amenajări.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="fade-in">
-      <div class="container">
-        <div class="tag">Acces rapid</div>
-        <h2 class="section-title">Alegi varianta care ți se potrivește</h2>
-        <p class="section-text">
-          Poți merge direct în pagina potrivită tipului tău de nevoie sau poți consulta separat serviciile, prețurile și contactul.
-        </p>
-
-        <div class="grid-2">
-          <div class="info-box">
-            <h3>Servicii & prețuri</h3>
-            <p>
-              Descoperi rapid ce servicii sunt disponibile și care este structura de prețuri pentru intervențiile textile și interioare.
-            </p>
-            <div class="hero-actions" style="margin-top:18px;margin-bottom:0;">
-              <a class="btn btn-primary" href="textile-servicii.html">Vezi serviciile</a>
-              <a class="btn btn-primary" href="textile-preturi.html">Vezi prețurile</a>
-            </div>
-          </div>
-
-          <div class="info-box">
-            <h3>Contact & evaluare</h3>
-            <p>
-              Pentru recomandări, estimări sau detalii despre o intervenție, poți merge direct în pagina de contact.
-            </p>
-            <div class="hero-actions" style="margin-top:18px;margin-bottom:0;">
-              <a class="btn btn-primary" href="textile-contact.html">Deschide contactul</a>
-            </div>
+            <div class="quick-point"><span class="quick-dot"></span><span>Curățare canapele textile și colțare</span></div>
+            <div class="quick-point"><span class="quick-dot"></span><span>Igienizare saltele și suprafețe de dormit</span></div>
+            <div class="quick-point"><span class="quick-dot"></span><span>Întreținere pentru piele, alcantara și materiale sensibile</span></div>
+            <div class="quick-point"><span class="quick-dot"></span><span>Structură clară pentru servicii și pachete</span></div>
           </div>
         </div>
       </div>
@@ -1001,7 +827,220 @@
 
     <section class="coming fade-in">
       <div class="container">
-        <div class="tag">Întrebări frecvente</div>
+        <span class="tag">Servicii</span>
+        <h2 class="section-title">Ce putem curăța și întreține în zona rezidențială</h2>
+        <p class="section-text">
+          Intervențiile sunt gândite pentru suprafețe și materiale care fac diferența în aspectul și confortul unei locuințe: textile, tapițerii, piele și zone de utilizare frecventă.
+        </p>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>Canapele & colțare</h3>
+            <p>Curățare dedicată pentru piese textile care au nevoie de reîmprospătare și un aspect mai curat, mai uniform și mai bine întreținut.</p>
+          </div>
+
+          <div class="card">
+            <h3>Saltele</h3>
+            <p>Intervenții orientate spre igienă, prospețime și întreținerea corectă a suprafețelor folosite zilnic.</p>
+          </div>
+
+          <div class="card">
+            <h3>Mochete & covoare</h3>
+            <p>Curățare pentru suprafețe textile din locuințe, cu accent pe prezentare, confort și aspect îngrijit.</p>
+          </div>
+
+          <div class="card">
+            <h3>Scaune tapițate</h3>
+            <p>Serviciu potrivit pentru zone de dining, living sau alte piese care au nevoie de întreținere periodică.</p>
+          </div>
+
+          <div class="card">
+            <h3>Piele</h3>
+            <p>Îngrijire atentă pentru suprafețe din piele, cu accent pe curățare, întreținere și păstrarea unui aspect premium.</p>
+          </div>
+
+          <div class="card">
+            <h3>Alcantara & materiale sensibile</h3>
+            <p>Abordare mai atentă pentru suprafețe care cer grijă suplimentară și o intervenție corectă.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fade-in" id="pachete">
+      <div class="container">
+        <span class="tag">Pachete</span>
+        <h2 class="section-title">Trei niveluri clare pentru locuințe</h2>
+        <p class="section-text">
+          Am structurat oferta în trei direcții simple, astfel încât să poți înțelege mai ușor nivelul de intervenție potrivit pentru spațiul și materialele tale.
+        </p>
+
+        <div class="package-grid">
+          <div class="package-card">
+            <div class="package-badge">Refresh</div>
+            <h3>Refresh Care</h3>
+            <p class="package-subtitle">
+              Potrivit pentru piese care au nevoie de o reîmprospătare clară și o întreținere corectă, fără intervenție complexă.
+            </p>
+            <ul class="package-list">
+              <li>Împrospătare vizibilă a suprafețelor textile</li>
+              <li>Potrivit pentru întreținere periodică</li>
+              <li>Aspect mai curat și mai bine întreținut</li>
+            </ul>
+            <p class="package-note">Ideal pentru întreținere și menținerea unei imagini curate în locuință.</p>
+          </div>
+
+          <div class="package-card featured">
+            <div class="package-badge">Recomandat</div>
+            <h3>Deep Clean</h3>
+            <p class="package-subtitle">
+              Varianta recomandată pentru majoritatea canapelelor, saltelelor și suprafețelor textile care au nevoie de o intervenție completă.
+            </p>
+            <ul class="package-list">
+              <li>Curățare mai amplă și mai atentă</li>
+              <li>Rezultat vizibil mai clar în aspectul general</li>
+              <li>Potrivit pentru suprafețe utilizate frecvent</li>
+            </ul>
+            <p class="package-note">Cea mai echilibrată alegere pentru confort, igienă și prezentare.</p>
+          </div>
+
+          <div class="package-card">
+            <div class="package-badge">Premium</div>
+            <h3>Premium Care</h3>
+            <p class="package-subtitle">
+              Pentru piele, alcantara, materiale sensibile sau pentru clienții care caută o abordare mai atentă și mai premium.
+            </p>
+            <ul class="package-list">
+              <li>Abordare dedicată materialelor sensibile</li>
+              <li>Întreținere orientată spre aspect premium</li>
+              <li>Opțiuni suplimentare de tratament și protecție</li>
+            </ul>
+            <p class="package-note">Potrivit pentru suprafețe speciale și pentru clienți care urmăresc standard ridicat.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="coming fade-in">
+      <div class="container">
+        <span class="tag">Prețuri orientative</span>
+        <h2 class="section-title">Repere rapide pentru persoane fizice</h2>
+        <p class="section-text">
+          Mai jos ai câteva repere orientative. Prețul final poate varia în funcție de dimensiune, material, gradul de încărcare și tipul intervenției necesare.
+        </p>
+
+        <div class="price-grid">
+          <div class="price-card">
+            <h3>Textile & tapițerii</h3>
+            <div class="price-table">
+              <div class="price-row">
+                <div>
+                  <strong>Canapea 2 locuri</strong>
+                  <span>Curățare standard</span>
+                </div>
+                <div class="price-value">de la 150 lei</div>
+              </div>
+
+              <div class="price-row">
+                <div>
+                  <strong>Canapea 3 locuri</strong>
+                  <span>În funcție de material și dimensiune</span>
+                </div>
+                <div class="price-value">de la 180 lei</div>
+              </div>
+
+              <div class="price-row">
+                <div>
+                  <strong>Colțar</strong>
+                  <span>Format standard</span>
+                </div>
+                <div class="price-value">de la 250 lei</div>
+              </div>
+
+              <div class="price-row">
+                <div>
+                  <strong>Mochetă</strong>
+                  <span>Suprafețe rezidențiale</span>
+                </div>
+                <div class="price-value">de la 12 lei/mp</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="price-card">
+            <h3>Materiale speciale</h3>
+            <div class="price-table">
+              <div class="price-row">
+                <div>
+                  <strong>Curățare piele</strong>
+                  <span>Întreținere și aspect premium</span>
+                </div>
+                <div class="price-value">de la 180 lei</div>
+              </div>
+
+              <div class="price-row">
+                <div>
+                  <strong>Întreținere alcantara</strong>
+                  <span>Abordare atentă</span>
+                </div>
+                <div class="price-value">de la 180 lei</div>
+              </div>
+
+              <div class="price-row">
+                <div>
+                  <strong>Tratament piele</strong>
+                  <span>Protecție după curățare</span>
+                </div>
+                <div class="price-value">de la 80 lei</div>
+              </div>
+
+              <div class="price-row">
+                <div>
+                  <strong>Tratament hidrofob</strong>
+                  <span>Opțiune suplimentară</span>
+                </div>
+                <div class="price-value">de la 70 lei</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="price-note" style="margin-top:18px;">
+          Pentru piese atipice, materiale speciale sau intervenții mai complexe, evaluarea se stabilește separat.
+        </p>
+      </div>
+    </section>
+
+    <section class="fade-in">
+      <div class="container">
+        <span class="tag">De ce noi</span>
+        <h2 class="section-title">Un serviciu gândit pentru locuințe care trebuie să inspire grijă și ordine</h2>
+        <p class="section-text">
+          Interior Care nu este construit ca un serviciu generic. Este gândit pentru clienții care urmăresc un spațiu curat, o prezentare îngrijită și o intervenție făcută cu atenție reală.
+        </p>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>Fără grabă</h3>
+            <p>Intervențiile sunt organizate controlat, astfel încât fiecare lucrare să primească timpul necesar.</p>
+          </div>
+
+          <div class="card">
+            <h3>Materiale tratate corect</h3>
+            <p>Textilul, pielea și alcantara nu sunt abordate la fel. Fiecare suprafață cere soluția potrivită.</p>
+          </div>
+
+          <div class="card">
+            <h3>Rezultat vizibil</h3>
+            <p>Accentul este pus pe diferența reală de aspect, confort și senzație de curat.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="coming fade-in">
+      <div class="container">
+        <span class="tag">Întrebări frecvente</span>
         <h2 class="section-title">Ce întreabă clienții cel mai des</h2>
 
         <div class="faq-grid">
@@ -1009,18 +1048,18 @@
             <h3>Despre servicii</h3>
             <div class="faq-list">
               <div class="faq-item">
-                <button class="faq-q" type="button"><span>Lucrați doar pentru locuințe?</span><span>+</span></button>
-                <div class="faq-a">Nu. Interior Care include atât servicii pentru persoane fizice, cât și intervenții pentru business și spații profesionale.</div>
+                <button class="faq-q" type="button"><span>Faceți doar canapele și saltele?</span><span>+</span></button>
+                <div class="faq-a">Nu. Interior Care include și mochete, scaune tapițate, piele, alcantara și alte suprafețe textile din locuințe.</div>
               </div>
 
               <div class="faq-item">
-                <button class="faq-q" type="button"><span>Faceți și canapele, saltele sau piele?</span><span>+</span></button>
-                <div class="faq-a">Da. Acestea fac parte din categoria principală de servicii și sunt tratate separat, în funcție de material și de tipul intervenției.</div>
+                <button class="faq-q" type="button"><span>Lucrați și pe materiale sensibile?</span><span>+</span></button>
+                <div class="faq-a">Da. Pentru piele, alcantara și alte materiale sensibile, intervenția este adaptată în funcție de suprafață și necesitate.</div>
               </div>
 
               <div class="faq-item">
-                <button class="faq-q" type="button"><span>Există și curățenie după renovări?</span><span>+</span></button>
-                <div class="faq-a">Da. Este o direcție distinctă, dedicată spațiilor care trebuie aduse la un standard curat și prezentabil după lucrări.</div>
+                <button class="faq-q" type="button"><span>Există și tratamente suplimentare?</span><span>+</span></button>
+                <div class="faq-a">Da. În funcție de suprafață, se pot adăuga tratamente de întreținere sau protecție.</div>
               </div>
             </div>
           </div>
@@ -1029,18 +1068,18 @@
             <h3>Despre organizare</h3>
             <div class="faq-list">
               <div class="faq-item">
-                <button class="faq-q" type="button"><span>Se lucrează pe bază de programare?</span><span>+</span></button>
-                <div class="faq-a">Da. Programările sunt organizate astfel încât fiecare intervenție să primească timpul și atenția necesară.</div>
+                <button class="faq-q" type="button"><span>Prețurile sunt fixe?</span><span>+</span></button>
+                <div class="faq-a">Sunt orientative. Prețul final se stabilește în funcție de dimensiune, material și gradul de încărcare al suprafeței.</div>
               </div>
 
               <div class="faq-item">
                 <button class="faq-q" type="button"><span>Pot cere o evaluare înainte?</span><span>+</span></button>
-                <div class="faq-a">Da. Pentru estimări și recomandări, cel mai bine este să folosești pagina de contact dedicată.</div>
+                <div class="faq-a">Da. Pentru asta poți folosi pagina de contact și vom reveni cu recomandarea potrivită.</div>
               </div>
 
               <div class="faq-item">
-                <button class="faq-q" type="button"><span>Există pagini separate pentru persoane și firme?</span><span>+</span></button>
-                <div class="faq-a">Da. Site-ul este structurat separat, pentru ca fiecare tip de client să ajungă mai ușor la informațiile potrivite.</div>
+                <button class="faq-q" type="button"><span>Lucrați pe bază de programare?</span><span>+</span></button>
+                <div class="faq-a">Da. Programările sunt organizate astfel încât fiecare intervenție să primească timpul și atenția necesară.</div>
               </div>
             </div>
           </div>
@@ -1052,23 +1091,23 @@
       <div class="container contact-wrap">
         <div>
           <div class="tag">Contact</div>
-          <h2 class="section-title">Contact Interior Care</h2>
+          <h2 class="section-title">Contact pentru persoane fizice</h2>
           <p class="section-text">
-            Pentru evaluări, recomandări sau detalii despre intervenții pentru textile, piele și spații interioare, ne poți contacta direct.
+            Pentru evaluări, recomandări sau detalii despre intervenții pentru locuințe, ne poți contacta direct.
           </p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="tel:+40757352371">0757 352 371</a>
-            <a class="btn btn-primary" href="textile-contact.html">Formular de contact</a>
-            <a class="btn btn-primary" href="textile-preturi.html">Prețuri</a>
+            <a class="btn btn-primary" href="textile-contact.html">Solicită ofertă</a>
+            <a class="btn btn-primary" href="textile-preturi.html">Vezi prețurile</a>
           </div>
         </div>
 
         <div class="info-box">
           <div class="contact-row"><strong>Telefon principal</strong><span>0757 352 371</span></div>
           <div class="contact-row"><strong>Email</strong><span>prestige.finish@yahoo.com</span></div>
+          <div class="contact-row"><strong>Tip clienți</strong><span>Persoane fizice</span></div>
           <div class="contact-row"><strong>Direcție</strong><span>Prestige Finish Interior Care</span></div>
-          <div class="contact-row"><strong>Tip intervenții</strong><span>Locuințe, business, textile, piele, spații interioare</span></div>
 
           <div class="hero-actions" style="margin-top:18px;margin-bottom:0;">
             <a class="btn btn-primary" href="textile-contact.html">Deschide contactul</a>
@@ -1081,50 +1120,39 @@
   <footer>
     <div class="container footer-row">
       <div>© 2026 Prestige Finish Interior Care. Toate drepturile rezervate.</div>
-      <div>Textile, piele & spații interioare</div>
+      <div><a href="textile-index.html">Interior Care</a> · <a href="index.html">Auto Detailing</a></div>
     </div>
   </footer>
 
-  <a class="whatsapp-btn" href="https://wa.me/40757352371?text=Buna!%20Vreau%20informatii%20despre%20serviciile%20Interior%20Care." rel="noopener noreferrer" target="_blank">
-    <img alt="WhatsApp" src="https://cdn-icons-png.flaticon.com/512/733/733585.png"/>
-    Scrie-ne pe WhatsApp
+  <a class="whatsapp-btn" href="https://wa.me/40757352371?text=Buna!%20Vreau%20informatii%20despre%20serviciile%20Interior%20Care%20pentru%20persoane%20fizice." target="_blank" rel="noopener noreferrer">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp">
+    WhatsApp rapid
   </a>
 
   <script>
-    function toggleMenu() {
-      document.getElementById('mobileMenu').classList.toggle('active');
-    }
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
 
-    function closeMenu() {
-      document.getElementById('mobileMenu').classList.remove('active');
+    if(menuToggle && navLinks){
+      menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
     }
-
-    document.addEventListener('click', function(event) {
-      const menu = document.getElementById('mobileMenu');
-      const toggle = document.querySelector('.menu-toggle');
-      if (!menu || !toggle) return;
-      const clickedInsideMenu = menu.contains(event.target);
-      const clickedToggle = toggle.contains(event.target);
-      if (!clickedInsideMenu && !clickedToggle) {
-        menu.classList.remove('active');
-      }
-    });
 
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.12 });
 
     fadeEls.forEach(el => observer.observe(el));
 
     document.querySelectorAll('.faq-item').forEach(item => {
-      item.querySelector('.faq-q').addEventListener('click', () => {
-        item.classList.toggle('active');
-      });
+      const btn = item.querySelector('.faq-q');
+      if(btn){
+        btn.addEventListener('click', () => {
+          item.classList.toggle('active');
+        });
+      }
     });
   </script>
 </body>
