@@ -5,50 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prestige Finish | Programare online</title>
   <link rel="icon" type="image/png" href="logo.png" />
-  <meta name="description" content="Programează online serviciile Prestige Finish direct din site. Alege serviciul, data dorită și intervalul preferat, iar noi revenim cu confirmarea." />
+  <meta name="description" content="Programare online Prestige Finish. Selectează serviciul, ziua și intervalul dorit, iar noi revenim cu confirmarea în funcție de disponibilitate." />
 
   <style>
     :root{
       --bg:#050505;
-      --bg-soft:#0b0b0b;
+      --bg-soft:#0d0d0d;
       --card:rgba(255,255,255,0.04);
       --gold:#d4af37;
+      --gold-strong:#f0d266;
       --gold-soft:rgba(212,175,55,0.12);
       --text:#f5f2ea;
       --muted:#c5bea9;
       --line:rgba(212,175,55,0.18);
-      --line-strong:rgba(212,175,55,0.34);
+      --line-strong:rgba(212,175,55,0.36);
       --green:#25D366;
-      --shadow:0 20px 60px rgba(0,0,0,0.45);
-      --shadow-soft:0 10px 30px rgba(0,0,0,0.25);
-      --success:#7dffbf;
-      --success-bg:rgba(0,255,150,0.08);
       --danger:#ff8b8b;
-      --danger-bg:rgba(255,0,0,0.08);
+      --danger-soft:rgba(255,139,139,0.12);
+      --success:#7dffbf;
+      --success-soft:rgba(125,255,191,0.10);
+      --shadow:0 24px 70px rgba(0,0,0,0.5);
+      --shadow-soft:0 10px 30px rgba(0,0,0,0.25);
       --radius:28px;
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-
     body{
       margin:0;
       font-family:Arial,Helvetica,sans-serif;
       background:
-        radial-gradient(circle at top right, rgba(212,175,55,0.15), transparent 24%),
-        radial-gradient(circle at bottom left, rgba(212,175,55,0.10), transparent 20%),
+        radial-gradient(circle at top right, rgba(212,175,55,0.12), transparent 24%),
+        radial-gradient(circle at bottom left, rgba(212,175,55,0.08), transparent 20%),
         var(--bg);
       color:var(--text);
-      line-height:1.6;
+      line-height:1.55;
       overflow-x:hidden;
     }
 
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
-    button,input,select,textarea{font:inherit}
+    button,input,textarea,select{font:inherit}
 
     .container{
-      width:min(1180px,calc(100% - 32px));
+      width:min(1240px,calc(100% - 32px));
       margin:0 auto;
     }
 
@@ -56,18 +56,18 @@
       position:sticky;
       top:0;
       z-index:1000;
-      background:rgba(5,5,5,0.88);
+      background:rgba(5,5,5,0.9);
       backdrop-filter:blur(14px);
       border-bottom:1px solid var(--line);
     }
 
     .nav{
-      position:relative;
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:24px;
       padding:16px 0;
+      position:relative;
     }
 
     .brand{
@@ -75,7 +75,6 @@
       align-items:center;
       gap:12px;
       min-width:max-content;
-      flex-shrink:0;
     }
 
     .brand-logo{
@@ -90,16 +89,15 @@
       color:var(--gold);
       font-size:22px;
       font-weight:700;
-      letter-spacing:0.4px;
+      letter-spacing:.4px;
       white-space:nowrap;
     }
 
     .nav-right{
       display:flex;
       align-items:center;
-      gap:12px;
+      gap:14px;
       margin-left:auto;
-      flex-shrink:0;
     }
 
     .nav-links{
@@ -109,7 +107,6 @@
       color:var(--muted);
       font-size:14px;
       flex-wrap:nowrap;
-      justify-content:flex-end;
     }
 
     .nav-links a{
@@ -127,18 +124,17 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-height:54px;
-      padding:0 24px;
+      min-height:52px;
+      padding:0 22px;
       border-radius:999px;
       border:none;
       font-weight:700;
-      text-align:center;
       cursor:pointer;
-      box-shadow:var(--shadow-soft);
+      text-align:center;
       transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
-      background:linear-gradient(135deg,var(--gold),#f0d266);
+      background:linear-gradient(135deg,var(--gold),var(--gold-strong));
       color:#0a0a0a !important;
-      text-decoration:none;
+      box-shadow:var(--shadow-soft);
     }
 
     .btn::after,.nav-cta::after{
@@ -157,8 +153,7 @@
 
     .btn:hover,.nav-cta:hover{
       transform:translateY(-2px) scale(1.02);
-      box-shadow:0 12px 30px rgba(212,175,55,0.30);
-      filter:brightness(1.03);
+      box-shadow:0 12px 30px rgba(212,175,55,0.28);
     }
 
     .top-socials{
@@ -212,7 +207,7 @@
     }
 
     .hero{
-      padding:78px 0 48px;
+      padding:84px 0 34px;
       position:relative;
       overflow:hidden;
     }
@@ -239,7 +234,7 @@
       position:relative;
       z-index:2;
       display:grid;
-      grid-template-columns:1.08fr .92fr;
+      grid-template-columns:1fr 380px;
       gap:24px;
       align-items:start;
     }
@@ -260,10 +255,10 @@
     }
 
     h1{
-      margin:0 0 16px;
-      font-size:clamp(38px,7vw,70px);
-      line-height:.98;
-      letter-spacing:-1px;
+      margin:0 0 14px;
+      font-size:clamp(40px,7vw,76px);
+      line-height:.96;
+      letter-spacing:-1.2px;
       max-width:760px;
     }
 
@@ -278,147 +273,345 @@
       display:flex;
       gap:14px;
       flex-wrap:wrap;
-      margin-bottom:20px;
     }
 
-    .tag{
+    .hero-side,
+    .booking-shell,
+    .service-panel,
+    .summary-panel,
+    .faq-card{
+      border:1px solid var(--line);
+      background:
+        radial-gradient(circle at top right, rgba(212,175,55,0.08), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+
+    .hero-side{
+      padding:24px;
+    }
+
+    .hero-side h3,
+    .service-panel h3,
+    .summary-panel h3,
+    .faq-card h3{
+      margin:0 0 10px;
+      color:var(--gold);
+      font-size:24px;
+    }
+
+    .hero-side p,
+    .service-panel p,
+    .summary-panel p,
+    .faq-card p,
+    .helper,
+    .muted{
+      color:var(--muted);
+    }
+
+    .hero-points{
+      display:grid;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .hero-point{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+
+    .hero-dot{
+      width:10px;
+      height:10px;
+      margin-top:7px;
+      border-radius:999px;
+      background:var(--gold);
+      box-shadow:0 0 10px rgba(212,175,55,0.5);
+      flex-shrink:0;
+    }
+
+    section{
+      padding:28px 0 78px;
+    }
+
+    .booking-layout{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:24px;
+      align-items:start;
+    }
+
+    .booking-shell{
+      padding:26px;
+    }
+
+    .section-tag{
       display:inline-flex;
-      margin-bottom:14px;
+      margin-bottom:12px;
       color:var(--gold);
       font-size:12px;
       text-transform:uppercase;
       letter-spacing:1.4px;
     }
 
-    section{
-      padding:34px 0 78px;
-    }
-
     .section-title{
-      font-size:clamp(30px,4vw,48px);
       margin:0 0 12px;
+      font-size:clamp(30px,4vw,48px);
     }
 
     .section-text{
+      margin:0 0 24px;
       max-width:760px;
-      margin:0 0 28px;
-      font-size:17px;
       color:var(--muted);
+      font-size:17px;
     }
 
-    .grid-2,
-    .services-grid,
-    .quick-actions,
-    .mini-grid,
-    .faq-grid{
+    .service-grid{
       display:grid;
-      gap:18px;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:16px;
+      margin-bottom:20px;
     }
 
-    .grid-2{grid-template-columns:1.08fr .92fr}
-    .services-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .quick-actions{grid-template-columns:1fr 1fr}
-    .mini-grid{grid-template-columns:1fr 1fr}
-    .faq-grid{grid-template-columns:1fr 1fr}
-
-    .form-card,
-    .info-card,
-    .mini-info,
-    .highlight-card,
-    .faq-card,
     .service-card{
       border:1px solid var(--line);
-      background:
-        radial-gradient(circle at top right, rgba(212,175,55,0.06), transparent 32%),
-        linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.02));
-      border-radius:var(--radius);
-      padding:24px;
-      box-shadow:var(--shadow);
+      border-radius:22px;
+      background:rgba(255,255,255,0.025);
+      padding:18px;
+      cursor:pointer;
+      transition:.22s ease;
+      min-height:100%;
     }
 
-    .form-card h2,
-    .info-card h2,
-    .mini-info h3,
-    .highlight-card h3,
-    .faq-card h3,
-    .service-card h3{
-      margin:0 0 12px;
+    .service-card:hover{
+      transform:translateY(-4px);
+      border-color:var(--line-strong);
+      box-shadow:0 16px 34px rgba(0,0,0,0.35);
+    }
+
+    .service-card.active{
+      border-color:rgba(212,175,55,0.38);
+      background:
+        radial-gradient(circle at top right, rgba(212,175,55,0.14), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      box-shadow:
+        0 0 0 1px rgba(212,175,55,0.12),
+        0 0 24px rgba(212,175,55,0.10),
+        0 16px 34px rgba(0,0,0,0.35);
+    }
+
+    .service-badge{
+      display:inline-flex;
+      margin-bottom:10px;
+      padding:7px 11px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(212,175,55,0.10);
+      color:var(--gold);
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.6px;
+      text-transform:uppercase;
+    }
+
+    .service-card h4{
+      margin:0 0 8px;
+      color:var(--text);
+      font-size:20px;
+    }
+
+    .service-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .calendar-wrap{
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:rgba(255,255,255,0.02);
+      padding:18px;
+      margin-bottom:20px;
+    }
+
+    .calendar-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:14px;
+    }
+
+    .calendar-title{
+      font-size:24px;
+      font-weight:700;
       color:var(--gold);
     }
 
-    .form-card p,
-    .info-card p,
-    .mini-info p,
-    .highlight-card p,
-    .faq-card p,
-    .service-card p,
-    .contact-row span,
-    .helper-text,
-    .tiny,
-    .service-meta{
+    .calendar-nav{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .calendar-nav button{
+      width:42px;
+      height:42px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.03);
+      color:var(--gold);
+      cursor:pointer;
+      transition:.22s ease;
+      font-size:20px;
+    }
+
+    .calendar-nav button:hover{
+      background:rgba(212,175,55,0.10);
+      border-color:var(--line-strong);
+      transform:translateY(-2px);
+    }
+
+    .calendar-head,
+    .calendar-grid{
+      display:grid;
+      grid-template-columns:repeat(7,minmax(0,1fr));
+      gap:8px;
+    }
+
+    .calendar-head{
+      margin-bottom:8px;
+    }
+
+    .calendar-head div{
+      text-align:center;
+      color:var(--gold);
+      font-size:12px;
+      letter-spacing:.8px;
+      text-transform:uppercase;
+      padding:8px 0;
+    }
+
+    .calendar-day{
+      min-height:74px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,0.05);
+      background:rgba(255,255,255,0.02);
+      padding:10px 8px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      align-items:flex-start;
+      cursor:pointer;
+      transition:.22s ease;
+      color:var(--text);
+    }
+
+    .calendar-day:hover{
+      transform:translateY(-2px);
+      border-color:var(--line-strong);
+      background:rgba(212,175,55,0.08);
+    }
+
+    .calendar-day.muted-day{
+      opacity:.22;
+      cursor:default;
+      pointer-events:none;
+    }
+
+    .calendar-day.disabled{
+      opacity:.42;
+      cursor:not-allowed;
+      background:rgba(255,255,255,0.015);
+      border-color:rgba(255,255,255,0.04);
+    }
+
+    .calendar-day.disabled:hover{
+      transform:none;
+      background:rgba(255,255,255,0.015);
+    }
+
+    .calendar-day.selected{
+      border-color:rgba(212,175,55,0.42);
+      background:
+        radial-gradient(circle at top right, rgba(212,175,55,0.14), transparent 35%),
+        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      box-shadow:0 0 0 1px rgba(212,175,55,0.12), 0 10px 20px rgba(0,0,0,0.25);
+    }
+
+    .calendar-number{
+      font-size:16px;
+      font-weight:700;
+    }
+
+    .calendar-status{
+      font-size:11px;
       color:var(--muted);
     }
 
-    .contact-list{
-      display:grid;
-      gap:18px;
-      margin-top:12px;
+    .calendar-day.disabled .calendar-status{
+      color:var(--danger);
     }
 
-    .contact-row{
-      padding-bottom:14px;
-      border-bottom:1px solid rgba(255,255,255,0.08);
-    }
-
-    .contact-row strong{
-      display:block;
-      color:var(--text);
-      margin-bottom:4px;
-    }
-
-    .quick-card{
+    .time-wrap{
       border:1px solid var(--line);
-      border-radius:20px;
-      background:rgba(255,255,255,0.025);
-      padding:16px;
-      transition:.22s ease;
+      border-radius:24px;
+      background:rgba(255,255,255,0.02);
+      padding:18px;
+      margin-bottom:18px;
     }
 
-    .quick-card:hover{
+    .time-title{
+      margin:0 0 14px;
+      font-size:20px;
+      color:var(--gold);
+    }
+
+    .time-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+    }
+
+    .time-slot{
+      min-height:54px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.025);
+      color:var(--text);
+      padding:0 16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      transition:.22s ease;
+      font-weight:700;
+    }
+
+    .time-slot:hover{
       transform:translateY(-2px);
       border-color:var(--line-strong);
-      background:rgba(255,255,255,0.04);
-    }
-
-    .quick-card strong{
-      display:block;
-      color:var(--text);
-      margin-bottom:4px;
-    }
-
-    .highlight-card{
-      margin-top:18px;
-      background:linear-gradient(180deg, rgba(212,175,55,0.08), rgba(255,255,255,0.02));
-    }
-
-    .form-top-note{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:10px 14px;
-      border-radius:999px;
       background:rgba(212,175,55,0.08);
-      border:1px solid var(--line);
-      color:var(--gold);
-      font-size:13px;
-      margin:8px 0 18px;
+    }
+
+    .time-slot.active{
+      background:linear-gradient(135deg,var(--gold),var(--gold-strong));
+      color:#0a0a0a;
+      border-color:transparent;
+      box-shadow:0 10px 24px rgba(212,175,55,0.18);
+    }
+
+    .time-slot.disabled{
+      opacity:.35;
+      pointer-events:none;
     }
 
     .form-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:16px;
-      margin-top:18px;
     }
 
     .field,
@@ -434,12 +627,11 @@
 
     label{
       font-size:14px;
-      color:var(--text);
       font-weight:700;
-      letter-spacing:.2px;
+      color:var(--text);
     }
 
-    input,select,textarea{
+    input, textarea, select{
       width:100%;
       border:1px solid rgba(212,175,55,0.16);
       background:#0b0b0b;
@@ -448,24 +640,10 @@
       padding:14px 16px;
       font-size:15px;
       outline:none;
-      font-family:Arial,Helvetica,sans-serif;
       transition:.22s ease;
       appearance:none;
       -webkit-appearance:none;
       -moz-appearance:none;
-    }
-
-    input::placeholder,
-    textarea::placeholder{
-      color:#a39b86;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus{
-      border-color:rgba(212,175,55,0.46);
-      box-shadow:0 0 0 3px rgba(212,175,55,0.10);
-      background:#111;
     }
 
     select{
@@ -482,108 +660,29 @@
 
     textarea{
       resize:vertical;
-      min-height:150px;
+      min-height:130px;
     }
 
-    .helper-row{
+    input::placeholder,textarea::placeholder{
+      color:#a39b86;
+    }
+
+    input:focus,textarea:focus,select:focus{
+      border-color:rgba(212,175,55,0.46);
+      box-shadow:0 0 0 3px rgba(212,175,55,0.10);
+      background:#111;
+    }
+
+    .booking-submit{
       display:flex;
-      justify-content:space-between;
-      gap:12px;
-      align-items:center;
-      margin-top:2px;
-    }
-
-    .helper-text{
-      font-size:13px;
-    }
-
-    .counter{
-      font-size:12px;
-      color:var(--muted);
-      white-space:nowrap;
-    }
-
-    .service-card{
-      position:relative;
-      cursor:pointer;
-      transition:.22s ease;
-      min-height:100%;
-    }
-
-    .service-card:hover{
-      transform:translateY(-4px);
-      border-color:var(--line-strong);
-      box-shadow:0 24px 65px rgba(0,0,0,0.52);
-    }
-
-    .service-card.active{
-      border-color:rgba(212,175,55,0.42);
-      background:
-        radial-gradient(circle at top right, rgba(212,175,55,0.14), transparent 32%),
-        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
-      box-shadow:
-        0 0 0 1px rgba(212,175,55,0.12),
-        0 0 22px rgba(212,175,55,0.12),
-        0 24px 65px rgba(0,0,0,0.52);
-    }
-
-    .service-badge{
-      display:inline-flex;
-      margin-bottom:14px;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(212,175,55,0.10);
-      color:var(--gold);
-      font-size:12px;
-      font-weight:700;
-      letter-spacing:.6px;
-      text-transform:uppercase;
-    }
-
-    .service-meta{
-      font-size:14px;
-      margin-top:8px;
-    }
-
-    .choice-pills{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-bottom:8px;
-    }
-
-    .choice-pill{
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,0.025);
-      color:var(--muted);
-      font-size:13px;
-      cursor:pointer;
-      transition:.22s ease;
-      user-select:none;
-    }
-
-    .choice-pill:hover,
-    .choice-pill.active{
-      color:#0a0a0a;
-      border-color:var(--line-strong);
-      background:linear-gradient(135deg,var(--gold),#f0d266);
-    }
-
-    .submit-row{
-      display:flex;
-      flex-wrap:wrap;
       gap:14px;
-      margin-top:22px;
+      flex-wrap:wrap;
+      margin-top:20px;
       align-items:center;
     }
 
     .submit-main{
-      appearance:none;
-      border:none;
-      min-width:220px;
+      min-width:240px;
     }
 
     .loader{
@@ -612,38 +711,60 @@
     }
 
     .inline-state.success{
-      background:var(--success-bg);
-      border-color:rgba(0,255,150,0.25);
+      background:var(--success-soft);
+      border-color:rgba(125,255,191,0.22);
       color:var(--success);
     }
 
     .inline-state.error{
-      background:var(--danger-bg);
-      border-color:rgba(255,0,0,0.20);
+      background:var(--danger-soft);
+      border-color:rgba(255,139,139,0.20);
       color:var(--danger);
     }
 
-    .benefit-list{
-      display:grid;
-      gap:12px;
+    .summary-panel{
+      padding:24px;
+      position:sticky;
+      top:98px;
+    }
+
+    .summary-block{
+      border:1px solid rgba(255,255,255,0.06);
+      background:rgba(255,255,255,0.02);
+      border-radius:20px;
+      padding:16px;
       margin-top:14px;
     }
 
-    .benefit-item{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      color:var(--muted);
+    .summary-label{
+      color:var(--gold);
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.8px;
+      margin-bottom:6px;
     }
 
-    .benefit-dot{
-      width:10px;
-      height:10px;
-      margin-top:7px;
-      border-radius:999px;
-      background:var(--gold);
-      flex-shrink:0;
-      box-shadow:0 0 10px rgba(212,175,55,0.5);
+    .summary-value{
+      font-size:18px;
+      font-weight:700;
+      color:var(--text);
+    }
+
+    .summary-note{
+      margin-top:18px;
+      padding:14px 16px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:rgba(212,175,55,0.08);
+      color:var(--gold);
+      font-size:14px;
+    }
+
+    .faq-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      margin-top:20px;
     }
 
     .faq-list{
@@ -665,7 +786,7 @@
       border:none;
       color:var(--text);
       text-align:left;
-      padding:18px 18px;
+      padding:18px;
       font-weight:700;
       cursor:pointer;
       display:flex;
@@ -693,14 +814,8 @@
     }
 
     .faq-item.active .faq-a{
-      max-height:200px;
+      max-height:180px;
       padding:0 18px 18px;
-    }
-
-    .coming{
-      background:linear-gradient(180deg, rgba(212,175,55,0.08), rgba(255,255,255,0.02));
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
     }
 
     .fade-in{
@@ -776,6 +891,12 @@
 
     @media (max-width:1150px){
       .top-socials{display:none}
+      .hero-grid{
+        grid-template-columns:1fr;
+      }
+      .summary-panel{
+        position:static;
+      }
     }
 
     @media (max-width:980px){
@@ -805,33 +926,48 @@
         border:1px solid rgba(255,255,255,0.04);
       }
 
-      .hero-grid,
-      .grid-2,
+      .booking-layout,
+      .faq-grid,
       .form-grid,
-      .services-grid,
-      .quick-actions,
-      .mini-grid,
-      .faq-grid{
+      .service-grid,
+      .time-grid{
         grid-template-columns:1fr;
       }
 
-      .field-full{grid-column:auto}
-      h1{font-size:46px}
+      h1{font-size:48px}
       .brand-logo{height:44px}
       .brand-name{font-size:20px}
     }
 
     @media (max-width:640px){
-      .hero{padding:74px 0 42px}
-      .hero-actions,
-      .submit-row{flex-direction:column}
-      .hero-actions .btn,
-      .submit-row .btn,
-      .submit-main{width:100%}
-      .helper-row{
-        flex-direction:column;
-        align-items:flex-start;
+      .hero{
+        padding:72px 0 38px;
       }
+
+      .hero-actions,
+      .booking-submit{
+        flex-direction:column;
+      }
+
+      .hero-actions .btn,
+      .booking-submit .btn,
+      .submit-main{
+        width:100%;
+      }
+
+      .calendar-day{
+        min-height:64px;
+        padding:8px 6px;
+      }
+
+      .calendar-number{
+        font-size:14px;
+      }
+
+      .calendar-status{
+        font-size:10px;
+      }
+
       .whatsapp-btn{
         right:16px;
         left:16px;
@@ -883,296 +1019,242 @@
       <div class="hero-bg"></div>
       <div class="container hero-grid">
         <div class="hero-copy">
-          <div class="eyebrow">Programare online</div>
-          <h1>Trimite cererea ta de programare</h1>
+          <div class="eyebrow">Booking Prestige Finish</div>
+          <h1>Alege ziua și intervalul potrivit</h1>
           <p>
-            Selectezi serviciul dorit, alegi data și intervalul preferat, iar noi revenim pentru confirmare în funcție de disponibilitate.
+            Selectezi serviciul, alegi o zi disponibilă din calendar și trimiți cererea. Duminicile și zilele marcate full sunt blocate automat.
           </p>
 
           <div class="hero-actions">
-            <a class="btn" href="#programare-form">Deschide programarea</a>
-            <a class="btn" href="formular-contact.html">Prefer formularul de contact</a>
-          </div>
-
-          <div class="form-card" id="programare-form" style="margin-top:10px;">
-            <h2>Programare Prestige Finish</h2>
-            <p>
-              Cererea ta ajunge direct către echipa Prestige Finish. Programarea devine valabilă după confirmarea noastră telefonică sau pe WhatsApp.
-            </p>
-
-            <div class="form-top-note">
-              Confirmarea se face în funcție de disponibilitatea reală din calendar
-            </div>
-
-            <form id="bookingForm" action="https://formspree.io/f/maqpgwqy" method="POST">
-              <input type="hidden" name="_subject" value="Programare nouă - Prestige Finish">
-              <input type="hidden" name="_replyto" value="">
-              <input type="hidden" name="Tip solicitare" value="Programare online">
-              <input type="hidden" name="Serviciu selectat" id="hiddenService" value="Detailing interior">
-              <input type="text" name="_gotcha" style="display:none">
-
-              <div class="form-grid">
-                <div class="field">
-                  <label for="nume">Nume</label>
-                  <input type="text" id="nume" name="Nume" placeholder="Numele tău" required autocomplete="name">
-                </div>
-
-                <div class="field">
-                  <label for="telefon">Telefon</label>
-                  <input type="tel" id="telefon" name="Telefon" placeholder="07xx xxx xxx" required autocomplete="tel">
-                </div>
-
-                <div class="field">
-                  <label for="email">Email</label>
-                  <input type="email" id="email" name="Email" placeholder="adresa ta de email" required autocomplete="email">
-                </div>
-
-                <div class="field">
-                  <label for="tip-client">Tip client</label>
-                  <select id="tip-client" name="Tip client" required>
-                    <option value="Persoană fizică">Persoană fizică</option>
-                    <option value="Persoană juridică / flotă">Persoană juridică / flotă</option>
-                  </select>
-                </div>
-
-                <div class="field">
-                  <label for="data-dorita">Data dorită</label>
-                  <input type="date" id="data-dorita" name="Data dorită" required>
-                </div>
-
-                <div class="field">
-                  <label for="interval">Interval preferat</label>
-                  <select id="interval" name="Interval preferat" required>
-                    <option value="Dimineață (09:00 - 12:00)">Dimineață (09:00 - 12:00)</option>
-                    <option value="Prânz (12:00 - 15:00)">Prânz (12:00 - 15:00)</option>
-                    <option value="După-amiază (15:00 - 18:00)">După-amiază (15:00 - 18:00)</option>
-                  </select>
-                </div>
-
-                <div class="field">
-                  <label for="confirmare">Confirmare preferată prin</label>
-                  <select id="confirmare" name="Confirmare preferată prin" required>
-                    <option value="Telefon">Telefon</option>
-                    <option value="WhatsApp">WhatsApp</option>
-                  </select>
-                </div>
-
-                <div class="field-full">
-                  <label>Selecție rapidă interes</label>
-                  <div class="choice-pills" id="servicePills">
-                    <button type="button" class="choice-pill active" data-value="Detailing interior">Detailing interior</button>
-                    <button type="button" class="choice-pill" data-value="Premium Interior">Premium Interior</button>
-                    <button type="button" class="choice-pill" data-value="Prestige Interior Pack">Prestige Interior</button>
-                    <button type="button" class="choice-pill" data-value="Detailing motor">Detailing motor</button>
-                    <button type="button" class="choice-pill" data-value="Polish de întreținere">Polish întreținere</button>
-                    <button type="button" class="choice-pill" data-value="Polish corectiv">Polish corectiv</button>
-                    <button type="button" class="choice-pill" data-value="Protecții ceramice">Protecții ceramice</button>
-                    <button type="button" class="choice-pill" data-value="Protecții hidrofobe geamuri">Hidrofob geamuri</button>
-                    <button type="button" class="choice-pill" data-value="PPF faruri și stopuri">PPF faruri</button>
-                    <button type="button" class="choice-pill" data-value="Recondiționări faruri">Recondiționări faruri</button>
-                    <button type="button" class="choice-pill" data-value="Tratamente piele">Tratamente piele</button>
-                    <button type="button" class="choice-pill" data-value="Tratamente textile / alcantara">Textile / alcantara</button>
-                    <button type="button" class="choice-pill" data-value="Basic Protection">Basic Protection</button>
-                    <button type="button" class="choice-pill" data-value="Prestige Protection">Prestige Protection</button>
-                  </div>
-                </div>
-
-                <div class="field-full">
-                  <label for="mesaj">Detalii suplimentare</label>
-                  <textarea id="mesaj" name="Detalii suplimentare" placeholder="Model mașină, starea actuală, ce urmărești și orice alte detalii utile."></textarea>
-                  <div class="helper-row">
-                    <div class="helper-text">
-                      Exemplu: modelul mașinii, dacă vrei evaluare pentru polish / ceramică sau dacă ai nevoie de recomandare.
-                    </div>
-                    <div class="counter"><span id="msgCount">0</span>/800</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="submit-row">
-                <button type="submit" class="btn submit-main" id="submitBtn">
-                  <span>Trimite cererea de programare</span>
-                  <span class="loader" id="loader"></span>
-                </button>
-                <a href="formular-contact.html" class="btn">Prefer doar contact</a>
-              </div>
-
-              <div class="inline-state success" id="successBox">
-                ✔ Cererea de programare a fost trimisă cu succes.
-              </div>
-
-              <div class="inline-state error" id="errorBox">
-                ✖ A apărut o problemă la trimitere. Încearcă din nou sau contactează-ne telefonic.
-              </div>
-            </form>
+            <a class="btn" href="#booking-zone">Deschide calendarul</a>
+            <a class="btn" href="formular-contact.html">Prefer doar contact</a>
           </div>
         </div>
 
-        <div>
-          <div class="info-card">
-            <h2>Contact rapid</h2>
-            <p>
-              Dacă vrei răspuns imediat sau ai nevoie de recomandare înainte de programare, ne poți contacta direct.
-            </p>
+        <div class="hero-side">
+          <h3>Cum funcționează</h3>
+          <p>Pagina aceasta este gândită ca un mini-sistem de booking, fără costuri externe și fără programări automate suprapuse.</p>
 
-            <div class="contact-list">
-              <div class="contact-row"><strong>Telefon principal</strong><span>0757 352 371</span></div>
-              <div class="contact-row"><strong>Telefon secundar</strong><span>0727 707 545</span></div>
-              <div class="contact-row"><strong>Email studio</strong><span>prestige.finish@yahoo.com</span></div>
-              <div class="contact-row" style="border-bottom:none;"><strong>Locație</strong><span>Acces direct din DN1, în zona industrială Ploiești Triaj</span></div>
-            </div>
-
-            <div class="quick-actions">
-              <a class="quick-card" href="tel:+40757352371">
-                <strong>Sună acum</strong>
-                <span class="tiny">Ideal pentru discuții rapide și clarificări</span>
-              </a>
-              <a class="quick-card" href="https://wa.me/40757352371?text=Buna!%20Vreau%20sa%20fac%20o%20programare%20la%20Prestige%20Finish." target="_blank" rel="noopener noreferrer">
-                <strong>Scrie pe WhatsApp</strong>
-                <span class="tiny">Potrivit pentru confirmare și întrebări scurte</span>
-              </a>
-            </div>
-          </div>
-
-          <div class="highlight-card">
-            <h3>Cum funcționează</h3>
-            <div class="benefit-list">
-              <div class="benefit-item"><span class="benefit-dot"></span><span>alegi serviciul dorit</span></div>
-              <div class="benefit-item"><span class="benefit-dot"></span><span>selectezi data și intervalul preferat</span></div>
-              <div class="benefit-item"><span class="benefit-dot"></span><span>noi verificăm disponibilitatea reală</span></div>
-              <div class="benefit-item"><span class="benefit-dot"></span><span>confirmăm telefonic sau pe WhatsApp</span></div>
-            </div>
-          </div>
-
-          <div class="faq-card" style="margin-top:18px;">
-            <h3>Întrebări frecvente</h3>
-            <div class="faq-list">
-              <div class="faq-item">
-                <button class="faq-q" type="button">
-                  <span>Programarea este automată?</span>
-                  <span>+</span>
-                </button>
-                <div class="faq-a">
-                  Nu. Cererea ta este trimisă imediat către noi, iar programarea devine valabilă după confirmarea disponibilității.
-                </div>
-              </div>
-
-              <div class="faq-item">
-                <button class="faq-q" type="button">
-                  <span>Pot exista suprapuneri?</span>
-                  <span>+</span>
-                </button>
-                <div class="faq-a">
-                  Nu confirmăm două programări pe același interval. De aceea fiecare cerere este verificată înainte de confirmare.
-                </div>
-              </div>
-
-              <div class="faq-item">
-                <button class="faq-q" type="button">
-                  <span>Pot cere evaluare pentru ceramică sau polish?</span>
-                  <span>+</span>
-                </button>
-                <div class="faq-a">
-                  Da. Poți selecta direct serviciul dorit și menționa în câmpul de detalii că ai nevoie de evaluare sau recomandare.
-                </div>
-              </div>
-            </div>
+          <div class="hero-points">
+            <div class="hero-point"><span class="hero-dot"></span><span>alegi serviciul dorit</span></div>
+            <div class="hero-point"><span class="hero-dot"></span><span>selectezi o zi liberă din calendar</span></div>
+            <div class="hero-point"><span class="hero-dot"></span><span>alegi intervalul preferat</span></div>
+            <div class="hero-point"><span class="hero-dot"></span><span>noi confirmăm manual disponibilitatea</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="coming fade-in">
-      <div class="container">
-        <div class="tag">Servicii programabile</div>
-        <h2 class="section-title">Alege serviciul potrivit pentru tine</h2>
-        <p class="section-text">
-          Selectează direct din cardurile de mai jos. La click, serviciul se completează automat în formularul de programare.
-        </p>
+    <section id="booking-zone" class="fade-in">
+      <div class="container booking-layout">
+        <div class="booking-shell">
+          <span class="section-tag">Programare online</span>
+          <h2 class="section-title">Rezervare asistată</h2>
+          <p class="section-text">
+            Am separat procesul în 3 pași: serviciu, zi și interval. Astfel clientul înțelege mai clar procesul și pagina nu mai seamănă deloc cu formularul clasic de contact.
+          </p>
 
-        <div class="services-grid" id="serviceCards">
-          <div class="service-card active" data-value="Detailing interior">
-            <span class="service-badge">Interior</span>
-            <h3>Detailing interior</h3>
-            <p>Curățare atentă, igienizare și finisaj premium pentru un habitaclu îngrijit și bine întreținut.</p>
-            <div class="service-meta">Potrivit pentru programări rapide.</div>
+          <div class="service-panel" style="padding:20px; margin-bottom:18px;">
+            <h3 style="font-size:22px;">1. Alege serviciul</h3>
+            <div class="service-grid" id="serviceGrid">
+              <div class="service-card active" data-value="Detailing interior">
+                <span class="service-badge">Interior</span>
+                <h4>Detailing interior</h4>
+                <p>Curățare atentă, igienizare și finisaj premium pentru habitacluri bine întreținute.</p>
+              </div>
+
+              <div class="service-card" data-value="Premium Interior">
+                <span class="service-badge">Interior</span>
+                <h4>Premium Interior</h4>
+                <p>Intervenție extinsă pentru clienții care doresc o curățare mai amplă.</p>
+              </div>
+
+              <div class="service-card" data-value="Prestige Interior Pack">
+                <span class="service-badge">Top Prestige</span>
+                <h4>Prestige Interior Pack</h4>
+                <p>Pachet complet dedicat interioarelor care necesită timp și atenție reală.</p>
+              </div>
+
+              <div class="service-card" data-value="Detailing motor">
+                <span class="service-badge">Auto</span>
+                <h4>Detailing motor</h4>
+                <p>Curățare atentă a compartimentului motor pentru un aspect îngrijit.</p>
+              </div>
+
+              <div class="service-card" data-value="Polish de întreținere">
+                <span class="service-badge">Corecție</span>
+                <h4>Polish de întreținere</h4>
+                <p>Refresh vizual și plus de claritate pentru mașini cu uzură estetică ușoară.</p>
+              </div>
+
+              <div class="service-card" data-value="Polish corectiv">
+                <span class="service-badge">Corecție estetică</span>
+                <h4>Polish corectiv</h4>
+                <p>Serviciu recomandat pentru holograme, zgârieturi fine și aspect neuniform.</p>
+              </div>
+
+              <div class="service-card" data-value="Protecții ceramice">
+                <span class="service-badge">Protecție</span>
+                <h4>Protecții ceramice</h4>
+                <p>Protecție premium pentru caroserie și întreținere mai ușoară în timp.</p>
+              </div>
+
+              <div class="service-card" data-value="Protecții hidrofobe geamuri">
+                <span class="service-badge">Protecție</span>
+                <h4>Hidrofob geamuri</h4>
+                <p>Tratament pentru vizibilitate mai bună și comportament mai bun pe ploaie.</p>
+              </div>
+
+              <div class="service-card" data-value="PPF faruri și stopuri">
+                <span class="service-badge">PPF</span>
+                <h4>PPF faruri & stopuri</h4>
+                <p>Protecție transparentă pentru elementele optice expuse la uzură.</p>
+              </div>
+
+              <div class="service-card" data-value="Recondiționări faruri">
+                <span class="service-badge">Faruri</span>
+                <h4>Recondiționări faruri</h4>
+                <p>Serviciu pentru faruri afectate de matuire, oxidare sau pierdere de claritate.</p>
+              </div>
+
+              <div class="service-card" data-value="Basic Protection">
+                <span class="service-badge">Koch Chemie</span>
+                <h4>Basic Protection</h4>
+                <p>Pachet complet de protecții pe suprafețe, construit pe sistem Koch Chemie.</p>
+              </div>
+
+              <div class="service-card" data-value="Prestige Protection">
+                <span class="service-badge">Gtechniq</span>
+                <h4>Prestige Protection</h4>
+                <p>Pachet premium orientat către protecție avansată și exclusivitate.</p>
+              </div>
+            </div>
           </div>
 
-          <div class="service-card" data-value="Premium Interior">
-            <span class="service-badge">Interior</span>
-            <h3>Premium Interior</h3>
-            <p>Pachet extins pentru clienții care își doresc o intervenție mai amplă și o curățare mai atentă.</p>
-            <div class="service-meta">Ideal pentru întreținere avansată.</div>
+          <div class="calendar-wrap">
+            <div class="calendar-top">
+              <div class="calendar-title" id="calendarTitle">Aprilie 2026</div>
+              <div class="calendar-nav">
+                <button type="button" id="prevMonth" aria-label="Luna anterioară">‹</button>
+                <button type="button" id="nextMonth" aria-label="Luna următoare">›</button>
+              </div>
+            </div>
+
+            <div class="calendar-head">
+              <div>Lun</div>
+              <div>Mar</div>
+              <div>Mie</div>
+              <div>Joi</div>
+              <div>Vin</div>
+              <div>Sâm</div>
+              <div>Dum</div>
+            </div>
+
+            <div class="calendar-grid" id="calendarGrid"></div>
           </div>
 
-          <div class="service-card" data-value="Prestige Interior Pack">
-            <span class="service-badge">Top Prestige</span>
-            <h3>Prestige Interior Pack</h3>
-            <p>Intervenție completă pentru interioare care necesită timp, atenție și standard premium.</p>
-            <div class="service-meta">Recomandat pentru lucrări complexe.</div>
+          <div class="time-wrap">
+            <h3 class="time-title">3. Alege intervalul preferat</h3>
+            <div class="time-grid" id="timeGrid">
+              <button type="button" class="time-slot active" data-value="09:00 - 12:00">09:00 - 12:00</button>
+              <button type="button" class="time-slot" data-value="12:00 - 15:00">12:00 - 15:00</button>
+              <button type="button" class="time-slot" data-value="15:00 - 18:00">15:00 - 18:00</button>
+              <button type="button" class="time-slot" data-value="Evaluare flexibilă">Evaluare flexibilă</button>
+            </div>
           </div>
 
-          <div class="service-card" data-value="Detailing motor">
-            <span class="service-badge">Auto</span>
-            <h3>Detailing motor</h3>
-            <p>Curățare atentă a compartimentului motor pentru un aspect îngrijit și prezentare generală mai bună.</p>
-            <div class="service-meta">Potrivit pentru întreținere controlată.</div>
+          <form id="bookingForm" action="https://formspree.io/f/maqpgwqy" method="POST">
+            <input type="hidden" name="_subject" value="Programare nouă - Prestige Finish">
+            <input type="hidden" name="_replyto" value="">
+            <input type="hidden" name="Tip solicitare" value="Programare online">
+            <input type="hidden" name="Serviciu selectat" id="hiddenService" value="Detailing interior">
+            <input type="hidden" name="Data selectată" id="hiddenDateValue" value="">
+            <input type="hidden" name="Interval selectat" id="hiddenTimeValue" value="09:00 - 12:00">
+            <input type="text" name="_gotcha" style="display:none">
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="nume">Nume</label>
+                <input type="text" id="nume" name="Nume" placeholder="Numele tău" required autocomplete="name">
+              </div>
+
+              <div class="field">
+                <label for="telefon">Telefon</label>
+                <input type="tel" id="telefon" name="Telefon" placeholder="07xx xxx xxx" required autocomplete="tel">
+              </div>
+
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="Email" placeholder="adresa ta de email" required autocomplete="email">
+              </div>
+
+              <div class="field">
+                <label for="tip-client">Tip client</label>
+                <select id="tip-client" name="Tip client" required>
+                  <option value="Persoană fizică">Persoană fizică</option>
+                  <option value="Persoană juridică / flotă">Persoană juridică / flotă</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="displayDate">Zi selectată</label>
+                <input type="text" id="displayDate" placeholder="Alege o zi din calendar" readonly required>
+              </div>
+
+              <div class="field">
+                <label for="confirmare">Confirmare preferată prin</label>
+                <select id="confirmare" name="Confirmare preferată prin" required>
+                  <option value="Telefon">Telefon</option>
+                  <option value="WhatsApp">WhatsApp</option>
+                </select>
+              </div>
+
+              <div class="field-full">
+                <label for="mesaj">Detalii suplimentare</label>
+                <textarea id="mesaj" name="Detalii suplimentare" placeholder="Model mașină, starea actuală, observații sau ce urmărești prin serviciul ales."></textarea>
+                <div class="helper">Programarea devine valabilă doar după confirmarea noastră. Duminicile și zilele marcate full nu pot fi selectate.</div>
+              </div>
+            </div>
+
+            <div class="booking-submit">
+              <button type="submit" class="btn submit-main" id="submitBtn">
+                <span>Trimite cererea de programare</span>
+                <span class="loader" id="loader"></span>
+              </button>
+              <a class="btn" href="formular-contact.html">Prefer doar contact</a>
+            </div>
+
+            <div class="inline-state success" id="successBox">
+              ✔ Cererea de programare a fost trimisă cu succes.
+            </div>
+
+            <div class="inline-state error" id="errorBox">
+              ✖ A apărut o problemă la trimitere. Încearcă din nou sau contactează-ne telefonic.
+            </div>
+          </form>
+        </div>
+
+        <div class="summary-panel">
+          <h3>Rezumat selecție</h3>
+          <p>Clientul vede clar ce a ales înainte să trimită cererea.</p>
+
+          <div class="summary-block">
+            <div class="summary-label">Serviciu</div>
+            <div class="summary-value" id="summaryService">Detailing interior</div>
           </div>
 
-          <div class="service-card" data-value="Polish de întreținere">
-            <span class="service-badge">Corecție</span>
-            <h3>Polish de întreținere</h3>
-            <p>Refresh vizual și îmbunătățire a luciului pentru mașini care au nevoie de un plus de claritate.</p>
-            <div class="service-meta">Programare cu evaluare scurtă.</div>
+          <div class="summary-block">
+            <div class="summary-label">Zi</div>
+            <div class="summary-value" id="summaryDate">Neselectată</div>
           </div>
 
-          <div class="service-card" data-value="Polish corectiv">
-            <span class="service-badge">Corecție estetică</span>
-            <h3>Polish corectiv</h3>
-            <p>Serviciu dedicat mașinilor cu holograme, zgârieturi fine sau uzură estetică vizibilă.</p>
-            <div class="service-meta">Recomandat cu evaluare înainte.</div>
+          <div class="summary-block">
+            <div class="summary-label">Interval</div>
+            <div class="summary-value" id="summaryTime">09:00 - 12:00</div>
           </div>
 
-          <div class="service-card" data-value="Protecții ceramice">
-            <span class="service-badge">Protecție</span>
-            <h3>Protecții ceramice</h3>
-            <p>Protecție premium pentru caroserie și întreținere mai ușoară, în funcție de starea mașinii.</p>
-            <div class="service-meta">Potrivit pentru cereri premium.</div>
-          </div>
-
-          <div class="service-card" data-value="Protecții hidrofobe geamuri">
-            <span class="service-badge">Protecție</span>
-            <h3>Protecții hidrofobe geamuri</h3>
-            <p>Tratament dedicat geamurilor pentru vizibilitate mai bună și comportament mai bun în ploaie.</p>
-            <div class="service-meta">Serviciu rapid și eficient.</div>
-          </div>
-
-          <div class="service-card" data-value="PPF faruri și stopuri">
-            <span class="service-badge">PPF</span>
-            <h3>PPF faruri & stopuri</h3>
-            <p>Protecție transparentă pentru elementele optice expuse la uzură, pietricele și micro-zgârieturi.</p>
-            <div class="service-meta">Necesită programare dedicată.</div>
-          </div>
-
-          <div class="service-card" data-value="Recondiționări faruri">
-            <span class="service-badge">Faruri</span>
-            <h3>Recondiționări faruri</h3>
-            <p>Serviciu pentru faruri afectate de matuire, oxidare sau pierdere de claritate.</p>
-            <div class="service-meta">Ideal pentru îmbunătățire vizibilă.</div>
-          </div>
-
-          <div class="service-card" data-value="Basic Protection">
-            <span class="service-badge">Koch Chemie</span>
-            <h3>Basic Protection</h3>
-            <p>Pachet dedicat de protecții pe suprafețe, construit pe sistemul Koch Chemie.</p>
-            <div class="service-meta">Pachet complet sau evaluare separată.</div>
-          </div>
-
-          <div class="service-card" data-value="Prestige Protection">
-            <span class="service-badge">Gtechniq</span>
-            <h3>Prestige Protection</h3>
-            <p>Pachet premium orientat către protecție avansată și un nivel superior de exclusivitate.</p>
-            <div class="service-meta">Recomandat pentru clienți premium.</div>
+          <div class="summary-note">
+            Zilele de duminică sunt blocate automat. Zilele pline le blochezi tu manual direct din cod.
           </div>
         </div>
       </div>
@@ -1180,26 +1262,38 @@
 
     <section class="fade-in">
       <div class="container">
-        <div class="tag">Alternative</div>
-        <h2 class="section-title">Nu vrei să faci programarea acum?</h2>
+        <span class="section-tag">Întrebări frecvente</span>
+        <h2 class="section-title">Totul rămâne sub controlul tău</h2>
         <p class="section-text">
-          Dacă ai nevoie mai întâi de o recomandare sau de o estimare, poți folosi și formularul de contact clasic.
+          Pagina funcționează ca o simulare premium de booking: clientul selectează clar, iar tu confirmi manual doar ce este liber în realitate.
         </p>
 
-        <div class="mini-grid">
-          <div class="mini-info">
-            <h3>Formular de contact</h3>
-            <p>Ideal dacă vrei să ne explici mai întâi ce ai nevoie și preferi să discutăm înainte de stabilirea programării.</p>
-            <div class="submit-row">
-              <a href="formular-contact.html" class="btn">Deschide formularul</a>
+        <div class="faq-grid">
+          <div class="faq-card">
+            <h3>Despre calendar</h3>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-q" type="button"><span>Duminica este blocată automat?</span><span>+</span></button>
+                <div class="faq-a">Da. Toate duminicile apar automat indisponibile și nu pot fi selectate.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" type="button"><span>Pot bloca și alte zile?</span><span>+</span></button>
+                <div class="faq-a">Da. În cod ai o listă de date full pe care o poți actualiza foarte ușor.</div>
+              </div>
             </div>
           </div>
 
-          <div class="mini-info">
-            <h3>Contact direct</h3>
-            <p>Poți suna sau scrie pe WhatsApp dacă vrei un răspuns mai rapid legat de disponibilitate sau recomandare.</p>
-            <div class="submit-row">
-              <a href="tel:+40757352371" class="btn">Sună acum</a>
+          <div class="faq-card">
+            <h3>Despre confirmare</h3>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-q" type="button"><span>Programarea este automată?</span><span>+</span></button>
+                <div class="faq-a">Nu. Cererea este trimisă către tine prin email, iar confirmarea se face manual.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" type="button"><span>Poate cineva selecta aceeași oră?</span><span>+</span></button>
+                <div class="faq-a">Poate trimite cerere, dar tu confirmi doar una. Pentru zile full, blochezi data înainte și nu mai apare disponibilă.</div>
+              </div>
             </div>
           </div>
         </div>
@@ -1239,6 +1333,12 @@
       }
     });
 
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.querySelector('.faq-q').addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1247,99 +1347,225 @@
     }, { threshold: 0.12 });
     fadeEls.forEach(el => observer.observe(el));
 
-    document.querySelectorAll('.faq-item').forEach(item => {
-      item.querySelector('.faq-q').addEventListener('click', () => {
-        item.classList.toggle('active');
+    const serviceCards = document.querySelectorAll('.service-card');
+    const timeSlots = document.querySelectorAll('.time-slot');
+
+    const hiddenService = document.getElementById('hiddenService');
+    const hiddenDateValue = document.getElementById('hiddenDateValue');
+    const hiddenTimeValue = document.getElementById('hiddenTimeValue');
+
+    const summaryService = document.getElementById('summaryService');
+    const summaryDate = document.getElementById('summaryDate');
+    const summaryTime = document.getElementById('summaryTime');
+    const displayDate = document.getElementById('displayDate');
+
+    const calendarTitle = document.getElementById('calendarTitle');
+    const calendarGrid = document.getElementById('calendarGrid');
+    const prevMonth = document.getElementById('prevMonth');
+    const nextMonth = document.getElementById('nextMonth');
+
+    const today = new Date();
+    today.setHours(0,0,0,0);
+
+    let currentMonth = today.getMonth();
+    let currentYear = today.getFullYear();
+    let selectedDateISO = '';
+
+    const blockedDates = [
+      '2026-04-14',
+      '2026-04-18'
+    ];
+
+    const monthNames = [
+      'Ianuarie','Februarie','Martie','Aprilie','Mai','Iunie',
+      'Iulie','August','Septembrie','Octombrie','Noiembrie','Decembrie'
+    ];
+
+    function formatISO(date){
+      const y = date.getFullYear();
+      const m = String(date.getMonth() + 1).padStart(2,'0');
+      const d = String(date.getDate()).padStart(2,'0');
+      return `${y}-${m}-${d}`;
+    }
+
+    function formatRomanianFromISO(iso){
+      const [y,m,d] = iso.split('-');
+      return `${d}.${m}.${y}`;
+    }
+
+    function isSunday(date){
+      return date.getDay() === 0;
+    }
+
+    function isPast(date){
+      return date < today;
+    }
+
+    function isBlocked(date){
+      return blockedDates.includes(formatISO(date));
+    }
+
+    function isDisabled(date){
+      return isSunday(date) || isPast(date) || isBlocked(date);
+    }
+
+    function renderCalendar(month, year){
+      calendarGrid.innerHTML = '';
+      calendarTitle.textContent = `${monthNames[month]} ${year}`;
+
+      const firstDay = new Date(year, month, 1);
+      const lastDay = new Date(year, month + 1, 0);
+
+      let startDay = firstDay.getDay();
+      startDay = startDay === 0 ? 6 : startDay - 1;
+
+      for(let i = 0; i < startDay; i++){
+        const empty = document.createElement('div');
+        empty.className = 'calendar-day muted-day';
+        calendarGrid.appendChild(empty);
+      }
+
+      for(let day = 1; day <= lastDay.getDate(); day++){
+        const date = new Date(year, month, day);
+        date.setHours(0,0,0,0);
+
+        const iso = formatISO(date);
+        const isDayDisabled = isDisabled(date);
+
+        const dayEl = document.createElement('button');
+        dayEl.type = 'button';
+        dayEl.className = 'calendar-day';
+        if(isDayDisabled) dayEl.classList.add('disabled');
+        if(selectedDateISO === iso) dayEl.classList.add('selected');
+
+        let statusText = 'Disponibil';
+        if(isSunday(date)) statusText = 'Duminică';
+        else if(isBlocked(date)) statusText = 'Full';
+        else if(isPast(date)) statusText = 'Trecută';
+
+        dayEl.innerHTML = `
+          <span class="calendar-number">${day}</span>
+          <span class="calendar-status">${statusText}</span>
+        `;
+
+        if(!isDayDisabled){
+          dayEl.addEventListener('click', () => {
+            selectedDateISO = iso;
+            hiddenDateValue.value = formatRomanianFromISO(iso);
+            displayDate.value = formatRomanianFromISO(iso);
+            summaryDate.textContent = formatRomanianFromISO(iso);
+            renderCalendar(currentMonth, currentYear);
+          });
+        }
+
+        calendarGrid.appendChild(dayEl);
+      }
+    }
+
+    serviceCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const value = card.dataset.value;
+        serviceCards.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+        hiddenService.value = value;
+        summaryService.textContent = value;
       });
     });
+
+    timeSlots.forEach(slot => {
+      slot.addEventListener('click', () => {
+        timeSlots.forEach(s => s.classList.remove('active'));
+        slot.classList.add('active');
+        hiddenTimeValue.value = slot.dataset.value;
+        summaryTime.textContent = slot.dataset.value;
+      });
+    });
+
+    prevMonth.addEventListener('click', () => {
+      currentMonth--;
+      if(currentMonth < 0){
+        currentMonth = 11;
+        currentYear--;
+      }
+      renderCalendar(currentMonth, currentYear);
+    });
+
+    nextMonth.addEventListener('click', () => {
+      currentMonth++;
+      if(currentMonth > 11){
+        currentMonth = 0;
+        currentYear++;
+      }
+      renderCalendar(currentMonth, currentYear);
+    });
+
+    renderCalendar(currentMonth, currentYear);
 
     const form = document.getElementById('bookingForm');
     const submitBtn = document.getElementById('submitBtn');
     const loader = document.getElementById('loader');
     const successBox = document.getElementById('successBox');
     const errorBox = document.getElementById('errorBox');
-    const msg = document.getElementById('mesaj');
-    const msgCount = document.getElementById('msgCount');
     const emailInput = document.getElementById('email');
-    const replyTo = form.querySelector('input[name="_replyto"]');
-    const hiddenService = document.getElementById('hiddenService');
-    const cards = document.querySelectorAll('.service-card');
-    const pills = document.querySelectorAll('.choice-pill');
 
-    function updateCounter() {
-      const len = msg.value.length;
-      msgCount.textContent = len;
-      if (len > 800) {
-        msg.value = msg.value.slice(0, 800);
-        msgCount.textContent = 800;
-      }
-    }
-
-    function selectService(value) {
-      hiddenService.value = value;
-
-      cards.forEach(card => {
-        card.classList.toggle('active', card.dataset.value === value);
-      });
-
-      pills.forEach(pill => {
-        pill.classList.toggle('active', pill.dataset.value === value);
-      });
-    }
-
-    cards.forEach(card => {
-      card.addEventListener('click', () => {
-        selectService(card.dataset.value);
-        document.getElementById('programare-form').scrollIntoView({ behavior:'smooth', block:'start' });
-      });
-    });
-
-    pills.forEach(pill => {
-      pill.addEventListener('click', () => {
-        selectService(pill.dataset.value);
-      });
-    });
-
-    msg.addEventListener('input', updateCounter);
-
-    form.addEventListener('submit', async function(e) {
+    form.addEventListener('submit', async function(e){
       e.preventDefault();
 
       successBox.style.display = 'none';
       errorBox.style.display = 'none';
 
-      replyTo.value = emailInput.value.trim();
+      if(!hiddenDateValue.value){
+        errorBox.textContent = '✖ Selectează mai întâi o zi disponibilă din calendar.';
+        errorBox.style.display = 'block';
+        return;
+      }
 
-      if (!form.reportValidity()) return;
+      form.querySelector('input[name="_replyto"]').value = emailInput.value.trim();
+
+      if(!form.reportValidity()) return;
 
       submitBtn.disabled = true;
       loader.style.display = 'inline-block';
 
       const formData = new FormData(form);
 
-      try {
+      try{
         const response = await fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
+          method:'POST',
+          body:formData,
+          headers:{ 'Accept':'application/json' }
         });
 
-        if (response.ok) {
+        if(response.ok){
           successBox.style.display = 'block';
-          successBox.classList.add('success');
           form.reset();
-          selectService('Detailing interior');
-          updateCounter();
+
+          serviceCards.forEach(c => c.classList.remove('active'));
+          serviceCards[0].classList.add('active');
+          hiddenService.value = 'Detailing interior';
+          summaryService.textContent = 'Detailing interior';
+
+          timeSlots.forEach(s => s.classList.remove('active'));
+          timeSlots[0].classList.add('active');
+          hiddenTimeValue.value = timeSlots[0].dataset.value;
+          summaryTime.textContent = timeSlots[0].dataset.value;
+
+          hiddenDateValue.value = '';
+          selectedDateISO = '';
+          displayDate.value = '';
+          summaryDate.textContent = 'Neselectată';
+          renderCalendar(currentMonth, currentYear);
+
           burstConfetti();
           window.scrollTo({ top: form.offsetTop - 80, behavior: 'smooth' });
-        } else {
+        }else{
+          errorBox.textContent = '✖ A apărut o problemă la trimitere. Încearcă din nou sau contactează-ne telefonic.';
           errorBox.style.display = 'block';
-          errorBox.classList.add('error');
         }
-      } catch (err) {
+      }catch(err){
+        errorBox.textContent = '✖ A apărut o problemă la trimitere. Încearcă din nou sau contactează-ne telefonic.';
         errorBox.style.display = 'block';
-        errorBox.classList.add('error');
-      } finally {
+      }finally{
         submitBtn.disabled = false;
         loader.style.display = 'none';
       }
@@ -1357,16 +1583,6 @@
         setTimeout(() => conf.remove(), 5000);
       }
     }
-
-    selectService('Detailing interior');
-    updateCounter();
-
-    const today = new Date();
-    today.setDate(today.getDate() + 1);
-    const anul = today.getFullYear();
-    const ziua = String(today.getMonth() + 1).padStart(2, '0');
-    const luna = String(today.getDate()).padStart(2, '0');
-    document.getElementById('data-dorita').min = `${anul}-${luna}-${ziua}`;
   </script>
 </body>
 </html>
