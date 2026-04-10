@@ -584,7 +584,38 @@
       width:22px;
       height:22px;
     }
+.premium-price-cards{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:24px;
+  align-items:stretch;
+}
 
+.premium-price-card{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  min-height:100%;
+  border:1px solid var(--line);
+  border-radius:28px;
+  padding:26px;
+  background:
+    radial-gradient(circle at top right, rgba(212,175,55,0.10), transparent 28%),
+    linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.02));
+  box-shadow:var(--shadow);
+  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.premium-price-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 26px 60px rgba(0,0,0,0.42);
+  border-color:var(--line-strong);
+}
+
+.featured-card{
+  border-color:rgba(212,175,55,0.34);
+  box-shadow:0 24px 55
     @media (max-width:1100px){
       .review-grid,
       .grid-3{
@@ -1092,72 +1123,92 @@
     </div>
   </div>
 </section>
-    <section class="coming fade-in">
+   <section class="coming fade-in" id="corectie-protectie">
   <div class="container">
     <div class="tag">Corecție & protecție</div>
-    <h2 class="section-title">Polish & protecții ceramice</h2>
+    <h2 class="section-title">Corecție estetică & protecție ceramică</h2>
     <p class="section-text">
-      Prețurile pentru polish și protecțiile ceramice sunt orientative și se stabilesc în funcție de dimensiunea mașinii,
-      starea lacului și nivelul de corecție dorit.
+      Servicii dedicate corecției estetice a lacului și protecției ceramice, pentru clienții care urmăresc un aspect curat, luciu controlat și protecție premium pe termen lung.
     </p>
 
-    <div class="grid-2">
-      <div class="info-box">
-        <h3>Polish</h3>
-        <div class="price-table">
-          <div class="price-row">
-            <div>
-              <strong>Polish de întreținere</strong>
-              <span>Refresh vizual și îmbunătățire generală a luciului</span>
-            </div>
-            <div class="price-value">de la 500 lei</div>
-          </div>
-
-          <div class="price-row">
-            <div>
-              <strong>Polish într-un pas</strong>
-              <span>Corecție ușoară spre medie, pentru un aspect mai clar și uniform</span>
-            </div>
-            <div class="price-value">de la 900 lei</div>
-          </div>
-
-          <div class="price-row">
-            <div>
-              <strong>Polish în mai multe etape</strong>
-              <span>Pentru corecție avansată și finisaj premium</span>
-            </div>
-            <div class="price-value">de la 1500 lei</div>
-          </div>
+    <div class="grid-3 premium-price-cards">
+      <div class="card premium-price-card fade-in">
+        <div class="price-card-top">
+          <span class="price-badge">Corecție</span>
+          <h3>Polish de întreținere</h3>
+          <p>
+            Refresh vizual, îmbunătățirea luciului și uniformizarea aspectului exterior pentru mașini care au nevoie de un plus de claritate și prezentare.
+          </p>
         </div>
+
+        <div class="price-features">
+          <div class="price-feature">Îmbunătățire luciu general</div>
+          <div class="price-feature">Corecție ușoară vizuală</div>
+          <div class="price-feature">Aspect mai curat și uniform</div>
+        </div>
+
+        <div class="price-list">
+          <div class="price-row"><span>Auto mic</span><strong>de la 500 lei</strong></div>
+          <div class="price-row"><span>Auto mediu</span><strong>de la 650 lei</strong></div>
+          <div class="price-row"><span>Auto mare / SUV</span><strong>de la 800 lei</strong></div>
+        </div>
+
+        <a class="btn btn-primary package-btn" href="https://wa.me/40757352371?text=Buna!%20Vreau%20detalii%20despre%20polishul%20de%20intretinere." target="_blank" rel="noopener noreferrer">
+          Programează pe WhatsApp
+        </a>
       </div>
 
-      <div class="info-box">
-        <h3>Protecții ceramice</h3>
-        <div class="price-table">
-          <div class="price-row">
-            <div>
-              <strong>Protecție ceramică caroserie</strong>
-              <span>Aplicare protecție ceramică profesională</span>
-            </div>
-            <div class="price-value">de la 1200 lei</div>
-          </div>
-
-          <div class="price-row">
-            <div>
-              <strong>Polish + protecție ceramică</strong>
-              <span>Pachet recomandat pentru aspect și protecție completă</span>
-            </div>
-            <div class="price-value">de la 1800 lei</div>
-          </div>
-
-          <div class="price-row">
-            <div>
-              <strong>Protecții suplimentare</strong>
-              <span>Jante, elemente lucioase, suprafețe dedicate</span>
-            </div>
-            <div class="price-value">ofertă personalizată</div>
-          </div>
+      <div class="card premium-price-card featured-card fade-in">
+        <div class="featured-label">Recomandat</div>
+        <div class="price-card-top">
+          <span class="price-badge">Corecție estetică</span>
+          <h3>Polish corectiv</h3>
+          <p>
+            Serviciu recomandat pentru mașini care prezintă holograme, zgârieturi fine sau un nivel vizibil de uzură estetică și au nevoie de rafinare reală a finisajului.
+          </p>
         </div>
+
+        <div class="price-features">
+          <div class="price-feature">Corecție estetică într-un pas</div>
+          <div class="price-feature">Claritate și profunzime mai bună</div>
+          <div class="price-feature">Aspect premium al lacului</div>
+        </div>
+
+        <div class="price-list">
+          <div class="price-row"><span>Auto mic</span><strong>de la 900 lei</strong></div>
+          <div class="price-row"><span>Auto mediu</span><strong>de la 1200 lei</strong></div>
+          <div class="price-row"><span>Auto mare / SUV</span><strong>de la 1500 lei</strong></div>
+        </div>
+
+        <a class="btn btn-primary package-btn" href="https://wa.me/40757352371?text=Buna!%20Vreau%20detalii%20despre%20polishul%20corectiv." target="_blank" rel="noopener noreferrer">
+          Programează pe WhatsApp
+        </a>
+      </div>
+
+      <div class="card premium-price-card fade-in">
+        <div class="price-card-top">
+          <span class="price-badge">Protecție</span>
+          <h3>Protecție ceramică</h3>
+          <p>
+            Soluție premium pentru protecția caroseriei, menținerea luciului și întreținere mai ușoară, aplicată în funcție de starea mașinii și pregătirea suprafeței.
+          </p>
+        </div>
+
+        <div class="price-features">
+          <div class="price-feature">Protecție ceramică profesională</div>
+          <div class="price-feature">Întreținere mai ușoară</div>
+          <div class="price-feature">Pachet disponibil și cu polish</div>
+        </div>
+
+        <div class="price-list">
+          <div class="price-row"><span>Protecție ceramică</span><strong>de la 1200 lei</strong></div>
+          <div class="price-row"><span>Polish + ceramică</span><strong>de la 1800 lei</strong></div>
+          <div class="price-row"><span>Elemente suplimentare</span><strong>ofertă personalizată</strong></div>
+        </div>
+
+        <a class="btn btn-primary package-btn" href="https://wa.me/40757352371?text=Buna!%20Vreau%20detalii%20despre%20protectia%20ceramica." target="_blank" rel="noopener noreferrer">
+          Programează pe WhatsApp
+        </a>
       </div>
     </div>
   </div>
