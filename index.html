@@ -70,6 +70,7 @@
       align-items:center;
       gap:12px;
       min-width:0;
+      flex-shrink:1;
     }
 
     .brand-logo{
@@ -92,6 +93,7 @@
       display:flex;
       align-items:center;
       gap:16px;
+      min-width:0;
     }
 
     .nav-links{
@@ -105,7 +107,7 @@
     }
 
     .nav-links a{
-      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
+      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease, color .22s ease;
     }
 
     .nav-links a:hover{
@@ -134,9 +136,7 @@
       pointer-events:none;
     }
 
-    .nav-cta:hover::after{
-      transform:translateX(130%);
-    }
+    .nav-cta:hover::after{transform:translateX(130%)}
 
     .nav-cta:hover{
       transform:translateY(-2px);
@@ -147,6 +147,7 @@
       display:flex;
       align-items:center;
       gap:10px;
+      margin-left:6px;
     }
 
     .top-social{
@@ -160,6 +161,7 @@
       justify-content:center;
       box-shadow:var(--shadow-soft);
       transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
+      flex-shrink:0;
     }
 
     .top-social:hover{
@@ -185,6 +187,7 @@
       align-items:center;
       justify-content:center;
       cursor:pointer;
+      flex-shrink:0;
     }
 
     .menu-toggle svg{
@@ -194,7 +197,7 @@
     }
 
     .hero{
-      padding:92px 0 60px;
+      padding:92px 0 52px;
       position:relative;
       overflow:hidden;
     }
@@ -244,7 +247,7 @@
     h1{
       margin:0 0 16px;
       font-size:clamp(40px,7vw,78px);
-      line-height:.98;
+      line-height:.96;
       letter-spacing:-1px;
       max-width:780px;
     }
@@ -296,9 +299,7 @@
       pointer-events:none;
     }
 
-    .btn:hover::after{
-      transform:translateX(130%);
-    }
+    .btn:hover::after{transform:translateX(130%)}
 
     .btn:hover{
       transform:translateY(-2px) scale(1.02);
@@ -332,7 +333,7 @@
     .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
     .faq-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
     .contact-wrap{grid-template-columns:1.05fr .95fr}
-    .offer-wrap{grid-template-columns:1.05fr .95fr; align-items:center;}
+    .offer-wrap{grid-template-columns:1fr 1fr; align-items:center}
 
     .mini-card,
     .card,
@@ -465,6 +466,7 @@
     }
 
     .service-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+
     .service-card{
       min-height:300px;
       background-size:cover;
@@ -586,23 +588,35 @@
     }
 
     .offer-price{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      flex-wrap:wrap;
+      display:grid;
+      gap:12px;
       margin-bottom:20px;
     }
 
-    .old-price{
-      text-decoration:line-through;
-      color:#8c8677;
-      font-size:18px;
+    .price-item{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      padding:12px 0;
+      border-bottom:1px solid rgba(255,255,255,0.08);
     }
 
-    .new-price{
-      font-size:38px;
+    .price-item:last-child{
+      border-bottom:none;
+      padding-bottom:0;
+    }
+
+    .price-label{
+      color:var(--muted);
+      font-size:16px;
+    }
+
+    .price-value{
+      font-size:30px;
       font-weight:800;
       color:var(--gold);
+      white-space:nowrap;
     }
 
     .offer-actions{
@@ -824,6 +838,11 @@
         width:100%;
       }
 
+      .price-item{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
       .whatsapp-btn{
         right:16px;
         left:16px;
@@ -877,7 +896,7 @@
       <div class="container hero-grid">
         <div>
           <div class="eyebrow">Prestige Finish Detailing Studio • Ploiești</div>
-          <h1>Detailing auto premium în Ploiești</h1>
+          <h1>Where your car meets perfection</h1>
           <p>
             Corecție estetică, protecții ceramice și detailing interior realizate la standard premium, cu produse profesionale și atenție reală la fiecare detaliu.
           </p>
@@ -930,35 +949,52 @@
     </section>
 
     <section class="april-offer fade-in">
-      <div class="container offer-wrap">
-        <div class="offer-box">
-          <span class="offer-badge">Ofertă specială • Aprilie</span>
-          <h2 class="offer-title">Pachet complet detailing interior + exterior</h2>
-          <p class="offer-text">
-            O combinație premium pentru clienții care își doresc un interior îngrijit și un exterior cu aspect curat, luciu plăcut și prezentare premium.
-          </p>
+      <div class="container">
+        <div class="tag">Ofertă specială</div>
+        <h2 class="section-title">Prestige April Offer</h2>
+        <p class="section-text">
+          Un pachet promoțional gândit pentru clienții care își doresc un interior curat, îngrijit și un exterior cu aspect proaspăt, bine întreținut și prezentabil.
+        </p>
 
-          <ul class="offer-list">
-            <li>✔ Detailing interior complet</li>
-            <li>✔ Curățare și îngrijire atentă a suprafețelor interioare</li>
-            <li>✔ Curățare exterioară + decontaminare ușoară</li>
-            <li>✔ Polish de întreținere pentru un plus de claritate și luciu</li>
-            <li>✔ Protecție hidrofobă rapidă pentru finisaj și întreținere mai ușoară</li>
-          </ul>
-
-          <div class="offer-price">
-            <span class="old-price">de la 790 lei</span>
-            <span class="new-price">590 lei</span>
+        <div class="offer-wrap">
+          <div class="offer-image-box">
+            <img alt="Prestige April Offer" src="assets/oferta-aprilie.jpeg"/>
           </div>
 
-          <div class="offer-actions">
-            <a class="btn btn-primary" href="programari.html">Programează acum</a>
-            <a class="btn btn-primary" href="formular-contact.html">Cere detalii</a>
-          </div>
-        </div>
+          <div class="offer-box">
+            <span class="offer-badge">Valabil în luna aprilie</span>
+            <h3>Basic interior + refresh exterior</h3>
+            <p class="offer-text">
+              O combinație echilibrată pentru un rezultat vizibil, curat și premium, ideală pentru întreținerea completă a mașinii.
+            </p>
 
-        <div class="offer-image-box">
-          <img alt="Ofertă detailing aprilie" src="assets/oferta-aprilie.jpeg"/>
+            <ul class="offer-list">
+              <li>✔ Detailing interior complet la nivel Basic Interior</li>
+              <li>✔ Curățare și dressing ușor suprafețe interioare</li>
+              <li>✔ Curățare exterioară completă</li>
+              <li>✔ Refresh vizual exterior pentru un aspect mai curat și mai uniform</li>
+            </ul>
+
+            <div class="offer-price">
+              <div class="price-item">
+                <span class="price-label">Auto mic</span>
+                <span class="price-value">590 lei</span>
+              </div>
+              <div class="price-item">
+                <span class="price-label">Auto mediu</span>
+                <span class="price-value">690 lei</span>
+              </div>
+              <div class="price-item">
+                <span class="price-label">SUV / auto mare</span>
+                <span class="price-value">790 lei</span>
+              </div>
+            </div>
+
+            <div class="offer-actions">
+              <a class="btn btn-primary" href="programari.html">Programează acum</a>
+              <a class="btn btn-primary" href="formular-contact.html">Cere detalii</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
