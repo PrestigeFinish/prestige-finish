@@ -5,13 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prestige Finish | Programare online</title>
   <link rel="icon" type="image/png" href="logo.png" />
-  <meta name="description" content="Programare online Prestige Finish pentru detailing interior, corecție estetică, protecții ceramice, faruri și servicii premium auto." />
+  <meta name="description" content="Programare online Prestige Finish pentru detailing interior, corecție estetică, protecții ceramice și servicii premium auto în Ploiești." />
 
   <style>
     :root{
       --bg:#050505;
       --card:rgba(255,255,255,0.04);
-      --card-strong:rgba(255,255,255,0.06);
       --gold:#d4af37;
       --gold-soft:rgba(212,175,55,0.12);
       --text:#f5f2ea;
@@ -19,9 +18,12 @@
       --line:rgba(212,175,55,0.18);
       --line-strong:rgba(212,175,55,0.34);
       --green:#25D366;
-      --danger:#ff8d8d;
       --shadow:0 20px 60px rgba(0,0,0,0.45);
       --shadow-soft:0 10px 30px rgba(0,0,0,0.25);
+      --success:#7dffbf;
+      --success-bg:rgba(0,255,150,0.08);
+      --danger:#ff8b8b;
+      --danger-bg:rgba(255,0,0,0.08);
     }
 
     *{box-sizing:border-box}
@@ -85,7 +87,7 @@
       color:var(--gold);
       font-size:22px;
       font-weight:700;
-      letter-spacing:.4px;
+      letter-spacing:0.4px;
       white-space:nowrap;
     }
 
@@ -105,7 +107,13 @@
       justify-content:flex-end;
     }
 
-    .nav-links a:hover{color:var(--text)}
+    .nav-links a{
+      transition:.22s ease;
+    }
+
+    .nav-links a:hover{
+      color:var(--text);
+    }
 
     .nav-cta{
       padding:10px 16px;
@@ -114,12 +122,27 @@
       color:var(--gold);
       background:rgba(212,175,55,0.06);
       font-weight:700;
+      position:relative;
+      overflow:hidden;
     }
+
+    .nav-cta::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.22) 45%, transparent 100%);
+      transform:translateX(-130%);
+      transition:transform .55s ease;
+      pointer-events:none;
+    }
+
+    .nav-cta:hover::after{transform:translateX(130%)}
 
     .top-socials{
       display:flex;
       align-items:center;
       gap:10px;
+      margin-left:6px;
     }
 
     .top-social{
@@ -133,6 +156,7 @@
       justify-content:center;
       box-shadow:var(--shadow-soft);
       transition:.22s ease;
+      flex-shrink:0;
     }
 
     .top-social:hover{
@@ -167,7 +191,7 @@
     }
 
     .hero{
-      padding:86px 0 26px;
+      padding:92px 0 46px;
       position:relative;
       overflow:hidden;
     }
@@ -194,8 +218,8 @@
       position:relative;
       z-index:2;
       display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:28px;
+      grid-template-columns:1.06fr .94fr;
+      gap:30px;
       align-items:start;
     }
 
@@ -226,7 +250,7 @@
       color:var(--muted);
       font-size:18px;
       max-width:760px;
-      margin:0 0 24px;
+      margin:0 0 28px;
     }
 
     .hero-actions{
@@ -275,30 +299,31 @@
       color:#0a0a0a;
     }
 
+    .btn-dark{
+      background:rgba(255,255,255,0.03);
+      color:var(--text);
+      border:1px solid var(--line);
+    }
+
     .hero-panel,
-    .section-card,
+    .booking-card,
     .summary-card,
-    .service-card,
-    .calendar-card,
-    .time-card,
-    .final-card{
+    .faq-card,
+    .mini-card{
       border:1px solid var(--line);
       background:
         radial-gradient(circle at top right, rgba(212,175,55,0.06), transparent 30%),
-        linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.02));
-      border-radius:28px;
+        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border-radius:26px;
+      padding:22px;
       box-shadow:var(--shadow);
-    }
-
-    .hero-panel{
-      padding:26px;
     }
 
     .hero-panel img{
       width:100%;
-      max-width:280px;
+      max-width:300px;
       margin:0 auto 18px;
-      border-radius:22px;
+      border-radius:24px;
       border:1px solid var(--line);
       background:#000;
     }
@@ -322,9 +347,32 @@
       border-radius:999px;
       background:var(--gold);
       box-shadow:0 0 12px rgba(212,175,55,0.7);
+      flex-shrink:0;
     }
 
-    section{padding:24px 0 72px}
+    .quick-points{
+      display:grid;
+      gap:12px;
+      margin-top:16px;
+    }
+
+    .quick-point{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+
+    .quick-dot{
+      width:10px;
+      height:10px;
+      margin-top:7px;
+      border-radius:999px;
+      background:var(--gold);
+      flex-shrink:0;
+      box-shadow:0 0 10px rgba(212,175,55,0.5);
+    }
+
+    section{padding:30px 0 78px}
 
     .tag{
       display:inline-flex;
@@ -336,367 +384,294 @@
     }
 
     .section-title{
-      font-size:clamp(30px,4vw,46px);
+      font-size:clamp(30px,4vw,48px);
       margin:0 0 12px;
     }
 
     .section-text{
-      max-width:780px;
+      max-width:760px;
       margin:0 0 28px;
       font-size:17px;
       color:var(--muted);
     }
 
-    .steps-bar{
-      position:sticky;
-      top:87px;
-      z-index:900;
-      margin-bottom:24px;
-    }
-
-    .steps-inner{
-      border:1px solid var(--line);
-      background:rgba(5,5,5,0.92);
-      backdrop-filter:blur(12px);
-      border-radius:24px;
-      padding:10px;
+    .booking-layout{
       display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
-      gap:10px;
-      box-shadow:var(--shadow-soft);
-    }
-
-    .step-btn{
-      border:1px solid rgba(255,255,255,0.06);
-      background:rgba(255,255,255,0.02);
-      color:var(--muted);
-      min-height:56px;
-      border-radius:18px;
-      padding:10px 14px;
-      font-weight:700;
-      cursor:pointer;
-      transition:.22s ease;
-    }
-
-    .step-btn.active,
-    .step-btn:hover{
-      color:var(--gold);
-      border-color:var(--line-strong);
-      background:rgba(212,175,55,0.08);
-    }
-
-    .layout{
-      display:grid;
-      grid-template-columns:1.2fr .8fr;
+      grid-template-columns:1.08fr .92fr;
       gap:24px;
       align-items:start;
     }
 
-    .main-stack{
+    .step-tabs{
       display:grid;
-      gap:24px;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+      margin-bottom:22px;
     }
 
-    .section-card,
-    .summary-card{
-      padding:24px;
+    .step-tab{
+      min-height:58px;
+      padding:12px 14px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.025);
+      color:var(--muted);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:2px;
+      font-size:13px;
+      cursor:pointer;
+      transition:.22s ease;
+      text-align:left;
     }
 
-    .services-grid{
+    .step-tab strong{
+      font-size:14px;
+      color:var(--text);
+      font-weight:700;
+    }
+
+    .step-tab.active{
+      border-color:var(--line-strong);
+      background:rgba(212,175,55,0.12);
+      color:var(--gold);
+      box-shadow:0 0 0 1px rgba(212,175,55,0.08);
+    }
+
+    .step-panel{display:none}
+    .step-panel.active{display:block}
+
+    .service-grid{
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:18px;
+      gap:14px;
     }
 
-    .service-card{
-      overflow:hidden;
-      transition:.22s ease;
-      cursor:pointer;
+    .service-item{
       position:relative;
-    }
-
-    .service-card:hover{
-      transform:translateY(-4px);
-      border-color:var(--line-strong);
-    }
-
-    .service-top{
-      height:180px;
-      background-size:cover;
-      background-position:center;
-      position:relative;
-    }
-
-    .service-top::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.55));
-    }
-
-    .service-body{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.03);
+      border-radius:20px;
       padding:18px;
+      cursor:pointer;
+      transition:.22s ease;
+      min-height:120px;
     }
 
-    .service-body h3{
+    .service-item:hover{
+      transform:translateY(-2px);
+      border-color:var(--line-strong);
+      background:rgba(255,255,255,0.05);
+    }
+
+    .service-item.active{
+      border-color:rgba(212,175,55,0.42);
+      background:rgba(212,175,55,0.12);
+      box-shadow:0 0 0 1px rgba(212,175,55,0.10);
+    }
+
+    .service-item h3{
       margin:0 0 8px;
       color:var(--gold);
-      font-size:22px;
+      font-size:20px;
     }
 
-    .service-body p{
-      margin:0 0 14px;
+    .service-item p{
+      margin:0;
       color:var(--muted);
       font-size:14px;
-    }
-
-    .service-meta{
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      align-items:center;
-      font-size:13px;
-      color:var(--muted);
     }
 
     .service-check{
       position:absolute;
       top:14px;
       right:14px;
-      z-index:3;
-      width:34px;
-      height:34px;
+      width:26px;
+      height:26px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,0.16);
-      background:rgba(0,0,0,0.45);
+      border:1px solid var(--line);
       display:flex;
       align-items:center;
       justify-content:center;
-      color:#fff;
+      color:transparent;
+      font-weight:700;
+      background:rgba(255,255,255,0.03);
+      transition:.22s ease;
+    }
+
+    .service-item.active .service-check{
+      color:#0a0a0a;
+      background:linear-gradient(135deg,var(--gold),#f0d266);
+      border-color:transparent;
+    }
+
+    .date-toolbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      margin-bottom:18px;
+      flex-wrap:wrap;
+    }
+
+    .month-label{
+      color:var(--gold);
+      font-size:20px;
       font-weight:700;
     }
 
-    .service-card.selected{
-      border-color:rgba(212,175,55,0.42);
-      box-shadow:0 18px 44px rgba(212,175,55,0.08);
-    }
-
-    .service-card.selected .service-check{
-      background:var(--gold);
-      color:#111;
-      border-color:var(--gold);
-    }
-
-    .calendar-card,
-    .time-card,
-    .final-card{
-      padding:24px;
-    }
-
-    .calendar-head{
-      display:flex;
-      justify-content:space-between;
-      gap:14px;
-      align-items:center;
-      margin-bottom:20px;
-    }
-
-    .calendar-head h3,
-    .time-card h3,
-    .final-card h3,
-    .summary-card h3{
-      margin:0;
-      color:var(--gold);
-      font-size:22px;
-    }
-
-    .month-nav{
+    .month-controls{
       display:flex;
       gap:10px;
+      align-items:center;
     }
 
-    .month-btn{
-      width:54px;
-      height:54px;
-      border-radius:18px;
+    .icon-btn{
+      width:44px;
+      height:44px;
+      border-radius:14px;
       border:1px solid var(--line);
       background:rgba(255,255,255,0.03);
       color:var(--gold);
-      font-size:24px;
       cursor:pointer;
       transition:.22s ease;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-shrink:0;
     }
 
-    .month-btn:hover{
-      background:rgba(212,175,55,0.08);
+    .icon-btn:hover{
+      transform:translateY(-2px);
       border-color:var(--line-strong);
+      background:rgba(212,175,55,0.08);
     }
 
-    .weekdays{
+    .calendar{
       display:grid;
       grid-template-columns:repeat(7,minmax(0,1fr));
       gap:10px;
-      margin-bottom:12px;
+    }
+
+    .calendar-head{
+      text-align:center;
       color:var(--gold);
       font-size:12px;
-      letter-spacing:.8px;
-      text-transform:uppercase;
-      text-align:center;
+      font-weight:700;
+      letter-spacing:.4px;
+      padding-bottom:4px;
     }
 
-    .calendar-grid{
-      display:grid;
-      grid-template-columns:repeat(7,minmax(0,1fr));
-      gap:10px;
-    }
-
-    .day-cell{
-      min-height:92px;
-      border-radius:22px;
-      border:1px solid rgba(255,255,255,0.06);
-      background:rgba(255,255,255,0.02);
-      padding:10px 8px;
+    .day{
+      min-height:82px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.025);
+      padding:12px 10px;
       display:flex;
       flex-direction:column;
       justify-content:space-between;
-      align-items:center;
-      text-align:center;
-      transition:.22s ease;
+      gap:8px;
       cursor:pointer;
+      transition:.22s ease;
+      position:relative;
     }
 
-    .day-cell.empty{
-      visibility:hidden;
+    .day:hover{
+      transform:translateY(-2px);
+      border-color:var(--line-strong);
+      background:rgba(255,255,255,0.04);
+    }
+
+    .day.muted{
+      opacity:.30;
       pointer-events:none;
     }
 
-    .day-number{
-      font-size:16px;
+    .day.blocked{
+      opacity:.45;
+      pointer-events:none;
+      background:rgba(255,255,255,0.015);
+    }
+
+    .day.selected{
+      border-color:rgba(212,175,55,0.42);
+      background:rgba(212,175,55,0.12);
+      box-shadow:0 0 0 1px rgba(212,175,55,0.10);
+    }
+
+    .day-num{
       font-weight:700;
+      font-size:16px;
       color:var(--text);
     }
 
-    .day-status{
-      font-size:12px;
-      line-height:1.2;
+    .day-note{
+      font-size:11px;
       color:var(--muted);
-      white-space:normal;
-      word-break:break-word;
-      padding:0 2px;
+      line-height:1.2;
     }
 
-    .day-cell.past,
-    .day-cell.closed{
-      opacity:.4;
-      cursor:not-allowed;
+    .day.selected .day-note{
+      color:var(--gold);
     }
 
-    .day-cell.available:hover{
-      transform:translateY(-2px);
-      border-color:var(--line-strong);
-      background:rgba(212,175,55,0.06);
-    }
-
-    .day-cell.selected{
-      border-color:rgba(212,175,55,0.45);
-      box-shadow:0 0 0 2px rgba(212,175,55,0.14) inset;
-      background:rgba(212,175,55,0.08);
-    }
-
-    .day-cell.full{
-      opacity:.55;
-      cursor:not-allowed;
-    }
-
-    .times-grid{
+    .hour-grid{
       display:grid;
       grid-template-columns:repeat(4,minmax(0,1fr));
-      gap:14px;
-      margin-top:18px;
+      gap:12px;
     }
 
-    .time-slot{
-      min-height:62px;
-      border-radius:18px;
-      border:1px solid rgba(255,255,255,0.08);
-      background:rgba(255,255,255,0.025);
+    .hour-item{
+      min-height:58px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.03);
       color:var(--text);
       font-weight:700;
       cursor:pointer;
       transition:.22s ease;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:8px 10px;
+      text-align:center;
     }
 
-    .time-slot:hover{
+    .hour-item:hover{
       transform:translateY(-2px);
       border-color:var(--line-strong);
-      background:rgba(212,175,55,0.06);
+      background:rgba(255,255,255,0.05);
     }
 
-    .time-slot.selected{
+    .hour-item.selected{
       background:linear-gradient(135deg,var(--gold),#f0d266);
-      color:#111;
-      border-color:var(--gold);
+      color:#0a0a0a;
+      border-color:transparent;
     }
 
-    .time-slot.blocked{
+    .hour-item.blocked{
       opacity:.35;
-      cursor:not-allowed;
+      pointer-events:none;
       text-decoration:line-through;
     }
 
-    .hint{
-      color:var(--muted);
-      font-size:14px;
-      margin-top:12px;
-    }
-
-    .summary-list{
+    .form-grid{
       display:grid;
-      gap:12px;
-      margin:18px 0 20px;
-    }
-
-    .summary-item{
-      border:1px solid rgba(255,255,255,0.06);
-      border-radius:16px;
-      background:rgba(255,255,255,0.02);
-      padding:12px 14px;
-      color:var(--text);
-      font-size:14px;
-    }
-
-    .summary-empty{
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    .selected-services-tags{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:12px;
-    }
-
-    .selected-tag{
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(212,175,55,0.08);
-      color:var(--gold);
-      font-size:13px;
-      font-weight:700;
-    }
-
-    .final-form{
-      display:grid;
+      grid-template-columns:1fr 1fr;
       gap:16px;
-      margin-top:18px;
     }
 
-    .field{
+    .field,
+    .field-full{
       display:flex;
       flex-direction:column;
       gap:8px;
+    }
+
+    .field-full{
+      grid-column:1 / -1;
     }
 
     label{
@@ -736,50 +711,136 @@
       min-height:140px;
     }
 
+    .step-actions{
+      display:flex;
+      gap:12px;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      margin-top:22px;
+    }
+
+    .summary-card h3,
+    .mini-card h3,
+    .faq-card h3,
+    .booking-card h2{
+      margin:0 0 12px;
+      color:var(--gold);
+    }
+
+    .summary-block{
+      padding:14px 0;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .summary-block:last-child{
+      border-bottom:none;
+      padding-bottom:0;
+    }
+
+    .summary-label{
+      display:block;
+      color:var(--muted);
+      font-size:13px;
+      margin-bottom:6px;
+    }
+
+    .summary-value{
+      color:var(--text);
+      font-weight:700;
+      word-break:break-word;
+    }
+
+    .summary-list{
+      display:grid;
+      gap:8px;
+      margin:0;
+      padding-left:18px;
+      color:var(--text);
+    }
+
+    .mini-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:18px;
+      margin-top:18px;
+    }
+
+    .mini-card p{
+      margin:0;
+      color:var(--muted);
+    }
+
     .inline-state{
       display:none;
-      margin-top:16px;
+      margin-top:18px;
       padding:14px 16px;
       border-radius:16px;
+      border:1px solid transparent;
       font-size:14px;
       font-weight:700;
     }
 
     .inline-state.success{
-      background:rgba(0,255,150,0.08);
-      border:1px solid rgba(0,255,150,0.25);
-      color:#7dffbf;
+      background:var(--success-bg);
+      border-color:rgba(0,255,150,0.25);
+      color:var(--success);
     }
 
     .inline-state.error{
-      background:rgba(255,0,0,0.08);
-      border:1px solid rgba(255,0,0,0.20);
+      background:var(--danger-bg);
+      border-color:rgba(255,0,0,0.20);
       color:var(--danger);
     }
 
-    .summary-card{
-      position:sticky;
-      top:170px;
+    .faq-list{
+      display:grid;
+      gap:14px;
+      margin-top:18px;
     }
 
-    .summary-card h3{
-      margin:0 0 8px;
+    .faq-item{
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:rgba(255,255,255,0.025);
+      overflow:hidden;
     }
 
-    .summary-row{
-      padding:12px 0;
-      border-bottom:1px solid rgba(255,255,255,0.08);
-    }
-
-    .summary-row strong{
-      display:block;
+    .faq-q{
+      width:100%;
+      background:none;
+      border:none;
       color:var(--text);
-      margin-bottom:4px;
+      text-align:left;
+      padding:18px 18px;
+      font-weight:700;
+      cursor:pointer;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
     }
 
-    .summary-row span{
+    .faq-q span:last-child{
+      color:var(--gold);
+      font-size:20px;
+      transition:transform .22s ease;
+    }
+
+    .faq-item.active .faq-q span:last-child{
+      transform:rotate(45deg);
+    }
+
+    .faq-a{
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .3s ease;
+      padding:0 18px;
       color:var(--muted);
-      font-size:14px;
+    }
+
+    .faq-item.active .faq-a{
+      max-height:160px;
+      padding:0 18px 18px;
     }
 
     .fade-in{
@@ -826,7 +887,9 @@
       transition:.22s ease;
     }
 
-    .whatsapp-btn:hover{transform:scale(1.04)}
+    .whatsapp-btn:hover{
+      transform:scale(1.04);
+    }
 
     .whatsapp-btn img{
       width:22px;
@@ -834,13 +897,14 @@
     }
 
     @media (max-width:1100px){
-      .layout,
+      .booking-layout,
       .hero-grid{
         grid-template-columns:1fr;
       }
 
-      .summary-card{
-        position:static;
+      .service-grid,
+      .hour-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
       }
     }
 
@@ -872,14 +936,24 @@
         border:1px solid rgba(255,255,255,0.04);
       }
 
-      .services-grid,
-      .times-grid{
-        grid-template-columns:1fr 1fr;
+      .step-tabs{
+        grid-template-columns:repeat(2,1fr);
       }
 
-      .steps-inner{
-        grid-template-columns:1fr 1fr;
+      .calendar{
+        gap:8px;
       }
+
+      .day{
+        min-height:74px;
+        padding:10px 8px;
+      }
+
+      .form-grid{
+        grid-template-columns:1fr;
+      }
+
+      .field-full{grid-column:auto}
 
       h1{font-size:46px}
       .brand-logo{height:44px}
@@ -887,44 +961,59 @@
     }
 
     @media (max-width:640px){
-      .hero{padding:74px 0 20px}
-      .hero-actions{flex-direction:column}
-      .hero-actions .btn{width:100%}
+      .hero{padding:74px 0 42px}
+      .hero-actions,
+      .step-actions{
+        flex-direction:column;
+      }
 
-      .services-grid,
-      .times-grid{
+      .hero-actions .btn,
+      .step-actions .btn{
+        width:100%;
+      }
+
+      .service-grid,
+      .hour-grid{
         grid-template-columns:1fr;
       }
 
-      .calendar-grid{
-        gap:8px;
+      .step-tabs{
+        grid-template-columns:1fr;
       }
 
-      .day-cell{
-        min-height:82px;
-        border-radius:18px;
+      .calendar{
+        grid-template-columns:repeat(7,minmax(34px,1fr));
+        gap:6px;
+      }
+
+      .calendar-head{
+        font-size:10px;
+      }
+
+      .day{
+        min-height:66px;
         padding:8px 6px;
+        border-radius:14px;
       }
 
-      .day-number{
-        font-size:15px;
+      .day-num{
+        font-size:14px;
       }
 
-      .day-status{
-        font-size:11px;
+      .day-note{
+        font-size:10px;
+        line-height:1.1;
+        overflow-wrap:anywhere;
       }
 
-      .steps-bar{
-        top:78px;
+      .month-label{
+        font-size:18px;
       }
 
-      .steps-inner{
-        grid-template-columns:1fr;
-      }
-
-      .month-btn{
-        width:50px;
-        height:50px;
+      .status{
+        width:100%;
+        justify-content:center;
+        text-align:center;
       }
 
       .whatsapp-btn{
@@ -958,15 +1047,17 @@
         </div>
 
         <button class="menu-toggle" onclick="toggleMenu()" aria-label="Deschide meniul">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 7H20M4 12H20M4 17H20"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+            <path d="M4 7H20M4 12H20M4 17H20" />
+          </svg>
         </button>
       </div>
 
       <div class="nav-links" id="mobileMenu">
         <a href="index.html" onclick="closeMenu()">Acasă</a>
         <a href="persoane-fizice.html" onclick="closeMenu()">Persoane fizice</a>
-        <a href="flote.html" onclick="closeMenu()">Persoane juridice / flote</a>
-        <a href="formular-contact.html" onclick="closeMenu()">Formular de contact</a>
+        <a href="flote.html" onclick="closeMenu()">Flote</a>
+        <a href="formular-contact.html" onclick="closeMenu()">Contact</a>
         <a href="programari.html" class="nav-cta" onclick="closeMenu()">Programare online</a>
       </div>
     </div>
@@ -978,247 +1069,298 @@
       <div class="container hero-grid">
         <div>
           <div class="eyebrow">Programare online</div>
-          <h1>Rezervă serviciile dorite direct din site</h1>
+          <h1>Rezervă direct din site</h1>
           <p>
-            Selectezi serviciile, alegi data și ora potrivită, apoi trimiți cererea de programare într-un format clar și ușor de completat.
+            Selectează serviciile dorite, alege data și ora potrivită, apoi trimite cererea de programare direct către Prestige Finish.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#booking-flow">Începe programarea</a>
-            <a class="btn btn-primary" href="formular-contact.html">Prefer formularul de contact</a>
+            <a class="btn btn-primary" href="#booking">Începe programarea</a>
+            <a class="btn btn-dark" href="formular-contact.html">Prefer formularul de contact</a>
           </div>
         </div>
 
         <div class="hero-panel">
-          <div class="status"><span class="status-dot"></span> Programare structurată</div>
+          <div class="status"><span class="status-dot"></span> Programare online</div>
           <img src="logo.png" alt="Prestige Finish Logo" />
           <h3 style="margin:0 0 8px;font-size:28px;">Prestige Finish</h3>
           <p style="margin:0;color:var(--muted);">
-            O pagină de rezervare construită pentru claritate: alegi exact serviciile, data potrivită și ora disponibilă, apoi trimiți solicitarea completă.
+            O pagină de programare construită clar, rapid și premium, astfel încât clientul să poată selecta exact ce are nevoie.
           </p>
+
+          <div class="quick-points">
+            <div class="quick-point"><span class="quick-dot"></span><span>Selecție multiplă servicii</span></div>
+            <div class="quick-point"><span class="quick-dot"></span><span>Data și ora alese simplu</span></div>
+            <div class="quick-point"><span class="quick-dot"></span><span>Trimitere directă a cererii</span></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="booking-flow" class="fade-in">
+    <section id="booking" class="fade-in">
       <div class="container">
-        <div class="steps-bar">
-          <div class="steps-inner">
-            <button type="button" class="step-btn active" data-target="servicesSection">1. Servicii</button>
-            <button type="button" class="step-btn" data-target="calendarSection">2. Data</button>
-            <button type="button" class="step-btn" data-target="timeSection">3. Ora</button>
-            <button type="button" class="step-btn" data-target="finalSection">4. Finalizare</button>
-          </div>
-        </div>
+        <div class="tag">Programare</div>
+        <h2 class="section-title">Alege serviciile și rezervă</h2>
+        <p class="section-text">
+          Completează pașii de mai jos pentru a trimite cererea de programare.
+        </p>
 
-        <div class="layout">
-          <div class="main-stack">
-            <div class="section-card" id="servicesSection">
-              <div class="tag">Pasul 1</div>
-              <h2 class="section-title">Alege unul sau mai multe servicii</h2>
-              <p class="section-text">
-                Poți selecta mai multe servicii în aceeași cerere, în funcție de ce ai nevoie pentru mașina ta.
-              </p>
+        <div class="booking-layout">
+          <div class="booking-card">
+            <h2>Programare online</h2>
 
-              <div class="services-grid" id="servicesGrid">
-                <div class="service-card" data-service="Detailing interior premium" data-image="assets/serv-interior.jpeg">
-                  <div class="service-check">+</div>
-                  <div class="service-top" style="background-image:url('assets/serv-interior.jpeg')"></div>
-                  <div class="service-body">
+            <div class="step-tabs">
+              <button class="step-tab active" type="button" data-step="1">
+                <strong>1. Servicii</strong>
+                <span>Selectează</span>
+              </button>
+              <button class="step-tab" type="button" data-step="2">
+                <strong>2. Data</strong>
+                <span>Alege ziua</span>
+              </button>
+              <button class="step-tab" type="button" data-step="3">
+                <strong>3. Ora</strong>
+                <span>Alege ora</span>
+              </button>
+              <button class="step-tab" type="button" data-step="4">
+                <strong>4. Finalizare</strong>
+                <span>Trimite cererea</span>
+              </button>
+            </div>
+
+            <form id="bookingForm" action="https://formspree.io/f/maqpgwqy" method="POST">
+              <input type="hidden" name="_subject" value="Cerere programare nouă - Prestige Finish">
+              <input type="hidden" name="_replyto" value="">
+              <input type="hidden" name="Tip solicitare" value="Programare online">
+              <input type="hidden" name="Servicii selectate" id="servicesField">
+              <input type="hidden" name="Data programării" id="dateField">
+              <input type="hidden" name="Ora programării" id="timeField">
+              <input type="text" name="_gotcha" style="display:none">
+
+              <div class="step-panel active" data-panel="1">
+                <div class="service-grid" id="serviceGrid">
+                  <button class="service-item" type="button" data-service="Detailing interior premium">
+                    <span class="service-check">✓</span>
                     <h3>Detailing interior</h3>
-                    <p>Curățare atentă, igienizare și finisaj premium pentru habitacluri care trebuie să arate impecabil.</p>
-                    <div class="service-meta">
-                      <span>Interior</span>
-                      <span>Premium</span>
-                    </div>
-                  </div>
-                </div>
+                    <p>Curățare completă, igienizare și finisaj premium pentru habitaclu.</p>
+                  </button>
 
-                <div class="service-card" data-service="Polish de întreținere / corecție estetică" data-image="assets/serv-polish.jpeg">
-                  <div class="service-check">+</div>
-                  <div class="service-top" style="background-image:url('assets/serv-polish.jpeg')"></div>
-                  <div class="service-body">
-                    <h3>Polish / corecție</h3>
-                    <p>Corecție vizuală, rafinare și îmbunătățirea clarității pentru un aspect exterior mai curat și mai uniform.</p>
-                    <div class="service-meta">
-                      <span>Exterior</span>
-                      <span>Corecție</span>
-                    </div>
-                  </div>
-                </div>
+                  <button class="service-item" type="button" data-service="Polish de întreținere">
+                    <span class="service-check">✓</span>
+                    <h3>Polish întreținere</h3>
+                    <p>Refresh vizual pentru luciu, claritate și aspect general mai bine uniformizat.</p>
+                  </button>
 
-                <div class="service-card" data-service="Protecție ceramică" data-image="assets/serv-ceramic.jpeg">
-                  <div class="service-check">+</div>
-                  <div class="service-top" style="background-image:url('assets/serv-ceramic.jpeg')"></div>
-                  <div class="service-body">
+                  <button class="service-item" type="button" data-service="Polish corectiv">
+                    <span class="service-check">✓</span>
+                    <h3>Polish corectiv</h3>
+                    <p>Corecție estetică pentru holograme, zgârieturi fine și uzură vizibilă.</p>
+                  </button>
+
+                  <button class="service-item" type="button" data-service="Protecție ceramică">
+                    <span class="service-check">✓</span>
                     <h3>Protecție ceramică</h3>
-                    <p>Protecție premium pentru luciu, claritate și întreținere mai ușoară a suprafețelor exterioare.</p>
-                    <div class="service-meta">
-                      <span>Protecție</span>
-                      <span>Ceramică</span>
-                    </div>
-                  </div>
+                    <p>Protecție pentru luciu, claritate și întreținere mai ușoară în timp.</p>
+                  </button>
+
+                  <button class="service-item" type="button" data-service="Tratament piele">
+                    <span class="service-check">✓</span>
+                    <h3>Tratament piele</h3>
+                    <p>Îngrijire, hidratare și protecție dedicată suprafețelor din piele.</p>
+                  </button>
+
+                  <button class="service-item" type="button" data-service="Tratament textile / alcantara">
+                    <span class="service-check">✓</span>
+                    <h3>Textile / alcantara</h3>
+                    <p>Curățare și tratament dedicat pentru textile, pluș și alcantara.</p>
+                  </button>
+
+                  <button class="service-item" type="button" data-service="Protecție geamuri">
+                    <span class="service-check">✓</span>
+                    <h3>Protecție geamuri</h3>
+                    <p>Efect hidrofob și vizibilitate mai bună în condiții dificile.</p>
+                  </button>
+
+                  <button class="service-item" type="button" data-service="Recondiționare faruri">
+                    <span class="service-check">✓</span>
+                    <h3>Recondiționare faruri</h3>
+                    <p>Îmbunătățirea clarității și aspectului optic al farurilor afectate.</p>
+                  </button>
                 </div>
 
-                <div class="service-card" data-service="Tratamente piele" data-image="assets/serv-leather.jpeg">
-                  <div class="service-check">+</div>
-                  <div class="service-top" style="background-image:url('assets/serv-leather.jpeg')"></div>
-                  <div class="service-body">
-                    <h3>Tratamente piele</h3>
-                    <p>Curățare, hidratare și întreținere atentă pentru suprafețele din piele auto.</p>
-                    <div class="service-meta">
-                      <span>Interior</span>
-                      <span>Piele</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="service-card" data-service="PPF faruri și stopuri" data-image="assets/serv-ppf-lights.jpeg">
-                  <div class="service-check">+</div>
-                  <div class="service-top" style="background-image:url('assets/serv-ppf-lights.jpeg')"></div>
-                  <div class="service-body">
-                    <h3>PPF faruri & stopuri</h3>
-                    <p>Protecție transparentă pentru elementele optice expuse la uzură și micro-zgârieturi.</p>
-                    <div class="service-meta">
-                      <span>Protecție</span>
-                      <span>Faruri</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="service-card" data-service="Recondiționări faruri" data-image="assets/serv-faruri.jpeg">
-                  <div class="service-check">+</div>
-                  <div class="service-top" style="background-image:url('assets/serv-faruri.jpeg')"></div>
-                  <div class="service-body">
-                    <h3>Recondiționări faruri</h3>
-                    <p>Serviciu dedicat farurilor afectate de matuire, oxidare sau pierdere de claritate.</p>
-                    <div class="service-meta">
-                      <span>Faruri</span>
-                      <span>Restaurare</span>
-                    </div>
-                  </div>
+                <div class="step-actions">
+                  <div></div>
+                  <button type="button" class="btn btn-primary" id="nextToDate">Continuă către data</button>
                 </div>
               </div>
 
-              <div class="hint">Poți selecta mai multe servicii.</div>
-            </div>
+              <div class="step-panel" data-panel="2">
+                <div class="date-toolbar">
+                  <div class="month-label" id="monthLabel">Aprilie 2026</div>
+                  <div class="month-controls">
+                    <button type="button" class="icon-btn" id="prevMonth">‹</button>
+                    <button type="button" class="icon-btn" id="nextMonth">›</button>
+                  </div>
+                </div>
 
-            <div class="calendar-card" id="calendarSection">
-              <div class="tag">Pasul 2</div>
-              <div class="calendar-head">
-                <h3>Alege data dorită</h3>
-                <div class="month-nav">
-                  <button class="month-btn" id="prevMonth" type="button">‹</button>
-                  <button class="month-btn" id="nextMonth" type="button">›</button>
+                <div class="calendar" id="calendarHead"></div>
+                <div class="calendar" id="calendarGrid"></div>
+
+                <div class="step-actions">
+                  <button type="button" class="btn btn-dark" data-back="1">Înapoi</button>
+                  <button type="button" class="btn btn-primary" id="nextToTime">Continuă către oră</button>
                 </div>
               </div>
 
-              <div id="monthTitle" style="font-size:clamp(28px,4vw,44px);font-weight:800;color:var(--gold);margin-bottom:18px;"></div>
+              <div class="step-panel" data-panel="3">
+                <div class="hour-grid" id="hourGrid">
+                  <!-- JS -->
+                </div>
 
-              <div class="weekdays">
-                <div>Lun</div>
-                <div>Mar</div>
-                <div>Mie</div>
-                <div>Joi</div>
-                <div>Vin</div>
-                <div>Sâm</div>
-                <div>Dum</div>
+                <div class="step-actions">
+                  <button type="button" class="btn btn-dark" data-back="2">Înapoi</button>
+                  <button type="button" class="btn btn-primary" id="nextToFinish">Continuă către finalizare</button>
+                </div>
               </div>
 
-              <div class="calendar-grid" id="calendarGrid"></div>
-            </div>
+              <div class="step-panel" data-panel="4">
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="nume">Nume</label>
+                    <input type="text" id="nume" name="Nume" placeholder="Numele tău" required autocomplete="name">
+                  </div>
 
-            <div class="time-card" id="timeSection">
-              <div class="tag">Pasul 3</div>
-              <h3>Alege ora dorită</h3>
-              <p class="section-text" style="margin-bottom:10px;">
-                Intervalele disponibile sunt afișate din 2 în 2 ore.
-              </p>
-              <div class="times-grid" id="timesGrid"></div>
-            </div>
+                  <div class="field">
+                    <label for="telefon">Telefon</label>
+                    <input type="tel" id="telefon" name="Telefon" placeholder="07xx xxx xxx" required autocomplete="tel">
+                  </div>
 
-            <div class="final-card" id="finalSection">
-              <div class="tag">Pasul 4</div>
-              <h3>Finalizare programare</h3>
-              <p class="section-text" style="margin-bottom:12px;">
-                Completează datele și trimite solicitarea.
-              </p>
+                  <div class="field-full">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="Email" placeholder="adresa ta de email" required autocomplete="email">
+                  </div>
 
-              <form id="bookingForm" action="https://formspree.io/f/maqpgwqy" method="POST" class="final-form">
-                <input type="hidden" name="_subject" value="Programare nouă - Prestige Finish">
-                <input type="hidden" name="_replyto" value="">
-                <input type="text" name="_gotcha" style="display:none">
+                  <div class="field-full">
+                    <label for="masina">Mașină</label>
+                    <input type="text" id="masina" name="Mașină" placeholder="Ex: BMW Seria 5 / Audi Q7 / VW Passat">
+                  </div>
 
-                <input type="hidden" id="selectedServicesInput" name="Servicii selectate">
-                <input type="hidden" id="selectedDateInput" name="Data dorită">
-                <input type="hidden" id="selectedTimeInput" name="Ora dorită">
-
-                <div class="field">
-                  <label for="nume">Nume</label>
-                  <input type="text" id="nume" name="Nume" placeholder="Numele tău" required>
+                  <div class="field-full">
+                    <label for="detalii">Detalii suplimentare</label>
+                    <textarea id="detalii" name="Detalii suplimentare" placeholder="Poți menționa orice detalii importante despre mașină sau despre ce îți dorești."></textarea>
+                  </div>
                 </div>
 
-                <div class="field">
-                  <label for="telefon">Telefon</label>
-                  <input type="tel" id="telefon" name="Telefon" placeholder="07xx xxx xxx" required>
-                </div>
-
-                <div class="field">
-                  <label for="email">Email</label>
-                  <input type="email" id="email" name="Email" placeholder="adresa ta de email" required>
-                </div>
-
-                <div class="field">
-                  <label for="masina">Mașină</label>
-                  <input type="text" id="masina" name="Mașină" placeholder="Ex: BMW X5 / Audi A4 / Mercedes C Class">
-                </div>
-
-                <div class="field">
-                  <label for="mesaj">Detalii suplimentare</label>
-                  <textarea id="mesaj" name="Mesaj" placeholder="Poți menționa detalii despre starea mașinii sau ce vrei să urmărim în mod special."></textarea>
-                </div>
-
-                <div class="hero-actions" style="margin-bottom:0;">
-                  <button type="submit" class="btn btn-primary">Trimite programarea</button>
-                  <a href="formular-contact.html" class="btn btn-primary">Prefer formularul de contact</a>
+                <div class="step-actions">
+                  <button type="button" class="btn btn-dark" data-back="3">Înapoi</button>
+                  <button type="submit" class="btn btn-primary">Trimite cererea de programare</button>
                 </div>
 
                 <div class="inline-state success" id="successBox">
-                  ✔ Programarea a fost trimisă cu succes.
+                  ✔ Cererea de programare a fost trimisă cu succes.
                 </div>
 
                 <div class="inline-state error" id="errorBox">
-                  ✖ A apărut o problemă. Verifică selecțiile și încearcă din nou.
+                  ✖ A apărut o problemă la trimitere. Încearcă din nou sau contactează-ne telefonic.
                 </div>
-              </form>
+              </div>
+            </form>
+          </div>
+
+          <div>
+            <div class="summary-card">
+              <h3>Rezumat selecție</h3>
+
+              <div class="summary-block">
+                <span class="summary-label">Servicii</span>
+                <div class="summary-value" id="summaryServices">Niciun serviciu selectat</div>
+              </div>
+
+              <div class="summary-block">
+                <span class="summary-label">Data</span>
+                <div class="summary-value" id="summaryDate">Nu a fost aleasă</div>
+              </div>
+
+              <div class="summary-block">
+                <span class="summary-label">Ora</span>
+                <div class="summary-value" id="summaryTime">Nu a fost aleasă</div>
+              </div>
+            </div>
+
+            <div class="mini-grid">
+              <div class="mini-card">
+                <h3>Programare rapidă</h3>
+                <p>Poți selecta unul sau mai multe servicii, apoi alegi direct data și ora dorită.</p>
+              </div>
+
+              <div class="mini-card">
+                <h3>Ai nevoie de recomandare?</h3>
+                <p>Dacă nu ești sigur ce serviciu ți se potrivește, folosește formularul de contact.</p>
+                <div class="hero-actions" style="margin-top:16px;margin-bottom:0;">
+                  <a href="formular-contact.html" class="btn btn-primary">Deschide formularul</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fade-in">
+      <div class="container">
+        <div class="tag">Întrebări frecvente</div>
+        <h2 class="section-title">Programări și rezervări</h2>
+
+        <div class="faq-grid">
+          <div class="faq-card">
+            <h3>Despre rezervare</h3>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-q" type="button">
+                  <span>Pot selecta mai multe servicii?</span>
+                  <span>+</span>
+                </button>
+                <div class="faq-a">
+                  Da. În programare poți selecta mai multe servicii, în funcție de ce ai nevoie pentru mașina ta.
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-q" type="button">
+                  <span>Trebuie să completez toate câmpurile?</span>
+                  <span>+</span>
+                </button>
+                <div class="faq-a">
+                  Sunt necesare datele de contact esențiale pentru ca echipa să poată confirma cererea de programare.
+                </div>
+              </div>
             </div>
           </div>
 
-          <aside class="summary-card">
-            <div class="tag">Rezumat</div>
-            <h3>Selecția ta</h3>
+          <div class="faq-card">
+            <h3>Despre confirmare</h3>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-q" type="button">
+                  <span>Programarea este automată?</span>
+                  <span>+</span>
+                </button>
+                <div class="faq-a">
+                  Cererea este trimisă direct către echipă, iar confirmarea se face după verificarea solicitării.
+                </div>
+              </div>
 
-            <div class="summary-row">
-              <strong>Servicii</strong>
-              <span id="summaryServices">Nu ai selectat încă niciun serviciu.</span>
-              <div class="selected-services-tags" id="summaryTags"></div>
+              <div class="faq-item">
+                <button class="faq-q" type="button">
+                  <span>Pot cere recomandare înainte?</span>
+                  <span>+</span>
+                </button>
+                <div class="faq-a">
+                  Da. Pentru recomandări sau solicitări speciale, formularul de contact este varianta potrivită.
+                </div>
+              </div>
             </div>
-
-            <div class="summary-row">
-              <strong>Data</strong>
-              <span id="summaryDate">Nu ai ales încă o dată.</span>
-            </div>
-
-            <div class="summary-row">
-              <strong>Ora</strong>
-              <span id="summaryTime">Nu ai ales încă o oră.</span>
-            </div>
-
-            <div class="summary-row" style="border-bottom:none;">
-              <strong>Trimite cererea</strong>
-              <span>După completarea datelor, programarea ajunge direct în email.</span>
-            </div>
-          </aside>
+          </div>
         </div>
       </div>
     </section>
@@ -1226,7 +1368,7 @@
 
   <footer>
     <div class="container footer-row">
-      <div>© 2026 Prestige Finish. Toate drepturile rezervate.</div>
+      <div>©️ 2026 Prestige Finish. Toate drepturile rezervate.</div>
       <div>Programare online • Ploiești</div>
     </div>
   </footer>
@@ -1266,323 +1408,325 @@
     }, { threshold: 0.12 });
     fadeEls.forEach(el => observer.observe(el));
 
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.querySelector('.faq-q').addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+
+    const serviceItems = document.querySelectorAll('.service-item');
+    const servicesField = document.getElementById('servicesField');
+    const dateField = document.getElementById('dateField');
+    const timeField = document.getElementById('timeField');
+    const summaryServices = document.getElementById('summaryServices');
+    const summaryDate = document.getElementById('summaryDate');
+    const summaryTime = document.getElementById('summaryTime');
+
+    const tabs = document.querySelectorAll('.step-tab');
+    const panels = document.querySelectorAll('.step-panel');
+
+    let selectedServices = [];
+    let selectedDate = null;
+    let selectedTime = null;
+
+    function setStep(step){
+      tabs.forEach(tab => tab.classList.toggle('active', tab.dataset.step === String(step)));
+      panels.forEach(panel => panel.classList.toggle('active', panel.dataset.panel === String(step)));
+      window.scrollTo({ top: document.getElementById('booking').offsetTop - 80, behavior: 'smooth' });
+    }
+
+    serviceItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const service = item.dataset.service;
+        item.classList.toggle('active');
+
+        if (selectedServices.includes(service)) {
+          selectedServices = selectedServices.filter(s => s !== service);
+        } else {
+          selectedServices.push(service);
+        }
+
+        updateSummary();
+      });
+    });
+
+    function updateSummary(){
+      summaryServices.textContent = selectedServices.length ? selectedServices.join(', ') : 'Niciun serviciu selectat';
+      summaryDate.textContent = selectedDate ? formatDateRO(selectedDate) : 'Nu a fost aleasă';
+      summaryTime.textContent = selectedTime || 'Nu a fost aleasă';
+
+      servicesField.value = selectedServices.join(', ');
+      dateField.value = selectedDate ? formatDateRO(selectedDate) : '';
+      timeField.value = selectedTime || '';
+    }
+
+    document.getElementById('nextToDate').addEventListener('click', () => {
+      if (!selectedServices.length) {
+        alert('Selectează cel puțin un serviciu.');
+        return;
+      }
+      setStep(2);
+    });
+
+    document.getElementById('nextToTime').addEventListener('click', () => {
+      if (!selectedDate) {
+        alert('Alege o dată.');
+        return;
+      }
+      setStep(3);
+    });
+
+    document.getElementById('nextToFinish').addEventListener('click', () => {
+      if (!selectedTime) {
+        alert('Alege o oră.');
+        return;
+      }
+      setStep(4);
+    });
+
+    document.querySelectorAll('[data-back]').forEach(btn => {
+      btn.addEventListener('click', () => setStep(btn.dataset.back));
+    });
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const step = Number(tab.dataset.step);
+        if (step === 2 && !selectedServices.length) return;
+        if (step === 3 && !selectedDate) return;
+        if (step === 4 && (!selectedServices.length || !selectedDate || !selectedTime)) return;
+        setStep(step);
+      });
+    });
+
+    const monthLabel = document.getElementById('monthLabel');
+    const calendarHead = document.getElementById('calendarHead');
+    const calendarGrid = document.getElementById('calendarGrid');
+    const prevMonth = document.getElementById('prevMonth');
+    const nextMonth = document.getElementById('nextMonth');
+
+    const weekdays = ['Lun', 'Mar', 'Mie', 'Joi', 'Vin', 'Sâm', 'Dum'];
     const monthNames = [
       'Ianuarie','Februarie','Martie','Aprilie','Mai','Iunie',
       'Iulie','August','Septembrie','Octombrie','Noiembrie','Decembrie'
     ];
 
-    const fullDays = [
-      '2026-04-18',
-      '2026-04-25'
+    const today = new Date();
+    let currentMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+
+    const blockedDates = [
+      '2026-04-06',
+      '2026-04-13',
+      '2026-04-20'
     ];
 
-    const blockedTimes = {
-      '2026-04-10': ['12:00'],
-      '2026-04-15': ['10:00'],
-      '2026-04-17': ['14:00','16:00'],
-      '2026-04-22': ['12:00','14:00'],
-      '2026-04-29': ['10:00']
+    const blockedHours = {
+      '2026-04-08': ['08:00', '10:00'],
+      '2026-04-10': ['14:00', '16:00'],
+      '2026-04-15': ['12:00'],
+      '2026-04-18': ['08:00', '10:00', '12:00'],
+      '2026-04-22': ['16:00'],
+      '2026-04-25': ['10:00', '14:00']
     };
 
-    const fixedSlots = ['10:00', '12:00', '14:00', '16:00', '18:00'];
+    const availableHours = ['08:00', '10:00', '12:00', '14:00', '16:00', '18:00'];
 
-    const calendarGrid = document.getElementById('calendarGrid');
-    const monthTitle = document.getElementById('monthTitle');
-    const timesGrid = document.getElementById('timesGrid');
-    const summaryServices = document.getElementById('summaryServices');
-    const summaryDate = document.getElementById('summaryDate');
-    const summaryTime = document.getElementById('summaryTime');
-    const summaryTags = document.getElementById('summaryTags');
-    const selectedServicesInput = document.getElementById('selectedServicesInput');
-    const selectedDateInput = document.getElementById('selectedDateInput');
-    const selectedTimeInput = document.getElementById('selectedTimeInput');
-    const bookingForm = document.getElementById('bookingForm');
-    const successBox = document.getElementById('successBox');
-    const errorBox = document.getElementById('errorBox');
-    const emailInput = document.getElementById('email');
-    const replyInput = bookingForm.querySelector('input[name="_replyto"]');
+    function renderCalendarHead(){
+      calendarHead.innerHTML = '';
+      weekdays.forEach(day => {
+        const div = document.createElement('div');
+        div.className = 'calendar-head';
+        div.textContent = day;
+        calendarHead.appendChild(div);
+      });
+    }
 
-    const serviceCards = document.querySelectorAll('.service-card');
-    const stepButtons = document.querySelectorAll('.step-btn');
-
-    let selectedServices = [];
-    let selectedDate = null;
-    let selectedTime = null;
-    let currentDate = new Date();
-
-    currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
-
-    function formatDateISO(date) {
+    function formatISO(date){
       const y = date.getFullYear();
       const m = String(date.getMonth() + 1).padStart(2, '0');
       const d = String(date.getDate()).padStart(2, '0');
       return `${y}-${m}-${d}`;
     }
 
-    function formatDateRO(date) {
-      const zi = String(date.getDate()).padStart(2, '0');
-      const luna = String(date.getMonth() + 1).padStart(2, '0');
-      const an = date.getFullYear();
-      return `${zi}.${luna}.${an}`;
+    function formatDateRO(date){
+      const d = String(date.getDate()).padStart(2, '0');
+      const m = String(date.getMonth() + 1).padStart(2, '0');
+      const y = date.getFullYear();
+      return `${d}.${m}.${y}`;
     }
 
-    function isPastDay(date) {
-      const today = new Date();
-      today.setHours(0,0,0,0);
-      const compare = new Date(date.getFullYear(), date.getMonth(), date.getDate());
-      return compare < today;
-    }
-
-    function renderCalendar() {
+    function renderCalendar(){
       calendarGrid.innerHTML = '';
-      monthTitle.textContent = `${monthNames[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
+      monthLabel.textContent = `${monthNames[currentMonth.getMonth()]} ${currentMonth.getFullYear()}`;
 
-      const firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
-      const lastDay = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
+      const firstDay = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), 1);
+      const lastDay = new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 0);
 
-      let startDay = firstDay.getDay();
-      startDay = startDay === 0 ? 6 : startDay - 1;
+      let startWeekday = firstDay.getDay();
+      if (startWeekday === 0) startWeekday = 7;
 
-      for (let i = 0; i < startDay; i++) {
+      for (let i = 1; i < startWeekday; i++) {
         const empty = document.createElement('div');
-        empty.className = 'day-cell empty';
+        empty.className = 'day muted';
         calendarGrid.appendChild(empty);
       }
 
       for (let day = 1; day <= lastDay.getDate(); day++) {
-        const date = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
-        const iso = formatDateISO(date);
-        const dow = date.getDay();
-        const sunday = dow === 0;
-        const past = isPastDay(date);
-        const full = fullDays.includes(iso);
+        const date = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), day);
+        const iso = formatISO(date);
+        const weekday = date.getDay();
+        const isSunday = weekday === 0;
+        const isPast = date < new Date(today.getFullYear(), today.getMonth(), today.getDate());
+        const isBlocked = blockedDates.includes(iso);
 
-        const cell = document.createElement('button');
-        cell.type = 'button';
-        cell.className = 'day-cell';
-        cell.dataset.date = iso;
+        const div = document.createElement('button');
+        div.type = 'button';
+        div.className = 'day';
 
-        const num = document.createElement('div');
-        num.className = 'day-number';
-        num.textContent = day;
+        if (isSunday || isPast || isBlocked) div.classList.add('blocked');
+        if (selectedDate && formatISO(selectedDate) === iso) div.classList.add('selected');
 
-        const status = document.createElement('div');
-        status.className = 'day-status';
+        const availableCount = availableHours.filter(h => !(blockedHours[iso] || []).includes(h)).length;
+        let note = 'Disponibil';
 
-        if (past) {
-          cell.classList.add('past');
-          status.textContent = 'Trecută';
-          cell.disabled = true;
-        } else if (sunday) {
-          cell.classList.add('closed');
-          status.textContent = 'Închis';
-          cell.disabled = true;
-        } else if (full) {
-          cell.classList.add('full');
-          status.textContent = 'Complet';
-          cell.disabled = true;
-        } else {
-          cell.classList.add('available');
-          status.textContent = 'Disponibil';
-          cell.addEventListener('click', () => {
-            selectedDate = iso;
+        if (isSunday) note = 'Indisponibil';
+        else if (isPast) note = 'Indisponibil';
+        else if (isBlocked) note = 'Complet';
+        else if (availableCount <= 2) note = 'Locuri limitate';
+
+        div.innerHTML = `
+          <span class="day-num">${day}</span>
+          <span class="day-note">${note}</span>
+        `;
+
+        if (!isSunday && !isPast && !isBlocked) {
+          div.addEventListener('click', () => {
+            selectedDate = date;
             selectedTime = null;
             updateSummary();
             renderCalendar();
-            renderTimes();
-            activateStep('timeSection');
-            scrollToSection('timeSection');
+            renderHours();
           });
         }
 
-        if (selectedDate === iso) {
-          cell.classList.add('selected');
-        }
-
-        cell.appendChild(num);
-        cell.appendChild(status);
-        calendarGrid.appendChild(cell);
+        calendarGrid.appendChild(div);
       }
     }
 
-    function renderTimes() {
-      timesGrid.innerHTML = '';
+    prevMonth.addEventListener('click', () => {
+      currentMonth = new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1, 1);
+      renderCalendar();
+    });
 
-      fixedSlots.forEach(slot => {
+    nextMonth.addEventListener('click', () => {
+      currentMonth = new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 1);
+      renderCalendar();
+    });
+
+    const hourGrid = document.getElementById('hourGrid');
+
+    function renderHours(){
+      hourGrid.innerHTML = '';
+
+      if (!selectedDate) {
+        hourGrid.innerHTML = '<div style="color:var(--muted);">Alege mai întâi o dată.</div>';
+        return;
+      }
+
+      const iso = formatISO(selectedDate);
+      const blockedForDay = blockedHours[iso] || [];
+
+      availableHours.forEach(hour => {
         const btn = document.createElement('button');
         btn.type = 'button';
-        btn.className = 'time-slot';
-        btn.textContent = slot;
+        btn.className = 'hour-item';
+        btn.textContent = hour;
 
-        if (!selectedDate) {
+        if (blockedForDay.includes(hour)) {
           btn.classList.add('blocked');
-          btn.disabled = true;
-        } else {
-          const blocked = blockedTimes[selectedDate] || [];
-          if (blocked.includes(slot)) {
-            btn.classList.add('blocked');
-            btn.disabled = true;
-          } else {
-            btn.addEventListener('click', () => {
-              selectedTime = slot;
-              updateSummary();
-              renderTimes();
-              activateStep('finalSection');
-              scrollToSection('finalSection');
-            });
-          }
         }
 
-        if (selectedTime === slot) {
+        if (selectedTime === hour) {
           btn.classList.add('selected');
         }
 
-        timesGrid.appendChild(btn);
-      });
-    }
-
-    function updateSummary() {
-      if (selectedServices.length) {
-        summaryServices.textContent = `${selectedServices.length} serviciu(e) selectat(e)`;
-      } else {
-        summaryServices.textContent = 'Nu ai selectat încă niciun serviciu.';
-      }
-
-      summaryTags.innerHTML = '';
-      selectedServices.forEach(service => {
-        const tag = document.createElement('div');
-        tag.className = 'selected-tag';
-        tag.textContent = service;
-        summaryTags.appendChild(tag);
-      });
-
-      if (selectedDate) {
-        const [year, month, day] = selectedDate.split('-');
-        summaryDate.textContent = `${day}.${month}.${year}`;
-      } else {
-        summaryDate.textContent = 'Nu ai ales încă o dată.';
-      }
-
-      summaryTime.textContent = selectedTime ? selectedTime : 'Nu ai ales încă o oră.';
-
-      selectedServicesInput.value = selectedServices.join(', ');
-      selectedDateInput.value = selectedDate ? summaryDate.textContent : '';
-      selectedTimeInput.value = selectedTime || '';
-    }
-
-    serviceCards.forEach(card => {
-      card.addEventListener('click', () => {
-        const serviceName = card.dataset.service;
-
-        if (selectedServices.includes(serviceName)) {
-          selectedServices = selectedServices.filter(item => item !== serviceName);
-          card.classList.remove('selected');
-          card.querySelector('.service-check').textContent = '+';
-        } else {
-          selectedServices.push(serviceName);
-          card.classList.add('selected');
-          card.querySelector('.service-check').textContent = '✓';
+        if (!blockedForDay.includes(hour)) {
+          btn.addEventListener('click', () => {
+            selectedTime = hour;
+            updateSummary();
+            renderHours();
+          });
         }
 
-        updateSummary();
-
-        if (selectedServices.length) {
-          activateStep('calendarSection');
-          scrollToSection('calendarSection');
-        }
-      });
-    });
-
-    function scrollToSection(id) {
-      const el = document.getElementById(id);
-      if (!el) return;
-      const offset = window.innerWidth <= 640 ? 120 : 130;
-      window.scrollTo({
-        top: el.getBoundingClientRect().top + window.pageYOffset - offset,
-        behavior: 'smooth'
+        hourGrid.appendChild(btn);
       });
     }
 
-    function activateStep(id) {
-      stepButtons.forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.target === id);
-      });
-    }
+    renderCalendarHead();
+    renderCalendar();
+    renderHours();
 
-    stepButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        activateStep(btn.dataset.target);
-        scrollToSection(btn.dataset.target);
-      });
-    });
+    const form = document.getElementById('bookingForm');
+    const successBox = document.getElementById('successBox');
+    const errorBox = document.getElementById('errorBox');
+    const emailInput = document.getElementById('email');
+    const replyTo = form.querySelector('input[name="_replyto"]');
 
-    document.getElementById('prevMonth').addEventListener('click', () => {
-      currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1);
-      renderCalendar();
-    });
-
-    document.getElementById('nextMonth').addEventListener('click', () => {
-      currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1);
-      renderCalendar();
-    });
-
-    bookingForm.addEventListener('submit', async function(e) {
+    form.addEventListener('submit', async function(e){
       e.preventDefault();
 
       successBox.style.display = 'none';
       errorBox.style.display = 'none';
 
-      if (!selectedServices.length || !selectedDate || !selectedTime) {
-        errorBox.textContent = '✖ Te rugăm să selectezi serviciile, data și ora înainte de trimitere.';
-        errorBox.style.display = 'block';
+      if (!selectedServices.length) {
+        alert('Selectează cel puțin un serviciu.');
+        setStep(1);
         return;
       }
 
-      replyInput.value = emailInput.value.trim();
+      if (!selectedDate) {
+        alert('Alege o dată.');
+        setStep(2);
+        return;
+      }
 
-      if (!bookingForm.reportValidity()) return;
+      if (!selectedTime) {
+        alert('Alege o oră.');
+        setStep(3);
+        return;
+      }
 
-      const formData = new FormData(bookingForm);
+      replyTo.value = emailInput.value.trim();
 
-      try {
-        const response = await fetch(bookingForm.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
+      if (!form.reportValidity()) return;
+
+      const formData = new FormData(form);
+
+      try{
+        const response = await fetch(form.action, {
+          method:'POST',
+          body:formData,
+          headers:{ 'Accept':'application/json' }
         });
 
-        if (response.ok) {
-          successBox.textContent = '✔ Programarea a fost trimisă cu succes.';
+        if(response.ok){
           successBox.style.display = 'block';
-          bookingForm.reset();
-
+          form.reset();
           selectedServices = [];
           selectedDate = null;
           selectedTime = null;
-
-          serviceCards.forEach(card => {
-            card.classList.remove('selected');
-            card.querySelector('.service-check').textContent = '+';
-          });
-
+          serviceItems.forEach(item => item.classList.remove('active'));
           updateSummary();
           renderCalendar();
-          renderTimes();
-          activateStep('servicesSection');
-          scrollToSection('top');
-        } else {
-          errorBox.textContent = '✖ A apărut o problemă la trimitere. Încearcă din nou.';
+          renderHours();
+          setStep(1);
+          window.scrollTo({ top: document.getElementById('booking').offsetTop - 80, behavior:'smooth' });
+        }else{
           errorBox.style.display = 'block';
         }
-      } catch(err) {
-        errorBox.textContent = '✖ A apărut o problemă la trimitere. Încearcă din nou.';
+      }catch(err){
         errorBox.style.display = 'block';
       }
     });
-
-    renderCalendar();
-    renderTimes();
-    updateSummary();
   </script>
 </body>
 </html>
