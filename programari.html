@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prestige Finish | Programare online</title>
+  <title>Prestige Finish Lounge | Programări smart</title>
   <link rel="icon" type="image/png" href="logo.png" />
   <meta name="description" content="Programare online Prestige Finish pentru detailing interior, corecție estetică, protecții ceramice și servicii premium auto în Ploiești." />
 
@@ -1023,7 +1023,183 @@
         justify-content:center;
       }
     }
-  </style>
+  
+/* ===== Prestige Finish Lounge - MONSTRU FINAL ADDON ===== */
+.pf-ribbon{
+  position:relative;
+  z-index:20;
+  margin-top:74px;
+  border-bottom:1px solid rgba(212,175,55,.22);
+  border-top:1px solid rgba(212,175,55,.10);
+  background:linear-gradient(90deg, rgba(212,175,55,.20), rgba(0,0,0,.92), rgba(212,175,55,.12));
+  color:#f7e9a6;
+  font-weight:900;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.pf-ribbon-inner{
+  max-width:1180px;
+  margin:auto;
+  padding:10px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  font-size:.78rem;
+}
+.pf-ribbon a{color:#050505;background:linear-gradient(135deg,#fff2a8,#d4af37);padding:8px 14px;border-radius:999px;text-decoration:none;box-shadow:0 10px 30px rgba(212,175,55,.18)}
+.pf-lounge-badge{
+  display:inline-flex!important;
+  align-items:center;
+  gap:7px;
+  border:1px solid rgba(212,175,55,.38);
+  color:#ffe88c!important;
+  background:rgba(212,175,55,.10);
+  padding:8px 13px!important;
+  border-radius:999px;
+  font-weight:900!important;
+  box-shadow:0 0 28px rgba(212,175,55,.08);
+}
+.pf-monster-section{
+  position:relative;
+  overflow:hidden;
+  padding:74px 0;
+  border-top:1px solid rgba(212,175,55,.14);
+  border-bottom:1px solid rgba(212,175,55,.10);
+  background:
+    radial-gradient(circle at 20% 10%, rgba(212,175,55,.13), transparent 32%),
+    radial-gradient(circle at 90% 0%, rgba(255,255,255,.05), transparent 28%),
+    linear-gradient(180deg, rgba(255,255,255,.025), rgba(0,0,0,.15));
+}
+.pf-monster-wrap{max-width:1180px;margin:auto;padding:0 20px}
+.pf-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid rgba(212,175,55,.34);
+  background:rgba(212,175,55,.10);
+  color:#ffe88c;
+  border-radius:999px;
+  padding:8px 13px;
+  font-size:.78rem;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.pf-title{font-size:clamp(2rem,4.2vw,4.2rem);line-height:.96;margin:18px 0 14px;color:#fff3b0;letter-spacing:-.05em}
+.pf-subtitle{max-width:850px;color:#d7cfbd;font-size:1.08rem;line-height:1.7}
+.pf-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.pf-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:48px;padding:13px 20px;border-radius:999px;
+  text-decoration:none;font-weight:950;letter-spacing:.01em;
+  border:1px solid rgba(212,175,55,.34);
+  transition:.22s ease;
+}
+.pf-btn.primary{background:linear-gradient(135deg,#fff3b0,#d4af37,#a97e15);color:#060606;box-shadow:0 18px 55px rgba(212,175,55,.22)}
+.pf-btn.secondary{background:rgba(255,255,255,.045);color:#fff2a8}
+.pf-btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.pf-trustbar{
+  display:grid;grid-template-columns:repeat(6,1fr);gap:10px;
+  margin:28px 0 0;
+}
+.pf-trustbar span{
+  border:1px solid rgba(212,175,55,.18);background:rgba(0,0,0,.32);
+  border-radius:18px;padding:13px 12px;color:#efe6c8;font-weight:800;text-align:center;font-size:.9rem
+}
+.pf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.pf-card{
+  border:1px solid rgba(212,175,55,.18);
+  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.025));
+  border-radius:28px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,.26);
+  min-height:180px;
+}
+.pf-card h3{margin:0 0 10px;color:#fff1a0;font-size:1.28rem}
+.pf-card p{margin:0;color:#d0c7b4;line-height:1.65}
+.pf-card .icon{font-size:2rem;margin-bottom:12px;display:block}
+.pf-phone{
+  border:1px solid rgba(212,175,55,.25);border-radius:42px;padding:14px;background:#060606;
+  box-shadow:0 40px 90px rgba(0,0,0,.55), inset 0 0 0 1px rgba(255,255,255,.04);
+}
+.pf-phone-screen{
+  min-height:520px;border-radius:32px;padding:28px;
+  background:
+    linear-gradient(180deg, rgba(212,175,55,.18), rgba(0,0,0,.08)),
+    radial-gradient(circle at 50% 0%, rgba(255,242,165,.16), transparent 38%),
+    #090909;
+  border:1px solid rgba(212,175,55,.18);
+}
+.pf-phone .mini{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:#ffe88c;font-weight:900}
+.pf-phone h3{font-size:2rem;line-height:1.02;margin:12px 0;color:#fff0a3}
+.pf-status{display:grid;gap:10px;margin-top:22px}
+.pf-status div{display:flex;justify-content:space-between;gap:12px;background:rgba(0,0,0,.42);border:1px solid rgba(212,175,55,.16);padding:12px 14px;border-radius:16px;color:#eee}
+.pf-status b{color:#ffe88c}
+.pf-two{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
+.pf-loyalty{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.pf-rank{
+  position:relative;overflow:hidden;border:1px solid rgba(212,175,55,.22);border-radius:30px;padding:26px;
+  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.025));
+}
+.pf-rank:before{content:"";position:absolute;inset:-80px auto auto -80px;width:180px;height:180px;background:radial-gradient(circle,rgba(212,175,55,.18),transparent 65%)}
+.pf-rank h3{font-size:1.55rem;margin:0 0 6px;color:#fff1a0}
+.pf-rank .tag{color:#d7cfbd;margin-bottom:16px}
+.pf-rank ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.pf-rank li{color:#eee1be;line-height:1.45}
+.pf-rank li:before{content:"✦";color:#d4af37;margin-right:8px}
+.pf-rank.vip{border-color:rgba(255,230,120,.48);box-shadow:0 25px 80px rgba(212,175,55,.14)}
+.pf-compare{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+.pf-compare-card{border-radius:28px;padding:24px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.035)}
+.pf-compare-card.good{border-color:rgba(212,175,55,.28);background:rgba(212,175,55,.08)}
+.pf-compare-card h3{margin:0 0 14px;color:#fff2a8}
+.pf-compare-card ul{padding:0;list-style:none;margin:0;display:grid;gap:10px;color:#ddd}
+.pf-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:28px}
+.pf-step{border:1px solid rgba(212,175,55,.18);border-radius:22px;padding:18px;background:rgba(0,0,0,.28)}
+.pf-step strong{display:block;font-size:1.8rem;color:#d4af37;margin-bottom:8px}
+.pf-step b{color:#fff2a8}
+.pf-counter-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+.pf-counter{border-radius:24px;border:1px solid rgba(212,175,55,.18);background:rgba(0,0,0,.30);padding:22px;text-align:center}
+.pf-counter strong{display:block;font-size:2rem;color:#fff1a0}
+.pf-counter span{color:#d0c7b4}
+.pf-before-after{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+.pf-ba{border-radius:26px;overflow:hidden;border:1px solid rgba(212,175,55,.18);background:rgba(255,255,255,.04)}
+.pf-ba img{width:100%;height:220px;object-fit:cover;display:block;filter:saturate(1.05) contrast(1.02)}
+.pf-ba div{padding:16px;color:#efe6c8;font-weight:900}
+.pf-capture{
+  margin-top:28px;padding:24px;border-radius:30px;border:1px solid rgba(212,175,55,.24);
+  background:linear-gradient(135deg,rgba(212,175,55,.12),rgba(255,255,255,.035));
+  display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;
+}
+.pf-capture input{min-height:48px;border-radius:999px;border:1px solid rgba(212,175,55,.25);background:#050505;color:#fff;padding:0 16px;min-width:260px}
+.pf-sticky-lounge{
+  position:fixed;right:18px;bottom:18px;z-index:9999;
+  display:flex;align-items:center;gap:12px;
+  max-width:360px;padding:14px 15px;border-radius:24px;
+  border:1px solid rgba(212,175,55,.35);
+  background:rgba(5,5,5,.92);backdrop-filter:blur(14px);
+  box-shadow:0 22px 70px rgba(0,0,0,.45);
+}
+.pf-sticky-lounge strong{display:block;color:#fff2a8;font-size:.95rem}
+.pf-sticky-lounge span{display:block;color:#cfc5aa;font-size:.76rem;margin-top:2px}
+.pf-sticky-lounge a{white-space:nowrap;text-decoration:none;color:#050505;background:linear-gradient(135deg,#fff2a8,#d4af37);padding:10px 12px;border-radius:999px;font-weight:950;font-size:.82rem}
+.pf-exit{
+  position:fixed;inset:0;display:none;place-items:center;background:rgba(0,0,0,.72);z-index:10000;padding:18px;
+}
+.pf-exit.show{display:grid}
+.pf-exit-box{max-width:620px;border:1px solid rgba(212,175,55,.32);background:#070707;border-radius:32px;padding:30px;box-shadow:0 40px 110px rgba(0,0,0,.75)}
+.pf-exit-box h3{font-size:2rem;color:#fff1a0;margin:0 0 10px}
+.pf-exit-box p{color:#d7cfbd;line-height:1.6}
+.pf-exit-close{float:right;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.18);border-radius:999px;width:34px;height:34px;cursor:pointer}
+.pf-page-booster{margin:34px 0;padding:26px;border-radius:30px;border:1px solid rgba(212,175,55,.24);background:linear-gradient(135deg,rgba(212,175,55,.12),rgba(0,0,0,.20))}
+.pf-page-booster h2{margin:0 0 10px;color:#fff1a0;font-size:clamp(1.7rem,3vw,2.7rem)}
+.pf-page-booster p{color:#d7cfbd;line-height:1.65;max-width:850px}
+@media(max-width:900px){
+  .pf-ribbon{margin-top:64px}
+  .pf-ribbon-inner,.pf-two,.pf-capture{grid-template-columns:1fr;display:grid}
+  .pf-trustbar,.pf-grid,.pf-loyalty,.pf-compare,.pf-steps,.pf-counter-grid,.pf-before-after{grid-template-columns:1fr}
+  .pf-sticky-lounge{left:12px;right:12px;bottom:12px;max-width:none}
+  .pf-sticky-lounge span{display:none}
+  .pf-phone-screen{min-height:auto}
+}
+
+</style>
 </head>
 <body>
   <header class="topbar">
@@ -1058,313 +1234,221 @@
         <a href="persoane-fizice.html" onclick="closeMenu()">Persoane fizice</a>
         <a href="flote.html" onclick="closeMenu()">Flote</a>
         <a href="formular-contact.html" onclick="closeMenu()">Contact</a>
-        <a href="programari.html" class="nav-cta" onclick="closeMenu()">Programare online</a>
+        <a href="https://prestige-finish-client-lounge-production.up.railway.app/booking" class="nav-cta" onclick="closeMenu()">Programare online</a>
       </div>
     </div>
   </header>
 
-  <main id="top">
-    <section class="hero fade-in">
-      <div class="hero-bg"></div>
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Programare online</div>
-          <h1>Rezervă direct din site</h1>
-          <p>
-            Selectează serviciile dorite, alege data și ora potrivită, apoi trimite cererea de programare direct către Prestige Finish.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#booking">Începe programarea</a>
-            <a class="btn btn-dark" href="formular-contact.html">Prefer formularul de contact</a>
-          </div>
+  
+<main>
+  <section class="pf-monster-section" style="padding-top:110px">
+    <div class="pf-monster-wrap pf-two">
+      <div>
+        <span class="pf-eyebrow">Programări Prestige Finish</span>
+        <h1 class="pf-title">Programările smart se fac prin Prestige Finish Lounge.</h1>
+        <p class="pf-subtitle">Pentru o experiență optimă și programări fără suprapuneri, recomandăm rezervarea prin Prestige Finish Lounge. Programările prin WhatsApp rămân disponibile pentru solicitări speciale.</p>
+        <div class="pf-actions">
+          <a class="pf-btn primary" href="https://prestige-finish-client-lounge-production.up.railway.app/booking">Programează acum în Lounge</a>
+          <a class="pf-btn secondary" href="https://prestige-finish-client-lounge-production.up.railway.app/register">Nu ai cont? Creează unul gratuit</a>
         </div>
-
-        <div class="hero-panel">
-          <div class="status"><span class="status-dot"></span> Programare online</div>
-          <img src="logo.png" alt="Prestige Finish Logo" />
-          <h3 style="margin:0 0 8px;font-size:28px;">Prestige Finish</h3>
-          <p style="margin:0;color:var(--muted);">
-            O pagină de programare construită clar, rapid și premium, astfel încât clientul să poată selecta exact ce are nevoie.
-          </p>
-
-          <div class="quick-points">
-            <div class="quick-point"><span class="quick-dot"></span><span>Selecție multiplă servicii</span></div>
-            <div class="quick-point"><span class="quick-dot"></span><span>Data și ora alese simplu</span></div>
-            <div class="quick-point"><span class="quick-dot"></span><span>Trimitere directă a cererii</span></div>
+      </div>
+      <div class="pf-phone">
+        <div class="pf-phone-screen">
+          <div class="mini">Smart booking</div>
+          <h3>Alegi serviciul. Alegi slotul. Urmărești lucrarea.</h3>
+          <div class="pf-status">
+            <div><span>Programare</span><b>Fără suprapuneri</b></div>
+            <div><span>Cont client</span><b>Activ</b></div>
+            <div><span>Rewards</span><b>Puncte incluse</b></div>
           </div>
         </div>
       </div>
-    </section>
-
-    <section id="booking" class="fade-in">
-      <div class="container">
-        <div class="tag">Programare</div>
-        <h2 class="section-title">Alege serviciile și rezervă</h2>
-        <p class="section-text">
-          Completează pașii de mai jos pentru a trimite cererea de programare.
-        </p>
-
-        <div class="booking-layout">
-          <div class="booking-card">
-            <h2>Programare online</h2>
-
-            <div class="step-tabs">
-              <button class="step-tab active" type="button" data-step="1">
-                <strong>1. Servicii</strong>
-                <span>Selectează</span>
-              </button>
-              <button class="step-tab" type="button" data-step="2">
-                <strong>2. Data</strong>
-                <span>Alege ziua</span>
-              </button>
-              <button class="step-tab" type="button" data-step="3">
-                <strong>3. Ora</strong>
-                <span>Alege ora</span>
-              </button>
-              <button class="step-tab" type="button" data-step="4">
-                <strong>4. Finalizare</strong>
-                <span>Trimite cererea</span>
-              </button>
-            </div>
-
-            <form id="bookingForm" action="https://formspree.io/f/maqpgwqy" method="POST">
-              <input type="hidden" name="_subject" value="Cerere programare nouă - Prestige Finish">
-              <input type="hidden" name="_replyto" value="">
-              <input type="hidden" name="Tip solicitare" value="Programare online">
-              <input type="hidden" name="Servicii selectate" id="servicesField">
-              <input type="hidden" name="Data programării" id="dateField">
-              <input type="hidden" name="Ora programării" id="timeField">
-              <input type="text" name="_gotcha" style="display:none">
-
-              <div class="step-panel active" data-panel="1">
-                <div class="service-grid" id="serviceGrid">
-                  <button class="service-item" type="button" data-service="Detailing interior premium">
-                    <span class="service-check">✓</span>
-                    <h3>Detailing interior</h3>
-                    <p>Curățare completă, igienizare și finisaj premium pentru habitaclu.</p>
-                  </button>
-
-                  <button class="service-item" type="button" data-service="Polish de întreținere">
-                    <span class="service-check">✓</span>
-                    <h3>Polish întreținere</h3>
-                    <p>Refresh vizual pentru luciu, claritate și aspect general mai bine uniformizat.</p>
-                  </button>
-
-                  <button class="service-item" type="button" data-service="Polish corectiv">
-                    <span class="service-check">✓</span>
-                    <h3>Polish corectiv</h3>
-                    <p>Corecție estetică pentru holograme, zgârieturi fine și uzură vizibilă.</p>
-                  </button>
-
-                  <button class="service-item" type="button" data-service="Protecție ceramică">
-                    <span class="service-check">✓</span>
-                    <h3>Protecție ceramică</h3>
-                    <p>Protecție pentru luciu, claritate și întreținere mai ușoară în timp.</p>
-                  </button>
-
-                  <button class="service-item" type="button" data-service="Tratament piele">
-                    <span class="service-check">✓</span>
-                    <h3>Tratament piele</h3>
-                    <p>Îngrijire, hidratare și protecție dedicată suprafețelor din piele.</p>
-                  </button>
-
-                  <button class="service-item" type="button" data-service="Tratament textile / alcantara">
-                    <span class="service-check">✓</span>
-                    <h3>Textile / alcantara</h3>
-                    <p>Curățare și tratament dedicat pentru textile, pluș și alcantara.</p>
-                  </button>
-
-                  <button class="service-item" type="button" data-service="Protecție geamuri">
-                    <span class="service-check">✓</span>
-                    <h3>Protecție geamuri</h3>
-                    <p>Efect hidrofob și vizibilitate mai bună în condiții dificile.</p>
-                  </button>
-
-                  <button class="service-item" type="button" data-service="Recondiționare faruri">
-                    <span class="service-check">✓</span>
-                    <h3>Recondiționare faruri</h3>
-                    <p>Îmbunătățirea clarității și aspectului optic al farurilor afectate.</p>
-                  </button>
-                </div>
-
-                <div class="step-actions">
-                  <div></div>
-                  <button type="button" class="btn btn-primary" id="nextToDate">Continuă către data</button>
-                </div>
-              </div>
-
-              <div class="step-panel" data-panel="2">
-                <div class="date-toolbar">
-                  <div class="month-label" id="monthLabel">Aprilie 2026</div>
-                  <div class="month-controls">
-                    <button type="button" class="icon-btn" id="prevMonth">‹</button>
-                    <button type="button" class="icon-btn" id="nextMonth">›</button>
-                  </div>
-                </div>
-
-                <div class="calendar" id="calendarHead"></div>
-                <div class="calendar" id="calendarGrid"></div>
-
-                <div class="step-actions">
-                  <button type="button" class="btn btn-dark" data-back="1">Înapoi</button>
-                  <button type="button" class="btn btn-primary" id="nextToTime">Continuă către oră</button>
-                </div>
-              </div>
-
-              <div class="step-panel" data-panel="3">
-                <div class="hour-grid" id="hourGrid">
-                  <!-- JS -->
-                </div>
-
-                <div class="step-actions">
-                  <button type="button" class="btn btn-dark" data-back="2">Înapoi</button>
-                  <button type="button" class="btn btn-primary" id="nextToFinish">Continuă către finalizare</button>
-                </div>
-              </div>
-
-              <div class="step-panel" data-panel="4">
-                <div class="form-grid">
-                  <div class="field">
-                    <label for="nume">Nume</label>
-                    <input type="text" id="nume" name="Nume" placeholder="Numele tău" required autocomplete="name">
-                  </div>
-
-                  <div class="field">
-                    <label for="telefon">Telefon</label>
-                    <input type="tel" id="telefon" name="Telefon" placeholder="07xx xxx xxx" required autocomplete="tel">
-                  </div>
-
-                  <div class="field-full">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="Email" placeholder="adresa ta de email" required autocomplete="email">
-                  </div>
-
-                  <div class="field-full">
-                    <label for="masina">Mașină</label>
-                    <input type="text" id="masina" name="Mașină" placeholder="Ex: BMW Seria 5 / Audi Q7 / VW Passat">
-                  </div>
-
-                  <div class="field-full">
-                    <label for="detalii">Detalii suplimentare</label>
-                    <textarea id="detalii" name="Detalii suplimentare" placeholder="Poți menționa orice detalii importante despre mașină sau despre ce îți dorești."></textarea>
-                  </div>
-                </div>
-
-                <div class="step-actions">
-                  <button type="button" class="btn btn-dark" data-back="3">Înapoi</button>
-                  <button type="submit" class="btn btn-primary">Trimite cererea de programare</button>
-                </div>
-
-                <div class="inline-state success" id="successBox">
-                  ✔ Cererea de programare a fost trimisă cu succes.
-                </div>
-
-                <div class="inline-state error" id="errorBox">
-                  ✖ A apărut o problemă la trimitere. Încearcă din nou sau contactează-ne telefonic.
-                </div>
-              </div>
-            </form>
-          </div>
-
-          <div>
-            <div class="summary-card">
-              <h3>Rezumat selecție</h3>
-
-              <div class="summary-block">
-                <span class="summary-label">Servicii</span>
-                <div class="summary-value" id="summaryServices">Niciun serviciu selectat</div>
-              </div>
-
-              <div class="summary-block">
-                <span class="summary-label">Data</span>
-                <div class="summary-value" id="summaryDate">Nu a fost aleasă</div>
-              </div>
-
-              <div class="summary-block">
-                <span class="summary-label">Ora</span>
-                <div class="summary-value" id="summaryTime">Nu a fost aleasă</div>
-              </div>
-            </div>
-
-            <div class="mini-grid">
-              <div class="mini-card">
-                <h3>Programare rapidă</h3>
-                <p>Poți selecta unul sau mai multe servicii, apoi alegi direct data și ora dorită.</p>
-              </div>
-
-              <div class="mini-card">
-                <h3>Ai nevoie de recomandare?</h3>
-                <p>Dacă nu ești sigur ce serviciu ți se potrivește, folosește formularul de contact.</p>
-                <div class="hero-actions" style="margin-top:16px;margin-bottom:0;">
-                  <a href="formular-contact.html" class="btn btn-primary">Deschide formularul</a>
-                </div>
-              </div>
-            </div>
-          </div>
+    </div>
+  </section>
+  
+<section class="pf-monster-section" id="prestige-lounge">
+  <div class="pf-monster-wrap pf-two">
+    <div>
+      <span class="pf-eyebrow">Prestige Finish Lounge</span>
+      <h2 class="pf-title">Mai mult decât detailing. O experiență digitală premium pentru mașina ta.</h2>
+      <p class="pf-subtitle">Probabil una dintre cele mai avansate experiențe digitale oferite de un atelier de detailing auto din România. Creezi cont, programezi, urmărești lucrarea, gestionezi garajul și primești puncte pentru fiecare experiență Prestige.</p>
+      <div class="pf-actions">
+        <a class="pf-btn primary" href="https://prestige-finish-client-lounge-production.up.railway.app/register">Nu ai cont? Hai în aplicație</a>
+        <a class="pf-btn secondary" href="https://prestige-finish-client-lounge-production.up.railway.app/login">Intră în cont</a>
+        <a class="pf-btn secondary" href="https://prestige-finish-client-lounge-production.up.railway.app/booking">Programează prin Lounge</a>
+      </div>
+    </div>
+    <div class="pf-phone">
+      <div class="pf-phone-screen">
+        <div class="mini">Client dashboard</div>
+        <h3>Garajul tău Prestige</h3>
+        <p class="pf-subtitle">Lucrări, status, puncte, istoric și beneficii într-un singur loc.</p>
+        <div class="pf-status">
+          <div><span>BMW Seria 5</span><b>În lucru</b></div>
+          <div><span>Status</span><b>Detailing interior</b></div>
+          <div><span>Puncte</span><b>+120 rewards</b></div>
+          <div><span>Rank</span><b>Gold</b></div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+  <div class="pf-monster-wrap">
+    <div class="pf-trustbar">
+      <span>Programări inteligente</span>
+      <span>Garaj personal</span>
+      <span>Status lucrare</span>
+      <span>Rewards & referral</span>
+      <span>Pickup & return</span>
+      <span>Fleet management</span>
+    </div>
+  </div>
+</section>
 
-    <section class="fade-in">
-      <div class="container">
-        <div class="tag">Întrebări frecvente</div>
-        <h2 class="section-title">Programări și rezervări</h2>
+<section class="pf-monster-section">
+  <div class="pf-monster-wrap">
+    <span class="pf-eyebrow">De ce Lounge?</span>
+    <h2 class="pf-title">Totul organizat. Totul premium.</h2>
+    <div class="pf-grid">
+      <div class="pf-card"><span class="icon">📍</span><h3>Status lucrare</h3><p>Vezi etapa în care se află mașina: recepționată, în lucru, finalizare sau gata de ridicare.</p></div>
+      <div class="pf-card"><span class="icon">🚘</span><h3>Garaj personal</h3><p>Adaugi toate mașinile tale și vezi istoricul separat pentru fiecare vehicul.</p></div>
+      <div class="pf-card"><span class="icon">🧾</span><h3>Istoric complet</h3><p>Ai toate lucrările salvate, cu servicii, valori și detalii importante.</p></div>
+      <div class="pf-card"><span class="icon">🎁</span><h3>Referral rewards</h3><p>Adu un prieten prin codul tău referral și câștigă puncte bonus.</p></div>
+      <div class="pf-card"><span class="icon">🔒</span><h3>Beneficii exclusive</h3><p>Unele avantaje sunt disponibile doar membrilor Prestige Finish Lounge.</p></div>
+      <div class="pf-card"><span class="icon">🛻</span><h3>Pickup & return</h3><p>Nu ai timp? Pentru clienții eligibili, ridicăm și returnăm mașina.</p></div>
+    </div>
+  </div>
+</section>
 
-        <div class="faq-grid">
-          <div class="faq-card">
-            <h3>Despre rezervare</h3>
-            <div class="faq-list">
-              <div class="faq-item">
-                <button class="faq-q" type="button">
-                  <span>Pot selecta mai multe servicii?</span>
-                  <span>+</span>
-                </button>
-                <div class="faq-a">
-                  Da. În programare poți selecta mai multe servicii, în funcție de ce ai nevoie pentru mașina ta.
-                </div>
-              </div>
-
-              <div class="faq-item">
-                <button class="faq-q" type="button">
-                  <span>Trebuie să completez toate câmpurile?</span>
-                  <span>+</span>
-                </button>
-                <div class="faq-a">
-                  Sunt necesare datele de contact esențiale pentru ca echipa să poată confirma cererea de programare.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-card">
-            <h3>Despre confirmare</h3>
-            <div class="faq-list">
-              <div class="faq-item">
-                <button class="faq-q" type="button">
-                  <span>Programarea este automată?</span>
-                  <span>+</span>
-                </button>
-                <div class="faq-a">
-                  Cererea este trimisă direct către echipă, iar confirmarea se face după verificarea solicitării.
-                </div>
-              </div>
-
-              <div class="faq-item">
-                <button class="faq-q" type="button">
-                  <span>Pot cere recomandare înainte?</span>
-                  <span>+</span>
-                </button>
-                <div class="faq-a">
-                  Da. Pentru recomandări sau solicitări speciale, formularul de contact este varianta potrivită.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+<section class="pf-monster-section">
+  <div class="pf-monster-wrap">
+    <span class="pf-eyebrow">Prestige Rewards</span>
+    <h2 class="pf-title">Rank-uri care chiar aduc beneficii.</h2>
+    <p class="pf-subtitle">Cu cât revii mai des în ecosistemul Prestige, cu atât experiența devine mai avantajoasă.</p>
+    <div class="pf-loyalty">
+      <div class="pf-rank">
+        <h3>Silver</h3>
+        <div class="tag">Start în Lounge</div>
+        <ul>
+          <li>Garaj personal gratuit</li>
+          <li>Status lucrare și istoric complet</li>
+          <li>Puncte la lucrări</li>
+          <li>Cod referral personal</li>
+          <li>Tratament geamuri gratuit după primele 2 vizite recurente</li>
+        </ul>
       </div>
-    </section>
-  </main>
+      <div class="pf-rank">
+        <h3>Gold</h3>
+        <div class="tag">Experiență avansată</div>
+        <ul>
+          <li>Toate beneficiile Silver</li>
+          <li>Prioritate la programare</li>
+          <li>Dressing interior bonus după atingerea pragului Gold</li>
+          <li>Acces mai rapid la promoții și campanii</li>
+          <li>Bonusuri sezoniere selectate</li>
+        </ul>
+      </div>
+      <div class="pf-rank vip">
+        <h3>Platinum VIP</h3>
+        <div class="tag">Nivel premium</div>
+        <ul>
+          <li>Toate beneficiile Gold</li>
+          <li>20% reducere la orice lucrare</li>
+          <li>Pickup & return prioritar pentru clienții eligibili</li>
+          <li>Early access la promoții</li>
+          <li>Surprise upgrades în campanii speciale</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pf-monster-section">
+  <div class="pf-monster-wrap">
+    <span class="pf-eyebrow">WhatsApp rămâne, Lounge recomandat</span>
+    <h2 class="pf-title">Programări fără suprapuneri și fără haos.</h2>
+    <p class="pf-subtitle">Programările se pot face și pe WhatsApp pentru solicitări speciale, dar pentru o experiență optimă recomandăm Prestige Finish Lounge.</p>
+    <div class="pf-compare">
+      <div class="pf-compare-card">
+        <h3>Doar WhatsApp</h3>
+        <ul>
+          <li>❌ conversații greu de urmărit</li>
+          <li>❌ risc de programări suprapuse</li>
+          <li>❌ fără garaj personal</li>
+          <li>❌ fără rewards și istoric organizat</li>
+        </ul>
+      </div>
+      <div class="pf-compare-card good">
+        <h3>Prestige Finish Lounge</h3>
+        <ul>
+          <li>✅ sloturi organizate</li>
+          <li>✅ status lucrare</li>
+          <li>✅ garaj personal</li>
+          <li>✅ puncte, referral și beneficii</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pf-monster-section">
+  <div class="pf-monster-wrap">
+    <span class="pf-eyebrow">Cum funcționează</span>
+    <h2 class="pf-title">5 pași simpli. Experiență premium.</h2>
+    <div class="pf-steps">
+      <div class="pf-step"><strong>1</strong><b>Creezi cont</b><p>Activezi accesul în Lounge.</p></div>
+      <div class="pf-step"><strong>2</strong><b>Programezi</b><p>Alegi serviciul și slotul.</p></div>
+      <div class="pf-step"><strong>3</strong><b>Aduci mașina</b><p>Sau soliciți pickup.</p></div>
+      <div class="pf-step"><strong>4</strong><b>Urmărești lucrarea</b><p>Vezi statusul în cont.</p></div>
+      <div class="pf-step"><strong>5</strong><b>Primești puncte</b><p>Crești în rank.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="pf-monster-section">
+  <div class="pf-monster-wrap">
+    <span class="pf-eyebrow">În curând</span>
+    <h2 class="pf-title">Extindem experiența Prestige Finish.</h2>
+    <p class="pf-subtitle">În curând extindem experiența Prestige Finish: anumite servicii premium vor putea fi realizate direct la domiciliul clientului sau la sediul companiei, în funcție de serviciile dorite și de eligibilitatea intervenției.</p>
+  </div>
+</section>
+
+<section class="pf-monster-section">
+  <div class="pf-monster-wrap">
+    <span class="pf-eyebrow">Transformări reale</span>
+    <h2 class="pf-title">Before / After Prestige Finish</h2>
+    <p class="pf-subtitle">Secțiune pregătită pentru portofoliu. Următorul pas: upload direct din admin pentru poze înainte / după.</p>
+    <div class="pf-before-after">
+      <div class="pf-ba"><img src="assets/serv-interior.jpeg" alt="Detailing interior"><div>Interior deep clean</div></div>
+      <div class="pf-ba"><img src="assets/serv-ceramic.jpeg" alt="Protecție ceramică"><div>Protecție ceramică</div></div>
+      <div class="pf-ba"><img src="assets/serv-faruri.jpeg" alt="Faruri"><div>Recondiționare faruri</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="pf-monster-section">
+  <div class="pf-monster-wrap">
+    <span class="pf-eyebrow">Community & trust</span>
+    <h2 class="pf-title">Ai avut o experiență premium?</h2>
+    <p class="pf-subtitle">Lasă o recenzie Google și ajută Prestige Finish să crească. Feedback-ul real ajută alți clienți să aleagă o experiență premium.</p>
+    <div class="pf-actions">
+      <a class="pf-btn primary" href="https://www.google.com/maps/search/?api=1&query=Prestige%20Finish%20Ploie%C8%99ti" target="_blank" rel="noopener">Lasă o recenzie pe Google</a>
+      <a class="pf-btn secondary" href="https://prestige-finish-client-lounge-production.up.railway.app">Intră în Lounge</a>
+    </div>
+    <div class="pf-capture">
+      <div>
+        <h3 style="margin:0;color:#fff1a0">Club Prestige Updates</h3>
+        <p style="margin:.4rem 0 0;color:#d7cfbd">Primește noutăți, campanii și beneficii înaintea tuturor.</p>
+      </div>
+      <form onsubmit="event.preventDefault(); alert('Mulțumim! Te vom anunța când activăm lista VIP.');">
+        <input type="email" placeholder="Emailul tău" required>
+        <button class="pf-btn primary" type="submit">Mă înscriu</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
 
   <footer>
     <div class="container footer-row">
