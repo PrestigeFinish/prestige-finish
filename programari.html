@@ -1462,355 +1462,50 @@
     Scrie-ne pe WhatsApp
   </a>
 
-  <script>
-    function toggleMenu() {
-      document.getElementById('mobileMenu').classList.toggle('active');
+  
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    if (menu) menu.classList.toggle('active');
+  }
+
+  function closeMenu() {
+    const menu = document.getElementById('mobileMenu');
+    if (menu) menu.classList.remove('active');
+  }
+
+  document.addEventListener('click', function(event) {
+    const menu = document.getElementById('mobileMenu');
+    const toggle = document.querySelector('.menu-toggle');
+    if (!menu || !toggle) return;
+    if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+      menu.classList.remove('active');
     }
+  });
 
-    function closeMenu() {
-      document.getElementById('mobileMenu').classList.remove('active');
-    }
-
-    document.addEventListener('click', function(event) {
-      const menu = document.getElementById('mobileMenu');
-      const toggle = document.querySelector('.menu-toggle');
-      if (!menu || !toggle) return;
-      const clickedInsideMenu = menu.contains(event.target);
-      const clickedToggle = toggle.contains(event.target);
-      if (!clickedInsideMenu && !clickedToggle) {
-        menu.classList.remove('active');
-      }
-    });
-
-    const fadeEls = document.querySelectorAll('.fade-in');
+  const fadeEls = document.querySelectorAll('.fade-in');
+  if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.12 });
     fadeEls.forEach(el => observer.observe(el));
+  } else {
+    fadeEls.forEach(el => el.classList.add('visible'));
+  }
 
-    document.querySelectorAll('.faq-item').forEach(item => {
-      item.querySelector('.faq-q').addEventListener('click', () => {
-        item.classList.toggle('active');
-      });
-    });
-
-    const serviceItems = document.querySelectorAll('.service-item');
-    const servicesField = document.getElementById('servicesField');
-    const dateField = document.getElementById('dateField');
-    const timeField = document.getElementById('timeField');
-    const summaryServices = document.getElementById('summaryServices');
-    const summaryDate = document.getElementById('summaryDate');
-    const summaryTime = document.getElementById('summaryTime');
-
-    const tabs = document.querySelectorAll('.step-tab');
-    const panels = document.querySelectorAll('.step-panel');
-
-    let selectedServices = [];
-    let selectedDate = null;
-    let selectedTime = null;
-
-    function setStep(step){
-      tabs.forEach(tab => tab.classList.toggle('active', tab.dataset.step === String(step)));
-      panels.forEach(panel => panel.classList.toggle('active', panel.dataset.panel === String(step)));
-      window.scrollTo({ top: document.getElementById('booking').offsetTop - 80, behavior: 'smooth' });
-    }
-
-    serviceItems.forEach(item => {
-      item.addEventListener('click', () => {
-        const service = item.dataset.service;
-        item.classList.toggle('active');
-
-        if (selectedServices.includes(service)) {
-          selectedServices = selectedServices.filter(s => s !== service);
-        } else {
-          selectedServices.push(service);
-        }
-
-        updateSummary();
-      });
-    });
-
-    function updateSummary(){
-      summaryServices.textContent = selectedServices.length ? selectedServices.join(', ') : 'Niciun serviciu selectat';
-      summaryDate.textContent = selectedDate ? formatDateRO(selectedDate) : 'Nu a fost aleasă';
-      summaryTime.textContent = selectedTime || 'Nu a fost aleasă';
-
-      servicesField.value = selectedServices.join(', ');
-      dateField.value = selectedDate ? formatDateRO(selectedDate) : '';
-      timeField.value = selectedTime || '';
-    }
-
-    document.getElementById('nextToDate').addEventListener('click', () => {
-      if (!selectedServices.length) {
-        alert('Selectează cel puțin un serviciu.');
-        return;
-      }
-      setStep(2);
-    });
-
-    document.getElementById('nextToTime').addEventListener('click', () => {
-      if (!selectedDate) {
-        alert('Alege o dată.');
-        return;
-      }
-      setStep(3);
-    });
-
-    document.getElementById('nextToFinish').addEventListener('click', () => {
-      if (!selectedTime) {
-        alert('Alege o oră.');
-        return;
-      }
-      setStep(4);
-    });
-
-    document.querySelectorAll('[data-back]').forEach(btn => {
-      btn.addEventListener('click', () => setStep(btn.dataset.back));
-    });
-
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const step = Number(tab.dataset.step);
-        if (step === 2 && !selectedServices.length) return;
-        if (step === 3 && !selectedDate) return;
-        if (step === 4 && (!selectedServices.length || !selectedDate || !selectedTime)) return;
-        setStep(step);
-      });
-    });
-
-    const monthLabel = document.getElementById('monthLabel');
-    const calendarHead = document.getElementById('calendarHead');
-    const calendarGrid = document.getElementById('calendarGrid');
-    const prevMonth = document.getElementById('prevMonth');
-    const nextMonth = document.getElementById('nextMonth');
-
-    const weekdays = ['Lun', 'Mar', 'Mie', 'Joi', 'Vin', 'Sâm', 'Dum'];
-    const monthNames = [
-      'Ianuarie','Februarie','Martie','Aprilie','Mai','Iunie',
-      'Iulie','August','Septembrie','Octombrie','Noiembrie','Decembrie'
-    ];
-
-    const today = new Date();
-    let currentMonth = new Date(today.getFullYear(), today.getMonth(), 1);
-
-    const blockedDates = [
-      '2026-04-06',
-      '2026-04-13',
-      '2026-04-20'
-    ];
-
-    const blockedHours = {
-      '2026-04-08': ['08:00', '10:00'],
-      '2026-04-10': ['14:00', '16:00'],
-      '2026-04-15': ['12:00'],
-      '2026-04-18': ['08:00', '10:00', '12:00'],
-      '2026-04-22': ['16:00'],
-      '2026-04-25': ['10:00', '14:00']
-    };
-
-    const availableHours = ['08:00', '10:00', '12:00', '14:00', '16:00', '18:00'];
-
-    function renderCalendarHead(){
-      calendarHead.innerHTML = '';
-      weekdays.forEach(day => {
-        const div = document.createElement('div');
-        div.className = 'calendar-head';
-        div.textContent = day;
-        calendarHead.appendChild(div);
-      });
-    }
-
-    function formatISO(date){
-      const y = date.getFullYear();
-      const m = String(date.getMonth() + 1).padStart(2, '0');
-      const d = String(date.getDate()).padStart(2, '0');
-      return `${y}-${m}-${d}`;
-    }
-
-    function formatDateRO(date){
-      const d = String(date.getDate()).padStart(2, '0');
-      const m = String(date.getMonth() + 1).padStart(2, '0');
-      const y = date.getFullYear();
-      return `${d}.${m}.${y}`;
-    }
-
-    function renderCalendar(){
-      calendarGrid.innerHTML = '';
-      monthLabel.textContent = `${monthNames[currentMonth.getMonth()]} ${currentMonth.getFullYear()}`;
-
-      const firstDay = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), 1);
-      const lastDay = new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 0);
-
-      let startWeekday = firstDay.getDay();
-      if (startWeekday === 0) startWeekday = 7;
-
-      for (let i = 1; i < startWeekday; i++) {
-        const empty = document.createElement('div');
-        empty.className = 'day muted';
-        calendarGrid.appendChild(empty);
-      }
-
-      for (let day = 1; day <= lastDay.getDate(); day++) {
-        const date = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), day);
-        const iso = formatISO(date);
-        const weekday = date.getDay();
-        const isSunday = weekday === 0;
-        const isPast = date < new Date(today.getFullYear(), today.getMonth(), today.getDate());
-        const isBlocked = blockedDates.includes(iso);
-
-        const div = document.createElement('button');
-        div.type = 'button';
-        div.className = 'day';
-
-        if (isSunday || isPast || isBlocked) div.classList.add('blocked');
-        if (selectedDate && formatISO(selectedDate) === iso) div.classList.add('selected');
-
-        const availableCount = availableHours.filter(h => !(blockedHours[iso] || []).includes(h)).length;
-        let note = 'Disponibil';
-
-        if (isSunday) note = 'Indisponibil';
-        else if (isPast) note = 'Indisponibil';
-        else if (isBlocked) note = 'Complet';
-        else if (availableCount <= 2) note = 'Locuri limitate';
-
-        div.innerHTML = `
-          <span class="day-num">${day}</span>
-          <span class="day-note">${note}</span>
-        `;
-
-        if (!isSunday && !isPast && !isBlocked) {
-          div.addEventListener('click', () => {
-            selectedDate = date;
-            selectedTime = null;
-            updateSummary();
-            renderCalendar();
-            renderHours();
-          });
-        }
-
-        calendarGrid.appendChild(div);
-      }
-    }
-
-    prevMonth.addEventListener('click', () => {
-      currentMonth = new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1, 1);
-      renderCalendar();
-    });
-
-    nextMonth.addEventListener('click', () => {
-      currentMonth = new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 1);
-      renderCalendar();
-    });
-
-    const hourGrid = document.getElementById('hourGrid');
-
-    function renderHours(){
-      hourGrid.innerHTML = '';
-
-      if (!selectedDate) {
-        hourGrid.innerHTML = '<div style="color:var(--muted);">Alege mai întâi o dată.</div>';
-        return;
-      }
-
-      const iso = formatISO(selectedDate);
-      const blockedForDay = blockedHours[iso] || [];
-
-      availableHours.forEach(hour => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'hour-item';
-        btn.textContent = hour;
-
-        if (blockedForDay.includes(hour)) {
-          btn.classList.add('blocked');
-        }
-
-        if (selectedTime === hour) {
-          btn.classList.add('selected');
-        }
-
-        if (!blockedForDay.includes(hour)) {
-          btn.addEventListener('click', () => {
-            selectedTime = hour;
-            updateSummary();
-            renderHours();
-          });
-        }
-
-        hourGrid.appendChild(btn);
-      });
-    }
-
-    renderCalendarHead();
-    renderCalendar();
-    renderHours();
-
-    const form = document.getElementById('bookingForm');
-    const successBox = document.getElementById('successBox');
-    const errorBox = document.getElementById('errorBox');
-    const emailInput = document.getElementById('email');
-    const replyTo = form.querySelector('input[name="_replyto"]');
-
-    form.addEventListener('submit', async function(e){
-      e.preventDefault();
-
-      successBox.style.display = 'none';
-      errorBox.style.display = 'none';
-
-      if (!selectedServices.length) {
-        alert('Selectează cel puțin un serviciu.');
-        setStep(1);
-        return;
-      }
-
-      if (!selectedDate) {
-        alert('Alege o dată.');
-        setStep(2);
-        return;
-      }
-
-      if (!selectedTime) {
-        alert('Alege o oră.');
-        setStep(3);
-        return;
-      }
-
-      replyTo.value = emailInput.value.trim();
-
-      if (!form.reportValidity()) return;
-
-      const formData = new FormData(form);
-
-      try{
-        const response = await fetch(form.action, {
-          method:'POST',
-          body:formData,
-          headers:{ 'Accept':'application/json' }
-        });
-
-        if(response.ok){
-          successBox.style.display = 'block';
-          form.reset();
-          selectedServices = [];
-          selectedDate = null;
-          selectedTime = null;
-          serviceItems.forEach(item => item.classList.remove('active'));
-          updateSummary();
-          renderCalendar();
-          renderHours();
-          setStep(1);
-          window.scrollTo({ top: document.getElementById('booking').offsetTop - 80, behavior:'smooth' });
-        }else{
-          errorBox.style.display = 'block';
-        }
-      }catch(err){
-        errorBox.style.display = 'block';
+  (function(){
+    let shown = false;
+    document.addEventListener('mouseleave', function(e){
+      if(!shown && e.clientY < 8){
+        shown = true;
+        const popup = document.getElementById('pfExit');
+        if(popup) popup.classList.add('show');
       }
     });
-  </script>
+  })();
+</script>
+
 </body>
 </html>
