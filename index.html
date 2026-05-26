@@ -1025,6 +1025,45 @@
   .pf-sticky-lounge span{display:none}
   .pf-phone-screen{min-height:auto}
 }
+    .pf-ba-split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4px;
+}
+
+.pf-ba-photo{
+  position:relative;
+  overflow:hidden;
+  min-height:220px;
+  background:#000;
+}
+
+.pf-ba-photo img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  display:block;
+}
+
+.pf-ba-label{
+  position:absolute;
+  left:12px;
+  top:12px;
+  z-index:2;
+  border-radius:999px;
+  background:rgba(0,0,0,.72);
+  border:1px solid rgba(212,175,55,.55);
+  color:#f5d76e;
+  padding:7px 12px;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.12em;
+}
+
+.pf-ba-label-after{
+  background:rgba(212,175,55,.90);
+  color:#050505;
+}
 
 </style>
 </head>
@@ -1739,17 +1778,27 @@ async function loadGallery() {
     }
 
     container.innerHTML = items
-      .slice(0, 6)
-      .map(
-        (item) => `
-          <div class="pf-ba">
-            <img src="${item.beforeUrl}" alt="${item.title}">
-            <img src="${item.afterUrl}" alt="${item.title}">
-            <div>${item.title}</div>
+  .slice(0, 6)
+  .map(
+    (item) => `
+      <div class="pf-ba">
+        <div class="pf-ba-split">
+          <div class="pf-ba-photo">
+            <span class="pf-ba-label">BEFORE</span>
+            <img src="${item.beforeUrl}" alt="${item.title} before">
           </div>
-        `
-      )
-      .join("");
+
+          <div class="pf-ba-photo">
+            <span class="pf-ba-label pf-ba-label-after">AFTER</span>
+            <img src="${item.afterUrl}" alt="${item.title} after">
+          </div>
+        </div>
+
+        <div>${item.title}</div>
+      </div>
+    `
+  )
+  .join("");
   } catch (error) {
     console.error(error);
   }
