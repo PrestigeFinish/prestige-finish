@@ -1064,9 +1064,26 @@
   background:rgba(212,175,55,.90);
   color:#050505;
 }
-    .pf-before-after{
-  overflow:hidden;
+  .pf-before-after{
+  overflow-x:auto;
+  overflow-y:hidden;
   display:block;
+  scroll-behavior:smooth;
+  padding-bottom:18px;
+}
+
+.pf-before-after::-webkit-scrollbar{
+  height:10px;
+}
+
+.pf-before-after::-webkit-scrollbar-track{
+  background:rgba(255,255,255,.06);
+  border-radius:999px;
+}
+
+.pf-before-after::-webkit-scrollbar-thumb{
+  background:linear-gradient(90deg,#d4af37,#fff1a0);
+  border-radius:999px;
 }
 
 .pf-gallery-track{
@@ -1076,7 +1093,8 @@
   animation:pfGalleryMove 35s linear infinite;
 }
 
-.pf-gallery-track:hover{
+.pf-gallery-track:hover,
+.pf-before-after:hover .pf-gallery-track{
   animation-play-state:paused;
 }
 
