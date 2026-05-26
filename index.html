@@ -1276,11 +1276,16 @@
   <div class="pf-monster-wrap">
     <span class="pf-eyebrow">Transformări reale</span>
     <h2 class="pf-title">Before / After Prestige Finish</h2>
-    <p class="pf-subtitle">Secțiune pregătită pentru portofoliu. Următorul pas: upload direct din admin pentru poze înainte / după.</p>
-    <div class="pf-before-after">
-      <div class="pf-ba"><img src="assets/serv-interior.jpeg" alt="Detailing interior"><div>Interior deep clean</div></div>
-      <div class="pf-ba"><img src="assets/serv-ceramic.jpeg" alt="Protecție ceramică"><div>Protecție ceramică</div></div>
-      <div class="pf-ba"><img src="assets/serv-faruri.jpeg" alt="Faruri"><div>Recondiționare faruri</div></div>
+    <p class="pf-subtitle">
+      Lucrări reale Prestige Finish, actualizate direct din aplicația admin.
+    </p>
+
+    <div class="pf-before-after" id="galleryContainer">
+      <div class="pf-ba">
+        <div style="padding:40px;text-align:center;color:#fff;">
+          Se încarcă galeria...
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1710,5 +1715,47 @@
       });
     });
   </script>
+  <script>
+async function loadGallery() {
+  try {
+    const res = await fetch(
+      "https://prestige-finish-client-lounge-production.up.railway.app/api/gallery"
+    );
+
+    const items = await res.json();
+
+    const container = document.getElementById("galleryContainer");
+    if (!container) return;
+
+    if (!items.length) {
+      container.innerHTML = `
+        <div class="pf-ba">
+          <div style="padding:40px;text-align:center;color:white;">
+            Galeria va fi populată în curând.
+          </div>
+        </div>
+      `;
+      return;
+    }
+
+    container.innerHTML = items
+      .slice(0, 6)
+      .map(
+        (item) => `
+          <div class="pf-ba">
+            <img src="${item.beforeUrl}" alt="${item.title}">
+            <img src="${item.afterUrl}" alt="${item.title}">
+            <div>${item.title}</div>
+          </div>
+        `
+      )
+      .join("");
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+loadGallery();
+</script>
 </body>
 </html>
