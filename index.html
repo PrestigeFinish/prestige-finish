@@ -1990,19 +1990,11 @@ async function loadGallery() {
       .map(
         (item) => `
           <div class="pf-gallery-card">
-            <div class="pf-ba-split big">
-              <div class="pf-ba-photo" onclick="openGalleryImage('${item.beforeUrl}')">
-                <span class="pf-ba-label">ÎNAINTE</span>
-                <img src="${item.beforeUrl}" alt="${item.title} before">
-              </div>
-
+            <div class="pf-ba-split big" style="grid-template-columns:1fr;">
               <div class="pf-ba-photo" onclick="openGalleryImage('${item.afterUrl}')">
-                <span class="pf-ba-label pf-ba-label-after">DUPĂ</span>
-                <img src="${item.afterUrl}" alt="${item.title} after">
+                <img src="${item.afterUrl}" alt="Lucrare Prestige Finish" loading="lazy">
               </div>
             </div>
-
-            <div class="pf-gallery-title">${item.title}</div>
           </div>
         `
       )
