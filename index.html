@@ -1565,12 +1565,12 @@
   </div>
 </section>
 
-<section class="pf-monster-section">
+<section class="pf-monster-section" id="portfolio">
   <div class="pf-monster-wrap">
-    <span class="pf-eyebrow">Galeria Prestige</span>
-    <h2 class="pf-title">Lucrarile noastre</h2>
+    <span class="pf-eyebrow">Portofoliu Prestige Finish</span>
+    <h2 class="pf-title">Lucrările noastre</h2>
     <p class="pf-subtitle">
-      Mașinile care au trecut pragul atelierului nostru
+      Mașini care ne-au trecut pragul atelierului și rezultate reale obținute de echipa Prestige Finish.
     </p>
 
     <div class="pf-before-after" id="galleryContainer">
@@ -1976,7 +1976,7 @@ async function loadGallery() {
       container.innerHTML = `
         <div class="pf-ba">
           <div style="padding:40px;text-align:center;color:white;">
-            Galeria va fi populată în curând.
+            Primele lucrări vor apărea aici în curând.
           </div>
         </div>
       `;
@@ -1992,12 +1992,12 @@ async function loadGallery() {
           <div class="pf-gallery-card">
             <div class="pf-ba-split big">
               <div class="pf-ba-photo" onclick="openGalleryImage('${item.beforeUrl}')">
-                <span class="pf-ba-label">BEFORE</span>
+                <span class="pf-ba-label">ÎNAINTE</span>
                 <img src="${item.beforeUrl}" alt="${item.title} before">
               </div>
 
               <div class="pf-ba-photo" onclick="openGalleryImage('${item.afterUrl}')">
-                <span class="pf-ba-label pf-ba-label-after">AFTER</span>
+                <span class="pf-ba-label pf-ba-label-after">DUPĂ</span>
                 <img src="${item.afterUrl}" alt="${item.title} after">
               </div>
             </div>
@@ -2040,7 +2040,7 @@ loadGallery();
       const offer = document.getElementById('oferta-iulie');
       const services = document.getElementById('servicii');
       const lounge = document.getElementById('prestige-lounge');
-      const gallery = findSection('Before / After Prestige Finish');
+      const gallery = document.getElementById('portfolio') || findSection('Lucrările noastre');
       const accreditations = findSection('Studio acreditat pentru sisteme');
       const reasons = findSection('O abordare premium, clară și controlată');
       const contact = document.getElementById('contact');
@@ -2053,8 +2053,6 @@ loadGallery();
       if (about) about.classList.add('pf-redesign-hidden');
 
       keep.forEach(section => main.appendChild(section));
-
-      if (gallery) gallery.id = 'portfolio';
 
       const serviceCards = services ? [...services.querySelectorAll('.service-card')] : [];
       serviceCards.slice(3).forEach(card => card.classList.add('pf-redesign-hidden'));
