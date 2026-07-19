@@ -1235,6 +1235,37 @@
     }
 
 </style>
+  <style id="pf-homepage-redesign">
+    .pf-redesign-hidden{display:none !important;}
+    .pf-homepage-redesign .hero{min-height:calc(100vh - 84px);display:flex;align-items:center;}
+    .pf-homepage-redesign .hero h1{max-width:820px;line-height:.98;}
+    .pf-homepage-redesign .hero-actions .btn{min-height:48px;display:inline-flex;align-items:center;justify-content:center;}
+    .pf-homepage-redesign #servicii{padding-top:96px;padding-bottom:96px;}
+    .pf-homepage-redesign #servicii .service-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+    .pf-homepage-redesign #servicii .service-card{min-height:420px;}
+    .pf-homepage-redesign #servicii .service-entry{cursor:pointer;display:flex;text-decoration:none;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;}
+    .pf-homepage-redesign #servicii .service-entry:hover{transform:translateY(-6px);border-color:rgba(246,196,83,.55);box-shadow:0 24px 60px rgba(0,0,0,.45);}
+    .pf-homepage-redesign .service-entry-cta{display:inline-flex;margin-top:18px;color:#f6c453;font-weight:900;letter-spacing:.01em;}
+    .pf-homepage-redesign .homepage-service-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px;}
+    .pf-homepage-redesign #portfolio{padding-top:96px;padding-bottom:96px;}
+    .pf-homepage-redesign #prestige-lounge{padding-top:96px;padding-bottom:96px;}
+    .pf-homepage-redesign .featured-offer{padding-top:90px;padding-bottom:90px;}
+    .pf-homepage-redesign .featured-offer .section-text{max-width:760px;}
+    .pf-homepage-redesign .whatsapp-btn{z-index:70;}
+    @media(max-width:900px){
+      .pf-homepage-redesign .hero{min-height:auto;padding-top:80px;padding-bottom:80px;}
+      .pf-homepage-redesign #servicii .service-grid{grid-template-columns:1fr;}
+      .pf-homepage-redesign #servicii .service-card{min-height:340px;}
+      .pf-homepage-redesign .hero-actions{gap:10px;}
+      .pf-homepage-redesign .hero-actions .btn{width:100%;}
+    }
+    @media(max-width:640px){
+      .pf-homepage-redesign .whatsapp-btn{width:58px;height:58px;right:16px;bottom:16px;padding:0;border-radius:50%;font-size:0;justify-content:center;}
+      .pf-homepage-redesign .whatsapp-btn img{width:25px;height:25px;margin:0;}
+      .pf-homepage-redesign .section-title,.pf-homepage-redesign .pf-title{font-size:clamp(34px,10vw,50px);}
+      .pf-homepage-redesign .featured-offer,.pf-homepage-redesign #servicii,.pf-homepage-redesign #portfolio,.pf-homepage-redesign #prestige-lounge{padding-top:64px;padding-bottom:64px;}
+    }
+  </style>
 </head>
 <body>
   <header class="topbar">
@@ -1611,32 +1642,35 @@
     <section class="coming fade-in" id="servicii">
       <div class="container">
         <div class="tag">Servicii premium</div>
-        <h2 class="section-title">Servicii auto specializate, prezentate clar și premium</h2>
+        <h2 class="section-title">Alege serviciul potrivit pentru mașina ta</h2>
         <p class="section-text">
-          Pe lângă detailingul interior, Prestige Finish include servicii premium de corecție, protecție și recondiționare, construite pentru clienți care urmăresc rezultat real și prezentare impecabilă.
+          Intră direct în categoria care te interesează pentru a vedea ce include fiecare pachet, durata estimată și prețurile pentru dimensiunea mașinii tale.
         </p>
 
         <div class="grid-3 service-grid">
-          <div class="card service-card" style="background-image:url('assets/serv-interior.jpeg')">
+          <a class="card service-card service-entry" href="persoane-fizice.html#pachete" style="background-image:url('assets/serv-interior.jpeg')">
             <div class="service-overlay">
               <h3>Detailing interior</h3>
               <p>Curățare atentă, igienizare și finisaj premium pentru habitacluri care trebuie să arate impecabil.</p>
+              <span class="service-entry-cta">Vezi pachetele și prețurile →</span>
             </div>
-          </div>
+          </a>
 
-          <div class="card service-card" style="background-image:url('assets/serv-polish.jpeg')">
+          <a class="card service-card service-entry" href="persoane-fizice.html#corectie-protectie" style="background-image:url('assets/serv-polish.jpeg')">
             <div class="service-overlay">
               <h3>Polish</h3>
               <p>Corecție vizuală și rafinare a finisajului pentru un aspect profund, curat și bine controlat.</p>
+              <span class="service-entry-cta">Vezi nivelurile de corecție →</span>
             </div>
-          </div>
+          </a>
 
-          <div class="card service-card" style="background-image:url('assets/serv-ceramic.jpeg')">
+          <a class="card service-card service-entry" href="persoane-fizice.html#basic-protection" style="background-image:url('assets/serv-ceramic.jpeg')">
             <div class="service-overlay">
               <h3>Protecții ceramice</h3>
               <p>Protecție ceramică profesională pentru mașini care trebuie să își păstreze luciul, claritatea și întreținerea la un nivel superior.</p>
+              <span class="service-entry-cta">Compară protecțiile ceramice →</span>
             </div>
-          </div>
+          </a>
 
           <div class="card service-card" style="background-image:url('assets/serv-leather.jpeg')">
             <div class="service-overlay">
@@ -1991,5 +2025,78 @@ loadGallery();
   document.body.appendChild(modal);
 }
 </script>
+  <script id="pf-homepage-redesign-script">
+    (() => {
+      const main = document.querySelector('main');
+      if (!main) return;
+      document.body.classList.add('pf-homepage-redesign');
+
+      const sections = [...main.querySelectorAll(':scope > section')];
+      const findSection = (text) => sections.find(section =>
+        section.textContent.toLowerCase().includes(text.toLowerCase())
+      );
+
+      const hero = main.querySelector('.hero');
+      const offer = document.getElementById('oferta-iulie');
+      const services = document.getElementById('servicii');
+      const lounge = document.getElementById('prestige-lounge');
+      const gallery = findSection('Before / After Prestige Finish');
+      const accreditations = findSection('Studio acreditat pentru sisteme');
+      const reasons = findSection('O abordare premium, clară și controlată');
+      const contact = document.getElementById('contact');
+      const about = document.getElementById('despre');
+      const keep = [hero, services, offer, gallery, lounge, accreditations, reasons, contact].filter(Boolean);
+
+      sections.forEach(section => {
+        if (!keep.includes(section)) section.classList.add('pf-redesign-hidden');
+      });
+      if (about) about.classList.add('pf-redesign-hidden');
+
+      keep.forEach(section => main.appendChild(section));
+
+      if (gallery) gallery.id = 'portfolio';
+
+      const serviceCards = services ? [...services.querySelectorAll('.service-card')] : [];
+      serviceCards.slice(3).forEach(card => card.classList.add('pf-redesign-hidden'));
+      if (services && !services.querySelector('.homepage-service-actions')) {
+        const actions = document.createElement('div');
+        actions.className = 'homepage-service-actions';
+        actions.innerHTML = `
+          <a class="btn btn-primary" href="persoane-fizice.html">Vezi toate serviciile și prețurile</a>
+          <a class="btn btn-primary" href="https://prestige-finish-client-lounge-production.up.railway.app/booking">Programează online</a>`;
+        services.querySelector('.container')?.appendChild(actions);
+      }
+
+      const heroLinks = hero ? [...hero.querySelectorAll('.hero-actions a')] : [];
+      if (heroLinks[1]) {
+        heroLinks[1].href = '#servicii';
+        heroLinks[1].textContent = 'Vezi serviciile';
+      }
+      heroLinks.slice(2).forEach(link => link.classList.add('pf-redesign-hidden'));
+
+      if (lounge) {
+        const loungeTitle = lounge.querySelector('.pf-title');
+        const loungeText = lounge.querySelector('.pf-subtitle');
+        if (loungeTitle) loungeTitle.textContent = 'Programare, garaj și statusul lucrării într-un singur loc.';
+        if (loungeText) loungeText.textContent = 'În Prestige Finish Lounge alegi serviciile și intervalul, salvezi mașinile, urmărești lucrarea și păstrezi istoricul fiecărei vizite.';
+      }
+
+      const navLinks = [...document.querySelectorAll('#mobileMenu > a')];
+      const navModel = [
+        ['#servicii', 'Servicii complete'],
+        ['#portfolio', 'Portofoliu'],
+        ['flote.html', 'Pentru companii'],
+        ['#contact', 'Contact']
+      ];
+      navLinks.forEach((link, index) => {
+        if (index < navModel.length) {
+          link.href = navModel[index][0];
+          link.textContent = navModel[index][1];
+        } else if (!link.classList.contains('nav-cta')) {
+          link.classList.add('pf-redesign-hidden');
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
